@@ -1,0 +1,5 @@
+all:
+  propel:
+    class:          sfPropelDatabase
+    param:
+      dsn:          mssql://student:password@bambi.cs.columbia.edu/Genspace

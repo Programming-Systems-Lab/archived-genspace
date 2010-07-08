@@ -1,0 +1,125 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="fdr"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="562980042"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>16</hour>
+			<minute>3</minute>
+			<second>54</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="1">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+			<parameter id="2">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="3">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="4">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="fdr"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="438340246"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>17</hour>
+			<minute>4</minute>
+			<second>18</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>iterations</key>
+				<value>2000</value>
+			</parameter>
+			<parameter id="1">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+			<parameter id="2">
+				<key>columns</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="3">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="4">
+				<key>function</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="5">
+				<key>rows</key>
+				<value>2</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="fdr"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="438340246"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>17</hour>
+			<minute>4</minute>
+			<second>42</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>iterations</key>
+				<value>2500</value>
+			</parameter>
+			<parameter id="1">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+			<parameter id="2">
+				<key>columns</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="3">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="4">
+				<key>function</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="5">
+				<key>rows</key>
+				<value>2</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

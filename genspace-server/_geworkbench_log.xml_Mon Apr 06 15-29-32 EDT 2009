@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Alterations in Gene Expression Profiles during Prostate Cancer Progression_6_merged"/>
+		<transaction id="1284735672"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>6</day>
+			<hour>15</hour>
+			<minute>29</minute>
+			<second>25</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="Alterations in Gene Expression Profiles during Prostate Cancer Progression_6_merged"/>
+		<transaction id="1284735672"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>6</day>
+			<hour>15</hour>
+			<minute>29</minute>
+			<second>32</second>
+		</time>
+	</metric>
+</measurement>

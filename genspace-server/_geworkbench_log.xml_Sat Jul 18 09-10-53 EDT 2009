@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="asusxp"/>
+		<analysis name="ARACNE"/>
+		<dataset name="insilico_size100_1_knockdowns"/>
+		<transaction id="589423223"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>18</day>
+			<hour>9</hour>
+			<minute>10</minute>
+			<second>17</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="asusxp"/>
+		<analysis name="ARACNE"/>
+		<dataset name=""/>
+		<transaction id="515219504"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>18</day>
+			<hour>9</hour>
+			<minute>10</minute>
+			<second>53</second>
+		</time>
+	</metric>
+</measurement>

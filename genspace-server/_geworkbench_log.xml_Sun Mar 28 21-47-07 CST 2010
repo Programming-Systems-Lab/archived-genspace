@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lenovo-87fd5b82"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="GSE7524_series_matrix"/>
+		<transaction id="1608242067"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>28</day>
+			<hour>21</hour>
+			<minute>41</minute>
+			<second>17</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lenovo-87fd5b82"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE7524_series_matrix"/>
+		<transaction id="982458851"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>28</day>
+			<hour>21</hour>
+			<minute>47</minute>
+			<second>6</second>
+		</time>
+	</metric>
+</measurement>

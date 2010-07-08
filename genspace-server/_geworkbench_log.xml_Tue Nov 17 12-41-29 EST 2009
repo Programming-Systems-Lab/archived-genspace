@@ -1,0 +1,150 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lindsay-corstorphines-macbook-pro.local"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Day 4 (RMA_PLM)"/>
+		<transaction id="1670339295"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>15</day>
+			<hour>11</hour>
+			<minute>8</minute>
+			<second>28</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>adjbonferroni</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lindsay-corstorphines-macbook-pro.local"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Day 4 (RMA_PLM)"/>
+		<transaction id="1752463824"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>17</day>
+			<hour>11</hour>
+			<minute>8</minute>
+			<second>2</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lindsay-corstorphines-macbook-pro.local"/>
+		<analysis name="PCA Analysis 3.0"/>
+		<dataset name="Day 4 (RMA_PLM)"/>
+		<transaction id="567598310"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>17</day>
+			<hour>12</hour>
+			<minute>21</minute>
+			<second>12</second>
+		</time>
+		<parameters count="1">
+			<parameter id="0">
+				<key>variables</key>
+				<value>experiments</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lindsay-corstorphines-macbook-pro.local"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Day 4 (RMA_PLM)"/>
+		<transaction id="183996892"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>17</day>
+			<hour>12</hour>
+			<minute>41</minute>
+			<second>29</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

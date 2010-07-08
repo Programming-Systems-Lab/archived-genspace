@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS8"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Merged DataSet:  A549 treatement with MGd_GSM39801  A549 treatement with MGd_GSM39802  A549 treatement with MGd_GSM39803  A549 treatement with MGd_GSM39804  A549 treatement with MGd_GSM39805  A549 treatement with MGd_GSM39806  A549 treatement with MGd_GSM39807  A549 treatement with MGd_GSM39808  A549 treatement with MGd_GSM39809  A549 treatement with MGd_GSM39810  A549 treatement with MGd_GSM39811  A549 treatement with MGd_GSM39812  A549 treatement with MGd_GSM39813  A549 treatement with MGd_GSM39814  A549 treatement with MGd_GSM39815  A549 treatement with MGd_GSM39816  A549 treatement with MGd_GSM39817  A549 treatement with MGd_GSM39818 "/>
+		<transaction id="422308007"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>13</day>
+			<hour>9</hour>
+			<minute>5</minute>
+			<second>24</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS8"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="Merged DataSet:  A549 treatement with MGd_GSM39801  A549 treatement with MGd_GSM39802  A549 treatement with MGd_GSM39803  A549 treatement with MGd_GSM39804  A549 treatement with MGd_GSM39805  A549 treatement with MGd_GSM39806  A549 treatement with MGd_GSM39807  A549 treatement with MGd_GSM39808  A549 treatement with MGd_GSM39809  A549 treatement with MGd_GSM39810  A549 treatement with MGd_GSM39811  A549 treatement with MGd_GSM39812  A549 treatement with MGd_GSM39813  A549 treatement with MGd_GSM39814  A549 treatement with MGd_GSM39815  A549 treatement with MGd_GSM39816  A549 treatement with MGd_GSM39817  A549 treatement with MGd_GSM39818 "/>
+		<transaction id="422308007"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>13</day>
+			<hour>9</hour>
+			<minute>5</minute>
+			<second>43</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

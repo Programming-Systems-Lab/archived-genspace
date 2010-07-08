@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>added security server
+</CommitComment>
+	<CommitComment>Fixed nextbestratedtool command in isbu</CommitComment>
+	<CommitComment>added isbu</CommitComment>
+	<CommitComment>Made server ports up to runtimeconfig class (starting from 12340), added output about server initializations in server class.</CommitComment>
+	<CommitComment>ISBU server now extends Server and can be called from Genspace.java.  RatingManager now fully supports retreiving ratings from DB</CommitComment>
+	<CommitComment>fixing logical error</CommitComment>
+</CommitComments>

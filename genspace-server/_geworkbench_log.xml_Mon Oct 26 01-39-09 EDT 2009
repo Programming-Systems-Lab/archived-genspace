@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1159429467"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>26</day>
+			<hour>1</hour>
+			<minute>38</minute>
+			<second>53</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1159429467"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>26</day>
+			<hour>1</hour>
+			<minute>39</minute>
+			<second>9</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

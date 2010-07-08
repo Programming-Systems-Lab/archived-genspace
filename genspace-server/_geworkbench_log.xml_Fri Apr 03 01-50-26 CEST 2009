@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="brunello"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="IDI_linear"/>
+		<transaction id="1870376645"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>2</day>
+			<hour>15</hour>
+			<minute>58</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="brunello"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="IDI_linear_NOCONTROL"/>
+		<transaction id="1523895999"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>2</day>
+			<hour>16</hour>
+			<minute>44</minute>
+			<second>27</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="fabio" genspace="false"/>
+		<host name="brunello"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="IDI_linear_NOCONTROL"/>
+		<transaction id="497223426"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>3</day>
+			<hour>1</hour>
+			<minute>19</minute>
+			<second>31</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="fabio" genspace="false"/>
+		<host name="brunello"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="IDI_linear_NOCONTROL"/>
+		<transaction id="1055143393"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>3</day>
+			<hour>1</hour>
+			<minute>50</minute>
+			<second>25</second>
+		</time>
+	</metric>
+</measurement>

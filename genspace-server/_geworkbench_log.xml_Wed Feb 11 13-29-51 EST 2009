@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="iris-norm2"/>
+		<transaction id="1544992961"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>13</hour>
+			<minute>2</minute>
+			<second>55</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="iris-norm2"/>
+		<transaction id="1511287155"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>13</hour>
+			<minute>29</minute>
+			<second>51</second>
+		</time>
+	</metric>
+</measurement>

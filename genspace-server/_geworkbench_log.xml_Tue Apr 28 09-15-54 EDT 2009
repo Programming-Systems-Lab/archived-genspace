@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="David" genspace="false"/>
+		<host name="Washington"/>
+		<analysis name="ARACNE"/>
+		<dataset name=""/>
+		<transaction id="671966509"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>9</hour>
+			<minute>13</minute>
+			<second>49</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="David" genspace="false"/>
+		<host name="Washington"/>
+		<analysis name="ARACNE"/>
+		<dataset name=""/>
+		<transaction id="429484625"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>9</hour>
+			<minute>15</minute>
+			<second>54</second>
+		</time>
+	</metric>
+</measurement>

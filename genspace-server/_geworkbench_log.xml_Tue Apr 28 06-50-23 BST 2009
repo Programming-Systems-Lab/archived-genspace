@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gse12390_aracne"/>
+		<transaction id="1687287825"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>6</hour>
+			<minute>50</minute>
+			<second>3</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gse12390_aracne"/>
+		<transaction id="1687287825"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>6</hour>
+			<minute>50</minute>
+			<second>23</second>
+		</time>
+	</metric>
+</measurement>

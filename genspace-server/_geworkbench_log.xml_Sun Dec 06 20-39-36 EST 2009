@@ -1,0 +1,104 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MINI-LAPTOP"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE13320_series_matrix GSE15022_series_matrix GSE6918_series_matrix "/>
+		<transaction id="1074167670"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>6</day>
+			<hour>20</hour>
+			<minute>32</minute>
+			<second>19</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MINI-LAPTOP"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Merged DataSet: GSE13320_series_matrix GSE15022_series_matrix GSE6918_series_matrix "/>
+		<transaction id="1074167670"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>6</day>
+			<hour>20</hour>
+			<minute>39</minute>
+			<second>36</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>bonferroni</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>permutation</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

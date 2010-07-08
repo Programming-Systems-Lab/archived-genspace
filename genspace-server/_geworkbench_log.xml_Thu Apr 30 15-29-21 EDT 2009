@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="Richard" genspace="false"/>
+		<host name="richard-pc"/>
+		<analysis name="ARACNE"/>
+		<dataset name="webmatrix.exp"/>
+		<transaction id="372705641"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>30</day>
+			<hour>15</hour>
+			<minute>27</minute>
+			<second>58</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="Richard" genspace="false"/>
+		<host name="richard-pc"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="webmatrix.exp"/>
+		<transaction id="1038416100"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>30</day>
+			<hour>15</hour>
+			<minute>29</minute>
+			<second>20</second>
+		</time>
+	</metric>
+</measurement>

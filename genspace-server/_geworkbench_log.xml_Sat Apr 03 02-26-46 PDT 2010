@@ -1,0 +1,23 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ubuntu"/>
+		<analysis name="PCA Analysis 3.0"/>
+		<dataset name="affy_430_2_dataset"/>
+		<transaction id="1813592154"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>3</day>
+			<hour>2</hour>
+			<minute>26</minute>
+			<second>19</second>
+		</time>
+		<parameters count="1">
+			<parameter id="0">
+				<key>variables</key>
+				<value>experiments</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC655023685108"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Mesenchymal Induction 20061215"/>
+		<transaction id="1701340215"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>2</day>
+			<hour>14</hour>
+			<minute>22</minute>
+			<second>10</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC655023685108"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Mesenchymal Induction 20061215"/>
+		<transaction id="1047660474"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>2</day>
+			<hour>14</hour>
+			<minute>29</minute>
+			<second>21</second>
+		</time>
+	</metric>
+</measurement>

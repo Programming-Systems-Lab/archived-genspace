@@ -1,0 +1,77 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="arraydata10x336.adj"/>
+		<transaction id="962465250"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>12</hour>
+			<minute>2</minute>
+			<second>24</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="arraydata10x336.adj"/>
+		<transaction id="1024947801"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>12</hour>
+			<minute>4</minute>
+			<second>43</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="arraydata10x336.adj"/>
+		<transaction id="1376979513"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>12</hour>
+			<minute>6</minute>
+			<second>41</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="out1"/>
+		<transaction id="883179356"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>18</day>
+			<hour>22</hour>
+			<minute>14</minute>
+			<second>38</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="out1"/>
+		<transaction id="238579740"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>18</day>
+			<hour>22</hour>
+			<minute>15</minute>
+			<second>49</second>
+		</time>
+	</metric>
+</measurement>

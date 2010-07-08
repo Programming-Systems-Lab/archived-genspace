@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="homecomputer-PC"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="MG-U74Av2 IDO-competent dendritic cells GSE3337_series_matrix"/>
+		<transaction id="1534553572"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>20</day>
+			<hour>22</hour>
+			<minute>32</minute>
+			<second>27</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="homecomputer-PC"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="MG-U74Av2 IDO-competent dendritic cells GSE3337_series_matrix"/>
+		<transaction id="1534553572"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>20</day>
+			<hour>22</hour>
+			<minute>32</minute>
+			<second>56</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="computer"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="MSLN"/>
+		<transaction id="1124124220"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>4</day>
+			<hour>16</hour>
+			<minute>43</minute>
+			<second>37</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="computer"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="MSLN"/>
+		<transaction id="1518200942"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>4</day>
+			<hour>17</hour>
+			<minute>4</minute>
+			<second>59</second>
+		</time>
+	</metric>
+</measurement>

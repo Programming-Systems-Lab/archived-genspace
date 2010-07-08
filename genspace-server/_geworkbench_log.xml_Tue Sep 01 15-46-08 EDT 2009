@@ -1,0 +1,846 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="t Test Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2053550495"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>5</minute>
+			<second>38</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="226663596"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>7</minute>
+			<second>36</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="183209641"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>8</minute>
+			<second>48</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1721634714"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>10</minute>
+			<second>38</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1506784152"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>13</minute>
+			<second>41</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1441704810"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>31</minute>
+			<second>12</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="519208419"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>39</minute>
+			<second>55</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1308333890"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>53</minute>
+			<second>50</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2117004220"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>57</minute>
+			<second>39</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1058481437"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>6</minute>
+			<second>23</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2132109875"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>8</minute>
+			<second>1</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="923264591"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>9</minute>
+			<second>29</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="992091716"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>26</minute>
+			<second>50</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1666229248"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>29</minute>
+			<second>14</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="45001163"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>33</minute>
+			<second>59</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1725352101"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>37</minute>
+			<second>7</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="795439121"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>46</minute>
+			<second>52</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2104615690"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>49</minute>
+			<second>5</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1827953824"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>52</minute>
+			<second>34</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1028510376"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>56</minute>
+			<second>29</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1724357868"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>13</hour>
+			<minute>59</minute>
+			<second>32</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="573842989"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>2</minute>
+			<second>52</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1672896077"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>5</minute>
+			<second>32</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1538685014"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>9</minute>
+			<second>40</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="252558778"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>24</minute>
+			<second>44</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="155536276"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>27</minute>
+			<second>4</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1312196499"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>28</minute>
+			<second>30</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1886987068"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>33</minute>
+			<second>33</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1119414781"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>14</hour>
+			<minute>36</minute>
+			<second>7</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1681351062"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>15</hour>
+			<minute>21</minute>
+			<second>5</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1503066438"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>15</hour>
+			<minute>45</minute>
+			<second>35</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1503066438"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>1</day>
+			<hour>15</hour>
+			<minute>46</minute>
+			<second>8</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,164 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="a"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="226421799"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>7</day>
+			<hour>16</hour>
+			<minute>9</minute>
+			<second>38</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>mainTF</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>202431_s_at, 202248_at, 215152_at, 224754_at, 204653_at, 201746_at, 216953_s_at, 213298_at, 211605_s_at, 228758_at, 211524_at, 201710_at, 215551_at, 205249_at, 221557_s_at, 2028_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value>202431_s_at, 202248_at, 215152_at, 224754_at, 204653_at, 201746_at, 216953_s_at, 213298_at, 211605_s_at, 228758_at, 211524_at, 201710_at, 215551_at, 205249_at, 221557_s_at, 2028_s_at</value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.65</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="a"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="226421799"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>7</day>
+			<hour>16</hour>
+			<minute>13</minute>
+			<second>24</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>mainTF</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>202431_s_at, 202248_at, 215152_at, 224754_at, 204653_at, 201746_at, 216953_s_at, 213298_at, 211605_s_at, 228758_at, 211524_at, 201710_at, 215551_at, 205249_at, 221557_s_at, 2028_s_at, 203132_at, 217178_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value>202431_s_at, 202248_at, 215152_at, 224754_at, 204653_at, 201746_at, 216953_s_at, 213298_at, 211605_s_at, 228758_at, 211524_at, 201710_at, 215551_at, 205249_at, 221557_s_at, 2028_s_at, 203132_at, 217178_at</value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="HaoXuan"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="txt "/>
+		<transaction id="1222212944"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>21</day>
+			<hour>13</hour>
+			<minute>46</minute>
+			<second>51</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="HaoXuan"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="txt "/>
+		<transaction id="1222212944"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>21</day>
+			<hour>13</hour>
+			<minute>50</minute>
+			<second>19</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>1</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

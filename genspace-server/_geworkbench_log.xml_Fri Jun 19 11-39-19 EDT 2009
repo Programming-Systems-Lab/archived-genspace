@@ -1,0 +1,84 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2014925190"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>19</day>
+			<hour>11</hour>
+			<minute>38</minute>
+			<second>57</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2014925190"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>19</day>
+			<hour>11</hour>
+			<minute>39</minute>
+			<second>19</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

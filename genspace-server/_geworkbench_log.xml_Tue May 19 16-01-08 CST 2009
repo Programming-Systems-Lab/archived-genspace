@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dell-487dc8f844"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="1766318315"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>19</day>
+			<hour>15</hour>
+			<minute>17</minute>
+			<second>40</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dell-487dc8f844"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="1814372019"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>19</day>
+			<hour>16</hour>
+			<minute>1</minute>
+			<second>7</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,156 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="huey.molgen.mpg.de"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="Merged DataSet: GSE5258-GPL96_series_matrix-1 GSE5258-GPL96_series_matrix-2 "/>
+		<transaction id="582598917"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>29</day>
+			<hour>12</hour>
+			<minute>28</minute>
+			<second>34</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>200593_s_at,200594_x_at,200598_s_at,200599_s_at,200610_s_at,200627_at,200648_s_at,200664_s_at,200666_s_at,200676_s_at,200679_x_at,200680_x_at,200682_s_at,200683_s_at,200684_s_at,200799_at,200800_s_at,200806_s_at,200807_s_at,200854_at,200855_at,200856_x_at,200857_s_at,200894_s_at,200895_s_at,200935_at,201020_at,201041_s_at,201044_x_at,201072_s_at,201073_s_at,201074_at,201075_s_at,201268_at,201328_at,201329_s_at,201464_x_at,201465_s_at,201466_s_at,201693_s_at,201694_s_at,201739_at,201746_at,201758_at,201763_s_at,201783_s_at,201823_s_at,201824_at,201827_at,201833_at,202180_s_at,202217_at,202221_s_at,202291_s_at,202332_at,202340_x_at,202387_at,202431_s_at,202526_at,202527_s_at,202530_at,202573_at,202574_s_at,202580_x_at,202581_at,202582_s_at,202583_s_at,202599_s_at,202600_s_at,202610_s_at,202611_s_at,202612_s_at,202627_s_at,202628_s_at,202736_s_at,202737_s_at,202820_at,202847_at,202859_x_at,203010_at,203013_at,203135_at,203213_at,203214_x_at,203218_at,203327_at,203328_x_at,203453_at,203496_s_at,203497_at,203547_at,203575_at,203684_s_at,203685_at,203689_s_at,203920_at,203952_at,204130_at,204185_x_at,204186_s_at,204247_s_at,204252_at,204253_s_at,204254_s_at,204255_s_at,204312_x_at,204313_s_at,204314_s_at,204323_x_at,204325_s_at,204582_s_at,204583_x_at,204621_s_at,204622_x_at,204633_s_at,204635_at,204694_at,204748_at,204760_s_at,204791_at,204813_at,204828_at,204890_s_at,204891_s_at,205019_s_at,205026_at,205043_at,205253_at,205259_at,205266_at,205302_at,205311_at,205396_at,205397_x_at,205398_s_at,205404_at,205445_at,205502_at,205629_s_at,205630_at,205681_at,205720_at,205731_s_at,205732_s_at,205765_at,205883_at,205943_at,205946_at,205947_s_at,205956_x_at,205998_x_at,205999_x_at,206001_at,206038_s_at,206040_s_at,206106_at,206325_at,206326_at,206340_at,206410_at,206523_at,206542_s_at,206543_at,206544_x_at,206552_s_at,206562_s_at,206644_at,206645_s_at,206665_s_at,206762_at,206789_s_at,206793_at,206846_s_at,206916_x_at,207001_x_at,207004_at,207005_s_at,207007_at,207135_at,207145_at,207188_at,207301_at,207369_at,207443_at,207535_s_at,207742_s_at,207760_s_at,207846_at,207892_at,207929_at,207945_s_at,207951_at,207978_s_at,207987_s_at,208110_x_at,208138_at,208224_at,208305_at,208337_s_at,208343_s_at,208350_at,208359_s_at,208367_x_at,208385_at,208388_at,208442_s_at,208568_at,208687_x_at,208694_at,208760_at,208763_s_at,208774_at,208793_x_at,208794_s_at,208808_s_at,208814_at,208815_x_at,208822_s_at,208864_s_at,208865_at,208866_at,208867_s_at,208888_s_at,208889_s_at,208979_at,208991_at,208992_s_at,209105_at,209106_at,209107_x_at,209189_at,209239_at,209260_at,209261_s_at,209262_s_at,209383_at,209636_at,209651_at,209750_at,209878_s_at,209881_s_at,209925_at,209959_at,210058_at,210059_s_at,210145_at,210174_at,210211_s_at,210226_at,210249_s_at,210333_at,210338_s_at,210391_at,210392_x_at,210449_x_at,210477_x_at,210515_at,210530_s_at,210531_at,210543_s_at,210559_s_at,210570_x_at,210631_at,210667_s_at,210671_x_at,210726_at,210745_at,210774_s_at,210858_x_at,211005_at,211008_s_at,211015_s_at,211016_x_at,211087_x_at,211094_s_at,211095_at,211110_s_at,211143_x_at,211285_s_at,211300_s_at,211402_x_at,211451_s_at,211475_s_at,211499_s_at,211500_at,211506_s_at,211524_at,211561_x_at,211575_s_at,211598_x_at,211616_s_at,211621_at,211660_at,211722_s_at,211771_s_at,211803_at,211804_s_at,211914_x_at,211936_at,211968_s_at,211969_at,211988_at,211989_at,212148_at,212151_at,212167_s_at,212257_s_at,212258_s_at,212278_x_at,212312_at,212445_s_at,212448_at,212459_x_at,212501_at,212520_s_at,212549_at,212550_at,212615_at,212616_at,212657_s_at,212659_s_at,212672_at,212676_at,212678_at,212924_s_at,212953_x_at,213086_s_at,213128_s_at,213291_s_at,213324_at,213535_s_at,213536_s_at,213539_at,213579_s_at,213692_s_at,213720_s_at,213860_x_at,213921_at,213951_s_at,214018_at,214036_at,214234_s_at,214235_at,214315_x_at,214328_s_at,214347_s_at,214360_at,214413_at,214433_s_at,214447_at,214513_s_at,214630_at,214728_x_at,214835_s_at,214938_x_at,214980_at,215001_s_at,215026_x_at,215037_s_at,215167_at,215205_x_at,215245_x_at,215354_s_at,215605_at,215702_s_at,215703_at,215714_s_at,215757_at,215772_x_at,215897_at,216038_x_at,216058_s_at,216115_at,216125_s_at,216224_s_at,216243_s_at,216244_at,216245_at,216248_s_at,216424_at,216449_x_at,216450_x_at,216508_x_at,216609_at,216855_s_at,216930_at,216979_at,217026_at,217202_s_at,217203_at,217264_s_at,217370_x_at,217425_at,217434_at,217476_at,217496_s_at,217550_at,217656_at,217707_x_at,217765_at,217908_s_at,217937_s_at,218215_s_at,218284_at,218468_s_at,218469_at,219111_s_at,219195_at,220586_at,220684_at,221281_at,221284_s_at,221331_x_at,221384_at,221803_s_at,221891_x_at,222015_at,31637_s_at,33322_i_at,33323_r_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value>202082_s_at,202083_s_at,202084_s_at,202388_at,202643_s_at,202644_s_at,203887_s_at,203888_at,204351_at,204560_at,204731_at,205097_at,205476_at,205566_at,206029_at,206522_at,207574_s_at,208286_x_at,208325_s_at,209184_s_at,209185_s_at,209286_at,209287_s_at,209288_s_at,209304_x_at,209305_s_at,209534_x_at,209681_at,210605_s_at,213516_at,213560_at,221009_s_at,221718_s_at,221815_at,221902_at,222023_at,222024_s_at,63825_at,64942_at,87100_at</value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>201865_x_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="huey.molgen.mpg.de"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="Merged DataSet: GSE5258-GPL96_series_matrix-1 GSE5258-GPL96_series_matrix-2 "/>
+		<transaction id="582598917"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>29</day>
+			<hour>12</hour>
+			<minute>28</minute>
+			<second>52</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>200593_s_at,200594_x_at,200598_s_at,200599_s_at,200610_s_at,200627_at,200648_s_at,200664_s_at,200666_s_at,200676_s_at,200679_x_at,200680_x_at,200682_s_at,200683_s_at,200684_s_at,200799_at,200800_s_at,200806_s_at,200807_s_at,200854_at,200855_at,200856_x_at,200857_s_at,200894_s_at,200895_s_at,200935_at,201020_at,201041_s_at,201044_x_at,201072_s_at,201073_s_at,201074_at,201075_s_at,201268_at,201328_at,201329_s_at,201464_x_at,201465_s_at,201466_s_at,201693_s_at,201694_s_at,201739_at,201746_at,201758_at,201763_s_at,201783_s_at,201823_s_at,201824_at,201827_at,201833_at,202180_s_at,202217_at,202221_s_at,202291_s_at,202332_at,202340_x_at,202387_at,202431_s_at,202526_at,202527_s_at,202530_at,202573_at,202574_s_at,202580_x_at,202581_at,202582_s_at,202583_s_at,202599_s_at,202600_s_at,202610_s_at,202611_s_at,202612_s_at,202627_s_at,202628_s_at,202736_s_at,202737_s_at,202820_at,202847_at,202859_x_at,203010_at,203013_at,203135_at,203213_at,203214_x_at,203218_at,203327_at,203328_x_at,203453_at,203496_s_at,203497_at,203547_at,203575_at,203684_s_at,203685_at,203689_s_at,203920_at,203952_at,204130_at,204185_x_at,204186_s_at,204247_s_at,204252_at,204253_s_at,204254_s_at,204255_s_at,204312_x_at,204313_s_at,204314_s_at,204323_x_at,204325_s_at,204582_s_at,204583_x_at,204621_s_at,204622_x_at,204633_s_at,204635_at,204694_at,204748_at,204760_s_at,204791_at,204813_at,204828_at,204890_s_at,204891_s_at,205019_s_at,205026_at,205043_at,205253_at,205259_at,205266_at,205302_at,205311_at,205396_at,205397_x_at,205398_s_at,205404_at,205445_at,205502_at,205629_s_at,205630_at,205681_at,205720_at,205731_s_at,205732_s_at,205765_at,205883_at,205943_at,205946_at,205947_s_at,205956_x_at,205998_x_at,205999_x_at,206001_at,206038_s_at,206040_s_at,206106_at,206325_at,206326_at,206340_at,206410_at,206523_at,206542_s_at,206543_at,206544_x_at,206552_s_at,206562_s_at,206644_at,206645_s_at,206665_s_at,206762_at,206789_s_at,206793_at,206846_s_at,206916_x_at,207001_x_at,207004_at,207005_s_at,207007_at,207135_at,207145_at,207188_at,207301_at,207369_at,207443_at,207535_s_at,207742_s_at,207760_s_at,207846_at,207892_at,207929_at,207945_s_at,207951_at,207978_s_at,207987_s_at,208110_x_at,208138_at,208224_at,208305_at,208337_s_at,208343_s_at,208350_at,208359_s_at,208367_x_at,208385_at,208388_at,208442_s_at,208568_at,208687_x_at,208694_at,208760_at,208763_s_at,208774_at,208793_x_at,208794_s_at,208808_s_at,208814_at,208815_x_at,208822_s_at,208864_s_at,208865_at,208866_at,208867_s_at,208888_s_at,208889_s_at,208979_at,208991_at,208992_s_at,209105_at,209106_at,209107_x_at,209189_at,209239_at,209260_at,209261_s_at,209262_s_at,209383_at,209636_at,209651_at,209750_at,209878_s_at,209881_s_at,209925_at,209959_at,210058_at,210059_s_at,210145_at,210174_at,210211_s_at,210226_at,210249_s_at,210333_at,210338_s_at,210391_at,210392_x_at,210449_x_at,210477_x_at,210515_at,210530_s_at,210531_at,210543_s_at,210559_s_at,210570_x_at,210631_at,210667_s_at,210671_x_at,210726_at,210745_at,210774_s_at,210858_x_at,211005_at,211008_s_at,211015_s_at,211016_x_at,211087_x_at,211094_s_at,211095_at,211110_s_at,211143_x_at,211285_s_at,211300_s_at,211402_x_at,211451_s_at,211475_s_at,211499_s_at,211500_at,211506_s_at,211524_at,211561_x_at,211575_s_at,211598_x_at,211616_s_at,211621_at,211660_at,211722_s_at,211771_s_at,211803_at,211804_s_at,211914_x_at,211936_at,211968_s_at,211969_at,211988_at,211989_at,212148_at,212151_at,212167_s_at,212257_s_at,212258_s_at,212278_x_at,212312_at,212445_s_at,212448_at,212459_x_at,212501_at,212520_s_at,212549_at,212550_at,212615_at,212616_at,212657_s_at,212659_s_at,212672_at,212676_at,212678_at,212924_s_at,212953_x_at,213086_s_at,213128_s_at,213291_s_at,213324_at,213535_s_at,213536_s_at,213539_at,213579_s_at,213692_s_at,213720_s_at,213860_x_at,213921_at,213951_s_at,214018_at,214036_at,214234_s_at,214235_at,214315_x_at,214328_s_at,214347_s_at,214360_at,214413_at,214433_s_at,214447_at,214513_s_at,214630_at,214728_x_at,214835_s_at,214938_x_at,214980_at,215001_s_at,215026_x_at,215037_s_at,215167_at,215205_x_at,215245_x_at,215354_s_at,215605_at,215702_s_at,215703_at,215714_s_at,215757_at,215772_x_at,215897_at,216038_x_at,216058_s_at,216115_at,216125_s_at,216224_s_at,216243_s_at,216244_at,216245_at,216248_s_at,216424_at,216449_x_at,216450_x_at,216508_x_at,216609_at,216855_s_at,216930_at,216979_at,217026_at,217202_s_at,217203_at,217264_s_at,217370_x_at,217425_at,217434_at,217476_at,217496_s_at,217550_at,217656_at,217707_x_at,217765_at,217908_s_at,217937_s_at,218215_s_at,218284_at,218468_s_at,218469_at,219111_s_at,219195_at,220586_at,220684_at,221281_at,221284_s_at,221331_x_at,221384_at,221803_s_at,221891_x_at,222015_at,31637_s_at,33322_i_at,33323_r_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>201865_x_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

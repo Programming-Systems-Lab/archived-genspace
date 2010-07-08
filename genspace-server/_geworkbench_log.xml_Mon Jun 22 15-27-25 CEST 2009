@@ -1,0 +1,92 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="860636260"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>4</day>
+			<hour>8</hour>
+			<minute>41</minute>
+			<second>53</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="96780069"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>4</day>
+			<hour>8</hour>
+			<minute>52</minute>
+			<second>15</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8059_series_matrix"/>
+		<transaction id="1351272368"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>22</day>
+			<hour>12</hour>
+			<minute>18</minute>
+			<second>59</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8059_series_matrix"/>
+		<transaction id="119571571"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>22</day>
+			<hour>12</hour>
+			<minute>25</minute>
+			<second>54</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="1667052403"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>22</day>
+			<hour>15</hour>
+			<minute>22</minute>
+			<second>25</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="1934500849"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>22</day>
+			<hour>15</hour>
+			<minute>27</minute>
+			<second>24</second>
+		</time>
+	</metric>
+</measurement>

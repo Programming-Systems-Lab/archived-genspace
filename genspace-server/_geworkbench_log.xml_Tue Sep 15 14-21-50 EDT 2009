@@ -1,0 +1,156 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1521070282"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>15</day>
+			<hour>14</hour>
+			<minute>21</minute>
+			<second>43</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31310_at,31311_at,31312_at,31313_at,31314_at,31315_at,31316_at,31317_r_at,31318_at,31319_at,31320_at,31321_at,31322_at,31323_r_at,31324_at,31325_at,31326_at,31327_at,31328_at,31329_at,31330_at,31331_at,31332_at,31333_at,31334_at,31335_at,31336_at,31337_at,31338_at,31339_at,31340_at,31341_at,31342_at,31343_at,31344_at,31345_at,31346_at,31347_at,31348_at,31349_at,31350_at,31351_at,31352_at,31353_f_at,31354_r_at,31355_at,31356_at,31357_at,31358_at,31359_at,31360_at,31361_at,31362_at,31363_at,31364_i_at,31365_f_at,31366_at,31367_at,31368_at,31369_at,31370_at,31371_at,31372_at,31373_at,31374_at,31375_at,31376_at,31377_r_at,31378_at,31379_at,31380_at,31381_at,31382_f_at,31383_at,31384_at,31385_at,31386_at,31387_at,31388_at,31389_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>31310_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1521070282"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>15</day>
+			<hour>14</hour>
+			<minute>21</minute>
+			<second>50</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31310_at,31311_at,31312_at,31313_at,31314_at,31315_at,31316_at,31317_r_at,31318_at,31319_at,31320_at,31321_at,31322_at,31323_r_at,31324_at,31325_at,31326_at,31327_at,31328_at,31329_at,31330_at,31331_at,31332_at,31333_at,31334_at,31335_at,31336_at,31337_at,31338_at,31339_at,31340_at,31341_at,31342_at,31343_at,31344_at,31345_at,31346_at,31347_at,31348_at,31349_at,31350_at,31351_at,31352_at,31353_f_at,31354_r_at,31355_at,31356_at,31357_at,31358_at,31359_at,31360_at,31361_at,31362_at,31363_at,31364_i_at,31365_f_at,31366_at,31367_at,31368_at,31369_at,31370_at,31371_at,31372_at,31373_at,31374_at,31375_at,31376_at,31377_r_at,31378_at,31379_at,31380_at,31381_at,31382_f_at,31383_at,31384_at,31385_at,31386_at,31387_at,31388_at,31389_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>31310_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

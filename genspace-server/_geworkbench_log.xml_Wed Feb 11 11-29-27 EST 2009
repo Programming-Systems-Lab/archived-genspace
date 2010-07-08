@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="PCA Analysis"/>
+		<dataset name="pca-test.exp"/>
+		<transaction id="976203863"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>4</minute>
+			<second>40</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="ARACNE"/>
+		<dataset name="arraydata10x336.exp"/>
+		<transaction id="2129230168"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>28</minute>
+			<second>37</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="ARACNE"/>
+		<dataset name="arraydata10x336.exp"/>
+		<transaction id="2129230168"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>29</minute>
+			<second>27</second>
+		</time>
+	</metric>
+</measurement>

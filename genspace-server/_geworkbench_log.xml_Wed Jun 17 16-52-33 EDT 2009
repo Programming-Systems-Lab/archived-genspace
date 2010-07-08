@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="188503479"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>49</minute>
+			<second>26</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="188503479"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>52</minute>
+			<second>33</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

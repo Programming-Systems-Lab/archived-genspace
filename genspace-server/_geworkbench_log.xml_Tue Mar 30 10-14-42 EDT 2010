@@ -1,0 +1,126 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="NetBoost Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="671487791"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>10</day>
+			<hour>14</hour>
+			<minute>5</minute>
+			<second>18</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>modelSelections</key>
+				<value>[true, true, true, true, true, true, true]</value>
+			</parameter>
+			<parameter id="1">
+				<key>boostingIter</key>
+				<value>120</value>
+			</parameter>
+			<parameter id="2">
+				<key>trainingEx</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>crossValid</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="4">
+				<key>subgraphCounting</key>
+				<value>8 Step Walk</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1360777715"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>30</day>
+			<hour>10</hour>
+			<minute>12</minute>
+			<second>43</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1811661490"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>30</day>
+			<hour>10</hour>
+			<minute>14</minute>
+			<second>12</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="1194407763"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>30</day>
+			<hour>10</hour>
+			<minute>14</minute>
+			<second>42</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

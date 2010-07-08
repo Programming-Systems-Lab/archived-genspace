@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="124703452"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>16</day>
+			<hour>17</hour>
+			<minute>59</minute>
+			<second>25</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="124703452"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>16</day>
+			<hour>17</hour>
+			<minute>59</minute>
+			<second>58</second>
+		</time>
+	</metric>
+</measurement>

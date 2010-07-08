@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET14"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="1963989284"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>26</day>
+			<hour>15</hour>
+			<minute>7</minute>
+			<second>57</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET14"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="1963989284"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>26</day>
+			<hour>15</hour>
+			<minute>8</minute>
+			<second>8</second>
+		</time>
+	</metric>
+</measurement>

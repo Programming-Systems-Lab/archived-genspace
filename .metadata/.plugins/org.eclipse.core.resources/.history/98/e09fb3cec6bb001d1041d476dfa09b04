@@ -1,0 +1,163 @@
+package genspace.db;
+
+import genspace.common.Logger;
+
+import java.net.Socket;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
+
+import org.geworkbench.components.genspace.bean.RatingBean;
+
+public class ToolServer extends Server {
+
+	public static final int DEFAULT_PORT = 22223;
+	
+    /* This is the main method for starting the Server */
+    public static void main(String[] args)
+    {
+    	int port = DEFAULT_PORT;
+		if (args.length >= 1)
+		{
+			port = Integer.parseInt(args[0]);
+		}
+		else
+		{
+			System.out.println("Port not specified, using " + port + " as default");
+		}
+
+		ToolServer s = new ToolServer(port);
+		s.run();
+    }
+
+    /**
+     * Creates a socket server listening on the specified port
+     * @param port the port to listen to
+     */
+    public ToolServer(int port)
+    {
+    	super(port);
+    	
+    	System.out.println("Tool server running on " + port + ".");
+    }
+
+    /**
+     * This method does all the work
+     */
+    public void run()
+    {
+    	// TODO: need a graceful shutdown
+    	while (true)
+    	{
+    		try
+    		{
+    			// wait for a client
+    			Socket socket = server.accept();
+
+    			// spin off a new thread
+    			ToolServerHandler h = new ToolServerHandler(socket);
+    			h.start();
+    			
+    		}
+    		catch (Exception e)
+    		{
+    			e.printStackTrace();
+                if (Logger.isLogError()) Logger.logError(e);
+    		}
+    	}
+    }
+
+    
+    /**
+     * A class to handle the actual work of dealing with events
+     *
+     */
+    class ToolServerHandler extends ServerHandler
+    {
+
+    	public ToolServerHandler(Socket s) {
+			super(s);
+		}
+
+		public void run()
+    	{
+    	    // the input stream for reading from the network
+    	    Scanner in = null; 
+    	    
+    	    try
+    		{
+    			// get the input stream
+    			ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+    			
+    			String command = (String)ois.readObject();
+    			ArrayList args = (ArrayList)ois.readObject();
+    			System.out.println("Command: " + command);
+    			ois.close();
+    			
+    			if (command.equals("getToolId")) {
+    				String toolName = (String)args.get(0);
+    				
+    				int id = getToolId(toolName);
+    				
+        			respond(new Integer(id));
+    			} 
+    			else if (command.equals("getExpertUser")) {
+    				String toolName = (String)args.get(0);
+    				String username = (String)args.get(1);
+        			
+    				SuggestionManager sn = new SuggestionManager();
+    				String result = sn.suggestExpert("toolName", username, false);
+    				if (result == null)
+    					result = "none";
+        			
+    				respond(result);
+    			}    
+    			else if (command.equals("getToolRating")) {
+    				String toolName = (String)args.get(0);
+    				String username = (String)args.get(1);
+    				System.out.println(username + " is requesting rating for " + toolName + ".");	
+    				RatingManager rm = new RatingManager();
+    				RatingBean result = rm.getRating(getToolId(toolName), "tool_ratings", username);
+    				System.out.println("Rating for " + toolName + " is:" + rm);
+    				
+    				
+    				respond(result);
+    			}   
+    			else if (command.equals("writeToolRating")) {
+    				String toolName = (String)args.get(0);
+    				String username = (String)args.get(1);
+    				int rating = (Integer)args.get(2);
+    				System.out.println(username + " wants to rate " + toolName + " as a " + rating + ".");	
+    				RatingManager rm = new RatingManager();
+    				RatingBean result = rm.writeRating(getToolId(toolName), rating, "tool_ratings", username);
+    				System.out.println("Rating for " + toolName + " is now:" + rm);
+    				respond(result);
+    			}   
+    		}
+    		catch (Exception e)
+    		{
+    			e.printStackTrace();
+                if (Logger.isLogError()) Logger.logError(e);
+    		}
+    	}
+    }
+    
+    private int getToolId(String toolName){
+    	int id = 0;
+    	try{
+			DatabaseConnector dc = new DatabaseConnector();
+			PreparedStatement pstmt = dc.getConnection().prepareStatement("select id from tools where tool like ?");
+			pstmt.setString(1, toolName);
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+			id = rs.getInt(1);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return id;
+    }
+}

@@ -1,0 +1,167 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="339389951"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>30</day>
+			<hour>10</hour>
+			<minute>53</minute>
+			<second>59</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="752382608"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>13</hour>
+			<minute>38</minute>
+			<second>30</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="1786060663"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>11</hour>
+			<minute>52</minute>
+			<second>35</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="1814695325"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>5</day>
+			<hour>11</hour>
+			<minute>13</minute>
+			<second>21</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="2044469980"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>13</hour>
+			<minute>45</minute>
+			<second>22</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="1833275284"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>13</hour>
+			<minute>5</minute>
+			<second>10</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="2142456488"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>13</day>
+			<hour>11</hour>
+			<minute>31</minute>
+			<second>5</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="311489207"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>11</hour>
+			<minute>42</minute>
+			<second>7</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="cwebmatrix-t.exp"/>
+		<transaction id="1976721703"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>13</hour>
+			<minute>53</minute>
+			<second>33</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="web100.exp"/>
+		<transaction id="1225846626"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>18</day>
+			<hour>12</hour>
+			<minute>21</minute>
+			<second>53</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY"/>
+		<dataset name="web100.exp"/>
+		<transaction id="710095471"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>18</day>
+			<hour>12</hour>
+			<minute>28</minute>
+			<second>29</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,164 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="workstation"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="Merged DataSet: GSE2350_series_matrix-1 GSE2350_series_matrix-2 "/>
+		<transaction id="1489233267"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>25</day>
+			<hour>13</hour>
+			<minute>47</minute>
+			<second>13</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="1">
+				<key>HubGeneList</key>
+				<value>37724_at</value>
+			</parameter>
+			<parameter id="2">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="3">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="4">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="5">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="8">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="10">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="11">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="12">
+				<key>MarkerSet</key>
+				<value>Selection</value>
+			</parameter>
+			<parameter id="13">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="14">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="15">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="workstation"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="Merged DataSet: GSE2350_series_matrix-1 GSE2350_series_matrix-2 "/>
+		<transaction id="2052935161"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>25</day>
+			<hour>14</hour>
+			<minute>2</minute>
+			<second>47</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="1">
+				<key>HubGeneList</key>
+				<value>37724_at</value>
+			</parameter>
+			<parameter id="2">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="3">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="4">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="5">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>DPITolerance</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="7">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="8">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="10">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="11">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="12">
+				<key>MarkerSet</key>
+				<value>Selection</value>
+			</parameter>
+			<parameter id="13">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="14">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="15">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

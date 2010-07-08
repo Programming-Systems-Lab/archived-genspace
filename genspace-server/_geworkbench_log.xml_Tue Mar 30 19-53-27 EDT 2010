@@ -1,0 +1,100 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="glp1f3-050.broadinstitute.org"/>
+		<analysis name="WV Analysis 3.0"/>
+		<dataset name="exp"/>
+		<transaction id="2091290919"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>30</day>
+			<hour>19</hour>
+			<minute>50</minute>
+			<second>4</second>
+		</time>
+		<parameters count="8">
+			<parameter id="0">
+				<key>useMinStdDev</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>numFeatures</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="2">
+				<key>numFeatureMethod</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>featureFileMethod</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>useMedian</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>featureFile</key>
+				<value></value>
+			</parameter>
+			<parameter id="6">
+				<key>minStdDev</key>
+				<value></value>
+			</parameter>
+			<parameter id="7">
+				<key>statistic</key>
+				<value>SNR</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="glp1f3-050.broadinstitute.org"/>
+		<analysis name="WV Analysis 3.0"/>
+		<dataset name="exp"/>
+		<transaction id="2091290919"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>30</day>
+			<hour>19</hour>
+			<minute>53</minute>
+			<second>27</second>
+		</time>
+		<parameters count="8">
+			<parameter id="0">
+				<key>useMinStdDev</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>numFeatures</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="2">
+				<key>numFeatureMethod</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>featureFileMethod</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>useMedian</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>featureFile</key>
+				<value></value>
+			</parameter>
+			<parameter id="6">
+				<key>minStdDev</key>
+				<value></value>
+			</parameter>
+			<parameter id="7">
+				<key>statistic</key>
+				<value>SNR</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

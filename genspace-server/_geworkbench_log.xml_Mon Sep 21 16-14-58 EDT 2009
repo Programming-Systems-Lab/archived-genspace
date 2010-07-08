@@ -1,0 +1,89 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="array-test"/>
+		<transaction id="1734658542"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>21</day>
+			<hour>11</hour>
+			<minute>49</minute>
+			<second>50</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="300782741"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>21</day>
+			<hour>16</hour>
+			<minute>12</minute>
+			<second>56</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="300782741"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>21</day>
+			<hour>16</hour>
+			<minute>14</minute>
+			<second>58</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

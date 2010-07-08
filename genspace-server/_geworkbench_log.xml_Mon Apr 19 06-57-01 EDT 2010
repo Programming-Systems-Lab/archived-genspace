@@ -1,0 +1,164 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Macintosh-49.local"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="GSE20168_series_matrix"/>
+		<transaction id="1158965722"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>18</day>
+			<hour>23</hour>
+			<minute>12</minute>
+			<second>13</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>GSE20168.comp.marker.filt</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>218577_at, 203039_s_at, 201485_s_at, 218197_s_at, 214352_s_at, 215303_at, 213734_at, 218513_at, 209582_s_at, 200760_s_at, 218568_at, 212742_at, 204679_at, 208670_s_at, 212217_at, 203078_at, 203181_x_at, 204237_at, 209860_s_at, 208737_at, 202170_s_at, 211727_s_at, 216399_s_at, 202919_at, 212243_at, 213623_at, 213496_at, 205590_at, 203538_at, 213701_at, 213954_at, 212382_at, 214596_at, 204278_s_at, 220253_s_at, 218354_at, 219158_s_at, 209065_at, 206114_at, 201142_at, 213959_s_at, 201409_s_at, 203338_at, 200719_at, 205694_at, 218625_at, 201133_s_at, 213655_at, 208673_s_at, 221476_s_at, 208734_x_at, 203998_s_at, 216070_at, 207719_x_at, 212229_s_at, 219149_x_at, 211423_s_at, 209797_at, 221727_at, 200729_s_at, 200056_s_at, 201456_s_at, 203377_s_at, 204732_s_at, 205872_x_at, 219196_at, 215518_at, 218439_s_at, 201486_at, 218404_at, 201854_s_at, 203182_s_at, 212604_at, 213026_at, 200728_at, 204467_s_at, 203029_s_at, 202742_s_at, 201052_s_at, 207447_s_at, 201340_s_at, 209303_at, 212453_at, 207721_x_at, 212509_s_at, 218273_s_at, 214553_s_at, 210381_s_at, 201599_at, 204716_at, 219397_at, 212213_x_at, 212582_at, 212385_at, 211776_s_at, 202169_s_at, 222132_s_at, 206552_s_at, 212585_at, 204808_s_at, 203682_s_at, 215052_at, 200711_s_at, 220889_s_at, 207124_s_at, 221473_x_at, 210406_s_at, 207305_s_at, 202438_x_at, 221288_at, 212551_at, 201311_s_at, 200596_s_at, 214665_s_at, 207014_at, 212773_s_at, 206281_at, 219670_at, 211769_x_at, 219557_s_at, 213762_x_at, 204678_s_at, 218106_s_at, 209524_at, 203300_x_at, 217364_x_at, 201329_s_at, 213325_at, 203302_at, 200605_s_at, 201121_s_at, 203007_x_at, 213067_at, 212956_at, 201810_s_at, 200622_x_at, 202507_s_at, 212216_at, 219487_at, 207507_s_at, 205732_s_at, 201242_s_at, 203897_at, 201738_at, 205528_s_at, 201972_at, 206547_s_at, 213308_at, 208899_x_at, 214590_s_at, 204992_s_at, 216967_at, 202020_s_at, 219288_at, 200087_s_at, 203345_s_at, 206375_s_at, 201658_at, 202983_at, 203202_at, 212214_at, 218250_s_at, 219884_at, 213921_at, 209702_at, 219937_at, 206381_at, 201951_at, 206183_s_at, 208095_s_at, 209469_at, 200886_s_at, 214773_x_at, 205825_at, 209199_s_at, 200093_s_at, 204339_s_at, 203449_s_at, 205540_s_at, 217862_at, 202929_s_at, 201366_at, 219023_at, 203048_s_at, 218998_at, 202353_s_at, 206253_at, 211988_at, 221088_s_at, 202077_at, 202166_s_at, 213638_at, 200598_s_at, 200732_s_at, 206233_at, 213624_at, 211963_s_at, 212984_at, 217720_at, 208731_at, 217887_s_at, 209525_at, 209486_at, 210729_at, 203016_s_at, 213195_at, 212554_at, 201955_at, 204720_s_at, 203156_at, 202537_s_at, 219352_at, 222129_at, 213002_at, 203415_at, 219858_s_at, 201304_at, 205638_at, 201165_s_at, 209141_at, 208893_s_at, 200912_s_at, 204851_s_at, 202442_at, 200682_s_at, 213709_at, 216120_s_at, 217140_s_at, 214071_at, 219074_at, 201022_s_at, 206544_x_at, 202741_at, 218395_at, 204755_x_at, 208732_at, 201198_s_at, 201833_at, 206678_at, 202538_s_at, 205302_at, 212145_at, 200953_s_at, 202673_at, 203972_s_at, 205756_s_at, 217481_x_at, 203303_at, 206770_s_at, 200993_at, 219297_at, 213122_at, 218408_at, 204066_s_at, 212746_s_at, 215081_at, 214499_s_at, 210024_s_at, 219892_at, 210355_at, 205818_at, 201946_s_at, 203225_s_at, 208811_s_at, 201960_s_at, 209274_s_at, 214101_s_at, 203869_at, 203798_s_at, 201914_s_at, 206624_at, 213995_at, 212151_at, 204641_at, 218737_at, 212240_s_at, 201583_s_at, 217869_at, 201593_s_at, 204685_s_at, 211616_s_at, 209507_at, 219688_at, 219770_at, 206290_s_at, 218165_at, 203765_at, 203817_at, 210650_s_at, 213552_at, 217550_at, 210156_s_at, 209024_s_at, 206730_at, 209318_x_at, 212030_at, 212006_at, 209741_x_at, 221760_at, 208663_s_at, 206215_at, 204127_at, 209472_at, 201444_s_at, 204529_s_at, 209796_s_at, 202844_s_at, 201784_s_at, 214365_at, 208661_s_at, 220462_at, 213048_s_at, 217714_x_at, 209281_s_at, 218318_s_at, 205630_at, 219293_s_at, 206115_at, 204726_at, 203403_s_at, 207049_at, 209043_at, 200052_s_at, 205079_s_at, 220794_at, 207243_s_at, 210518_at, 219855_at, 205659_at, 212417_at, 220281_at, 201580_s_at, 209187_at, 202457_s_at, 51228_at, 208826_x_at, 200638_s_at, 211925_s_at, 221449_s_at, 219342_at, 209945_s_at, 221787_at, 203129_s_at, 217816_s_at, 216550_x_at, 208945_s_at, 218477_at, 209080_x_at, 220990_s_at, 209966_x_at, 211954_s_at, 211935_at, 210028_s_at, 211686_s_at, 213710_s_at, 219263_at, 217976_s_at, 204675_at, 222118_at, 208993_s_at, 206023_at, 217916_s_at, 60794_f_at, 201488_x_at, 209840_s_at, 202301_s_at, 219523_s_at, 219448_at, 214762_at, 217717_s_at, 206382_s_at, 205084_at, 213533_at, 204742_s_at, 210383_at, 201083_s_at, 201760_s_at, 221872_at, 201943_s_at, 209157_at, 208924_at, 204093_at, 219528_s_at, 221620_s_at, 211758_x_at, 204338_s_at, 221479_s_at, 210149_s_at, 208750_s_at, 202961_s_at, 222275_at, 200640_at, 215145_s_at, 209678_s_at, 206197_at, 210278_s_at, 217574_at, 203724_s_at, 203983_at, 211597_s_at, 203257_s_at, 202749_at, 220419_s_at, 200978_at, 208995_s_at, 216044_x_at, 205122_at, 200037_s_at, 36612_at, 201707_at, 203621_at, 202056_at, 209311_at, 212638_s_at, 205362_s_at, 207968_s_at, 211764_s_at, 213979_s_at, 203896_s_at, 209382_at, 217993_s_at, 212887_at, 202412_s_at, 204762_s_at, 207852_at, 213131_at, 206456_at, 213933_at, 200903_s_at, 209362_at, 212978_at, 202760_s_at, 215972_at, 221830_at, 213064_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Macintosh-49.local"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="GSE20168_series_matrix"/>
+		<transaction id="76508865"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>19</day>
+			<hour>6</hour>
+			<minute>57</minute>
+			<second>1</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>GSE20168.comp.marker.filt</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>218577_at, 203039_s_at, 201485_s_at, 218197_s_at, 214352_s_at, 215303_at, 213734_at, 218513_at, 209582_s_at, 200760_s_at, 218568_at, 212742_at, 204679_at, 208670_s_at, 212217_at, 203078_at, 203181_x_at, 204237_at, 209860_s_at, 208737_at, 202170_s_at, 211727_s_at, 216399_s_at, 202919_at, 212243_at, 213623_at, 213496_at, 205590_at, 203538_at, 213701_at, 213954_at, 212382_at, 214596_at, 204278_s_at, 220253_s_at, 218354_at, 219158_s_at, 209065_at, 206114_at, 201142_at, 213959_s_at, 201409_s_at, 203338_at, 200719_at, 205694_at, 218625_at, 201133_s_at, 213655_at, 208673_s_at, 221476_s_at, 208734_x_at, 203998_s_at, 216070_at, 207719_x_at, 212229_s_at, 219149_x_at, 211423_s_at, 209797_at, 221727_at, 200729_s_at, 200056_s_at, 201456_s_at, 203377_s_at, 204732_s_at, 205872_x_at, 219196_at, 215518_at, 218439_s_at, 201486_at, 218404_at, 201854_s_at, 203182_s_at, 212604_at, 213026_at, 200728_at, 204467_s_at, 203029_s_at, 202742_s_at, 201052_s_at, 207447_s_at, 201340_s_at, 209303_at, 212453_at, 207721_x_at, 212509_s_at, 218273_s_at, 214553_s_at, 210381_s_at, 201599_at, 204716_at, 219397_at, 212213_x_at, 212582_at, 212385_at, 211776_s_at, 202169_s_at, 222132_s_at, 206552_s_at, 212585_at, 204808_s_at, 203682_s_at, 215052_at, 200711_s_at, 220889_s_at, 207124_s_at, 221473_x_at, 210406_s_at, 207305_s_at, 202438_x_at, 221288_at, 212551_at, 201311_s_at, 200596_s_at, 214665_s_at, 207014_at, 212773_s_at, 206281_at, 219670_at, 211769_x_at, 219557_s_at, 213762_x_at, 204678_s_at, 218106_s_at, 209524_at, 203300_x_at, 217364_x_at, 201329_s_at, 213325_at, 203302_at, 200605_s_at, 201121_s_at, 203007_x_at, 213067_at, 212956_at, 201810_s_at, 200622_x_at, 202507_s_at, 212216_at, 219487_at, 207507_s_at, 205732_s_at, 201242_s_at, 203897_at, 201738_at, 205528_s_at, 201972_at, 206547_s_at, 213308_at, 208899_x_at, 214590_s_at, 204992_s_at, 216967_at, 202020_s_at, 219288_at, 200087_s_at, 203345_s_at, 206375_s_at, 201658_at, 202983_at, 203202_at, 212214_at, 218250_s_at, 219884_at, 213921_at, 209702_at, 219937_at, 206381_at, 201951_at, 206183_s_at, 208095_s_at, 209469_at, 200886_s_at, 214773_x_at, 205825_at, 209199_s_at, 200093_s_at, 204339_s_at, 203449_s_at, 205540_s_at, 217862_at, 202929_s_at, 201366_at, 219023_at, 203048_s_at, 218998_at, 202353_s_at, 206253_at, 211988_at, 221088_s_at, 202077_at, 202166_s_at, 213638_at, 200598_s_at, 200732_s_at, 206233_at, 213624_at, 211963_s_at, 212984_at, 217720_at, 208731_at, 217887_s_at, 209525_at, 209486_at, 210729_at, 203016_s_at, 213195_at, 212554_at, 201955_at, 204720_s_at, 203156_at, 202537_s_at, 219352_at, 222129_at, 213002_at, 203415_at, 219858_s_at, 201304_at, 205638_at, 201165_s_at, 209141_at, 208893_s_at, 200912_s_at, 204851_s_at, 202442_at, 200682_s_at, 213709_at, 216120_s_at, 217140_s_at, 214071_at, 219074_at, 201022_s_at, 206544_x_at, 202741_at, 218395_at, 204755_x_at, 208732_at, 201198_s_at, 201833_at, 206678_at, 202538_s_at, 205302_at, 212145_at, 200953_s_at, 202673_at, 203972_s_at, 205756_s_at, 217481_x_at, 203303_at, 206770_s_at, 200993_at, 219297_at, 213122_at, 218408_at, 204066_s_at, 212746_s_at, 215081_at, 214499_s_at, 210024_s_at, 219892_at, 210355_at, 205818_at, 201946_s_at, 203225_s_at, 208811_s_at, 201960_s_at, 209274_s_at, 214101_s_at, 203869_at, 203798_s_at, 201914_s_at, 206624_at, 213995_at, 212151_at, 204641_at, 218737_at, 212240_s_at, 201583_s_at, 217869_at, 201593_s_at, 204685_s_at, 211616_s_at, 209507_at, 219688_at, 219770_at, 206290_s_at, 218165_at, 203765_at, 203817_at, 210650_s_at, 213552_at, 217550_at, 210156_s_at, 209024_s_at, 206730_at, 209318_x_at, 212030_at, 212006_at, 209741_x_at, 221760_at, 208663_s_at, 206215_at, 204127_at, 209472_at, 201444_s_at, 204529_s_at, 209796_s_at, 202844_s_at, 201784_s_at, 214365_at, 208661_s_at, 220462_at, 213048_s_at, 217714_x_at, 209281_s_at, 218318_s_at, 205630_at, 219293_s_at, 206115_at, 204726_at, 203403_s_at, 207049_at, 209043_at, 200052_s_at, 205079_s_at, 220794_at, 207243_s_at, 210518_at, 219855_at, 205659_at, 212417_at, 220281_at, 201580_s_at, 209187_at, 202457_s_at, 51228_at, 208826_x_at, 200638_s_at, 211925_s_at, 221449_s_at, 219342_at, 209945_s_at, 221787_at, 203129_s_at, 217816_s_at, 216550_x_at, 208945_s_at, 218477_at, 209080_x_at, 220990_s_at, 209966_x_at, 211954_s_at, 211935_at, 210028_s_at, 211686_s_at, 213710_s_at, 219263_at, 217976_s_at, 204675_at, 222118_at, 208993_s_at, 206023_at, 217916_s_at, 60794_f_at, 201488_x_at, 209840_s_at, 202301_s_at, 219523_s_at, 219448_at, 214762_at, 217717_s_at, 206382_s_at, 205084_at, 213533_at, 204742_s_at, 210383_at, 201083_s_at, 201760_s_at, 221872_at, 201943_s_at, 209157_at, 208924_at, 204093_at, 219528_s_at, 221620_s_at, 211758_x_at, 204338_s_at, 221479_s_at, 210149_s_at, 208750_s_at, 202961_s_at, 222275_at, 200640_at, 215145_s_at, 209678_s_at, 206197_at, 210278_s_at, 217574_at, 203724_s_at, 203983_at, 211597_s_at, 203257_s_at, 202749_at, 220419_s_at, 200978_at, 208995_s_at, 216044_x_at, 205122_at, 200037_s_at, 36612_at, 201707_at, 203621_at, 202056_at, 209311_at, 212638_s_at, 205362_s_at, 207968_s_at, 211764_s_at, 213979_s_at, 203896_s_at, 209382_at, 217993_s_at, 212887_at, 202412_s_at, 204762_s_at, 207852_at, 213131_at, 206456_at, 213933_at, 200903_s_at, 209362_at, 212978_at, 202760_s_at, 215972_at, 221830_at, 213064_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

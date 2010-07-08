@@ -1,0 +1,428 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="151625223"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>12</day>
+			<hour>14</hour>
+			<minute>31</minute>
+			<second>12</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1484831040"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>12</day>
+			<hour>14</hour>
+			<minute>40</minute>
+			<second>14</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="6">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="8">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="10">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="11">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="12">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1513135650"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>12</day>
+			<hour>14</hour>
+			<minute>54</minute>
+			<second>55</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="768905292"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>12</day>
+			<hour>14</hour>
+			<minute>58</minute>
+			<second>27</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1614473715"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>14</day>
+			<hour>10</hour>
+			<minute>45</minute>
+			<second>4</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="158154729"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>14</day>
+			<hour>10</hour>
+			<minute>53</minute>
+			<second>26</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1304237710"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>14</day>
+			<hour>10</hour>
+			<minute>55</minute>
+			<second>19</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="780254674"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>14</day>
+			<hour>12</hour>
+			<minute>7</minute>
+			<second>25</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="638956025"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>19</day>
+			<hour>11</hour>
+			<minute>22</minute>
+			<second>50</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="3">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="4">
+				<key>modulatorFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>tf</key>
+				<value></value>
+			</parameter>
+			<parameter id="6">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="7">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="8">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="9">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>modulators</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="13">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="14">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="638956025"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>19</day>
+			<hour>11</hour>
+			<minute>23</minute>
+			<second>19</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>targetFromType</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="3">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="4">
+				<key>modulatorFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>tf</key>
+				<value>AFFX-BioC-5_at</value>
+			</parameter>
+			<parameter id="6">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="7">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="8">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="9">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>modulators</key>
+				<value>31310_at</value>
+			</parameter>
+			<parameter id="12">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="13">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="14">
+				<key>targets</key>
+				<value>AFFX-MurIL4_at,AFFX-MurFAS_at,AFFX-BioB-5_at,AFFX-BioB-M_at,AFFX-BioB-3_at,AFFX-BioC-5_at</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

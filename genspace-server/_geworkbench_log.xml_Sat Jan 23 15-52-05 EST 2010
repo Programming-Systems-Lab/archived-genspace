@@ -1,0 +1,31 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="laura-johnstons-computer-2.local"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="ClaireMeanRMA_05_05_"/>
+		<transaction id="1789336623"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>23</day>
+			<hour>15</hour>
+			<minute>51</minute>
+			<second>29</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

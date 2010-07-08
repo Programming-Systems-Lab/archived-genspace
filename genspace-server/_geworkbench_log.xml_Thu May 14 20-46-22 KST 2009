@@ -1,0 +1,17 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="corea"/>
+		<analysis name="ARACNE"/>
+		<dataset name="N1_Prostatebroad.exp"/>
+		<transaction id="1673548110"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>14</day>
+			<hour>20</hour>
+			<minute>46</minute>
+			<second>22</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="220935519"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>12</day>
+			<hour>15</hour>
+			<minute>15</minute>
+			<second>0</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="iris-norm2"/>
+		<transaction id="1074254080"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>12</day>
+			<hour>18</hour>
+			<minute>10</minute>
+			<second>6</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="iris-norm2"/>
+		<transaction id="722029014"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>12</day>
+			<hour>18</hour>
+			<minute>20</minute>
+			<second>13</second>
+		</time>
+	</metric>
+</measurement>

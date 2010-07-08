@@ -1,0 +1,132 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS8"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1269523376"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>18</day>
+			<hour>22</hour>
+			<minute>17</minute>
+			<second>10</second>
+		</time>
+		<parameters count="12">
+			<parameter id="0">
+				<key>ontologyFile</key>
+				<value>data/gene_ontology.1_2.obo</value>
+			</parameter>
+			<parameter id="1">
+				<key>referenceListSource</key>
+				<value>From Set</value>
+			</parameter>
+			<parameter id="2">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="3">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+			<parameter id="4">
+				<key>referenceListSets</key>
+				<value>Significant Genes</value>
+			</parameter>
+			<parameter id="5">
+				<key>changedListSource</key>
+				<value>From Set</value>
+			</parameter>
+			<parameter id="6">
+				<key>changedList</key>
+				<value></value>
+			</parameter>
+			<parameter id="7">
+				<key>referenceList</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>alternateAnnotationFile</key>
+				<value></value>
+			</parameter>
+			<parameter id="9">
+				<key>changedListSets</key>
+				<value>Significant Genes (3)</value>
+			</parameter>
+			<parameter id="10">
+				<key>loadedAnnotationFile</key>
+				<value>C:\Program Files\geWorkbench_1.8.0\data\public_data\70_TFs_from_HG-U95Av2.na28.csv</value>
+			</parameter>
+			<parameter id="11">
+				<key>loadedAnnotation</key>
+				<value>true</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS8"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1269523376"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>18</day>
+			<hour>22</hour>
+			<minute>17</minute>
+			<second>35</second>
+		</time>
+		<parameters count="12">
+			<parameter id="0">
+				<key>ontologyFile</key>
+				<value>data/gene_ontology.1_2.obo</value>
+			</parameter>
+			<parameter id="1">
+				<key>referenceListSource</key>
+				<value>From Set</value>
+			</parameter>
+			<parameter id="2">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="3">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+			<parameter id="4">
+				<key>referenceListSets</key>
+				<value>Significant Genes</value>
+			</parameter>
+			<parameter id="5">
+				<key>changedListSource</key>
+				<value>From Set</value>
+			</parameter>
+			<parameter id="6">
+				<key>changedList</key>
+				<value></value>
+			</parameter>
+			<parameter id="7">
+				<key>referenceList</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>alternateAnnotationFile</key>
+				<value></value>
+			</parameter>
+			<parameter id="9">
+				<key>changedListSets</key>
+				<value>Significant Genes (3)</value>
+			</parameter>
+			<parameter id="10">
+				<key>loadedAnnotationFile</key>
+				<value>C:\Program Files\geWorkbench_1.8.0\data\public_data\70_TFs_from_HG-U95Av2.na28.csv</value>
+			</parameter>
+			<parameter id="11">
+				<key>loadedAnnotation</key>
+				<value>true</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

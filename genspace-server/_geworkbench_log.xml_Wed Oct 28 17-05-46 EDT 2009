@@ -1,0 +1,448 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="360874150"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>26</day>
+			<hour>17</hour>
+			<minute>52</minute>
+			<second>21</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31330_at,33943_at,33485_at,32980_f_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>33943_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1738206883"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>27</day>
+			<hour>11</hour>
+			<minute>33</minute>
+			<second>2</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31330_at,33943_at,33485_at,32980_f_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1709002549"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>27</day>
+			<hour>13</hour>
+			<minute>20</minute>
+			<second>41</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-HSAC07/X00351_5_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="523834541"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>27</day>
+			<hour>16</hour>
+			<minute>58</minute>
+			<second>37</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-CreX-3_at,AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioDn-5_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1877230530"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>28</day>
+			<hour>17</hour>
+			<minute>5</minute>
+			<second>19</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1877230530"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>28</day>
+			<hour>17</hour>
+			<minute>5</minute>
+			<second>46</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

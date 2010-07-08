@@ -1,0 +1,138 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1755133112"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>15</hour>
+			<minute>9</minute>
+			<second>28</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1941738505"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>15</hour>
+			<minute>45</minute>
+			<second>37</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1460878556"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>16</hour>
+			<minute>1</minute>
+			<second>33</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1593096561"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>16</hour>
+			<minute>6</minute>
+			<second>5</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1830198791"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>16</hour>
+			<minute>9</minute>
+			<second>17</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1685039173"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>16</hour>
+			<minute>13</minute>
+			<second>31</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1060865214"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>16</hour>
+			<minute>37</minute>
+			<second>0</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1060865214"/>
+		<time>
+			<year>2009</year>
+			<month>8</month>
+			<day>20</day>
+			<hour>16</hour>
+			<minute>43</minute>
+			<second>40</second>
+		</time>
+		<parameters count="0">
+		</parameters>
+	</metric>
+</measurement>

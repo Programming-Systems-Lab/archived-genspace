@@ -1,0 +1,164 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1342602375"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>24</day>
+			<hour>16</hour>
+			<minute>0</minute>
+			<second>52</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Selection</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Preprocessing</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value></value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1342602375"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>24</day>
+			<hour>16</hour>
+			<minute>1</minute>
+			<second>6</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Significant Genes</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Preprocessing</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>31315_at, AFFX-HUMGAPDH/M33197_5_at, AFFX-HUMGAPDH/M33197_M_at, AFFX-HSAC07/X00351_3_st, AFFX-HSAC07/X00351_M_at, AFFX-BioB-M_at, AFFX-BioB-3_at, AFFX-BioB-5_at, AFFX-HUMGAPDH/M33197_3_at, AFFX-BioB-3_st, AFFX-HSAC07/X00351_3_at, AFFX-BioDn-5_st, AFFX-HUMGAPDH/M33197_5_st, AFFX-BioB-5_st, 31346_at, AFFX-HUMTFRR/M11507_M_at, AFFX-hum_alu_at, AFFX-HUMISGF3A/M97935_3_at, 31354_r_at, AFFX-HUMISGF3A/M97935_MA_at, AFFX-HSAC07/X00351_5_at, AFFX-BioC-3_at, 31319_at, AFFX-CreX-5_st, 31336_at, AFFX-HUMGAPDH/M33197_3_st, 31359_at, AFFX-BioDn-3_at, AFFX-HUMISGF3A/M97935_5_at, AFFX-CreX-5_at, AFFX-HUMISGF3A/M97935_MB_at, 31314_at, AFFX-HUMGAPDH/M33197_M_st, AFFX-HUMTFRR/M11507_5_at, 31326_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

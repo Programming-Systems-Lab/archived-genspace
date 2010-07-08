@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="NOTCH-DLCLPURIFIED-NORMALS.exp"/>
+		<transaction id="834110960"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>27</day>
+			<hour>15</hour>
+			<minute>40</minute>
+			<second>18</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="CLL and normals.exp"/>
+		<transaction id="1351180500"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>27</day>
+			<hour>15</hour>
+			<minute>55</minute>
+			<second>24</second>
+		</time>
+	</metric>
+</measurement>

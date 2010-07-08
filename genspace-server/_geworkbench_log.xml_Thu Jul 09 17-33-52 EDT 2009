@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Avinash-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="776533721"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>9</day>
+			<hour>17</hour>
+			<minute>32</minute>
+			<second>46</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Avinash-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="80699051"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>9</day>
+			<hour>17</hour>
+			<minute>33</minute>
+			<second>52</second>
+		</time>
+	</metric>
+</measurement>

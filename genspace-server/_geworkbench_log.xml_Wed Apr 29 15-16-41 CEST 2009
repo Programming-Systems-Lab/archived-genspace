@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1986760444"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>29</day>
+			<hour>15</hour>
+			<minute>13</minute>
+			<second>12</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1545314000"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>29</day>
+			<hour>15</hour>
+			<minute>16</minute>
+			<second>41</second>
+		</time>
+	</metric>
+</measurement>

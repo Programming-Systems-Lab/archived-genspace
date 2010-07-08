@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="tinin" genspace="false"/>
+		<host name="vaio"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Test3"/>
+		<transaction id="1389294191"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>1</day>
+			<hour>0</hour>
+			<minute>52</minute>
+			<second>36</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="tinin" genspace="false"/>
+		<host name="vaio"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Test3"/>
+		<transaction id="1389294191"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>1</day>
+			<hour>0</hour>
+			<minute>52</minute>
+			<second>54</second>
+		</time>
+	</metric>
+</measurement>

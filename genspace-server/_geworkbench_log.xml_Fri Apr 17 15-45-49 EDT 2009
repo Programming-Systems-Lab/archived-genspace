@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="MYC e1-ETS1.exp"/>
+		<transaction id="1254708623"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>17</day>
+			<hour>15</hour>
+			<minute>45</minute>
+			<second>20</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="MYC e1-IRF4.exp"/>
+		<transaction id="746034121"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>17</day>
+			<hour>15</hour>
+			<minute>45</minute>
+			<second>49</second>
+		</time>
+	</metric>
+</measurement>

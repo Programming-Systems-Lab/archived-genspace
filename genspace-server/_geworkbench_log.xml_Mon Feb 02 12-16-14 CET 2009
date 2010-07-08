@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="462669671"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>12</hour>
+			<minute>16</minute>
+			<second>0</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="462669671"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>12</hour>
+			<minute>16</minute>
+			<second>14</second>
+		</time>
+	</metric>
+</measurement>

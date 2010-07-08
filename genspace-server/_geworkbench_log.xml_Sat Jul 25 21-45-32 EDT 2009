@@ -1,0 +1,51 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="AsusVista"/>
+		<analysis name="WV Analysis 3.0"/>
+		<dataset name="noise-knockdowns"/>
+		<transaction id="1677007343"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>25</day>
+			<hour>21</hour>
+			<minute>45</minute>
+			<second>31</second>
+		</time>
+		<parameters count="8">
+			<parameter id="0">
+				<key>useMinStdDev</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>numFeatures</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="2">
+				<key>numFeatureMethod</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>featureFileMethod</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>useMedian</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>featureFile</key>
+				<value></value>
+			</parameter>
+			<parameter id="6">
+				<key>minStdDev</key>
+				<value></value>
+			</parameter>
+			<parameter id="7">
+				<key>statistic</key>
+				<value>SNR</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

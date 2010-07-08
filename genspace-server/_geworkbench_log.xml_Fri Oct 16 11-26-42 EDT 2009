@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="CbCCNaMegenesofthesignature.exp"/>
+		<transaction id="1613726299"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>16</day>
+			<hour>10</hour>
+			<minute>6</minute>
+			<second>51</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="celllinesGenesNotchsiganture.exp"/>
+		<transaction id="1364917702"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>16</day>
+			<hour>11</hour>
+			<minute>25</minute>
+			<second>41</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="celllinesGenesNotchsiganture.exp"/>
+		<transaction id="738251183"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>16</day>
+			<hour>11</hour>
+			<minute>26</minute>
+			<second>42</second>
+		</time>
+	</metric>
+</measurement>

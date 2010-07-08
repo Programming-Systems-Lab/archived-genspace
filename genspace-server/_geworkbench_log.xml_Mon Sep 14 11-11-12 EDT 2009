@@ -1,0 +1,102 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="876790277"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>14</day>
+			<hour>11</hour>
+			<minute>4</minute>
+			<second>52</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1758478069"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>14</day>
+			<hour>11</hour>
+			<minute>6</minute>
+			<second>58</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="629182761"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>14</day>
+			<hour>11</hour>
+			<minute>11</minute>
+			<second>9</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="GO Terms Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="629182761"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>14</day>
+			<hour>11</hour>
+			<minute>11</minute>
+			<second>12</second>
+		</time>
+		<parameters count="2">
+			<parameter id="0">
+				<key>correctionMethod</key>
+				<value>None</value>
+			</parameter>
+			<parameter id="1">
+				<key>calculationMethod</key>
+				<value>Term-For-Term</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

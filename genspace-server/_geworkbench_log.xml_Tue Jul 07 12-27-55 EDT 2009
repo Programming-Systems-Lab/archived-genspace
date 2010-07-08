@@ -1,0 +1,76 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="iris-norm2"/>
+		<transaction id="504465806"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>7</day>
+			<hour>12</hour>
+			<minute>26</minute>
+			<second>58</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>12000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.2</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="667461462"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>7</day>
+			<hour>12</hour>
+			<minute>27</minute>
+			<second>55</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

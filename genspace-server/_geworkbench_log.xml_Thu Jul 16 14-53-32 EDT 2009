@@ -1,0 +1,129 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="478935874"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>16</day>
+			<hour>13</hour>
+			<minute>38</minute>
+			<second>32</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="t Test Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="985336372"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>16</day>
+			<hour>14</hour>
+			<minute>53</minute>
+			<second>29</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="985336372"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>16</day>
+			<hour>14</hour>
+			<minute>53</minute>
+			<second>32</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

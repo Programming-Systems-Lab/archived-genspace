@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dell-487dc8f844"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE11870_series_matrix"/>
+		<transaction id="894194309"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>19</day>
+			<hour>21</hour>
+			<minute>31</minute>
+			<second>58</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dell-487dc8f844"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE11870_series_matrix"/>
+		<transaction id="1202187613"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>19</day>
+			<hour>21</hour>
+			<minute>59</minute>
+			<second>49</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dell-487dc8f844"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5353_series_matrix"/>
+		<transaction id="1967695703"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>2</minute>
+			<second>40</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dell-487dc8f844"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5353_series_matrix"/>
+		<transaction id="1168266689"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>18</minute>
+			<second>56</second>
+		</time>
+	</metric>
+</measurement>

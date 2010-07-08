@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="GSE2189_series_matrix"/>
+		<transaction id="68633778"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>9</day>
+			<hour>13</hour>
+			<minute>27</minute>
+			<second>34</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>bonferroni</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="GSE2189_series_matrix"/>
+		<transaction id="68633778"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>9</day>
+			<hour>13</hour>
+			<minute>28</minute>
+			<second>15</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>bonferroni</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

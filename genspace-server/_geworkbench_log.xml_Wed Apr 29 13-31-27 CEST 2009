@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="848234126"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>20</day>
+			<hour>12</hour>
+			<minute>25</minute>
+			<second>52</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1989585003"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>29</day>
+			<hour>9</hour>
+			<minute>23</minute>
+			<second>52</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1696768767"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>29</day>
+			<hour>13</hour>
+			<minute>31</minute>
+			<second>26</second>
+		</time>
+	</metric>
+</measurement>

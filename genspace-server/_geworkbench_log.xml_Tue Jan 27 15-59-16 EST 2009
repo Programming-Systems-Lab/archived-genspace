@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dhcp-18-188-71-214.dyn.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="aTestDataSet.exp"/>
+		<transaction id="1860880351"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>27</day>
+			<hour>14</hour>
+			<minute>47</minute>
+			<second>4</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dhcp-18-188-71-214.dyn.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="aTestDataSet.exp"/>
+		<transaction id="1846194185"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>27</day>
+			<hour>15</hour>
+			<minute>58</minute>
+			<second>43</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="dhcp-18-188-71-214.dyn.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="aTestDataSet.exp"/>
+		<transaction id="1846194185"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>27</day>
+			<hour>15</hour>
+			<minute>59</minute>
+			<second>15</second>
+		</time>
+	</metric>
+</measurement>

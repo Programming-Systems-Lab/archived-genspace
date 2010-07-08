@@ -1,0 +1,233 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS18"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="annotated"/>
+		<transaction id="1790255860"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>13</day>
+			<hour>12</hour>
+			<minute>5</minute>
+			<second>53</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.2</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31330_at, 33943_at, 33485_at, 32980_f_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.14</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>33943_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS18"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="annotated"/>
+		<transaction id="185759046"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>13</day>
+			<hour>12</hour>
+			<minute>32</minute>
+			<second>41</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.2</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31330_at, 33943_at, 33485_at, 32980_f_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.14</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>33943_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS18"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="annotated"/>
+		<transaction id="185759046"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>13</day>
+			<hour>12</hour>
+			<minute>33</minute>
+			<second>35</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.2</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31330_at, 33943_at, 33485_at, 32980_f_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.14</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>33943_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,144 @@
+propel:
+  _attributes:
+    package: lib.model
+  user_networks:
+    username: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: user_networks, foreignReference: network, onDelete: '', onUpdate: '' }
+    network: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: user_networks, foreignReference: network, onDelete: '', onUpdate: '' }
+    _indexes: { PK_user_networks: [username, network] }
+  networks:
+    id: { type: INTEGER, required: true }
+    network: { type: VARCHAR, size: '50', required: true }
+  user_IM_handles:
+    username: { type: VARCHAR, size: '50' }
+    IM_handle: { type: VARCHAR, size: '50' }
+    IM_service: { type: VARCHAR, size: '50' }
+  login_events:
+    username: { type: VARCHAR, size: '50' }
+    date: { type: TIMESTAMP }
+  analysis_events:
+    username: { type: VARCHAR, size: '50' }
+    host: { type: VARCHAR, size: '50' }
+    date: { type: TIMESTAMP }
+    analysis: { type: VARCHAR, size: '50' }
+    dataset: { type: VARCHAR, size: '255' }
+    transaction_id: { type: VARCHAR, size: '255' }
+    is_genspace_user: { type: VARCHAR, size: '1' }
+  include_exclude_analysis:
+    username: { type: VARCHAR, size: '50' }
+    analysis: { type: VARCHAR, size: '50' }
+    action: { type: VARCHAR, size: '50' }
+  friends:
+    user1: { type: VARCHAR, size: '50' }
+    user2: { type: VARCHAR, size: '50' }
+  test_analysis_events:
+    username: { type: VARCHAR, size: '50' }
+    host: { type: VARCHAR, size: '50' }
+    date: { type: TIMESTAMP }
+    analysis: { type: VARCHAR, size: '50' }
+    dataset: { type: VARCHAR, size: '255' }
+    transaction_id: { type: VARCHAR, size: '255' }
+    is_genspace_user: { type: VARCHAR, size: '1' }
+  registration:
+    username: { type: VARCHAR, size: '50', required: true, primaryKey: true }
+    password: { type: VARCHAR, size: '50', required: true }
+    email: { type: VARCHAR, size: '50' }
+    im_email: { type: VARCHAR, size: '50' }
+    im_password: { type: VARCHAR, size: '50' }
+    first_name: { type: VARCHAR, size: '50', required: true }
+    last_name: { type: VARCHAR, size: '50', required: true }
+    work_title: { type: VARCHAR, size: '50' }
+    phone: { type: VARCHAR, size: '50' }
+    lab_affiliation: { type: VARCHAR, size: '100', required: true }
+    addr1: { type: VARCHAR, size: '50' }
+    addr2: { type: VARCHAR, size: '50' }
+    city: { type: VARCHAR, size: '50' }
+    state: { type: VARCHAR, size: '50' }
+    zipcode: { type: VARCHAR, size: '5' }
+    _indexes: { PK_dbo.registration: [username] }
+  data_visibility:
+    username: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    logdata: { type: INTEGER, required: true }
+    datavisibility: { type: INTEGER, required: true }
+    _indexes: { PK_data_visibility: [username] }
+  user_visibility:
+    username: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    uservisibility: { type: INTEGER, required: true }
+  audit:
+    username: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    action: { type: VARCHAR, size: '500', required: true }
+    tablename: { type: VARCHAR, size: '50', required: true }
+    beforevalue: { type: VARCHAR, size: '1000', required: true }
+    aftervalue: { type: VARCHAR, size: '1000', required: true }
+    time: { type: TIMESTAMP, required: true }
+  network_visibility:
+    _attributes: { idMethod: native }
+    id: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    username: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    user_data_option: { type: INTEGER, required: true }
+    networkname: { type: VARCHAR, size: '50', required: true }
+    _indexes: { PK_network_visibility: [id], uq: [username, user_data_option, networkname] }
+  Outbox:
+    _attributes: { idMethod: native }
+    MessageID: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    Date: { type: TIMESTAMP, required: true }
+    FromUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    ToUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    Message: { type: VARCHAR, size: '200', required: true }
+    _indexes: { PK_Outbox: [MessageID] }
+  Inbox:
+    _attributes: { idMethod: native }
+    MessageID: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    Date: { type: TIMESTAMP, required: true }
+    FromUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    ToUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
+    Message: { type: VARCHAR, size: '200', required: true }
+    _indexes: { PK_Inbox: [MessageID] }
+  workflows:
+    _attributes: { idMethod: native }
+    id: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    parent: { type: INTEGER, required: true }
+    tool: { type: CHAR, size: '200', required: true }
+    _indexes: { IX_workflowParent: [parent], IX_workflowTool: [tool], PK_workflows: [id] }
+  tools:
+    _attributes: { idMethod: native }
+    id: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    tool: { type: VARCHAR, size: '100', required: true }
+    description: { type: LONGVARCHAR, size: '2147483647' }
+    _indexes: { PK_tools: [id] }
+  tool_comments:
+    _attributes: { idMethod: native }
+    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    id: { type: INTEGER, required: true }
+    comment: { type: LONGVARCHAR, size: '2147483647', required: true }
+    username: { type: CHAR, size: '200', required: true }
+    posted_on: { type: TIMESTAMP, required: true }
+    _indexes: { PK_tool_comments: [pk] }
+  workflow_ratings:
+    _attributes: { idMethod: native }
+    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    id: { type: INTEGER, required: true }
+    username: { type: VARCHAR, size: '100', required: true }
+    rating: { type: INTEGER, required: true }
+    _indexes: { PK_workflow_ratings: [pk] }
+  workflow_comments:
+    _attributes: { idMethod: native }
+    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    id: { type: INTEGER, required: true }
+    comment: { type: LONGVARCHAR, size: '2147483647', required: true }
+    username: { type: CHAR, size: '200', required: true }
+    posted_on: { type: TIMESTAMP, required: true }
+    _indexes: { PK_workflow_comments: [pk] }
+  tool_ratings:
+    _attributes: { idMethod: native }
+    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
+    id: { type: INTEGER, required: true }
+    rating: { type: INTEGER, required: true }
+    username: { type: CHAR, size: '200', required: true }
+    _indexes: { PK_tool_ratings: [pk] }
+  users:
+    id: { type: INTEGER, required: true, primaryKey: true }
+    username: { type: VARCHAR, size: '50' }
+    password: { type: VARCHAR, size: '50' }
+    email: { type: VARCHAR, size: '50' }
+    organization: { type: VARCHAR, size: '50' }
+    _indexes: { PK_users: [id] }

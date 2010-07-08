@@ -1,0 +1,164 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="D80541C1"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="GSE5337_series_matrix"/>
+		<transaction id="1316340724"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>3</day>
+			<hour>15</hour>
+			<minute>25</minute>
+			<second>40</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>5337_markers</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>10159, 11773, 12121, 13026, 13697, 14164, 14291, 14982, 15110, 15327, 15345, 17659, 18341, 18421, 19000, 20547, 20737, 21131, 2910, 3101, 3253, 3399, 3479, 3932, 3982, 4317, 4877, 5281, 5701, 5798, 5922, 6820, 7206, 7771, 7990, 9258</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>1.0E-7</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="D80541C1"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="902842845"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>5</day>
+			<hour>13</hour>
+			<minute>22</minute>
+			<second>35</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Vdp</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>37356_r_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>1.0E-7</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,72 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1270789236"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>25</day>
+			<hour>13</hour>
+			<minute>43</minute>
+			<second>1</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1270789236"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>25</day>
+			<hour>13</hour>
+			<minute>44</minute>
+			<second>5</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

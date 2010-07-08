@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="WESMutatedProbesCLL.exp"/>
+		<transaction id="1046517029"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>13</day>
+			<hour>9</hour>
+			<minute>13</minute>
+			<second>18</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="WESMutatedProbesCLL.exp"/>
+		<transaction id="1046517029"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>13</day>
+			<hour>9</hour>
+			<minute>13</minute>
+			<second>50</second>
+		</time>
+	</metric>
+</measurement>

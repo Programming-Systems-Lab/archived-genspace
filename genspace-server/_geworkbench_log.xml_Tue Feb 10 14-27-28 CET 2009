@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="E-MEXP-1245-processed-data-1499705884"/>
+		<transaction id="206684070"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>14</hour>
+			<minute>19</minute>
+			<second>44</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="E-MEXP-1245-processed-data-1499705884"/>
+		<transaction id="2003472880"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>14</hour>
+			<minute>27</minute>
+			<second>27</second>
+		</time>
+	</metric>
+</measurement>

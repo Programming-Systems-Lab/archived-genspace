@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MMED0033.local"/>
+		<analysis name="PCA Analysis"/>
+		<dataset name="Trans_top25genes_rln_tum_set1"/>
+		<transaction id="1367648447"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>23</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MMED0033.local"/>
+		<analysis name="PCA Analysis"/>
+		<dataset name="Trans_top25genes_rln_tum_set1"/>
+		<transaction id="928413853"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>1</day>
+			<hour>12</hour>
+			<minute>25</minute>
+			<second>38</second>
+		</time>
+	</metric>
+</measurement>

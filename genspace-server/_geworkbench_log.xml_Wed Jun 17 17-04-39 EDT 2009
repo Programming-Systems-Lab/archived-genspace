@@ -1,0 +1,229 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="188503479"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>53</minute>
+			<second>16</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1930490929"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>56</minute>
+			<second>7</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1701935698"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>59</minute>
+			<second>49</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1429189892"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>1</minute>
+			<second>38</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="401756472"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>3</minute>
+			<second>11</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="938770147"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>4</minute>
+			<second>19</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="938770147"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>4</minute>
+			<second>39</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

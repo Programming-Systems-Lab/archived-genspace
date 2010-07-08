@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="WV Classifier"/>
+		<dataset name="gse13041"/>
+		<transaction id="1541657639"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>11</day>
+			<hour>4</hour>
+			<minute>51</minute>
+			<second>37</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="gse13041"/>
+		<transaction id="1982874062"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>11</day>
+			<hour>5</hour>
+			<minute>5</minute>
+			<second>43</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data"/>
+		<transaction id="1798784219"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>5</hour>
+			<minute>21</minute>
+			<second>5</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data"/>
+		<transaction id="944142319"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>5</hour>
+			<minute>40</minute>
+			<second>3</second>
+		</time>
+	</metric>
+</measurement>

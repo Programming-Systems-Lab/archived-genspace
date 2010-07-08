@@ -1,0 +1,101 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1649463226"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>11</hour>
+			<minute>52</minute>
+			<second>12</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1055946156"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>13</hour>
+			<minute>1</minute>
+			<second>8</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1055946156"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>13</hour>
+			<minute>7</minute>
+			<second>21</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

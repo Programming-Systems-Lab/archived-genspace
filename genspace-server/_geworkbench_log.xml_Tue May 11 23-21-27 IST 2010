@@ -1,0 +1,1064 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="218777916"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>11</day>
+			<hour>22</hour>
+			<minute>12</minute>
+			<second>36</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>3_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>TP53, RB1, MYC</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="267025123"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>11</day>
+			<hour>23</hour>
+			<minute>49</minute>
+			<second>30</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>3_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>TP53, RB1, MYC</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.2</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="572458868"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>14</day>
+			<hour>9</hour>
+			<minute>40</minute>
+			<second>32</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>tflist</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, ADNP, AEBP1, AFF1, AFF3, AFF4, AHCTF1, AHR, ALX4, AR, ARID3A, ARID4A, ARNT, ARNT2, ARNTL, ARNTL2, ASCL1, ASCL2, ATF1, ATF2, ATF3, ATF4, ATF5, ATF6, ATF7, ATOH1, BARX2, BATF, BAZ1B, BCL6, BLZF1, BNC1, BRD8, BRF1, BRPF1, BTAF1, BUD31, C2orf3, CBFA2T2, CBFA2T3, CBFB, CBL, CCRN4L, CDX1, CDX2, CDX4, CEBPA, CEBPB, CEBPD, CEBPE, CEBPG, CEBPZ, CIITA, CITED1, CITED2, CLOCK, CNBP, CNOT7, CNOT8, CREB1, CREB3, CREB3L1, CREB3L2, CREB5, CREBBP, CREBL2, CREG1, CREM, CRX, CSDA, CTBP1, CTBP2, CTCF, CTNNB1, DAXX, DBP, DEK, DENND4A, DLX2, DLX4, DLX5, DLX6, DMTF1, DR1, DRAP1, DUX1, E2F1, E2F2, E2F3, E2F4, E2F5, E2F6, E2F8, E4F1, EDF1, EGR1, EGR2, EGR3, EGR4, ELF1, ELF2, ELF3, ELF4, ELF5, ELK1, ELK3, ELK4, EMX1, EMX2, EN1, EN2, ENO1, EP300, EPAS1, ERCC6, ERF, ERG, ESR1, ESR2, ESRRA, ESRRB, ESRRG, ETS1, ETS2, ETV1, ETV3, ETV4, ETV5, ETV6, ETV7, EVX1, EWSR1, FEV, FEZF2, FLI1, FMNL2, FOS, FOSB, FOSL1, FOSL2, FOXA1, FOXA2, FOXB1, FOXD1, FOXD3, FOXE1, FOXE3, FOXF1, FOXF2, FOXH1, FOXI1, FOXJ1, FOXJ2, FOXJ3, FOXK2, FOXL1, FOXM1, FOXN1, FOXP1, FOXP3, FUBP1, FUBP3, GAS7, GATA1, GATA2, GATA3, GATA4, GATA6, GATAD1, GATAD2A, GBX2, GLI2, GLI3, GMEB1, GRLF1, GTF2IRD1, HAND1, HAND2, HBP1, HCFC1, HCLS1, HES1, HES2, HESX1, HEY1, HEY2, HEYL, HHEX, HIC1, HIF1A, HIF3A, HIRA, HIVEP1, HIVEP2, HIVEP3, HLF, HMBOX1, HMG20A, HMG20B, HMGA1, HMGA2, HMGB1, HMGB2, HMX1, HNF4A, HNF4G, HOXA1, HOXA10, HOXA11, HOXA2, HOXA3, HOXA4, HOXA5, HOXA6, HOXA7, HOXA9, HOXB13, HOXB2, HOXB5, HOXB6, HOXB7, HOXB8, HOXB9, HOXC10, HOXC11, HOXC5, HOXC6, HOXD1, HOXD10, HOXD11, HOXD12, HOXD13, HOXD3, HOXD4, HOXD9, HR, HSF1, HSF2, HSF4, IKZF1, IKZF4, IKZF5, ILF2, INSM1, IRF1, IRF2, IRF3, IRF4, IRF5, IRF6, IRF7, IRF8, IRX4, IRX5, ISL1, JUN, JUNB, JUND, KIAA0415, KLF1, KLF10, KLF11, KLF12, KLF13, KLF15, KLF2, KLF3, KLF4, KLF5, KLF6, KLF7, KLF9, KNTC1, L3MBTL, LASS2, LASS4, LASS6, LBX1, LHX2, LHX3, LHX5, LHX6, LMO1, LMO4, LMX1B, LYL1, LZTFL1, LZTR1, LZTS1, MAF, MAFB, MAFF, MAFG, MAFK, MAML3, MAX, MAZ, MBD1, MECP2, MEF2A, MEF2C, MEF2D, MEIS1, MEIS2, MEIS3P1, MEOX1, MEOX2, MGA, MITF, MLL, MLL4, MLLT10, MLX, MLXIP, MLXIPL, MNT, MSC, MSRB2, MSX1, MSX2, MTA1, MTA2, MTF1, MXD1, MYB, MYBL1, MYBL2, MYC, MYCL1, MYCN, MYF6, MYNN, MYOD1, MYOG, MYST2, MYT1, MYT1L, MZF1, NANOG, NCOR1, NEUROD1, NEUROD2, NEUROG1, NEUROG3, NFAT5, NFATC1, NFATC3, NFATC4, NFE2, NFE2L1, NFE2L2, NFE2L3, NFIB, NFIC, NFIL3, NFIX, NFKB1, NFKB2, NFRKB, NFX1, NFYA, NFYB, NFYC, NHLH1, NHLH2, NKRF, NKX2-2, NKX2-5, NKX2-8, NKX3-1, NKX6-1, NOTCH2, NPAS2, NPAS3, NPAT, NR0B1, NR0B2, NR1D2, NR1H2, NR1H3, NR1H4, NR1I2, NR1I3, NR2C1, NR2C2, NR2E1, NR2E3, NR2F1, NR2F2, NR2F6, NR3C1, NR3C2, NR4A1, NR4A2, NR4A3, NR5A1, NR5A2, NR6A1, NRF1, NRL, OLIG2, ONECUT1, OVOL1, PAX1, PAX2, PAX3, PAX4, PAX6, PAX7, PAX8, PAX9, PBX1, PBX2, PBX3, PCGF2, PEG3, PFDN1, PGR, PHF2, PHOX2A, PHOX2B, PHTF1, PHTF2, PITX1, PITX3, PKNOX1, PKNOX2, PLAG1, PLAGL1, PLAGL2, PML, POU2F1, POU2F2, POU2F3, POU3F1, POU3F2, POU3F3, POU3F4, POU4F1, POU4F2, POU6F1, POU6F2, PPARA, PPARD, PPARG, PRDM1, PRDM16, PRDM2, PREB, PROP1, PRRX1, PRRX2, PTTG1, PURA, RARA, RARB, RARG, RAX, RB1, RBL2, REL, RELA, RELB, RERE, REST, REXO4, RFX1, RFX2, RFX3, RFX5, RFXANK, RFXAP, RLF, RNF4, RORA, RORB, RORC, RREB1, RUNX1, RUNX1T1, RUNX2, RUNX3, RXRA, RXRB, RXRG, SALL1, SALL2, SATB1, SATB2, SCAND1, SCAND2, SCML1, SCML2, SHOX, SHOX2, SIM2, SIX1, SIX2, SIX3, SIX5, SIX6, SLC26A3, SLC2A4RG, SLC30A9, SMAD1, SMAD2, SMAD3, SMAD4, SMAD5, SMAD6, SMAD7, SMAD9, SMARCA4, SNAI1, SNAI2, SNAPC2, SNAPC4, SNAPC5, SOLH, SOX1, SOX10, SOX11, SOX12, SOX13, SOX15, SOX17, SOX18, SOX2, SOX21, SOX3, SOX4, SOX5, SOX9, SP1, SP140, SP2, SP3, SP4, SPDEF, SPI1, SPIB, SREBF1, SREBF2, SRF, ST18, STAT1, STAT2, STAT3, STAT4, STAT5A, STAT5B, STAT6, SUPT4H1, SUPT6H, TADA2L, TADA3L, TAF1B, TAF5L, TAL1, TARDBP, TBR1, TBX1, TBX10, TBX19, TBX2, TBX21, TBX3, TBX4, TBX5, TBX6, TCEAL1, TCF12, TCF15, TCF21, TCF25, TCF3, TCF4, TCF7, TCF7L1, TCF7L2, TCFL5, TEAD1, TEAD3, TEAD4, TEF, TFAM, TFAP2A, TFAP2B, TFAP2C, TFAP4, TFCP2, TFCP2L1, TFDP1, TFDP2, TFDP3, TFE3, TFEB, TFEC, TGIF2, THRA, THRB, TLX1, TLX2, TNRC4, TP53, TP73, TRERF1, TRIM22, TRIM25, TRIM28, TRIM29, TRPS1, TSC22D1, TSC22D2, TSC22D3, TSC22D4, TULP4, TWIST1, UBN1, UBP1, USF2, VAV1, VAX2, VDR, VENTX, VEZF1, VPS72, VSX1, WT1, XBP1, YBX1, YEATS4, YWHAE, YWHAZ, YY1, YY2, ZBTB16, ZBTB17, ZBTB22, ZBTB25, ZBTB38, ZBTB43, ZBTB6, ZBTB7A, ZBTB7B, ZFHX4, ZFP36L1, ZFP36L2, ZFP37, ZFX, ZFY, ZHX2, ZHX3, ZIC1, ZIM2, ZKSCAN1, ZMYM2, ZMYM3, ZMYM4</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="267177857"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>18</day>
+			<hour>23</hour>
+			<minute>22</minute>
+			<second>36</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, ADNP, AEBP1, AFF1, AFF3, AFF4, AHCTF1, AHR, ALX4, AR, ARID3A, ARID4A, ARNT, ARNT2, ARNTL, ARNTL2, ASCL1, ASCL2, ATF1, ATF2, ATF3, ATF4, ATF5, ATF6, ATF7, ATOH1, BACH1, BACH2, BARX2, BATF, BAZ1B, BCL6, BHLHB2, BHLHB3, BLZF1, BNC1, BRD8, BRF1, BRPF1, BTAF1, BUD31, C2orf3, CBFA2T2, CBFA2T3, CBFB, CBL, CCRN4L, CDX1, CDX2, CDX4, CEBPA, CEBPB, CEBPD, CEBPE, CEBPG, CEBPZ, CIITA, CIR, CITED1, CITED2, CLOCK, CNBP, CNOT7, CNOT8, CREB1, CREB3, CREB3L1, CREB3L2, CREB5, CREBBP, CREBL1, CREBL2, CREG1, CREM, CRX, CSDA, CTBP1, CTBP2, CTCF, CTNNB1, DAXX, DBP, DDIT3, DEK, DENND4A, DLX2, DLX4, DLX5, DLX6, DMTF1, DR1, DRAP1, DUX1, E2F1, E2F2, E2F3, E2F4, E2F5, E2F6, E2F8, E4F1, EDF1, EGR1, EGR2, EGR3, EGR4, ELF1, ELF2, ELF3, ELF4, ELF5, ELK1, ELK3, ELK4, EMX1, EMX2, EN1, EN2, ENO1, EP300, EPAS1, ERCC6, ERF, ERG, ESR1, ESR2, ESRRA, ESRRB, ESRRG, ETS1, ETS2, ETV1, ETV3, ETV4, ETV5, ETV6, ETV7, EVI1, EVX1, EWSR1, FEV, FEZF2, FLI1, FOS, FOSB, FOSL1, FOSL2, FOXA1, FOXA2, FOXB1, FOXD1, FOXD3, FOXE1, FOXE3, FOXF1, FOXF2, FOXH1, FOXI1, FOXJ1, FOXJ2, FOXJ3, FOXK2, FOXL1, FOXM1, FOXN1, FOXP3, FUBP1, FUBP3, GAS7, GATA1, GATA2, GATA3, GATA4, GATA6, GATAD1, GATAD2A, GBX2, GLI2, GLI3, GMEB1, GRLF1, GTF2IRD1, HAND1, HAND2, HBP1, HCFC1, HCLS1, HES1, HES2, HESX1, HEY1, HEY2, HEYL, HHEX, HIC1, HIF1A, HIF3A, HIRA, HIVEP1, HIVEP2, HIVEP3, HLF, HMBOX1, HMG20A, HMG20B, HMGA1, HMGA2, HMGB1, HMGB2, HMX1, HNF4A, HNF4G, HOXA1, HOXA10, HOXA11, HOXA2, HOXA3, HOXA4, HOXA5, HOXA6, HOXA7, HOXA9, HOXB13, HOXB2, HOXB5, HOXB6, HOXB7, HOXB8, HOXB9, HOXC10, HOXC11, HOXC4, HOXC5, HOXD1, HOXD10, HOXD11, HOXD12, HOXD13, HOXD3, HOXD4, HOXD9, HR, HSF1, HSF2, HSF4, IKZF1, IKZF4, IKZF5, ILF2, INSM1, IRF1, IRF2, IRF3, IRF4, IRF5, IRF6, IRF7, IRF8, IRX4, IRX5, ISL1, JARID1A, JARID1B, JUN, JUNB, JUND, KIAA0415, KLF1, KLF10, KLF11, KLF12, KLF13, KLF15, KLF2, KLF3, KLF4, KLF5, KLF6, KLF7, KLF9, KNTC1, L3MBTL, LASS2, LASS4, LASS6, LBX1, LHX2, LHX3, LHX5, LHX6, LMO1, LMO4, LMX1B, LYL1, LZTFL1, LZTR1, LZTS1, MAF, MAFB, MAFF, MAFG, MAFK, MAML3, MAX, MAZ, MBD1, MDS1, MECP2, MEF2A, MEF2B, MEF2C, MEF2D, MEIS1, MEIS2, MEIS3P1, MEOX1, MEOX2, MGA, MITF, MIZF, MLL, MLL4, MLLT10, MLX, MLXIP, MLXIPL, MNT, MSC, MSL3L1, MSRB2, MSX1, MSX2, MTA1, MTA2, MTF1, MXD1, MYB, MYBL1, MYBL2, MYC, MYCL1, MYCN, MYF6, MYNN, MYOD1, MYOG, MYST2, MYT1, MYT1L, MZF1, NANOG, NCOR1, NEUROD1, NEUROD2, NEUROG1, NEUROG3, NFAT5, NFATC1, NFATC3, NFATC4, NFE2, NFE2L1, NFE2L2, NFE2L3, NFIB, NFIC, NFIL3, NFIX, NFKB1, NFKB2, NFRKB, NFX1, NFYA, NFYB, NFYC, NHLH1, NHLH2, NKRF, NKX2-2, NKX2-5, NKX2-8, NKX3-1, NKX6-1, NOTCH2, NPAS2, NPAS3, NPAT, NR0B1, NR0B2, NR1D2, NR1H2, NR1H3, NR1H4, NR1I2, NR1I3, NR2C1, NR2C2, NR2E1, NR2E3, NR2F1, NR2F2, NR2F6, NR3C1, NR3C2, NR4A1, NR4A2, NR4A3, NR5A1, NR5A2, NR6A1, NRF1, NRL, OLIG2, ONECUT1, OVOL1, PAX1, PAX2, PAX3, PAX4, PAX6, PAX7, PAX8, PAX9, PBX1, PBX2, PBX3, PCGF2, PEG3, PFDN1, PGR, PHF2, PHOX2A, PHOX2B, PHTF1, PHTF2, PITX1, PITX3, PKNOX1, PKNOX2, PLAG1, PLAGL1, PLAGL2, PML, POU2F1, POU2F2, POU2F3, POU3F1, POU3F2, POU3F3, POU3F4, POU4F2, POU6F1, PPARA, PPARD, PPARG, PRDM1, PRDM16, PRDM2, PREB, PROP1, PRRX1, PRRX2, PTTG1, PURA, RARA, RARB, RARG, RAX, RB1, RBL2, REL, RELA, RELB, RERE, REST, REXO4, RFX1, RFX2, RFX3, RFX5, RFXANK, RFXAP, RLF, RNF4, RORA, RORB, RORC, RREB1, RUNX1, RUNX1T1, RUNX2, RUNX3, RXRA, RXRB, RXRG, SALL1, SALL2, SATB1, SATB2, SCAND1, SCAND2, SCML1, SCML2, SHOX, SHOX2, SIM2, SIX1, SIX2, SIX3, SIX5, SIX6, SLC26A3, SLC2A4RG, SLC30A9, SMAD1, SMAD2, SMAD3, SMAD4, SMAD5, SMAD6, SMAD7, SMAD9, SMARCA4, SNAI1, SNAI2, SNAPC2, SNAPC4, SNAPC5, SOLH, SOX1, SOX10, SOX11, SOX12, SOX13, SOX15, SOX17, SOX18, SOX2, SOX21, SOX3, SOX4, SOX5, SOX9, SP1, SP140, SP2, SP3, SP4, SPDEF, SPI1, SPIB, SREBF1, SREBF2, SRF, ST18, STAT1, STAT2, STAT3, STAT4, STAT5A, STAT5B, STAT6, SUPT4H1, SUPT6H, T, TADA2L, TADA3L, TAF1B, TAF5L, TAL1, TARDBP, TBR1, TBX1, TBX10, TBX19, TBX2, TBX21, TBX3, TBX4, TBX5, TBX6, TCEAL1, TCF12, TCF15, TCF21, TCF25, TCF3, TCF4, TCF7, TCF7L1, TCF7L2, TCFL5, TEAD1, TEAD3, TEAD4, TEF, TFAM, TFAP2A, TFAP2B, TFAP2C, TFAP4, TFCP2, TFCP2L1, TFDP1, TFDP2, TFDP3, TFE3, TFEB, TFEC, TGIF2, THRA, THRB, TLX1, TLX2, TNRC4, TP53, TP73, TRIM22, TRIM25, TRIM28, TRIM29, TRPS1, TSC22D1, TSC22D2, TSC22D3, TSC22D4, TULP4, TWIST1, UBN1, UBP1, USF2, VAV1, VAX2, VDR, VENTX, VEZF1, VPS72, VSX1, WT1, XBP1, YBX1, YEATS4, YWHAE, YWHAZ, YY1, YY2, ZBTB16, ZBTB17, ZBTB22, ZBTB25, ZBTB38, ZBTB43, ZBTB6, ZBTB7A, ZBTB7B, ZFHX4, ZFP36L1, ZFP36L2, ZFP37, ZFX, ZHX2, ZHX3, ZIC1, ZIM2, ZKSCAN1, ZMYM2, ZMYM3, ZMYM4, ZNF10, ZNF117, ZNF12, ZNF124, ZNF131, ZNF132, ZNF133, ZNF134, ZNF135, ZNF136, ZNF137, ZNF14, ZNF140, ZNF141, ZNF142, ZNF143, ZNF146, ZNF148, ZNF154, ZNF155, ZNF16, ZNF160, ZNF167, ZNF174, ZNF175, ZNF177, ZNF180, ZNF184, ZNF185, ZNF187, ZNF189, ZNF192, ZNF193, ZNF195, ZNF197, ZNF20, ZNF200, ZNF202, ZNF204, ZNF205, ZNF207, ZNF211, ZNF212, ZNF215, ZNF217, ZNF219, ZNF22, ZNF221, ZNF222, ZNF223, ZNF224, ZNF225, ZNF226, ZNF227, ZNF230, ZNF232, ZNF235, ZNF236, ZNF238, ZNF239, ZNF24, ZNF248, ZNF250, ZNF253, ZNF259, ZNF26, ZNF263, ZNF264, ZNF266, ZNF267, ZNF268, ZNF271, ZNF273, ZNF274, ZNF277, ZNF281, ZNF282, ZNF287, ZNF292, ZNF294, ZNF3, ZNF302, ZNF304, ZNF318, ZNF32, ZNF322B, ZNF323, ZNF324, ZNF329, ZNF330, ZNF331, ZNF334, ZNF335, ZNF337, ZNF33B, ZNF34, ZNF343, ZNF345, ZNF35, ZNF350, ZNF354A, ZNF358, ZNF365, ZNF384, ZNF394, ZNF395, ZNF407, ZNF408, ZNF409, ZNF410, ZNF415, ZNF423, ZNF426, ZNF43, ZNF430, ZNF432, ZNF434, ZNF44, ZNF440, ZNF443, ZNF444, ZNF446, ZNF45, ZNF451, ZNF460, ZNF467, ZNF468, ZNF471, ZNF473, ZNF480, ZNF484, ZNF493, ZNF500, ZNF506, ZNF507, ZNF510, ZNF516, ZNF528, ZNF529, ZNF532, ZNF536, ZNF544, ZNF549, ZNF550, ZNF551, ZNF552, ZNF556, ZNF557, ZNF562, ZNF573, ZNF574, ZNF576, ZNF580, ZNF586, ZNF587, ZNF589, ZNF592, ZNF593, ZNF606, ZNF609, ZNF611, ZNF614, ZNF623, ZNF629, ZNF638, ZNF643, ZNF646, ZNF652, ZNF654, ZNF665, ZNF667, ZNF668, ZNF669, ZNF671, ZNF672, ZNF673, ZNF675, ZNF682, ZNF688, ZNF692, ZNF695, ZNF696, ZNF7, ZNF701, ZNF706, ZNF710, ZNF711, ZNF74, ZNF79, ZNF8, ZNF81, ZNF83, ZNF84, ZNF85, ZNF91, ZNF93</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1204501707"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>18</day>
+			<hour>23</hour>
+			<minute>28</minute>
+			<second>5</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, ADNP, AEBP1, AFF1, AFF3, AFF4, AHCTF1, AHR, ALX4, AR, ARID3A, ARID4A, ARNT, ARNT2, ARNTL, ARNTL2, ASCL1, ASCL2, ATF1, ATF2, ATF3, ATF4, ATF5, ATF6, ATF7, ATOH1, BACH1, BACH2, BARX2, BATF, BAZ1B, BCL6, BHLHB2, BHLHB3, BLZF1, BNC1, BRD8, BRF1, BRPF1, BTAF1, BUD31, C2orf3, CBFA2T2, CBFA2T3, CBFB, CBL, CCRN4L, CDX1, CDX2, CDX4, CEBPA, CEBPB, CEBPD, CEBPE, CEBPG, CEBPZ, CIITA, CIR, CITED1, CITED2, CLOCK, CNBP, CNOT7, CNOT8, CREB1, CREB3, CREB3L1, CREB3L2, CREB5, CREBBP, CREBL1, CREBL2, CREG1, CREM, CRX, CSDA, CTBP1, CTBP2, CTCF, CTNNB1, DAXX, DBP, DDIT3, DEK, DENND4A, DLX2, DLX4, DLX5, DLX6, DMTF1, DR1, DRAP1, DUX1, E2F1, E2F2, E2F3, E2F4, E2F5, E2F6, E2F8, E4F1, EDF1, EGR1, EGR2, EGR3, EGR4, ELF1, ELF2, ELF3, ELF4, ELF5, ELK1, ELK3, ELK4, EMX1, EMX2, EN1, EN2, ENO1, EP300, EPAS1, ERCC6, ERF, ERG, ESR1, ESR2, ESRRA, ESRRB, ESRRG, ETS1, ETS2, ETV1, ETV3, ETV4, ETV5, ETV6, ETV7, EVI1, EVX1, EWSR1, FEV, FEZF2, FLI1, FOS, FOSB, FOSL1, FOSL2, FOXA1, FOXA2, FOXB1, FOXD1, FOXD3, FOXE1, FOXE3, FOXF1, FOXF2, FOXH1, FOXI1, FOXJ1, FOXJ2, FOXJ3, FOXK2, FOXL1, FOXM1, FOXN1, FOXP3, FUBP1, FUBP3, GAS7, GATA1, GATA2, GATA3, GATA4, GATA6, GATAD1, GATAD2A, GBX2, GLI2, GLI3, GMEB1, GRLF1, GTF2IRD1, HAND1, HAND2, HBP1, HCFC1, HCLS1, HES1, HES2, HESX1, HEY1, HEY2, HEYL, HHEX, HIC1, HIF1A, HIF3A, HIRA, HIVEP1, HIVEP2, HIVEP3, HLF, HMBOX1, HMG20A, HMG20B, HMGA1, HMGA2, HMGB1, HMGB2, HMX1, HNF4A, HNF4G, HOXA1, HOXA10, HOXA11, HOXA2, HOXA3, HOXA4, HOXA5, HOXA6, HOXA7, HOXA9, HOXB13, HOXB2, HOXB5, HOXB6, HOXB7, HOXB8, HOXB9, HOXC10, HOXC11, HOXC4, HOXC5, HOXD1, HOXD10, HOXD11, HOXD12, HOXD13, HOXD3, HOXD4, HOXD9, HR, HSF1, HSF2, HSF4, IKZF1, IKZF4, IKZF5, ILF2, INSM1, IRF1, IRF2, IRF3, IRF4, IRF5, IRF6, IRF7, IRF8, IRX4, IRX5, ISL1, JARID1A, JARID1B, JUN, JUNB, JUND, KIAA0415, KLF1, KLF10, KLF11, KLF12, KLF13, KLF15, KLF2, KLF3, KLF4, KLF5, KLF6, KLF7, KLF9, KNTC1, L3MBTL, LASS2, LASS4, LASS6, LBX1, LHX2, LHX3, LHX5, LHX6, LMO1, LMO4, LMX1B, LYL1, LZTFL1, LZTR1, LZTS1, MAF, MAFB, MAFF, MAFG, MAFK, MAML3, MAX, MAZ, MBD1, MDS1, MECP2, MEF2A, MEF2B, MEF2C, MEF2D, MEIS1, MEIS2, MEIS3P1, MEOX1, MEOX2, MGA, MITF, MIZF, MLL, MLL4, MLLT10, MLX, MLXIP, MLXIPL, MNT, MSC, MSL3L1, MSRB2, MSX1, MSX2, MTA1, MTA2, MTF1, MXD1, MYB, MYBL1, MYBL2, MYC, MYCL1, MYCN, MYF6, MYNN, MYOD1, MYOG, MYST2, MYT1, MYT1L, MZF1, NANOG, NCOR1, NEUROD1, NEUROD2, NEUROG1, NEUROG3, NFAT5, NFATC1, NFATC3, NFATC4, NFE2, NFE2L1, NFE2L2, NFE2L3, NFIB, NFIC, NFIL3, NFIX, NFKB1, NFKB2, NFRKB, NFX1, NFYA, NFYB, NFYC, NHLH1, NHLH2, NKRF, NKX2-2, NKX2-5, NKX2-8, NKX3-1, NKX6-1, NOTCH2, NPAS2, NPAS3, NPAT, NR0B1, NR0B2, NR1D2, NR1H2, NR1H3, NR1H4, NR1I2, NR1I3, NR2C1, NR2C2, NR2E1, NR2E3, NR2F1, NR2F2, NR2F6, NR3C1, NR3C2, NR4A1, NR4A2, NR4A3, NR5A1, NR5A2, NR6A1, NRF1, NRL, OLIG2, ONECUT1, OVOL1, PAX1, PAX2, PAX3, PAX4, PAX6, PAX7, PAX8, PAX9, PBX1, PBX2, PBX3, PCGF2, PEG3, PFDN1, PGR, PHF2, PHOX2A, PHOX2B, PHTF1, PHTF2, PITX1, PITX3, PKNOX1, PKNOX2, PLAG1, PLAGL1, PLAGL2, PML, POU2F1, POU2F2, POU2F3, POU3F1, POU3F2, POU3F3, POU3F4, POU4F2, POU6F1, PPARA, PPARD, PPARG, PRDM1, PRDM16, PRDM2, PREB, PROP1, PRRX1, PRRX2, PTTG1, PURA, RARA, RARB, RARG, RAX, RB1, RBL2, REL, RELA, RELB, RERE, REST, REXO4, RFX1, RFX2, RFX3, RFX5, RFXANK, RFXAP, RLF, RNF4, RORA, RORB, RORC, RREB1, RUNX1, RUNX1T1, RUNX2, RUNX3, RXRA, RXRB, RXRG, SALL1, SALL2, SATB1, SATB2, SCAND1, SCAND2, SCML1, SCML2, SHOX, SHOX2, SIM2, SIX1, SIX2, SIX3, SIX5, SIX6, SLC26A3, SLC2A4RG, SLC30A9, SMAD1, SMAD2, SMAD3, SMAD4, SMAD5, SMAD6, SMAD7, SMAD9, SMARCA4, SNAI1, SNAI2, SNAPC2, SNAPC4, SNAPC5, SOLH, SOX1, SOX10, SOX11, SOX12, SOX13, SOX15, SOX17, SOX18, SOX2, SOX21, SOX3, SOX4, SOX5, SOX9, SP1, SP140, SP2, SP3, SP4, SPDEF, SPI1, SPIB, SREBF1, SREBF2, SRF, ST18, STAT1, STAT2, STAT3, STAT4, STAT5A, STAT5B, STAT6, SUPT4H1, SUPT6H, T, TADA2L, TADA3L, TAF1B, TAF5L, TAL1, TARDBP, TBR1, TBX1, TBX10, TBX19, TBX2, TBX21, TBX3, TBX4, TBX5, TBX6, TCEAL1, TCF12, TCF15, TCF21, TCF25, TCF3, TCF4, TCF7, TCF7L1, TCF7L2, TCFL5, TEAD1, TEAD3, TEAD4, TEF, TFAM, TFAP2A, TFAP2B, TFAP2C, TFAP4, TFCP2, TFCP2L1, TFDP1, TFDP2, TFDP3, TFE3, TFEB, TFEC, TGIF2, THRA, THRB, TLX1, TLX2, TNRC4, TP53, TP73, TRIM22, TRIM25, TRIM28, TRIM29, TRPS1, TSC22D1, TSC22D2, TSC22D3, TSC22D4, TULP4, TWIST1, UBN1, UBP1, USF2, VAV1, VAX2, VDR, VENTX, VEZF1, VPS72, VSX1, WT1, XBP1, YBX1, YEATS4, YWHAE, YWHAZ, YY1, YY2, ZBTB16, ZBTB17, ZBTB22, ZBTB25, ZBTB38, ZBTB43, ZBTB6, ZBTB7A, ZBTB7B, ZFHX4, ZFP36L1, ZFP36L2, ZFP37, ZFX, ZHX2, ZHX3, ZIC1, ZIM2, ZKSCAN1, ZMYM2, ZMYM3, ZMYM4, ZNF10, ZNF117, ZNF12, ZNF124, ZNF131, ZNF132, ZNF133, ZNF134, ZNF135, ZNF136, ZNF137, ZNF14, ZNF140, ZNF141, ZNF142, ZNF143, ZNF146, ZNF148, ZNF154, ZNF155, ZNF16, ZNF160, ZNF167, ZNF174, ZNF175, ZNF177, ZNF180, ZNF184, ZNF185, ZNF187, ZNF189, ZNF192, ZNF193, ZNF195, ZNF197, ZNF20, ZNF200, ZNF202, ZNF204, ZNF205, ZNF207, ZNF211, ZNF212, ZNF215, ZNF217, ZNF219, ZNF22, ZNF221, ZNF222, ZNF223, ZNF224, ZNF225, ZNF226, ZNF227, ZNF230, ZNF232, ZNF235, ZNF236, ZNF238, ZNF239, ZNF24, ZNF248, ZNF250, ZNF253, ZNF259, ZNF26, ZNF263, ZNF264, ZNF266, ZNF267, ZNF268, ZNF271, ZNF273, ZNF274, ZNF277, ZNF281, ZNF282, ZNF287, ZNF292, ZNF294, ZNF3, ZNF302, ZNF304, ZNF318, ZNF32, ZNF322B, ZNF323, ZNF324, ZNF329, ZNF330, ZNF331, ZNF334, ZNF335, ZNF337, ZNF33B, ZNF34, ZNF343, ZNF345, ZNF35, ZNF350, ZNF354A, ZNF358, ZNF365, ZNF384, ZNF394, ZNF395, ZNF407, ZNF408, ZNF409, ZNF410, ZNF415, ZNF423, ZNF426, ZNF43, ZNF430, ZNF432, ZNF434, ZNF44, ZNF440, ZNF443, ZNF444, ZNF446, ZNF45, ZNF451, ZNF460, ZNF467, ZNF468, ZNF471, ZNF473, ZNF480, ZNF484, ZNF493, ZNF500, ZNF506, ZNF507, ZNF510, ZNF516, ZNF528, ZNF529, ZNF532, ZNF536, ZNF544, ZNF549, ZNF550, ZNF551, ZNF552, ZNF556, ZNF557, ZNF562, ZNF573, ZNF574, ZNF576, ZNF580, ZNF586, ZNF587, ZNF589, ZNF592, ZNF593, ZNF606, ZNF609, ZNF611, ZNF614, ZNF623, ZNF629, ZNF638, ZNF643, ZNF646, ZNF652, ZNF654, ZNF665, ZNF667, ZNF668, ZNF669, ZNF671, ZNF672, ZNF673, ZNF675, ZNF682, ZNF688, ZNF692, ZNF695, ZNF696, ZNF7, ZNF701, ZNF706, ZNF710, ZNF711, ZNF74, ZNF79, ZNF8, ZNF81, ZNF83, ZNF84, ZNF85, ZNF91, ZNF93</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1065793832"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>20</day>
+			<hour>22</hour>
+			<minute>47</minute>
+			<second>30</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>928_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, ADNP, AEBP1, AFF1, AFF3, AFF4, AHCTF1, AHR, ALX4, AR, ARID3A, ARID4A, ARNT, ARNT2, ARNTL, ARNTL2, ASCL1, ASCL2, ATF1, ATF2, ATF3, ATF4, ATF5, ATF6, ATF7, ATOH1, BACH1, BACH2, BARX2, BATF, BAZ1B, BCL6, BHLHB2, BHLHB3, BLZF1, BNC1, BRD8, BRF1, BRPF1, BTAF1, BUD31, C2orf3, CBFA2T2, CBFA2T3, CBFB, CBL, CCRN4L, CDX1, CDX2, CDX4, CEBPA, CEBPB, CEBPD, CEBPE, CEBPG, CEBPZ, CIITA, CIR, CITED1, CITED2, CLOCK, CNBP, CNOT7, CNOT8, CREB1, CREB3, CREB3L1, CREB3L2, CREB5, CREBBP, CREBL1, CREBL2, CREG1, CREM, CRX, CSDA, CTBP1, CTBP2, CTCF, CTNNB1, DAXX, DBP, DDIT3, DEK, DENND4A, DLX2, DLX4, DLX5, DLX6, DMTF1, DR1, DRAP1, DUX1, E2F1, E2F2, E2F3, E2F4, E2F5, E2F6, E2F8, E4F1, EDF1, EGR1, EGR2, EGR3, EGR4, ELF1, ELF2, ELF3, ELF4, ELF5, ELK1, ELK3, ELK4, EMX1, EMX2, EN1, EN2, ENO1, EP300, EPAS1, ERCC6, ERF, ERG, ESR1, ESR2, ESRRA, ESRRB, ESRRG, ETS1, ETS2, ETV1, ETV3, ETV4, ETV5, ETV6, ETV7, EVI1, EVX1, EWSR1, FEV, FEZF2, FLI1, FOS, FOSB, FOSL1, FOSL2, FOXA1, FOXA2, FOXB1, FOXD1, FOXD3, FOXE1, FOXE3, FOXF1, FOXF2, FOXH1, FOXI1, FOXJ1, FOXJ2, FOXJ3, FOXK2, FOXL1, FOXM1, FOXN1, FOXP3, FUBP1, FUBP3, GAS7, GATA1, GATA2, GATA3, GATA4, GATA6, GATAD1, GATAD2A, GBX2, GLI2, GLI3, GMEB1, GRLF1, GTF2IRD1, HAND1, HAND2, HBP1, HCFC1, HCLS1, HES1, HES2, HESX1, HEY1, HEY2, HEYL, HHEX, HIC1, HIF1A, HIF3A, HIRA, HIVEP1, HIVEP2, HIVEP3, HLF, HMBOX1, HMG20A, HMG20B, HMGA1, HMGA2, HMGB1, HMGB2, HMX1, HNF4A, HNF4G, HOXA1, HOXA10, HOXA11, HOXA2, HOXA3, HOXA4, HOXA5, HOXA6, HOXA7, HOXA9, HOXB13, HOXB2, HOXB5, HOXB6, HOXB7, HOXB8, HOXB9, HOXC10, HOXC11, HOXC4, HOXC5, HOXD1, HOXD10, HOXD11, HOXD12, HOXD13, HOXD3, HOXD4, HOXD9, HR, HSF1, HSF2, HSF4, IKZF1, IKZF4, IKZF5, ILF2, INSM1, IRF1, IRF2, IRF3, IRF4, IRF5, IRF6, IRF7, IRF8, IRX4, IRX5, ISL1, JARID1A, JARID1B, JUN, JUNB, JUND, KIAA0415, KLF1, KLF10, KLF11, KLF12, KLF13, KLF15, KLF2, KLF3, KLF4, KLF5, KLF6, KLF7, KLF9, KNTC1, L3MBTL, LASS2, LASS4, LASS6, LBX1, LHX2, LHX3, LHX5, LHX6, LMO1, LMO4, LMX1B, LYL1, LZTFL1, LZTR1, LZTS1, MAF, MAFB, MAFF, MAFG, MAFK, MAML3, MAX, MAZ, MBD1, MDS1, MECP2, MEF2A, MEF2B, MEF2C, MEF2D, MEIS1, MEIS2, MEIS3P1, MEOX1, MEOX2, MGA, MITF, MIZF, MLL, MLL4, MLLT10, MLX, MLXIP, MLXIPL, MNT, MSC, MSL3L1, MSRB2, MSX1, MSX2, MTA1, MTA2, MTF1, MXD1, MYB, MYBL1, MYBL2, MYC, MYCL1, MYCN, MYF6, MYNN, MYOD1, MYOG, MYST2, MYT1, MYT1L, MZF1, NANOG, NCOR1, NEUROD1, NEUROD2, NEUROG1, NEUROG3, NFAT5, NFATC1, NFATC3, NFATC4, NFE2, NFE2L1, NFE2L2, NFE2L3, NFIB, NFIC, NFIL3, NFIX, NFKB1, NFKB2, NFRKB, NFX1, NFYA, NFYB, NFYC, NHLH1, NHLH2, NKRF, NKX2-2, NKX2-5, NKX2-8, NKX3-1, NKX6-1, NOTCH2, NPAS2, NPAS3, NPAT, NR0B1, NR0B2, NR1D2, NR1H2, NR1H3, NR1H4, NR1I2, NR1I3, NR2C1, NR2C2, NR2E1, NR2E3, NR2F1, NR2F2, NR2F6, NR3C1, NR3C2, NR4A1, NR4A2, NR4A3, NR5A1, NR5A2, NR6A1, NRF1, NRL, OLIG2, ONECUT1, OVOL1, PAX1, PAX2, PAX3, PAX4, PAX6, PAX7, PAX8, PAX9, PBX1, PBX2, PBX3, PCGF2, PEG3, PFDN1, PGR, PHF2, PHOX2A, PHOX2B, PHTF1, PHTF2, PITX1, PITX3, PKNOX1, PKNOX2, PLAG1, PLAGL1, PLAGL2, PML, POU2F1, POU2F2, POU2F3, POU3F1, POU3F2, POU3F3, POU3F4, POU4F2, POU6F1, PPARA, PPARD, PPARG, PRDM1, PRDM16, PRDM2, PREB, PROP1, PRRX1, PRRX2, PTTG1, PURA, RARA, RARB, RARG, RAX, RB1, RBL2, REL, RELA, RELB, RERE, REST, REXO4, RFX1, RFX2, RFX3, RFX5, RFXANK, RFXAP, RLF, RNF4, RORA, RORB, RORC, RREB1, RUNX1, RUNX1T1, RUNX2, RUNX3, RXRA, RXRB, RXRG, SALL1, SALL2, SATB1, SATB2, SCAND1, SCAND2, SCML1, SCML2, SHOX, SHOX2, SIM2, SIX1, SIX2, SIX3, SIX5, SIX6, SLC26A3, SLC2A4RG, SLC30A9, SMAD1, SMAD2, SMAD3, SMAD4, SMAD5, SMAD6, SMAD7, SMAD9, SMARCA4, SNAI1, SNAI2, SNAPC2, SNAPC4, SNAPC5, SOLH, SOX1, SOX10, SOX11, SOX12, SOX13, SOX15, SOX17, SOX18, SOX2, SOX21, SOX3, SOX4, SOX5, SOX9, SP1, SP140, SP2, SP3, SP4, SPDEF, SPI1, SPIB, SREBF1, SREBF2, SRF, ST18, STAT1, STAT2, STAT3, STAT4, STAT5A, STAT5B, STAT6, SUPT4H1, SUPT6H, T, TADA2L, TADA3L, TAF1B, TAF5L, TAL1, TARDBP, TBR1, TBX1, TBX10, TBX19, TBX2, TBX21, TBX3, TBX4, TBX5, TBX6, TCEAL1, TCF12, TCF15, TCF21, TCF25, TCF3, TCF4, TCF7, TCF7L1, TCF7L2, TCFL5, TEAD1, TEAD3, TEAD4, TEF, TFAM, TFAP2A, TFAP2B, TFAP2C, TFAP4, TFCP2, TFCP2L1, TFDP1, TFDP2, TFDP3, TFE3, TFEB, TFEC, TGIF2, THRA, THRB, TLX1, TLX2, TNRC4, TP53, TP73, TRIM22, TRIM25, TRIM28, TRIM29, TRPS1, TSC22D1, TSC22D2, TSC22D3, TSC22D4, TULP4, TWIST1, UBN1, UBP1, USF2, VAV1, VAX2, VDR, VENTX, VEZF1, VPS72, VSX1, WT1, XBP1, YBX1, YEATS4, YWHAE, YWHAZ, YY1, YY2, ZBTB16, ZBTB17, ZBTB22, ZBTB25, ZBTB38, ZBTB43, ZBTB6, ZBTB7A, ZBTB7B, ZFHX4, ZFP36L1, ZFP36L2, ZFP37, ZFX, ZHX2, ZHX3, ZIC1, ZIM2, ZKSCAN1, ZMYM2, ZMYM3, ZMYM4, ZNF10, ZNF117, ZNF12, ZNF124, ZNF131, ZNF132, ZNF133, ZNF134, ZNF135, ZNF136, ZNF137, ZNF14, ZNF140, ZNF141, ZNF142, ZNF143, ZNF146, ZNF148, ZNF154, ZNF155, ZNF16, ZNF160, ZNF167, ZNF174, ZNF175, ZNF177, ZNF180, ZNF184, ZNF185, ZNF187, ZNF189, ZNF192, ZNF193, ZNF195, ZNF197, ZNF20, ZNF200, ZNF202, ZNF204, ZNF205, ZNF207, ZNF211, ZNF212, ZNF215, ZNF217, ZNF219, ZNF22, ZNF221, ZNF222, ZNF223, ZNF224, ZNF225, ZNF226, ZNF227, ZNF230, ZNF232, ZNF235, ZNF236, ZNF238, ZNF239, ZNF24, ZNF248, ZNF250, ZNF253, ZNF259, ZNF26, ZNF263, ZNF264, ZNF266, ZNF267, ZNF268, ZNF271, ZNF273, ZNF274, ZNF277, ZNF281, ZNF282, ZNF287, ZNF292, ZNF294, ZNF3, ZNF302, ZNF304, ZNF318, ZNF32, ZNF322B, ZNF323, ZNF324, ZNF329, ZNF330, ZNF331, ZNF334, ZNF335, ZNF337, ZNF33B, ZNF34, ZNF343, ZNF345, ZNF35, ZNF350, ZNF354A, ZNF358, ZNF365, ZNF384, ZNF394, ZNF395, ZNF407, ZNF408, ZNF409, ZNF410, ZNF415, ZNF423, ZNF426, ZNF43, ZNF430, ZNF432, ZNF434, ZNF44, ZNF440, ZNF443, ZNF444, ZNF446, ZNF45, ZNF451, ZNF460, ZNF467, ZNF468, ZNF471, ZNF473, ZNF480, ZNF484, ZNF493, ZNF500, ZNF506, ZNF507, ZNF510, ZNF516, ZNF528, ZNF529, ZNF532, ZNF536, ZNF544, ZNF549, ZNF550, ZNF551, ZNF552, ZNF556, ZNF557, ZNF562, ZNF573, ZNF574, ZNF576, ZNF580, ZNF586, ZNF587, ZNF589, ZNF592, ZNF593, ZNF606, ZNF609, ZNF611, ZNF614, ZNF623, ZNF629, ZNF638, ZNF643, ZNF646, ZNF652, ZNF654, ZNF665, ZNF667, ZNF668, ZNF669, ZNF671, ZNF672, ZNF673, ZNF675, ZNF682, ZNF688, ZNF692, ZNF695, ZNF696, ZNF7, ZNF701, ZNF706, ZNF710, ZNF711, ZNF74, ZNF79, ZNF8, ZNF81, ZNF83, ZNF84, ZNF85, ZNF91, ZNF93</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1440092841"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>24</day>
+			<hour>21</hour>
+			<minute>30</minute>
+			<second>39</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>928_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>209165_at, 201773_at, 201792_at, 201924_at, 227198_at, 225229_at, 226115_at, 202820_at, 208330_at, 211110_s_at, 205865_at, 230141_at, 218221_at, 202986_at, 209824_s_at, 224204_x_at, 209985_s_at, 229215_at, 222103_at, 212984_at, 202672_s_at, 200779_at, 204998_s_at, 203952_at, 244587_at, 221336_at, 204194_at, 227173_s_at, 210419_at, 205965_at, 208445_s_at, 203140_at, 203840_at, 206581_at, 202227_s_at, 203754_s_at, 204481_at, 209430_at, 205690_s_at, 216305_s_at, 238549_at, 208056_s_at, 202370_s_at, 225231_at, 1554283_at, 206430_at, 206387_at, 221340_at, 204039_at, 212501_at, 203973_s_at, 214523_at, 225527_at, 203341_at, 205101_at, 207144_s_at, 209357_at, 204980_at, 206158_s_at, 225053_at, 202163_s_at, 225572_at, 209432_s_at, 213059_at, 212345_s_at, 229228_at, 202160_at, 201989_s_at, 201200_at, 209967_s_at, 217510_at, 201160_s_at, 212863_x_at, 201220_x_at, 202521_at, 223679_at, 201763_s_at, 209782_s_at, 200934_at, 1554352_s_at, 215685_s_at, 208216_at, 213707_s_at, 221289_at, 203301_s_at, 209187_at, 203258_at, 208176_at, 204947_at, 228361_at, 203693_s_at, 38707_r_at, 221586_s_at, 203957_at, 219990_at, 218524_at, 209058_at, 227404_s_at, 205249_at, 206115_at, 207767_s_at, 212418_at, 203822_s_at, 210827_s_at, 31845_at, 220624_s_at, 203617_x_at, 221773_at, 230549_at, 215265_at, 221950_at, 220559_at, 207060_at, 201231_s_at, 202221_s_at, 200878_at, 230108_at, 203643_at, 213541_s_at, 205225_at, 210780_at, 1487_at, 223858_at, 207981_s_at, 224833_at, 201328_at, 221911_at, 1552423_at, 211603_s_at, 230102_at, 225764_at, 221680_s_at, 207914_x_at, 209214_s_at, 207260_at, 221086_s_at, 204236_at, 226184_at, 209189_at, 202768_at, 204420_at, 228188_at, 204667_at, 40284_at, 208513_at, 206307_s_at, 208500_x_at, 208239_at, 220621_at, 205935_at, 206377_at, 231407_s_at, 208006_at, 205906_at, 203734_at, 206015_s_at, 226224_at, 216572_at, 202580_x_at, 207683_at, 224837_at, 221334_s_at, 214093_s_at, 212824_at, 202191_s_at, 1555590_a_at, 209710_at, 209604_s_at, 205517_at, 210002_at, 208503_s_at, 222526_at, 210560_at, 228537_at, 227376_at, 235233_s_at, 229394_s_at, 218412_s_at, 220138_at, 220480_at, 209102_s_at, 202474_s_at, 202957_at, 203395_s_at, 231928_at, 211267_at, 44783_s_at, 219743_at, 226828_s_at, 204689_at, 230218_at, 200989_at, 1556069_s_at, 217427_s_at, 204512_at, 212642_s_at, 220042_x_at, 204754_at, 219269_at, 218152_at, 210719_s_at, 206074_s_at, 208025_s_at, 200680_x_at, 208808_s_at, 207353_s_at, 214832_at, 232271_at, 214639_s_at, 213147_at, 208493_at, 214457_at, 208604_s_at, 206289_at, 213844_at, 208557_at, 235753_at, 209905_at, 209844_at, 205453_at, 205601_s_at, 205366_s_at, 204779_s_at, 221278_at, 216417_x_at, 218959_at, 206745_at, 206739_at, 206858_s_at, 205975_s_at, 229400_at, 214604_at, 221411_at, 236681_at, 206601_s_at, 205522_at, 205604_at, 241355_at, 202344_at, 209657_s_at, 210977_s_at, 205039_s_at, 226761_at, 226680_at, 200052_s_at, 206502_s_at, 202531_at, 203275_at, 202621_at, 204562_at, 239412_at, 202597_at, 208436_s_at, 204057_at, 220225_at, 210239_at, 206104_at, 201466_s_at, 201473_at, 203752_s_at, 209913_x_at, 210504_at, 202393_s_at, 218486_at, 227261_at, 225390_s_at, 231015_at, 219371_s_at, 225133_at, 221841_s_at, 209211_at, 224606_at, 204334_at, 203543_s_at, 206316_s_at, 210306_at, 222212_s_at, 218922_s_at, 212442_s_at, 208380_at, 206140_at, 221670_s_at, 208333_at, 219884_at, 206718_at, 209205_s_at, 208487_at, 210044_s_at, 218437_s_at, 203412_at, 47550_at, 209348_s_at, 218559_s_at, 36711_at, 204970_s_at, 226206_at, 242794_at, 209332_s_at, 212064_x_at, 203353_s_at, 202616_s_at, 212535_at, 209199_s_at, 225641_at, 204069_at, 207480_s_at, 214077_x_at, 205619_s_at, 206201_s_at, 212945_s_at, 226066_at, 226981_at, 203419_at, 225992_at, 213708_s_at, 225157_at, 221163_s_at, 204206_at, 209928_s_at, 218773_s_at, 205932_s_at, 210319_x_at, 211783_s_at, 203444_s_at, 227150_at, 226275_at, 204798_at, 213906_at, 201710_at, 202431_s_at, 214058_at, 209757_s_at, 206372_at, 218926_at, 206657_s_at, 207282_s_at, 200049_at, 1556269_at, 1554633_a_at, 40569_at, 220184_at, 200854_at, 1556057_s_at, 1552953_a_at, 208497_x_at, 207965_at, 224984_at, 211105_s_at, 210555_s_at, 213345_at, 209930_s_at, 200758_s_at, 201146_at, 236471_at, 209289_at, 226895_at, 203574_at, 227400_at, 209239_at, 207535_s_at, 213028_at, 1553103_at, 228433_at, 218127_at, 202215_s_at, 214628_at, 214497_s_at, 205004_at, 206915_at, 206578_at, 207451_at, 209706_at, 221366_at, 202443_x_at, 39549_at, 220316_at, 209798_at, 206645_s_at, 206410_at, 209750_at, 218215_s_at, 203920_at, 206340_at, 207202_s_at, 1570188_at, 204791_at, 225477_s_at, 207443_at, 208388_at, 209505_at, 209120_at, 209262_s_at, 211671_s_at, 205259_at, 202340_x_at, 204621_s_at, 216979_at, 210333_at, 208337_s_at, 211402_x_at, 204651_at, 206596_s_at, 213824_at, 210745_at, 229396_at, 1553492_a_at, 206228_at, 207679_at, 211176_s_at, 205646_s_at, 208060_at, 213917_at, 207059_at, 212148_at, 202876_s_at, 204082_at, 203793_x_at, 209242_at, 201507_at, 228554_at, 212726_at, 214609_at, 207009_at, 205702_at, 209780_at, 208502_s_at, 208277_at, 221883_at, 219046_s_at, 205372_at, 209318_x_at, 202925_s_at, 235508_at, 227254_at, 229750_at, 207109_at, 208345_s_at, 207084_at, 208563_x_at, 207694_at, 206940_s_at, 207725_at, 205878_at, 207450_s_at, 226978_at, 37152_at, 208510_s_at, 228964_at, 232424_at, 203057_s_at, 217861_s_at, 211223_at, 226695_at, 219729_at, 203554_x_at, 204020_at, 203749_s_at, 205080_at, 204189_at, 208242_at, 203132_at, 212331_at, 206036_s_at, 201783_s_at, 205205_at, 200940_s_at, 204535_s_at, 218767_at, 226786_at, 226872_at, 238810_at, 202963_at, 202758_s_at, 229431_at, 204243_at, 212696_s_at, 226682_at, 242385_at, 228806_at, 203704_s_at, 209360_s_at, 205529_s_at, 232231_at, 204197_s_at, 202449_s_at, 209148_at, 205954_at, 206893_at, 213283_s_at, 203408_s_at, 213435_at, 218206_x_at, 222211_x_at, 218793_s_at, 206147_x_at, 207570_at, 210134_x_at, 208157_at, 228347_at, 206510_at, 206634_at, 229009_at, 207250_at, 206143_at, 218494_s_at, 202614_at, 210993_s_at, 203075_at, 218284_at, 202527_s_at, 225219_at, 207069_s_at, 204790_at, 227719_at, 208794_s_at, 219480_at, 213139_at, 204104_at, 215926_x_at, 213203_at, 204275_at, 208533_at, 209842_at, 204913_s_at, 204432_at, 209736_at, 206122_at, 219993_at, 219568_x_at, 213721_at, 208468_at, 1553802_a_at, 201417_at, 207336_at, 202935_s_at, 224754_at, 207777_s_at, 204367_at, 213168_at, 236265_at, 220192_x_at, 205312_at, 205861_at, 202308_at, 201247_at, 202401_s_at, 206135_at, 200887_s_at, 225636_at, 208991_at, 206118_at, 203010_at, 212549_at, 201331_s_at, 201483_s_at, 208420_x_at, 206524_at, 210537_s_at, 215273_s_at, 216941_s_at, 213654_at, 216928_at, 200020_at, 220025_at, 236926_at, 207689_at, 206838_at, 40560_at, 220684_at, 219682_s_at, 220634_at, 240715_at, 207684_at, 204045_at, 208986_at, 207306_at, 204931_at, 213311_s_at, 209153_s_at, 212386_at, 205255_x_at, 221016_s_at, 212761_at, 204849_at, 224955_at, 209454_s_at, 204281_at, 225840_at, 203177_x_at, 204653_at, 214451_at, 205286_at, 205688_at, 227637_at, 227642_at, 212330_at, 226157_at, 207385_at, 212457_at, 50221_at, 232383_at, 216262_s_at, 35846_at, 229657_at, 207179_at, 207410_s_at, 215045_at, 201746_at, 1554379_a_at, 238520_at, 213293_s_at, 224806_at, 200990_at, 202504_at, 222651_s_at, 215111_s_at, 204094_s_at, 208763_s_at, 1554501_at, 239742_at, 213943_at, 209088_s_at, 218082_s_at, 202152_x_at, 206219_s_at, 220443_s_at, 204254_s_at, 207376_at, 202171_at, 202261_at, 224074_at, 206067_s_at, 200670_at, 208628_s_at, 218911_at, 210996_s_at, 200639_s_at, 200047_s_at, 216531_at, 205883_at, 203602_s_at, 213081_at, 214482_at, 219221_at, 227991_x_at, 206098_at, 226554_at, 235145_at, 219779_at, 211962_s_at, 201368_at, 207068_at, 214678_x_at, 207246_at, 203556_at, 217367_s_at, 206373_at, 220653_at, 214670_at, 202778_s_at, 207559_s_at, 202049_s_at, 229848_at, 235408_x_at, 1554021_a_at, 206928_at, 1557384_at, 207402_at, 37254_at, 206182_at, 206142_at, 206240_s_at, 207394_at, 219854_at, 204523_at, 235580_at, 204474_at, 221873_at, 200050_at, 203318_s_at, 216677_at, 221201_s_at, 219548_at, 214715_x_at, 206314_at, 205252_at, 205497_at, 207417_s_at, 219495_s_at, 213452_at, 203585_at, 213218_at, 207513_s_at, 206579_at, 205181_at, 204234_s_at, 205855_at, 207338_s_at, 204327_s_at, 214823_at, 206416_at, 231848_x_at, 205437_at, 203985_at, 220214_at, 203739_at, 219314_s_at, 218005_at, 233848_x_at, 206175_x_at, 207128_s_at, 216983_s_at, 207125_at, 233461_x_at, 227689_at, 205791_x_at, 219123_at, 220350_at, 47571_at, 212774_at, 206261_at, 203247_s_at, 213269_at, 213858_at, 242919_at, 200054_at, 203707_at, 205917_at, 214686_at, 219540_at, 209989_at, 211009_s_at, 215239_x_at, 204937_s_at, 218645_at, 228785_at, 212892_at, 220055_at, 212368_at, 212684_at, 218490_s_at, 207753_at, 203521_s_at, 209538_at, 222016_s_at, 205182_s_at, 219765_at, 209814_at, 219228_at, 220022_at, 221890_at, 37860_at, 215022_x_at, 219801_at, 227986_at, 207236_at, 206096_at, 219266_at, 205427_at, 219379_x_at, 206448_at, 212369_at, 214714_at, 218149_s_at, 227768_at, 219224_x_at, 209944_at, 205514_at, 214761_at, 205964_at, 206695_x_at, 206829_x_at, 219848_s_at, 218937_at, 215359_x_at, 241731_x_at, 205928_at, 50376_at, 219900_s_at, 222028_at, 1556060_a_at, 216273_at, 214746_s_at, 214751_at, 232117_at, 213124_at, 222283_at, 214922_at, 1558486_at, 213639_s_at, 238493_at, 226327_at, 206053_at, 203604_at, 215019_x_at, 231940_at, 220617_s_at, 206403_at, 218735_s_at, 215315_at, 228099_at, 211721_s_at, 232328_at, 220709_at, 220444_at, 219163_at, 217627_at, 218762_at, 219088_s_at, 220748_s_at, 219711_at, 219981_x_at, 219968_at, 213389_at, 204175_at, 219635_at, 212618_at, 208137_x_at, 227045_at, 206188_at, 213196_at, 213775_x_at, 207219_at, 204876_at, 205594_at, 241348_at, 220760_x_at, 236635_at, 219047_s_at, 220215_at, 219849_at, 218068_s_at, 206583_at, 217547_x_at, 242915_at, 213527_s_at, 220661_s_at, 208273_at, 232162_at, 205089_at, 220242_x_at, 218059_at, 39891_at, 228988_at, 235997_at, 216486_x_at, 214901_at, 1561038_at, 221645_s_at, 204453_at, 206572_x_at, 206059_at, 208119_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1091224348"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>25</day>
+			<hour>7</hour>
+			<minute>9</minute>
+			<second>51</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>928_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>209165_at, 201773_at, 201792_at, 201924_at, 227198_at, 225229_at, 226115_at, 202820_at, 208330_at, 211110_s_at, 205865_at, 230141_at, 218221_at, 202986_at, 209824_s_at, 224204_x_at, 209985_s_at, 229215_at, 222103_at, 212984_at, 202672_s_at, 200779_at, 204998_s_at, 203952_at, 244587_at, 221336_at, 204194_at, 227173_s_at, 210419_at, 205965_at, 208445_s_at, 203140_at, 203840_at, 206581_at, 202227_s_at, 203754_s_at, 204481_at, 209430_at, 205690_s_at, 216305_s_at, 238549_at, 208056_s_at, 202370_s_at, 225231_at, 1554283_at, 206430_at, 206387_at, 221340_at, 204039_at, 212501_at, 203973_s_at, 214523_at, 225527_at, 203341_at, 205101_at, 207144_s_at, 209357_at, 204980_at, 206158_s_at, 225053_at, 202163_s_at, 225572_at, 209432_s_at, 213059_at, 212345_s_at, 229228_at, 202160_at, 201989_s_at, 201200_at, 209967_s_at, 217510_at, 201160_s_at, 212863_x_at, 201220_x_at, 202521_at, 223679_at, 201763_s_at, 209782_s_at, 200934_at, 1554352_s_at, 215685_s_at, 208216_at, 213707_s_at, 221289_at, 203301_s_at, 209187_at, 203258_at, 208176_at, 204947_at, 228361_at, 203693_s_at, 38707_r_at, 221586_s_at, 203957_at, 219990_at, 218524_at, 209058_at, 227404_s_at, 205249_at, 206115_at, 207767_s_at, 212418_at, 203822_s_at, 210827_s_at, 31845_at, 220624_s_at, 203617_x_at, 221773_at, 230549_at, 215265_at, 221950_at, 220559_at, 207060_at, 201231_s_at, 202221_s_at, 200878_at, 230108_at, 203643_at, 213541_s_at, 205225_at, 210780_at, 1487_at, 223858_at, 207981_s_at, 224833_at, 201328_at, 221911_at, 1552423_at, 211603_s_at, 230102_at, 225764_at, 221680_s_at, 207914_x_at, 209214_s_at, 207260_at, 221086_s_at, 204236_at, 226184_at, 209189_at, 202768_at, 204420_at, 228188_at, 204667_at, 40284_at, 208513_at, 206307_s_at, 208500_x_at, 208239_at, 220621_at, 205935_at, 206377_at, 231407_s_at, 208006_at, 205906_at, 203734_at, 206015_s_at, 226224_at, 216572_at, 202580_x_at, 207683_at, 224837_at, 221334_s_at, 214093_s_at, 212824_at, 202191_s_at, 1555590_a_at, 209710_at, 209604_s_at, 205517_at, 210002_at, 208503_s_at, 222526_at, 210560_at, 228537_at, 227376_at, 235233_s_at, 229394_s_at, 218412_s_at, 220138_at, 220480_at, 209102_s_at, 202474_s_at, 202957_at, 203395_s_at, 231928_at, 211267_at, 44783_s_at, 219743_at, 226828_s_at, 204689_at, 230218_at, 200989_at, 1556069_s_at, 217427_s_at, 204512_at, 212642_s_at, 220042_x_at, 204754_at, 219269_at, 218152_at, 210719_s_at, 206074_s_at, 208025_s_at, 200680_x_at, 208808_s_at, 207353_s_at, 214832_at, 232271_at, 214639_s_at, 213147_at, 208493_at, 214457_at, 208604_s_at, 206289_at, 213844_at, 208557_at, 235753_at, 209905_at, 209844_at, 205453_at, 205601_s_at, 205366_s_at, 204779_s_at, 221278_at, 216417_x_at, 218959_at, 206745_at, 206739_at, 206858_s_at, 205975_s_at, 229400_at, 214604_at, 221411_at, 236681_at, 206601_s_at, 205522_at, 205604_at, 241355_at, 202344_at, 209657_s_at, 210977_s_at, 205039_s_at, 226761_at, 226680_at, 200052_s_at, 206502_s_at, 202531_at, 203275_at, 202621_at, 204562_at, 239412_at, 202597_at, 208436_s_at, 204057_at, 220225_at, 210239_at, 206104_at, 201466_s_at, 201473_at, 203752_s_at, 209913_x_at, 210504_at, 202393_s_at, 218486_at, 227261_at, 225390_s_at, 231015_at, 219371_s_at, 225133_at, 221841_s_at, 209211_at, 224606_at, 204334_at, 203543_s_at, 206316_s_at, 210306_at, 222212_s_at, 218922_s_at, 212442_s_at, 208380_at, 206140_at, 221670_s_at, 208333_at, 219884_at, 206718_at, 209205_s_at, 208487_at, 210044_s_at, 218437_s_at, 203412_at, 47550_at, 209348_s_at, 218559_s_at, 36711_at, 204970_s_at, 226206_at, 242794_at, 209332_s_at, 212064_x_at, 203353_s_at, 202616_s_at, 212535_at, 209199_s_at, 225641_at, 204069_at, 207480_s_at, 214077_x_at, 205619_s_at, 206201_s_at, 212945_s_at, 226066_at, 226981_at, 203419_at, 225992_at, 213708_s_at, 225157_at, 221163_s_at, 204206_at, 209928_s_at, 218773_s_at, 205932_s_at, 210319_x_at, 211783_s_at, 203444_s_at, 227150_at, 226275_at, 204798_at, 213906_at, 201710_at, 202431_s_at, 214058_at, 209757_s_at, 206372_at, 218926_at, 206657_s_at, 207282_s_at, 200049_at, 1556269_at, 1554633_a_at, 40569_at, 220184_at, 200854_at, 1556057_s_at, 1552953_a_at, 208497_x_at, 207965_at, 224984_at, 211105_s_at, 210555_s_at, 213345_at, 209930_s_at, 200758_s_at, 201146_at, 236471_at, 209289_at, 226895_at, 203574_at, 227400_at, 209239_at, 207535_s_at, 213028_at, 1553103_at, 228433_at, 218127_at, 202215_s_at, 214628_at, 214497_s_at, 205004_at, 206915_at, 206578_at, 207451_at, 209706_at, 221366_at, 202443_x_at, 39549_at, 220316_at, 209798_at, 206645_s_at, 206410_at, 209750_at, 218215_s_at, 203920_at, 206340_at, 207202_s_at, 1570188_at, 204791_at, 225477_s_at, 207443_at, 208388_at, 209505_at, 209120_at, 209262_s_at, 211671_s_at, 205259_at, 202340_x_at, 204621_s_at, 216979_at, 210333_at, 208337_s_at, 211402_x_at, 204651_at, 206596_s_at, 213824_at, 210745_at, 229396_at, 1553492_a_at, 206228_at, 207679_at, 211176_s_at, 205646_s_at, 208060_at, 213917_at, 207059_at, 212148_at, 202876_s_at, 204082_at, 203793_x_at, 209242_at, 201507_at, 228554_at, 212726_at, 214609_at, 207009_at, 205702_at, 209780_at, 208502_s_at, 208277_at, 221883_at, 219046_s_at, 205372_at, 209318_x_at, 202925_s_at, 235508_at, 227254_at, 229750_at, 207109_at, 208345_s_at, 207084_at, 208563_x_at, 207694_at, 206940_s_at, 207725_at, 205878_at, 207450_s_at, 226978_at, 37152_at, 208510_s_at, 228964_at, 232424_at, 203057_s_at, 217861_s_at, 211223_at, 226695_at, 219729_at, 203554_x_at, 204020_at, 203749_s_at, 205080_at, 204189_at, 208242_at, 203132_at, 212331_at, 206036_s_at, 201783_s_at, 205205_at, 200940_s_at, 204535_s_at, 218767_at, 226786_at, 226872_at, 238810_at, 202963_at, 202758_s_at, 229431_at, 204243_at, 212696_s_at, 226682_at, 242385_at, 228806_at, 203704_s_at, 209360_s_at, 205529_s_at, 232231_at, 204197_s_at, 202449_s_at, 209148_at, 205954_at, 206893_at, 213283_s_at, 203408_s_at, 213435_at, 218206_x_at, 222211_x_at, 218793_s_at, 206147_x_at, 207570_at, 210134_x_at, 208157_at, 228347_at, 206510_at, 206634_at, 229009_at, 207250_at, 206143_at, 218494_s_at, 202614_at, 210993_s_at, 203075_at, 218284_at, 202527_s_at, 225219_at, 207069_s_at, 204790_at, 227719_at, 208794_s_at, 219480_at, 213139_at, 204104_at, 215926_x_at, 213203_at, 204275_at, 208533_at, 209842_at, 204913_s_at, 204432_at, 209736_at, 206122_at, 219993_at, 219568_x_at, 213721_at, 208468_at, 1553802_a_at, 201417_at, 207336_at, 202935_s_at, 224754_at, 207777_s_at, 204367_at, 213168_at, 236265_at, 220192_x_at, 205312_at, 205861_at, 202308_at, 201247_at, 202401_s_at, 206135_at, 200887_s_at, 225636_at, 208991_at, 206118_at, 203010_at, 212549_at, 201331_s_at, 201483_s_at, 208420_x_at, 206524_at, 210537_s_at, 215273_s_at, 216941_s_at, 213654_at, 216928_at, 200020_at, 220025_at, 236926_at, 207689_at, 206838_at, 40560_at, 220684_at, 219682_s_at, 220634_at, 240715_at, 207684_at, 204045_at, 208986_at, 207306_at, 204931_at, 213311_s_at, 209153_s_at, 212386_at, 205255_x_at, 221016_s_at, 212761_at, 204849_at, 224955_at, 209454_s_at, 204281_at, 225840_at, 203177_x_at, 204653_at, 214451_at, 205286_at, 205688_at, 227637_at, 227642_at, 212330_at, 226157_at, 207385_at, 212457_at, 50221_at, 232383_at, 216262_s_at, 35846_at, 229657_at, 207179_at, 207410_s_at, 215045_at, 201746_at, 1554379_a_at, 238520_at, 213293_s_at, 224806_at, 200990_at, 202504_at, 222651_s_at, 215111_s_at, 204094_s_at, 208763_s_at, 1554501_at, 239742_at, 213943_at, 209088_s_at, 218082_s_at, 202152_x_at, 206219_s_at, 220443_s_at, 204254_s_at, 207376_at, 202171_at, 202261_at, 224074_at, 206067_s_at, 200670_at, 208628_s_at, 218911_at, 210996_s_at, 200639_s_at, 200047_s_at, 216531_at, 205883_at, 203602_s_at, 213081_at, 214482_at, 219221_at, 227991_x_at, 206098_at, 226554_at, 235145_at, 219779_at, 211962_s_at, 201368_at, 207068_at, 214678_x_at, 207246_at, 203556_at, 217367_s_at, 206373_at, 220653_at, 214670_at, 202778_s_at, 207559_s_at, 202049_s_at, 229848_at, 235408_x_at, 1554021_a_at, 206928_at, 1557384_at, 207402_at, 37254_at, 206182_at, 206142_at, 206240_s_at, 207394_at, 219854_at, 204523_at, 235580_at, 204474_at, 221873_at, 200050_at, 203318_s_at, 216677_at, 221201_s_at, 219548_at, 214715_x_at, 206314_at, 205252_at, 205497_at, 207417_s_at, 219495_s_at, 213452_at, 203585_at, 213218_at, 207513_s_at, 206579_at, 205181_at, 204234_s_at, 205855_at, 207338_s_at, 204327_s_at, 214823_at, 206416_at, 231848_x_at, 205437_at, 203985_at, 220214_at, 203739_at, 219314_s_at, 218005_at, 233848_x_at, 206175_x_at, 207128_s_at, 216983_s_at, 207125_at, 233461_x_at, 227689_at, 205791_x_at, 219123_at, 220350_at, 47571_at, 212774_at, 206261_at, 203247_s_at, 213269_at, 213858_at, 242919_at, 200054_at, 203707_at, 205917_at, 214686_at, 219540_at, 209989_at, 211009_s_at, 215239_x_at, 204937_s_at, 218645_at, 228785_at, 212892_at, 220055_at, 212368_at, 212684_at, 218490_s_at, 207753_at, 203521_s_at, 209538_at, 222016_s_at, 205182_s_at, 219765_at, 209814_at, 219228_at, 220022_at, 221890_at, 37860_at, 215022_x_at, 219801_at, 227986_at, 207236_at, 206096_at, 219266_at, 205427_at, 219379_x_at, 206448_at, 212369_at, 214714_at, 218149_s_at, 227768_at, 219224_x_at, 209944_at, 205514_at, 214761_at, 205964_at, 206695_x_at, 206829_x_at, 219848_s_at, 218937_at, 215359_x_at, 241731_x_at, 205928_at, 50376_at, 219900_s_at, 222028_at, 1556060_a_at, 216273_at, 214746_s_at, 214751_at, 232117_at, 213124_at, 222283_at, 214922_at, 1558486_at, 213639_s_at, 238493_at, 226327_at, 206053_at, 203604_at, 215019_x_at, 231940_at, 220617_s_at, 206403_at, 218735_s_at, 215315_at, 228099_at, 211721_s_at, 232328_at, 220709_at, 220444_at, 219163_at, 217627_at, 218762_at, 219088_s_at, 220748_s_at, 219711_at, 219981_x_at, 219968_at, 213389_at, 204175_at, 219635_at, 212618_at, 208137_x_at, 227045_at, 206188_at, 213196_at, 213775_x_at, 207219_at, 204876_at, 205594_at, 241348_at, 220760_x_at, 236635_at, 219047_s_at, 220215_at, 219849_at, 218068_s_at, 206583_at, 217547_x_at, 242915_at, 213527_s_at, 220661_s_at, 208273_at, 232162_at, 205089_at, 220242_x_at, 218059_at, 39891_at, 228988_at, 235997_at, 216486_x_at, 214901_at, 1561038_at, 221645_s_at, 204453_at, 206572_x_at, 206059_at, 208119_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.65</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="MRA Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="398374855"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>25</day>
+			<hour>9</hour>
+			<minute>19</minute>
+			<second>18</second>
+		</time>
+		<parameters count="14">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>TF</key>
+				<value>209165_at, 201773_at, 201792_at, 201924_at, 227198_at, 225229_at, 226115_at, 202820_at, 208330_at, 211110_s_at, 205865_at, 230141_at, 218221_at, 202986_at, 209824_s_at, 224204_x_at, 209985_s_at, 229215_at, 222103_at, 212984_at, 202672_s_at, 200779_at, 204998_s_at, 203952_at, 244587_at, 221336_at, 204194_at, 227173_s_at, 210419_at, 205965_at, 208445_s_at, 203140_at, 203840_at, 206581_at, 202227_s_at, 203754_s_at, 204481_at, 209430_at, 205690_s_at, 216305_s_at, 238549_at, 208056_s_at, 202370_s_at, 225231_at, 1554283_at, 206430_at, 206387_at, 221340_at, 204039_at, 212501_at, 203973_s_at, 214523_at, 225527_at, 203341_at, 205101_at, 207144_s_at, 209357_at, 204980_at, 206158_s_at, 225053_at, 202163_s_at, 225572_at, 209432_s_at, 213059_at, 212345_s_at, 229228_at, 202160_at, 201989_s_at, 201200_at, 209967_s_at, 217510_at, 201160_s_at, 212863_x_at, 201220_x_at, 202521_at, 223679_at, 201763_s_at, 209782_s_at, 200934_at, 1554352_s_at, 215685_s_at, 208216_at, 213707_s_at, 221289_at, 203301_s_at, 209187_at, 203258_at, 208176_at, 204947_at, 228361_at, 203693_s_at, 38707_r_at, 221586_s_at, 203957_at, 219990_at, 218524_at, 209058_at, 227404_s_at, 205249_at, 206115_at, 207767_s_at, 212418_at, 203822_s_at, 210827_s_at, 31845_at, 220624_s_at, 203617_x_at, 221773_at, 230549_at, 215265_at, 221950_at, 220559_at, 207060_at, 201231_s_at, 202221_s_at, 200878_at, 230108_at, 203643_at, 213541_s_at, 205225_at, 210780_at, 1487_at, 223858_at, 207981_s_at, 224833_at, 201328_at, 221911_at, 1552423_at, 211603_s_at, 230102_at, 225764_at, 221680_s_at, 207914_x_at, 209214_s_at, 207260_at, 221086_s_at, 204236_at, 226184_at, 209189_at, 202768_at, 204420_at, 228188_at, 204667_at, 40284_at, 208513_at, 206307_s_at, 208500_x_at, 208239_at, 220621_at, 205935_at, 206377_at, 231407_s_at, 208006_at, 205906_at, 203734_at, 206015_s_at, 226224_at, 216572_at, 202580_x_at, 207683_at, 224837_at, 221334_s_at, 214093_s_at, 212824_at, 202191_s_at, 1555590_a_at, 209710_at, 209604_s_at, 205517_at, 210002_at, 208503_s_at, 222526_at, 210560_at, 228537_at, 227376_at, 235233_s_at, 229394_s_at, 218412_s_at, 220138_at, 220480_at, 209102_s_at, 202474_s_at, 202957_at, 203395_s_at, 231928_at, 211267_at, 44783_s_at, 219743_at, 226828_s_at, 204689_at, 230218_at, 200989_at, 1556069_s_at, 217427_s_at, 204512_at, 212642_s_at, 220042_x_at, 204754_at, 219269_at, 218152_at, 210719_s_at, 206074_s_at, 208025_s_at, 200680_x_at, 208808_s_at, 207353_s_at, 214832_at, 232271_at, 214639_s_at, 213147_at, 208493_at, 214457_at, 208604_s_at, 206289_at, 213844_at, 208557_at, 235753_at, 209905_at, 209844_at, 205453_at, 205601_s_at, 205366_s_at, 204779_s_at, 221278_at, 216417_x_at, 218959_at, 206745_at, 206739_at, 206858_s_at, 205975_s_at, 229400_at, 214604_at, 221411_at, 236681_at, 206601_s_at, 205522_at, 205604_at, 241355_at, 202344_at, 209657_s_at, 210977_s_at, 205039_s_at, 226761_at, 226680_at, 200052_s_at, 206502_s_at, 202531_at, 203275_at, 202621_at, 204562_at, 239412_at, 202597_at, 208436_s_at, 204057_at, 220225_at, 210239_at, 206104_at, 201466_s_at, 201473_at, 203752_s_at, 209913_x_at, 210504_at, 202393_s_at, 218486_at, 227261_at, 225390_s_at, 231015_at, 219371_s_at, 225133_at, 221841_s_at, 209211_at, 224606_at, 204334_at, 203543_s_at, 206316_s_at, 210306_at, 222212_s_at, 218922_s_at, 212442_s_at, 208380_at, 206140_at, 221670_s_at, 208333_at, 219884_at, 206718_at, 209205_s_at, 208487_at, 210044_s_at, 218437_s_at, 203412_at, 47550_at, 209348_s_at, 218559_s_at, 36711_at, 204970_s_at, 226206_at, 242794_at, 209332_s_at, 212064_x_at, 203353_s_at, 202616_s_at, 212535_at, 209199_s_at, 225641_at, 204069_at, 207480_s_at, 214077_x_at, 205619_s_at, 206201_s_at, 212945_s_at, 226066_at, 226981_at, 203419_at, 225992_at, 213708_s_at, 225157_at, 221163_s_at, 204206_at, 209928_s_at, 218773_s_at, 205932_s_at, 210319_x_at, 211783_s_at, 203444_s_at, 227150_at, 226275_at, 204798_at, 213906_at, 201710_at, 202431_s_at, 214058_at, 209757_s_at, 206372_at, 218926_at, 206657_s_at, 207282_s_at, 200049_at, 1556269_at, 1554633_a_at, 40569_at, 220184_at, 200854_at, 1556057_s_at, 1552953_a_at, 208497_x_at, 207965_at, 224984_at, 211105_s_at, 210555_s_at, 213345_at, 209930_s_at, 200758_s_at, 201146_at, 236471_at, 209289_at, 226895_at, 203574_at, 227400_at, 209239_at, 207535_s_at, 213028_at, 1553103_at, 228433_at, 218127_at, 202215_s_at, 214628_at, 214497_s_at, 205004_at, 206915_at, 206578_at, 207451_at, 209706_at, 221366_at, 202443_x_at, 39549_at, 220316_at, 209798_at, 206645_s_at, 206410_at, 209750_at, 218215_s_at, 203920_at, 206340_at, 207202_s_at, 1570188_at, 204791_at, 225477_s_at, 207443_at, 208388_at, 209505_at, 209120_at, 209262_s_at, 211671_s_at, 205259_at, 202340_x_at, 204621_s_at, 216979_at, 210333_at, 208337_s_at, 211402_x_at, 204651_at, 206596_s_at, 213824_at, 210745_at, 229396_at, 1553492_a_at, 206228_at, 207679_at, 211176_s_at, 205646_s_at, 208060_at, 213917_at, 207059_at, 212148_at, 202876_s_at, 204082_at, 203793_x_at, 209242_at, 201507_at, 228554_at, 212726_at, 214609_at, 207009_at, 205702_at, 209780_at, 208502_s_at, 208277_at, 221883_at, 219046_s_at, 205372_at, 209318_x_at, 202925_s_at, 235508_at, 227254_at, 229750_at, 207109_at, 208345_s_at, 207084_at, 208563_x_at, 207694_at, 206940_s_at, 207725_at, 205878_at, 207450_s_at, 226978_at, 37152_at, 208510_s_at, 228964_at, 232424_at, 203057_s_at, 217861_s_at, 211223_at, 226695_at, 219729_at, 203554_x_at, 204020_at, 203749_s_at, 205080_at, 204189_at, 208242_at, 203132_at, 212331_at, 206036_s_at, 201783_s_at, 205205_at, 200940_s_at, 204535_s_at, 218767_at, 226786_at, 226872_at, 238810_at, 202963_at, 202758_s_at, 229431_at, 204243_at, 212696_s_at, 226682_at, 242385_at, 228806_at, 203704_s_at, 209360_s_at, 205529_s_at, 232231_at, 204197_s_at, 202449_s_at, 209148_at, 205954_at, 206893_at, 213283_s_at, 203408_s_at, 213435_at, 218206_x_at, 222211_x_at, 218793_s_at, 206147_x_at, 207570_at, 210134_x_at, 208157_at, 228347_at, 206510_at, 206634_at, 229009_at, 207250_at, 206143_at, 218494_s_at, 202614_at, 210993_s_at, 203075_at, 218284_at, 202527_s_at, 225219_at, 207069_s_at, 204790_at, 227719_at, 208794_s_at, 219480_at, 213139_at, 204104_at, 215926_x_at, 213203_at, 204275_at, 208533_at, 209842_at, 204913_s_at, 204432_at, 209736_at, 206122_at, 219993_at, 219568_x_at, 213721_at, 208468_at, 1553802_a_at, 201417_at, 207336_at, 202935_s_at, 224754_at, 207777_s_at, 204367_at, 213168_at, 236265_at, 220192_x_at, 205312_at, 205861_at, 202308_at, 201247_at, 202401_s_at, 206135_at, 200887_s_at, 225636_at, 208991_at, 206118_at, 203010_at, 212549_at, 201331_s_at, 201483_s_at, 208420_x_at, 206524_at, 210537_s_at, 215273_s_at, 216941_s_at, 213654_at, 216928_at, 200020_at, 220025_at, 236926_at, 207689_at, 206838_at, 40560_at, 220684_at, 219682_s_at, 220634_at, 240715_at, 207684_at, 204045_at, 208986_at, 207306_at, 204931_at, 213311_s_at, 209153_s_at, 212386_at, 205255_x_at, 221016_s_at, 212761_at, 204849_at, 224955_at, 209454_s_at, 204281_at, 225840_at, 203177_x_at, 204653_at, 214451_at, 205286_at, 205688_at, 227637_at, 227642_at, 212330_at, 226157_at, 207385_at, 212457_at, 50221_at, 232383_at, 216262_s_at, 35846_at, 229657_at, 207179_at, 207410_s_at, 215045_at, 201746_at, 1554379_a_at, 238520_at	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="MRA Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1842106971"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>25</day>
+			<hour>9</hour>
+			<minute>29</minute>
+			<second>29</second>
+		</time>
+		<parameters count="14">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>TF</key>
+				<value>209165_at, 201773_at, 201792_at, 201924_at, 227198_at, 225229_at, 226115_at, 202820_at, 208330_at, 211110_s_at, 205865_at, 230141_at, 218221_at, 202986_at, 209824_s_at, 224204_x_at, 209985_s_at, 229215_at, 222103_at, 212984_at, 202672_s_at, 200779_at, 204998_s_at, 203952_at, 244587_at, 221336_at, 204194_at, 227173_s_at, 210419_at, 205965_at, 208445_s_at, 203140_at, 203840_at, 206581_at, 202227_s_at, 203754_s_at, 204481_at, 209430_at, 205690_s_at, 216305_s_at, 238549_at, 208056_s_at, 202370_s_at, 225231_at, 1554283_at, 206430_at, 206387_at, 221340_at, 204039_at, 212501_at, 203973_s_at, 214523_at, 225527_at, 203341_at, 205101_at, 207144_s_at, 209357_at, 204980_at, 206158_s_at, 225053_at, 202163_s_at, 225572_at, 209432_s_at, 213059_at, 212345_s_at, 229228_at, 202160_at, 201989_s_at, 201200_at, 209967_s_at, 217510_at, 201160_s_at, 212863_x_at, 201220_x_at, 202521_at, 223679_at, 201763_s_at, 209782_s_at, 200934_at, 1554352_s_at, 215685_s_at, 208216_at, 213707_s_at, 221289_at, 203301_s_at, 209187_at, 203258_at, 208176_at, 204947_at, 228361_at, 203693_s_at, 38707_r_at, 221586_s_at, 203957_at, 219990_at, 218524_at, 209058_at, 227404_s_at, 205249_at, 206115_at, 207767_s_at, 212418_at, 203822_s_at, 210827_s_at, 31845_at, 220624_s_at, 203617_x_at, 221773_at, 230549_at, 215265_at, 221950_at, 220559_at, 207060_at, 201231_s_at, 202221_s_at, 200878_at, 230108_at, 203643_at, 213541_s_at, 205225_at, 210780_at, 1487_at, 223858_at, 207981_s_at, 224833_at, 201328_at, 221911_at, 1552423_at, 211603_s_at, 230102_at, 225764_at, 221680_s_at, 207914_x_at, 209214_s_at, 207260_at, 221086_s_at, 204236_at, 226184_at, 209189_at, 202768_at, 204420_at, 228188_at, 204667_at, 40284_at, 208513_at, 206307_s_at, 208500_x_at, 208239_at, 220621_at, 205935_at, 206377_at, 231407_s_at, 208006_at, 205906_at, 203734_at, 206015_s_at, 226224_at, 216572_at, 202580_x_at, 207683_at, 224837_at, 221334_s_at, 214093_s_at, 212824_at, 202191_s_at, 1555590_a_at, 209710_at, 209604_s_at, 205517_at, 210002_at, 208503_s_at, 222526_at, 210560_at, 228537_at, 227376_at, 235233_s_at, 229394_s_at, 218412_s_at, 220138_at, 220480_at, 209102_s_at, 202474_s_at, 202957_at, 203395_s_at, 231928_at, 211267_at, 44783_s_at, 219743_at, 226828_s_at, 204689_at, 230218_at, 200989_at, 1556069_s_at, 217427_s_at, 204512_at, 212642_s_at, 220042_x_at, 204754_at, 219269_at, 218152_at, 210719_s_at, 206074_s_at, 208025_s_at, 200680_x_at, 208808_s_at, 207353_s_at, 214832_at, 232271_at, 214639_s_at, 213147_at, 208493_at, 214457_at, 208604_s_at, 206289_at, 213844_at, 208557_at, 235753_at, 209905_at, 209844_at, 205453_at, 205601_s_at, 205366_s_at, 204779_s_at, 221278_at, 216417_x_at, 218959_at, 206745_at, 206739_at, 206858_s_at, 205975_s_at, 229400_at, 214604_at, 221411_at, 236681_at, 206601_s_at, 205522_at, 205604_at, 241355_at, 202344_at, 209657_s_at, 210977_s_at, 205039_s_at, 226761_at, 226680_at, 200052_s_at, 206502_s_at, 202531_at, 203275_at, 202621_at, 204562_at, 239412_at, 202597_at, 208436_s_at, 204057_at, 220225_at, 210239_at, 206104_at, 201466_s_at, 201473_at, 203752_s_at, 209913_x_at, 210504_at, 202393_s_at, 218486_at, 227261_at, 225390_s_at, 231015_at, 219371_s_at, 225133_at, 221841_s_at, 209211_at, 224606_at, 204334_at, 203543_s_at, 206316_s_at, 210306_at, 222212_s_at, 218922_s_at, 212442_s_at, 208380_at, 206140_at, 221670_s_at, 208333_at, 219884_at, 206718_at, 209205_s_at, 208487_at, 210044_s_at, 218437_s_at, 203412_at, 47550_at, 209348_s_at, 218559_s_at, 36711_at, 204970_s_at, 226206_at, 242794_at, 209332_s_at, 212064_x_at, 203353_s_at, 202616_s_at, 212535_at, 209199_s_at, 225641_at, 204069_at, 207480_s_at, 214077_x_at, 205619_s_at, 206201_s_at, 212945_s_at, 226066_at, 226981_at, 203419_at, 225992_at, 213708_s_at, 225157_at, 221163_s_at, 204206_at, 209928_s_at, 218773_s_at, 205932_s_at, 210319_x_at, 211783_s_at, 203444_s_at, 227150_at, 226275_at, 204798_at, 213906_at, 201710_at, 202431_s_at, 214058_at, 209757_s_at, 206372_at, 218926_at, 206657_s_at, 207282_s_at, 200049_at, 1556269_at, 1554633_a_at, 40569_at, 220184_at, 200854_at, 1556057_s_at, 1552953_a_at, 208497_x_at, 207965_at, 224984_at, 211105_s_at, 210555_s_at, 213345_at, 209930_s_at, 200758_s_at, 201146_at, 236471_at, 209289_at, 226895_at, 203574_at, 227400_at, 209239_at, 207535_s_at, 213028_at, 1553103_at, 228433_at, 218127_at, 202215_s_at, 214628_at, 214497_s_at, 205004_at, 206915_at, 206578_at, 207451_at, 209706_at, 221366_at, 202443_x_at, 39549_at, 220316_at, 209798_at, 206645_s_at, 206410_at, 209750_at, 218215_s_at, 203920_at, 206340_at, 207202_s_at, 1570188_at, 204791_at, 225477_s_at, 207443_at, 208388_at, 209505_at, 209120_at, 209262_s_at, 211671_s_at, 205259_at, 202340_x_at, 204621_s_at, 216979_at, 210333_at, 208337_s_at, 211402_x_at, 204651_at, 206596_s_at, 213824_at, 210745_at, 229396_at, 1553492_a_at, 206228_at, 207679_at, 211176_s_at, 205646_s_at, 208060_at, 213917_at, 207059_at, 212148_at, 202876_s_at, 204082_at, 203793_x_at, 209242_at, 201507_at, 228554_at, 212726_at, 214609_at, 207009_at, 205702_at, 209780_at, 208502_s_at, 208277_at, 221883_at, 219046_s_at, 205372_at, 209318_x_at, 202925_s_at, 235508_at, 227254_at, 229750_at, 207109_at, 208345_s_at, 207084_at, 208563_x_at, 207694_at, 206940_s_at, 207725_at, 205878_at, 207450_s_at, 226978_at, 37152_at, 208510_s_at, 228964_at, 232424_at, 203057_s_at, 217861_s_at, 211223_at, 226695_at, 219729_at, 203554_x_at, 204020_at, 203749_s_at, 205080_at, 204189_at, 208242_at, 203132_at, 212331_at, 206036_s_at, 201783_s_at, 205205_at, 200940_s_at, 204535_s_at, 218767_at, 226786_at, 226872_at, 238810_at, 202963_at, 202758_s_at, 229431_at, 204243_at, 212696_s_at, 226682_at, 242385_at, 228806_at, 203704_s_at, 209360_s_at, 205529_s_at, 232231_at, 204197_s_at, 202449_s_at, 209148_at, 205954_at, 206893_at, 213283_s_at, 203408_s_at, 213435_at, 218206_x_at, 222211_x_at, 218793_s_at, 206147_x_at, 207570_at, 210134_x_at, 208157_at, 228347_at, 206510_at, 206634_at, 229009_at, 207250_at, 206143_at, 218494_s_at, 202614_at, 210993_s_at, 203075_at, 218284_at, 202527_s_at, 225219_at, 207069_s_at, 204790_at, 227719_at, 208794_s_at, 219480_at, 213139_at, 204104_at, 215926_x_at, 213203_at, 204275_at, 208533_at, 209842_at, 204913_s_at, 204432_at, 209736_at, 206122_at, 219993_at, 219568_x_at, 213721_at, 208468_at, 1553802_a_at, 201417_at, 207336_at, 202935_s_at, 224754_at, 207777_s_at, 204367_at, 213168_at, 236265_at, 220192_x_at, 205312_at, 205861_at, 202308_at, 201247_at, 202401_s_at, 206135_at, 200887_s_at, 225636_at, 208991_at, 206118_at, 203010_at, 212549_at, 201331_s_at, 201483_s_at, 208420_x_at, 206524_at, 210537_s_at, 215273_s_at, 216941_s_at, 213654_at, 216928_at, 200020_at, 220025_at, 236926_at, 207689_at, 206838_at, 40560_at, 220684_at, 219682_s_at, 220634_at, 240715_at, 207684_at, 204045_at, 208986_at, 207306_at, 204931_at, 213311_s_at, 209153_s_at, 212386_at, 205255_x_at, 221016_s_at, 212761_at, 204849_at, 224955_at, 209454_s_at, 204281_at, 225840_at, 203177_x_at, 204653_at, 214451_at, 205286_at, 205688_at, 227637_at, 227642_at, 212330_at, 226157_at, 207385_at, 212457_at, 50221_at, 232383_at, 216262_s_at, 35846_at, 229657_at, 207179_at, 207410_s_at, 215045_at, 201746_at, 1554379_a_at, 238520_a	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1307755239"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>25</day>
+			<hour>10</hour>
+			<minute>46</minute>
+			<second>56</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>928_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>209165_at, 201773_at, 201792_at, 201924_at, 227198_at, 225229_at, 226115_at, 202820_at, 208330_at, 211110_s_at, 205865_at, 230141_at, 218221_at, 202986_at, 209824_s_at, 224204_x_at, 209985_s_at, 229215_at, 222103_at, 212984_at, 202672_s_at, 200779_at, 204998_s_at, 203952_at, 244587_at, 221336_at, 204194_at, 227173_s_at, 210419_at, 205965_at, 208445_s_at, 203140_at, 203840_at, 206581_at, 202227_s_at, 203754_s_at, 204481_at, 209430_at, 205690_s_at, 216305_s_at, 238549_at, 208056_s_at, 202370_s_at, 225231_at, 1554283_at, 206430_at, 206387_at, 221340_at, 204039_at, 212501_at, 203973_s_at, 214523_at, 225527_at, 203341_at, 205101_at, 207144_s_at, 209357_at, 204980_at, 206158_s_at, 225053_at, 202163_s_at, 225572_at, 209432_s_at, 213059_at, 212345_s_at, 229228_at, 202160_at, 201989_s_at, 201200_at, 209967_s_at, 217510_at, 201160_s_at, 212863_x_at, 201220_x_at, 202521_at, 223679_at, 201763_s_at, 209782_s_at, 200934_at, 1554352_s_at, 215685_s_at, 208216_at, 213707_s_at, 221289_at, 203301_s_at, 209187_at, 203258_at, 208176_at, 204947_at, 228361_at, 203693_s_at, 38707_r_at, 221586_s_at, 203957_at, 219990_at, 218524_at, 209058_at, 227404_s_at, 205249_at, 206115_at, 207767_s_at, 212418_at, 203822_s_at, 210827_s_at, 31845_at, 220624_s_at, 203617_x_at, 221773_at, 230549_at, 215265_at, 221950_at, 220559_at, 207060_at, 201231_s_at, 202221_s_at, 200878_at, 230108_at, 203643_at, 213541_s_at, 205225_at, 210780_at, 1487_at, 223858_at, 207981_s_at, 224833_at, 201328_at, 221911_at, 1552423_at, 211603_s_at, 230102_at, 225764_at, 221680_s_at, 207914_x_at, 209214_s_at, 207260_at, 221086_s_at, 204236_at, 226184_at, 209189_at, 202768_at, 204420_at, 228188_at, 204667_at, 40284_at, 208513_at, 206307_s_at, 208500_x_at, 208239_at, 220621_at, 205935_at, 206377_at, 231407_s_at, 208006_at, 205906_at, 203734_at, 206015_s_at, 226224_at, 216572_at, 202580_x_at, 207683_at, 224837_at, 221334_s_at, 214093_s_at, 212824_at, 202191_s_at, 1555590_a_at, 209710_at, 209604_s_at, 205517_at, 210002_at, 208503_s_at, 222526_at, 210560_at, 228537_at, 227376_at, 235233_s_at, 229394_s_at, 218412_s_at, 220138_at, 220480_at, 209102_s_at, 202474_s_at, 202957_at, 203395_s_at, 231928_at, 211267_at, 44783_s_at, 219743_at, 226828_s_at, 204689_at, 230218_at, 200989_at, 1556069_s_at, 217427_s_at, 204512_at, 212642_s_at, 220042_x_at, 204754_at, 219269_at, 218152_at, 210719_s_at, 206074_s_at, 208025_s_at, 200680_x_at, 208808_s_at, 207353_s_at, 214832_at, 232271_at, 214639_s_at, 213147_at, 208493_at, 214457_at, 208604_s_at, 206289_at, 213844_at, 208557_at, 235753_at, 209905_at, 209844_at, 205453_at, 205601_s_at, 205366_s_at, 204779_s_at, 221278_at, 216417_x_at, 218959_at, 206745_at, 206739_at, 206858_s_at, 205975_s_at, 229400_at, 214604_at, 221411_at, 236681_at, 206601_s_at, 205522_at, 205604_at, 241355_at, 202344_at, 209657_s_at, 210977_s_at, 205039_s_at, 226761_at, 226680_at, 200052_s_at, 206502_s_at, 202531_at, 203275_at, 202621_at, 204562_at, 239412_at, 202597_at, 208436_s_at, 204057_at, 220225_at, 210239_at, 206104_at, 201466_s_at, 201473_at, 203752_s_at, 209913_x_at, 210504_at, 202393_s_at, 218486_at, 227261_at, 225390_s_at, 231015_at, 219371_s_at, 225133_at, 221841_s_at, 209211_at, 224606_at, 204334_at, 203543_s_at, 206316_s_at, 210306_at, 222212_s_at, 218922_s_at, 212442_s_at, 208380_at, 206140_at, 221670_s_at, 208333_at, 219884_at, 206718_at, 209205_s_at, 208487_at, 210044_s_at, 218437_s_at, 203412_at, 47550_at, 209348_s_at, 218559_s_at, 36711_at, 204970_s_at, 226206_at, 242794_at, 209332_s_at, 212064_x_at, 203353_s_at, 202616_s_at, 212535_at, 209199_s_at, 225641_at, 204069_at, 207480_s_at, 214077_x_at, 205619_s_at, 206201_s_at, 212945_s_at, 226066_at, 226981_at, 203419_at, 225992_at, 213708_s_at, 225157_at, 221163_s_at, 204206_at, 209928_s_at, 218773_s_at, 205932_s_at, 210319_x_at, 211783_s_at, 203444_s_at, 227150_at, 226275_at, 204798_at, 213906_at, 201710_at, 202431_s_at, 214058_at, 209757_s_at, 206372_at, 218926_at, 206657_s_at, 207282_s_at, 200049_at, 1556269_at, 1554633_a_at, 40569_at, 220184_at, 200854_at, 1556057_s_at, 1552953_a_at, 208497_x_at, 207965_at, 224984_at, 211105_s_at, 210555_s_at, 213345_at, 209930_s_at, 200758_s_at, 201146_at, 236471_at, 209289_at, 226895_at, 203574_at, 227400_at, 209239_at, 207535_s_at, 213028_at, 1553103_at, 228433_at, 218127_at, 202215_s_at, 214628_at, 214497_s_at, 205004_at, 206915_at, 206578_at, 207451_at, 209706_at, 221366_at, 202443_x_at, 39549_at, 220316_at, 209798_at, 206645_s_at, 206410_at, 209750_at, 218215_s_at, 203920_at, 206340_at, 207202_s_at, 1570188_at, 204791_at, 225477_s_at, 207443_at, 208388_at, 209505_at, 209120_at, 209262_s_at, 211671_s_at, 205259_at, 202340_x_at, 204621_s_at, 216979_at, 210333_at, 208337_s_at, 211402_x_at, 204651_at, 206596_s_at, 213824_at, 210745_at, 229396_at, 1553492_a_at, 206228_at, 207679_at, 211176_s_at, 205646_s_at, 208060_at, 213917_at, 207059_at, 212148_at, 202876_s_at, 204082_at, 203793_x_at, 209242_at, 201507_at, 228554_at, 212726_at, 214609_at, 207009_at, 205702_at, 209780_at, 208502_s_at, 208277_at, 221883_at, 219046_s_at, 205372_at, 209318_x_at, 202925_s_at, 235508_at, 227254_at, 229750_at, 207109_at, 208345_s_at, 207084_at, 208563_x_at, 207694_at, 206940_s_at, 207725_at, 205878_at, 207450_s_at, 226978_at, 37152_at, 208510_s_at, 228964_at, 232424_at, 203057_s_at, 217861_s_at, 211223_at, 226695_at, 219729_at, 203554_x_at, 204020_at, 203749_s_at, 205080_at, 204189_at, 208242_at, 203132_at, 212331_at, 206036_s_at, 201783_s_at, 205205_at, 200940_s_at, 204535_s_at, 218767_at, 226786_at, 226872_at, 238810_at, 202963_at, 202758_s_at, 229431_at, 204243_at, 212696_s_at, 226682_at, 242385_at, 228806_at, 203704_s_at, 209360_s_at, 205529_s_at, 232231_at, 204197_s_at, 202449_s_at, 209148_at, 205954_at, 206893_at, 213283_s_at, 203408_s_at, 213435_at, 218206_x_at, 222211_x_at, 218793_s_at, 206147_x_at, 207570_at, 210134_x_at, 208157_at, 228347_at, 206510_at, 206634_at, 229009_at, 207250_at, 206143_at, 218494_s_at, 202614_at, 210993_s_at, 203075_at, 218284_at, 202527_s_at, 225219_at, 207069_s_at, 204790_at, 227719_at, 208794_s_at, 219480_at, 213139_at, 204104_at, 215926_x_at, 213203_at, 204275_at, 208533_at, 209842_at, 204913_s_at, 204432_at, 209736_at, 206122_at, 219993_at, 219568_x_at, 213721_at, 208468_at, 1553802_a_at, 201417_at, 207336_at, 202935_s_at, 224754_at, 207777_s_at, 204367_at, 213168_at, 236265_at, 220192_x_at, 205312_at, 205861_at, 202308_at, 201247_at, 202401_s_at, 206135_at, 200887_s_at, 225636_at, 208991_at, 206118_at, 203010_at, 212549_at, 201331_s_at, 201483_s_at, 208420_x_at, 206524_at, 210537_s_at, 215273_s_at, 216941_s_at, 213654_at, 216928_at, 200020_at, 220025_at, 236926_at, 207689_at, 206838_at, 40560_at, 220684_at, 219682_s_at, 220634_at, 240715_at, 207684_at, 204045_at, 208986_at, 207306_at, 204931_at, 213311_s_at, 209153_s_at, 212386_at, 205255_x_at, 221016_s_at, 212761_at, 204849_at, 224955_at, 209454_s_at, 204281_at, 225840_at, 203177_x_at, 204653_at, 214451_at, 205286_at, 205688_at, 227637_at, 227642_at, 212330_at, 226157_at, 207385_at, 212457_at, 50221_at, 232383_at, 216262_s_at, 35846_at, 229657_at, 207179_at, 207410_s_at, 215045_at, 201746_at, 1554379_a_at, 238520_at, 213293_s_at, 224806_at, 200990_at, 202504_at, 222651_s_at, 215111_s_at, 204094_s_at, 208763_s_at, 1554501_at, 239742_at, 213943_at, 209088_s_at, 218082_s_at, 202152_x_at, 206219_s_at, 220443_s_at, 204254_s_at, 207376_at, 202171_at, 202261_at, 224074_at, 206067_s_at, 200670_at, 208628_s_at, 218911_at, 210996_s_at, 200639_s_at, 200047_s_at, 216531_at, 205883_at, 203602_s_at, 213081_at, 214482_at, 219221_at, 227991_x_at, 206098_at, 226554_at, 235145_at, 219779_at, 211962_s_at, 201368_at, 207068_at, 214678_x_at, 207246_at, 203556_at, 217367_s_at, 206373_at, 220653_at, 214670_at, 202778_s_at, 207559_s_at, 202049_s_at, 229848_at, 235408_x_at, 1554021_a_at, 206928_at, 1557384_at, 207402_at, 37254_at, 206182_at, 206142_at, 206240_s_at, 207394_at, 219854_at, 204523_at, 235580_at, 204474_at, 221873_at, 200050_at, 203318_s_at, 216677_at, 221201_s_at, 219548_at, 214715_x_at, 206314_at, 205252_at, 205497_at, 207417_s_at, 219495_s_at, 213452_at, 203585_at, 213218_at, 207513_s_at, 206579_at, 205181_at, 204234_s_at, 205855_at, 207338_s_at, 204327_s_at, 214823_at, 206416_at, 231848_x_at, 205437_at, 203985_at, 220214_at, 203739_at, 219314_s_at, 218005_at, 233848_x_at, 206175_x_at, 207128_s_at, 216983_s_at, 207125_at, 233461_x_at, 227689_at, 205791_x_at, 219123_at, 220350_at, 47571_at, 212774_at, 206261_at, 203247_s_at, 213269_at, 213858_at, 242919_at, 200054_at, 203707_at, 205917_at, 214686_at, 219540_at, 209989_at, 211009_s_at, 215239_x_at, 204937_s_at, 218645_at, 228785_at, 212892_at, 220055_at, 212368_at, 212684_at, 218490_s_at, 207753_at, 203521_s_at, 209538_at, 222016_s_at, 205182_s_at, 219765_at, 209814_at, 219228_at, 220022_at, 221890_at, 37860_at, 215022_x_at, 219801_at, 227986_at, 207236_at, 206096_at, 219266_at, 205427_at, 219379_x_at, 206448_at, 212369_at, 214714_at, 218149_s_at, 227768_at, 219224_x_at, 209944_at, 205514_at, 214761_at, 205964_at, 206695_x_at, 206829_x_at, 219848_s_at, 218937_at, 215359_x_at, 241731_x_at, 205928_at, 50376_at, 219900_s_at, 222028_at, 1556060_a_at, 216273_at, 214746_s_at, 214751_at, 232117_at, 213124_at, 222283_at, 214922_at, 1558486_at, 213639_s_at, 238493_at, 226327_at, 206053_at, 203604_at, 215019_x_at, 231940_at, 220617_s_at, 206403_at, 218735_s_at, 215315_at, 228099_at, 211721_s_at, 232328_at, 220709_at, 220444_at, 219163_at, 217627_at, 218762_at, 219088_s_at, 220748_s_at, 219711_at, 219981_x_at, 219968_at, 213389_at, 204175_at, 219635_at, 212618_at, 208137_x_at, 227045_at, 206188_at, 213196_at, 213775_x_at, 207219_at, 204876_at, 205594_at, 241348_at, 220760_x_at, 236635_at, 219047_s_at, 220215_at, 219849_at, 218068_s_at, 206583_at, 217547_x_at, 242915_at, 213527_s_at, 220661_s_at, 208273_at, 232162_at, 205089_at, 220242_x_at, 218059_at, 39891_at, 228988_at, 235997_at, 216486_x_at, 214901_at, 1561038_at, 221645_s_at, 204453_at, 206572_x_at, 206059_at, 208119_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1298833078"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>11</day>
+			<hour>20</hour>
+			<minute>30</minute>
+			<second>13</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>150_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, AFF1, ATF4, ATF6, BACH1, BARX2, BATF, BNC1, CBFA2T2, CNOT8, CREB1, CREB3, CREM, CSDA, CTBP1, CTBP2, DLX4, DRAP1, E2F2, E2F5, E2F8, ELF3, ELK1, EMX2, ENO1, ESR2, ETS2, ETV4, ETV5, FOSB, FOXA2, FOXF2, FOXJ1, FOXP3, FUBP3, GATA6, GATAD1, HESX1, HIC1, HMX1, HOXB13, HOXB2, HOXB7, HOXD1, HSF1, HSF2, IKZF1, ILF2, IRF3, IRF6, IRF7, IRF8, KLF13, KLF6, LASS2, MAZ, MECP2, MEIS1, MLL4, MLXIP, MSC, MYB, MYC, MZF1, NCOR1, NFATC3, NFIX, NPAS2, NPAS3, NR1H2, NR2F6, PAX1, PML, POU4F1, PPARA, PREB, PRRX1, RARB, REL, RERE, RFX3, RFXANK, RORC, RUNX2, SALL1, SALL2, SATB1, SCAND1, SIM2, SMAD1, SMARCA4, SNAI2, SNAPC4, SNAPC5, SOX11, SOX17, SOX4, SOX9, SP140, SREBF1, STAT1, STAT3, STAT6, SUPT6H, TAL1, TCF25, TCF7L2, TEAD3, TEAD4, TFCP2, TFDP2, TFEC, TNRC4, TP53, TRIM28, TRIM29, TSC22D2, TSC22D4, USF2, VEZF1, XBP1, YWHAE, YWHAZ, ZFP36L1, ZFP36L2, ZIM2, ZKSCAN1, ZMYM4, ZNF132, ZNF135, ZNF146, ZNF154, ZNF160, ZNF192, ZNF195, ZNF207, ZNF215, ZNF217, ZNF219, ZNF227, ZNF264, ZNF268, ZNF292, ZNF318, ZNF407, ZNF415, ZNF426, ZNF430, ZNF432, ZNF451, ZNF529, ZNF549, ZNF551, ZNF652, ZNF665, ZNF695, ZNF83</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="572101367"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>11</day>
+			<hour>23</hour>
+			<minute>1</minute>
+			<second>51</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>150_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, AFF1, ATF4, ATF6, BACH1, BARX2, BATF, BNC1, CBFA2T2, CNOT8, CREB1, CREB3, CREM, CSDA, CTBP1, CTBP2, DLX4, DRAP1, E2F2, E2F5, E2F8, ELF3, ELK1, EMX2, ENO1, ESR2, ETS2, ETV4, ETV5, FOSB, FOXA2, FOXF2, FOXJ1, FOXP3, FUBP3, GATA6, GATAD1, HESX1, HIC1, HMX1, HOXB13, HOXB2, HOXB8, HOXB7, HOXD1, HSF1, HSF2, IKZF1, ILF2, IRF3, IRF6, IRF7, IRF8, KLF13, KLF6, LASS2, MAZ, MECP2, MEIS1, MLL4, MLXIP, MSC, MYB, MYC, MZF1, NCOR1, NFATC3, NFIX, NPAS2, NPAS3, NR1H2, NR2F6, PAX1, PML, POU4F1, PPARA, PREB, PRRX1, RARB, REL, RERE, RFX3, RFXANK, RORC, RUNX2, SALL1, SALL2, SATB1, SCAND1, SIM2, SMAD1, SMARCA4, SNAI2, SNAPC4, SNAPC5, SOX11, SOX17, SOX4, SOX9, SP140, SREBF1, STAT1, STAT3, STAT6, SUPT6H, TAL1, TCF25, TCF7L2, TEAD3, TEAD4, TFCP2, TFDP2, TFEC, TNRC4, TP53, TRIM28, TRIM29, TSC22D2, TSC22D4, USF2, VEZF1, XBP1, YWHAE, YWHAZ, ZFP36L1, ZFP36L2, ZIM2, ZKSCAN1, ZMYM4, ZNF132, ZNF135, ZNF146, ZNF154, ZNF160, ZNF192, ZNF195, ZNF207, ZNF215, ZNF217, ZNF219, ZNF227, ZNF264, ZNF268, ZNF292, ZNF318, ZNF407, ZNF415, ZNF426, ZNF430, ZNF432, ZNF451, ZNF529, ZNF549, ZNF551, ZNF652, ZNF665, ZNF695, ZNF83</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Lenovo-PC"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="673006164"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>11</day>
+			<hour>23</hour>
+			<minute>21</minute>
+			<second>24</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>150_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, AFF1, ATF4, ATF6, BACH1, BARX2, BATF, BNC1, CBFA2T2, CNOT8, CREB1, CREB3, CREM, CSDA, CTBP1, CTBP2, DLX4, DRAP1, E2F2, E2F5, E2F8, ELF3, ELK1, EMX2, ENO1, ESR2, ETS2, ETV4, ETV5, FOSB, FOXA2, FOXF2, FOXJ1, FOXP3, FUBP3, GATA6, GATAD1, HESX1, HIC1, HMX1, HOXB13, HOXB2, HOXB8, HOXB7, HOXD1, HSF1, HSF2, IKZF1, ILF2, IRF3, IRF6, IRF7, IRF8, KLF13, KLF6, LASS2, MAZ, MECP2, MEIS1, MLL4, MLXIP, MSC, MYB, MYC, MZF1, NCOR1, NFATC3, NFIX, NPAS2, NPAS3, NR1H2, NR2F6, PAX1, PML, POU4F1, PPARA, PREB, PRRX1, RARB, REL, RERE, RFX3, RFXANK, RORC, RUNX2, SALL1, SALL2, SATB1, SCAND1, SIM2, SMAD1, SMARCA4, SNAI2, SNAPC4, SNAPC5, SOX11, SOX17, SOX4, SOX9, SP140, SREBF1, STAT1, STAT3, STAT6, SUPT6H, TAL1, TCF25, TCF7L2, TEAD3, TEAD4, TFCP2, TFDP2, TFEC, TNRC4, TP53, TRIM28, TRIM29, TSC22D2, TSC22D4, USF2, VEZF1, XBP1, YWHAE, YWHAZ, ZFP36L1, ZFP36L2, ZIM2, ZKSCAN1, ZMYM4, ZNF132, ZNF135, ZNF146, ZNF154, ZNF160, ZNF192, ZNF195, ZNF207, ZNF215, ZNF217, ZNF219, ZNF227, ZNF264, ZNF268, ZNF292, ZNF318, ZNF407, ZNF415, ZNF426, ZNF430, ZNF432, ZNF451, ZNF529, ZNF549, ZNF551, ZNF652, ZNF665, ZNF695, ZNF83</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

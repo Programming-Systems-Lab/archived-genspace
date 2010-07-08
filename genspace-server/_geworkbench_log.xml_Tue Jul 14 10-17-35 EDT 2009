@@ -1,0 +1,413 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Protein Function Annotation Server: MarkUs"/>
+		<dataset name=""/>
+		<transaction id="2045537264"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>14</day>
+			<hour>10</hour>
+			<minute>14</minute>
+			<second>56</second>
+		</time>
+		<parameters count="30">
+			<parameter id="0">
+				<key>edc</key>
+				<value>80</value>
+			</parameter>
+			<parameter id="1">
+				<key>iter3</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>filter4</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="3">
+				<key>gridsize</key>
+				<value>145</value>
+			</parameter>
+			<parameter id="4">
+				<key>iter4</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>ips</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="6">
+				<key>screen</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>consurf</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>dali</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>csftitle3</key>
+				<value>analysis%203</value>
+			</parameter>
+			<parameter id="10">
+				<key>psiblast</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>skan</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="12">
+				<key>boxfill</key>
+				<value>85</value>
+			</parameter>
+			<parameter id="13">
+				<key>delphi</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="14">
+				<key>steps</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="15">
+				<key>eval4</key>
+				<value>0.0</value>
+			</parameter>
+			<parameter id="16">
+				<key>filter3</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="17">
+				<key>idc</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="18">
+				<key>msa3</key>
+				<value>Muscle</value>
+			</parameter>
+			<parameter id="19">
+				<key>Chain</key>
+				<value>A</value>
+			</parameter>
+			<parameter id="20">
+				<key>radius</key>
+				<value>1.4</value>
+			</parameter>
+			<parameter id="21">
+				<key>eval3</key>
+				<value>0.0</value>
+			</parameter>
+			<parameter id="22">
+				<key>nli</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="23">
+				<key>ibc</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="24">
+				<key>msa4</key>
+				<value>Muscle</value>
+			</parameter>
+			<parameter id="25">
+				<key>sc</key>
+				<value>0.145</value>
+			</parameter>
+			<parameter id="26">
+				<key>consurf4</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="27">
+				<key>li</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="28">
+				<key>consurf3</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="29">
+				<key>csftitle4</key>
+				<value>analysis%204</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Protein Function Annotation Server: MarkUs"/>
+		<dataset name=""/>
+		<transaction id="646897347"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>14</day>
+			<hour>10</hour>
+			<minute>17</minute>
+			<second>3</second>
+		</time>
+		<parameters count="30">
+			<parameter id="0">
+				<key>edc</key>
+				<value>80</value>
+			</parameter>
+			<parameter id="1">
+				<key>iter3</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>filter4</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="3">
+				<key>gridsize</key>
+				<value>145</value>
+			</parameter>
+			<parameter id="4">
+				<key>iter4</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>ips</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="6">
+				<key>screen</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>consurf</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>dali</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>csftitle3</key>
+				<value>analysis%203</value>
+			</parameter>
+			<parameter id="10">
+				<key>psiblast</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>skan</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="12">
+				<key>boxfill</key>
+				<value>85</value>
+			</parameter>
+			<parameter id="13">
+				<key>delphi</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="14">
+				<key>steps</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="15">
+				<key>eval4</key>
+				<value>0.0</value>
+			</parameter>
+			<parameter id="16">
+				<key>filter3</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="17">
+				<key>idc</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="18">
+				<key>msa3</key>
+				<value>Muscle</value>
+			</parameter>
+			<parameter id="19">
+				<key>Chain</key>
+				<value>A</value>
+			</parameter>
+			<parameter id="20">
+				<key>radius</key>
+				<value>1.4</value>
+			</parameter>
+			<parameter id="21">
+				<key>eval3</key>
+				<value>0.0</value>
+			</parameter>
+			<parameter id="22">
+				<key>nli</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="23">
+				<key>ibc</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="24">
+				<key>msa4</key>
+				<value>Muscle</value>
+			</parameter>
+			<parameter id="25">
+				<key>sc</key>
+				<value>0.145</value>
+			</parameter>
+			<parameter id="26">
+				<key>consurf4</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="27">
+				<key>li</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="28">
+				<key>consurf3</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="29">
+				<key>csftitle4</key>
+				<value>analysis%204</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Protein Function Annotation Server: MarkUs"/>
+		<dataset name=""/>
+		<transaction id="646897347"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>14</day>
+			<hour>10</hour>
+			<minute>17</minute>
+			<second>35</second>
+		</time>
+		<parameters count="30">
+			<parameter id="0">
+				<key>edc</key>
+				<value>80</value>
+			</parameter>
+			<parameter id="1">
+				<key>iter3</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>filter4</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="3">
+				<key>gridsize</key>
+				<value>145</value>
+			</parameter>
+			<parameter id="4">
+				<key>iter4</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>ips</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="6">
+				<key>screen</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>consurf</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>dali</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>csftitle3</key>
+				<value>analysis%203</value>
+			</parameter>
+			<parameter id="10">
+				<key>psiblast</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>skan</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="12">
+				<key>boxfill</key>
+				<value>85</value>
+			</parameter>
+			<parameter id="13">
+				<key>delphi</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="14">
+				<key>steps</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="15">
+				<key>eval4</key>
+				<value>0.0</value>
+			</parameter>
+			<parameter id="16">
+				<key>filter3</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="17">
+				<key>idc</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="18">
+				<key>msa3</key>
+				<value>Muscle</value>
+			</parameter>
+			<parameter id="19">
+				<key>Chain</key>
+				<value>A</value>
+			</parameter>
+			<parameter id="20">
+				<key>radius</key>
+				<value>1.4</value>
+			</parameter>
+			<parameter id="21">
+				<key>eval3</key>
+				<value>0.0</value>
+			</parameter>
+			<parameter id="22">
+				<key>nli</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="23">
+				<key>ibc</key>
+				<value>4</value>
+			</parameter>
+			<parameter id="24">
+				<key>msa4</key>
+				<value>Muscle</value>
+			</parameter>
+			<parameter id="25">
+				<key>sc</key>
+				<value>0.145</value>
+			</parameter>
+			<parameter id="26">
+				<key>consurf4</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="27">
+				<key>li</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="28">
+				<key>consurf3</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="29">
+				<key>csftitle4</key>
+				<value>analysis%204</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

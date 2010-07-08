@@ -1,0 +1,76 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="161693682"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>6</day>
+			<hour>17</hour>
+			<minute>54</minute>
+			<second>49</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseSignificantGenesLimit</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="2">
+				<key>FalseDiscoveryRateControl</key>
+				<value>proportion</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueEstimation</key>
+				<value>permutation</value>
+			</parameter>
+			<parameter id="4">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="161693682"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>6</day>
+			<hour>17</hour>
+			<minute>56</minute>
+			<second>7</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseSignificantGenesLimit</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="2">
+				<key>FalseDiscoveryRateControl</key>
+				<value>proportion</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueEstimation</key>
+				<value>permutation</value>
+			</parameter>
+			<parameter id="4">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

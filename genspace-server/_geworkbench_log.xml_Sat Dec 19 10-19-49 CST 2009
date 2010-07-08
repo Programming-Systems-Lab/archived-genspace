@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lenovo-87fd5b82"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3920_series_matrix"/>
+		<transaction id="2061700479"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>17</day>
+			<hour>20</hour>
+			<minute>54</minute>
+			<second>31</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lenovo-87fd5b82"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3589_series_matrix"/>
+		<transaction id="654850475"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>19</day>
+			<hour>10</hour>
+			<minute>17</minute>
+			<second>0</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="lenovo-87fd5b82"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3589_series_matrix"/>
+		<transaction id="1104531058"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>19</day>
+			<hour>10</hour>
+			<minute>19</minute>
+			<second>48</second>
+		</time>
+	</metric>
+</measurement>

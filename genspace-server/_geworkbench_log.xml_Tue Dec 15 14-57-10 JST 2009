@@ -1,0 +1,181 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ishizu-daishi-no-imac.local"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="259241241"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>15</day>
+			<hour>12</hour>
+			<minute>45</minute>
+			<second>33</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Significant Genes</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AFFX-hum_alu_at, 31315_at, 31319_at, 31336_at, 31344_at, 31346_at, 31347_at, 31431_at, 31432_g_at, 31460_f_at, 31473_s_at, 31496_g_at, 31506_s_at, 31512_at, 31540_at, 31581_at, 31586_f_at, 31732_at, 31751_f_at, 31765_at, 31783_at, 31925_s_at, 31969_i_at, 31998_at, 32389_at, 32406_at, 32434_at, 33012_at, 33015_at, 33018_at, 33023_at, 33039_at, 33049_at, 33613_at, 33641_g_at, 33649_at, 33678_i_at, 34094_i_at, 34095_f_at, 34096_at, 34098_f_at, 34105_f_at, 34106_at, 34117_at, 34563_at, 34579_r_at, 35022_at, 35031_r_at, 35061_at, 35071_s_at, 35107_at, 35530_f_at, 35546_at, 35549_at, 35562_at, 35566_f_at, 35607_at, 36363_at, 36377_at, 36389_at, 36392_at, 36413_at, 32312_at, 32313_at, 32314_g_at, 32338_at, 32904_at, 32967_at, 32978_g_at, 33483_at, 33491_at, 33499_s_at, 33500_i_at, 33501_r_at, 33513_at, 33528_at, 33540_at, 33541_s_at, 33555_at, 33563_s_at, 33966_at, 33999_f_at, 34000_r_at, 34028_at, 34041_at, 34054_at, 34451_at, 34459_at, 34498_at, 34898_at, 34916_s_at, 34965_at, 35000_at, 35389_s_at, 35459_at, 35862_at, 35869_at, 35881_at, 35892_at, 35893_s_at, 35905_s_at, 35926_s_at, 35940_at, 35965_at, 35966_at, 36215_at, 36280_at, 36296_at, 36708_at, 36710_at, 36718_s_at, 36753_at, 36757_at, 36776_at, 36785_at, 36808_at, 37051_at, 37112_at, 37121_at, 37145_at, 37156_at, 37440_at, 37456_at, 37458_at, 37467_at, 37474_at, 37483_at, 37497_at, 37502_at, 37524_at, 37528_at, 37773_at, 37788_at, 37806_at, 37827_r_at, 38156_at, 38158_at, 38207_at, 38218_at, 38220_at, 38496_at, 38514_at, 38515_at, 38521_at, 38522_s_at, 38525_at, 38533_s_at, 38536_at, 38549_at, 38556_at, 38576_at, 38577_at, 38578_at, 38847_at, 38895_i_at, 38907_at, 38920_at, 38933_at, 38940_at, 39212_at, 39226_at, 39269_at, 39293_at, 39295_s_at, 39301_at, 39318_at, 39566_at, 39602_at, 39677_at, 39925_at, 39942_at, 39950_at, 40001_r_at, 40041_at, 40297_at, 40323_at, 40350_at, 40355_at, 40375_at, 40659_at, 40661_at, 40662_g_at, 40690_at, 40697_at, 40702_at, 40715_at, 40726_at, 40729_s_at, 40742_at, 40749_at, 40757_at, 41019_at, 41027_at, 41071_at, 41081_at, 41094_at, 41114_at, 41388_at, 41392_at, 41396_at, 41400_at, 41439_at, 41475_at, 41476_at, 41607_at, 41615_at, 41639_at, 41710_at, 41715_at, 41872_at, 31848_at, 31869_at, 31892_at, 31897_at, 32078_at, 32081_at, 32112_s_at, 32113_at, 32119_at, 32120_at, 32127_at, 32134_at, 32140_at, 32142_at, 32143_at, 32664_at, 32668_at, 32702_at, 32724_at, 32730_at, 33239_at, 33266_at, 33273_f_at, 33274_f_at, 33291_at, 33316_at, 33324_s_at, 33703_f_at, 33705_at, 33714_at, 33731_at, 33753_at, 33766_at, 33796_at, 33802_at, 33813_at, 34180_at, 34213_at, 34283_at, 34288_at, 34715_at, 34718_at, 34736_at, 34750_r_at, 34770_at, 35193_at, 35224_at, 35238_at, 35245_at, 35249_at, 35627_at, 35694_at, 35699_at, 35703_at, 35704_at, 35705_at, 35732_at, 35975_at, 35995_at, 36453_at, 36488_at, 36491_at, 36502_at, 36520_at, 36543_at, 36812_at, 36837_at, 36863_at, 36874_at, 36884_at, 36894_at, 36922_at, 37171_at, 37173_at, 37190_at, 37221_at, 37228_at, 37231_at, 37233_at, 37251_s_at, 37276_at, 37277_at, 37282_at, 37533_r_at, 37539_at, 37542_at, 37571_at, 37603_at, 37623_at, 37625_at, 37627_g_at, 37645_at, 37899_at, 37913_at, 37918_at, 37920_at, 37960_at, 37975_at, 37981_at, 37985_at, 37988_at, 38005_at, 38254_at, 38267_at, 38268_at, 38289_r_at, 38323_at, 38333_at, 38656_s_at, 38722_at, 38989_at, 39018_at, 39038_at, 39062_at, 39072_at, 39077_at, 39331_at, 39374_at, 39382_at, 39420_at, 39692_at, 39698_at, 39729_at, 39781_at, 40053_at, 40088_at, 40091_at, 40095_at, 40117_at, 40145_at, 40152_r_at, 40155_at, 40407_at, 40412_at, 40428_i_at, 40433_at, 40456_at, 40472_at, 40488_at, 40508_at, 40775_at, 40782_at, 40790_at, 40831_at, 40853_at, 40855_at, 41124_r_at, 41164_at, 41165_g_at, 41195_at, 41215_s_at, 41734_at, 41735_at, 41736_g_at, 41755_at, 32148_at, 32164_at, 32176_at, 32184_at, 32186_at, 32193_at, 32263_at, 32747_at, 32767_at, 32808_at, 32819_at, 32821_at, 32826_at, 32827_at, 32842_at, 32845_at, 33371_s_at, 33382_at, 33383_f_at, 33435_r_at, 33439_at, 33834_at, 33865_at, 34311_at, 34321_i_at, 34335_at, 34362_at, 34412_s_at, 34789_at, 34800_at, 34805_at, 34852_g_at, 34878_at, 34887_at, 35331_at, 35366_at, 35367_at, 35742_at, 35780_at, 35848_at, 36103_at, 36105_at, 36116_at, 36117_at, 36119_at, 36142_at, 36155_at, 36174_at, 36192_at, 36204_at, 36575_at, 36629_at, 36644_at, 36650_at, 36669_at, 36680_at, 36965_at, 36990_at, 36993_at, 37018_at, 37027_at, 37028_at, 37291_r_at, 37302_at, 37305_at, 37306_at, 37360_at, 37377_i_at, 37399_at, 37403_at, 37691_at, 37695_at, 37701_at, 37710_at, 37712_g_at, 37724_at, 38018_g_at, 38022_s_at, 38033_at, 38062_at, 38075_at, 38086_at, 38087_s_at, 38116_at, 38391_at, 38404_at, 38407_r_at, 38411_at, 38414_at, 38422_s_at, 38433_at, 38474_at, 38748_at, 38796_at, 38805_at, 39102_at, 39109_at, 39119_s_at, 39120_at, 39145_at, 39158_at, 39182_at, 39542_at, 39829_at, 39839_at, 39880_at, 40195_at, 40202_at, 40602_at, 40606_at, 40915_r_at, 40916_at, 40920_at, 41353_at, 41489_at, 41505_r_at, 41544_at, 41583_at, 41585_at, 41592_at, 41827_f_at, 41847_at, 32526_at, 32529_at, 32583_at, 32593_at, 32607_at, 32609_at, 32612_at, 32617_at, 33127_at, 33145_at, 2094_s_at, 2038_g_at, 2045_s_at, 2049_s_at, 2057_g_at, 2036_s_at, 2020_at, 1993_s_at, 1996_s_at, 1973_s_at, 1943_at, 1945_at, 1909_at, 1915_s_at, 1916_s_at, 1921_at, 1884_s_at, 1837_at, 1838_g_at, 1842_at, 1854_at, 1856_at, 1819_at, 1820_g_at, 1826_at, 1803_at, 1787_at, 1788_s_at, 1727_at, 1737_s_at, 1717_s_at, 1721_g_at, 1693_s_at, 1665_s_at, 1670_at, 1647_at, 1651_at, 1634_s_at, 1610_s_at, 1592_at, 1599_at, 1606_at, 1583_at, 1584_at, 1561_at, 1530_g_at, 1515_at, 1463_at, 1465_s_at, 1388_g_at, 1389_at, 1395_at, 1403_s_at, 1405_i_at, 1365_at, 1385_at, 1343_s_at, 1348_s_at, 1328_at, 1337_s_at, 1319_at, 1299_at, 1278_at, 1292_at, 1249_at, 1227_g_at, 1201_at, 1183_at, 1149_at, 1159_at, 1126_s_at, 1097_s_at, 1005_at, 981_at, 965_at, 975_at, 977_s_at, 952_at, 931_at, 904_s_at, 910_at, 805_at, 740_at, 741_g_at, 748_s_at, 717_at, 719_g_at, 700_s_at, 703_at, 653_at, 654_at, 607_s_at, 619_s_at, 572_at, 547_s_at, 527_at, 529_at, 535_s_at, 511_s_at, 492_g_at, 432_s_at, 418_at, 419_at, 366_s_at, 369_s_at, 356_at, 358_at, 341_at, 342_at, 349_g_at, 317_at, 325_s_at, 312_s_at, 296_at, 297_g_at, 280_g_at, 287_at, 251_at, 252_at, 253_g_at, 246_at, 216_at, 157_at, 117_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ishizu-daishi-no-imac.local"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE6916_series_matrix"/>
+		<transaction id="541464208"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>15</day>
+			<hour>14</hour>
+			<minute>30</minute>
+			<second>20</second>
+		</time>
+		<parameters count="13">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="8">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>numCombs</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="12">
+				<key>alpha</key>
+				<value>0.01</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ishizu-daishi-no-imac.local"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="GSE6916_series_matrix"/>
+		<transaction id="1342623896"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>15</day>
+			<hour>14</hour>
+			<minute>57</minute>
+			<second>9</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

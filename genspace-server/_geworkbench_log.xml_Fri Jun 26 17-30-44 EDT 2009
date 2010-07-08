@@ -1,0 +1,35 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="SMLR Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="120494043"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>26</day>
+			<hour>16</hour>
+			<minute>43</minute>
+			<second>24</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>Epsilon</key>
+				<value>0.0010</value>
+			</parameter>
+			<parameter id="1">
+				<key>Prior</key>
+				<value>Laplacian</value>
+			</parameter>
+			<parameter id="2">
+				<key>SelectedKernel</key>
+				<value>Direct</value>
+			</parameter>
+			<parameter id="3">
+				<key>Gamma</key>
+				<value>1.0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS5"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="webmatrix-filtered.exp"/>
+		<transaction id="1092590904"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>20</day>
+			<hour>17</hour>
+			<minute>53</minute>
+			<second>54</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS5"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="webmatrix-filtered.exp"/>
+		<transaction id="1765063931"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>20</day>
+			<hour>17</hour>
+			<minute>55</minute>
+			<second>19</second>
+		</time>
+	</metric>
+</measurement>

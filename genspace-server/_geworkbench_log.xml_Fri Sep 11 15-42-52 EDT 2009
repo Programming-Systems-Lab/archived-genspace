@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="2024121527"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>11</day>
+			<hour>15</hour>
+			<minute>34</minute>
+			<second>42</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="2024121527"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>11</day>
+			<hour>15</hour>
+			<minute>42</minute>
+			<second>52</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

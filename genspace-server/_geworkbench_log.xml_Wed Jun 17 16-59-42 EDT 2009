@@ -1,0 +1,133 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name=""/>
+		<transaction id="1716933354"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>12</hour>
+			<minute>46</minute>
+			<second>33</second>
+		</time>
+		<parameters count="10">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>HubGeneList</key>
+				<value>31309_r_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="4">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>isThresholdMI</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="8">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>Threshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="NetBoost Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1905476813"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>59</minute>
+			<second>11</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>modelSelections</key>
+				<value>[true, true, true, true, true, true, true]</value>
+			</parameter>
+			<parameter id="1">
+				<key>boostingIter</key>
+				<value>120</value>
+			</parameter>
+			<parameter id="2">
+				<key>trainingEx</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>crossValid</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="4">
+				<key>subgraphCounting</key>
+				<value>8 Step Walk</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="NetBoost Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1905476813"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>59</minute>
+			<second>42</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>modelSelections</key>
+				<value>[true, true, true, true, true, true, true]</value>
+			</parameter>
+			<parameter id="1">
+				<key>boostingIter</key>
+				<value>120</value>
+			</parameter>
+			<parameter id="2">
+				<key>trainingEx</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>crossValid</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="4">
+				<key>subgraphCounting</key>
+				<value>8 Step Walk</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

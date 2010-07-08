@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ishizu-daishi-no-imac.local"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="GSE6916_series_matrix"/>
+		<transaction id="1082956245"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>15</day>
+			<hour>16</hour>
+			<minute>21</minute>
+			<second>1</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="1">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueThreshold</key>
+				<value>1.0E-4</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ishizu-daishi-no-imac.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="GSE6916_series_matrix"/>
+		<transaction id="1082956245"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>15</day>
+			<hour>16</hour>
+			<minute>27</minute>
+			<second>19</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>1</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,2056 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="730690920"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>1</day>
+			<hour>16</hour>
+			<minute>38</minute>
+			<second>38</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>1552264_a_at, 1552266_at, 1552269_at, 1552271_at, 1552272_a_at, 1552274_at, 1552275_s_at, 1552276_a_at, 1552277_a_at, 1552278_a_at, 1552279_a_at, 1552280_at, 1552281_at, 1552283_s_at, 1552286_at, 1552287_s_at, 1552288_at, 1552289_a_at, 1552291_at, 1552293_at, 1552295_a_at, 1552296_at, 1552299_at, 1552301_a_at, 1552302_at, 1552303_a_at, 1552304_at, 1552306_at, 1552307_a_at, 1552309_a_at, 1552310_at, 1552311_a_at, 1552312_a_at, 1552314_a_at, 1552315_at, 1552316_a_at, 1552318_at, 1552319_a_at, 1552320_a_at, 1552321_a_at, 1552322_at, 1552323_s_at, 1552325_at, 1552326_a_at, 1552327_at, 1552329_at, 1552330_at, 1552332_at, 1552334_at, 1552335_at, 1552337_s_at, 1552338_at, 1552340_at, 1552343_s_at, 1552344_s_at, 1552347_at, 1552348_at, 1552349_a_at, 1552354_at, 1552355_s_at, 1552359_at, 1552360_a_at, 1552362_a_at, 1552364_s_at, 1552365_at, 1552367_a_at, 1552368_at, 1552370_at, 1552372_at, 1552373_s_at, 1552375_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1322205270"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>4</hour>
+			<minute>36</minute>
+			<second>15</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>exp1</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AFFX-BioB-5_at, AFFX-BioB-M_at, AFFX-BioB-3_at, AFFX-BioC-5_at, AFFX-BioC-3_at, AFFX-BioDn-5_at, AFFX-BioDn-3_at, AFFX-CreX-5_at, AFFX-CreX-3_at, AFFX-hum_alu_at, AFFX-DapX-5_at, AFFX-DapX-M_at, AFFX-DapX-3_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1204463153"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>5</hour>
+			<minute>12</minute>
+			<second>26</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>1552264_a_at, 1552266_at, 1552269_at, 1552271_at, 1552272_a_at, 1552274_at, 1552275_s_at, 1552276_a_at, 1552277_a_at, 1552278_a_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1653736925"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>5</hour>
+			<minute>41</minute>
+			<second>40</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1399481690"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>5</hour>
+			<minute>7</minute>
+			<second>48</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>X00351_3_t, X00351_5_t, X00351_M_t, M33197_3_t, M33197_5_t, M33197_M_t, M97935_3_t, M97935_5_t, M97935_M_t, M97935_MB_t, M10098_3_t, M10098_5_t, M10098_M_t, LysX-3_t, LysX-5_t, LysX-M_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="888525753"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>6</hour>
+			<minute>21</minute>
+			<second>50</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Cytoscape selection</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>200887_s_t, M97935_MB_t, M97935_3_t, M97935_M_t, M97935_5_t, 202270_t, 209969_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="888525753"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>6</hour>
+			<minute>23</minute>
+			<second>35</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28 (1)</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>204712_t, 221021_s_t, 203638_s_t, 208711_s_t, 202894_t, 202871_t, 203050_t, 204225_t, 212348_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="888525753"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>6</hour>
+			<minute>27</minute>
+			<second>54</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Cytoscape selection</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>203639_s_t, 203638_s_t, 208228_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="888525753"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>6</hour>
+			<minute>37</minute>
+			<second>31</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Cytoscape selection</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>203639_s_t, 203638_s_t, 208228_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="888525753"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>6</hour>
+			<minute>40</minute>
+			<second>26</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>Cytoscape selection</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>203639_s_t, 203638_s_t, 208228_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>All vs. All</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1228531660"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>8</hour>
+			<minute>1</minute>
+			<second>28</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>57532_t, 57539_t, 57540_t, 57588_t, 57703_t, 57715_t, 57739_t, 58308_t, 58367_s_t, 58696_t, 58780_s_t, 58900_t, 58916_t, 58994_t, 59375_t, 59433_t, 59437_t, 59625_t, 59631_t, 59644_t, 59697_t, 59705_t, 59999_t, 60084_t, 60471_t, 60474_t, 60528_t, 60794_f_t, 60815_t, 61297_t, 61732_r_t, 61734_t, 61874_t, 62212_t, 62987_r_t, 63009_t, 63305_t, 63825_t, 64064_t, 64371_t, 64408_s_t, 64418_t, 64432_t, 64438_t, 64440_t, 64474_g_t, 64486_t, 64488_t, 64883_t, 64899_t, 64900_t, 64942_t, 65086_t, 65133_i_t, 65438_t, 65472_t, 65493_t, 65517_t, 65521_t, 65585_t, 65588_t, 65591_t, 65630_t, 65635_t, 65718_t, 65770_t, 65884_t, 66053_t, 71933_t, 74694_s_t, 76897_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="191054552"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>8</hour>
+			<minute>56</minute>
+			<second>23</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>202144_s_t, 201792_t, 214846_s_t, 205047_s_t, 204976_s_t, 201806_s_t, 203452_t, 203212_s_t, 201761_t, 201710_t, 204823_t, 204425_t, 209135_t, 203956_t, 204580_t, 203414_t, 206000_t, 209087_x_t, 206571_s_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="191054552"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>9</hour>
+			<minute>6</minute>
+			<second>14</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>1294_t, 1316_t, 1320_t, 1405_i_t, 1431_t, 1438_t, 1487_t, 1494_f_t, 1598_g_t, 1729_t, 1773_t, 1861_t, 2028_s_t, 31637_s_t, 31799_t, 31807_t, 31826_t, 31835_t, 31837_t, 31845_t, 31846_t, 31861_t, 31874_t, 32029_t, 32032_t, 32042_t, 32062_t, 32069_t, 32088_t, 32091_t, 32094_t, 32099_t, 32128_t, 32137_t, 32209_t, 32259_t, 32402_s_t, 32502_t, 32540_t, 32541_t, 32625_t, 32699_s_t, 32723_t, 32811_t, 32836_t, 32837_t, 33132_t, 33148_t, 33197_t, 33304_t, 33307_t, 33322_i_t, 33323_r_t, 33494_t, 33579_i_t, 33646_g_t, 33736_t, 33760_t, 33767_t, 33768_t, 33778_t, 33814_t, 33850_t, 34031_i_t, 34063_t, 34187_t, 34206_t, 34210_t, 34221_t, 79005_t, 81737_t, 81811_t, 87100_t, 89476_r_t, 89948_t, 89977_t, 90265_t, 90610_t, 91580_t, 91617_t, 91682_t, 91684_g_t, 91703_t, 91816_f_t, 91826_t, 91920_t, 91952_t, 160020_t, 200000_s_t, 200001_t, 200002_t, 200003_s_t, 200004_t, 200005_t, 200006_t, 200007_t, 200008_s_t, 200009_t, 200010_t, 200011_s_t, 200012_x_t, 200013_t, 200014_s_t, 200015_s_t, 200016_x_t, 200017_t, 200018_t, 200019_s_t, 200020_t, 200021_t, 200022_t, 200023_s_t, 200024_t, 200025_s_t, 200026_t, 200027_t, 200028_s_t, 200029_t, 200030_s_t, 200031_s_t, 200032_s_t, 200033_t, 200034_s_t, 200035_t, 200036_s_t, 200037_s_t, 200038_s_t, 200039_s_t, 200040_t, 200041_s_t, 200042_t, 200043_t, 200044_t, 200045_t, 200046_t, 200047_s_t, 200048_s_t, 200049_t, 200050_t, 200051_t, 200052_s_t, 200053_t, 200054_t, 200055_t, 200056_s_t, 200057_s_t, 200058_s_t, 200059_s_t, 200060_s_t, 200061_s_t, 200062_s_t, 200063_s_t, 200064_t</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="795506519"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>10</hour>
+			<minute>34</minute>
+			<second>26</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>213003_s_at, 204039_at, 204312_x_at, 2028_s_at, 38707_r_at, 202248_at, 214447_at, 204798_at, 206394_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="795506519"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>10</hour>
+			<minute>36</minute>
+			<second>40</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>213003_s_at, 204039_at, 204312_x_at, 2028_s_at, 38707_r_at, 202248_at, 214447_at, 204798_at, 206394_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1652893622"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>11</hour>
+			<minute>19</minute>
+			<second>57</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>213003_s_at, 204039_at, 204312_x_at, 2028_s_at, 38707_r_at, 202248_at, 214447_at, 204798_at, 206394_at, 218782_s_at, 220546_at, 201890_at, 218399_s_at, 210130_s_at, 204777_s_at, 222346_at, 203936_s_at, 213201_s_at, 202016_at, 219993_at, 201278_at, 204000_at, 203058_s_at, 207569_at, 213397_x_at, 213720_s_at, 206187_at, 214724_at, 219371_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1652893622"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>11</hour>
+			<minute>26</minute>
+			<second>48</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>213003_s_at, 204039_at, 204312_x_at, 2028_s_at, 38707_r_at, 202248_at, 214447_at, 204798_at, 206394_at, 218782_s_at, 220546_at, 201890_at, 218399_s_at, 210130_s_at, 204777_s_at, 222346_at, 203936_s_at, 213201_s_at, 202016_at, 219993_at, 201278_at, 204000_at, 203058_s_at, 207569_at, 213397_x_at, 213720_s_at, 206187_at, 214724_at, 219371_s_at, 201499_s_at, 201500_s_at, 201501_s_at, 201502_s_at, 201503_at, 201504_s_at, 201505_at, 201506_at, 201507_at, 201508_at, 201509_at, 201510_at, 201511_at, 201512_s_at, 201513_at, 201514_s_at, 201515_s_at, 201516_at, 201517_at, 201518_at, 201519_at, 201520_s_at, 201521_s_at, 201522_x_at, 201523_x_at, 201524_x_at, 201525_at, 201526_at, 201527_at, 201528_at, 201529_s_at, 201530_x_at, 201531_at, 201532_at, 201533_at, 201534_s_at, 201535_at, 201536_at, 201537_s_at, 201538_s_at, 201539_s_at, 201540_at, 201541_s_at, 201542_at, 201543_s_at, 201544_x_at, 201545_s_at, 201546_at, 201547_at, 201548_s_at, 201549_x_at, 201550_x_at, 201551_s_at, 201552_at, 201553_s_at, 201554_x_at, 201555_at, 201556_s_at, 201557_at, 201558_at, 201559_s_at, 201560_at, 201561_s_at, 201562_s_at, 201563_at, 201564_s_at, 201565_s_at, 201566_x_at, 201567_s_at, 201568_at, 201569_s_at, 201570_at, 201571_s_at, 201572_x_at, 201573_s_at, 201574_at, 201575_at, 201576_s_at, 201577_at, 201578_at, 201579_at, 201580_s_at, 201581_at, 201582_at, 201583_s_at, 201584_s_at, 201585_s_at, 201586_s_at, 201587_s_at, 201588_at, 201589_at, 201590_x_at, 201591_s_at, 201592_at, 213572_s_at, 213573_at, 213574_s_at, 213575_at, 213577_at, 213578_at, 213579_s_at, 213580_at, 213581_at, 213582_at, 213583_x_at, 213584_s_at, 213585_s_at, 213586_at, 213587_s_at, 213588_x_at, 213589_s_at, 213590_at, 213591_at, 213592_at, 213593_s_at, 213594_x_at, 213595_s_at, 213596_at, 213597_s_at, 213598_at, 213599_at, 213600_at, 213601_at, 213602_s_at, 213603_s_at, 213604_at, 213605_s_at, 213606_s_at, 213607_x_at, 213608_s_at, 213609_s_at, 213610_s_at, 213611_at, 213612_x_at, 213613_s_at, 213614_x_at, 213615_at, 213616_at, 213617_s_at, 213618_at, 213619_at, 213620_s_at, 213621_s_at, 213622_at, 213623_at, 213624_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1340142846"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>8</day>
+			<hour>14</hour>
+			<minute>55</minute>
+			<second>34</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>TFB2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, ADNP, AEBP1, AFF1, AFF4, AHCTF1, AHR, AR, ARID3A, ARID4A, ARNT, ARNT2, ARNTL, ARNTL2, ASCL1, ATF1, ATF2, ATF3, ATF4, ATF5, ATF6, ATF7, BACH1, BACH2, BARX2, BATF, BAZ1B, BCL6, BLZF1, BNC1, BRD8, BRF1, BRPF1, BTAF1, BUD31, C2orf3, CBFA2T2, CBFA2T3, CBFB, CBL, CEBPA, CEBPB, CEBPD, CEBPE, CEBPG, CEBPZ, CIITA, CITED2, CLOCK, CNBP, CNOT7, CNOT8, CREB1, CREB3L1, CREB3L2, CREB5, CREBBP, CREBL2, CREG1, CREM, CSDA, CTBP1, CTBP2, CTNNB1, DAXX, DBP, DEK, DENND4A, DLX2, DLX4, DLX5, DLX6, DMTF1, DR1, E2F1, E2F3, E2F4, E2F5, E2F6, E2F8, E4F1, EDF1, EGR1, EGR2, EGR3, EGR4, ELF1, ELF2, ELF3, ELF4, ELF5, ELK1, ELK3, ELK4, EMX2, EN1, EN2, ENO1, EP300, EPAS1, ERF, ERG, ESR1, ESR2, ESRRA, ESRRG, ETS1, ETS2, ETV1, ETV4, ETV5, ETV6, ETV7, EVX1, FLI1, FOS, FOSB, FOSL1, FOSL2, FOXA1, FOXA2, FOXD1, FOXF1, FOXF2, FOXH1, FOXI1, FOXJ1, FOXJ2, FOXJ3, FOXK2, FOXM1, FOXP3, FUBP1, GAS7, GATA1, GATA2, GATA3, GATA4, GATA6, GATAD1, GATAD2A, GLI2, GLI3, GMEB1, GRLF1, GTF2IRD1, HAND1, HBP1, HCFC1, HCLS1, HES1, HES2, HEY1, HEY2, HHEX, HIF1A, HIF3A, HIRA, HIVEP1, HIVEP2, HIVEP3, HLF, HMBOX1, HMG20A, HMG20B, HMGA1, HMGA2, HMGB1, HMGB2, HMX1, HNF4A, HOXA10, HOXA11, HOXA4, HOXA5, HOXA6, HOXA7, HOXA9, HOXB2, HOXB5, HOXB6, HOXB7, HOXB9, HOXC10, HOXC11, HOXC5, HOXC6, HOXD1, HOXD11, HOXD13, HOXD3, HOXD4, HOXD9, HR, HSF1, HSF2, IKZF1, IKZF4, IKZF5, ILF2, IRF1, IRF3, IRF4, IRF6, IRF7, IRF8, IRX5, ISL1, JUN, JUNB, JUND, KIAA0415, KLF1, KLF10, KLF11, KLF12, KLF15, KLF2, KLF3, KLF4, KLF5, KLF6, KLF9, KNTC1, L3MBTL, LASS2, LASS4, LASS6, LHX2, LHX6, LMO1, LMO4, LZTFL1, LZTR1, LZTS1, MAF, MAFB, MAFF, MAFG, MAML3, MAX, MAZ, MBD1, MECP2, MEF2A, MEF2C, MEF2D, MEIS1, MEIS2, MEIS3P1, MEOX1, MGA, MITF, MLL, MLL4, MLLT10, MLX, MLXIP, MLXIPL, MNT, MSC, MSRB2, MSX1, MSX2, MTA1, MTF1, MYB, MYBL1, MYBL2, MYC, MYCL1, MYCN, MYF6, MYNN, MYT1, MZF1, NCOR1, NEUROG1, NFAT5, NFATC1, NFATC3, NFATC4, NFE2, NFE2L1, NFE2L3, NFIB, NFIC, NFIL3, NFKB1, NFKB2, NFRKB, NFX1, NFYA, NFYB, NFYC, NHLH2, NKX2-5, NKX3-1, NOTCH2, NPAS2, NPAS3, NPAT, NR0B1, NR0B2, NR1D2, NR1H2, NR1H3, NR1H4, NR1I2, NR1I3, NR2C1, NR2C2, NR2E3, NR2F1, NR2F2, NR2F6, NR3C1, NR3C2, NR4A1, NR4A2, NR4A3, NR5A2, NR6A1, NRF1, ONECUT1, OVOL1, PAX1, PAX2, PAX3, PAX4, PAX6, PAX8, PAX9, PBX1, PBX2, PBX3, PCGF2, PEG3, PGR, PHF2, PHOX2A, PHOX2B, PHTF1, PHTF2, PITX1, PKNOX1, PKNOX2, PLAG1, PLAGL1, PLAGL2, PML, POU2F2, POU2F3, POU3F1, POU3F4, POU4F1, POU4F2, POU6F1, PPARA, PPARD, PPARG, PRDM1, PRDM16, PRDM2, PREB, PROP1, PRRX1, PRRX2, PTTG1, PURA, RARA, RARB, RARG, RB1, RBL2, REL, RELA, RELB, RERE, REST, REXO4, RFX3, RFX5, RFXANK, RLF, RNF4, RORA, RORC, RREB1, RUNX1, RUNX1T1, RUNX2, RUNX3, RXRA, RXRB, RXRG, SALL1, SALL2, SATB1, SATB2, SCAND2, SCML1, SCML2, SIM2, SIX1, SIX2, SIX3, SIX6, SLC2A4RG, SLC30A9, SMAD1, SMAD2, SMAD3, SMAD4, SMAD5, SMAD6, SMAD7, SMARCA4, SNAI1, SNAI2, SNAPC2, SNAPC4, SNAPC5, SOLH, SOX11, SOX12, SOX13, SOX17, SOX18, SOX2, SOX21, SOX3, SOX4, SOX5, SOX9, SP1, SP140, SP3, SP4, SPDEF, SPI1, SPIB, SREBF1, SREBF2, SRF, STAT1, STAT2, STAT3, STAT5A, STAT5B, STAT6, SUPT4H1, SUPT6H, T, TADA2L, TADA3L, TAF1B, TAL1, TBR1, TBX1, TBX10, TBX19, TBX2, TBX21, TBX3, TBX5, TCEAL1, TCF12, TCF15, TCF21, TCF25, TCF3, TCF4, TCF7, TCF7L1, TCF7L2, TCFL5, TEAD1, TEAD3, TEAD4, TEF, TFAM, TFAP2A, TFAP2C, TFAP4, TFCP2, TFCP2L1, TFDP1, TFDP2, TFE3, TFEB, TFEC, TGIF2, THRA, TNRC4, TP53, TRIM22, TRIM25, TRIM28, TRIM29, TRPS1, TSC22D1, TSC22D2, TSC22D3, TSC22D4, TULP4, TWIST1, UBP1, USF2, VAV1, VAX2, VDR, VENTX, VEZF1, WT1, XBP1, YBX1, YEATS4, YWHAE, YWHAZ, YY1, YY2, ZBTB16, ZBTB22, ZBTB25, ZBTB38, ZBTB43, ZBTB7A, ZFHX4, ZFP36L1, ZFP36L2, ZFP37, ZFX, ZFY, ZHX2, ZHX3, ZIC1, ZIM2, ZKSCAN1, ZMYM2, ZMYM4, ZNF10, ZNF117, ZNF12, ZNF124, ZNF131, ZNF132, ZNF133, ZNF134, ZNF135, ZNF136, ZNF137, ZNF14, ZNF140, ZNF141, ZNF142, ZNF146, ZNF148, ZNF154, ZNF16, ZNF160, ZNF167, ZNF174, ZNF175, ZNF177, ZNF180, ZNF184, ZNF185, ZNF187, ZNF189, ZNF192, ZNF193, ZNF195, ZNF20, ZNF200, ZNF202, ZNF204, ZNF205, ZNF211, ZNF217, ZNF219, ZNF22, ZNF222, ZNF223, ZNF224, ZNF226, ZNF227, ZNF230, ZNF232, ZNF236, ZNF238, ZNF239, ZNF24, ZNF248, ZNF250, ZNF253, ZNF259, ZNF26, ZNF264, ZNF266, ZNF267, ZNF268, ZNF271, ZNF273, ZNF277, ZNF282, ZNF287, ZNF292, ZNF3, ZNF302, ZNF304, ZNF318, ZNF32, ZNF323, ZNF329, ZNF330, ZNF331, ZNF334, ZNF335, ZNF33B, ZNF34, ZNF343, ZNF345, ZNF35, ZNF350, ZNF354A, ZNF358, ZNF365, ZNF394, ZNF395, ZNF408, ZNF410, ZNF415, ZNF423, ZNF426, ZNF43, ZNF430, ZNF432, ZNF434, ZNF440, ZNF443, ZNF444, ZNF446, ZNF45, ZNF451, ZNF460, ZNF467, ZNF468, ZNF480, ZNF484, ZNF493, ZNF500, ZNF506, ZNF507, ZNF516, ZNF528, ZNF529, ZNF532, ZNF536, ZNF549, ZNF550, ZNF551, ZNF552, ZNF557, ZNF573, ZNF574, ZNF576, ZNF580, ZNF586, ZNF587, ZNF589, ZNF592, ZNF593, ZNF606, ZNF609, ZNF611, ZNF614, ZNF623, ZNF638, ZNF643, ZNF646, ZNF652, ZNF654, ZNF667, ZNF668, ZNF669, ZNF671, ZNF673, ZNF675, ZNF682, ZNF688, ZNF692, ZNF695, ZNF696, ZNF7, ZNF701, ZNF706, ZNF710, ZNF74, ZNF79, ZNF8, ZNF83, ZNF84, ZNF85, ZNF91, ZNF93</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1977883120"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>8</day>
+			<hour>20</hour>
+			<minute>14</minute>
+			<second>19</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>test</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>1405_i_at, 1431_at, 1438_at, 1487_at, 1598_g_at, 1729_at, 177_at, 1773_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="526099685"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>8</day>
+			<hour>20</hour>
+			<minute>24</minute>
+			<second>45</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>test</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>209165_at, 208991_at, 218782_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="526099685"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>8</day>
+			<hour>20</hour>
+			<minute>25</minute>
+			<second>46</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>test</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>209165_at, 208991_at, 218782_s_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="496118208"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>8</day>
+			<hour>20</hour>
+			<minute>46</minute>
+			<second>37</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>tf80</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value></value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="496118208"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>8</day>
+			<hour>20</hour>
+			<minute>46</minute>
+			<second>52</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>test</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AATF, ADNP, AEBP1, AFF1, AFF4, AHCTF1, AHR, AR, ARID3A, ARID4A, ARNT, ARNT2, ARNTL, ARNTL2, ASCL1, ATF1, ATF2, ATF3, ATF4, ATF5, ATF6, ATF7, BACH1, BACH2, BARX2, BATF, BAZ1B, BCL6, BLZF1, BNC1, BRD8, BRF1, BRPF1, BTAF1, BUD31, C2orf3, CBFA2T2, CBFA2T3, CBFB, CBL, CEBPA, CEBPB, CEBPD, CEBPE, CEBPG, CEBPZ, CIITA, CITED2, CLOCK, CNBP, CNOT7, CNOT8, CREB1, CREB3L1, CREB3L2, CREB5, CREBBP, CREBL2, CREG1, CREM, CSDA, CTBP1</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1793029429"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>9</day>
+			<hour>8</hour>
+			<minute>11</minute>
+			<second>16</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>209678_s_at, 209679_s_at, 209680_s_at, 209681_at, 209682_at, 209683_at, 209684_at, 209685_s_at, 209687_at, 209688_s_at, 209689_at, 209690_s_at, 209691_s_at, 209692_at, 209693_at, 209694_at, 209695_at, 209696_at, 209698_at, 209699_x_at, 209701_at, 209702_at, 209703_x_at, 209704_at, 209705_at, 209706_at, 209707_at, 209708_at, 209709_s_at, 209710_at, 209711_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="671153142"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>18</hour>
+			<minute>24</minute>
+			<second>59</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>204829_s_at, 211074_at, 205778_at, 202286_s_at, 211075_s_at, 201428_at, 204846_at, 205350_at, 204733_at, 204086_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="r-4c6c4e3afb924"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2020322180"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>18</hour>
+			<minute>53</minute>
+			<second>36</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>70_TFs_from_HG-U95Av2.na28</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Discovery</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>204829_s_at, 211074_at, 205778_at, 202286_s_at, 211075_s_at, 201428_at, 204846_at, 205350_at, 204733_at, 204086_at, 203892_at, 208650_s_at, 201005_at, 201897_s_at, 201137_s_at, 201596_x_at, 202016_at, 209677_at, 203021_at, 210715_s_at, 219935_at, 206385_s_at, 202672_s_at, 206125_s_at, 204777_s_at, 207921_x_at, 200887_s_at, 206542_s_at, 203875_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.5</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

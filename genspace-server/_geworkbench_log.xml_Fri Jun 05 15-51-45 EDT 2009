@@ -1,0 +1,77 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="X-Box binding protein overexpression effect on breast cancer cell line_6_merged"/>
+		<transaction id="2133429930"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>46</minute>
+			<second>23</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="MINDY"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="1473360702"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>10</day>
+			<hour>13</hour>
+			<minute>47</minute>
+			<second>51</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100-filtered.exp"/>
+		<transaction id="1522616758"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>22</day>
+			<hour>14</hour>
+			<minute>3</minute>
+			<second>56</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="1364790174"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>5</day>
+			<hour>15</hour>
+			<minute>51</minute>
+			<second>37</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="1364790174"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>5</day>
+			<hour>15</hour>
+			<minute>51</minute>
+			<second>45</second>
+		</time>
+	</metric>
+</measurement>

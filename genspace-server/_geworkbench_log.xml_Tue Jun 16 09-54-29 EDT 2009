@@ -1,0 +1,107 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="ARACNE"/>
+		<dataset name="webmatrix.exp"/>
+		<transaction id="561383628"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>29</day>
+			<hour>16</hour>
+			<minute>34</minute>
+			<second>0</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1008021912"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>16</day>
+			<hour>9</hour>
+			<minute>54</minute>
+			<second>13</second>
+		</time>
+		<parameters count="10">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>HubGeneList</key>
+				<value>31564_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="4">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="8">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name=""/>
+		<transaction id="28436259"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>16</day>
+			<hour>9</hour>
+			<minute>54</minute>
+			<second>29</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>alpha</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

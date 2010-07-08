@@ -1,0 +1,73 @@
+package genspace.db;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import genspace.RuntimeEnvironmentSettings;
+import org.geworkbench.components.genspace.bean.RatingBean;
+
+public class RatingManager extends DatabaseConnector{
+	
+	public RatingBean writeRating(int id, int rating, String table, String user){
+		//do not allow guests to rate
+		if (user.equals(RuntimeEnvironmentSettings.DEFAULT_USER)) return getRating(id, table, user);
+		
+		try {
+			PreparedStatement pstmt = 
+				getConnection().prepareStatement("INSERT INTO " + table + " (id, rating, username) VALUES (?, ?, ?)");
+			
+			pstmt.setInt(1, id);
+			pstmt.setInt(2, rating);
+			pstmt.setString(3, user);
+			
+			pstmt.execute();
+			
+			return getRating(id, table, user);
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public RatingBean getRating(int identifier, String table, String user){
+		double overallRating = 0;
+		double userRating = -1;
+		long total = 0;
+		
+		try{
+			Statement overall = getConnection().createStatement();
+			ResultSet r = overall.executeQuery("SELECT CAST(AVG(rating) as Float) as avg, COUNT(rating) as count FROM " + table + " where id = " + identifier);
+			
+			r.next();
+			if (r.getInt("count") != 0){
+				overallRating = r.getDouble("avg");
+				total = r.getInt("count");
+				
+				if (!user.equals(RuntimeEnvironmentSettings.DEFAULT_USER)){
+					Statement userStmt = getConnection().createStatement();
+					ResultSet userRatingRS = 
+						userStmt.executeQuery("SELECT rating FROM " + table + 
+												" where id = " + identifier + 
+												" AND username = '" + user + "'");
+					
+					if (userRatingRS.next())
+						userRating = userRatingRS.getInt("rating");
+					else 
+						userRating = 0;
+					
+				}
+					
+			}
+			else if (!user.equals(RuntimeEnvironmentSettings.DEFAULT_USER)) userRating = 0;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return new RatingBean(identifier, overallRating, userRating, total);
+	}
+	 
+}

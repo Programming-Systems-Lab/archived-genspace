@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="CCC12"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="bladder_reactome_dbase_orig.exp"/>
+		<transaction id="1279364819"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>23</day>
+			<hour>14</hour>
+			<minute>59</minute>
+			<second>26</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="CCC12"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="bladder_reactome_dbase_orig.exp"/>
+		<transaction id="1279364819"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>23</day>
+			<hour>14</hour>
+			<minute>59</minute>
+			<second>35</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="CCC12"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="affydata_no_norm.exp"/>
+		<transaction id="192224048"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>13</day>
+			<hour>11</hour>
+			<minute>9</minute>
+			<second>33</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="CCC12"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="affydata_no_norm.exp"/>
+		<transaction id="192224048"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>13</day>
+			<hour>11</hour>
+			<minute>9</minute>
+			<second>41</second>
+		</time>
+	</metric>
+</measurement>

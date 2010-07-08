@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="BCL7A-PIM1.exp"/>
+		<transaction id="587116904"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>28</minute>
+			<second>31</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="BCL7A-PAX5.exp"/>
+		<transaction id="1398835770"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>29</minute>
+			<second>13</second>
+		</time>
+	</metric>
+</measurement>

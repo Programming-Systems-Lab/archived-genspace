@@ -1,0 +1,76 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="NetBoost Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1905476813"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>13</minute>
+			<second>26</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>modelSelections</key>
+				<value>[true, true, true, true, true, true, true]</value>
+			</parameter>
+			<parameter id="1">
+				<key>boostingIter</key>
+				<value>120</value>
+			</parameter>
+			<parameter id="2">
+				<key>trainingEx</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>crossValid</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="4">
+				<key>subgraphCounting</key>
+				<value>8 Step Walk</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET8"/>
+		<analysis name="NetBoost Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1905476813"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>15</minute>
+			<second>46</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>modelSelections</key>
+				<value>[true, false, false, false, false, false, false]</value>
+			</parameter>
+			<parameter id="1">
+				<key>boostingIter</key>
+				<value>120</value>
+			</parameter>
+			<parameter id="2">
+				<key>trainingEx</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>crossValid</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="4">
+				<key>subgraphCounting</key>
+				<value>8 Step Walk</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

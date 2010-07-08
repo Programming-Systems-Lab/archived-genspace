@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="CNAsValidatedProbesCLLU133p2notfilteredout.exp"/>
+		<transaction id="1730450298"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>12</day>
+			<hour>10</hour>
+			<minute>26</minute>
+			<second>47</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="WESMutatedProbesDLBCL.exp"/>
+		<transaction id="1306324454"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>12</day>
+			<hour>18</hour>
+			<minute>7</minute>
+			<second>26</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="WESMutatedProbesCLL.exp"/>
+		<transaction id="2108183798"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>12</day>
+			<hour>18</hour>
+			<minute>13</minute>
+			<second>45</second>
+		</time>
+	</metric>
+</measurement>

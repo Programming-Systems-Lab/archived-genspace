@@ -1,0 +1,92 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="Alterations in Gene Expression Profiles during Prostate Cancer Progression_6_merged"/>
+		<transaction id="1284735672"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>6</day>
+			<hour>15</hour>
+			<minute>30</minute>
+			<second>30</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="test experiment 90_E06_U133P2"/>
+		<transaction id="524032537"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>6</day>
+			<hour>17</hour>
+			<minute>34</minute>
+			<second>24</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="A549 teatement with MGd_18_merged"/>
+		<transaction id="933095888"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>9</day>
+			<hour>15</hour>
+			<minute>31</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Motexafin gadolinium (MGd) treatment of A549 lung cancer cell line_18_merged"/>
+		<transaction id="1272998378"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>14</day>
+			<hour>12</hour>
+			<minute>30</minute>
+			<second>46</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="Motexafin gadolinium (MGd) treatment of A549 lung cancer cell line_18_merged"/>
+		<transaction id="30206066"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>14</day>
+			<hour>13</hour>
+			<minute>53</minute>
+			<second>16</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="NCI-MESSERDO-L1"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Motexafin gadolinium (MGd) treatment of A549 lung cancer cell line_18_merged"/>
+		<transaction id="336996870"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>14</day>
+			<hour>13</hour>
+			<minute>55</minute>
+			<second>11</second>
+		</time>
+	</metric>
+</measurement>

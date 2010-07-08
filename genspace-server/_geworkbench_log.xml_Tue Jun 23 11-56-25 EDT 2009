@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="out1"/>
+		<transaction id="258289646"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>23</day>
+			<hour>11</hour>
+			<minute>52</minute>
+			<second>28</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="patrick-cronins-macbook-2.local"/>
+		<analysis name="ARACNE"/>
+		<dataset name="out1.adj"/>
+		<transaction id="1261592942"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>23</day>
+			<hour>11</hour>
+			<minute>56</minute>
+			<second>25</second>
+		</time>
+	</metric>
+</measurement>

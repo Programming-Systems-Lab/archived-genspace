@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Sriram-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="nl4actdata"/>
+		<transaction id="420883759"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>15</hour>
+			<minute>28</minute>
+			<second>25</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="Sriram-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="nl4actdata"/>
+		<transaction id="420883759"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>15</hour>
+			<minute>28</minute>
+			<second>42</second>
+		</time>
+	</metric>
+</measurement>

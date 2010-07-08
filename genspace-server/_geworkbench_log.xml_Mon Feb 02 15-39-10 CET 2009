@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1443648164"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>15</hour>
+			<minute>19</minute>
+			<second>19</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1371904790"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>2</day>
+			<hour>15</hour>
+			<minute>39</minute>
+			<second>10</second>
+		</time>
+	</metric>
+</measurement>

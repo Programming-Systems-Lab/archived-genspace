@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="brunello"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="tutto_IDI"/>
+		<transaction id="662266865"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>1</minute>
+			<second>53</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="brunello"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="tutto_IDI"/>
+		<transaction id="230113757"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>17</day>
+			<hour>17</hour>
+			<minute>3</minute>
+			<second>8</second>
+		</time>
+	</metric>
+</measurement>

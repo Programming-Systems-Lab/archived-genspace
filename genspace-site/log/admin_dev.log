@@ -1,0 +1,42 @@
+Feb 22 19:37:35 symfony [info] {sfPatternRouting} Connect sfRoute "homepage" (/)
+Feb 22 19:37:35 symfony [info] {sfPatternRouting} Connect sfRoute "default_symfony" (/symfony/:action/*)
+Feb 22 19:37:35 symfony [info] {sfPatternRouting} Connect sfRoute "default_index" (/:module)
+Feb 22 19:37:35 symfony [info] {sfPatternRouting} Connect sfRoute "default" (/:module/:action/*)
+Feb 22 19:37:35 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'list',  'action' => 'index',)
+Feb 22 19:37:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Feb 22 19:37:35 symfony [info] {sfFilterChain} Executing filter "sfCommonFilter"
+Feb 22 19:37:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Feb 22 19:37:35 symfony [info] {listActions} Call "listActions->executeIndex()"
+Feb 22 19:37:35 symfony [info] {sfPHPView} Render "C:\genspace_site\apps\admin\modules/list/templates/indexSuccess.php"
+Feb 22 19:37:35 symfony [info] {sfPHPView} Decorate content with "C:\genspace_site\apps\admin\templates/layout.php"
+Feb 22 19:37:35 symfony [info] {sfPHPView} Render "C:\genspace_site\apps\admin\templates/layout.php"
+Feb 22 19:37:35 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Feb 22 19:37:35 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Feb 22 19:37:35 symfony [info] {sfWebDebugLogger} Configuration 928.47 ms (9)
+Feb 22 19:37:35 symfony [info] {sfWebDebugLogger} Action "list/index" 0.33 ms (1)
+Feb 22 19:37:35 symfony [info] {sfWebDebugLogger} View "Success" for "list/index" 64.41 ms (1)
+Feb 22 19:37:35 symfony [info] {sfWebResponse} Send content (25129 o)
+Jul 01 13:04:50 symfony [info] {sfPatternRouting} Connect "/"
+Jul 01 13:04:50 symfony [info] {sfPatternRouting} Connect "/symfony/:action/*"
+Jul 01 13:04:50 symfony [info] {sfPatternRouting} Connect "/:module"
+Jul 01 13:04:50 symfony [info] {sfPatternRouting} Connect "/:module/:action/*"
+Jul 01 13:04:50 symfony [info] {sfFrontWebController} Initialization
+Jul 01 13:04:50 symfony [info] {sfPatternRouting} Match route [homepage] for "/"
+Jul 01 13:04:50 symfony [info] {sfWebRequest} Request parameters array (  'module' => 'list',  'action' => 'index',)
+Jul 01 13:04:50 symfony [info] {sfContext} Initialization
+Jul 01 13:04:50 symfony [info] {sfFrontWebController} Dispatch request
+Jul 01 13:04:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 01 13:04:50 symfony [info] {sfFilterChain} Executing filter "sfCommonFilter"
+Jul 01 13:04:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 01 13:04:50 symfony [info] {listActions} Call "listActions->executeIndex()"
+Jul 01 13:04:50 symfony [info] {sfPHPView} Initialize view for "list/index"
+Jul 01 13:04:50 symfony [info] {sfPHPView} Render "C:\genspace_site\apps\admin\modules/list/templates/indexSuccess.php"
+Jul 01 13:04:50 symfony [info] {sfPHPView} Decorate content with "C:\genspace_site\apps\admin\templates/layout.php"
+Jul 01 13:04:50 symfony [info] {sfPHPView} Render "C:\genspace_site\apps\admin\templates/layout.php"
+Jul 01 13:04:50 symfony [info] {sfRenderingFilter} Render to the client
+Jul 01 13:04:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 01 13:04:50 symfony [info] {sfWebResponse} Send header "Content-Type": "text/html; charset=utf-8"
+Jul 01 13:04:50 symfony [info] {sfWebDebugLogger} Configuration 11785.95 ms (9)
+Jul 01 13:04:50 symfony [info] {sfWebDebugLogger} Action "list/index" 0.44 ms (1)
+Jul 01 13:04:50 symfony [info] {sfWebDebugLogger} View "Success" for "list/index" 62.37 ms (1)
+Jul 01 13:04:50 symfony [info] {sfWebResponse} Send content (21083 o)

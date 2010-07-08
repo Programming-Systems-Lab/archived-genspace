@@ -1,0 +1,31 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="califano11"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="SpellmanReduced"/>
+		<transaction id="1515106345"/>
+		<time>
+			<year>2009</year>
+			<month>12</month>
+			<day>1</day>
+			<hour>9</hour>
+			<minute>47</minute>
+			<second>15</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

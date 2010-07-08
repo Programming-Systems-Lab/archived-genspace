@@ -1,0 +1,84 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="sandra-canosa-macbooks-macbook-pro.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="GSE480_series_matrix"/>
+		<transaction id="410149724"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>7</day>
+			<hour>16</hour>
+			<minute>46</minute>
+			<second>29</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>10000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.9</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="sandra-canosa-macbooks-macbook-pro.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="GSE480_series_matrix"/>
+		<transaction id="410149724"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>7</day>
+			<hour>16</hour>
+			<minute>47</minute>
+			<second>49</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>10000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.9</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

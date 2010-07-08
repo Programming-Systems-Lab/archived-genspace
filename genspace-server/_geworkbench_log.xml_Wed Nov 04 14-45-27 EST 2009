@@ -1,0 +1,84 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS19"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="181207905"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>4</day>
+			<hour>14</hour>
+			<minute>12</minute>
+			<second>10</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>iterations</key>
+				<value>8000</value>
+			</parameter>
+			<parameter id="1">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+			<parameter id="2">
+				<key>columns</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="3">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="4">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>rows</key>
+				<value>5</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS19"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="324163236"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>4</day>
+			<hour>14</hour>
+			<minute>45</minute>
+			<second>27</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>iterations</key>
+				<value>8000</value>
+			</parameter>
+			<parameter id="1">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+			<parameter id="2">
+				<key>columns</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="3">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="4">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="5">
+				<key>rows</key>
+				<value>5</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

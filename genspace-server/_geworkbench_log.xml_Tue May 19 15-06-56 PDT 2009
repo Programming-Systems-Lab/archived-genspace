@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ip-0AF8BE20"/>
+		<analysis name="ARACNE"/>
+		<dataset name="webmatrix.exp"/>
+		<transaction id="986335307"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>19</day>
+			<hour>15</hour>
+			<minute>5</minute>
+			<second>39</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ip-0AF8BE20"/>
+		<analysis name="MatrixREDUCE"/>
+		<dataset name="webmatrix.exp"/>
+		<transaction id="3350315"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>19</day>
+			<hour>15</hour>
+			<minute>6</minute>
+			<second>56</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,221 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="vijay-laptop"/>
+		<analysis name="MRA Analysis"/>
+		<dataset name="FTD_CONTROL_100"/>
+		<transaction id="39670614"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>20</day>
+			<hour>19</hour>
+			<minute>24</minute>
+			<second>15</second>
+		</time>
+		<parameters count="14">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>TF</key>
+				<value>ILMN_1659572, ILMN_1767351, ILMN_1670130, ILMN_1762582, ILMN_1782004, ILMN_1738027, ILMN_1715715, ILMN_2334242, ILMN_1786015, ILMN_1676984, ILMN_2051469, ILMN_1778681, ILMN_1762899, ILMN_1813270, ILMN_1654289, ILMN_1664815, ILMN_1771805, ILMN_2273103, ILMN_1709593, ILMN_1678535, ILMN_1740045, ILMN_1707398, ILMN_1803367, ILMN_1697735, ILMN_1727041, ILMN_2413251, ILMN_1751460, ILMN_1665738, ILMN_1766650, ILMN_1668052, ILMN_1763712, ILMN_1738401, ILMN_1704418, ILMN_1737435, ILMN_1674934, ILMN_1651437, ILMN_1736936, ILMN_1741692, ILMN_1681703, ILMN_1687940, ILMN_1669046, ILMN_2175562, ILMN_1797251, ILMN_2102670, ILMN_1690420, ILMN_1680987, ILMN_1763260, ILMN_1722829, ILMN_1698546, ILMN_2372124, ILMN_1753613, ILMN_1797668, ILMN_1742993, ILMN_1708375, ILMN_1806023, ILMN_1701340, ILMN_1806395, ILMN_1764709, ILMN_1695633, ILMN_1704236, ILMN_1802457, ILMN_1661888, ILMN_1667453, ILMN_1776480, ILMN_1711894, ILMN_1675461, ILMN_1739450, ILMN_1790909, ILMN_1654942, ILMN_2329263, ILMN_1707312, ILMN_1714965, ILMN_1690325, ILMN_1805457, ILMN_1800058, ILMN_1667162, ILMN_1678032, ILMN_1667906, ILMN_1751882, ILMN_1791916, ILMN_1786197, ILMN_2389347, ILMN_2339955, ILMN_1734365, ILMN_1739400, ILMN_1793101, ILMN_1687052, ILMN_1789905, ILMN_1784678, ILMN_1657344, ILMN_1800225, ILMN_2364384, ILMN_1790338, ILMN_1727107, ILMN_2247229, ILMN_2322498, ILMN_2322499, ILMN_1738368, ILMN_2298624, ILMN_2415267, ILMN_1730797, ILMN_1801504, ILMN_1687315, ILMN_1673820, ILMN_1798588, ILMN_1653750, ILMN_1671092, ILMN_1760051, ILMN_1805466, ILMN_1676010, ILMN_1696463, ILMN_2143314, ILMN_1761016, ILMN_1803398, ILMN_1748182, ILMN_1690105, ILMN_1691364, ILMN_1777325, ILMN_2401978, ILMN_1748450, ILMN_1697117, ILMN_1659929, ILMN_1663561, ILMN_1778337, ILMN_1778941, ILMN_1664434, ILMN_1762231, ILMN_1765574, ILMN_1736527, ILMN_1677564, ILMN_1779356, ILMN_1777982, ILMN_2353240, ILMN_2319952, ILMN_2181540, ILMN_1687484, ILMN_1674399, ILMN_2224946, ILMN_1670816, ILMN_1749838</value>
+			</parameter>
+			<parameter id="8">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="10">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="12">
+				<key>numCombs</key>
+				<value>500</value>
+			</parameter>
+			<parameter id="13">
+				<key>alpha</key>
+				<value>0.0010</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="vijay-laptop"/>
+		<analysis name="MRA Analysis"/>
+		<dataset name="AD_CONTROL_100"/>
+		<transaction id="1102807402"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>20</day>
+			<hour>19</hour>
+			<minute>25</minute>
+			<second>24</second>
+		</time>
+		<parameters count="14">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>TF</key>
+				<value>ILMN_1659572, ILMN_1767351, ILMN_1670130, ILMN_1762582, ILMN_1782004, ILMN_1738027, ILMN_1715715, ILMN_2334242, ILMN_1786015, ILMN_1676984, ILMN_2051469, ILMN_1778681, ILMN_1762899, ILMN_1813270, ILMN_1654289, ILMN_1664815, ILMN_1771805, ILMN_2273103, ILMN_1709593, ILMN_1678535, ILMN_1740045, ILMN_1707398, ILMN_1803367, ILMN_1697735, ILMN_1727041, ILMN_2413251, ILMN_1751460, ILMN_1665738, ILMN_1766650, ILMN_1668052, ILMN_1763712, ILMN_1738401, ILMN_1704418, ILMN_1737435, ILMN_1674934, ILMN_1651437, ILMN_1736936, ILMN_1741692, ILMN_1681703, ILMN_1687940, ILMN_1669046, ILMN_2175562, ILMN_1797251, ILMN_2102670, ILMN_1690420, ILMN_1680987, ILMN_1763260, ILMN_1722829, ILMN_1698546, ILMN_2372124, ILMN_1753613, ILMN_1797668, ILMN_1742993, ILMN_1708375, ILMN_1806023, ILMN_1701340, ILMN_1806395, ILMN_1764709, ILMN_1695633, ILMN_1704236, ILMN_1802457, ILMN_1661888, ILMN_1667453, ILMN_1776480, ILMN_1711894, ILMN_1675461, ILMN_1739450, ILMN_1790909, ILMN_1654942, ILMN_2329263, ILMN_1707312, ILMN_1714965, ILMN_1690325, ILMN_1805457, ILMN_1800058, ILMN_1667162, ILMN_1678032, ILMN_1667906, ILMN_1751882, ILMN_1791916, ILMN_1786197, ILMN_2389347, ILMN_2339955, ILMN_1734365, ILMN_1739400, ILMN_1793101, ILMN_1687052, ILMN_1789905, ILMN_1784678, ILMN_1657344, ILMN_1800225, ILMN_2364384, ILMN_1790338, ILMN_1727107, ILMN_2247229, ILMN_2322498, ILMN_2322499, ILMN_1738368, ILMN_2298624, ILMN_2415267, ILMN_1730797, ILMN_1801504, ILMN_1687315, ILMN_1673820, ILMN_1798588, ILMN_1653750, ILMN_1671092, ILMN_1760051, ILMN_1805466, ILMN_1676010, ILMN_1696463, ILMN_2143314, ILMN_1761016, ILMN_1803398, ILMN_1748182, ILMN_1690105, ILMN_1691364, ILMN_1777325, ILMN_2401978, ILMN_1748450, ILMN_1697117, ILMN_1659929, ILMN_1663561, ILMN_1778337, ILMN_1778941, ILMN_1664434, ILMN_1762231, ILMN_1765574, ILMN_1736527, ILMN_1677564, ILMN_1779356, ILMN_1777982, ILMN_2353240, ILMN_2319952, ILMN_2181540, ILMN_1687484, ILMN_1674399, ILMN_2224946, ILMN_1670816, ILMN_1749838</value>
+			</parameter>
+			<parameter id="8">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="10">
+				<key>bonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="12">
+				<key>numCombs</key>
+				<value>500</value>
+			</parameter>
+			<parameter id="13">
+				<key>alpha</key>
+				<value>0.0010</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="vijay-laptop"/>
+		<analysis name="MRA Analysis"/>
+		<dataset name="AD_CONTROL_100"/>
+		<transaction id="1102807402"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>20</day>
+			<hour>19</hour>
+			<minute>30</minute>
+			<second>31</second>
+		</time>
+		<parameters count="14">
+			<parameter id="0">
+				<key>pvaluesByPerm</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>adjustedBonferroni</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>welch</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="3">
+				<key>allPerms</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="4">
+				<key>noCorrection</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="5">
+				<key>equalVariances</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="6">
+				<key>stepdownMinP</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="7">
+				<key>TF</key>
+				<value>ILMN_1659572, ILMN_1767351, ILMN_1670130, ILMN_1762582, ILMN_1782004, ILMN_1738027, ILMN_1715715, ILMN_2334242, ILMN_1786015, ILMN_1676984, ILMN_2051469, ILMN_1778681, ILMN_1762899, ILMN_1813270, ILMN_1654289, ILMN_1664815, ILMN_1771805, ILMN_2273103, ILMN_1709593, ILMN_1678535, ILMN_1740045, ILMN_1707398, ILMN_1803367, ILMN_1697735, ILMN_1727041, ILMN_2413251, ILMN_1751460, ILMN_1665738, ILMN_1766650, ILMN_1668052, ILMN_1763712, ILMN_1738401, ILMN_1704418, ILMN_1737435, ILMN_1674934, ILMN_1651437, ILMN_1736936, ILMN_1741692, ILMN_1681703, ILMN_1687940, ILMN_1669046, ILMN_2175562, ILMN_1797251, ILMN_2102670, ILMN_1690420, ILMN_1680987, ILMN_1763260, ILMN_1722829, ILMN_1698546, ILMN_2372124, ILMN_1753613, ILMN_1797668, ILMN_1742993, ILMN_1708375, ILMN_1806023, ILMN_1701340, ILMN_1806395, ILMN_1764709, ILMN_1695633, ILMN_1704236, ILMN_1802457, ILMN_1661888, ILMN_1667453, ILMN_1776480, ILMN_1711894, ILMN_1675461, ILMN_1739450, ILMN_1790909, ILMN_1654942, ILMN_2329263, ILMN_1707312, ILMN_1714965, ILMN_1690325, ILMN_1805457, ILMN_1800058, ILMN_1667162, ILMN_1678032, ILMN_1667906, ILMN_1751882, ILMN_1791916, ILMN_1786197, ILMN_2389347, ILMN_2339955, ILMN_1734365, ILMN_1739400, ILMN_1793101, ILMN_1687052, ILMN_1789905, ILMN_1784678, ILMN_1657344, ILMN_1800225, ILMN_2364384, ILMN_1790338, ILMN_1727107, ILMN_2247229, ILMN_2322498, ILMN_2322499, ILMN_1738368, ILMN_2298624, ILMN_2415267, ILMN_1730797, ILMN_1801504, ILMN_1687315, ILMN_1673820, ILMN_1798588, ILMN_1653750, ILMN_1671092, ILMN_1760051, ILMN_1805466, ILMN_1676010, ILMN_1696463, ILMN_2143314, ILMN_1761016, ILMN_1803398, ILMN_1748182, ILMN_1690105, ILMN_1691364, ILMN_1777325, ILMN_2401978, ILMN_1748450, ILMN_1697117, ILMN_1659929, ILMN_1663561, ILMN_1778337, ILMN_1778941, ILMN_1664434, ILMN_1762231, ILMN_1765574, ILMN_1736527, ILMN_1677564, ILMN_1779356, ILMN_1777982, ILMN_2353240, ILMN_2319952, ILMN_2181540, ILMN_1687484, ILMN_1674399, ILMN_2224946, ILMN_1670816, ILMN_1749838</value>
+			</parameter>
+			<parameter id="8">
+				<key>randomlyGroup</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>pvaluesByTDistribution</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="10">
+				<key>bonferroni</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="11">
+				<key>stepdownMaxT</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="12">
+				<key>numCombs</key>
+				<value>500</value>
+			</parameter>
+			<parameter id="13">
+				<key>alpha</key>
+				<value>0.0010</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

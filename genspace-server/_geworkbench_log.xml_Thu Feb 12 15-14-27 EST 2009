@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="220935519"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>12</day>
+			<hour>15</hour>
+			<minute>14</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testdata2log"/>
+		<transaction id="220935519"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>12</day>
+			<hour>15</hour>
+			<minute>14</minute>
+			<second>27</second>
+		</time>
+	</metric>
+</measurement>

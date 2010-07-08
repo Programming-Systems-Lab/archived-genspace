@@ -1,0 +1,118 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="meng1"/>
+		<analysis name="Blast SkyBase"/>
+		<dataset name=""/>
+		<transaction id="964299345"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>28</day>
+			<hour>12</hour>
+			<minute>17</minute>
+			<second>7</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>trphits</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="1">
+				<key>minsid</key>
+				<value>30</value>
+			</parameter>
+			<parameter id="2">
+				<key>mincov</key>
+				<value>75</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="meng1"/>
+		<analysis name="Blast SkyBase"/>
+		<dataset name=""/>
+		<transaction id="1440655488"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>28</day>
+			<hour>14</hour>
+			<minute>25</minute>
+			<second>11</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>trphits</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="1">
+				<key>minsid</key>
+				<value>30</value>
+			</parameter>
+			<parameter id="2">
+				<key>mincov</key>
+				<value>75</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="meng1"/>
+		<analysis name="Blast SkyBase"/>
+		<dataset name=""/>
+		<transaction id="1462121819"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>28</day>
+			<hour>14</hour>
+			<minute>51</minute>
+			<second>23</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>trphits</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="1">
+				<key>minsid</key>
+				<value>30</value>
+			</parameter>
+			<parameter id="2">
+				<key>mincov</key>
+				<value>75</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="meng1"/>
+		<analysis name="Blast SkyBase"/>
+		<dataset name=""/>
+		<transaction id="2083654733"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>28</day>
+			<hour>15</hour>
+			<minute>28</minute>
+			<second>34</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>trphits</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="1">
+				<key>minsid</key>
+				<value>30</value>
+			</parameter>
+			<parameter id="2">
+				<key>mincov</key>
+				<value>75</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

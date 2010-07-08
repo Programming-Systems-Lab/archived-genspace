@@ -1,0 +1,640 @@
+package genspace.db;
+
+import genspace.common.Logger;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.io.*;
+import java.util.*;
+
+
+/**
+ * This class is part of the server side suggestion engine implemented 
+ * This class implements all the abstract methods defined in ISBUSuggestionEngine
+ * @author cheng
+ *
+ */
+
+public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSuggestionEngine {
+	
+	private static final String FILE_PATH = "DataAnalysisResult.gs";
+	private ObjectInputStream input;
+	private ISBUManager dbManager;
+	
+	
+	
+	/**
+	 * Constructor
+	 *  
+	 */
+	public ISBUSuggestionEngineImpl()  {
+		
+	}
+	
+	
+	
+	public void engineInitialization() throws Exception{
+		
+		try {
+			//first we read in the analysis result file stored on the server side
+			File fileFromStorage = new File(FILE_PATH);
+			input = new ObjectInputStream(new FileInputStream(fileFromStorage));
+			dbManager = (ISBUManager) input.readObject();
+			input.close();
+		}
+		catch (Exception e) {
+			System.out.println("Error:" + e);
+		}
+		
+	}
+	
+	
+	
+	
+	public ArrayList <String> getAllAnalysisTools1() {
+		
+		return dbManager.getAnalysisToolSet();
+	}
+	
+	
+	public ArrayList <String> getTop3MostPopularTools() {
+		
+		ArrayList <String> top3Tools = new ArrayList();
+		
+		ArrayList sortedList = dbManager.getSortedIndex1By1stValue();
+		
+		//we are sure that the total number of tools is larger than 3, so we just get the first 3 elements
+		for (int i = 0; i < 3; i++) {
+			top3Tools.add(((CompareUnit)(sortedList.get(i))).getName());
+		}
+		return top3Tools;
+	}
+	
+	
+	public ArrayList <String> getTop3MostPopularWFHead() {
+		
+		ArrayList <String> top3Heads = new ArrayList();
+		
+		ArrayList sortedList = dbManager.getSortedIndex1By2ndValue();
+		
+		for (int i = 0; i < 3 ; i++) {
+			top3Heads.add(((CompareUnit)(sortedList.get(i))).getName());
+		}
+		return top3Heads;
+	}
+	
+	
+	public ArrayList <String> getTop3MostPopularWF() {
+		
+		ArrayList <String> top3WFs = new ArrayList();
+		
+		ArrayList sortedList = dbManager.getSortedIndex2ByOnlyValue();
+		
+		for (int i = 0; i < 3; i++) {
+			top3WFs.add(((CompareUnit)(sortedList.get(i))).getName());
+		}
+		return top3WFs;
+	}
+	
+	
+	
+	/*
+	public HashMap <String, ArrayList> getSuggestionForEachTool()  {
+		return dbManager.getAnalysisToolIndex();
+	}
+	*/
+	
+	
+	public String getUsageRate(String toolName){
+		
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		Integer result = (Integer)(valueList.get(0));
+		return result.toString();
+		
+	}
+	
+	
+	
+	public String getUsageRateAsWFHead(String toolName) {
+		
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		Integer result = (Integer)(valueList.get(1));
+		return result.toString();
+	}
+
+	
+	
+	public String getMostPopularNextTool(String toolName) {
+		
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		String result = (String) (valueList.get(2));
+		return result.toString();
+	}
+	
+	
+	public String getMostPopularPreviousTool(String toolName) {
+		
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		String result = (String) (valueList.get(3));
+		return result.toString();
+	}
+	
+	
+	
+	public ArrayList <String> getTop3MostPopularWFForThisTool(String toolName) {
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		ArrayList <String> results = new ArrayList();
+		if (valueList.get(4) != null) {
+			results.add((String) (valueList.get(4)));
+		}
+		if (valueList.get(5) != null) {
+			results.add((String) (valueList.get(5)));
+		}
+		if (valueList.get(6) != null) {
+			results.add((String) (valueList.get(6)));
+		}
+		
+		return results;
+		
+	}
+	
+	
+	public HashSet <String> getAllWFsIncludingThisTool(String toolName) {
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		HashSet <String> results = (HashSet) valueList.get(8);
+		return results;
+	}
+	
+	
+	public String getMostCommonWFIncludingThisTool(String toolName) {
+		ArrayList valueList = dbManager.getAnalysisToolIndex().get(toolName);
+		String result = (String) valueList.get(4);
+		return result;
+	}
+	
+	
+	public String getMostCommonWFStartingWithThisTool(String toolName) {
+		ArrayList <CompareUnit> sortedIndex2 = (ArrayList) dbManager.getSortedIndex2ByOnlyValue();
+		for (int i = 0; i < sortedIndex2.size(); i++) {
+			String currentWorkFlow = ((CompareUnit) sortedIndex2.get(i)).getName();
+			StringTokenizer tokens = new StringTokenizer(currentWorkFlow, ",");
+			String head = tokens.nextToken();
+			if (head.equals(toolName)) { //we get the most common Workflow starting with this tool
+				return currentWorkFlow;
+			}
+			
+		}
+		return "N/A";
+		
+	}
+	
+	
+	
+	
+	
+	//Instance messaging APIs-----------------------------------------------
+	//*********************************************************************
+	
+public ArrayList <String> getListOfUserNames() {
+		
+		ArrayList <String> allUserList = new ArrayList();
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql =  "select Username from [Genspace].[dbo].[registration]";
+					
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				while (rs.next()) {
+					allUserList.add(rs.getString(1));
+				}
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+		return allUserList;
+		
+	}
+	
+public ArrayList <String> getUserCount() {
+		
+		ArrayList <String> allUserList = new ArrayList();
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql =  "select count(*) from [Genspace].[dbo].[registration]";
+					
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				while (rs.next()) {
+					allUserList.add(rs.getString(1));
+				}
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+		return allUserList;
+		
+	}
+	
+	
+	
+	
+	
+	public boolean insertIntoMessagebox(String fromUser, String toUser, String message) {
+		
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql = "insert into [Genspace].[dbo].[Inbox](FromUser, ToUser, Message) values('" + fromUser + "','" + toUser + ',' + message +"')";
+				String sql1 = "insert into [Genspace].[dbo].[Outbox](FromUser, ToUser, Message) values('" + fromUser + "','" + toUser + ',' + message +"')";
+					
+				int result = stmt.executeUpdate(sql);
+				int result1 = stmt.executeUpdate(sql1);
+				//???what is the error code here???
+				
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+		return true;
+	}
+	
+	
+	
+	
+	
+	
+	public ArrayList <String> getAllInboxMsgForCurrentUser(String currentUserId) {
+		
+		ArrayList <String> allInboxMsgList = new ArrayList();
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql =  "select MessageID,FromUser,Date,Message from [Genspace].[dbo].[Inbox] " +
+				              "where ToUser = '" + currentUserId + "'";
+				
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				while (rs.next()) {
+					allInboxMsgList.add(rs.getString(1) + "#" + rs.getString(2)+"#"+rs.getString(3)+"#"+rs.getString(4)+"#");//ATTENTION we use '#' as the delimeter
+				}
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+		return allInboxMsgList;
+	}
+	
+	
+	
+	
+	public boolean deleteFromInbox(String messageID) {
+		boolean res = false;
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql = "delete from [Genspace].[dbo].[Inbox] " +
+				             "where MessageID = '" + messageID + "'"; 
+				System.out.println("DELETED!"+messageID);
+				int result = stmt.executeUpdate(sql);
+				res = true;
+				//???what is the error code here???
+				
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		return res;
+	}
+	
+	
+	
+	
+	
+	
+	public ArrayList <String> getAllOutboxMsgForCurrentUser(String currentUserId) {
+		
+		ArrayList <String> allOutboxMsgList = new ArrayList();
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql =  "select ToUser,Message from [Genspace].[dbo].[Outbox] " +
+				              "where FromUser = '" + currentUserId + "'";
+				
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				while (rs.next()) {
+					allOutboxMsgList.add(rs.getString(1) + "#" + rs.getString(2));//ATTENTION we use '#' as the delimeter
+				}
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+		return allOutboxMsgList;
+		
+	}
+	
+	
+	
+	
+	
+	public boolean deleteFromOutbox(String messageID) {
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql = "delete from [Genspace].[dbo].[Outbox] " +
+				             "where MessageId = '" + messageID + "'"; 
+				
+				int result = stmt.executeUpdate(sql);
+				
+				//???what is the error code here???
+				
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		return true;
+		
+		
+	}
+	
+	// Ratings
+public boolean insertIntoWFRatings(String identifier, String ratings, String user) {
+		
+		
+		try
+		{
+			// get a database connection
+			con = getConnection();
+
+			if(con != null)
+			{
+				// create a Statement
+				Statement stmt = con.createStatement();
+				
+				String sql = "insert into [Genspace].[dbo].[workflow_ratings](id, username, rating) values('" + identifier + "','" + user + ',' + ratings +"')";
+				int result = stmt.executeUpdate(sql);
+				//int result1 = stmt.executeUpdate(sql1);
+				//???what is the error code here???
+				
+            }
+            else System.out.println("Error: No active Connection");
+        }
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+		return true;
+	}
+	
+	
+public boolean insertIntoToolsRatings(String identifier, String ratings, String user) {
+	
+	
+	try
+	{
+		// get a database connection
+		con = getConnection();
+
+		if(con != null)
+		{
+			// create a Statement
+			Statement stmt = con.createStatement();
+			
+			String sql = "insert into [Genspace].[dbo].[tool_ratings](id, username, rating) values('" + identifier + "','" + user + ',' + ratings +"')";
+			int result = stmt.executeUpdate(sql);
+			//int result1 = stmt.executeUpdate(sql1);
+			//???what is the error code here???
+			
+        }
+        else System.out.println("Error: No active Connection");
+    }
+    catch(Exception e)
+    {
+		e.printStackTrace();
+        if (Logger.isLogError()) Logger.logError(e);
+	}
+	finally
+	{
+		closeConnection();
+	}
+	
+	return true;
+}
+
+	
+public ArrayList <String> getAllWFRating(String id, String user) {
+	
+	ArrayList <String> allRatingList = new ArrayList();
+	
+	try
+	{
+		// get a database connection
+		con = getConnection();
+
+		if(con != null)
+		{
+			// create a Statement
+			Statement stmt = con.createStatement();
+			
+			String sql =  "select rating from [Genspace].[dbo].[workflow_ratings] " +
+            "where username = '" + user + "'" +"AND id = '" + id;
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				allRatingList.add(rs.getString(1) + "#" + rs.getString(2));//ATTENTION we use '#' as the delimeter
+			}
+        }
+        else System.out.println("Error: No active Connection");
+    }
+    catch(Exception e)
+    {
+		e.printStackTrace();
+        if (Logger.isLogError()) Logger.logError(e);
+	}
+	finally
+	{
+		closeConnection();
+	}
+	
+	return allRatingList;
+	
+}
+	
+	
+public ArrayList <String> getAllToolsRating(String id, String user) {
+	
+	ArrayList <String> allOutboxMsgList = new ArrayList();
+	
+	try
+	{
+		// get a database connection
+		con = getConnection();
+
+		if(con != null)
+		{
+			// create a Statement
+			Statement stmt = con.createStatement();
+			
+			String sql =  "select rating from [Genspace].[dbo].[tool_ratings] " +
+			              "where username = '" + user + "'" +"AND id = '" + id;
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				allOutboxMsgList.add(rs.getString(1) + "#" + rs.getString(2));//ATTENTION we use '#' as the delimeter
+			}
+        }
+        else System.out.println("Error: No active Connection");
+    }
+    catch(Exception e)
+    {
+		e.printStackTrace();
+        if (Logger.isLogError()) Logger.logError(e);
+	}
+	finally
+	{
+		closeConnection();
+	}
+	
+	return allOutboxMsgList;
+	
+}
+
+
+
+@Override
+public ArrayList<String> getAllRatingsForCurrentUser(String currentUserId) {
+	// TODO Auto-generated method stub
+	return null;
+}
+	
+	
+
+}

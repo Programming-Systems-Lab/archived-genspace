@@ -1,0 +1,137 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1128507143"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>27</minute>
+			<second>37</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.2</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>31330_at, 33943_at, 33485_at, 32980_f_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.14</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value>31680_at, 36432_at, 34648_at, 31699_at</value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>10</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>33943_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="affy_430_2_dataset"/>
+		<transaction id="1223084908"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>18</day>
+			<hour>13</hour>
+			<minute>24</minute>
+			<second>40</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET6.local"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="testset"/>
+		<transaction id="1034855373"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>5</minute>
+			<second>48</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

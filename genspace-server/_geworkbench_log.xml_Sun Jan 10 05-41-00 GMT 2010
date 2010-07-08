@@ -1,0 +1,752 @@
+<measurement>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data"/>
+		<transaction id="460589577"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>5</hour>
+			<minute>49</minute>
+			<second>55</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="dataku"/>
+		<transaction id="713177625"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>6</hour>
+			<minute>52</minute>
+			<second>52</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_kedua"/>
+		<transaction id="1943668093"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>11</hour>
+			<minute>36</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_kedua"/>
+		<transaction id="620975223"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>11</hour>
+			<minute>48</minute>
+			<second>25</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="1164081437"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>11</hour>
+			<minute>51</minute>
+			<second>47</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="1164081437"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>11</hour>
+			<minute>52</minute>
+			<second>43</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="658023866"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>11</hour>
+			<minute>59</minute>
+			<second>34</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="2071546929"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>12</hour>
+			<minute>7</minute>
+			<second>24</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="1357205299"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>4</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="166347445"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>6</minute>
+			<second>53</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="459061923"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>22</minute>
+			<second>13</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="1921644860"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>23</minute>
+			<second>41</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="data_gse16925"/>
+		<transaction id="1029987290"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>37</minute>
+			<second>40</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="ips"/>
+		<transaction id="876703045"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>57</minute>
+			<second>27</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="ips"/>
+		<transaction id="876703045"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>13</hour>
+			<minute>58</minute>
+			<second>10</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="ips"/>
+		<transaction id="31721321"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>4</minute>
+			<second>25</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="ips"/>
+		<transaction id="2135995861"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>7</minute>
+			<second>5</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="esc"/>
+		<transaction id="758389657"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>9</minute>
+			<second>34</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="ips"/>
+		<transaction id="1589343289"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>10</minute>
+			<second>4</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="1286541791"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>44</minute>
+			<second>52</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="1286541791"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>45</minute>
+			<second>14</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="2080052561"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>46</minute>
+			<second>51</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="2080052561"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>14</hour>
+			<minute>47</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="291240394"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>17</hour>
+			<minute>2</minute>
+			<second>43</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="291240394"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>17</hour>
+			<minute>2</minute>
+			<second>56</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="231160585"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>17</hour>
+			<minute>9</minute>
+			<second>15</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="myoblast"/>
+		<transaction id="135539475"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>17</hour>
+			<minute>10</minute>
+			<second>17</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="esc"/>
+		<transaction id="727077673"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>17</hour>
+			<minute>27</minute>
+			<second>35</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="1421847638"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>26</minute>
+			<second>1</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="266281100"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>28</minute>
+			<second>35</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="2023544259"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>32</minute>
+			<second>34</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="16389026"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>40</minute>
+			<second>36</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="1221599396"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>44</minute>
+			<second>11</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="2064756229"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>45</minute>
+			<second>47</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="493153131"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>47</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="493153131"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>47</minute>
+			<second>28</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="1950161284"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>48</minute>
+			<second>45</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="708377638"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>54</minute>
+			<second>29</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="708377638"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>18</hour>
+			<minute>54</minute>
+			<second>51</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="1427710930"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>19</hour>
+			<minute>3</minute>
+			<second>12</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="nsc"/>
+		<transaction id="835891489"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>19</hour>
+			<minute>10</minute>
+			<second>30</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="2093085975"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>19</hour>
+			<minute>53</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="nsc"/>
+		<transaction id="1902445468"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>7</day>
+			<hour>19</hour>
+			<minute>53</minute>
+			<second>36</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="1746960986"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>8</day>
+			<hour>17</hour>
+			<minute>0</minute>
+			<second>20</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="nsc"/>
+		<transaction id="1826343113"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>8</day>
+			<hour>17</hour>
+			<minute>1</minute>
+			<second>8</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="127290285"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>8</day>
+			<hour>17</hour>
+			<minute>13</minute>
+			<second>46</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbm"/>
+		<transaction id="127290285"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>8</day>
+			<hour>17</hour>
+			<minute>14</minute>
+			<second>33</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="nsc"/>
+		<transaction id="1436322041"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>8</day>
+			<hour>17</hour>
+			<minute>16</minute>
+			<second>30</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbmup"/>
+		<transaction id="1900482097"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>10</day>
+			<hour>5</hour>
+			<minute>40</minute>
+			<second>45</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="gbmup"/>
+		<transaction id="1900482097"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>10</day>
+			<hour>5</hour>
+			<minute>40</minute>
+			<second>59</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="Richard" genspace="false"/>
+		<host name="richard-pc"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="Glanders-RMAExpress"/>
+		<transaction id="1840934287"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>6</day>
+			<hour>18</hour>
+			<minute>36</minute>
+			<second>50</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="Richard" genspace="false"/>
+		<host name="richard-pc"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Bcell-100.exp"/>
+		<transaction id="42238169"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>7</day>
+			<hour>10</hour>
+			<minute>35</minute>
+			<second>46</second>
+		</time>
+	</metric>
+</measurement>

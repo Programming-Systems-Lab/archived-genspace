@@ -1,0 +1,232 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="804268781"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>42</minute>
+			<second>41</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="927787250"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>44</minute>
+			<second>3</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="1159214022"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>46</minute>
+			<second>27</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="695412218"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>47</minute>
+			<second>21</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>2</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2006948202"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>19</day>
+			<hour>13</hour>
+			<minute>15</minute>
+			<second>11</second>
+		</time>
+		<parameters count="10">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>HubGeneList</key>
+				<value>1972_s_t</value>
+			</parameter>
+			<parameter id="3">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="4">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="8">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS16"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2006948202"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>19</day>
+			<hour>13</hour>
+			<minute>15</minute>
+			<second>17</second>
+		</time>
+		<parameters count="10">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>HubGeneList</key>
+				<value>1973_s_t</value>
+			</parameter>
+			<parameter id="3">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="4">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="7">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="8">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="9">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

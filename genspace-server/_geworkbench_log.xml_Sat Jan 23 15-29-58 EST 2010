@@ -1,0 +1,125 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="laura-johnstons-computer-2.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="ClaireMeanRMA_05_05_"/>
+		<transaction id="2071236476"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>23</day>
+			<hour>10</hour>
+			<minute>1</minute>
+			<second>55</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="laura-johnstons-computer-2.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="ClaireMeanRMA_05_05_"/>
+		<transaction id="1463498999"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>23</day>
+			<hour>10</hour>
+			<minute>45</minute>
+			<second>44</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="laura-johnstons-computer-2.local"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="ClaireMeanRMA_05_05_"/>
+		<transaction id="1789336623"/>
+		<time>
+			<year>2010</year>
+			<month>1</month>
+			<day>23</day>
+			<hour>15</hour>
+			<minute>29</minute>
+			<second>58</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

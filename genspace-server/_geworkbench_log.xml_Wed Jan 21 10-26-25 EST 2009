@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE"/>
+		<dataset name="web100.exp"/>
+		<transaction id="1328713542"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>21</day>
+			<hour>10</hour>
+			<minute>7</minute>
+			<second>2</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE"/>
+		<dataset name="web100.exp"/>
+		<transaction id="548341743"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>21</day>
+			<hour>10</hour>
+			<minute>24</minute>
+			<second>40</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE"/>
+		<dataset name="web100.exp"/>
+		<transaction id="2026714015"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>21</day>
+			<hour>10</hour>
+			<minute>26</minute>
+			<second>12</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE"/>
+		<dataset name="web100.exp"/>
+		<transaction id="2026714015"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>21</day>
+			<hour>10</hour>
+			<minute>26</minute>
+			<second>25</second>
+		</time>
+	</metric>
+</measurement>

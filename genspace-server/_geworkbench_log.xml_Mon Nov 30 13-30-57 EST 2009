@@ -1,0 +1,703 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="696817430"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>18</day>
+			<hour>18</hour>
+			<minute>44</minute>
+			<second>25</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at,AFFX-HUMGAPDH/M33197_3_at,AFFX-HSAC07/X00351_5_at,AFFX-HSAC07/X00351_M_at,AFFX-HSAC07/X00351_3_at,AFFX-HUMTFRR/M11507_5_at,AFFX-HUMTFRR/M11507_3_at,AFFX-HSAC07/X00351_3_st,31330_at,31385_at,31444_s_at,31463_s_at,31481_s_at,31492_at,31504_at,31505_at,31508_at,31509_at,31510_s_at,31511_at,31519_f_at,31526_f_at,31527_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1472420541"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>18</day>
+			<hour>18</hour>
+			<minute>46</minute>
+			<second>36</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at,AFFX-HUMGAPDH/M33197_3_at,AFFX-HSAC07/X00351_5_at,AFFX-HSAC07/X00351_M_at,AFFX-HSAC07/X00351_3_at,AFFX-HUMTFRR/M11507_5_at,AFFX-HUMTFRR/M11507_3_at,AFFX-HSAC07/X00351_3_st,31330_at,31385_at,31444_s_at,31463_s_at,31481_s_at,31492_at,31504_at,31505_at,31508_at,31509_at,31510_s_at,31511_at,31519_f_at,31526_f_at,31527_at,31536_at,31538_at,31545_at,31546_at,31557_at,31568_at,31573_at,31583_at,31584_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1299306948"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>18</day>
+			<hour>18</hour>
+			<minute>51</minute>
+			<second>0</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at,AFFX-HUMGAPDH/M33197_3_at,AFFX-HSAC07/X00351_5_at,AFFX-HSAC07/X00351_M_at,AFFX-HSAC07/X00351_3_at,AFFX-HUMTFRR/M11507_5_at,AFFX-HUMTFRR/M11507_3_at,AFFX-HSAC07/X00351_3_st,31330_at,31385_at,31444_s_at,31463_s_at,31481_s_at,31492_at,31504_at,31505_at,31508_at,31509_at,31510_s_at,31511_at,31519_f_at,31526_f_at,31527_at,31536_at,31538_at,31545_at,31546_at,31557_at,31568_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1429380372"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>18</day>
+			<hour>18</hour>
+			<minute>52</minute>
+			<second>31</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1538609381"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>18</day>
+			<hour>19</hour>
+			<minute>7</minute>
+			<second>24</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at,AFFX-HUMGAPDH/M33197_3_at,AFFX-HSAC07/X00351_5_at,AFFX-HSAC07/X00351_M_at,AFFX-HSAC07/X00351_3_at,AFFX-HUMTFRR/M11507_5_at,AFFX-HUMTFRR/M11507_3_at,AFFX-HSAC07/X00351_3_st,31330_at,31385_at,31444_s_at,31463_s_at,31481_s_at,31492_at,31504_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1030400662"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>18</day>
+			<hour>19</hour>
+			<minute>15</minute>
+			<second>43</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at,AFFX-HUMGAPDH/M33197_3_at,AFFX-HSAC07/X00351_5_at,AFFX-HSAC07/X00351_M_at,AFFX-HSAC07/X00351_3_at,AFFX-HUMTFRR/M11507_5_at,AFFX-HUMTFRR/M11507_3_at,AFFX-HSAC07/X00351_3_st,31330_at,31385_at,31444_s_at,31463_s_at,31481_s_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-3_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="2104751154"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>24</day>
+			<hour>11</hour>
+			<minute>52</minute>
+			<second>14</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>AFFX-HUMISGF3A/M97935_3_at,AFFX-HUMGAPDH/M33197_5_at,AFFX-HUMGAPDH/M33197_M_at,AFFX-HUMGAPDH/M33197_3_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>AFFX-BioC-5_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="192052535"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>30</day>
+			<hour>13</hour>
+			<minute>29</minute>
+			<second>3</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>m</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AFFX-BioC-5_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET13"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="518669059"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>30</day>
+			<hour>13</hour>
+			<minute>30</minute>
+			<second>57</second>
+		</time>
+		<parameters count="16">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>MarkerSet</key>
+				<value>m1</value>
+			</parameter>
+			<parameter id="2">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="3">
+				<key>ConsensusThreshold</key>
+				<value>1.e-6</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>BootstrapNumber</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>HubGeneList</key>
+				<value>AFFX-MurIL2_at</value>
+			</parameter>
+			<parameter id="10">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="13">
+				<key>Hub</key>
+				<value>From Sets</value>
+			</parameter>
+			<parameter id="14">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+			<parameter id="15">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

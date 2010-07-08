@@ -1,0 +1,30 @@
+static:
+  url: /static/:content
+  param: { module: static, action: index }
+
+
+tool_detail:
+  url: tool/index/:id
+  param: { module: tool, action: index }
+
+workflow_detail:
+  url: workflow/index/:id
+  param: { module: workflow, action: index }
+
+
+# default rules
+homepage:
+  url:   /
+  param: { module: static, action: index }
+
+default_symfony:
+  url:   /symfony/:action/*
+  param: { module: default }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+

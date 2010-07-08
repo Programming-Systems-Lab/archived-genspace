@@ -1,0 +1,156 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="mac-0171.wlan.molgen.mpg.de"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1411584045"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>16</day>
+			<hour>17</hour>
+			<minute>47</minute>
+			<second>6</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>200627_at,200799_at,200800_s_at,200806_s_at,200807_s_at,200894_s_at,200895_s_at,201072_s_at,201073_s_at,201074_at,201075_s_at,201328_at,201329_s_at,201464_x_at,201465_s_at,201466_s_at,202581_at,203010_at,204312_x_at,204313_s_at,204314_s_at,204828_at,205026_at,205253_at,205311_at,206789_s_at,207535_s_at,207846_at,208224_at,208760_at,208864_s_at,209239_at,209260_at,209636_at,210211_s_at,210745_at,211008_s_at,211524_at,211660_at,211771_s_at,211968_s_at,211969_at,212148_at,212151_at,212167_s_at,212501_at,212549_at,212550_at,212657_s_at,212659_s_at,213535_s_at,213536_s_at,214328_s_at,214347_s_at,214433_s_at,214447_at,214513_s_at,216243_s_at,216244_at,216245_at,216609_at,33322_i_at,33323_r_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>201865_x_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="mac-0171.wlan.molgen.mpg.de"/>
+		<analysis name="MINDY Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1411584045"/>
+		<time>
+			<year>2010</year>
+			<month>3</month>
+			<day>16</day>
+			<hour>17</hour>
+			<minute>47</minute>
+			<second>17</second>
+		</time>
+		<parameters count="15">
+			<parameter id="0">
+				<key>conditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="1">
+				<key>dpitolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="2">
+				<key>modulators</key>
+				<value>200627_at,200799_at,200800_s_at,200806_s_at,200807_s_at,200894_s_at,200895_s_at,201072_s_at,201073_s_at,201074_at,201075_s_at,201328_at,201329_s_at,201464_x_at,201465_s_at,201466_s_at,202581_at,203010_at,204312_x_at,204313_s_at,204314_s_at,204828_at,205026_at,205253_at,205311_at,206789_s_at,207535_s_at,207846_at,208224_at,208760_at,208864_s_at,209239_at,209260_at,209636_at,210211_s_at,210745_at,211008_s_at,211524_at,211660_at,211771_s_at,211968_s_at,211969_at,212148_at,212151_at,212167_s_at,212501_at,212549_at,212550_at,212657_s_at,212659_s_at,213535_s_at,213536_s_at,214328_s_at,214347_s_at,214433_s_at,214447_at,214513_s_at,216243_s_at,216244_at,216245_at,216609_at,33322_i_at,33323_r_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>targetFromType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>dpitargets</key>
+				<value></value>
+			</parameter>
+			<parameter id="5">
+				<key>unconditionalValue</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="6">
+				<key>modulatorFromType</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="7">
+				<key>annotations</key>
+				<value></value>
+			</parameter>
+			<parameter id="8">
+				<key>conditionalType</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="9">
+				<key>conditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="10">
+				<key>unconditionalCorrection</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="11">
+				<key>targets</key>
+				<value></value>
+			</parameter>
+			<parameter id="12">
+				<key>fraction</key>
+				<value>35</value>
+			</parameter>
+			<parameter id="13">
+				<key>tf</key>
+				<value>211671_s_at</value>
+			</parameter>
+			<parameter id="14">
+				<key>unconditionalType</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

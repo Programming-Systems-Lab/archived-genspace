@@ -1,0 +1,100 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="MatrixREDUCE Analysis"/>
+		<dataset name="Spellman1998AlphaTimeCourseMod"/>
+		<transaction id="1485551083"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>6</day>
+			<hour>13</hour>
+			<minute>42</minute>
+			<second>43</second>
+		</time>
+		<parameters count="8">
+			<parameter id="0">
+				<key>saveRunlog</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>strand</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>topoPattern</key>
+				<value>N8</value>
+			</parameter>
+			<parameter id="3">
+				<key>maxMotif</key>
+				<value>20</value>
+			</parameter>
+			<parameter id="4">
+				<key>topoChoice</key>
+				<value>Specify pattern</value>
+			</parameter>
+			<parameter id="5">
+				<key>pvalue</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="6">
+				<key>seqFile</key>
+				<value>Please specify file</value>
+			</parameter>
+			<parameter id="7">
+				<key>topoFile</key>
+				<value></value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="MatrixREDUCE Analysis"/>
+		<dataset name="Spellman1998AlphaTimeCourseMod"/>
+		<transaction id="1485551083"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>6</day>
+			<hour>13</hour>
+			<minute>43</minute>
+			<second>13</second>
+		</time>
+		<parameters count="8">
+			<parameter id="0">
+				<key>saveRunlog</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="1">
+				<key>strand</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>topoPattern</key>
+				<value>N8</value>
+			</parameter>
+			<parameter id="3">
+				<key>maxMotif</key>
+				<value>20</value>
+			</parameter>
+			<parameter id="4">
+				<key>topoChoice</key>
+				<value>Specify pattern</value>
+			</parameter>
+			<parameter id="5">
+				<key>pvalue</key>
+				<value>0.01</value>
+			</parameter>
+			<parameter id="6">
+				<key>seqFile</key>
+				<value>C:\workbench\YeastUpstream.fasta</value>
+			</parameter>
+			<parameter id="7">
+				<key>topoFile</key>
+				<value></value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

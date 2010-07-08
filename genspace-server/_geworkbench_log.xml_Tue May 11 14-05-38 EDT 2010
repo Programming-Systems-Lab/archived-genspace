@@ -1,0 +1,60 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="D80541C1"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="GSE5337_series_matrix"/>
+		<transaction id="835068464"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>11</day>
+			<hour>13</hour>
+			<minute>15</minute>
+			<second>23</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>1</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="D80541C1"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="exp"/>
+		<transaction id="2005762363"/>
+		<time>
+			<year>2010</year>
+			<month>5</month>
+			<day>11</day>
+			<hour>14</hour>
+			<minute>5</minute>
+			<second>38</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>1</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="swing-layout-1.0.3.jar"/>
+	<classpathentry kind="lib" path="src/smack.jar"/>
+	<classpathentry kind="lib" path="JimiProClasses.zip"/>
+	<classpathentry kind="lib" path="colt-1.2.0.jar"/>
+	<classpathentry kind="lib" path="concurrent-1.3.4.jar"/>
+	<classpathentry kind="lib" path="jung-algorithms-2.0.jar"/>
+	<classpathentry kind="lib" path="jung-api-2.0.jar"/>
+	<classpathentry kind="lib" path="jung-graph-impl-2.0.jar"/>
+	<classpathentry kind="lib" path="jung-visualization-2.0.jar"/>
+	<classpathentry kind="lib" path="mina-core-1.1.7.jar"/>
+	<classpathentry kind="lib" path="slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="slf4j-simple-1.5.8.jar"/>
+	<classpathentry kind="lib" path="smack.jar"/>
+	<classpathentry kind="lib" path="swing-worker-1.2.jar"/>
+	<classpathentry kind="lib" path="jgraph.jar"/>
+	<classpathentry kind="lib" path="hyperapplet.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-feb-2010"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

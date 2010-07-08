@@ -1,0 +1,39 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="NetBoost Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="574082672"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>1</day>
+			<hour>15</hour>
+			<minute>35</minute>
+			<second>20</second>
+		</time>
+		<parameters count="5">
+			<parameter id="0">
+				<key>modelSelections</key>
+				<value>[true, true, true, true, true, true, true]</value>
+			</parameter>
+			<parameter id="1">
+				<key>boostingIter</key>
+				<value>120</value>
+			</parameter>
+			<parameter id="2">
+				<key>trainingEx</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="3">
+				<key>crossValid</key>
+				<value>5</value>
+			</parameter>
+			<parameter id="4">
+				<key>subgraphCounting</key>
+				<value>8 Step Walk</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="jon" genspace="false"/>
+		<host name="dyn-209-2-212-1.dyn.columbia.edu"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="487042942"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>27</day>
+			<hour>12</hour>
+			<minute>21</minute>
+			<second>1</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="jon" genspace="false"/>
+		<host name="dyn-209-2-232-145.dyn.columbia.edu"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="606223889"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>12</day>
+			<hour>16</hour>
+			<minute>37</minute>
+			<second>17</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="jon" genspace="false"/>
+		<host name="dyn-209-2-232-145.dyn.columbia.edu"/>
+		<analysis name="ARACNE"/>
+		<dataset name="webmatrix2_quantile_log2_dev1.2_mv0.exp"/>
+		<transaction id="606223889"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>12</day>
+			<hour>16</hour>
+			<minute>38</minute>
+			<second>6</second>
+		</time>
+	</metric>
+</measurement>

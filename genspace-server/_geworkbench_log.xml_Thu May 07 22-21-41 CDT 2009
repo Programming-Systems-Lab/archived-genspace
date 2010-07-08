@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ALICIA-NICKD620"/>
+		<analysis name="ARACNE"/>
+		<dataset name="BCell_matrix.exp"/>
+		<transaction id="911918738"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>7</day>
+			<hour>22</hour>
+			<minute>21</minute>
+			<second>32</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="ALICIA-NICKD620"/>
+		<analysis name="ARACNE"/>
+		<dataset name="BCell_matrix.exp"/>
+		<transaction id="911918738"/>
+		<time>
+			<year>2009</year>
+			<month>5</month>
+			<day>7</day>
+			<hour>22</hour>
+			<minute>21</minute>
+			<second>41</second>
+		</time>
+	</metric>
+</measurement>

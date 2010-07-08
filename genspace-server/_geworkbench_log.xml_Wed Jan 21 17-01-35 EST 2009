@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE"/>
+		<dataset name="web100.exp"/>
+		<transaction id="398170589"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>21</day>
+			<hour>17</hour>
+			<minute>1</minute>
+			<second>18</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE"/>
+		<dataset name="web100.exp"/>
+		<transaction id="398170589"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>21</day>
+			<hour>17</hour>
+			<minute>1</minute>
+			<second>35</second>
+		</time>
+	</metric>
+</measurement>

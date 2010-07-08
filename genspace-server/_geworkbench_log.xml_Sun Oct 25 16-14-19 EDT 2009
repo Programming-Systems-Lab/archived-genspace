@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="workstation"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Merged DataSet: GSE2350_series_matrix-1 GSE2350_series_matrix-2 "/>
+		<transaction id="1129642791"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>25</day>
+			<hour>15</hour>
+			<minute>48</minute>
+			<second>33</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="workstation"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Merged DataSet: GSE2350_series_matrix-1 GSE2350_series_matrix-2 "/>
+		<transaction id="2114673247"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>25</day>
+			<hour>16</hour>
+			<minute>14</minute>
+			<second>19</second>
+		</time>
+	</metric>
+</measurement>

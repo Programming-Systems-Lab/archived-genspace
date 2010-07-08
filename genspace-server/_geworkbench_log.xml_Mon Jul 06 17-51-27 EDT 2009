@@ -1,0 +1,68 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="161693682"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>6</day>
+			<hour>17</hour>
+			<minute>50</minute>
+			<second>44</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>100</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>adjbonferroni</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="floratos4"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="161693682"/>
+		<time>
+			<year>2009</year>
+			<month>7</month>
+			<day>6</day>
+			<hour>17</hour>
+			<minute>51</minute>
+			<second>27</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>1000</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>westfallyoung</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>permutation</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,72 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="linux-desktop"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="GSE4818_series_matrix"/>
+		<transaction id="1601092571"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>10</day>
+			<hour>23</hour>
+			<minute>40</minute>
+			<second>29</second>
+		</time>
+		<parameters count="3">
+			<parameter id="0">
+				<key>dimension</key>
+				<value>1</value>
+			</parameter>
+			<parameter id="1">
+				<key>metric</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="2">
+				<key>method</key>
+				<value>0</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="linux-desktop"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="GSE4818_series_matrix"/>
+		<transaction id="67077877"/>
+		<time>
+			<year>2009</year>
+			<month>11</month>
+			<day>11</day>
+			<hour>0</hour>
+			<minute>12</minute>
+			<second>27</second>
+		</time>
+		<parameters count="6">
+			<parameter id="0">
+				<key>radius</key>
+				<value>3.0</value>
+			</parameter>
+			<parameter id="1">
+				<key>rows</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="2">
+				<key>iterations</key>
+				<value>4000</value>
+			</parameter>
+			<parameter id="3">
+				<key>function</key>
+				<value>0</value>
+			</parameter>
+			<parameter id="4">
+				<key>columns</key>
+				<value>3</value>
+			</parameter>
+			<parameter id="5">
+				<key>alpha</key>
+				<value>0.8</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="pou5f1_repressor_GBM"/>
+		<transaction id="1684701809"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>5</day>
+			<hour>16</hour>
+			<minute>10</minute>
+			<second>13</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="vaio" genspace="false"/>
+		<host name="vaio-PC"/>
+		<analysis name="ARACNE"/>
+		<dataset name="pou5f1_repressor_ESC"/>
+		<transaction id="334470459"/>
+		<time>
+			<year>2010</year>
+			<month>2</month>
+			<day>5</day>
+			<hour>16</hour>
+			<minute>10</minute>
+			<second>48</second>
+		</time>
+	</metric>
+</measurement>

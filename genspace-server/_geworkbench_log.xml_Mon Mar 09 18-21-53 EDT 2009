@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="caldev"/>
+		<analysis name="MINDY"/>
+		<dataset name="webmatrix-filtered.exp"/>
+		<transaction id="742484839"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>9</day>
+			<hour>18</hour>
+			<minute>21</minute>
+			<second>18</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="caldev"/>
+		<analysis name="MINDY"/>
+		<dataset name="webmatrix-filtered.exp"/>
+		<transaction id="742484839"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>9</day>
+			<hour>18</hour>
+			<minute>21</minute>
+			<second>53</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,47 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="mycom"/>
+		<analysis name="ARACNE"/>
+		<dataset name="N_Michigan.exp"/>
+		<transaction id="1547987593"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>24</day>
+			<hour>6</hour>
+			<minute>33</minute>
+			<second>5</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="mycom"/>
+		<analysis name="MINDY"/>
+		<dataset name="2_N_Michigan.exp"/>
+		<transaction id="1640450789"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>24</day>
+			<hour>20</hour>
+			<minute>13</minute>
+			<second>0</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="mycom"/>
+		<analysis name="MINDY"/>
+		<dataset name="2_N_Michigan.exp"/>
+		<transaction id="1640450789"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>24</day>
+			<hour>20</hour>
+			<minute>13</minute>
+			<second>24</second>
+		</time>
+	</metric>
+</measurement>

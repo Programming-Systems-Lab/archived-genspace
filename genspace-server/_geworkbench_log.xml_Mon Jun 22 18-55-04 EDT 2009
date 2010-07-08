@@ -1,0 +1,132 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1976256242"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>22</day>
+			<hour>18</hour>
+			<minute>53</minute>
+			<second>59</second>
+		</time>
+		<parameters count="12">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>HubGeneList</key>
+				<value>31564_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="6">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET12"/>
+		<analysis name="ARACNE Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1976256242"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>22</day>
+			<hour>18</hour>
+			<minute>55</minute>
+			<second>4</second>
+		</time>
+		<parameters count="12">
+			<parameter id="0">
+				<key>isHubListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="1">
+				<key>isDPIToleranceSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="2">
+				<key>HubGeneList</key>
+				<value>31564_at</value>
+			</parameter>
+			<parameter id="3">
+				<key>Algorithm</key>
+				<value>Adaptive Partitioning</value>
+			</parameter>
+			<parameter id="4">
+				<key>KernelWidth</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="5">
+				<key>TargetGenes</key>
+				<value></value>
+			</parameter>
+			<parameter id="6">
+				<key>DPITolerance</key>
+				<value>0.1</value>
+			</parameter>
+			<parameter id="7">
+				<key>Mode</key>
+				<value>Complete</value>
+			</parameter>
+			<parameter id="8">
+				<key>isThresholdMI</key>
+				<value>true</value>
+			</parameter>
+			<parameter id="9">
+				<key>isTargetListSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="10">
+				<key>isKernelWidthSpecified</key>
+				<value>false</value>
+			</parameter>
+			<parameter id="11">
+				<key>Threshold</key>
+				<value>0.3</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

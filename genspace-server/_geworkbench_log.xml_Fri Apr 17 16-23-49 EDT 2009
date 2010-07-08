@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="BCL7A-CIITA.exp"/>
+		<transaction id="1000843526"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>23</minute>
+			<second>7</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="BCL7A-ETS1.exp"/>
+		<transaction id="1244470671"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>23</minute>
+			<second>49</second>
+		</time>
+	</metric>
+</measurement>

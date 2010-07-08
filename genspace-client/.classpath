@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="client/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="client/lib/cindy.jar"/>
+	<classpathentry kind="lib" path="client/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="client/lib/cos.jar"/>
+	<classpathentry kind="lib" path="client/lib/daim.jar"/>
+	<classpathentry kind="lib" path="client/lib/db-ojb-1.0.4.jar"/>
+	<classpathentry kind="lib" path="client/lib/genspace-communicator.jar"/>
+	<classpathentry kind="lib" path="client/lib/jaimlib.jar"/>
+	<classpathentry kind="lib" path="client/lib/jazzy-core.eng.jar"/>
+	<classpathentry kind="lib" path="client/lib/jdic_misc.jar"/>
+	<classpathentry kind="lib" path="client/lib/jdic_stub.jar"/>
+	<classpathentry kind="lib" path="client/lib/jdic.jar"/>
+	<classpathentry kind="lib" path="client/lib/jgraph.jar"/>
+	<classpathentry kind="lib" path="client/lib/jgraph-latest-lgpl-src.jar"/>
+	<classpathentry kind="lib" path="client/lib/jml.jar"/>
+	<classpathentry kind="lib" path="client/lib/joscar-client.jar"/>
+	<classpathentry kind="lib" path="client/lib/joscar-common.jar"/>
+	<classpathentry kind="lib" path="client/lib/joscar-protocol.jar"/>
+	<classpathentry kind="lib" path="client/lib/jsocks-klea.jar"/>
+	<classpathentry kind="lib" path="client/lib/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="client/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="client/lib/msnm.jar"/>
+	<classpathentry kind="lib" path="client/lib/natelib.jar"/>
+	<classpathentry kind="lib" path="client/lib/openymsg.jar"/>
+	<classpathentry kind="lib" path="client/lib/Pack200Task.jar"/>
+	<classpathentry kind="lib" path="client/lib/smack.jar"/>
+	<classpathentry kind="lib" path="client/lib/smackx.jar"/>
+	<classpathentry kind="lib" path="client/lib/substance.jar"/>
+	<classpathentry kind="lib" path="client/lib/ymsg_network_v0_6.jar"/>
+	<classpathentry kind="lib" path="client/lib/ymsg_support_v0_6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="pittjj" genspace="false"/>
+		<host name="nci-01808571.nci.nih.gov"/>
+		<analysis name="MINDY"/>
+		<dataset name="GSE20842 All"/>
+		<transaction id="828630475"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>0</hour>
+			<minute>21</minute>
+			<second>58</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="pittjj" genspace="false"/>
+		<host name="NCI-01558003-M.local"/>
+		<analysis name="MINDY"/>
+		<dataset name="GSE20842 All"/>
+		<transaction id="1850606772"/>
+		<time>
+			<year>2010</year>
+			<month>4</month>
+			<day>28</day>
+			<hour>14</hour>
+			<minute>55</minute>
+			<second>29</second>
+		</time>
+	</metric>
+</measurement>

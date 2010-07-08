@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="gmc84-ef3.broad.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="svm-test.exp"/>
+		<transaction id="1905040110"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>22</day>
+			<hour>11</hour>
+			<minute>27</minute>
+			<second>1</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="gmc84-ef3.broad.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="svm-test.exp"/>
+		<transaction id="1280976993"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>22</day>
+			<hour>11</hour>
+			<minute>32</minute>
+			<second>7</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="gmc84-ef3.broad.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="aTestDataSet.exp"/>
+		<transaction id="1814068459"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>27</day>
+			<hour>13</hour>
+			<minute>53</minute>
+			<second>55</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="gmc84-ef3.broad.mit.edu"/>
+		<analysis name="SVM Classifier"/>
+		<dataset name="aTestDataSet.exp"/>
+		<transaction id="1026263216"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>27</day>
+			<hour>13</hour>
+			<minute>55</minute>
+			<second>37</second>
+		</time>
+	</metric>
+</measurement>

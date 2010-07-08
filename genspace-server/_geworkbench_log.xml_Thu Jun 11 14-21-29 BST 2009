@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="xinzhong" genspace="false"/>
+		<host name="Durban"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="MmBrain301_median7_NnatPearson0.5.exp"/>
+		<transaction id="552679464"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>14</hour>
+			<minute>19</minute>
+			<second>55</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="xinzhong" genspace="false"/>
+		<host name="Durban"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="MmBrain301_median7_NnatPearson0.5.exp"/>
+		<transaction id="1632211503"/>
+		<time>
+			<year>2009</year>
+			<month>6</month>
+			<day>11</day>
+			<hour>14</hour>
+			<minute>21</minute>
+			<second>29</second>
+		</time>
+	</metric>
+</measurement>

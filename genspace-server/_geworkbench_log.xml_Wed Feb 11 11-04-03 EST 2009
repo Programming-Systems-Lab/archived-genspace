@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="PCA Analysis"/>
+		<dataset name="pca-test.exp"/>
+		<transaction id="976203863"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>3</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="PCA Analysis"/>
+		<dataset name="pca-test.exp"/>
+		<transaction id="976203863"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>11</hour>
+			<minute>4</minute>
+			<second>3</second>
+		</time>
+	</metric>
+</measurement>

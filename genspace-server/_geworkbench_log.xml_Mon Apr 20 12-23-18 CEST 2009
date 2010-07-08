@@ -1,0 +1,857 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="1720349855"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>9</hour>
+			<minute>45</minute>
+			<second>49</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="387844955"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>13</hour>
+			<minute>48</minute>
+			<second>49</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="544525380"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>11</day>
+			<hour>14</hour>
+			<minute>5</minute>
+			<second>1</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="518655824"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>16</day>
+			<hour>16</hour>
+			<minute>45</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8671_series_matrix"/>
+		<transaction id="518655824"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>16</day>
+			<hour>16</hour>
+			<minute>46</minute>
+			<second>26</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE11943_series_matrix"/>
+		<transaction id="934752591"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>22</minute>
+			<second>38</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE11943_series_matrix"/>
+		<transaction id="28587023"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>16</hour>
+			<minute>26</minute>
+			<second>9</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE3982_series_matrix GSE5099-GPL96_series_matrix "/>
+		<transaction id="1603208425"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>19</hour>
+			<minute>10</minute>
+			<second>15</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE3982_series_matrix GSE5099-GPL96_series_matrix "/>
+		<transaction id="295665634"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>19</hour>
+			<minute>11</minute>
+			<second>19</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="Merged DataSet: GSE3982_series_matrix GSE5099-GPL96_series_matrix "/>
+		<transaction id="1740553450"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>19</hour>
+			<minute>18</minute>
+			<second>19</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="76741394"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>19</hour>
+			<minute>53</minute>
+			<second>24</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="167667706"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>19</hour>
+			<minute>55</minute>
+			<second>1</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE14419_series_matrix"/>
+		<transaction id="145694317"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>22</hour>
+			<minute>27</minute>
+			<second>14</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="5056339"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>23</hour>
+			<minute>24</minute>
+			<second>31</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="5056339"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>23</hour>
+			<minute>25</minute>
+			<second>6</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="1453789762"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>23</hour>
+			<minute>38</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="947597893"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>23</hour>
+			<minute>40</minute>
+			<second>42</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="537983258"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>23</hour>
+			<minute>42</minute>
+			<second>16</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="749442771"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>17</day>
+			<hour>23</hour>
+			<minute>46</minute>
+			<second>39</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="633360187"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>11</hour>
+			<minute>55</minute>
+			<second>7</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="633360187"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>11</hour>
+			<minute>56</minute>
+			<second>2</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="1665564455"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>11</hour>
+			<minute>58</minute>
+			<second>32</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3720_series_matrix"/>
+		<transaction id="1153769222"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>12</hour>
+			<minute>17</minute>
+			<second>46</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3720_series_matrix"/>
+		<transaction id="1443531893"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>12</hour>
+			<minute>19</minute>
+			<second>28</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3720_series_matrix"/>
+		<transaction id="1142514384"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>12</hour>
+			<minute>24</minute>
+			<second>58</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3720_series_matrix"/>
+		<transaction id="1356545447"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>12</hour>
+			<minute>27</minute>
+			<second>2</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE11943_series_matrix GSE3982_series_matrix "/>
+		<transaction id="63112521"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>13</hour>
+			<minute>5</minute>
+			<second>57</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE11943_series_matrix GSE3982_series_matrix "/>
+		<transaction id="63112521"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>13</hour>
+			<minute>6</minute>
+			<second>45</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8059_series_matrix"/>
+		<transaction id="1249861126"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>19</minute>
+			<second>7</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE11943_series_matrix GSE3982_series_matrix "/>
+		<transaction id="1304167673"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>30</minute>
+			<second>19</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE11943_series_matrix GSE3982_series_matrix "/>
+		<transaction id="1304167673"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>31</minute>
+			<second>14</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="525534414"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>36</minute>
+			<second>15</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL97_series_matrix"/>
+		<transaction id="109209911"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>39</minute>
+			<second>41</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL97_series_matrix"/>
+		<transaction id="70871050"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>16</hour>
+			<minute>58</minute>
+			<second>33</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL97_series_matrix"/>
+		<transaction id="734146227"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>7</minute>
+			<second>28</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL97_series_matrix"/>
+		<transaction id="1735347898"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>8</minute>
+			<second>29</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE5099-GPL96_series_matrix"/>
+		<transaction id="2033261291"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>17</hour>
+			<minute>48</minute>
+			<second>57</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="Merged DataSet: GSE3982_series_matrix GSE8059_series_matrix "/>
+		<transaction id="994632848"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>18</hour>
+			<minute>18</minute>
+			<second>21</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3996_series_matrix"/>
+		<transaction id="356480739"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>20</hour>
+			<minute>55</minute>
+			<second>53</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="WV Classifier"/>
+		<dataset name="GSE3996_series_matrix"/>
+		<transaction id="291574305"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>20</hour>
+			<minute>57</minute>
+			<second>12</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE13411_series_matrix"/>
+		<transaction id="81353767"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>21</hour>
+			<minute>2</minute>
+			<second>36</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE13411_series_matrix"/>
+		<transaction id="1412150058"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>21</hour>
+			<minute>5</minute>
+			<second>20</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE13411_series_matrix"/>
+		<transaction id="1072130908"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>21</hour>
+			<minute>14</minute>
+			<second>37</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE13411_series_matrix"/>
+		<transaction id="1072130908"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>18</day>
+			<hour>21</hour>
+			<minute>15</minute>
+			<second>30</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8668_series_matrix"/>
+		<transaction id="1756687832"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>23</day>
+			<hour>8</hour>
+			<minute>7</minute>
+			<second>49</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE3996_series_matrix"/>
+		<transaction id="1153917115"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>23</day>
+			<hour>9</hour>
+			<minute>23</minute>
+			<second>30</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="E-MEXP-1245-processed-data-1499705884"/>
+		<transaction id="2040240410"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>26</day>
+			<hour>13</hour>
+			<minute>47</minute>
+			<second>35</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="557301508"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>26</day>
+			<hour>14</hour>
+			<minute>53</minute>
+			<second>41</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="281284144"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>26</day>
+			<hour>14</hour>
+			<minute>57</minute>
+			<second>46</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1792878810"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>26</day>
+			<hour>15</hour>
+			<minute>10</minute>
+			<second>27</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="444935208"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>26</day>
+			<hour>15</hour>
+			<minute>13</minute>
+			<second>54</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1574316207"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>2</day>
+			<hour>7</hour>
+			<minute>55</minute>
+			<second>48</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="864477107"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>2</day>
+			<hour>7</hour>
+			<minute>57</minute>
+			<second>6</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="ARACNE"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="825115086"/>
+		<time>
+			<year>2009</year>
+			<month>3</month>
+			<day>2</day>
+			<hour>20</hour>
+			<minute>40</minute>
+			<second>35</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE8582_series_matrix"/>
+		<transaction id="901397478"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>20</day>
+			<hour>11</hour>
+			<minute>1</minute>
+			<second>59</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="MINDY"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1175957333"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>20</day>
+			<hour>12</hour>
+			<minute>20</minute>
+			<second>29</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="MINDY"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="2137359369"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>20</day>
+			<hour>12</hour>
+			<minute>23</minute>
+			<second>18</second>
+		</time>
+	</metric>
+</measurement>

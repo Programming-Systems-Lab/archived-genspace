@@ -1,0 +1,68 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1633708566"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>3</day>
+			<hour>11</hour>
+			<minute>46</minute>
+			<second>29</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>50</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>adjbonferroni</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>permutation</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="MAGNET10"/>
+		<analysis name="Anova Analysis"/>
+		<dataset name="exp"/>
+		<transaction id="1633708566"/>
+		<time>
+			<year>2009</year>
+			<month>9</month>
+			<day>3</day>
+			<hour>11</hour>
+			<minute>46</minute>
+			<second>46</second>
+		</time>
+		<parameters count="4">
+			<parameter id="0">
+				<key>PermutationsNumber</key>
+				<value>50</value>
+			</parameter>
+			<parameter id="1">
+				<key>FalseDiscoveryRateControl</key>
+				<value>adjbonferroni</value>
+			</parameter>
+			<parameter id="2">
+				<key>PValueEstimation</key>
+				<value>fdistribution</value>
+			</parameter>
+			<parameter id="3">
+				<key>PValueThreshold</key>
+				<value>0.05</value>
+			</parameter>
+		</parameters>
+	</metric>
+</measurement>

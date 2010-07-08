@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="unsupervised_ASSOCIATIONBETWEENMUTATED GENES.exp"/>
+		<transaction id="309797437"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>4</day>
+			<hour>16</hour>
+			<minute>0</minute>
+			<second>43</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="rdf10"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="unsupervised_ASSOCIATIONBETWEENMUTATED GENES.exp"/>
+		<transaction id="309797437"/>
+		<time>
+			<year>2009</year>
+			<month>4</month>
+			<day>4</day>
+			<hour>16</hour>
+			<minute>1</minute>
+			<second>37</second>
+		</time>
+	</metric>
+</measurement>

@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS5"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="webmatrix-filtered.exp"/>
+		<transaction id="648164736"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>20</day>
+			<hour>17</hour>
+			<minute>40</minute>
+			<second>52</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="FLORATOS5"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="webmatrix-filtered.exp"/>
+		<transaction id="648164736"/>
+		<time>
+			<year>2009</year>
+			<month>1</month>
+			<day>20</day>
+			<hour>17</hour>
+			<minute>41</minute>
+			<second>6</second>
+		</time>
+	</metric>
+</measurement>

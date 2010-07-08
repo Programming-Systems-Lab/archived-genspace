@@ -1,0 +1,62 @@
+<measurement>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="1605539462"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>4</day>
+			<hour>19</hour>
+			<minute>37</minute>
+			<second>16</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="GSE4183_series_matrix"/>
+		<transaction id="938265686"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>7</day>
+			<hour>16</hour>
+			<minute>4</minute>
+			<second>58</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="T Test Analysis"/>
+		<dataset name="E-MEXP-1245-processed-data-1499705884"/>
+		<transaction id="354283436"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>8</hour>
+			<minute>36</minute>
+			<second>13</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="anonymous" genspace="false"/>
+		<host name="PC-francesco"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="E-MEXP-1245-processed-data-1499705884"/>
+		<transaction id="535357248"/>
+		<time>
+			<year>2009</year>
+			<month>2</month>
+			<day>10</day>
+			<hour>8</hour>
+			<minute>51</minute>
+			<second>20</second>
+		</time>
+	</metric>
+</measurement>

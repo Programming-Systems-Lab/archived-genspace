@@ -1,0 +1,32 @@
+<measurement>
+	<metric name="analysis">
+		<user name="tinin" genspace="false"/>
+		<host name="vaio"/>
+		<analysis name="Hierarchical Clustering"/>
+		<dataset name="Test3"/>
+		<transaction id="1086303543"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>1</day>
+			<hour>1</hour>
+			<minute>21</minute>
+			<second>5</second>
+		</time>
+	</metric>
+	<metric name="analysis">
+		<user name="tinin" genspace="false"/>
+		<host name="vaio"/>
+		<analysis name="SOM Analysis"/>
+		<dataset name="Test3"/>
+		<transaction id="1030030048"/>
+		<time>
+			<year>2009</year>
+			<month>10</month>
+			<day>1</day>
+			<hour>1</hour>
+			<minute>34</minute>
+			<second>29</second>
+		</time>
+	</metric>
+</measurement>
