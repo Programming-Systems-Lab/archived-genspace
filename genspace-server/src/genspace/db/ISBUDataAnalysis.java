@@ -1,5 +1,7 @@
 package genspace.db;
 
+import genspace.common.Logger;
+
 import java.util.*;
 import java.io.*;
 
@@ -29,6 +31,8 @@ public class ISBUDataAnalysis {
 		System.out.println("Now we begin the data analysis process.");
 		
 		dbManager = new ISBUManager();
+		
+		
 		System.out.println("Database manager initialized.");
 		System.out.println();
 		
@@ -53,6 +57,16 @@ public class ISBUDataAnalysis {
 		
 		dbManager.fillInIndex1EighthValue();
 		
+		try{
+			//Added by Flavio: Stores the entire workflow model into the DB (the central workflow entity is stored in the worflow_info table)
+			//wrapping this function into try & catch to make sure that the rest of the script works correctly
+			dbManager.storeWorkflowModel();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			if (Logger.isLogError()) Logger.logError(e);
+			System.err.println("ERROR: storing the workflow model into the DB");
+		}
 		
 		//next we store our analysis results (write into files)
 		try {

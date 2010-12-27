@@ -9,6 +9,9 @@ import java.util.*;
 
 
 import org.geworkbench.components.genspace.bean.RatingBean;
+import org.geworkbench.components.genspace.bean.User;
+import org.geworkbench.components.genspace.bean.UserWorkflow;
+import org.geworkbench.components.genspace.bean.Workflow;
 
 public class ISBUServer extends Server {
 
@@ -360,11 +363,12 @@ class Handler extends ServerHandler {
 				ArrayList<String> workflow = (ArrayList) ois.readObject();
 
 //				System.out.println("Workflow ID request.");
-				log.info("Workflow ID request:" + workflow.toString());
+				log.info("Workflow ID request:" + workflow.toString()+" "+workflow.size());
 
 				WorkflowManager wManager = new WorkflowManager();
-				WorkflowNode currentNode = wManager.getWorkflowNode(workflow
-						.toArray(new String[1]), false);
+				//WorkflowNode currentNode = wManager.getWorkflowNode(workflow
+				//		.toArray(new String[1]), false);
+				WorkflowNode currentNode = wManager.getWorkflowNode(workflow.toArray(new String[workflow.size()]), false);
 
 				if (currentNode == null) {
 					System.out
@@ -377,6 +381,21 @@ class Handler extends ServerHandler {
 				System.out.println("Workflow ID: " + currentNode.getId());
 				respond(new Integer(currentNode.getId()));
 			}
+			
+			//Added by Flavio: add to the user repository specified by the username (1st param)
+			//the workflow specified by the ID (2nd Param) and returns the Workflow fully loaded
+			//with all infos
+			else if (clientSideID.contains("addUWF")) {
+
+				ArrayList<Object> params = (ArrayList<Object>) ois.readObject();
+
+//				System.out.println("Workflow ID request.");
+				log.info("addUWF params:" + params+ ", size: "+params.size());
+				UserManager um = new UserManager();
+				UserWorkflow uw = um.addAndGetUserWorkflow((String)params.get(0), (Integer)params.get(1),(String)params.get(2));
+				respond(uw);
+			}
+			
 			// given a list of tool strings in workflow order, this will give
 			// you the rating of the workflow
 			else if (clientSideID.contains("getWFRating")) {

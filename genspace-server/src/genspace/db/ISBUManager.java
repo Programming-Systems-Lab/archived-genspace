@@ -2,10 +2,16 @@ package genspace.db;
 
 import genspace.common.Logger;
 
+import org.geworkbench.components.genspace.bean.Tool;
+import org.geworkbench.components.genspace.bean.Workflow;
+import org.geworkbench.components.genspace.bean.*;
+
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 /**
  * This class extends DatabaseManager, as the DB Manager class for the ISBU feature
@@ -20,7 +26,7 @@ import java.io.*;
 public class ISBUManager extends DatabaseManager implements Serializable {
 
 	private ArrayList <String> analysisToolSet = new ArrayList();//a global set of all the tools
-	private HashMap <String, String> toolIDIndex = new HashMap();//an index to hold a unique ID for each tool
+	public HashMap <String, String> toolIDIndex = new HashMap();//an index to hold a unique ID for each tool
 	
 	private ArrayList <String> completeTransactionList = new ArrayList();//or we can say, this is a complete work flow list
 	private HashMap <String, ArrayList> analysisToolIndex = new HashMap(); //"index 1"
@@ -35,7 +41,10 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 	private ArrayList <CompareUnit> sortedIndex1By2ndValue = new ArrayList();
 	private ArrayList <CompareUnit> sortedIndex2ByOnlyValue = new ArrayList();
 	
-
+	//WORKFLOW REPOSITORY MODEL structures (computed in storeWorkflowModel())
+	public HashMap <String, Tool> toolsTable = new HashMap<String, Tool>(); //The actual tools table available in the DB, given a tool name you can access the corresponding tool object
+	HashMap<String, Workflow> workflows =  new HashMap<String, Workflow>();
+	
 	static final long serialVersionUID = 6503560436267816846L;
 	private String table_name = "[Genspace].[dbo].[analysis_events]";
 	
@@ -1184,6 +1193,189 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			
 		}
 		return superWorkFlowList;
+	}
+
+	
+	/**
+	 * Stores all the model information associated with workflows into the DB
+	 * Exception are just thrown to the caller who is going to handle them
+	 */
+	public void storeWorkflowModel() throws Exception {
+		con = getConnection();
+		try{
+			con.setAutoCommit(false);
+			
+			/**Load the tools table, given the name returns the tool object with all the infos**/
+			//we can't use toolIDindex map already provided because it doesn't coincide with DB tools table
+			toolsTable = new HashMap<String, Tool>();
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select t.id, t.tool,t.description, tp.parameters, tp.usage_count "+
+											 "from [Genspace].[dbo].[tools] t left join [Genspace].[dbo].[tool_parameters] tp on t.id = tp.tool_id "+
+											 "where tp.parameters is null or tp.usage_count = (select max(usage_count) "+
+											 												  "from [Genspace].[dbo].[tool_parameters] "+
+											 												  "where tool_id = tp.tool_id)");
+			while(rs.next()){
+				Tool t = new Tool();
+				t.name = rs.getString("tool");
+				t.id = rs.getInt("id");	
+				t.description = rs.getString("description");
+				t.mostCommonParameters = rs.getString("parameters");
+				if(t.mostCommonParameters != null){
+					t.mostCommonParametersCount = rs.getInt("usage_count");
+				}
+				toolsTable.put(t.name, t);
+			}
+
+			
+			
+			/** Retrieve all workflows information from ANALYSIS_EVENTS **/
+			stmt = con.createStatement();
+			String sql = "select * " +
+						 "from " + table_name + " A " +
+						 "where A.transaction_id <> 'NULL' " +
+						 "order by transaction_id, date ";
+			rs = stmt.executeQuery(sql);
+			//HashMap of all workflows identified so far (workflow.getIdentifier(), workflow)
+			Workflow currentInstance = null;
+			int oneDayInMS = 1000 * 60 * 60 * 24;
+			while (rs.next()) {
+				//get the info of one tuple (a single tool usage within a workflow)
+				String tid = rs.getString("transaction_id");
+				Date date = rs.getDate("date");
+				String user = rs.getString("username");
+				String toolName = rs.getString("analysis");
+				Tool tool = toolsTable.get(toolName);
+				
+				//check weather the tuple is part of the same workflow instance (same TID and no more than one day difference)
+				boolean newWorkflowInstance = false;
+				if(currentInstance == null)
+					newWorkflowInstance = true;
+				else if(!currentInstance.creationTransactionId.equals(tid))
+					newWorkflowInstance = true; 
+				//NO CHECK ON DATE, a workflow can last for more than a day
+				//else if(Math.abs(currentInstance.creationDate.getTime() - date.getTime()) > oneDayInMS)
+				//	newWorkflowInstance = true;
+					
+				
+				if(newWorkflowInstance){
+					//store this instance in the hashmap before initializing a new instance
+					if(currentInstance != null){
+						Workflow w = workflows.get(currentInstance.getIdentifier());
+						if(w != null){
+							//we already found this workflow before, just keep the info of the oldest one
+							if(w.creationDate.getTime() > currentInstance.creationDate.getTime()){
+								w.creationDate = currentInstance.creationDate;
+								w.creationTransactionId = currentInstance.creationTransactionId;
+								w.creatorUsername = currentInstance.creatorUsername;
+							}
+							w.usageCount += 1;
+						}
+						else{
+							//first time we find this workflow
+							w = currentInstance;
+							w.usageCount = 1;
+						}
+						//update the map with the update workflow
+						workflows.put(w.getIdentifier(), w);
+					}
+					//previous workflow stored, now create the new one
+					currentInstance = new Workflow();
+					currentInstance.creationDate = date;
+					currentInstance.creationTransactionId = tid;
+					currentInstance.creatorUsername  = user;
+					//currentInstance.tools.add(tool);
+				}
+				
+				//add next tool to the same workflow instance
+				//if the same tool is used multiple times within a small interval, we still add it
+				currentInstance.tools.add(tool);
+					
+			}
+			
+			/*DEBUG*/
+			System.out.println("workflows size: "+workflows.size());
+			Collection<Workflow> c = workflows.values();
+			int count = 0;
+			for(Workflow w: c){
+				count+= w.usageCount;
+			}
+			System.out.println("total # of workflow usage: "+count);
+			
+			
+			/** for each workflow, find the corresponding id in the workflows DB table*/
+			WorkflowManager wm = new WorkflowManager();
+			Collection<Workflow> ws = workflows.values();
+			int problematic = 0;
+			for(Workflow w: ws){
+				int parent = -1;
+				for(Tool t: w.tools){
+					WorkflowNode existsNode = wm.getWorkflowNode(t.name, parent, true);
+					if(existsNode == null){
+						System.out.println("WORKFLOW PROBLEMATIC\n "+w);
+						System.out.println("TOOL\n"+t);
+						problematic++;
+						break;
+						//throw new RuntimeException("Some workflows in Analysis_event are not stored yet into workflows. Therefore, the getWorkflowNode() has to be invoked with true");
+					}
+					else{
+						parent = existsNode.getId();
+						w.workflowsTableToolIds.add(parent);
+					}
+				}
+				w.ID = w.workflowsTableToolIds.get(w.workflowsTableToolIds.size()-1);
+			}
+			System.out.println("PROBLEMS: "+problematic);
+			
+			/** Store each workflow in the DB, if the workflow exists just update the count */
+			ws = workflows.values();
+			for(Workflow w: ws){
+				String sqlInsert = "insert into workflow_info values (?, ?, ?, ?, ?, ?)";
+				PreparedStatement pstmt = con.prepareStatement(sqlInsert);
+				pstmt.setInt(1,w.ID);
+				pstmt.setString(2,w.creatorUsername);
+				pstmt.setDate(3, new java.sql.Date(w.creationDate.getTime()));
+				pstmt.setString(4, w.creationTransactionId);
+				pstmt.setInt(5, w.usageCount);
+				pstmt.setString(6, w.getIdentifier());
+				try{
+					//insert 
+					System.out.println(w);
+					pstmt.executeUpdate();
+					for(int i = 0; i < w.tools.size(); i++){
+						Tool t = w.tools.get(i);
+						String sqlInsertTool = "insert into workflow_tool values (?,?,?)";
+						PreparedStatement pstmt2 = con.prepareStatement(sqlInsertTool);
+						pstmt2.setInt(1, w.ID);
+						pstmt2.setInt(2, t.id);
+						pstmt2.setInt(3, i);
+						pstmt2.executeUpdate();
+					}
+				}
+				catch(SQLException e){
+					if(e.getErrorCode() == 2627){
+						//Workflow already existing, just update 
+						System.out.println("The workflow exists already, just update: \n"+w.tools);
+						String sqlUpdate = "update workflow_info set num_usage = ? where id = ?";
+						pstmt = con.prepareStatement(sqlUpdate);
+						pstmt.setInt(1, w.usageCount);
+						pstmt.setInt(2, w.ID);
+						pstmt.executeUpdate();
+					}
+					else{
+						throw e;
+					}
+
+				}
+			}
+			
+		}
+		catch(Exception e){
+			con.rollback();
+			closeConnection();
+			throw e;
+		}
+		con.commit();
+		closeConnection();
 	}
 	
 	

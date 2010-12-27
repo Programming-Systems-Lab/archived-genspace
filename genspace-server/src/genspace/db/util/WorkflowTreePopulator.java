@@ -41,7 +41,7 @@ public class WorkflowTreePopulator extends DatabaseConnector{
 	public void populateTree(ArrayList<String> transactionIds, boolean writeToDb){
 		try {
 			PreparedStatement transactionWorkflowsStatement = getConnection().prepareStatement(
-					"SELECT ae.analysis, ae.date " +
+					"SELECT ae.analysis, ae.date, ae.username " +
 					"FROM analysis_events ae " +
 					"WHERE transaction_id = ? ORDER BY ae.date ASC");
 			

@@ -667,13 +667,7 @@ public class BotEventHandler implements ConnectionEventListener {
 		
 	}
 
-
-
-
-
-	@Override
-	public void statusChanged(Connection connection, Contact contact,
-			Status oldStatus) {
+	public void statusChanged(Connection connection, Contact contact, Status oldStatus) {
 		// TODO Auto-generated method stub
 		
 	}

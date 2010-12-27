@@ -1,9 +1,10 @@
 package org.geworkbench.components.genspace.ui;
 
-import org.geworkbench.components.genspace.bean.*;
 import org.geworkbench.engine.config.VisualPlugin;
 
 import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -79,7 +81,15 @@ public class NetworkVisibility extends JPanel implements VisualPlugin, ActionLis
 	}
 	
 	private void initComponents(NetworkVisibilityBean bean) {
-
+		this.setSize(500, 600);
+		
+		GridBagLayout gridbag = new GridBagLayout();
+    	this.setLayout(gridbag);
+    	
+    	GridBagConstraints c = new GridBagConstraints();
+    	c.ipady = 5;
+    	JLabel blank = new JLabel(" ");
+    	
 		networkVisibilityOptions = new JComboBox();
 		networkVisibilityOptions.addItem("-- Select Visibility Options --");
 		networkVisibilityOptions.addItem("Not Visible At All");
@@ -87,10 +97,15 @@ public class NetworkVisibility extends JPanel implements VisualPlugin, ActionLis
 		networkVisibilityOptions.addItem("Visible In Networks");
 
 		networkVisibilityOptions.setSelectedIndex(bean.getUserVisibility()+1);
-		
+		c.gridwidth = GridBagConstraints.REMAINDER;
+		gridbag.setConstraints(networkVisibilityOptions, c);
 		add(networkVisibilityOptions);
 		networkVisibilityOptions.addActionListener(this);
 
+		c.gridwidth = GridBagConstraints.REMAINDER;		
+        gridbag.setConstraints(blank, c);
+    	add(blank);	
+    	
 		ArrayList<String> allNetworks = getAllNetworks();
 		networks = new JList(allNetworks.toArray());
 		networks.setVisibleRowCount(3);
@@ -115,10 +130,16 @@ public class NetworkVisibility extends JPanel implements VisualPlugin, ActionLis
 		}
 		if (selectedNetworks.size() > 0)
 			networks.setSelectedIndices(selectedIndices);
-		
-		add(new JScrollPane(networks));
+		JScrollPane jp = new JScrollPane(networks);
+		c.gridwidth = GridBagConstraints.REMAINDER;
+		gridbag.setConstraints(jp, c);		
+		add(jp);
 		networks.addListSelectionListener(this);
 
+		c.gridwidth = GridBagConstraints.REMAINDER;		
+        gridbag.setConstraints(blank, c);
+    	add(blank);				
+    	
 		save = new JButton("Save");
 		add(save);
 		save.addActionListener(this);
@@ -205,7 +226,7 @@ public class NetworkVisibility extends JPanel implements VisualPlugin, ActionLis
 	}
 
 	public void valueChanged(ListSelectionEvent e) {
-		selectedNetworks = Arrays.asList((Object[]) networks
+		selectedNetworks = Arrays.asList(networks
 				.getSelectedValues());
 	}
 

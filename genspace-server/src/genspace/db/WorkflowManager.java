@@ -86,7 +86,7 @@ public class WorkflowManager extends DatabaseConnector {
 	public WorkflowNode getWorkflowNode(String toolName, int parent, boolean createIfNotExist){
 		try {		
 			PreparedStatement selectNodeStatement = getConnection().prepareStatement(
-				"SELECT * FROM workflows WHERE tool = ? and parent = ?");
+				"SELECT * FROM workflows WHERE tool COLLATE SQL_Latin1_General_CP1_CS_AS = ? and parent = ?");
 	
 			selectNodeStatement.setString(1, toolName);
 			selectNodeStatement.setInt(2, parent);

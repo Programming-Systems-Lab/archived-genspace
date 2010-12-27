@@ -1,18 +1,15 @@
 package org.geworkbench.components.genspace.ui;
-import org.geworkbench.components.genspace.ui.*;
-import org.geworkbench.components.genspace.bean.*;
-
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.bean.UserSession;
 import org.geworkbench.engine.config.VisualPlugin;
-import org.geworkbench.engine.properties.PropertiesManager;
 
 public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin, ActionListener {
 
@@ -27,8 +24,11 @@ public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin, Actio
 		DataVisibility dataPanel = new DataVisibility(uName);
 		mainPanel.addTab("Data Visibility", dataPanel);
 		
-		NetworkVisibility nwPanel = new NetworkVisibility(uName);
-		mainPanel.addTab("User Visibility", nwPanel);
+		//NetworkVisibility nwPanel = new NetworkVisibility(uName);
+		//mainPanel.addTab("User Visibility", nwPanel);
+		
+		GenSpaceGeneralProfile genPanel = new GenSpaceGeneralProfile();
+		mainPanel.addTab("General Profile", genPanel);
 		
 		add(mainPanel);
 		logout = new JButton("logout");
@@ -41,6 +41,8 @@ public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin, Actio
 		LoginManager mgr = new LoginManager();
 		mgr.logout();
 		GenSpaceLogin p = new GenSpaceLogin();
+		UserSession.setUser(null);
+		GenSpace.getInstance().getWorkflowRepository().updateUser(null);
 		this.removeAll();
 		this.add(p);
 		this.setSize(500, 500);

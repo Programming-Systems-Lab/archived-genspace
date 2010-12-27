@@ -1,21 +1,24 @@
 package org.geworkbench.components.genspace;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.Socket;
 import java.util.Calendar;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.ojb.otm.lock.ObjectLock;
+import org.geworkbench.analysis.AbstractAnalysis;
+import org.geworkbench.bison.model.analysis.Analysis;
+import org.geworkbench.util.FilePathnameUtils;
+import org.jdesktop.swingworker.*;
 
 /**
  * A handler used to log events.
  * 
  * @author sheths
- * @version $Id: ObjectHandler.java,v 1.4 2008-11-28 06:36:48 nankin Exp $
+ * @version $Id: ObjectHandler.java,v 1.13 2009-06-11 21:06:52 sheths Exp $
  */
 public class ObjectHandler {
 
@@ -28,11 +31,11 @@ public class ObjectHandler {
 	private static int count = 0;
 	private static String lastRunDataSetName = "";
 	private static long lastRunTime = 0;
-	private long defaultRunTime = 1000 * 60; // 1 min
+	private long defaultRunTime = 1000 * 60 * 10; // 10 min
 	private static String lastTransactionId = "0";
 	private static int logStatus = 1; //0 = log, 1 = log anonymously, 2 = dont log
-    private static String userName = "";
-    
+	private static String userName = "";
+
 	public ObjectHandler(Object event, Object source) {
 
 		if (event.getClass().getName().equals("org.geworkbench.events.AnalysisInvokedEvent")) {
@@ -41,10 +44,10 @@ public class ObjectHandler {
 
 				Method methods[] = event.getClass().getDeclaredMethods();
 
-				String analysisName = "";
+				Analysis analysis = null;
 				String dataSetName = "";
 				String username;
-				
+
 				/*
 				  // change this when we start using genSpace logins
 				boolean genspace = genspaceLogin.isLoggedIn;
@@ -54,11 +57,11 @@ public class ObjectHandler {
 				} else {
 					username = System.getProperty("user.name");
 				}
-				*/
+				 */
 
 				// this is temporary
 				boolean genspace = false; // for now they are NOT logged in
-				
+
 				if (userName.equals("")) {
 					username = System.getProperty("user.name"); // so use the system name
 				} else
@@ -68,8 +71,8 @@ public class ObjectHandler {
 
 				for (Method m : methods) {
 					try {
-						if (m.getName().equals("getAnalysisName")) {
-							analysisName = m.invoke(event).toString();
+						if (m.getName().equals("getAnalysis")) {
+							analysis = (Analysis)m.invoke(event);
 						} else if (m.getName().equals("getDataSetName")) {
 							dataSetName = m.invoke(event).toString();
 						}
@@ -80,14 +83,19 @@ public class ObjectHandler {
 
 				incrementTransactionId(dataSetName);
 				ObjectLogger o = null;
+				String analysisName = "";
+				analysisName = ((AbstractAnalysis)analysis).getLabel();
+				Map parameters = analysis.getParameters();
+
 				if (logStatus == 0) {
 					log.debug("genspace - Logging");
+
 					o = new ObjectLogger(analysisName, dataSetName,
-							lastTransactionId, username, genspace);
+							lastTransactionId, username, genspace, parameters);
 				} else if (logStatus == 1) {
 					log.debug("genspace - Logging anonymously");
 					o = new ObjectLogger(analysisName, dataSetName,
-							lastTransactionId, "anonymous", false);
+							lastTransactionId, "anonymous", false, parameters);
 				}
 
 				count++;
@@ -97,29 +105,39 @@ public class ObjectHandler {
 			}
 		}
 	}
-	
+
 	/**
 	 * This method will phone home and try to send the log file.
 	 * If this doesn't work, it will try updating the log server information in case the log server has been changed
 	 * @param logger The ObjectLogger object
 	 */
-	private void phoneHome(ObjectLogger logger) {
-		boolean success = sendLogFile(logger);
+	private void phoneHome(final ObjectLogger logger) {
 
-		if (success != true) {
-			//could not send log file to the server.
-			//we have 2 possibilities - 1.the server is down, in which case look up the new server
-			//or 2.the client is not connected to the internet, so just try again later
-			//this is for possibility 1.
-			log.info("");
-			log.info("genspace - sending log file failed, trying to update the server information");
-			log.info("");
-			updateLogServer();
-			//try resending the log file to the new server
-			sendLogFile(logger);
-		}
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+			@Override
+			public Void doInBackground() {
+
+
+				boolean success = sendLogFile(logger);
+
+				if (success != true) {
+					//could not send log file to the server.
+					//we have 2 possibilities - 1.the server is down, in which case look up the new server
+					//or 2.the client is not connected to the internet, so just try again later
+					//this is for possibility 1.
+					log.info("");
+					log.info("genspace - sending log file failed, trying to update the server information");
+					log.info("");
+					updateLogServer();
+					//try resending the log file to the new server
+					sendLogFile(logger);
+				}
+				return null;
+			}
+		};
+		worker.execute();
 	}
-	
+
 	/**
 	 * This method will send the log files to the current log server
 	 * @param logger The ObjectLogger object
@@ -127,7 +145,7 @@ public class ObjectHandler {
 	 */
 	private boolean sendLogFile(ObjectLogger logger) {
 		XmlClient x = new XmlClient(host, port);
-		boolean success = x.readAndSendFile("geworkbench_log.xml");
+		boolean success = x.readAndSendFile(FilePathnameUtils.getUserSettingDirectoryPath() + "geworkbench_log.xml");
 
 		if (success == true) {
 			log.info("");
@@ -137,7 +155,7 @@ public class ObjectHandler {
 		}
 		return success;
 	}
-	
+
 	/**
 	 * This method will check the lookup server to get the hostname and port number of the new log server and update the information
 	 */
@@ -199,8 +217,10 @@ public class ObjectHandler {
 		logStatus = i;
 		//System.out.println(logStatus);
 	}
-	
-	public static void setUserName(String userName) {
-		userName = userName;
+
+	public static void setUserName(String name) {
+		//System.out.println(userName);
+		userName = name;
+		//System.out.println(userName);
 	}
 }

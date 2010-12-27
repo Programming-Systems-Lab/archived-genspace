@@ -8,6 +8,7 @@ import genspace.db.SecurityServer;
 import genspace.db.SocialNetworkServer;
 import genspace.db.NetworkVisualizationServer;
 import genspace.db.ToolServer;
+import genspace.db.WorkflowRepositoryServer;
 import genspace.db.WorkflowVisualizationServer;
 import genspace.scripts.ScriptRunner;
 
@@ -168,16 +169,20 @@ public class GenSpace {
         ToolServer ts = new ToolServer(RuntimeEnvironmentSettings.TOOL_SERVER_PORT);
         ts.start();
         
-        ISBUServer isbus = new ISBUServer(RuntimeEnvironmentSettings.ISBU_SERVER_PORT);
-        isbus.start();
+       ISBUServer isbus = new ISBUServer(RuntimeEnvironmentSettings.ISBU_SERVER_PORT);
+       isbus.start();
         
         SecurityServer security = new SecurityServer(RuntimeEnvironmentSettings.SECURITY_SERVER_PORT);
         security.start();
         
+//		Added by Flavio
+//		accepts all requests from the Workflow Repository tab
+//		however, "adding a workflow to the repository" from other tabs is handled by the ISBUServer
+        WorkflowRepositoryServer wfr = new WorkflowRepositoryServer(RuntimeEnvironmentSettings.WORKFLOW_REPOSITORY_PORT);
+        wfr.start();
+        
         // start the scripts
         ScriptRunner scriptrunner = new ScriptRunner();
-       
-        
         while (true) { // Simplified version of "stick around" wait
             System.out.println("waiting");
             GeneralUtils.sleep(60*60*1000);

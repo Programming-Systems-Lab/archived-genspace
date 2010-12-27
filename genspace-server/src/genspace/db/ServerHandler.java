@@ -16,7 +16,7 @@ public abstract class ServerHandler extends Thread{
 	public void respond(Serializable s) {
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-			System.out.println("Response: " + s.toString());
+			System.out.println("Response: " + s);
 			oos.writeObject(s);
 			oos.flush();
 		}

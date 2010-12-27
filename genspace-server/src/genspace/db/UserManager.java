@@ -1,10 +1,19 @@
 package genspace.db;
 
 import genspace.common.Logger;
+import genspace.db.util.UserWorkflowLoader;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import org.geworkbench.components.genspace.bean.RegisterBean;
+import org.geworkbench.components.genspace.bean.User;
+import org.geworkbench.components.genspace.bean.UserWorkflow;
+import org.geworkbench.components.genspace.bean.Workflow;
+import org.geworkbench.components.genspace.bean.WorkflowComment;
+import org.geworkbench.components.genspace.bean.WorkflowInbox;
 
 public class UserManager extends DatabaseManager {
 	
@@ -386,15 +395,312 @@ public class UserManager extends DatabaseManager {
 		return null;
 	}
 
+	/**
+	 * Added by Flavio
+	 * This function is requested at login-time
+	 * the login credentials have already been checked and they are correct
+	 * Loads all the information associated with a user
+	 * The user object will be then sent to the client
+	 * @param string the registerBean provided by the client
+	 * @return a filled user
+	 */
+	public User getUser(String username) {
+		User u = null;
+		try
+		{
+			con = getConnection();
+
+			if (con != null)
+			{
+				u = UserWorkflowLoader.loadUser(con, username);
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+		}
+		finally
+		{
+			closeConnection();
+		}
+		return u;
+	}
+	
+	/**
+	 * Added by Flavio
+	 * Store a new UserWorkflow for the given user
+	 * The user just added the UserWorkflow to the repository
+	 * it has to be added in the DB
+	 * and then it has to be fully loaded and returned to the user itself
+	 * @param string the registerBean provided by the client
+	 * @return a filled user
+	 * @throws Exception 
+	 */
+	public UserWorkflow addAndGetUserWorkflow(String username, int wfid, String name) throws Exception {
+		UserWorkflow uw = null;
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.storeUserWorkflow(con, username, wfid, name);
+				uw = UserWorkflowLoader.loadUserWorkflow(con, username, wfid);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+		return uw;
+	}
 	
 	public static void main(String[] args)
 	{
 		genspace.db.UserManager um = new genspace.db.UserManager();
+		User u = um.getUser("swap");
+		System.out.println(u);
+	}
 
-		String[] allUsers = um.getAllUsers();
+	public void createUserFolder(String username, String foldername) throws Exception {
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.storeUserFolder(con, username, foldername);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
 
-		for (String user : allUsers) System.out.println(user);
 
-		System.out.println("done");	
+	public void addWorkflowToFolder(String username, int workflowId, String foldername) throws Exception {
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.updateWorkflowFolder(con, username, workflowId, foldername);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
+	}
+
+
+	public void deleteWorkflow(String username, int workflowId) throws Exception {
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.deleteWorkflow(con, username, workflowId);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);            
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
+
+
+	public void deleteFolder(String username, String foldername) throws Exception {
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.deleteFolder(con, username, foldername);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);            
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
+
+
+	public void deleteWorkflowInbox(String username, WorkflowInbox wi) throws Exception {
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.deleteWorkflowInbox(con, username, wi);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e); 
+            
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
+
+
+	public void addWorkflowInboxToRepository(String username, WorkflowInbox wi) throws Exception {
+		try
+		{
+			
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.addWorkflowInboxToRepository(con, username, wi);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);            
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
+
+
+	public void sendWorkflow(String receiver, WorkflowInbox wi) throws Exception {
+		try
+		{
+			con = getConnection();
+			if (con != null)
+			{
+				con.setAutoCommit(false);
+				UserWorkflowLoader.sendWorkflow(con, receiver, wi);
+				con.commit();
+			}
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);            
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
+
+
+	public int storeComment(WorkflowComment wc, Workflow w) throws Exception {
+		try
+		{
+			con = getConnection();
+			con.setAutoCommit(false);
+			int pk = UserWorkflowLoader.storeComment(con, wc, w);
+			con.commit();
+			return pk;
+		}
+        catch(Exception e)
+        {
+			e.printStackTrace();
+            if (Logger.isLogError()) Logger.logError(e);            
+            if(con != null)
+            	con.rollback();
+            throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+	}
+
+
+	public void deleteComment(WorkflowComment wc, Workflow w) throws Exception {
+		try
+		{
+			con = getConnection();
+			con.setAutoCommit(false);
+			UserWorkflowLoader.deleteComment(con, wc, w);
+			con.commit();
+		}
+	    catch(Exception e)
+	    {
+			e.printStackTrace();
+	        if (Logger.isLogError()) Logger.logError(e);            
+	        if(con != null)
+	        	con.rollback();
+	        throw e;
+		}
+		finally
+		{
+			closeConnection();
+		}
+		
 	}
 }

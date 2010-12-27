@@ -2,20 +2,19 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="client/src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM 1.5.0 (MacOS X Default)"/>
 	<classpathentry kind="lib" path="client/lib/cindy.jar"/>
 	<classpathentry kind="lib" path="client/lib/commons-logging.jar"/>
 	<classpathentry kind="lib" path="client/lib/cos.jar"/>
 	<classpathentry kind="lib" path="client/lib/daim.jar"/>
 	<classpathentry kind="lib" path="client/lib/db-ojb-1.0.4.jar"/>
-	<classpathentry kind="lib" path="client/lib/genspace-communicator.jar"/>
 	<classpathentry kind="lib" path="client/lib/jaimlib.jar"/>
 	<classpathentry kind="lib" path="client/lib/jazzy-core.eng.jar"/>
 	<classpathentry kind="lib" path="client/lib/jdic_misc.jar"/>
 	<classpathentry kind="lib" path="client/lib/jdic_stub.jar"/>
 	<classpathentry kind="lib" path="client/lib/jdic.jar"/>
-	<classpathentry kind="lib" path="client/lib/jgraph.jar"/>
 	<classpathentry kind="lib" path="client/lib/jgraph-latest-lgpl-src.jar"/>
+	<classpathentry kind="lib" path="client/lib/jgraph.jar"/>
 	<classpathentry kind="lib" path="client/lib/jml.jar"/>
 	<classpathentry kind="lib" path="client/lib/joscar-client.jar"/>
 	<classpathentry kind="lib" path="client/lib/joscar-common.jar"/>
@@ -32,5 +31,6 @@
 	<classpathentry kind="lib" path="client/lib/substance.jar"/>
 	<classpathentry kind="lib" path="client/lib/ymsg_network_v0_6.jar"/>
 	<classpathentry kind="lib" path="client/lib/ymsg_support_v0_6.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-core"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

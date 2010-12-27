@@ -16,12 +16,19 @@ public class RatingBean implements Serializable, Comparable {
 	//total number of ratings for the object
 	private long totalRatings;
 	
+	private String username;
+	
+	public int dbPK;
+
+
 	public RatingBean(int i, double o, double u, long t){
 		identifier = i;
 		overallRating = o;
 		userRating = u;
 		totalRatings = t;
 	}
+	
+	public RatingBean(){}
 
 	public double getOverallRating() {
 		return overallRating;
@@ -39,12 +46,24 @@ public class RatingBean implements Serializable, Comparable {
 		return totalRatings;
 	}
 
+	@Override
 	public String toString(){
 		return "(Avg:" + overallRating + " User:" + userRating + " Total Times Rated:" + totalRatings + ")";
 				
 	}
 	
-	@Override
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public void setUserRating(double rating){
+		userRating = rating;
+	}
+	
 	public int compareTo(Object arg0) {
 		RatingBean other = (RatingBean) arg0;
 		if (this.overallRating > other.overallRating) return 1;

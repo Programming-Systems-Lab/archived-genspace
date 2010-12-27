@@ -2,8 +2,6 @@ package org.geworkbench.components.genspace.rating;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import org.geworkbench.components.genspace.ServerConfig;
 import org.geworkbench.components.genspace.ServerRequest;
 import org.geworkbench.components.genspace.bean.RatingBean;
@@ -30,7 +28,7 @@ public class Rater {
 		RatingBean newRating = (RatingBean)ServerRequest.get(server, writeCommand, args);
 		
 
-		System.out.println(user + " submitted rating to " + server.getHost() + ":" + id + " as a " + rating);
+		//System.out.println(user + " submitted rating to " + server.getHost() + ":" + id + " as a " + rating);
 		
 		return newRating;
 	}
@@ -40,7 +38,7 @@ public class Rater {
 		args.add(new Integer(id));
 		args.add(user);
 		RatingBean currentRating = (RatingBean)ServerRequest.get(server, getCommand, args);
-		System.out.println(user + " requested rating for " + server.getHost() + ":" + id + ". Response: " + currentRating);
+		//System.out.println(user + " requested rating for " + server.getHost() + ":" + id + ". Response: " + currentRating);
 		return currentRating;
 	}
 }

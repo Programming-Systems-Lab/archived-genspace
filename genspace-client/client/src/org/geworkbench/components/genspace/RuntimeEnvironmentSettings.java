@@ -24,6 +24,8 @@ public class RuntimeEnvironmentSettings {
 	public static final ServerConfig ISBU_SERVER = new ServerConfig(SERVER, 12345);
 	public static final ServerConfig TOOL_SERVER = new ServerConfig(SERVER, 12341);
 	public static final ServerConfig SECURITY_SERVER = new ServerConfig(SERVER, 12347);
+	public static final ServerConfig WORKFLOW_REPOSITORY_SERVER = new ServerConfig(SERVER, 12349);
+
 
 	public static final String DEFAULT_USER = "";
 	

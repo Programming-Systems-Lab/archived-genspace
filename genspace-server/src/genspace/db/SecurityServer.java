@@ -85,7 +85,7 @@ public class SecurityServer extends Server{
 				OutputStream os = socket.getOutputStream();
 				OutputStreamWriter writer = new OutputStreamWriter(os);
 				PrintWriter pw = new PrintWriter(writer, true);
-				 
+			    
 				while(true)
 				{
 					System.out.println("Waiting for bean");
@@ -145,12 +145,24 @@ public class SecurityServer extends Server{
 							//TODO: send this message to LoginMgr via socket
 							System.out.println("Registered: "+flag);
 							pw.println(flag);
+
 						} else if (r.getMessage().equals("Login")) {
 							boolean flag = mgr.login(r);
-							
 							//TODO: send this message to LoginMgr via socket
-							System.out.println("Login: "+flag);				
-							pw.println(flag);
+							System.out.println("Login: "+flag);
+							//pw.println(flag);
+							//pw.flush();
+							//System.out.println("Done with writing: "+flag);		
+							//Added by Flavio
+							User u = null;
+							if(flag){
+								UserManager um = new UserManager();
+								u = um.getUser(r.getUsername());
+							}
+							ObjectOutputStream oos = new ObjectOutputStream(os);
+							oos.writeObject(u); //in the case of erroneous login we return null
+							oos.flush();
+							//oos.close();
 						}
 					}
 					else if("datavisibilityedit".equalsIgnoreCase(msg))

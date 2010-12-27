@@ -4,6 +4,8 @@ import genspace.db.ISBUDataAnalysis;
 
 /**
  * This script will update the index used by ISBU 
+ * UPDATE BY FLAVIO: it will also now store into the DB all the information associated with WFs such as
+ * wf_info and list of tools to be used in the workflow repository functionalities
  * @author swapneel
  *
  */

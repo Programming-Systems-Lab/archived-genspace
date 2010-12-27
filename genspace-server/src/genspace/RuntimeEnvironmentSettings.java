@@ -22,11 +22,12 @@ public class RuntimeEnvironmentSettings {
 	public static final int ISBU_SERVER_PORT = 12345;
 	public static final int TOOL_SERVER_PORT = 12341;
 	public static final int SECURITY_SERVER_PORT = 12347;
+	public static final int WORKFLOW_REPOSITORY_PORT = 12349;
 	
 	
 	
 	//Database connection constants
-	public static final String DB_HOST = "bambi.cs.columbia.edu";
+	public static final String DB_HOST = "boris.cs.columbia.edu";
 	public static final String DB_PORT = "1433";
 	public static final String DB_USER = "student";
 	public static final String DB_PASS = "password";

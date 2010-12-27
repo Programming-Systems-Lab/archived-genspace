@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>geworkbench-core</name>
+			<type>2</type>
+			<location>/Users/flavio/eclipse-workspace/geworkbench-core</location>
+		</link>
+	</linkedResources>
 </projectDescription>

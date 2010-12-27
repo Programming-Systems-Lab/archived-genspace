@@ -825,7 +825,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 
 
 
-	@Override
+	
 	public ArrayList<String> getAllRatingsForCurrentUser(String currentUserId) {
 		// TODO Auto-generated method stub
 		return null;

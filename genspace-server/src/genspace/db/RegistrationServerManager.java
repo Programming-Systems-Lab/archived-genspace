@@ -134,17 +134,17 @@ public class RegistrationServerManager extends DatabaseManager {
 				PreparedStatement stmt = con.prepareStatement(query);
 				stmt.setString(1, reg.getUsername());
 				ResultSet rs = stmt.executeQuery();
-
+				System.out.println("username: "+reg.getUsername());
 				if (rs.next()) {
 					encryptedPassword = rs.getString("password");
 				} else {
 					// no user with this username exists
 					return false;
 				}
-
-				if (encryptedPassword.equals(getEncryptPassword(reg
-						.getPassword()))) {
-					// password matches
+				
+				System.out.println("password received: "+reg.getPassword()+", password in DB: "+encryptedPassword+", encryptedPassword in DB: "+getEncryptPassword(encryptedPassword.toCharArray()));
+				System.out.println("enc password received: "+getEncryptPassword(reg.getPassword()));
+				if (encryptedPassword.equals(getEncryptPassword(reg.getPassword()))) {
 					return true;
 				} else {
 					return false;

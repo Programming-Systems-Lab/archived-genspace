@@ -1,21 +1,22 @@
 //package genspace.ui;
 package org.geworkbench.components.genspace.ui;
 
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
+import org.geworkbench.components.genspace.ServerRequest;
 import org.geworkbench.components.genspace.bean.*;
 import org.geworkbench.engine.properties.PropertiesManager;
-
+import org.geworkbench.components.genspace.GenSpace;
 import java.net.Socket;
 import java.io.*;
 import java.util.ArrayList;
 
 public class LoginManager {
-	public static final String DEFAULT_IP = "localhost";
-	public static final int DEFAULT_PORT = 33334;
 	
 	private static final String PROPERTY_GENSPACE_LOGIN_USER="LoginUserId";
 	RegisterBean bean = null;
 	DataVisibilityBean dvb = null;
 	NetworkVisibilityBean nvb = null;
+	User user;
 	
 	public static String loggedUser = null;
 	
@@ -70,7 +71,8 @@ public class LoginManager {
 	
 	private Socket getSocket() {
 		try {
-			Socket s = new Socket(DEFAULT_IP, DEFAULT_PORT);
+			Socket s = new Socket(RuntimeEnvironmentSettings.SECURITY_SERVER.getHost(),
+					RuntimeEnvironmentSettings.SECURITY_SERVER.getPort());
 			OutputStream pw = s.getOutputStream();
 		
 			return s;
@@ -92,8 +94,7 @@ public class LoginManager {
 			
 			OutputStream pw = s.getOutputStream();
 			pw.write (buf);
-			pw.flush();
-				
+			pw.flush();	
             boolean ret = false;
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(s.getInputStream()));            
             if (socketBr.readLine().equals("true")) {
@@ -110,7 +111,10 @@ public class LoginManager {
 		} catch (Exception ex) { 
 			ex.printStackTrace();
 			
-			return false;
+			//in case there's an exception such as losing network connections, this used to give a false error message that the user id is duplicated.
+			//assume that the user is not a duplicate for now, and try registering
+			//changed the return value to true
+			return true;
 		}		
 		
 	}
@@ -154,30 +158,38 @@ public class LoginManager {
 		try {		
 			byte[] buf ; 
 			buf = bean.write();
-				
 			Socket s = getSocket();
 			
 			OutputStream pw = s.getOutputStream();
 			pw.write (buf);
 			pw.flush();
-				
+            ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+            user = (User) ois.readObject();
+            //System.out.println(user);
 			boolean ret = false;
-			BufferedReader socketBr = new BufferedReader(new InputStreamReader(s.getInputStream()));			
-	        if (socketBr.readLine().equals("true")) {
+			//BufferedReader socketBr = new BufferedReader(new InputStreamReader(s.getInputStream()));			
+	        //if (socketBr.readLine().equals("true")) {
+			if(user != null){
 	        	loggedUser = bean.getUsername();
+	        	UserSession.setUser(user);
+	        	GenSpace.getInstance().getWorkflowRepository().updateUser(user);
+	        	
 	        	try
 	    		{
 	    			PropertiesManager properties = PropertiesManager.getInstance();
 	    			properties.setProperty(GenSpaceLogin.class, PROPERTY_GENSPACE_LOGIN_USER, bean.getUsername());
+	    			//Message msg = new Message();
+	    			//msg.startMessage();
 	    		}
 	    		catch (Exception ex) { }
 	        	ret= true;
 	        } else {
 	        	ret = false;
 	        } 	
-	        
+           
+            ois.close();
 	        pw.close();
-	        socketBr.close();
+	        //socketBr.close();
 	        s.close();
 	        
 	        return ret;
@@ -186,6 +198,58 @@ public class LoginManager {
 			
 			return false;			
 		}	        
+	}
+	
+	public RegisterBean getUserInfo(){
+		bean.setMessage("GetUserInfo");
+		try{
+			byte[] buf;
+			buf = bean.write();
+			
+			Socket s = getSocket();
+			OutputStream pw = s.getOutputStream();
+			pw.write (buf);
+			pw.flush();
+				
+			//System.out.println("Sent socket!");
+			byte[] buffer = new byte[1024];
+			InputStream in =  s.getInputStream();
+			in.read(buffer);
+			
+			RegisterBean bean = (RegisterBean) RegisterBean.read(buffer);
+			return bean;
+		}
+		catch(Exception ex){
+			return null;
+		}
+	}
+	
+	public boolean userUpdate(){
+		
+		try {
+			byte[] buf ;
+			
+			bean.setMessage("Update");
+			buf = bean.write();
+				
+			Socket s = getSocket();
+			OutputStream pw = s.getOutputStream();
+			BufferedReader socketBr = new BufferedReader(new InputStreamReader(s.getInputStream()));			
+			pw.write (buf);
+			pw.flush();
+				
+			//System.out.println("Sent socket!");
+			
+
+            if (socketBr.readLine().equalsIgnoreCase("true")) {
+            	//System.out.println("Sent true!");
+            	return true;
+            } else {
+            	return false;
+            } 			
+		} catch (Exception ex) { 
+			return false;			
+		}
 	}
 	
 	public ArrayList<String> getAllNetworks() {
@@ -415,6 +479,16 @@ public class LoginManager {
 		}
 		catch (Exception ex) { return false;}
 
+	}
+	
+	public static User getUser(User u) throws Exception{
+		ArrayList<Object> params = new ArrayList<Object>();
+		params.add(u.username);
+		Object result = ServerRequest.get(RuntimeEnvironmentSettings.WORKFLOW_REPOSITORY_SERVER, "get_user", params);
+		if(result instanceof User){
+			return (User)result;
+		}
+		else throw new Exception(result.toString());
 	}
 }
 
