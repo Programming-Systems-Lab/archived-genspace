@@ -1,0 +1,63 @@
+001293042789001292956389a:3:{s:7:"content";s:2223:"<?xml version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>geWorkbench Tool RSS Feed</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu"></link>
+  <id>http://bambi.cs.columbia.edu</id>
+  <updated>2010-12-21T18:18:00Z</updated>
+<entry>
+  <title>Anova Analysis-5/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/2"></link>
+  <updated>2010-12-21T18:18:00Z</updated>
+  <id>20</id>
+  <summary type="text">This is an excellent tool</summary>
+</entry>
+<entry>
+  <title>Blast SkyBase-1/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/29"></link>
+  <updated>2010-11-21T20:09:00Z</updated>
+  <id>24</id>
+  <summary type="text">Not a good tool</summary>
+</entry>
+<entry>
+  <title>Anova Analysis-4/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/2"></link>
+  <updated>2010-12-02T02:12:00Z</updated>
+  <id>25</id>
+  <summary type="text">Great tool</summary>
+</entry>
+<entry>
+  <title>Blast SkyBase-2/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/29"></link>
+  <updated>2010-11-21T20:20:00Z</updated>
+  <id>26</id>
+  <summary type="text">Okay tool</summary>
+</entry>
+<entry>
+  <title>Anova Analysis-3/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/2"></link>
+  <updated>2010-11-21T20:59:00Z</updated>
+  <id>27</id>
+  <summary type="text">good tool</summary>
+</entry>
+<entry>
+  <title>ARACNE Analysis-5/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/27"></link>
+  <updated>2010-11-23T15:20:00Z</updated>
+  <id>28</id>
+  <summary type="text">Excellent tool</summary>
+</entry>
+<entry>
+  <title>Comparative Modeling Pipeline: SkyLine-3/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/28"></link>
+  <updated>2010-11-29T03:04:00Z</updated>
+  <id>35</id>
+  <summary type="text">good tool</summary>
+</entry>
+<entry>
+  <title>KNN Classifier-5/5</title>
+  <link rel="alternate" href="http://bambi.cs.columbia.edu/tool/index/23"></link>
+  <updated>2010-12-15T03:21:00Z</updated>
+  <id>36</id>
+  <summary type="text">Not a good tool</summary>
+</entry>
+</feed>";s:17:"decoratorTemplate";b:0;s:8:"response";C:13:"sfWebResponse":711:{a:11:{i:0;s:0:"";i:1;i:200;i:2;s:2:"OK";i:3;a:5:{s:13:"http_protocol";s:8:"HTTP/1.1";s:7:"logging";s:3:"off";s:7:"charset";s:5:"UTF-8";s:17:"send_http_headers";b:1;s:12:"content_type";s:24:"text/html; charset=utf-8";}i:4;b:0;i:5;a:1:{s:12:"Content-Type";s:35:"application/atom+xml; charset=UTF-8";}i:6;a:1:{s:6:"robots";s:13:"index, follow";}i:7;a:1:{s:12:"Content-Type";s:24:"text/html; charset=utf-8";}i:8;a:3:{s:5:"first";a:0:{}s:0:"";a:1:{s:4:"main";a:0:{}}s:4:"last";a:0:{}}i:9;a:3:{s:5:"first";a:0:{}s:0:"";a:2:{s:61:"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js";a:0:{}s:73:"http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js";a:0:{}}s:4:"last";a:0:{}}i:10;a:0:{}}}}

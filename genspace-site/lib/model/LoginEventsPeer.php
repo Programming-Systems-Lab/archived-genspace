@@ -1,12 +1,19 @@
 <?php
 
+require 'lib/model/om/BaseLoginEventsPeer.php';
+
+
 /**
- * Subclass for performing query and update operations on the 'login_events' table.
+ * Skeleton subclass for performing query and update operations on the 'login_events' table.
  *
  * 
  *
- * @package lib.model
- */ 
-class LoginEventsPeer extends BaseLoginEventsPeer
-{
-}
+ * You should add additional methods to this class to meet the
+ * application requirements.  This class will only be generated as
+ * long as it does not already exist in the output directory.
+ *
+ * @package    lib.model
+ */
+class LoginEventsPeer extends BaseLoginEventsPeer {
+
+} // LoginEventsPeer

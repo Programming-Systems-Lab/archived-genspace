@@ -11,7 +11,12 @@ default:
 
   stylesheets:    [main]
 
-  javascripts:    []
+  javascripts:    [http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js,http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js]
 
   has_layout:     on
   layout:         layout
+
+addSuccess:
+  has_layout: off
+  template:   login
+

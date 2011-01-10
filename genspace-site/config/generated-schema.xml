@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="propel" package="lib.model" defaultIdMethod="native">
+
+  <table name="user_networks">
+    <column name="username" type="VARCHAR" size="50" required="true" primaryKey="true" />
+    <foreign-key foreignTable="networks" onDelete="" onUpdate="">
+      <reference local="username" foreign="id" />
+    </foreign-key>
+    <column name="network" type="VARCHAR" size="50" required="true" primaryKey="true" />
+    <foreign-key foreignTable="networks" onDelete="" onUpdate="">
+      <reference local="network" foreign="network" />
+    </foreign-key>
+    <index name="PK_user_networks">
+      <index-column name="username" />
+      <index-column name="network" />
+    </index>
+  </table>
+
+  <table name="networks">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="network" type="VARCHAR" size="50" required="true" />
+  </table>
+
+  <table name="user_IM_handles">
+    <column name="username" type="VARCHAR" size="50" />
+    <column name="IM_handle" type="VARCHAR" size="50" />
+    <column name="IM_service" type="VARCHAR" size="50" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="login_events">
+    <column name="username" type="VARCHAR" size="50" />
+    <column name="date" type="TIMESTAMP" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="analysis_events">
+    <column name="username" type="VARCHAR" size="50" />
+    <column name="host" type="VARCHAR" size="50" />
+    <column name="date" type="TIMESTAMP" />
+    <column name="analysis" type="VARCHAR" size="50" />
+    <column name="dataset" type="VARCHAR" size="255" />
+    <column name="transaction_id" type="VARCHAR" size="255" />
+    <column name="is_genspace_user" type="VARCHAR" size="1" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="include_exclude_analysis">
+    <column name="username" type="VARCHAR" size="50" />
+    <column name="analysis" type="VARCHAR" size="50" />
+    <column name="action" type="VARCHAR" size="50" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="friends">
+    <column name="user1" type="VARCHAR" size="50" />
+    <column name="user2" type="VARCHAR" size="50" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="test_analysis_events">
+    <column name="username" type="VARCHAR" size="50" />
+    <column name="host" type="VARCHAR" size="50" />
+    <column name="date" type="TIMESTAMP" />
+    <column name="analysis" type="VARCHAR" size="50" />
+    <column name="dataset" type="VARCHAR" size="255" />
+    <column name="transaction_id" type="VARCHAR" size="255" />
+    <column name="is_genspace_user" type="VARCHAR" size="1" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="registration">
+    <column name="username" type="VARCHAR" size="50" required="true" primaryKey="true" />
+    <column name="password" type="VARCHAR" size="50" required="true" />
+    <column name="email" type="VARCHAR" size="50" />
+    <column name="im_email" type="VARCHAR" size="50" />
+    <column name="im_password" type="VARCHAR" size="50" />
+    <column name="first_name" type="VARCHAR" size="50" required="true" />
+    <column name="last_name" type="VARCHAR" size="50" required="true" />
+    <column name="work_title" type="VARCHAR" size="50" />
+    <column name="phone" type="VARCHAR" size="50" />
+    <column name="lab_affiliation" type="VARCHAR" size="100" required="true" />
+    <column name="addr1" type="VARCHAR" size="50" />
+    <column name="addr2" type="VARCHAR" size="50" />
+    <column name="city" type="VARCHAR" size="50" />
+    <column name="state" type="VARCHAR" size="50" />
+    <column name="zipcode" type="VARCHAR" size="5" />
+    <index name="PK_dbo.registration">
+      <index-column name="username" />
+    </index>
+  </table>
+
+  <table name="data_visibility">
+    <column name="username" type="VARCHAR" size="50" required="true" primaryKey="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="username" foreign="username" />
+    </foreign-key>
+    <column name="logdata" type="INTEGER" required="true" />
+    <column name="datavisibility" type="INTEGER" required="true" />
+    <index name="PK_data_visibility">
+      <index-column name="username" />
+    </index>
+  </table>
+
+  <table name="user_visibility">
+    <column name="username" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="username" foreign="username" />
+    </foreign-key>
+    <column name="uservisibility" type="INTEGER" required="true" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="audit">
+    <column name="username" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="username" foreign="username" />
+    </foreign-key>
+    <column name="action" type="VARCHAR" size="500" required="true" />
+    <column name="tablename" type="VARCHAR" size="50" required="true" />
+    <column name="beforevalue" type="VARCHAR" size="1000" required="true" />
+    <column name="aftervalue" type="VARCHAR" size="1000" required="true" />
+    <column name="time" type="TIMESTAMP" required="true" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+  </table>
+
+  <table name="network_visibility" idMethod="native">
+    <column name="id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="username" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="username" foreign="username" />
+    </foreign-key>
+    <column name="user_data_option" type="INTEGER" required="true" />
+    <column name="networkname" type="VARCHAR" size="50" required="true" />
+    <index name="PK_network_visibility">
+      <index-column name="id" />
+    </index>
+    <index name="uq">
+      <index-column name="username" />
+      <index-column name="user_data_option" />
+      <index-column name="networkname" />
+    </index>
+  </table>
+
+  <table name="Outbox" idMethod="native">
+    <column name="MessageID" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="Date" type="TIMESTAMP" required="true" />
+    <column name="FromUser" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="FromUser" foreign="username" />
+    </foreign-key>
+    <column name="ToUser" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="ToUser" foreign="username" />
+    </foreign-key>
+    <column name="Message" type="VARCHAR" size="200" required="true" />
+    <index name="PK_Outbox">
+      <index-column name="MessageID" />
+    </index>
+  </table>
+
+  <table name="Inbox" idMethod="native">
+    <column name="MessageID" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="Date" type="TIMESTAMP" required="true" />
+    <column name="FromUser" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="FromUser" foreign="username" />
+    </foreign-key>
+    <column name="ToUser" type="VARCHAR" size="50" required="true" />
+    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
+      <reference local="ToUser" foreign="username" />
+    </foreign-key>
+    <column name="Message" type="VARCHAR" size="200" required="true" />
+    <index name="PK_Inbox">
+      <index-column name="MessageID" />
+    </index>
+  </table>
+
+  <table name="workflows" idMethod="native">
+    <column name="id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="parent" type="INTEGER" required="true" />
+    <column name="tool" type="CHAR" size="200" required="true" />
+    <index name="IX_workflowParent">
+      <index-column name="parent" />
+    </index>
+    <index name="IX_workflowTool">
+      <index-column name="tool" />
+    </index>
+    <index name="PK_workflows">
+      <index-column name="id" />
+    </index>
+  </table>
+
+  <table name="tools" idMethod="native">
+    <column name="id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="tool" type="VARCHAR" size="100" required="true" />
+    <column name="description" type="LONGVARCHAR" size="2147483647" />
+    <index name="PK_tools">
+      <index-column name="id" />
+    </index>
+  </table>
+
+  <table name="tool_comments" idMethod="native">
+    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="id" type="INTEGER" required="true" />
+    <column name="comment" type="LONGVARCHAR" size="2147483647" required="true" />
+    <column name="username" type="CHAR" size="200" required="true" />
+    <column name="posted_on" type="TIMESTAMP" required="true" />
+    <index name="PK_tool_comments">
+      <index-column name="pk" />
+    </index>
+  </table>
+
+  <table name="workflow_ratings" idMethod="native">
+    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="id" type="INTEGER" required="true" />
+    <column name="username" type="VARCHAR" size="100" required="true" />
+    <column name="rating" type="INTEGER" required="true" />
+    <index name="PK_workflow_ratings">
+      <index-column name="pk" />
+    </index>
+  </table>
+
+  <table name="workflow_comments" idMethod="native">
+    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="id" type="INTEGER" required="true" />
+    <column name="comment" type="LONGVARCHAR" size="2147483647" required="true" />
+    <column name="username" type="CHAR" size="200" required="true" />
+    <column name="posted_on" type="TIMESTAMP" required="true" />
+    <index name="PK_workflow_comments">
+      <index-column name="pk" />
+    </index>
+  </table>
+
+  <table name="tool_ratings" idMethod="native">
+    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+    <column name="id" type="INTEGER" required="true" />
+    <column name="rating" type="INTEGER" required="true" />
+    <column name="username" type="CHAR" size="200" required="true" />
+    <index name="PK_tool_ratings">
+      <index-column name="pk" />
+    </index>
+  </table>
+
+  <table name="users">
+    <column name="id" type="INTEGER" required="true" primaryKey="true" />
+    <column name="username" type="VARCHAR" size="50" />
+    <column name="password" type="VARCHAR" size="50" />
+    <column name="email" type="VARCHAR" size="50" />
+    <column name="organization" type="VARCHAR" size="50" />
+    <index name="PK_users">
+      <index-column name="id" />
+    </index>
+  </table>
+
+</database>

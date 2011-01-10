@@ -13,5 +13,11 @@ This web portal provides registered users with the ability to comment on and rat
 					
 </div>
 </div>
+<div id="sidebar_about" >
 
-			<div style="clear: both;">&nbsp;</div>
+<?php include_partial('about_side'); ?>
+
+
+
+
+</div>

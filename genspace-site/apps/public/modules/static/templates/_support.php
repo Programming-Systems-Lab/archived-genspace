@@ -7,4 +7,4 @@ Contact swapneel [at] cs.columbia.edu for questions and comments.
 </div>
 </div>
 
-			<div style="clear: both;">&nbsp;</div>
+			

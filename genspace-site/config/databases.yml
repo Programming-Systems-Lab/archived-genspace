@@ -1,5 +1,10 @@
 all:
-  propel:
-    class:          sfPropelDatabase
-    param:
-      dsn:          mssql://student:password@bambi.cs.columbia.edu/Genspace
+ 
+     propel:
+       class:          sfPropelDatabase
+       param:
+         classname: MssqlPropelPDO
+         dsn:          mssql:dbname=Genspace;host=boris.cs.columbia.edu
+         username: student
+         password: password
+         encoding: 

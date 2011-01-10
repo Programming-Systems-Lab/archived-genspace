@@ -1,0 +1,502 @@
+001293993540001293907140a:3:{s:7:"content";s:26418:"<div id="content">	
+	<div id="post">
+
+		<h2>geWorkbench Tools <a href="/feed"><img src="/images/rss_logo.jpg" width="34" height="36" border="0" /></a></h2>
+        <div id='forgotpassdialog' style='display:none'>Enter your email address below, and your password will be reset and sent to you:<br/><br/>
+<form action="/tool/forgotpass" method="post">Email:<input name="email" type="text" size="40" /><br/><input type='submit' value='Submit' style='float:right' /></form>
+</div>	        
+		<p>Click on a tool for more information</p>
+		<ul style="list-style: none; margin: 0px;" id="tools">
+			      <form>
+    Sort: <select><option value="Name - A-Z" onclick="$('ul#tools li').tsort({order:'asc'});">Name - A-Z</option><option value="Name - Z-A" onclick="$('ul#tools li').tsort({attr:'id',order:'desc'});">Name - Z-A</option><option value="Highest Rating" onclick="$('ul#tools li').tsort('span[class!=notrated]',{attr:'value', order:'desc'});">Highest Rating</option><option value="Lowest Rating" onclick="$('ul#tools li').tsort('span[class!=notrated]',{attr:'value', order:'asc'});">Lowest Rating</option><option value="Most Comments" onclick="$('ul#tools li').tsort('span[class!=notrated]',{attr:'id', order:'desc'});">Most Comments</option><option value="Least Comments" onclick="$('ul#tools li').tsort('span[class!=notrated]',{attr:'id', order:'asc'});">Least Comments</option></select>
+    </form>
+   
+	
+		             
+		<li class="rated" style="padding:10px" id=Anova Analysis >
+        <span class='rated' value=4 id=3>	 
+		<h3 style="border: none" ><a href="/tool/index/2">Anova Analysis</a></h3>
+    
+		<form id="avg1" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="4"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 3 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=ARACNE >
+        <span class='rated' value=5 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/32">ARACNE</a></h3>
+    
+		<form id="avg2" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="5"   disabled="disabled" checked="checked" />
+                                            <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=ARACNE Analysis >
+        <span class='rated' value=5 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/27">ARACNE Analysis</a></h3>
+    
+		<form id="avg3" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="5"   disabled="disabled" checked="checked" />
+                                            <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Blast SkyBase >
+        <span class='rated' value=1 id=2>	 
+		<h3 style="border: none" ><a href="/tool/index/29">Blast SkyBase</a></h3>
+    
+		<form id="avg4" style="width: 200px">
+															<input type="radio" name="rate_avg" value="1"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 2 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Comparative Modeling Pipeline: SkyLine >
+        <span class='rated' value=3 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/28">Comparative Modeling Pipeline: SkyLine</a></h3>
+    
+		<form id="avg5" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="3"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Evidence Integration Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/25">Evidence Integration Analysis</a></h3>
+    
+		<form id="avg6" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=EvidenceIntegration >
+        <span class='rated' value=2 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/33">EvidenceIntegration</a></h3>
+    
+		<form id="avg7" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="2"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Hierachical Clustering >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/34">Hierachical Clustering</a></h3>
+    
+		<form id="avg8" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Hierarchical Clustering >
+        <span class='rated' value=3 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/5">Hierarchical Clustering</a></h3>
+    
+		<form id="avg9" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="3"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=KNN Classifier >
+        <span class='rated' value=1 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/23">KNN Classifier</a></h3>
+    
+		<form id="avg10" style="width: 200px">
+															<input type="radio" name="rate_avg" value="1"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Master Regulator Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/9">Master Regulator Analysis</a></h3>
+    
+		<form id="avg11" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=MatrixREDUCE >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/35">MatrixREDUCE</a></h3>
+    
+		<form id="avg12" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=MatrixREDUCE Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/18">MatrixREDUCE Analysis</a></h3>
+    
+		<form id="avg13" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=MEDUSA >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/7">MEDUSA</a></h3>
+    
+		<form id="avg14" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=MINDY >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/36">MINDY</a></h3>
+    
+		<form id="avg15" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=MINDY Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/21">MINDY Analysis</a></h3>
+    
+		<form id="avg16" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=MRA Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/37">MRA Analysis</a></h3>
+    
+		<form id="avg17" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Multi t Test Analysis >
+        <span class='rated' value=5 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/10">Multi t Test Analysis</a></h3>
+    
+		<form id="avg18" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="5"   disabled="disabled" checked="checked" />
+                                            <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Net Boost Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/38">Net Boost Analysis</a></h3>
+    
+		<form id="avg19" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=NetBoost >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/11">NetBoost</a></h3>
+    
+		<form id="avg20" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=NetBoost Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/12">NetBoost Analysis</a></h3>
+    
+		<form id="avg21" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=NetBoostAnalysis >
+        <span class='rated' value=3 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/39">NetBoostAnalysis</a></h3>
+    
+		<form id="avg22" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="3"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=PCA Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/13">PCA Analysis</a></h3>
+    
+		<form id="avg23" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=PCA Analysis 3.0 >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/16">PCA Analysis 3.0</a></h3>
+    
+		<form id="avg24" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Protein Function Annotation Server: MarkUs >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/22">Protein Function Annotation Server: MarkUs</a></h3>
+    
+		<form id="avg25" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=Pudge Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/24">Pudge Analysis</a></h3>
+    
+		<form id="avg26" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=SOM Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/14">SOM Analysis</a></h3>
+    
+		<form id="avg27" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=SVM Analysis 3.0 >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/30">SVM Analysis 3.0</a></h3>
+    
+		<form id="avg28" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=SVM Classifier >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/26">SVM Classifier</a></h3>
+    
+		<form id="avg29" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=t Test Analysis >
+        <span class='notrated'>	 
+		<h3 style="border: none" ><a href="/tool/index/40">t Test Analysis</a></h3>
+    
+		<form id="avg30" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="3"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 0 comments</span> 
+					
+				</form></span>
+	</li>
+		             
+		<li class="rated" style="padding:10px" id=T Test Analysis >
+        <span class='rated' value=3 id=1>	 
+		<h3 style="border: none" ><a href="/tool/index/15">T Test Analysis</a></h3>
+    
+		<form id="avg31" style="width: 200px">
+					<input type="radio" name="rate_avg" value="1"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="2"  disabled="disabled"  />
+    											<input type="radio" name="rate_avg" value="3"   disabled="disabled" checked="checked" />
+                                            	<input type="radio" name="rate_avg" value="4"  disabled="disabled"  />
+    	<input type="radio" name="rate_avg" value="5"  disabled="disabled"  />
+    <span class='notrated' style='color:#cccccc'>&nbsp;&nbsp;&nbsp; 1 comments</span> 
+					
+				</form></span>
+	</li>
+				</ul>
+        
+
+
+		</div>
+
+</div>
+<div id="sidebar">
+<ul>
+
+<li style="letter-spacing: none; padding: 5px; border: 1px solid #f1f1f1;background-color: #f5f5f5; background-image:url(/images/bottom_fade.png); background-repeat:repeat-x; background-position:bottom">
+	<h3>Login</h3>
+		  
+      
+  <form action="/tool/login" method="post" >	  Username: <input type="text" name="login[username]" id="login_username" value=""/><br/><br/>
+	Password: <input type="password" name="login[password]" id="login_password" value="" /><br/><a class="forgotpass" href="javascript:;" style="text-decoration:none">Forgot Password?</a><br/>
+ <input name="image" type="image" style="border:0px;" src="/images/login_butt.png" onclick="/tool/index">
+	</form>
+	</li>
+</ul>
+
+</div>
+";s:17:"decoratorTemplate";s:49:"C:\dev\sfproject\apps\public\templates/layout.php";s:8:"response";C:13:"sfWebResponse":738:{a:11:{i:0;s:0:"";i:1;i:200;i:2;s:2:"OK";i:3;a:5:{s:13:"http_protocol";s:8:"HTTP/1.1";s:7:"logging";s:3:"off";s:7:"charset";s:5:"utf-8";s:17:"send_http_headers";b:1;s:12:"content_type";s:24:"text/html; charset=utf-8";}i:4;b:0;i:5;a:1:{s:12:"Content-Type";s:24:"text/html; charset=utf-8";}i:6;a:2:{s:5:"title";s:18:"geWorkbench Tools ";s:6:"robots";s:13:"index, follow";}i:7;a:1:{s:12:"Content-Type";s:24:"text/html; charset=utf-8";}i:8;a:3:{s:5:"first";a:0:{}s:0:"";a:1:{s:4:"main";a:0:{}}s:4:"last";a:0:{}}i:9;a:3:{s:5:"first";a:0:{}s:0:"";a:2:{s:61:"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js";a:0:{}s:73:"http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js";a:0:{}}s:4:"last";a:0:{}}i:10;a:0:{}}}}

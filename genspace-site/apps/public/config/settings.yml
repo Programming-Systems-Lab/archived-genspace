@@ -80,7 +80,7 @@ all:
 #    standard_helpers:       [Partial, Cache, Form]
 #
 #    # Activated modules from plugins or from the symfony core
-#    enabled_modules:        [default]
+    enabled_modules:        [default, sfJqueryFormVal]
 #
 #    # Charset used for the response
 #    charset:                utf-8
@@ -102,4 +102,4 @@ all:
 #    default_culture:        en        # Default user culture
 #
 #    # enable 1.0 compatibility
-#    compat_10:              off
+#  compat_10:              off

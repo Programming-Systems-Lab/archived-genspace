@@ -2,8 +2,8 @@ propel:
   _attributes:
     package: lib.model
   user_networks:
-    username: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: user_networks, foreignReference: network, onDelete: '', onUpdate: '' }
-    network: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: user_networks, foreignReference: network, onDelete: '', onUpdate: '' }
+    username: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: networks, foreignReference: network, onDelete: '', onUpdate: '' }
+    network: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: networks, foreignReference: username, onDelete: '', onUpdate: '' }
     _indexes: { PK_user_networks: [username, network] }
   networks:
     id: { type: INTEGER, required: true }

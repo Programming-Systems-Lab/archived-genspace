@@ -1,8 +1,18 @@
-rendering: ~
-security:  ~
+rendering:
+  class: sfRenderingFilter
+  param:
+    type: rendering
 
-# insert your own filters here
+security:
+  enabled: false
 
-cache:     ~
-common:    ~
-execution: ~
+cache:
+  class: sfCacheFilter
+  param:
+    condition: %SF_CACHE%
+
+execution:
+  class:  sfExecutionFilter
+  param:
+    type: execution
+

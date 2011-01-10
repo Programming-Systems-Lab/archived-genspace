@@ -1,0 +1,22 @@
+Nov 04 22:44:30 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'static',  'action' => 'index',)
+Nov 04 22:44:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 04 22:44:30 symfony [info] {sfFilterChain} Executing filter "sfCacheFilter"
+Nov 04 22:44:30 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 04 22:44:30 symfony [info] {staticActions} Call "staticActions->executeIndex()"
+Nov 04 22:44:30 symfony [info] {sfViewCacheManager} Cache for "static/index" does not exist
+Nov 04 22:44:30 symfony [info] {sfPHPView} Render "C:\dev\sfproject\apps\public\modules/static/templates/indexSuccess.php"
+Nov 04 22:44:30 symfony [info] {sfViewCacheManager} Generate cache key
+Nov 04 22:44:30 symfony [info] {sfViewCacheManager} Cache for "@sf_cache_partial?module=static&action=_about_us&sf_cache_key=40cd750bba9870f18aada2478b24840a" does not exist
+Nov 04 22:44:30 symfony [info] {sfPartialView} Render "C:\dev\sfproject\apps\public\modules/static/templates/_about_us.php"
+Nov 04 22:44:30 symfony [info] {sfViewCacheManager} Save cache for "@sf_cache_partial?module=static&action=_about_us&sf_cache_key=40cd750bba9870f18aada2478b24840a"
+Nov 04 22:44:30 symfony [info] {sfViewCacheManager} Save cache for "static/index"
+Nov 04 22:44:30 symfony [info] {sfPHPView} Decorate content with "C:\dev\sfproject\apps\public\templates/layout.php"
+Nov 04 22:44:30 symfony [info] {sfPHPView} Render "C:\dev\sfproject\apps\public\templates/layout.php"
+Nov 04 22:44:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 04 22:44:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 04 22:44:30 symfony [info] {sfWebDebugLogger} Configuration 361.49 ms (10)
+Nov 04 22:44:30 symfony [info] {sfWebDebugLogger} Factories 164.60 ms (1)
+Nov 04 22:44:30 symfony [info] {sfWebDebugLogger} Action "static/index" 1.93 ms (1)
+Nov 04 22:44:30 symfony [info] {sfWebDebugLogger} View "Success" for "static/index" 53.78 ms (1)
+Nov 04 22:44:30 symfony [info] {sfWebDebugLogger} Partial "static/_about_us" 13.51 ms (1)
+Nov 04 22:44:30 symfony [info] {sfWebResponse} Send content (35418 o)

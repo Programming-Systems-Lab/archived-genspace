@@ -9,6 +9,10 @@ Released for free under a Creative Commons Attribution 2.5 License
 	padding: 0;
 }
 
+#searchcontrol .gsc-search-box {display : none;} 
+
+#searchcontrol .gs-result {width:450px;} 
+
 body {
 	background: #F6F6F6 url(../images/img01.jpg) repeat-x;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -146,7 +150,7 @@ img.right {
 
 #logo h1 {
 	margin: 0;
-	padding: 30px 0 0 78px;
+	padding: 5px 0 0 78px;
 	letter-spacing: -2px;
 	font-size: 40px;
 	color: #FFFFFF;
@@ -160,12 +164,21 @@ img.right {
 /* Menu */
 
 #menu {
-	float: right;
+	padding-left:78px;
+
+}
+
+#toolsearch {
+	float:right;
+	padding-right:40px;
+	position:relative;
+	top:-50px;
+	
 }
 
 #menu ul {
 	margin: 0;
-	padding: 50px 78px 0 0;
+	padding: 50px 0px 0 0;
 	list-style: none;
 	line-height: normal;
 }
@@ -175,7 +188,7 @@ img.right {
 }
 
 #menu a {
-	padding-left: 40px;
+	padding-right:10px;
 	text-decoration: none;
 	font-size: 13px;
 	font-weight: bold;
@@ -225,7 +238,7 @@ img.right {
 }
 
 .post .meta {
-	height: 16px;
+	height: 20px;
 	margin: 0;
 	padding: 10px;
 	background: url(../images/img07.jpg) repeat-x left bottom;
@@ -257,6 +270,11 @@ img.right {
 	float: right;
 	width: 186px;
 	padding: 30px 76px 0 0;
+}
+#sidebar_about {
+	float: right;
+	width: 186px;
+	padding: 40px 90px 0 0;
 }
 
 #sidebar ul {

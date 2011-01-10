@@ -40,3 +40,15 @@ Jul 01 13:04:50 symfony [info] {sfWebDebugLogger} Configuration 11785.95 ms (9)
 Jul 01 13:04:50 symfony [info] {sfWebDebugLogger} Action "list/index" 0.44 ms (1)
 Jul 01 13:04:50 symfony [info] {sfWebDebugLogger} View "Success" for "list/index" 62.37 ms (1)
 Jul 01 13:04:50 symfony [info] {sfWebResponse} Send content (21083 o)
+Nov 03 23:45:44 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'list',  'action' => 'index',)
+Nov 03 23:45:44 symfony [err] {sfParseException} Configuration file "C:\dev\sfproject\lib\vendor\symfony\lib/config/config/filters.yml" specifies category "common" with missing class key.
+Nov 03 23:45:44 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Nov 03 23:45:44 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 03 23:45:44 symfony [info] {sfWebDebugLogger} Configuration 379.71 ms (7)
+Nov 03 23:45:44 symfony [info] {sfWebDebugLogger} Factories 161.21 ms (1)
+Nov 03 23:46:25 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'list',  'action' => 'index',)
+Nov 03 23:46:25 symfony [err] {sfParseException} Configuration file "C:\dev\sfproject\lib\vendor\symfony\lib/config/config/filters.yml" specifies category "common" with missing class key.
+Nov 03 23:46:26 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Nov 03 23:46:26 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 03 23:46:26 symfony [info] {sfWebDebugLogger} Configuration 14.84 ms (8)
+Nov 03 23:46:26 symfony [info] {sfWebDebugLogger} Factories 67.74 ms (1)

@@ -1,12 +1,19 @@
 <?php
 
+require 'lib/model/om/BaseIncludeExcludeAnalysisPeer.php';
+
+
 /**
- * Subclass for performing query and update operations on the 'include_exclude_analysis' table.
+ * Skeleton subclass for performing query and update operations on the 'include_exclude_analysis' table.
  *
  * 
  *
- * @package lib.model
- */ 
-class IncludeExcludeAnalysisPeer extends BaseIncludeExcludeAnalysisPeer
-{
-}
+ * You should add additional methods to this class to meet the
+ * application requirements.  This class will only be generated as
+ * long as it does not already exist in the output directory.
+ *
+ * @package    lib.model
+ */
+class IncludeExcludeAnalysisPeer extends BaseIncludeExcludeAnalysisPeer {
+
+} // IncludeExcludeAnalysisPeer

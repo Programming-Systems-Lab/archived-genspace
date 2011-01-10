@@ -1,12 +1,19 @@
 <?php
 
+require 'lib/model/om/BaseTools.php';
+
+
 /**
- * Subclass for representing a row from the 'tools' table.
+ * Skeleton subclass for representing a row from the 'tools' table.
  *
  * 
  *
- * @package lib.model
- */ 
-class Tools extends BaseTools
-{
-}
+ * You should add additional methods to this class to meet the
+ * application requirements.  This class will only be generated as
+ * long as it does not already exist in the output directory.
+ *
+ * @package    lib.model
+ */
+class Tools extends BaseTools {
+
+} // Tools

@@ -2,3 +2,4 @@ default:
   enabled:     off
   with_layout: false
   lifetime:    86400
+  clientLifeTime: 1

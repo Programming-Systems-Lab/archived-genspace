@@ -3,10 +3,10 @@
 /**
  * login actions.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage login
  * @author     Your name here
- * @version    SVN: $Id: actions.class.php,v 1.3 2009-12-23 18:46:17 swapneel Exp $
+ * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class loginActions extends sfActions
 {
@@ -15,52 +15,90 @@ class loginActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
+  
+  
   public function executeIndex($request)
   {
-    
+$this->form = new LoginForm();
+
   }
+  function clear_cache ($app, $env)
+{
+  $cacheDir = sfConfig::get('sf_cache_dir').'/'. $app.'/'.$env.'/';
+
+  //Clear cache
+  $cache = new sfFileCache(array('cache_dir' => $cacheDir));
+  $cache->clean();
+}
+  public function executeLogin(sfwebrequest $request)
+  {	 $this->form = new LoginForm();
+	
+	  $this->forward404Unless($request->isMethod('post'));
+$params = array(
+		    'username'    => $request->getPostParameter('login[username]'),
+		    'password'   => $request->getPostParameter('login[password]'),
+		  
+);
+	 	$this->form->bind($params);	
+     	if( $request->getPostParameter('login[username]')==NULL){
+				$this->getUser()->setFlash('nouser', 'Username Required!');
+				$this->redirect('tool/index');
+ 	
   
-  public function executeLogin($request){
-  	
-  	$username = $request->getParameter('username');
-  	$password = $request->getParameter('password');
-  	
-  	if ($username && $password){
-  		$c = new Criteria();
-  		$c->add(RegistrationPeer::USERNAME, $username);
-  		$c->add(RegistrationPeer::PASSWORD, sha1($password));
-  		$result = RegistrationPeer::doSelect($c);
+			
+		}
+		if($request->getPostParameter('login[password]')==NULL){
+				$this->getUser()->setFlash('nopass', 'Password Required!');
+			$this->redirect('tool/index');
+ 		
+  
+			
+		}
+		
+		if ($this->form->isValid()) {
+			$username=$this->form->getValue('username');
+	        $password=$this->form->getValue('password');
+			  $c = new Criteria();
+	        $c->add(RegistrationPeer::USERNAME, $username); 
+            $c->add(RegistrationPeer::PASSWORD, $password);
+	        $result = RegistrationPeer::doSelect($c);
   		
-  		if ($result){
-  			$this->getUser()->setAttribute('username', $username);
-  			$this->getUser()->setAttribute('name', $result[0]->getFirstName() . " " . $result[0]->getLastName());
-  			$this->getUser()->setFlash('msg', 'Logged in as ' . $username);
-  			$this->getUser()->setAuthenticated(true);
-  		}
-  		else {
-  			$this->getUser()->setFlash('msg', 'Login failed!');
-  			$this->getUser()->setAuthenticated(false);
-  		}
-  		
+if ($result){
+		$this->getUser()->setAttribute('username', $username);
+ 	$this->getUser()->setAttribute('name', $result[0]->getFirstName() . " " . $result[0]->getLastName());
+  	$this->getUser()->setAuthenticated(true);
+		$this->getUser()->setFlash('msg', 'Login successful!');
+  
+	$this->redirect('tool/index');
+ 		
   	}
-  	
-  	$this->forward('login', 'index');
-    	
-  	
-  }
+ 	else {
+  	$this->getUser()->setFlash('error', 'Login failed! Check username and password and try again.');
+  	$this->getUser()->setAuthenticated(false);
+	$this->redirect('tool/index');
+ 		}
   
-  
-  public function executeLogout($request){
+   
+}
+  // $this->forward('tool', 'index');
+
+     }
+	 
+	
+	 
+	  public function executeLogout(sfwebrequest $request){
   	
   	if ($this->getUser()->isAuthenticated()){
   		$this->getUser()->getAttributeHolder()->clear();
   		$this->getUser()->setAuthenticated(false);
-  		$this->getUser()->setFlash('msg', 'Logged out.');	
-  	}
+  		$this->getUser()->setFlash('loggedout', 'You are logged out.');	
   	
-  	$this->forward('login', 'index');
-    	
+		$this->redirect('tool/index');
+   
+	}
+  	
+   	
   	
   }
-  
 }
+?>
