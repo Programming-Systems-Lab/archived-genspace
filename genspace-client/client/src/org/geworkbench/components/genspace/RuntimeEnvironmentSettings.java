@@ -14,7 +14,7 @@ public class RuntimeEnvironmentSettings {
 	public static final String DEVEL_HOST = BORIS;
 	public static final String LOCAL_HOST = LOCAL;
 
-	public static final String SERVER = LOCAL;
+	public static final String SERVER = DEVEL_HOST;
 
 	public static final ServerConfig EVENT_SERVER = new ServerConfig(SERVER,
 			12346);

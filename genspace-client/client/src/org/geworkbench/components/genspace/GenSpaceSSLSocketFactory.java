@@ -63,7 +63,6 @@ public class GenSpaceSSLSocketFactory implements X509TrustManager {
 	@Override
 	public void checkServerTrusted(X509Certificate[] chain, String authType)
 			throws CertificateException {
-			System.out.println("My stored: " + cert.getPublicKey().toString());
 			for(X509Certificate c : chain)
 			{
 				if(cert.equals(c))
