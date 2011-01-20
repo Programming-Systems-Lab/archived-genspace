@@ -18,7 +18,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.jdesktop.swingworker.*;
+import javax.swing.SwingWorker.*;
 
 /**
  * This class build the panel for setting user's log preferences and data
@@ -254,7 +254,7 @@ ListSelectionListener {
 
 		if (e.getSource() == save) {
 
-			org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+			javax.swing.SwingWorker.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker.SwingWorker<Void, Void>() {
 				public Void doInBackground() {
 
 					if (logPreferences.getSelectedIndex() == 0) {

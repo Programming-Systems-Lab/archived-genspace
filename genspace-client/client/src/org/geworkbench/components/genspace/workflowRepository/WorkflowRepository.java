@@ -189,7 +189,7 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 				return null;

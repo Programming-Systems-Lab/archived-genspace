@@ -110,7 +110,7 @@ public class WorkflowCommentsPanel extends JPanel implements VisualPlugin,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		final Object source = e.getSource();
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 				String result = "";

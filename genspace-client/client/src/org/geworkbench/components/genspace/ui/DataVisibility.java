@@ -251,7 +251,7 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 
 		if (e.getSource() == save) {
 
-			org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+			javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
 				@Override
 				public Void doInBackground() {
 

@@ -24,6 +24,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingWorker;
 import javax.swing.border.MatteBorder;
 
 import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
@@ -368,7 +369,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 	public static void updateCWFStatus(final int hour, final int minute,
 			final int second, final String toolName, final String transactionID) {
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 

@@ -242,7 +242,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 	}
 
 	private void addWorkFlowToRepository() {
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 				User u = UserSession.getInstance();

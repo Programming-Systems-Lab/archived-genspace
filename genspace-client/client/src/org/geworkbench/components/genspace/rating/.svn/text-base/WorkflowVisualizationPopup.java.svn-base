@@ -22,7 +22,7 @@ import org.geworkbench.components.genspace.ServerRequest;
 import org.geworkbench.components.genspace.ui.LoginManager;
 import org.geworkbench.util.BrowserLauncher;
 
-import org.jdesktop.swingworker.*;
+import javax.swing.SwingWorker.*;
 
 public class WorkflowVisualizationPopup extends JPopupMenu implements ActionListener{
 
@@ -72,7 +72,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements ActionList
 
 	public void initialize(final String tn, final ArrayList<String> workflow){
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		javax.swing.SwingWorker.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker.SwingWorker<Void, Void>() {
 			public Void doInBackground() {
 
 				//only perform setup if we need to

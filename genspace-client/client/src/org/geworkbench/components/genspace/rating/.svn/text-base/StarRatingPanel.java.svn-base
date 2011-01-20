@@ -17,7 +17,7 @@ import org.geworkbench.components.genspace.ServerConfig;
 import org.geworkbench.components.genspace.bean.RatingBean;
 import org.geworkbench.components.genspace.ui.LoginManager;
 
-import org.jdesktop.swingworker.*;
+import javax.swing.SwingWorker.*;
 
 public class StarRatingPanel extends JPanel implements MouseListener{
 
@@ -97,7 +97,7 @@ public class StarRatingPanel extends JPanel implements MouseListener{
 		}
 		else setVisible(true);
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		javax.swing.SwingWorker.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker.SwingWorker<Void, Void>() {
 			public Void doInBackground() {
 
 				RatingBean rating = rater.getRating(id, username);
@@ -148,7 +148,7 @@ public class StarRatingPanel extends JPanel implements MouseListener{
 
 	public void rate(final int rating){
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		javax.swing.SwingWorker.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker.SwingWorker<Void, Void>() {
 			public Void doInBackground() {
 
 

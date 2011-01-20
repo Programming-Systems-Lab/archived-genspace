@@ -108,7 +108,7 @@ public class WorkflowDetailsPanel extends JPanel implements VisualPlugin,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		final Object o = e.getSource();
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
 
 			@Override
 			protected Void doInBackground() throws Exception {
