@@ -1,24 +1,25 @@
 package org.geworkbench.components.genspace.ui;
 
-import javax.swing.*;
-
-import java.awt.*;
+import java.awt.Component;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import org.geworkbench.components.genspace.bean.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.geworkbench.components.genspace.ui.LoginManager;
-import org.geworkbench.engine.config.VisualPlugin;
-import java.awt.Component;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingWorker;
 
+import org.geworkbench.components.genspace.bean.RegisterBean;
+import org.geworkbench.engine.config.VisualPlugin;
 
-public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, ActionListener {
+public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
+		ActionListener {
 
 	private JFrame jframe;
 
@@ -33,33 +34,28 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 	private JTextField state;
 	private JTextField zipcode;
 
-	//TODO: All validations. Field validations.
-	//Invoke call to LoginMgr to pass the bean
-	//Display message from the LoginMgr
+	// TODO: All validations. Field validations.
+	// Invoke call to LoginMgr to pass the bean
+	// Display message from the LoginMgr
 
 	JButton save;
 
 	GenSpaceLogin login;
 
-	public GenSpaceGeneralProfile()
-	{	
+	public GenSpaceGeneralProfile() {
 		// read the preferences from the properties file
-		try 
-		{
+		try {
 			// ideally this should also be in the properties file
 			String title = "General Profile Settings";
 
-		} 
-		catch (Exception e) { }		
-
+		} catch (Exception e) {
+		}
 
 		initComponents();
 	}
 
-
-	private void initComponents()
-	{	
-		//String username = LoginManager.loggedInUser;
+	private void initComponents() {
+		// String username = LoginManager.loggedInUser;
 		String username = LoginManager.getLoggedInUser();
 		RegisterBean rbean = new RegisterBean();
 		rbean.setMessage("GetUserInfo");
@@ -67,8 +63,7 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 		LoginManager lmgr = new LoginManager(rbean);
 		rbean = lmgr.getUserInfo();
 
-		this.setLayout(new  GridLayout( 15, 2));
-
+		this.setLayout(new GridLayout(15, 2));
 
 		JLabel j2 = new JLabel("First Name");
 		fname = new JTextField(rbean.getFName(), 20);
@@ -80,14 +75,13 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 		add(j3);
 		add(lname);
 
-
 		JLabel j4 = new JLabel("Lab Affiliation *");
-		labaff= new JTextField(rbean.getLabAffliation(), 20);
+		labaff = new JTextField(rbean.getLabAffliation(), 20);
 		add(j4);
 		add(labaff);
 
 		JLabel emailLabel = new JLabel("Email Address");
-		email= new JTextField(rbean.getEmail(), 20);
+		email = new JTextField(rbean.getEmail(), 20);
 		add(emailLabel);
 		add(email);
 
@@ -95,7 +89,6 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 		phone = new JTextField(rbean.getPhoneNumber(), 20);
 		add(phoneLabel);
 		add(phone);
-
 
 		JLabel j5 = new JLabel("Address 1");
 		addr1 = new JTextField(rbean.getAddr1(), 20);
@@ -129,13 +122,10 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 
 		add(save);
 
-
 		save.setEnabled(true);
 	}
 
-
-	private RegisterBean getBean()
-	{
+	private RegisterBean getBean() {
 		RegisterBean bean = new RegisterBean();
 		bean.setFName(fname.getText());
 		bean.setLName(lname.getText());
@@ -150,11 +140,11 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 		return bean;
 	}
 
-	public void actionPerformed(ActionEvent e) 
-	{
+	@Override
+	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == save) {
 
-			org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+			SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 				@Override
 				public Void doInBackground() {
 
@@ -164,55 +154,51 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 					bean.setUName(username);
 					LoginManager manager = new LoginManager(bean);
 
-					try
-					{
+					try {
 						StringBuffer errMsg = new StringBuffer();
-						if(isValid(errMsg))
-						{
-							//System.out.println("valid");
+						if (isValid(errMsg)) {
+							// System.out.println("valid");
 
 							boolean userRegister = manager.userUpdate();
 
 							if (userRegister) {
-								String msg="Information updated";
+								String msg = "Information updated";
 
 								JOptionPane.showMessageDialog(null, msg);
 
-								//System.out.println("information updated");
-							}
-							else {
-								String msg="Information update failed";
+								// System.out.println("information updated");
+							} else {
+								String msg = "Information update failed";
 
 								JOptionPane.showMessageDialog(null, msg);
 
 							}
 						}
 
-
 						else {
-							JOptionPane.showMessageDialog(null, errMsg.toString(),
-									"Error Information", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null,
+									errMsg.toString(), "Error Information",
+									JOptionPane.INFORMATION_MESSAGE);
 
 							getThisPanel().revalidate();
 						}
+					} catch (Exception ex) {
 					}
-					catch (Exception ex) { }
 					save.setEnabled(true);
 
 					return null;
-				} 
+				}
 			};
 			worker.execute();
 		}
 	}
-	
+
 	public JPanel getThisPanel() {
 		return this;
 	}
 
-	private boolean empty(String str)
-	{
-		if("".equalsIgnoreCase(str) || null == str)
+	private boolean empty(String str) {
+		if ("".equalsIgnoreCase(str) || null == str)
 			return true;
 		else
 			return false;
@@ -223,9 +209,7 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 		String labaffStr = labaff.getText();
 		boolean valid = true;
 
-
-		if(empty(labaffStr))
-		{
+		if (empty(labaffStr)) {
 			msg.append("Lab affiliation cannot be empty\n");
 			valid = false;
 		}
@@ -234,71 +218,59 @@ public class GenSpaceGeneralProfile extends JPanel implements  VisualPlugin, Act
 		Matcher matcher;
 
 		// Phone number validation
-		if(!empty(phone.getText()))
-		{
-			pattern = 
-				Pattern.compile("[^0-9a-zA-Z()-]");
+		if (!empty(phone.getText())) {
+			pattern = Pattern.compile("[^0-9a-zA-Z()-]");
 
-			matcher = 
-				pattern.matcher(phone.getText());
+			matcher = pattern.matcher(phone.getText());
 
-			if(matcher.find()) 
-			{
+			if (matcher.find()) {
 				msg.append("Phone number contains invalid characters\n");
 				valid = false;
 			}
 		}
 		// email validation
-		if(!empty(email.getText()))
-		{
-			pattern = 
-				Pattern.compile("[0-9a-zA-Z()-_.]+@[0-9a-zA-Z()-_.]+");
+		if (!empty(email.getText())) {
+			pattern = Pattern.compile("[0-9a-zA-Z()-_.]+@[0-9a-zA-Z()-_.]+");
 
-			matcher = 
-				pattern.matcher(email.getText());
-			if(!matcher.find()) 
-			{
+			matcher = pattern.matcher(email.getText());
+			if (!matcher.find()) {
 				msg.append("Invalid Email.\n");
 				valid = false;
 			}
 
 		}
-		//System.out.println("valid : " + valid);
+		// System.out.println("valid : " + valid);
 		return valid;
 	}
 
-	public void initFrame()
-	{
+	public void initFrame() {
 		jframe = new JFrame();
 		jframe.add(this);
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jframe.setSize(500,500);
-	}    
+		jframe.setSize(500, 500);
+	}
 
-	public void showFrame()
-	{
-		jframe.setVisible(true); 	
-	} 
+	public void showFrame() {
+		jframe.setVisible(true);
+	}
 
-	public void hideFrame()
-	{
-		jframe.setVisible(false); 	
-	}    
+	public void hideFrame() {
+		jframe.setVisible(false);
+	}
 
 	/**
 	 * This method fulfills the contract of the {@link VisualPlugin} interface.
 	 * It returns the GUI component for this visual plugin.
 	 */
+	@Override
 	public Component getComponent() {
 		// In this case, this object is also the GUI component.
 		return this;
 	}
 
-	public static void main(String args[]) throws Exception
-	{
-		GenSpaceGeneralProfile panel = new  GenSpaceGeneralProfile();
+	public static void main(String args[]) throws Exception {
+		GenSpaceGeneralProfile panel = new GenSpaceGeneralProfile();
 		panel.initFrame();
 		panel.showFrame();
 	}
 }
-

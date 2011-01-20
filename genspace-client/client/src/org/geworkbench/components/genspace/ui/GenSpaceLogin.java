@@ -1,17 +1,14 @@
 //package genspace.ui;
 package org.geworkbench.components.genspace.ui;
 
-import org.geworkbench.components.genspace.bean.RegisterBean;
-import org.geworkbench.components.genspace.bean.User;
-import org.geworkbench.engine.config.VisualPlugin;
-import org.geworkbench.util.FilePathnameUtils;
-
-import javax.swing.*;
-
-import java.awt.*;
-import java.io.*;
-import java.awt.event.ActionListener;
+import java.awt.Component;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -19,15 +16,33 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.bean.RegisterBean;
+import org.geworkbench.components.genspace.bean.User;
+import org.geworkbench.components.genspace.chat.ChatReceiver;
+import org.geworkbench.engine.config.VisualPlugin;
+import org.geworkbench.util.FilePathnameUtils;
+
 /**
  * This is an example geWorkbench component.
- *
- *
+ * 
+ * 
  */
-//This annotation lists the data set types that this component accepts.
-//The component will only appear when a data set of the appropriate type is selected.
-//@AcceptTypes({DSMicroarraySet.class})
-public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListener, Runnable {
+// This annotation lists the data set types that this component accepts.
+// The component will only appear when a data set of the appropriate type is
+// selected.
+// @AcceptTypes({DSMicroarraySet.class})
+public class GenSpaceLogin extends JPanel implements VisualPlugin,
+		ActionListener, Runnable {
+	public static ChatReceiver chatHandler = new ChatReceiver();
 
 	private JLabel l1, l2, l3;
 	private JTextField tf;
@@ -35,7 +50,8 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 	private JButton b1, b2, b3;
 	private String filename = "genspace.txt";
 	private String hash = "MD5";
-	private JLabel msgText, msgText1, msgText2, msgText3, msgText4, msgText5, msgText6;
+	private JLabel msgText, msgText1, msgText2, msgText3, msgText4, msgText5,
+			msgText6;
 	protected final static String HEX_DIGITS = "0123456789abcdef";
 
 	// to indicate whether the user is logged in or not
@@ -62,14 +78,14 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 		run();
 	}
 
+	@Override
 	public void run() {
 		this.setSize(500, 500);
 
 		JPanel onePanel = new JPanel();
-		onePanel.setSize(150,150);
+		onePanel.setSize(150, 150);
 
-
-		onePanel.setLayout(new GridLayout(2,1));
+		onePanel.setLayout(new GridLayout(2, 1));
 
 		JPanel lPanel = new JPanel();
 
@@ -96,26 +112,27 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 		onePanel.add(lPanel);
 
-
 		JPanel msgPanel = new JPanel();
-		msgPanel.setLayout(new  GridLayout( 7, 1));
+		msgPanel.setLayout(new GridLayout(7, 1));
 
 		msgText = new JLabel("Not a registered user yet? ");
-		msgText1 = new JLabel ("Register to take advantage of genSpace security features.");
+		msgText1 = new JLabel(
+				"Register to take advantage of genSpace security features.");
 		msgText2 = new JLabel("As a registered user you will be able to:");
 		msgText3 = new JLabel("1. Set your data visbility preferences.");
 		msgText4 = new JLabel("2. Post comments and rate workflows and tools.");
-		msgText5 = new JLabel("You can also choose to continue using genSpace without a login in which case") ;
+		msgText5 = new JLabel(
+				"You can also choose to continue using genSpace without a login in which case");
 		msgText6 = new JLabel("default security preferences will be applied.");
 
-		msgPanel.add (msgText);
-		msgPanel.add (msgText1);
-		msgPanel.add (msgText2);
-		msgPanel.add (msgText3);
-		msgPanel.add (msgText4);
-		msgPanel.add (msgText5);
-		msgPanel.add (msgText6);
-		onePanel.add (msgPanel);
+		msgPanel.add(msgText);
+		msgPanel.add(msgText1);
+		msgPanel.add(msgText2);
+		msgPanel.add(msgText3);
+		msgPanel.add(msgText4);
+		msgPanel.add(msgText5);
+		msgPanel.add(msgText6);
+		onePanel.add(msgPanel);
 		add(onePanel);
 
 	}
@@ -123,6 +140,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 	/**
 	 * Action Listener
 	 */
+	@Override
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == b1) {
@@ -133,44 +151,52 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 					b1.setEnabled(false);
 
-					try
-					{
+					try {
 						StringBuffer errMsg = new StringBuffer();
 
 						System.out.println("after try");
-						if(isValid(errMsg))
+						if (isValid(errMsg))
 
 						{
 							System.out.println("is valid");
-							 
 
 							LoginManager manager = new LoginManager(getBean());
 							userLogin = manager.userLogin();
 							user = manager.user;
 							if (userLogin) {
-								String msg="User Logged in.";
+								String msg = "User Logged in.";
 								System.out.println(msg);
-								JOptionPane.showMessageDialog(getComponent(), msg);
-								GenSpaceSecurityPanel p = new GenSpaceSecurityPanel(getBean().getUsername());
+								isLoggedIn = true;
+								GenSpace.getInstance().handleLogin();
+								genspaceLogin = tf.getText();
+								JOptionPane.showMessageDialog(getComponent(),
+										msg);
+								chatHandler.login(tf.getText(),
+										new String(pf.getPassword()));
+								GenSpace.networksPanels.updateFormFields();
+								GenSpaceSecurityPanel p = new GenSpaceSecurityPanel(
+										getBean().getUsername());
 								getThisPanel().removeAll();
 								getThisPanel().add(p);
-								//this.setSize(500, 500);
+								// this.setSize(500, 500);
 								getThisPanel().revalidate();
 
 							} else {
-								String msg="User Log in failed.";
+								String msg = "User Log in failed.";
 								System.out.println(msg);
-								JOptionPane.showMessageDialog(getComponent(), msg);
+								JOptionPane.showMessageDialog(getComponent(),
+										msg);
 							}
-						}
-						else {
-							JOptionPane.showMessageDialog(getComponent(), errMsg.toString(),
-									"Error Information", JOptionPane.INFORMATION_MESSAGE);
+						} else {
+							JOptionPane.showMessageDialog(getComponent(),
+									errMsg.toString(), "Error Information",
+									JOptionPane.INFORMATION_MESSAGE);
 							System.out.println("Error Information");
 							getThisPanel().revalidate();
 						}
+					} catch (Exception ex) {
+						ex.printStackTrace();
 					}
-					catch (Exception ex) { ex.printStackTrace(); }
 					b1.setEnabled(true);
 
 					return null;
@@ -178,20 +204,17 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 			};
 			worker.execute();
 
-		}
-		else if (e.getSource() == b2) {
+		} else if (e.getSource() == b2) {
 			tf.setText("");
 			pf.setText("");
 			l3.setVisible(false);
-		}
-		else if (e.getSource() == b3) {
+		} else if (e.getSource() == b3) {
 			callRegisterMember();
 
 			if (create() == 0) {
 				l3.setText("Login Created");
 				isLoggedIn = false;
-			}
-			else {
+			} else {
 				l3.setText("Login Creation Failed");
 				isLoggedIn = false;
 			}
@@ -200,9 +223,8 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 	}
 
-	private boolean empty(String str)
-	{
-		if("".equalsIgnoreCase(str) || null == str)
+	private boolean empty(String str) {
+		if ("".equalsIgnoreCase(str) || null == str)
 			return true;
 		else
 			return false;
@@ -216,13 +238,11 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 		boolean valid = true;
 
-		if(empty(id))
-		{
+		if (empty(id)) {
 			msg.append("UserId cannot be empty\n");
 			valid = false;
 		}
-		if(empty(pw))
-		{
+		if (empty(pw)) {
 			msg.append("Pasword cannot be empty\n");
 			valid = false;
 		}
@@ -230,22 +250,17 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 		Pattern pattern;
 		Matcher matcher;
 		// user name special character validation
-		if(!empty(id))
-		{
-			pattern =
-				Pattern.compile("[^0-9a-zA-Z()-_]");
+		if (!empty(id)) {
+			pattern = Pattern.compile("[^0-9a-zA-Z()-_]");
 
-			matcher =
-				pattern.matcher(id);
-			if(matcher.find())
-			{
+			matcher = pattern.matcher(id);
+			if (matcher.find()) {
 				msg.append("Invalid user name.\n");
 				valid = false;
 			}
 		}
 
-
-		//System.out.println("valid : " + valid);
+		// System.out.println("valid : " + valid);
 		return valid;
 	}
 
@@ -253,22 +268,22 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 		boolean isCorrect = true;
 		char[] correctPassword = { 'b', 'u', 'g', 'a', 'b', 'o', 'o' };
 		String test = new String(input);
-		//System.out.println("co : " + test);
+		// System.out.println("co : " + test);
 
 		if (input.length != correctPassword.length) {
 			isCorrect = false;
 		} else {
-			isCorrect = Arrays.equals (input, correctPassword);
+			isCorrect = Arrays.equals(input, correctPassword);
 		}
 
-		//Zero out the password.
-		Arrays.fill(correctPassword,'0');
+		// Zero out the password.
+		Arrays.fill(correctPassword, '0');
 
 		return isCorrect;
 	}
 
 	private static String getEncryptPassword(String plaintext) {
-		java.security.MessageDigest d =null;
+		java.security.MessageDigest d = null;
 		try {
 			d = java.security.MessageDigest.getInstance("SHA-1");
 		} catch (NoSuchAlgorithmException e) {
@@ -277,28 +292,30 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 		}
 		d.reset();
 		d.update(plaintext.getBytes());
-		byte[] hashedBytes =  d.digest();
+		byte[] hashedBytes = d.digest();
 		StringBuffer sb = new StringBuffer(hashedBytes.length * 2);
 		for (int i = 0; i < hashedBytes.length; i++) {
 			int b = hashedBytes[i] & 0xFF;
-			sb.append(HEX_DIGITS.charAt(b >>> 4)).append(HEX_DIGITS.charAt(b & 0xF));
+			sb.append(HEX_DIGITS.charAt(b >>> 4)).append(
+					HEX_DIGITS.charAt(b & 0xF));
 		}
 		return sb.toString();
 	}
 
-	private RegisterBean getBean()
-	{
+	private RegisterBean getBean() {
 		RegisterBean bean = new RegisterBean();
-		bean.setMessage("Login");	//This is set to Login for logging in. Appropriately set in Jpanel for registration/login
+		bean.setMessage("Login"); // This is set to Login for logging in.
+									// Appropriately set in Jpanel for
+									// registration/login
 		bean.setUName(tf.getText());
 		char[] pass = pf.getPassword();
 		String test = "TEST";
-		//System.out.println("Pass 1: "+ pass);
-		//System.out.println("Pass 2: "+ getEncryptPassword(test));
-		//System.out.println("Pass 3: "+ getEncryptPassword(test));
+		// System.out.println("Pass 1: "+ pass);
+		// System.out.println("Pass 2: "+ getEncryptPassword(test));
+		// System.out.println("Pass 3: "+ getEncryptPassword(test));
 
 		bean.setPassword(pass);
-		//System.out.println("co : " + isPasswordCorrect(pass));
+		// System.out.println("co : " + isPasswordCorrect(pass));
 		bean.setFName("");
 		bean.setLName("");
 		bean.setLabAffiliation("");
@@ -314,33 +331,34 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 	/**
 	 * Checks if a login is valid
+	 * 
 	 * @return 0 is valid, -1 otherwise
 	 */
-	private int check()
-	{
+	private int check() {
 		return check(tf.getText(), new String(pf.getPassword()));
 	}
 
 	/**
 	 * Checks if a login is valid
+	 * 
 	 * @return 0 is valid, -1 otherwise
 	 */
 	public int check(String login, String pass) {
-		try{
+		try {
 			String encrypted_pass = getEncodedString(pass);
-			BufferedReader br = new BufferedReader(new FileReader(FilePathnameUtils.getUserSettingDirectoryPath() + filename));
+			BufferedReader br = new BufferedReader(new FileReader(
+					FilePathnameUtils.getUserSettingDirectoryPath() + filename));
 			String file_login = br.readLine();
 			String file_encrypted_pass = br.readLine();
 			br.close();
-			if (login.equals(file_login) && encrypted_pass.equals(file_encrypted_pass)) {
+			if (login.equals(file_login)
+					&& encrypted_pass.equals(file_encrypted_pass)) {
 				genspaceLogin = login;
 				return 0;
-			}
-			else {
+			} else {
 				return -1;
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;
 		}
@@ -348,14 +366,16 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 	/**
 	 * Converts a byte stream to a String
-	 * @param b The byte stream
+	 * 
+	 * @param b
+	 *            The byte stream
 	 * @return The converted String
 	 */
 	public String bytesToHex(byte[] b) {
-		char hexDigit[] = {'0', '1', '2', '3', '4', '5', '6', '7',
-				'8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+		char hexDigit[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+				'A', 'B', 'C', 'D', 'E', 'F' };
 		StringBuffer buf = new StringBuffer();
-		for (int j=0; j<b.length; j++) {
+		for (int j = 0; j < b.length; j++) {
 			buf.append(hexDigit[(b[j] >> 4) & 0x0f]);
 			buf.append(hexDigit[b[j] & 0x0f]);
 		}
@@ -364,7 +384,9 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 	/**
 	 * Creates a Hash
-	 * @param clearText The Clear-Text String
+	 * 
+	 * @param clearText
+	 *            The Clear-Text String
 	 * @return The Hashed String
 	 */
 	private String getEncodedString(String clearText) {
@@ -373,8 +395,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 			md.update(clearText.getBytes());
 			byte[] output = md.digest();
 			return bytesToHex(output);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "";
@@ -382,29 +403,30 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 
 	/**
 	 * Creates a Login
+	 * 
 	 * @return 0 If Successful, -1 otherwise
 	 */
-	private int create()
-	{
+	private int create() {
 		return create(tf.getText(), new String(pf.getPassword()));
 	}
 
 	/**
 	 * Creates a Login
+	 * 
 	 * @return 0 If Successful, -1 otherwise
 	 */
 	public int create(String login, String pass) {
-		try{
+		try {
 			String encrypted_pass = getEncodedString(pass);
-    		FileWriter fw = new FileWriter( FilePathnameUtils.getUserSettingDirectoryPath() + filename );
+			FileWriter fw = new FileWriter(
+					FilePathnameUtils.getUserSettingDirectoryPath() + filename);
 			fw.write(login);
 			fw.write("\n");
 			fw.write(encrypted_pass);
 			fw.close();
 			genspaceLogin = login;
 			return 0;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;
 		}
@@ -414,6 +436,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 	 * This method fulfills the contract of the {@link VisualPlugin} interface.
 	 * It returns the GUI component for this visual plugin.
 	 */
+	@Override
 	public Component getComponent() {
 		// In this case, this object is also the GUI component.
 		return this;
@@ -423,44 +446,38 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 		return this;
 	}
 
-
-
 	/**
 	 * For notifying other components of a login event.
 	 */
-	public void addActionListener(ActionListener al)
-	{
+	public void addActionListener(ActionListener al) {
 		listeners.add(al);
 	}
 
-	public void notifyActionListeners(ActionEvent e)
-	{
-		for (ActionListener al : listeners)
-		{
+	public void notifyActionListeners(ActionEvent e) {
+		for (ActionListener al : listeners) {
 			al.actionPerformed(e);
 		}
 	}
 
 	private void callRegisterMember() {
-		//System.out.println("Register");
+		// System.out.println("Register");
 
 		panel = new GenSpaceRegistration();
 		this.setLayout(new FlowLayout());
 		this.removeAll();
 		this.add(panel);
-		//this.setSize(500, 500);
+		// this.setSize(500, 500);
 		this.revalidate();
 	}
 
 	/**
 	 * For when we want to show this panel in its own frame.
 	 */
-	public void initFrame()
-	{
+	public void initFrame() {
 		frame = new JFrame();
 		frame.add(this);
-		//frame.setSize(400,400);
-		frame.setLocation(0,0);
+		// frame.setSize(400,400);
+		frame.setLocation(0, 0);
 		frame.setResizable(false);
 		frame.setTitle("Please login or register before starting jClaim");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -469,21 +486,18 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin, ActionListene
 	/**
 	 * For when we want to show this panel in its own frame.
 	 */
-	public void showFrame()
-	{
+	public void showFrame() {
 		frame.setVisible(true);
 	}
 
 	/**
 	 * For when we want to show this panel in its own frame.
 	 */
-	public void hideFrame()
-	{
+	public void hideFrame() {
 		frame.setVisible(false);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		GenSpaceLogin login = new GenSpaceLogin();
 
 		login.initFrame();

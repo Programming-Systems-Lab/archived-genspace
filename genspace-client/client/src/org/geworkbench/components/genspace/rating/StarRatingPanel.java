@@ -15,8 +15,9 @@ import javax.swing.border.MatteBorder;
 import org.geworkbench.components.genspace.ServerConfig;
 import org.geworkbench.components.genspace.bean.RatingBean;
 import org.geworkbench.components.genspace.ui.LoginManager;
+import javax.swing.SwingWorker;
 
-public class StarRatingPanel extends JPanel implements MouseListener{
+public class StarRatingPanel extends JPanel implements MouseListener {
 
 	public static final int SMALL = 1;
 	public static final int MEDIUM = 2;
@@ -40,75 +41,76 @@ public class StarRatingPanel extends JPanel implements MouseListener{
 	private String writeCommand;
 	private JComponent parent;
 
-	public StarRatingPanel(JComponent parent, ServerConfig server, String getCommand, String writeCommand){
+	public StarRatingPanel(JComponent parent, ServerConfig server,
+			String getCommand, String writeCommand) {
 		this(parent, "", -1, server, getCommand, writeCommand);
 	}
 
-	public StarRatingPanel(JComponent parent, String titleText, 
-			int id, 
-			ServerConfig server, 
-			String getCommand, 
-			String writeCommand){
+	public StarRatingPanel(JComponent parent, String titleText, int id,
+			ServerConfig server, String getCommand, String writeCommand) {
 
 		rater = new Rater(server, writeCommand, getCommand);
 
-		contentPanel.setBorder(new MatteBorder(2,2,2,2, this.getBackground()));
+		contentPanel
+				.setBorder(new MatteBorder(2, 2, 2, 2, this.getBackground()));
 		add(contentPanel);
 
-		//basic setup
+		// basic setup
 		contentPanel.setLayout(new BorderLayout());
 		this.id = id;
 
-		//add title
+		// add title
 		title = new JLabel(titleText);
 		title.setFont(titleFont);
 		contentPanel.add(title, BorderLayout.NORTH);
 
-		//add rating info
+		// add rating info
 		ratingInfo = new JLabel("");
 		ratingInfo.setFont(ratingFont);
 		contentPanel.add(ratingInfo, BorderLayout.EAST);
 
-		//add stars
+		// add stars
 		stars = new Star[5];
-		for(int i = 0; i < 5; i++) stars[i] = new Star(this, i + 1);
+		for (int i = 0; i < 5; i++)
+			stars[i] = new Star(this, i + 1);
 		contentPanel.add(starPanel, BorderLayout.WEST);
-		for(int i = 0; i < 5; i++) starPanel.add(stars[i]);
+		for (int i = 0; i < 5; i++)
+			starPanel.add(stars[i]);
 	}
 
 	public void setTitle(String t) {
 		this.title.setText(t);
 	}
 
-	public void loadRating(final int id){
-
-
+	public void loadRating(final int id) {
 
 		this.id = id;
 		final String username = LoginManager.getLoggedInUser();
 
-		//see if we can even execute the query
-		if (id == -1){
+		// see if we can even execute the query
+		if (id == -1) {
 			setVisible(false);
 			return;
-		}
-		else setVisible(true);
+		} else
+			setVisible(true);
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 
 				RatingBean rating = rater.getRating(id, username);
 
-				if (rating != null){
+				if (rating != null) {
 					setVisible(true);
-					if (rating.getUserRating() != 0) 
+					if (rating.getUserRating() != 0)
 						setClickable(false);
-					else setClickable(true);
+					else
+						setClickable(true);
 
-					setRatingValue(rating.getOverallRating(), rating.getTotalRatings());
-				}
-				else setVisible(false);
+					setRatingValue(rating.getOverallRating(),
+							rating.getTotalRatings());
+				} else
+					setVisible(false);
 
 				return null;
 			}
@@ -116,54 +118,57 @@ public class StarRatingPanel extends JPanel implements MouseListener{
 		worker.execute();
 	}
 
-	public void setRatingValue(double rating, long totalRatings){
-		if (totalRatings != 0){
+	public void setRatingValue(double rating, long totalRatings) {
+		if (totalRatings != 0) {
 			setStarValue(rating);
 			DecimalFormat twoDigit = new DecimalFormat("#,##0.00");
 
-			ratingInfo.setText("(" + twoDigit.format(rating) + 
-					" by " + totalRatings + " users.)");
-		}
-		else {
+			ratingInfo.setText("(" + twoDigit.format(rating) + " by "
+					+ totalRatings + " users.)");
+		} else {
 			setStarValue(0);
 			ratingInfo.setText("Not yet rated.");
 		}
 	}
 
-	public void setStarValue(double value){
+	public void setStarValue(double value) {
 		this.value = value;
 
-		for (int i = 1; i <= 5; i++){
-			if (value >= i) stars[i - 1].setStar(Star.FULL);
-			else if (value > i - 1) stars[i - 1].setStar(Star.HALF);
-			else stars[i - 1].setStar(Star.EMPTY);
+		for (int i = 1; i <= 5; i++) {
+			if (value >= i)
+				stars[i - 1].setStar(Star.FULL);
+			else if (value > i - 1)
+				stars[i - 1].setStar(Star.HALF);
+			else
+				stars[i - 1].setStar(Star.EMPTY);
 		}
 	}
-	
+
 	public JPanel getThisPanel() {
 		return this;
 	}
 
-	public void rate(final int rating){
+	public void rate(final int rating) {
 
-		org.jdesktop.swingworker.SwingWorker<Void, Void> worker = new org.jdesktop.swingworker.SwingWorker<Void, Void>() {
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 
-
 				String username = LoginManager.getLoggedInUser();
 
-				//perform rating here
+				// perform rating here
 				RatingBean newRating = rater.writeRating(id, username, rating);
 
-				if (newRating == null){
-					JOptionPane.showMessageDialog(null, "There was a problem in sending your rating.  Check your internet connection.");
-				}
-				else {
+				if (newRating == null) {
+					JOptionPane
+							.showMessageDialog(null,
+									"There was a problem in sending your rating.  Check your internet connection.");
+				} else {
 					setStarValue(newRating.getOverallRating());
-					setRatingValue(newRating.getOverallRating(), newRating.getTotalRatings());
-					//user can no longer rate now
-					clickable = false;	
+					setRatingValue(newRating.getOverallRating(),
+							newRating.getTotalRatings());
+					// user can no longer rate now
+					clickable = false;
 					setTitle("Thanks!");
 					getThisPanel().repaint();
 				}
@@ -173,35 +178,48 @@ public class StarRatingPanel extends JPanel implements MouseListener{
 		worker.execute();
 	}
 
-	public boolean isClickable(){
+	public boolean isClickable() {
 		return clickable;
 	}
 
-	public void setClickable(boolean c){
+	public void setClickable(boolean c) {
 		clickable = c;
 	}
 
+	@Override
 	public void mouseClicked(MouseEvent e) {
-		if (clickable) rate(((Star)e.getComponent()).getValue());
+		if (clickable)
+			rate(((Star) e.getComponent()).getValue());
 	}
 
+	@Override
 	public void mouseEntered(MouseEvent e) {
-		if (!clickable) return;
+		if (!clickable)
+			return;
 
-		int starIndex = ((Star)e.getComponent()).getValue() - 1;
-		for (int i = 0; i < 5; i++){
-			if (i <= starIndex) stars[i].setStar(Star.FULL);
-			else stars[i].setStar(Star.EMPTY);
+		int starIndex = ((Star) e.getComponent()).getValue() - 1;
+		for (int i = 0; i < 5; i++) {
+			if (i <= starIndex)
+				stars[i].setStar(Star.FULL);
+			else
+				stars[i].setStar(Star.EMPTY);
 		}
 	}
 
+	@Override
 	public void mouseExited(MouseEvent e) {
-		if (!clickable) return;
+		if (!clickable)
+			return;
 		setStarValue(value);
 	}
 
-	//these aren't needed.
-	public void mousePressed(MouseEvent e) {}
-	public void mouseReleased(MouseEvent e) {}
+	// these aren't needed.
+	@Override
+	public void mousePressed(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+	}
 
 }

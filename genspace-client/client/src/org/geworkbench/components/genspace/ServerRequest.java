@@ -22,10 +22,10 @@ public class ServerRequest {
 			oos.writeObject(command);
 			oos.writeObject(arg);
 			oos.flush();
-			
+
 			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
-			result = (Serializable)ois.readObject();
-			
+			result = (Serializable) ois.readObject();
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			// TODO: handle the error more gracefully
@@ -37,18 +37,15 @@ public class ServerRequest {
 		}
 		return result;
 	}
-	
-	
-	public static void main(String s[]){
-		
+
+	public static void main(String s[]) {
+
 		ArrayList args = new ArrayList();
 		args.add("ARACNE");
-		
-		System.out.println(
-				ServerRequest.get(
-						RuntimeEnvironmentSettings.TOOL_SERVER, 
-						"getToolId", args ));
-		
+
+		System.out.println(ServerRequest.get(
+				RuntimeEnvironmentSettings.TOOL_SERVER, "getToolId", args));
+
 	}
 
 }
