@@ -1,0 +1,4 @@
+Cleaned up logger for genspace to have a static loading
+--This line, and those below, will be ignored--
+
+M    GenspaceLogger.java
