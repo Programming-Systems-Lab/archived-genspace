@@ -14,7 +14,7 @@ public class RuntimeEnvironmentSettings {
 	public static final String DEVEL_HOST = BORIS;
 	public static final String LOCAL_HOST = LOCAL;
 
-	public static final String SERVER = DEVEL_HOST;
+	public static final String SERVER = LOCAL;
 
 	public static final ServerConfig EVENT_SERVER = new ServerConfig(SERVER,
 			12346);
@@ -37,7 +37,7 @@ public class RuntimeEnvironmentSettings {
 	public static final ServerConfig WORKFLOW_REPOSITORY_SERVER = new ServerConfig(
 			SERVER, 12349);
 
-	public static final String XMPP_HOST = SERVER;
+	public static final String XMPP_HOST = DEVEL_HOST;
 	public static final String DEFAULT_USER = "";
 
 	public static final String GS_WEB_ROOT_PROD = "http://bambi.cs.columbia.edu/";

@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -124,7 +126,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		PrintWriter out = null;
 		Socket s = null;
 		try {
-			s = new Socket(
+			s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(
 					RuntimeEnvironmentSettings.WORKFLOW_SERVER.getHost(),
 					RuntimeEnvironmentSettings.WORKFLOW_SERVER.getPort());
 			out = new java.io.PrintWriter(s.getOutputStream());
@@ -176,7 +178,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				PrintWriter out = null;
 				Socket s = null;
 				try {
-					s = new Socket(
+					s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(
 							RuntimeEnvironmentSettings.WORKFLOW_SERVER
 									.getHost(),
 							RuntimeEnvironmentSettings.WORKFLOW_SERVER

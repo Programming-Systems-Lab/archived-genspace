@@ -12,6 +12,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import javax.swing.JPanel;
 
 import org.geworkbench.engine.config.VisualPlugin;
@@ -60,10 +62,10 @@ public class NetworkVisualization extends JPanel implements VisualPlugin,
 	private void getNetworkData(String file) {
 		PrintWriter out = null;
 		PrintWriter outFile = null;
-		Socket s = null;
+		SSLSocket s = null;
 		// connect to the server and get the info we need
 		try {
-			s = new Socket(HOST, PORT);
+			s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(HOST, PORT);
 			out = new PrintWriter(s.getOutputStream());
 
 			// send the name of the user

@@ -6,16 +6,21 @@ import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+
 public class ServerRequest {
 
 	public static Serializable get(ServerConfig config, String command,
 			ArrayList arg) {
 		// send request to server
 		Socket s = null;
+		
 		Serializable result = null;
 
 		try {
-			s = new Socket(config.getHost(), config.getPort());
+			s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(config.getHost(), config.getPort());
+
 			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 
 			// send the action keyword and the name of the tool

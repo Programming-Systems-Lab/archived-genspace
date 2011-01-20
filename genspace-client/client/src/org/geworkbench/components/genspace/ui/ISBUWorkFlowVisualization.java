@@ -16,6 +16,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -27,6 +29,7 @@ import javax.swing.border.TitledBorder;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.geworkbench.components.genspace.GenSpaceSSLSocketFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.engine.config.VisualPlugin;
 
@@ -405,7 +408,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 		PrintWriter out = null;
 		Socket s = null;
 		try {
-			s = new Socket(HOST, PORT);
+			s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(HOST, PORT);
 			out = new java.io.PrintWriter(s.getOutputStream());
 
 			// send the action keyword and the name of the tool
@@ -448,7 +451,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 
 		// now we test the method "getTop3MostPopularTools"
 		clientSideID = "getTop3MostPopularTools";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -469,7 +472,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 
 		// now we test the method "getTop3MostPopularWFHead"
 		clientSideID = "getTop3MostPopularWFHead";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -490,7 +493,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 
 		// now we test the method "getTop3MostPopularWF"
 		clientSideID = "getTop3MostPopularWF";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -511,7 +514,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 
 		// now we test the method "getAllAnalysisTools"
 		clientSideID = "getAllAnalysisTools";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -533,7 +536,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 		clientSideID = "feature2,getUsageRate," + toolApplied;// zhu yi kong ge
 		// shi zi dai de
 		// ...
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -562,7 +565,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 		// dai
 		// de
 		// ...
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -591,7 +594,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 		// dai
 		// de
 		// ...
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -620,7 +623,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 		// dai
 		// de
 		// ...
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();

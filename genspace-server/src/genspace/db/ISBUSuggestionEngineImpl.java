@@ -64,7 +64,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 
 	public ArrayList <String> getTop3MostPopularTools() {
 
-		ArrayList <String> top3Tools = new ArrayList();
+		ArrayList <String> top3Tools = new ArrayList<String>();
 
 		ArrayList sortedList = dbManager.getSortedIndex1By1stValue();
 
@@ -132,12 +132,6 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 		return top3WFs;
 	}
 
-
-	/*
-	public HashMap <String, ArrayList> getSuggestionForEachTool()  {
-		return dbManager.getAnalysisToolIndex();
-	}
-	 */
 
 
 	public String getUsageRate(String toolName){
@@ -246,13 +240,6 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 				PreparedStatement stmt1 = con.prepareStatement(cntQuery);
 				ResultSet rs = stmt1.executeQuery();
 
-				// create a Statement
-//				Statement stmt = con.createStatement();
-//				System.out.println(current_user);
-//				String sql =  "(select username from [Genspace].[dbo].[registration]) EXCEPT (SELECT [username] FROM [Genspace].[dbo].[registration] where username = '" + current_user +"')";
-//				//String sql =  "(select Username from [Genspace].[dbo].[registration])";
-
-				//ResultSet rs = stmt.executeQuery(sql);
 
 				while (rs.next()) {
 					allUserList.add(rs.getString(1));

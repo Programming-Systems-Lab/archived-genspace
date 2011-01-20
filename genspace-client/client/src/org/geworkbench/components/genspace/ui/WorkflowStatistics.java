@@ -1,6 +1,10 @@
 package org.geworkbench.components.genspace.ui;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import javax.swing.*;
+
+import org.geworkbench.components.genspace.GenSpaceSSLSocketFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.engine.config.VisualPlugin;
 
@@ -237,7 +241,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 	private String getMostPopularNextTool(String toolApplied) throws Exception {
 
 		clientSideID = "feature2,getMostPopularNextTool," + toolApplied;
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -252,7 +256,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			throws Exception {
 
 		clientSideID = "feature2,getMostPopularPreviousTool," + toolApplied;
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -545,7 +549,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 		PrintWriter out = null;
 		Socket s = null;
 		try {
-			s = new Socket(HOST, PORT);
+			s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(HOST, PORT);
 			out = new java.io.PrintWriter(s.getOutputStream());
 
 			// send the action keyword and the name of the tool
@@ -582,7 +586,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 		// now we test the method "getTop3MostPopularTools"
 		clientSideID = "getMostPopularTools";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -603,7 +607,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 		// now we test the method "getTop3MostPopularWFHead"
 		clientSideID = "getMostPopularWFHead";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -624,7 +628,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 		// now we test the method "getTop3MostPopularWF"
 		clientSideID = "getMostPopularWF";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -643,7 +647,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 	private ArrayList<String> getAllAnalysisTools() throws Exception {
 
 		clientSideID = "getAllAnalysisTools";
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -660,7 +664,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 		clientSideID = "feature2,getUsageRate," + toolApplied;// zhu yi kong ge
 		// shi zi dai de
 		// ...
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();
@@ -688,7 +692,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 		// dai
 		// de
 		// ...
-		Socket s = new Socket(serverIP, serverPort);
+		Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();

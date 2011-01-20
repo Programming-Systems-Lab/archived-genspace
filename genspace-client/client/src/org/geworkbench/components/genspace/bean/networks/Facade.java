@@ -6,6 +6,10 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+
+import org.geworkbench.components.genspace.GenSpaceSSLSocketFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.ui.GenSpaceLogin;
 
@@ -36,7 +40,8 @@ public abstract class Facade {
 		Socket s = null;
 		NetworkMessage ret = null;
 		try {
-			s = new Socket(HOST, PORT);
+			s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(HOST, PORT);
+
 			ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
 			os.writeObject(m);
 			ObjectInputStream is = new ObjectInputStream(s.getInputStream());

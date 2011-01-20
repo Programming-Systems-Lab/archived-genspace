@@ -10,7 +10,11 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+
 import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.GenSpaceSSLSocketFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.ServerRequest;
 import org.geworkbench.components.genspace.bean.DataVisibilityBean;
@@ -83,7 +87,7 @@ public class LoginManager {
 
 	private Socket getSocket() {
 		try {
-			Socket s = new Socket(
+			Socket s = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(
 					RuntimeEnvironmentSettings.SECURITY_SERVER.getHost(),
 					RuntimeEnvironmentSettings.SECURITY_SERVER.getPort());
 			OutputStream pw = s.getOutputStream();

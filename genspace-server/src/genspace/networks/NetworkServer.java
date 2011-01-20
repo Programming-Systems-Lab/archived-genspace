@@ -2,7 +2,6 @@ package genspace.networks;
 
 import genspace.common.Logger;
 import genspace.db.Server;
-import genspace.jclaim.BotEventHandler;
 import java.net.Socket;
 import java.util.Scanner;
 import java.io.ObjectInputStream;
@@ -13,7 +12,6 @@ public class NetworkServer extends Server {
 
 	public static final int DEFAULT_PORT = 8182;
 	
-	private BotEventHandler handler = new BotEventHandler();
 	
     /* This is the main method for starting the Server */
     public static void main(String[] args)

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.net.ssl.SSLSocketFactory;
 import javax.swing.SwingWorker;
 
 import org.apache.commons.logging.Log;
@@ -169,7 +170,7 @@ public class ObjectHandler {
 	 */
 	private void updateLogServer() {
 		try {
-			Socket socket = new Socket(lookupServer, lookupPort);
+			Socket socket =   GenSpaceSSLSocketFactory.createSocket(lookupServer, lookupPort);
 			Scanner in = new Scanner(socket.getInputStream());
 			if (in.hasNext()) {
 				String msg = in.nextLine();

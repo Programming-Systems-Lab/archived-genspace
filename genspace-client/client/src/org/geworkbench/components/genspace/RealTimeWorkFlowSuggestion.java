@@ -13,6 +13,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -522,7 +524,8 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 																	// shi zi
 																	// dai de
 																	// ...
-		Socket s = new Socket(serverIP, serverPort);
+		
+		Socket s = GenSpaceSSLSocketFactory.createSocket(serverIP, serverPort);
 		ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 		oos.writeObject(clientSideID);
 		oos.flush();

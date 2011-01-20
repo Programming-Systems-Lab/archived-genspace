@@ -1,42 +1,8 @@
-Tue Dec 21 06:46:28 EST 2010: com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK_user_workflow'. Cannot insert duplicate key in object 'dbo.user_workflow'.
-com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:196)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1454)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:388)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:338)
-com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:4026)
-com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1416)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:185)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:160)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:306)
-genspace.db.util.UserWorkflowLoader.storeUserWorkflow(UserWorkflowLoader.java:191)
-genspace.db.UserManager.addAndGetUserWorkflow(UserManager.java:448)
-genspace.db.WFRHandler.run(WorkflowRepositoryServer.java:123)
+Thu Jan 20 16:34:21 EST 2011: java.util.NoSuchElementException: No line found
+java.util.Scanner.nextLine(Scanner.java:1516)
+genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:94)
 
-Tue Dec 21 06:48:19 EST 2010: com.microsoft.sqlserver.jdbc.SQLServerException: The data types text and nvarchar are incompatible in the equal to operator.
-com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:196)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1454)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:388)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:338)
-com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:4026)
-com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1416)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:185)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:160)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:306)
-genspace.db.util.UserWorkflowLoader.deleteComment(UserWorkflowLoader.java:313)
-genspace.db.UserManager.deleteComment(UserManager.java:689)
-genspace.db.WFRHandler.run(WorkflowRepositoryServer.java:148)
-
-Tue Dec 21 06:48:22 EST 2010: com.microsoft.sqlserver.jdbc.SQLServerException: The data types text and nvarchar are incompatible in the equal to operator.
-com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:196)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1454)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:388)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:338)
-com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:4026)
-com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1416)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:185)
-com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:160)
-com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:306)
-genspace.db.util.UserWorkflowLoader.deleteComment(UserWorkflowLoader.java:313)
-genspace.db.UserManager.deleteComment(UserManager.java:689)
-genspace.db.WFRHandler.run(WorkflowRepositoryServer.java:148)
+Thu Jan 20 16:34:21 EST 2011: java.util.NoSuchElementException: No line found
+java.util.Scanner.nextLine(Scanner.java:1516)
+genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:94)
 

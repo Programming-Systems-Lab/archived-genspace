@@ -8,6 +8,11 @@ import genspace.common.Logger;
 
 import java.net.*;
 
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocketFactory;
+
+import com.sun.net.ssl.internal.ssl.SSLServerSocketFactoryImpl;
+
 public abstract class Server extends Thread 
 {
 
@@ -30,7 +35,9 @@ public abstract class Server extends Thread
     {
 		try
 		{
-		    server = new ServerSocket(port);
+			SSLServerSocketFactoryImpl socketFactory = new SSLServerSocketFactoryImpl();
+			
+		    server = socketFactory.createServerSocket(port);
 		    System.out.println("Server started... waiting for connection");
 		}
 		catch (Exception e)

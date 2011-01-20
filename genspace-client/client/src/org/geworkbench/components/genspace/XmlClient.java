@@ -7,6 +7,9 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.Scanner;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+
 public class XmlClient {
 	// the output stream for writing to the server
 	private PrintWriter out;
@@ -16,7 +19,7 @@ public class XmlClient {
 	 */
 	public XmlClient(String host, int port) {
 		try {
-			Socket connect = new Socket(host, port);
+			Socket connect = (SSLSocket) GenSpaceSSLSocketFactory.createSocket(host, port);
 
 			// get the output stream
 			out = new PrintWriter(connect.getOutputStream());

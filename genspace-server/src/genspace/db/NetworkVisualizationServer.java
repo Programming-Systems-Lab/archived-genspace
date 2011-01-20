@@ -1,7 +1,6 @@
 package genspace.db;
 
 import genspace.common.Logger;
-import genspace.jclaim.BotEventHandler;
 import java.net.Socket;
 import java.util.Scanner;
 import java.io.PrintWriter;
