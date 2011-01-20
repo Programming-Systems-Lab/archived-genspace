@@ -10,6 +10,7 @@ import genspace.db.NetworkVisualizationServer;
 import genspace.db.ToolServer;
 import genspace.db.WorkflowRepositoryServer;
 import genspace.db.WorkflowVisualizationServer;
+import genspace.networks.NetworkServer;
 import genspace.scripts.ScriptRunner;
 
 import javax.swing.Icon;
@@ -174,7 +175,8 @@ public class GenSpace {
         
         SecurityServer security = new SecurityServer(RuntimeEnvironmentSettings.SECURITY_SERVER_PORT);
         security.start();
-        
+        NetworkServer ns = new NetworkServer(RuntimeEnvironmentSettings.SOCIAL_SERVER_PORT);
+        ns.start();
 //		Added by Flavio
 //		accepts all requests from the Workflow Repository tab
 //		however, "adding a workflow to the repository" from other tabs is handled by the ISBUServer
