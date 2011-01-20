@@ -23,8 +23,7 @@ public class RuntimeEnvironmentSettings {
 	public static final int TOOL_SERVER_PORT = 12341;
 	public static final int SECURITY_SERVER_PORT = 12347;
 	public static final int WORKFLOW_REPOSITORY_PORT = 12349;
-	
-	
+	public static final int SOCIAL_SERVER_PORT = 12348;
 	
 	//Database connection constants
 	public static final String DB_HOST = "boris.cs.columbia.edu";
@@ -55,4 +54,10 @@ public class RuntimeEnvironmentSettings {
     // AOL - not tested
     public static final String IM_AOL_USER = "genspac";
     public static final String IM_AOL_PASS = "g3n123sp4ce";
+    
+    //Constants for the Tigase XMPP database
+    public static final String Tig_DB_URI="jdbc:mysql://boris.cs.columbia.edu/tigase_xmpp?username=student&password=password";
+    public static final String TIG_DB_USER="student";
+    public static final String TIG_DB_PASS="password";
+    public static final String XMPP_HOST="lenox.cs.columbia.edu";
 }

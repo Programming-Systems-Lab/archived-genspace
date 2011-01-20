@@ -61,7 +61,8 @@ public class RegistrationServerManager extends DatabaseManager {
 				// create a Statement
 				PreparedStatement stmt = null;
 
-				String query = "INSERT INTO registration VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				String query = "INSERT INTO registration (username,password,email,im_email,im_password,first_name,last_name,work_title,phone,lab_affiliation,addr1,addr2,city,state,zipcode)" +
+						" VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				stmt = con.prepareStatement(query);
 				stmt.setString(1, reg.getUsername());
 				stmt.setString(2, getEncryptPassword(reg.getPassword()));
@@ -83,14 +84,14 @@ public class RegistrationServerManager extends DatabaseManager {
 
 				// this query sets the default data visibilty of new user as 1
 				// ie. data visible within network.
-				query = "INSERT INTO data_visibility VALUES (?,1,1)";
+				query = "INSERT INTO data_visibility (username,logdata,datavisibility) VALUES (?,1,1)";
 				stmt = con.prepareStatement(query);
 				stmt.setString(1, reg.getUsername());
 				stmt.executeUpdate();
 
 				// this query sets the default user visibilty of new user as 1
 				// ie. user visible within network.
-				query = "INSERT INTO user_visibility VALUES (?,1)";
+				query = "INSERT INTO user_visibility (username, uservisibility) VALUES (?,1)";
 				stmt = con.prepareStatement(query);
 				stmt.setString(1, reg.getUsername());
 				stmt.executeUpdate();
@@ -134,7 +135,7 @@ public class RegistrationServerManager extends DatabaseManager {
 				PreparedStatement stmt = con.prepareStatement(query);
 				stmt.setString(1, reg.getUsername());
 				ResultSet rs = stmt.executeQuery();
-				System.out.println("username: "+reg.getUsername());
+
 				if (rs.next()) {
 					encryptedPassword = rs.getString("password");
 				} else {

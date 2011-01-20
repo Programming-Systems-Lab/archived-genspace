@@ -103,7 +103,7 @@ class Handler extends ServerHandler {
 //				System.out.println("the client is requesting " + clientSideID);
 				log.info("the client is requesting " + clientSideID);
 				
-				ArrayList result = engine.getAllAnalysisTools1();
+				ArrayList<String> result = engine.getAllAnalysisTools1();
 //				System.out.println("Server has the result: "
 //						+ result.toString());
 				log.info("Server has the result: "
@@ -121,7 +121,7 @@ class Handler extends ServerHandler {
 //				System.out.println("the client is requesting " + clientSideID);
 				log.info("the client is requesting " + clientSideID);
 				
-				ArrayList result = engine.getTop3MostPopularTools();
+				ArrayList<String> result = engine.getTop3MostPopularTools();
 //				System.out.println("Server has the result: "
 //						+ result.toString());
 				log.info("Server has the result: "
@@ -133,13 +133,32 @@ class Handler extends ServerHandler {
 				oos.flush();
 //				System.out.println("Response sent back to client.");
 
-			} else if (clientSideID.equals("getTop3MostPopularWFHead")) {
+			} else if (clientSideID.equals("getMostPopularTools")) {
 
 //				System.out.println();
 //				System.out.println("the client is requesting " + clientSideID);
 				log.info("the client is requesting " + clientSideID);
 				
-				ArrayList result = engine.getTop3MostPopularWFHead();
+				ArrayList<String> result = engine.getMostPopularTools();
+//				System.out.println("Server has the result: "
+//						+ result.toString());
+				log.info("Server has the result: "
+						+ result.toString());
+				
+				ObjectOutputStream oos = new ObjectOutputStream(s
+						.getOutputStream());
+				oos.writeObject(result);
+				oos.flush();
+//				System.out.println("Response sent back to client.");
+
+			}  
+			else if (clientSideID.equals("getMostPopularWFHead")) {
+
+//				System.out.println();
+//				System.out.println("the client is requesting " + clientSideID);
+				log.info("the client is requesting " + clientSideID);
+				
+				ArrayList<String> result = engine.getMostPopularWFHead();
 //				System.out.println("Server has the result: "
 //						+ result.toString());
 				log.info("Server has the result: "
@@ -157,7 +176,7 @@ class Handler extends ServerHandler {
 //				System.out.println("the client is requesting " + clientSideID);
 				log.info("the client is requesting " + clientSideID);
 				
-				ArrayList result = engine.getTop3MostPopularWF();
+				ArrayList<String> result = engine.getTop3MostPopularWF();
 //				System.out.println("Server has the result: "
 //						+ result.toString());
 				log.info("Server has the result: "
@@ -169,7 +188,26 @@ class Handler extends ServerHandler {
 				oos.flush();
 //				System.out.println("Response sent back to client.");
 
-			} else if (clientSideID.contains("feature2")) {
+			} else if (clientSideID.equals("getMostPopularWF")) {
+
+//				System.out.println();
+//				System.out.println("the client is requesting " + clientSideID);
+				log.info("the client is requesting " + clientSideID);
+				
+				ArrayList<String> result = engine.getMostPopularWF();
+//				System.out.println("Server has the result: "
+//						+ result.toString());
+				log.info("Server has the result: "
+						+ result.toString());
+				
+				ObjectOutputStream oos = new ObjectOutputStream(s
+						.getOutputStream());
+				oos.writeObject(result);
+				oos.flush();
+//				System.out.println("Response sent back to client.");
+
+			}  
+			else if (clientSideID.contains("feature2")) {
 
 				StringTokenizer tokens = new StringTokenizer(clientSideID, ",");
 				tokens.nextToken(); // skip the token "feature2"

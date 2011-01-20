@@ -1,9 +1,8 @@
 package genspace.db;
 
-import genspace.common.Logger;
-
 import java.util.*;
 import java.io.*;
+import genspace.common.Logger;
 
 
 /**

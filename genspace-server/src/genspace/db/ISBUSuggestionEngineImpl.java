@@ -75,7 +75,27 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 		return top3Tools;
 	}
 
+	public ArrayList <String> getMostPopularTools() {
 
+		ArrayList <String> top3Tools = new ArrayList<String>();
+
+		ArrayList<CompareUnit> sortedList = dbManager.getSortedIndex1By1stValue();
+
+		for(CompareUnit u : sortedList)
+			top3Tools.add(u.getName());
+
+		return top3Tools;
+	}
+	public ArrayList <String> getMostPopularWFHead() {
+
+		ArrayList <String> top3Heads = new ArrayList();
+
+		ArrayList<CompareUnit> sortedList = dbManager.getSortedIndex1By2ndValue();
+
+		for(CompareUnit u : sortedList)
+			top3Heads.add(u.getName());
+		return top3Heads;
+	}
 	public ArrayList <String> getTop3MostPopularWFHead() {
 
 		ArrayList <String> top3Heads = new ArrayList();
@@ -100,7 +120,17 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 		}
 		return top3WFs;
 	}
+	public ArrayList <String> getMostPopularWF() {
 
+		ArrayList <String> top3WFs = new ArrayList<String>();
+
+		ArrayList<CompareUnit> sortedList = dbManager.getSortedIndex2ByOnlyValue();
+
+		for(CompareUnit u : sortedList)
+			top3WFs.add(u.getName());
+
+		return top3WFs;
+	}
 
 
 	/*

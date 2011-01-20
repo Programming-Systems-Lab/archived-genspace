@@ -7,12 +7,13 @@ import genspace.common.Logger;
 public class DatabaseConnector
 {	
      protected java.sql.Connection  con = null;
+     protected java.sql.Connection tigCon=null;
      
      // Informs the driver to use server a side-cursor,
      // which permits more than one active statement
      // on a connection.
      private final String selectMethod = "cursor";
-
+     
      // Constructor
      public DatabaseConnector(){}
 
@@ -42,7 +43,20 @@ public class DatabaseConnector
          }
           return con;
       }
-
+     public synchronized java.sql.Connection getTigConnection(){
+         try{
+              Class.forName("com.mysql.jdbc.Driver");
+              con = java.sql.DriverManager.getConnection(RuntimeEnvironmentSettings.Tig_DB_URI,RuntimeEnvironmentSettings.TIG_DB_USER,RuntimeEnvironmentSettings.TIG_DB_PASS);
+              
+              //if(con!=null) System.out.println("Connection Successful!");
+              if (con == null) throw new SQLException("TigConnection is null");
+         }catch(Exception e){
+              e.printStackTrace();
+              System.out.println("Error Trace in getTigConnection() : " + e.getMessage());
+              if (Logger.isLogError()) Logger.logError(e);
+        }
+         return con;
+     }
      /*
           Display the driver properties, database details
      */

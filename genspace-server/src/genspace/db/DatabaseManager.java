@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -36,7 +37,10 @@ public class DatabaseManager extends DatabaseConnector
 
 	}
 
-	
+	public void notifyVisbilityChange(String username, Set<String> affected, boolean isNowVisible)
+	{
+		//Do nothing is OK
+	}
 	
 	/**
 	 * This method inserts an event into the database by figuring out what type of event it is 
@@ -103,8 +107,8 @@ public class DatabaseManager extends DatabaseConnector
 				
 				//update the tools table
 				if (getToolId(e.getAnalysis()) == -1){
-					//Statement insertToolStmt = con.createStatement();
-					//insertToolStmt.executeQuery("INSERT INTO tools (tool) VALUES ('" + e.getAnalysis() + "')");
+					Statement insertToolStmt = con.createStatement();
+					insertToolStmt.executeQuery("INSERT INTO tools (tool) VALUES ('" + e.getAnalysis() + "')");
 				}
 					
 				

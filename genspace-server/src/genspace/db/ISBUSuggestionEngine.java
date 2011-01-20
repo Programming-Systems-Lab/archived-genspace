@@ -10,9 +10,13 @@ public interface ISBUSuggestionEngine {
 	//methods for suggestion feature 1
 	public ArrayList <String> getAllAnalysisTools1();
 	public ArrayList <String> getTop3MostPopularTools();
+	public ArrayList <String> getMostPopularTools();
+
 	public ArrayList <String> getTop3MostPopularWFHead();
+	public ArrayList <String> getMostPopularWFHead();
+
 	public ArrayList <String> getTop3MostPopularWF();
-	
+	public ArrayList <String> getMostPopularWF();
 	
 	//methods for suggestion feature 2
 	//public HashMap <String, ArrayList> getSuggestionForEachTool();
