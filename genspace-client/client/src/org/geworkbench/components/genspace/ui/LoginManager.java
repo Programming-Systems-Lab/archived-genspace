@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -104,14 +105,11 @@ public class LoginManager {
 		bean.setMessage("Duplication");
 
 		try {
-			byte[] buf;
-			buf = bean.write();
-
 			Socket s = getSocket();
 
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
+			ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
+			os.writeObject(bean);
+			os.flush();
 			boolean ret = false;
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(
 					s.getInputStream()));
@@ -121,8 +119,8 @@ public class LoginManager {
 				ret = false;
 			}
 
-			pw.close();
 			socketBr.close();
+			os.close();
 			s.close();
 
 			return ret;
@@ -145,14 +143,11 @@ public class LoginManager {
 
 		try {
 			byte[] buf;
-			buf = bean.write();
-
 			Socket s = getSocket();
 
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
-
+			ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
+			os.writeObject(bean);
+			os.flush();
 			boolean ret = false;
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(
 					s.getInputStream()));
@@ -162,7 +157,7 @@ public class LoginManager {
 				ret = false;
 			}
 
-			pw.close();
+			os.close();
 			socketBr.close();
 			s.close();
 
@@ -180,15 +175,17 @@ public class LoginManager {
 									// registration/login
 
 		try {
-			byte[] buf;
-			buf = bean.write();
+		
 			Socket s = getSocket();
-
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
+			
+			ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
+			os.writeObject(bean);
+			os.flush();
+			
+			System.out.println("Wrote");
 			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
 			user = (User) ois.readObject();
+			System.out.println("Read");
 			// System.out.println(user);
 			boolean ret = false;
 			// BufferedReader socketBr = new BufferedReader(new
@@ -214,7 +211,7 @@ public class LoginManager {
 			}
 
 			ois.close();
-			pw.close();
+			os.close();
 			// socketBr.close();
 			s.close();
 
@@ -229,20 +226,18 @@ public class LoginManager {
 	public RegisterBean getUserInfo() {
 		bean.setMessage("GetUserInfo");
 		try {
-			byte[] buf;
-			buf = bean.write();
 
 			Socket s = getSocket();
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
+			ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
+			os.writeObject(bean);
+			os.flush();
+			
 
 			// System.out.println("Sent socket!");
-			byte[] buffer = new byte[1024];
-			InputStream in = s.getInputStream();
-			in.read(buffer);
+			ObjectInputStream is = new ObjectInputStream(s.getInputStream());
 
-			RegisterBean bean = (RegisterBean) RegisterBean.read(buffer);
+			RegisterBean bean = (RegisterBean) is.readObject();
+			s.close();
 			return bean;
 		} catch (Exception ex) {
 			return null;
@@ -252,18 +247,15 @@ public class LoginManager {
 	public boolean userUpdate() {
 
 		try {
-			byte[] buf;
-
 			bean.setMessage("Update");
-			buf = bean.write();
 
 			Socket s = getSocket();
-			OutputStream pw = s.getOutputStream();
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(
 					s.getInputStream()));
-			pw.write(buf);
-			pw.flush();
-
+			ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
+			os.writeObject(bean);
+			os.flush();
+			
 			// System.out.println("Sent socket!");
 
 			if (socketBr.readLine().equalsIgnoreCase("true")) {
@@ -284,13 +276,12 @@ public class LoginManager {
 
 		try {
 			byte[] buf;
-			buf = nvb.write();
-
 			Socket s = getSocket();
 
-			OutputStream os = s.getOutputStream();
-			os.write(buf);
-			os.flush();
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+			oos.writeObject(nvb);
+			oos.flush();
+		
 
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(
 					s.getInputStream()));
@@ -299,7 +290,7 @@ public class LoginManager {
 				allNetworks.add(socketBr.readLine());
 			}
 
-			os.close();
+			oos.close();
 			socketBr.close();
 			s.close();
 
@@ -317,13 +308,13 @@ public class LoginManager {
 
 		try {
 			byte[] buf;
-			buf = dvb.write();
-
+			
 			Socket s = getSocket();
 
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+			oos.writeObject(dvb);
+			oos.flush();
+
 
 			boolean ret = false;
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(
@@ -334,7 +325,7 @@ public class LoginManager {
 				ret = false;
 			}
 
-			pw.close();
+			oos.close();
 			socketBr.close();
 			s.close();
 
@@ -350,15 +341,13 @@ public class LoginManager {
 
 		nvb.setMessage("networkvisibilityedit");
 
-		try {
-			byte[] buf;
-			buf = nvb.write();
-
+		try {		
 			Socket s = getSocket();
 
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+			oos.writeObject(nvb);
+			oos.flush();
+			
 
 			boolean ret = false;
 			BufferedReader socketBr = new BufferedReader(new InputStreamReader(
@@ -369,7 +358,7 @@ public class LoginManager {
 				ret = false;
 			}
 
-			pw.close();
+			oos.close();
 			socketBr.close();
 			s.close();
 
@@ -387,35 +376,18 @@ public class LoginManager {
 		dvb.setUName(userId);
 
 		try {
-			int len = 0, off = 0;
-			byte[] buf = dvb.write();
-			byte[] buf1 = new byte[1024];
-
 			Socket s = getSocket();
 
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
-
-			ByteArrayOutputStream b = new ByteArrayOutputStream();
-			InputStream is = s.getInputStream();
-			while (true) {
-				if (is.available() != 0)
-					break;
-			}
-
-			while ((len = is.available()) != 0) {
-				is.read(buf1);
-				b.write(buf1, off, len);
-				off += len;
-			}
-
-			Object obj = DataVisibilityBean.read(b.toByteArray());
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+			oos.writeObject(dvb);
+			oos.flush();
+			
+			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+			Object obj = ois.readObject();
 			String msg = ((SecurityMessageBean) obj).getMessage();
 
-			pw.close();
-			b.close();
-			is.close();
+			oos.close();
+			ois.close();
 			s.close();
 
 			if (msg.equalsIgnoreCase("success")) {
@@ -437,36 +409,19 @@ public class LoginManager {
 		nvb.setUName(userId);
 
 		try {
-			int len = 0, off = 0;
-			byte[] buf = nvb.write();
-			byte[] buf1 = new byte[1024];
-
+			
 			Socket s = getSocket();
 
-			OutputStream pw = s.getOutputStream();
-			pw.write(buf);
-			pw.flush();
-
-			ByteArrayOutputStream b = new ByteArrayOutputStream();
-
-			InputStream is = s.getInputStream();
-			while (true) {
-				if (is.available() != 0)
-					break;
-			}
-
-			while ((len = is.available()) != 0) {
-				is.read(buf1);
-				b.write(buf1, off, len);
-				off += len;
-			}
-
-			Object obj = DataVisibilityBean.read(b.toByteArray());
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+			oos.writeObject(nvb);
+			oos.flush();
+			
+			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+			Object obj = ois.readObject();
 			String msg = ((SecurityMessageBean) obj).getMessage();
 
-			pw.close();
-			b.close();
-			is.close();
+			oos.close();
+			ois.close();
 			s.close();
 
 			if (msg.equalsIgnoreCase("Success")) {

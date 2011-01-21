@@ -14,28 +14,28 @@ public class RuntimeEnvironmentSettings {
 	public static final String DEVEL_HOST = BORIS;
 	public static final String LOCAL_HOST = LOCAL;
 
-	public static final String SERVER = DEVEL_HOST;
+	public static final String SERVER = LOCAL;
 
 	public static final ServerConfig EVENT_SERVER = new ServerConfig(SERVER,
-			12346);
+			22346);
 	public static final ServerConfig WORKFLOW_SERVER = new ServerConfig(SERVER,
-			12343);
+			22343);
 	public static final ServerConfig WORKFLOW_VIS_SERVER = new ServerConfig(
-			SERVER, 12343);
+			SERVER, 22343);
 	public static final ServerConfig NETWORK_VIS_SERVER = new ServerConfig(
-			SERVER, 12344);
+			SERVER, 22344);
 	public static final ServerConfig LOOKUP_SERVER = new ServerConfig(
-			LOOKUP_HOST, 12346);
+			LOOKUP_HOST, 22346);
 	public static final ServerConfig ISBU_SERVER = new ServerConfig(SERVER,
-			12345);
+			22345);
 	public static final ServerConfig TOOL_SERVER = new ServerConfig(SERVER,
-			12341);
+			22341);
 	public static final ServerConfig SECURITY_SERVER = new ServerConfig(SERVER,
-			12347);
+			22347);
 	public static final ServerConfig SOCIAL_SERVER = new ServerConfig(SERVER,
-			12348);
+			22348);
 	public static final ServerConfig WORKFLOW_REPOSITORY_SERVER = new ServerConfig(
-			SERVER, 12349);
+			SERVER, 22349);
 
 	public static final String XMPP_HOST = DEVEL_HOST;
 	public static final String DEFAULT_USER = "";

@@ -74,42 +74,19 @@ public class SecurityServer extends Server{
 		}
 
 		public void run(){
-			int len = 0, off = 0;
 			System.out.println("Started");
 			try{
 			
-
-				InputStream is = socket.getInputStream();
-				ByteArrayOutputStream b = new ByteArrayOutputStream();
-				
-				OutputStream os = socket.getOutputStream();
-				OutputStreamWriter writer = new OutputStreamWriter(os);
-				PrintWriter pw = new PrintWriter(writer, true);
-			    
-				while(true)
-				{
-					System.out.println("Waiting for bean");
-					if(is.available() != 0)
-						break;
-				}
-
-				
-				byte[] buf = new byte[1024];
-	
-				while ((len=is.available())!=0) {
-					is.read(buf);
-					b.write(buf, off, len);
-					off += len;
-				}
-				System.out.println(b.size());
-				
-				//System.out.println(buf.toString());
-	
-				Object obj = RegisterBean.read(b.toByteArray());
+				ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+				Object obj = ois.readObject();
 				
 				String msg = ((SecurityMessageBean)obj).getMessage();
 //				System.out.println(msg);
 				log.info(msg);
+				
+				OutputStream os = socket.getOutputStream();
+				OutputStreamWriter writer = new OutputStreamWriter(os);
+				PrintWriter pw = new PrintWriter(writer, true);
 				
 				if( "Register".equalsIgnoreCase(msg)
 					|| "Duplication".equalsIgnoreCase(msg)
@@ -183,10 +160,10 @@ public class SecurityServer extends Server{
 						String userId = bean.getUsername();
 						DataVisibilityServerManager dvMgr = new DataVisibilityServerManager();
 						DataVisibilityBean beanResult = dvMgr.getBeanForUser(userId);
-						byte[] byteArray = beanResult.write();
-						os.write(byteArray);
-						os.flush();
-						System.out.println("Bean fetched and  written "+byteArray.length);
+		
+						ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+						oos.writeObject(beanResult);
+						oos.flush();
 					}					
 					else if("networkvisibilityedit".equalsIgnoreCase(msg))
 					{
@@ -203,9 +180,11 @@ public class SecurityServer extends Server{
 						String userId = bean.getUsername();
 						NetworkVisibilityServerManager nwMgr = new NetworkVisibilityServerManager();
 						NetworkVisibilityBean beanresult = nwMgr.getBeanForUser(userId);
-						byte[] byteArray = beanresult.write();
-						os.write(byteArray);
-						System.out.println("Bean fetched and  written "+byteArray.length);
+
+
+						ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+						oos.writeObject(beanresult);
+						oos.flush();
 					}					
 					else if("getallnetworks".equalsIgnoreCase(msg))
 					{
@@ -227,9 +206,9 @@ public class SecurityServer extends Server{
 						RegistrationServerManager gmgr = new RegistrationServerManager();
 //						System.out.println("Server msg called");
 						bean = gmgr.getUserInfo(userId);
-						byte[] byteArray = bean.write();
-						os.write(byteArray);
-						os.flush();
+						ObjectOutputStream oos = new ObjectOutputStream(os);
+						oos.writeObject(bean); //in the case of erroneous login we return null
+						oos.flush();
 					}
 					else if("Update".equalsIgnoreCase(msg))
 					{

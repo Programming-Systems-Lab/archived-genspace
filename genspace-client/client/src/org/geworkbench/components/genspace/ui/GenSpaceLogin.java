@@ -161,7 +161,9 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 							System.out.println("is valid");
 
 							LoginManager manager = new LoginManager(getBean());
+							System.out.println("Created login manager");
 							userLogin = manager.userLogin();
+							System.out.println("Logg in called");
 							user = manager.user;
 							if (userLogin) {
 								String msg = "User Logged in.";

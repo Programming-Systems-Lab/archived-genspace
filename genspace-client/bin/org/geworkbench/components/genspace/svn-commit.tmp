@@ -1,4 +1,0 @@
-Cleaned up logger for genspace to be static and only get 1 event
---This line, and those below, will be ignored--
-
-M    GenspaceLogger.java

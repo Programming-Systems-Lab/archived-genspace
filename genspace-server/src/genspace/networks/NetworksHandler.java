@@ -34,6 +34,7 @@ public class NetworksHandler {
 	}
 	public Object processMessage(Object m)
 	{
+		System.out.println("Received " + m);
 		return MessageProcessorFactory.getProcessor(m.getClass()).processMessage((NetworkMessage) m);
 	}
 

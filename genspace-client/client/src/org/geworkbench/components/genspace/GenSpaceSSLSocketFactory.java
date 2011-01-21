@@ -28,6 +28,7 @@ public class GenSpaceSSLSocketFactory implements X509TrustManager {
 
 		 
 		try {
+//			InputStream inStream = new FileInputStream("components/genspace/src/org/geworkbench/components/genspace/genspace-ssl-dev-key");
 			InputStream inStream = new FileInputStream("devKey");
 			 CertificateFactory cf = CertificateFactory.getInstance("X.509");
 			  cert = (X509Certificate)cf.generateCertificate(inStream);

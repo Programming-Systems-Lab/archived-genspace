@@ -4,16 +4,16 @@ public class RuntimeEnvironmentSettings {
 
 	
 	//Server startup ports
-	public static final int LOGIN_SERVER_PORT = 12340;
-	public static final int EVENT_SERVER_PORT = 12346;
-	public static final int SOCIAL_NETWORK_SERVER_PORT = 12342;
-	public static final int WORKFLOWVIS_SERVER_PORT = 12343;
-	public static final int NETWORKVIS_SERVER_PORT = 12344;
-	public static final int ISBU_SERVER_PORT = 12345;
-	public static final int TOOL_SERVER_PORT = 12341;
-	public static final int SECURITY_SERVER_PORT = 12347;
-	public static final int WORKFLOW_REPOSITORY_PORT = 12349;
-	public static final int SOCIAL_SERVER_PORT = 12348;
+	public static final int LOGIN_SERVER_PORT = 22340;
+	public static final int EVENT_SERVER_PORT = 22346;
+	public static final int SOCIAL_NETWORK_SERVER_PORT = 22342;
+	public static final int WORKFLOWVIS_SERVER_PORT = 22343;
+	public static final int NETWORKVIS_SERVER_PORT = 22344;
+	public static final int ISBU_SERVER_PORT = 22345;
+	public static final int TOOL_SERVER_PORT = 22341;
+	public static final int SECURITY_SERVER_PORT = 22347;
+	public static final int WORKFLOW_REPOSITORY_PORT = 22349;
+	public static final int SOCIAL_SERVER_PORT = 22348;
 	
 	//Database connection constants
 	public static final String DB_HOST = "boris.cs.columbia.edu";
