@@ -468,7 +468,6 @@ public class AddNetworkPanel extends javax.swing.JPanel {
 	private List<NetworkMessage> membersOfNetworkSelected;
 
 	private void lstNetworksMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_lstNetworksMouseClicked
-		System.out.println((String) lstNetworks.getSelectedValue());
 		membersOfNetworkSelected = f.listUsersByNetwork((String) lstNetworks
 				.getSelectedValue());
 		DefaultListModel model = new DefaultListModel();

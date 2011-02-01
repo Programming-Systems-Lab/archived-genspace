@@ -119,9 +119,6 @@ public class WorkflowVisualizationPanel extends JPanel {
 
 			// figure out which color - default is gray
 			Color myColor = Color.gray;
-			// System.out.println("Node is " + node + "; target is " + target);
-			// else if (nodes[i].isStart) color = Color.green;
-			// else if (count == nodes.length - 1) color = Color.red;
 
 			int myHeight = 40;
 			// use the number of characters to figure out the width
@@ -348,7 +345,6 @@ public class WorkflowVisualizationPanel extends JPanel {
 		 */
 		@Override
 		public void graphChanged(GraphModelEvent e) {
-			// System.out.println("GRAPH CHANGED! " + e.toString());
 		}
 
 		// stores the time when "valueChanged" was last called
@@ -455,9 +451,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 					// highlight it
 					if (cell instanceof GraphEdge) {
 						GraphEdge edge = (GraphEdge) cell;
-						// System.out.println("edge: " + edge.sourceNode + " " +
-						// edge.destNode);
-
+					
 						// see if it's in the list of edges for these workflows
 						if (workflowEdges.contains(new Edge(edge.sourceNode,
 								edge.destNode))) {
@@ -495,8 +489,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 						else {
 							GraphConstants.setGradientColor(
 									theCell.getAttributes(), theCell.color);
-							// System.out.println("reset " +
-							// theCell.getUserObject());
+						
 						}
 
 					}
@@ -527,7 +520,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 			/*
 			 * // if they click on an edge... though a DefaultEdge *is* a
 			 * DefaultGraphCell, so this would need to move up!!!!! else if (o
-			 * instanceof DefaultEdge) System.out.println("clicked on " +
+			 * instanceof DefaultEdge) System.out.prin tln("clicked on " +
 			 * ((DefaultEdge)o).getUserObject());
 			 */
 		}

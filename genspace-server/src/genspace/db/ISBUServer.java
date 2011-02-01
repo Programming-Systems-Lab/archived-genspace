@@ -38,11 +38,11 @@ public class ISBUServer extends Server {
 
 	public void run() {
 		try {
-			System.out.println("Initializing suggestion engine...");
+//			System.out.println("Initializing suggestion engine...");
 			ISBUSuggestionEngine engine = new ISBUSuggestionEngineImpl();
 			// initialize the suggestion engine
 			engine.engineInitialization();
-			System.out.println("Server initialized");
+//			System.out.println("Server initialized");
 			
 			long i = 0;
 			long count = 1000;
@@ -352,8 +352,8 @@ class Handler extends ServerHandler {
 						.toArray(new String[1]), true);
 
 				if (currentNode == null) {
-					System.out
-							.println("Could not find or create this requested workflow.");
+//					System.out
+//							.println("Could not find or create this requested workflow.");
 					respond("none");
 					return;
 				}
@@ -381,7 +381,7 @@ class Handler extends ServerHandler {
 				//if there are no ratings for any children
 				if (max == null || max.getOverallRating() == 0){
 					respond("none");
-					System.out.println("No ratings available for workflow children.");
+//					System.out.println("No ratings available for workflow children.");
 				}
 				else {
 					String result = 
@@ -409,14 +409,14 @@ class Handler extends ServerHandler {
 				WorkflowNode currentNode = wManager.getWorkflowNode(workflow.toArray(new String[workflow.size()]), false);
 
 				if (currentNode == null) {
-					System.out
-							.println("Could not find or create this requested workflow.");
+//					System.out
+//							.println("Could not find or create this requested workflow.");
 					respond(null);
 					return;
 				}
 
 				// write out rating
-				System.out.println("Workflow ID: " + currentNode.getId());
+//				System.out.println("Workflow ID: " + currentNode.getId());
 				respond(new Integer(currentNode.getId()));
 			}
 			

@@ -107,7 +107,6 @@ public class CachingNetworkManager
 			{
 				// if we get here, that's a problem. It would mean that the first check
 				// passed up above, which means we have a data integrity problem...
-				System.out.println("Oh crap: " + network_name + " contains " + user_name + " but not the other way around");
 				return false;
 			}
 			else

@@ -94,7 +94,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 					analysisToolSet.add(rs.getString(1));
 				}
             }
-            else System.out.println("Error: No active Connection");
+//            else System.out.println("Error: No active Connection");
         }
         catch(Exception e)
         {
@@ -106,34 +106,10 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			closeConnection();
 		}
 		
-		System.out.println("The current global analysis tool set: (with uniform assigned tool ID)");
-		System.out.println("There are altogether " + analysisToolSet.size() + " tools available.");
-		/*
-		for (String s : analysisToolSet) {
-			System.out.println(s);
-		}
-		*/
-		/*
-		for (int i = 0; i < analysisToolSet.size(); i++) {
-			System.out.println("Tool ID: " + i + ";   Tool Name: " + analysisToolSet.get(i));
-		}
-		*/
-		System.out.println();
 		
 		//Now we build the tool ID index
-		System.out.println("Building Tool ID index...");
 		for (int i = 0; i < analysisToolSet.size(); i++) {
 			toolIDIndex.put(analysisToolSet.get(i), String.valueOf(i));
-		}
-		System.out.println("Tool ID index finished.");
-		Set entries = toolIDIndex.entrySet();
-		Iterator it = entries.iterator();
-		while (it.hasNext()) {
-			
-			Map.Entry entry = (Map.Entry)it.next();
-			Object key = entry.getKey();
-			Object value = entry.getValue();
-			System.out.println("Tool name: " + key + "   Tool ID: " + value);
 		}
 
 	}
@@ -375,7 +351,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 				//###here , a tiny problem still exists??
 				//###now that we have entered a new T, before we save the last WF, we get the time stamp for the last WF and calculate Exp backoff
 				
-				System.out.println();
+//				System.out.println();
 				//System.out.println("This is the end of a Transaction, the ending time stamp for this T (WF) is " + currentTimeForUseOfLastTInRS.toString());
 				//System.out.println("Calculating Expinential Backoff for the current WORK FLOW appearance....");
 				Date now = new Date();
@@ -399,37 +375,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 				completeTransactionList.add(currentTransactionWorkFlow);
 				currentTransactionWorkFlow = "";
 				
-				
-				
-				
-				
-				
-				//After the whole RS is traversed, by now we should already created and filled in this two stuff:
-				//completeTransactionList & analysisToolIndex
-				//Now let's print it out and see what's in it
-				System.out.println();
-				System.out.println("Now we get the complete transaction / work flow list for each T: (including repetition)");
-				int n = 1;
-				for (String s : completeTransactionList) {
-					System.out.println(n + ": " + s);
-					n++;
-				}
-				
-				System.out.println();
-				System.out.println("Now we go through the tool index (index 1): Tool name & historical times of use");
-				
-				Set entries = analysisToolIndex.entrySet();
-				Iterator it = entries.iterator();
-				while (it.hasNext()) {
-					
-					Map.Entry entry = (Map.Entry)it.next();
-					Object key = entry.getKey();
-					Object value = entry.getValue();
-					System.out.println(key + ": " + value);
-				}
-				
             }
-            else System.out.println("Error: No active Connection");
         }
         catch(Exception e)
         {
@@ -515,8 +461,8 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 		}
 		
 		//Now we have already filled in the index 2, let's print it out
-		System.out.println();
-		System.out.println("Now we go through the work flow index (index 2): work flow name & historical times of use");
+//		System.out.println();
+//		System.out.println("Now we go through the work flow index (index 2): work flow name & historical times of use");
 		
 		Set entries = workFlowIndex.entrySet();
 		Iterator it = entries.iterator();
@@ -525,7 +471,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			Map.Entry entry = (Map.Entry)it.next();
 			Object key = entry.getKey();
 			Object value = entry.getValue();
-			System.out.println(key + ": " + value);
+//			System.out.println(key + ": " + value);
 		}
 		
 
@@ -571,8 +517,8 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 		}
 		
 		//now we have finished filling in the second index value of index 1, let's print out this newer version of index 1
-		System.out.println();
-		System.out.println("Now we go through the 2nd version of index 1 (with 2 index values):");
+//		System.out.println();
+//		System.out.println("Now we go through the 2nd version of index 1 (with 2 index values):");
 		Set entries1 = analysisToolIndex.entrySet();
 		Iterator it1 = entries1.iterator();
 		while (it1.hasNext()) {
@@ -717,10 +663,10 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 		
 		
 		//now we have finished step 1, index 3 and index 4 have been built up and filled in, now we print them out
-		System.out.println();
-		System.out.println("Done building index 3 and index 4.");
-		System.out.println();
-		System.out.println("Here is index 3: a " + analysisToolSet.size() + " by " + analysisToolSet.size() + " matrix representing the relationship between each node and its next node:");
+//		System.out.println();
+//		System.out.println("Done building index 3 and index 4.");
+//		System.out.println();
+//		System.out.println("Here is index 3: a " + analysisToolSet.size() + " by " + analysisToolSet.size() + " matrix representing the relationship between each node and its next node:");
 		Set entries1 = nextToolIndex.entrySet();
 		Iterator it1 = entries1.iterator();
 		while (it1.hasNext()) {
@@ -731,8 +677,8 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			System.out.println(key + ": " + value);
 		}
 		
-		System.out.println();
-		System.out.println("Here is index 4: a " + analysisToolSet.size() + " by " + analysisToolSet.size() + " matrix representing the relationship between each node and its previous node:");
+//		System.out.println();
+//		System.out.println("Here is index 4: a " + analysisToolSet.size() + " by " + analysisToolSet.size() + " matrix representing the relationship between each node and its previous node:");
 		Set entries2 = previousToolIndex.entrySet();
 		Iterator it2 = entries2.iterator();
 		while (it2.hasNext()) {
@@ -740,9 +686,9 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			Map.Entry entry2 = (Map.Entry)it2.next();
 			Object key = entry2.getKey();
 			Object value = entry2.getValue();
-			System.out.println(key + ": " + value);
+//			System.out.println(key + ": " + value);
 		}
-		System.out.println();
+//		System.out.println();
 		
 		
 		
@@ -872,9 +818,6 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 		}
 		//sorting
 		Collections.sort(sortedIndex1By1stValue);
-		System.out.println();
-		System.out.println("Finish sorting index 1 by its 1st value. ");
-		
 		
 		//Step 2
 		Set entries2 = analysisToolIndex.entrySet();
@@ -891,10 +834,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			sortedIndex1By2ndValue.add(newUnit);
 		}
 		//sorting
-		Collections.sort(sortedIndex1By2ndValue);
-		System.out.println();
-		System.out.println("Finish sorting index 1 by its 2nd value. ");
-		
+		Collections.sort(sortedIndex1By2ndValue);		
 		
 		//Step 3 ####
 		Set entries3 = workFlowIndexCopyForEBValue.entrySet();//####
@@ -910,34 +850,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			sortedIndex2ByOnlyValue.add(newUnit);
 		}
 		//sorting
-		Collections.sort(sortedIndex2ByOnlyValue);
-		System.out.println();
-		System.out.println("Finish sorting EB-COPY of index 2 by its only value (this value contains Exp Backoff weights!). ");
-		System.out.println();
-		System.out.println("Finish Sorting. Now we have a look at the sorting result:");
-		System.out.println();
-		System.out.println("Sorted index 1 by its 1st value:");
-		
-		for (CompareUnit unit : sortedIndex1By1stValue) {
-			System.out.println("Tool name: " + unit.getName() + "      Historical times of use: " + unit.getValue());
-		}
-		
-		System.out.println();
-		System.out.println("Sorted index 1 by its 2nd value:");
-		
-		for (CompareUnit unit : sortedIndex1By2ndValue) {
-			System.out.println("Tool name: " + unit.getName() + "      Historical times of being the head of a WF: " + unit.getValue());
-		}
-		
-		System.out.println();
-		System.out.println("Sorted index 2 by its only value:");
-		
-		for (CompareUnit unit : sortedIndex2ByOnlyValue) {
-			System.out.println("Work Flow name: " + unit.getName() + "       Historical times of use: " + unit.getValue());
-		}
-		
-		
-		
+		Collections.sort(sortedIndex2ByOnlyValue);		
 		
 	}//end of method
 	
@@ -1042,69 +955,7 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 		}
 		*/
 		
-		
-		
-		//finished ----------------------
-		System.out.println();
-		System.out.println("Now we have a look at the FINAL version (the final version for the summer period) of index 1, (with all 8 values including Exp-backoff)");
-		Set entries2 = analysisToolIndex.entrySet();
-		Iterator it2 = entries2.iterator();
-		while (it2.hasNext()) {
-			
-			Map.Entry entry2 = (Map.Entry)it2.next();
-			Object key = entry2.getKey();
-			System.out.println("Tool Name: " + key + " " );
-			ArrayList valueList = (ArrayList)entry2.getValue();
-			System.out.println("Historical times of use: " + valueList.get(0));
-			System.out.println("Historical times of being the WF head: " + valueList.get(1));
-			System.out.println("Most popular node next to it: " + valueList.get(2));
-			System.out.println("Most popular node before it: " + valueList.get(3));
-			
-			//int topX = valueList.size() - 4;
-			System.out.println("Top 3 work flows containing it:");
-			/*
-			if (topX != 3) {//we have found less than 3
-				System.out.println("SORRY! We only found " + topX + " work flows..., they are:");
-				int toBeginWith = 4;//we begin printing from index = 4
-				for (int k = toBeginWith; k < valueList.size(); k++) {
-					System.out.println(valueList.get(k));
-				}
-			}
-			else {//we have found 3
-				System.out.println(valueList.get(4));
-				System.out.println(valueList.get(5));
-				System.out.println(valueList.get(6));
-			}
-			System.out.println();
-			*/
-			
-			System.out.println(valueList.get(4));
-			System.out.println(valueList.get(5));
-			System.out.println(valueList.get(6));
-			
-			System.out.println("All workflows including this tool: ");
-			System.out.println("BEGIN ----");
-			HashSet<String> temp = (HashSet)valueList.get(8);
-			System.out.println("SIZE: " + temp.size() );
-			for (String each : temp) {
-				System.out.println("// " + each);
-			}
-			
-			System.out.println("END ---");
-			System.out.println();
-			System.out.println();
-			
-		}
-		
-		
-		
-		
 	}
-	
-	
-	
-	
-	
 	
 	
 	/**
@@ -1149,16 +1000,15 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 		
 		int times = 0;
 		
-		System.out.println("Now we are looking up CWF: " + cwf);
+//		System.out.println("Now we are looking up CWF: " + cwf);
 		if (workFlowIndex.get(cwf) != null) {//if we do have such a work flow in index2
 			times = ((Integer)workFlowIndex.get(cwf)).intValue();
-			System.out.println("CWF exists! time of use: " + times);
+//			System.out.println("CWF exists! time of use: " + times);
 			
 		}
-		else {//if the cwf does NOT exist in index2
-			System.out.println("CWF not in index!");
-			
-		}
+//		else {//if the cwf does NOT exist in index2
+//			System.out.println("CWF not in index!");	
+//		}
 		
 		return times;
 		
@@ -1293,13 +1143,13 @@ public class ISBUManager extends DatabaseManager implements Serializable {
 			}
 			
 			/*DEBUG*/
-			System.out.println("workflows size: "+workflows.size());
-			Collection<Workflow> c = workflows.values();
-			int count = 0;
-			for(Workflow w: c){
-				count+= w.usageCount;
-			}
-			System.out.println("total # of workflow usage: "+count);
+//			System.out.println("workflows size: "+workflows.size());
+//			Collection<Workflow> c = workflows.values();
+//			int count = 0;
+//			for(Workflow w: c){
+//				count+= w.usageCount;
+//			}
+//			System.out.println("total # of workflow usage: "+count);
 			
 			
 			/** for each workflow, find the corresponding id in the workflows DB table*/
@@ -1474,3 +1324,4 @@ class CompareUnit implements Comparable, Serializable{
 
 
 
+//

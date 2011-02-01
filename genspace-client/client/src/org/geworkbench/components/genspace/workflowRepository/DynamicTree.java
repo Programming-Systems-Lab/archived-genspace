@@ -187,8 +187,8 @@ public class DynamicTree extends JPanel implements ActionListener,
 			int index = e.getChildIndices()[0];
 			node = (DefaultMutableTreeNode) (node.getChildAt(index));
 
-			System.out.println("The user has finished editing the node.");
-			System.out.println("New value: " + node.getUserObject());
+//			System.out.println("The user has finished editing the node.");
+//			System.out.println("New value: " + node.getUserObject());
 			// TODO change the name in the DB
 		}
 

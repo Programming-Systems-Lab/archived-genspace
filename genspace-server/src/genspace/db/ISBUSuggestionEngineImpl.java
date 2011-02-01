@@ -41,14 +41,14 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 		try {
 
 			//first we read in the analysis result file stored on the server side
-			System.out.println("ISBU Suggestion Engine - reading index file");
+//			System.out.println("ISBU Suggestion Engine - reading index file");
 			File fileFromStorage = new File(FILE_PATH);
 			input = new ObjectInputStream(new FileInputStream(fileFromStorage));
 			dbManager = (ISBUManager) input.readObject();
 			input.close();
 		}
 		catch (Exception e) {
-			System.out.println("Error:" + e);
+			System.err.println("Error:" + e);
 		}
 
 	}
@@ -245,7 +245,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 					allUserList.add(rs.getString(1));
 				}
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -288,7 +288,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 					allUserList.add(rs.getString(1));
 				}
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -531,7 +531,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 					allInboxMsgList.add(rs.getString(1) + "#" + rs.getString(2)+"#"+rs.getString(3)+"#"+rs.getString(4)+"#");//ATTENTION we use '#' as the delimeter
 				}
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -572,7 +572,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 				//???what is the error code here???
 
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -617,7 +617,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 					allOutboxMsgList.add(rs.getString(1) + "#" + rs.getString(2)+"#"+rs.getString(3)+"#"+rs.getString(4)+"#");//ATTENTION we use '#' as the delimeter
 				}
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -661,7 +661,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 				//???what is the error code here???
 
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -784,7 +784,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 					allRatingList.add(rs.getString(1) + "#" + rs.getString(2));//ATTENTION we use '#' as the delimeter
 				}
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{
@@ -824,7 +824,7 @@ public class ISBUSuggestionEngineImpl extends DatabaseManager implements ISBUSug
 					allOutboxMsgList.add(rs.getString(1) + "#" + rs.getString(2));//ATTENTION we use '#' as the delimeter
 				}
 			}
-			else System.out.println("Error: No active Connection");
+//			else System.out.println("Error: No active Connection");
 		}
 		catch(Exception e)
 		{

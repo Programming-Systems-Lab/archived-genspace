@@ -90,9 +90,4 @@ public class NetworkFacade extends Facade {
 		n.subject = name;
 		return sendNetworkMessage(n).children;
 	}
-
-	public static void main(String[] args) {
-		NetworkFacade f = new NetworkFacade();
-		System.out.println(f.createNetwork("test network"));
-	}
 }

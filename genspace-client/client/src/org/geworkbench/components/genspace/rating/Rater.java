@@ -26,10 +26,6 @@ public class Rater {
 		args.add(new Integer(rating));
 		RatingBean newRating = (RatingBean) ServerRequest.get(server,
 				writeCommand, args);
-
-		// System.out.println(user + " submitted rating to " + server.getHost()
-		// + ":" + id + " as a " + rating);
-
 		return newRating;
 	}
 
@@ -39,8 +35,7 @@ public class Rater {
 		args.add(user);
 		RatingBean currentRating = (RatingBean) ServerRequest.get(server,
 				getCommand, args);
-		// System.out.println(user + " requested rating for " + server.getHost()
-		// + ":" + id + ". Response: " + currentRating);
+
 		return currentRating;
 	}
 }

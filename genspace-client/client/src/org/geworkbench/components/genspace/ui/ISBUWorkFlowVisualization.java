@@ -304,7 +304,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 							}
 
 						} catch (Exception except) {
-							System.out.println("$$$$$$$$$$$$$$$$Exception");
+//							System.out.println("$$$$$$$$$$$$$$$$Exception");
 							except.printStackTrace();
 						}
 						/* Koichrio added END */

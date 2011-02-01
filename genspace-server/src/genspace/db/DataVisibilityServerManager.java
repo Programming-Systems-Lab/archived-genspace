@@ -69,7 +69,7 @@ public class DataVisibilityServerManager extends DatabaseManager {
 				Object[] networks = net.toArray();
 				
 				for (int i = 0; i < networks.length; i++) {
-					System.out.println("Working on " +networks[i].toString());
+//					System.out.println("Working on " +networks[i].toString());
 					String query = "INSERT INTO network_visibility(username, user_data_option, networkname) VALUES (?,0,?)";
 					PreparedStatement stmt = con.prepareStatement(query);
 					stmt.setString(1, dbean.getUsername());
@@ -77,8 +77,8 @@ public class DataVisibilityServerManager extends DatabaseManager {
 					stmt.executeUpdate();
 				}
 
-			} else
-				System.out.println("Error: No active Connection");
+			} //else
+				//System.out.println("Error: No active Connection");
 		} catch (Exception e) {
 			e.printStackTrace();
 			if (Logger.isLogError())
@@ -118,8 +118,7 @@ public class DataVisibilityServerManager extends DatabaseManager {
 					return -1;
 				}
 
-			} else
-				System.out.println("Error: No active Connection");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			if (Logger.isLogError())
@@ -152,9 +151,6 @@ public class DataVisibilityServerManager extends DatabaseManager {
 				if (rs.next()) {
 					logdata = rs.getInt("logdata");
 				} else {
-					System.out
-							.println("No corresponding row for the username: "
-									+ dbean.getUsername());
 					return -1;
 				}
 			}
@@ -231,7 +227,6 @@ public class DataVisibilityServerManager extends DatabaseManager {
 					while (rs1.next()) {
 						String name = rs1.getString("networkname");
 						selectedNetworks.add(name);
-						System.out.println("Addeed "+name);
 					}
 					bean.setSelectedNetworks(selectedNetworks);
 					bean.setMessage("Success");
@@ -263,11 +258,9 @@ public class DataVisibilityServerManager extends DatabaseManager {
         boolean success= false;
 		DataVisibilityBean bean = new DataVisibilityBean();
 		try{
-			System.out.println("User:"+userId);
 			con = getConnection();
 			String query = "delete  from network_visibility " 
 				+" where user_data_option = 0 and username = ?";
-			System.out.println("Deleting for "+userId);
 			if(con != null){ 
 				PreparedStatement ps = con.prepareStatement(query);
 				ps.setString(1, userId);
@@ -329,8 +322,7 @@ public class DataVisibilityServerManager extends DatabaseManager {
 					String username = rs.getString("username");
 					usernames.add(username);
 				}
-			} else
-				System.out.println("Error: No active Connection");
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 			if (Logger.isLogError())
@@ -381,8 +373,7 @@ public class DataVisibilityServerManager extends DatabaseManager {
 					String network = rs.getString(1);
 					networks.add(network);
 				}
-			} else
-				System.out.println("Error: No active Connection");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			if (Logger.isLogError())

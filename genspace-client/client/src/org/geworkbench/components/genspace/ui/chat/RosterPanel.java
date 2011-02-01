@@ -76,8 +76,6 @@ public class RosterPanel extends javax.swing.JPanel implements RosterListener {
 
 		@Override
 		public Object getElementAt(int index) {
-			// System.out.println(keys.get(index));
-			// System.out.println(roster.getPresence(keys.get(index)));
 			String color = "black";
 			Presence p = roster.getPresence(keys.get(index));
 			if (p.getType().equals(Presence.Type.unavailable)) {
@@ -123,9 +121,7 @@ public class RosterPanel extends javax.swing.JPanel implements RosterListener {
 	@Override
 	public void presenceChanged(Presence p) {
 		lstRoster.repaint();
-		System.out.println("Presence change");
-		System.out.println(p.getFrom());
-		System.out.println(p);
+
 	}
 
 	/** Creates new form RosterPanel */

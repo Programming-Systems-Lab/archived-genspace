@@ -129,7 +129,6 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 						Integer id = (Integer) ServerRequest.get(
 								RuntimeEnvironmentSettings.ISBU_SERVER,
 								"getWFId", workflow);
-						System.out.println(id);
 						if (id != null)
 							wni = id;
 						else
@@ -257,7 +256,6 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 						UserWorkflow uw = (UserWorkflow) ServerRequest.get(
 								RuntimeEnvironmentSettings.ISBU_SERVER,
 								"addUWF", params);
-						System.out.println("uw " + uw);
 						if (uw == null) {
 							JOptionPane
 									.showMessageDialog(

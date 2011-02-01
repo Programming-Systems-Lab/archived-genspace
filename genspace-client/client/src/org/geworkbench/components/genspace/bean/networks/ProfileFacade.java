@@ -7,7 +7,6 @@ import org.geworkbench.components.genspace.bean.networks.NetworkMessage.Request;
 
 public class ProfileFacade extends Facade {
 	public int getNumRequests() {
-		System.out.println("Calling out fo rnum requests");
 		Profile p = new Profile();
 		p.subject = "reqCount";
 		p.reqType = NetworkMessage.Request.LIST;

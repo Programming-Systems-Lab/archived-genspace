@@ -154,20 +154,14 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 					try {
 						StringBuffer errMsg = new StringBuffer();
 
-						System.out.println("after try");
 						if (isValid(errMsg))
-
 						{
-							System.out.println("is valid");
 
 							LoginManager manager = new LoginManager(getBean());
-							System.out.println("Created login manager");
 							userLogin = manager.userLogin();
-							System.out.println("Logg in called");
 							user = manager.user;
 							if (userLogin) {
 								String msg = "User Logged in.";
-								System.out.println(msg);
 								isLoggedIn = true;
 								GenSpace.getInstance().handleLogin();
 								genspaceLogin = tf.getText();
@@ -185,7 +179,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 
 							} else {
 								String msg = "User Log in failed.";
-								System.out.println(msg);
 								JOptionPane.showMessageDialog(getComponent(),
 										msg);
 							}
@@ -193,7 +186,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 							JOptionPane.showMessageDialog(getComponent(),
 									errMsg.toString(), "Error Information",
 									JOptionPane.INFORMATION_MESSAGE);
-							System.out.println("Error Information");
 							getThisPanel().revalidate();
 						}
 					} catch (Exception ex) {

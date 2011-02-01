@@ -182,10 +182,10 @@ public class LoginManager {
 			os.writeObject(bean);
 			os.flush();
 			
-			System.out.println("Wrote");
+//			System.out.println("Wrote");
 			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
 			user = (User) ois.readObject();
-			System.out.println("Read");
+//			System.out.println("Read");
 			// System.out.println(user);
 			boolean ret = false;
 			// BufferedReader socketBr = new BufferedReader(new

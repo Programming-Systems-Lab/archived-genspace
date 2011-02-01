@@ -41,7 +41,6 @@ public class GenSpace {
         // start the scripts
         ScriptRunner scriptrunner = new ScriptRunner();
         while (true) { // Simplified version of "stick around" wait
-            System.out.println("waiting");
             Thread.sleep(60*60*1000);
         }
         

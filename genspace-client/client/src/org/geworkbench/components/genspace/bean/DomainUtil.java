@@ -37,7 +37,6 @@ public class DomainUtil {
 	public static ArrayList<String> fromWorkflowStringToList(String workflow) {
 		ArrayList<String> result = new ArrayList<String>();
 		String[] tools = workflow.split(",");
-		System.out.println("split " + tools.length);
 		for (String t : tools) {
 			result.add(t);
 		}

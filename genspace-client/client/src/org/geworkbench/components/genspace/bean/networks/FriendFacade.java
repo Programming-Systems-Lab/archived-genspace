@@ -32,7 +32,6 @@ public class FriendFacade extends Facade {
 		Friend request = new Friend();
 		request.reqType = Request.CREATE;
 		request.subject = user;
-		System.out.println("Adding friend " + user);
 		List<NetworkMessage> response = sendNetworkMessage(request).children;
 		// Also do the XMPP roster change
 
@@ -43,9 +42,6 @@ public class FriendFacade extends Facade {
 							+ RuntimeEnvironmentSettings.XMPP_HOST,
 					p.profile.get("first_name") + " "
 							+ p.profile.get("last_name"), null);
-			// ChatReceiver.manager.
-			// System.out.println("Added friend <"+p.profile.get("username")+"@"+RuntimeEnvironmentSettings.XMPP_HOST+"> for "
-			// + GenSpaceLogin.genspaceLogin);
 		} catch (XMPPException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

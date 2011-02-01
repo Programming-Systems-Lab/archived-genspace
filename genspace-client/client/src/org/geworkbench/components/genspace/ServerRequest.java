@@ -48,8 +48,8 @@ public class ServerRequest {
 		ArrayList args = new ArrayList();
 		args.add("ARACNE");
 
-		System.out.println(ServerRequest.get(
-				RuntimeEnvironmentSettings.TOOL_SERVER, "getToolId", args));
+//		System.out.println(ServerRequest.get(
+//				RuntimeEnvironmentSettings.TOOL_SERVER, "getToolId", args));
 
 	}
 

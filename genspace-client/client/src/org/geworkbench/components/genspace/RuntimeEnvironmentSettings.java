@@ -25,7 +25,7 @@ public class RuntimeEnvironmentSettings {
 	public static final ServerConfig NETWORK_VIS_SERVER = new ServerConfig(
 			SERVER, 22344);
 	public static final ServerConfig LOOKUP_SERVER = new ServerConfig(
-			LOOKUP_HOST, 22346);
+			LOOKUP_HOST, 12346);
 	public static final ServerConfig ISBU_SERVER = new ServerConfig(SERVER,
 			22345);
 	public static final ServerConfig TOOL_SERVER = new ServerConfig(SERVER,
@@ -35,7 +35,7 @@ public class RuntimeEnvironmentSettings {
 	public static final ServerConfig SOCIAL_SERVER = new ServerConfig(SERVER,
 			22348);
 	public static final ServerConfig WORKFLOW_REPOSITORY_SERVER = new ServerConfig(
-			SERVER, 22349);
+			SERVER, 12349);
 
 	public static final String XMPP_HOST = DEVEL_HOST;
 	public static final String DEFAULT_USER = "";

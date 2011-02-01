@@ -33,7 +33,7 @@ public class NetworkVisualization extends JPanel implements VisualPlugin,
 	// TODO: Fix the NullPointerExceptions
 
 	public NetworkVisualization() {
-		System.out.println("Network Visualization started");
+//		System.out.println("Network Visualization started");
 
 		initComponents();
 	}

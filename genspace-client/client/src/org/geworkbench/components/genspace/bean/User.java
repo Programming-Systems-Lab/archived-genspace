@@ -28,7 +28,7 @@ public class User implements Serializable {
 		for (UserWorkflow uw : workflows) {
 			result += uw.toString() + "\n";
 		}
-		System.out.println(result);
+
 		result += "Inbox: " + inbox.size() + "\n";
 		for (WorkflowInbox wi : inbox) {
 			result += wi.toString() + "\n";

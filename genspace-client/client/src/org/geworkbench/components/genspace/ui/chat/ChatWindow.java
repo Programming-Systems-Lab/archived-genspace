@@ -153,7 +153,6 @@ public class ChatWindow extends javax.swing.JFrame {
 				screenShareFrame.setVisible(false);
 			} else {
 				// This is an unknown screen type.
-				System.err.println(m.getProperty("specialType"));
 			}
 		}
 	}
@@ -250,7 +249,6 @@ public class ChatWindow extends javax.swing.JFrame {
 			ret.setProperty("port", screenListener.getLocalPort());
 			try {
 				chat.sendMessage(ret);
-				System.out.println("Sent handshake");
 			} catch (XMPPException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

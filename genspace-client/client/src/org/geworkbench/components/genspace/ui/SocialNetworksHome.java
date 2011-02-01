@@ -78,7 +78,7 @@ public class SocialNetworksHome {
 			public void mouseClicked(MouseEvent e) {
 				String source = ((JLabel) e.getSource()).getText()
 						.replace("<html><u>", "").replace("</u></html>", "");
-				System.out.println("Click@" + source);
+//				System.out.println("Click@" + source);
 				if (source.equals("My Networks")) {
 					setContent(networks);
 				} else if (source.equals("My Profile")) {

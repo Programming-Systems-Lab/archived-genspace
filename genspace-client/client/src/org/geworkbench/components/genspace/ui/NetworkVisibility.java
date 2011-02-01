@@ -40,12 +40,12 @@ public class NetworkVisibility extends JPanel implements VisualPlugin,
 	private String username = "";
 
 	public NetworkVisibility() {
-		System.out.println("Data Visibility Options");
+//		System.out.println("Data Visibility Options");
 		initComponents();
 	}
 
 	public NetworkVisibility(String uName) {
-		System.out.println("Data Visibility Options");
+//		System.out.println("Data Visibility Options");
 		LoginManager manager = new LoginManager();
 		NetworkVisibilityBean bean = manager.getNWVisibilityBean(uName);
 		username = uName;
@@ -116,9 +116,9 @@ public class NetworkVisibility extends JPanel implements VisualPlugin,
 		int[] selectedIndices = new int[selectedNetworks.size()];
 		int j = 0;
 		for (int i = 0; i < allNetworks.size(); i++) {
-			System.out.println("Checking on" + allNetworks.get(i));
+//			System.out.println("Checking on" + allNetworks.get(i));
 			if (selectedNetworks.contains(allNetworks.get(i))) {
-				System.out.println("Found in selected");
+//				System.out.println("Found in selected");
 				selectedIndices[j] = i;
 				j++;
 			}

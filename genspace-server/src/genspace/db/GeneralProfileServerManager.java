@@ -72,8 +72,8 @@ public class GeneralProfileServerManager extends DatabaseManager{
 				stmt.executeUpdate(query);
 				
 				
-			} else
-				System.out.println("Error: No active Connection");
+			} //else
+				//System.out.println("Error: No active Connection");
 		} catch (Exception e) {
 			e.printStackTrace();
 			if (Logger.isLogError())
@@ -87,7 +87,7 @@ public class GeneralProfileServerManager extends DatabaseManager{
 	}
 	
 	public RegisterBean getUserInfo(String username){
-		System.out.println("Called");
+//		System.out.println("Called");
 		RegisterBean rbean = new RegisterBean();
 		try {
 			// get a database connection
@@ -109,8 +109,8 @@ public class GeneralProfileServerManager extends DatabaseManager{
 				rbean.setState(rs1.getString("state"));
 				rbean.setZipcode(rs1.getString("zipcode"));
 						
-			} else
-				System.out.println("Error: No active Connection");
+			} //else
+				//System.out.println("Error: No active Connection");
 		} catch (Exception e) {
 			e.printStackTrace();
 			if (Logger.isLogError())

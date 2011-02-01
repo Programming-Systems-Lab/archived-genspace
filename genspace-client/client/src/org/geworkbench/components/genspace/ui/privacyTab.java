@@ -240,7 +240,7 @@ public class privacyTab extends SocialTab {
 					for (NetworkMessage t : cachedFriends) {
 						m.addElement(t);
 						if (t.details.equals("YES")) {
-							System.out.println("Selected: " + t.subject);
+//							System.out.println("Selected: " + t.subject);
 							selected.add(i);
 						}
 						i++;
