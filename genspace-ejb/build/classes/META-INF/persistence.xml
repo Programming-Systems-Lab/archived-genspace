@@ -1,0 +1,26 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+     <persistence-unit name="genspace_persist">
+         <jta-data-source>jdbc/GenSpaceDB</jta-data-source>
+         <class>edu.columbia.cs.psl.genspace.entity.AnalysisEvent</class>
+         <class>edu.columbia.cs.psl.genspace.entity.AnalysisEventParameter</class>
+         <class>edu.columbia.cs.psl.genspace.entity.Friend</class>
+         <class>edu.columbia.cs.psl.genspace.entity.IncomingWorkflow</class>
+         <class>edu.columbia.cs.psl.genspace.entity.Network</class>
+         <class>edu.columbia.cs.psl.genspace.entity.Tool</class>
+         <class>edu.columbia.cs.psl.genspace.entity.ToolComment</class>
+         <class>edu.columbia.cs.psl.genspace.entity.Transaction</class>
+         <class>edu.columbia.cs.psl.genspace.entity.User</class>
+         <class>edu.columbia.cs.psl.genspace.entity.UserWorkflow</class>
+         <class>edu.columbia.cs.psl.genspace.entity.Workflow</class>
+         <class>edu.columbia.cs.psl.genspace.entity.WorkflowComment</class>
+         <class>edu.columbia.cs.psl.genspace.entity.WorkflowFolder</class>
+         <properties>
+           <!--Use the java2db feature -->
+           <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+		<property name="eclipselink.ddl-generation.output-mode" value="database" />
+           </properties>
+     </persistence-unit>
+</persistence>
