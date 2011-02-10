@@ -9,18 +9,28 @@
          <class>org.geworkbench.components.genspace.entity.IncomingWorkflow</class>
          <class>org.geworkbench.components.genspace.entity.Network</class>
          <class>org.geworkbench.components.genspace.entity.Tool</class>
+                  <class>org.geworkbench.components.genspace.entity.ToolRating</class>
+         
          <class>org.geworkbench.components.genspace.entity.ToolComment</class>
          <class>org.geworkbench.components.genspace.entity.Transaction</class>
          <class>org.geworkbench.components.genspace.entity.User</class>
+         <class>org.geworkbench.components.genspace.entity.UserNetwork</class>
          <class>org.geworkbench.components.genspace.entity.UserWorkflow</class>
          <class>org.geworkbench.components.genspace.entity.Workflow</class>
+                  <class>org.geworkbench.components.genspace.entity.WorkflowTool</class>
+         
+                  <class>org.geworkbench.components.genspace.entity.WorkflowRating</class>
+         
          <class>org.geworkbench.components.genspace.entity.WorkflowComment</class>
          <class>org.geworkbench.components.genspace.entity.WorkflowFolder</class>
          <properties>
            <!--Use the java2db feature -->
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-		<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-		<property name="eclipselink.ddl-generation.output-mode" value="database" />
+			<!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>--> 
+		<property name="eclipselink.ddl-generation" value="create-tables"/>
+		<property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
+		<property name="eclipselink.ddl-generation.output-mode" value="sql-script" />
+		<property name="eclipselink.application-location" value="/Users/jon/Documents/PSL/genspace/"/>
            </properties>
      </persistence-unit>
-</persistence>
+</persistence> 
