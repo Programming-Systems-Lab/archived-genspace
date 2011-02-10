@@ -1,0 +1,34 @@
+<geaw-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ConfigurationFile Schema.xsd">
+
+	<component  name="Patterns"
+				class="org.geworkbench.components.patterns.PatternViewAppComponent"
+				version="1.0"
+				author="C2B2"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				description="The function of this component has been replaced by the Sequence (Viewer) component."
+				visualizer="true"
+				
+				loadByDefault="false"
+				hidden="true"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+	</component>
+
+	<plugin id="PatternViewAppComponent" name="Patterns" class="org.geworkbench.components.patterns.PatternViewAppComponent" source="patterns">
+		<gui-area name="VisualArea"/>
+	</plugin>
+
+	<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+	    <component class="org.geworkbench.components.patterns.PatternViewAppComponent">
+	        <online-help helpSet="org/geworkbench/components/patterns/help/patternsHelpSet.hs"/>
+	        <menu-item path="File.Image snapshot" mode="onFocus" var="File.Image snapshot"/>
+	    </component>
+	</component-descriptor>
+
+</geaw-config>

@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/geworkbench/!svn/ver/7376/trunk/geworkbench/src/org/geworkbench/util
+END
+RandomSequenceGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/1024/trunk/geworkbench/src/org/geworkbench/util/RandomSequenceGenerator.java
+END
+ProgressBarT.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/3850/trunk/geworkbench/src/org/geworkbench/util/ProgressBarT.java
+END
+ClassifierException.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/1402/trunk/geworkbench/src/org/geworkbench/util/ClassifierException.java
+END
+FastMatrixModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/FastMatrixModel.java
+END
+BrowserLauncher.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/6281/trunk/geworkbench/src/org/geworkbench/util/BrowserLauncher.java
+END
+MatrixModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/3249/trunk/geworkbench/src/org/geworkbench/util/MatrixModel.java
+END
+ProgressBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/6926/trunk/geworkbench/src/org/geworkbench/util/ProgressBar.java
+END
+BinaryEncodeDecode.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/BinaryEncodeDecode.java
+END
+FilePathnameUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7347/trunk/geworkbench/src/org/geworkbench/util/FilePathnameUtils.java
+END
+hgText.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/hgText.txt
+END
+splashscreen.png
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/src/org/geworkbench/util/splashscreen.png
+END
+ProgressItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/7183/trunk/geworkbench/src/org/geworkbench/util/ProgressItem.java
+END
+TrainingTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/2085/trunk/geworkbench/src/org/geworkbench/util/TrainingTask.java
+END
+SaveImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/SaveImage.java
+END
+TrainingProgressListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/1402/trunk/geworkbench/src/org/geworkbench/util/TrainingProgressListener.java
+END
+OWFileChooser.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/6487/trunk/geworkbench/src/org/geworkbench/util/OWFileChooser.java
+END
+JAutoList.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/6618/trunk/geworkbench/src/org/geworkbench/util/JAutoList.java
+END
+Cursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/4039/trunk/geworkbench/src/org/geworkbench/util/Cursor.java
+END
+Distance.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/176/trunk/geworkbench/src/org/geworkbench/util/Distance.java
+END
+EuclideanDistance.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/src/org/geworkbench/util/EuclideanDistance.java
+END
+ProgressTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/7183/trunk/geworkbench/src/org/geworkbench/util/ProgressTask.java
+END
+QSort.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/QSort.java
+END
+RegularExpressionVerifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/RegularExpressionVerifier.java
+END
+BaseRuntimeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/BaseRuntimeException.java
+END
+AlgorithmSelectionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/6429/trunk/geworkbench/src/org/geworkbench/util/AlgorithmSelectionPanel.java
+END
+ColorScale.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/4717/trunk/geworkbench/src/org/geworkbench/util/ColorScale.java
+END
+PropertiesMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/5829/trunk/geworkbench/src/org/geworkbench/util/PropertiesMonitor.java
+END
+IndexSortComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/IndexSortComparator.java
+END
+PrintUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/4141/trunk/geworkbench/src/org/geworkbench/util/PrintUtils.java
+END
+Combinations.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/Combinations.java
+END
+BusySwingWorker.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/6884/trunk/geworkbench/src/org/geworkbench/util/BusySwingWorker.java
+END
+Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/7362/trunk/geworkbench/src/org/geworkbench/util/Util.java
+END
+SpearmanRankDistance.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/177/trunk/geworkbench/src/org/geworkbench/util/SpearmanRankDistance.java
+END
+ProgressGraph.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/util/ProgressGraph.java
+END
+DoubleIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/DoubleIterator.java
+END
+BoundedProgressListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/7183/trunk/geworkbench/src/org/geworkbench/util/BoundedProgressListener.java
+END
+BaseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/BaseException.java
+END
+CsvFileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7354/trunk/geworkbench/src/org/geworkbench/util/CsvFileFilter.java
+END
+ValidationUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/4071/trunk/geworkbench/src/org/geworkbench/util/ValidationUtils.java
+END
+CorrelationDistance.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/1577/trunk/geworkbench/src/org/geworkbench/util/CorrelationDistance.java
+END
+SplashBitmap.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/SplashBitmap.java
+END
+ProgressDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7183/trunk/geworkbench/src/org/geworkbench/util/ProgressDialog.java
+END
+Debug.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/Debug.java
+END

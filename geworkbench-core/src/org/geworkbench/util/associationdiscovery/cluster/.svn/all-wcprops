@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/6659/trunk/geworkbench/src/org/geworkbench/util/associationdiscovery/cluster
+END
+DSMatrixPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/associationdiscovery/cluster/DSMatrixPattern.java
+END
+CSMatrixPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/associationdiscovery/cluster/CSMatrixPattern.java
+END
+CSMatchedMatrixPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/associationdiscovery/cluster/CSMatchedMatrixPattern.java
+END

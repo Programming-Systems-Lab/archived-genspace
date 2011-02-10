@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/7358/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections
+END
+CSMarkerVector.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/geworkbench/!svn/ver/7344/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/CSMarkerVector.java
+END
+DSDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7067/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/DSDataSet.java
+END
+DSMatrixDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/geworkbench/!svn/ver/320/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/DSMatrixDataSet.java
+END
+CSDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7067/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/CSDataSet.java
+END
+CSDataSet.jbx
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/CSDataSet.jbx
+END
+CSAncillaryDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/3465/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/CSAncillaryDataSet.java
+END
+DSAncillaryDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/3465/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/DSAncillaryDataSet.java
+END
+GoAnalysisResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/geworkbench/!svn/ver/7166/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/GoAnalysisResult.java
+END

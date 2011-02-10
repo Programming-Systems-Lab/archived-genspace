@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/1550/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
+END
+DSLocusLinkIdentifiable.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSLocusLinkIdentifiable.java
+END
+DSSequential.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSSequential.java
+END
+DSAffyIdentifiable.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSAffyIdentifiable.java
+END
+DSNamed.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSNamed.java
+END
+DSAnnotated.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSAnnotated.java
+END
+CSExpressionStats.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSExpressionStats.java
+END
+DSUnigene.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSUnigene.java
+END
+CSUnigene.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/geworkbench/!svn/ver/1550/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSUnigene.java
+END
+DSDescribable.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSDescribable.java
+END
+DSIdentifiable.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSIdentifiable.java
+END
+CSExtendable.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/1533/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSExtendable.java
+END
+CSDescribable.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/1533/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSDescribable.java
+END
+DSExtendable.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSExtendable.java
+END
+DSHasActivation.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSHasActivation.java
+END

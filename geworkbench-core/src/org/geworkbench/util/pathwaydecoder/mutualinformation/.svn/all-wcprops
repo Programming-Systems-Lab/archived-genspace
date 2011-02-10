@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/7326/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation
+END
+NetBoostData.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/geworkbench/!svn/ver/3266/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/NetBoostData.java
+END
+AdjacencyMatrixDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/7326/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/AdjacencyMatrixDataSet.java
+END
+NetBoostAnalysisData.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/3265/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/NetBoostAnalysisData.java
+END
+AdjacencyMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/6046/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/AdjacencyMatrix.java
+END
+TargetInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/TargetInfo.java
+END
+ModulatorInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/geworkbench/!svn/ver/5131/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/ModulatorInfo.java
+END
+Edge.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/4121/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/Edge.java
+END
+EdgeListDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/3177/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/EdgeListDataSet.java
+END
+EdgeList.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/3177/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/EdgeList.java
+END
+MindyGeneMarker.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyGeneMarker.java
+END
+MindyResultRow.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyResultRow.java
+END
+ModulatorStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/ModulatorStatistics.java
+END
+NetBoostDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/3177/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/NetBoostDataSet.java
+END
+MindyDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyDataSet.java
+END
+MindyData.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/5131/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyData.java
+END

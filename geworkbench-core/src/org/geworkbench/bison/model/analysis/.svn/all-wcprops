@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7203/trunk/geworkbench/src/org/geworkbench/bison/model/analysis
+END
+ParamValidationResults.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ParamValidationResults.java
+END
+ProteinSequenceAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/5107/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ProteinSequenceAnalysis.java
+END
+ProteinAnnotationAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/3973/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ProteinAnnotationAnalysis.java
+END
+AlgorithmExecutionResults.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/AlgorithmExecutionResults.java
+END
+Analysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/7118/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/Analysis.java
+END
+ProteinStructureAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/5111/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ProteinStructureAnalysis.java
+END
+ParameterPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/geworkbench/!svn/ver/7203/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ParameterPanel.java
+END
+ProteinDatabaseAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ProteinDatabaseAnalysis.java
+END
+AnalysisParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/AnalysisParameters.java
+END
+FilteringAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/geworkbench/!svn/ver/6402/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/FilteringAnalysis.java
+END
+NormalizingAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/NormalizingAnalysis.java
+END
+ClusteringAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ClusteringAnalysis.java
+END
+ParameterPanelIncludingNormalized.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/7203/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ParameterPanelIncludingNormalized.java
+END

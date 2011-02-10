@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/7370/trunk/geworkbench/src/org/geworkbench/parsers
+END
+EdgeListFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/EdgeListFileFormat.java
+END
+ExpressionFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/7109/trunk/geworkbench/src/org/geworkbench/parsers/ExpressionFileFormat.java
+END
+DataSetFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7107/trunk/geworkbench/src/org/geworkbench/parsers/DataSetFileFormat.java
+END
+AffyFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7370/trunk/geworkbench/src/org/geworkbench/parsers/AffyFileFormat.java
+END
+GeoSeriesMatrixParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/GeoSeriesMatrixParser.java
+END
+ExpressionResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/ExpressionResource.java
+END
+SampleFileParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/SampleFileParser.java
+END
+TabDelimitedDataMatrixFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/TabDelimitedDataMatrixFileFormat.java
+END
+PDBFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/PDBFileFormat.java
+END
+SOFTSeriesParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/SOFTSeriesParser.java
+END
+GenePixFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/GenePixFileFormat.java
+END
+CELFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/CELFileFormat.java
+END
+SOFTFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7288/trunk/geworkbench/src/org/geworkbench/parsers/SOFTFileFormat.java
+END
+AdjacencyMatrixFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/geworkbench/!svn/ver/7327/trunk/geworkbench/src/org/geworkbench/parsers/AdjacencyMatrixFileFormat.java
+END
+MageTabFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7288/trunk/geworkbench/src/org/geworkbench/parsers/MageTabFileFormat.java
+END
+FileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7107/trunk/geworkbench/src/org/geworkbench/parsers/FileFormat.java
+END
+InputFileFormatException.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/InputFileFormatException.java
+END

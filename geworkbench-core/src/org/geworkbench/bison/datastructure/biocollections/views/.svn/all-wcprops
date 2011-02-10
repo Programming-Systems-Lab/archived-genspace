@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/geworkbench/!svn/ver/3780/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views
+END
+DSDataSetView.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/3310/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views/DSDataSetView.java
+END
+CSDataSetView.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/1533/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views/CSDataSetView.java
+END
+DSMatrixDataSetView.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views/DSMatrixDataSetView.java
+END
+DSMicroarraySetView.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/3310/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views/DSMicroarraySetView.java
+END
+CSMicroarraySetView.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/3780/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views/CSMicroarraySetView.java
+END

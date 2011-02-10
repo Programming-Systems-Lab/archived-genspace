@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/geworkbench/!svn/ver/3184/trunk/geworkbench/components/netboost/test
+END
+confusion.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/3184/trunk/geworkbench/components/netboost/test/confusion.txt
+END
+classscores_target.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/3184/trunk/geworkbench/components/netboost/test/classscores_target.txt
+END
+netboost_traintestloss.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/3184/trunk/geworkbench/components/netboost/test/netboost_traintestloss.txt
+END

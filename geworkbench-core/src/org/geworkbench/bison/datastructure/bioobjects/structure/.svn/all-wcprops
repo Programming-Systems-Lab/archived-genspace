@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/geworkbench/!svn/ver/5122/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure
+END
+CSProteinStructure.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/5122/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSProteinStructure.java
+END
+MarkUsResultDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/4834/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/MarkUsResultDataSet.java
+END
+DSProteinStructure.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/3973/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSProteinStructure.java
+END
+PudgeResultSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/5103/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/PudgeResultSet.java
+END
+SkyLineResultDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/4896/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/SkyLineResultDataSet.java
+END
+CSPrtDBResultSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSPrtDBResultSet.java
+END
+DSPrtDBResultSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSPrtDBResultSet.java
+END
+DSPrtAnnotResultSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSPrtAnnotResultSet.java
+END
+CSPrtAnnotResultSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSPrtAnnotResultSet.java
+END

@@ -1,0 +1,29 @@
+<geaw-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ConfigurationFile Schema.xsd">
+
+	<component  name="Geneways"
+				class="org.geworkbench.components.cutenet.GenewaysWidget"
+				version="1.0"
+				author="C2B2"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://geneways.genomecenter.columbia.edu/"
+				description="Not released.  This component provides an
+ interface to a database of molecular interactions extracted
+ from the scientific literature."
+				visualizer="true"
+				loadByDefault="true"
+				hidden="true"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+	</component>
+
+	<plugin id="GenewaysWidget" name="Geneways" class="org.geworkbench.components.cutenet.GenewaysWidget" source="cutenet">
+		<!-- FIXME Add back in when geneways is released (bug 1928) --> 
+		<!--  <gui-area name="VisualArea"/> -->
+	</plugin>
+
+</geaw-config>

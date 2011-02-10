@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/geworkbench/!svn/ver/3612/trunk/geworkbench/data/testing
+END
+pca-test.exp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/geworkbench/!svn/ver/3502/trunk/geworkbench/data/testing/pca-test.exp
+END
+anova-test.exp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/3455/trunk/geworkbench/data/testing/anova-test.exp
+END
+svm-test.exp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/geworkbench/!svn/ver/3491/trunk/geworkbench/data/testing/svm-test.exp
+END
+webmatrix-quantile.exp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/3508/trunk/geworkbench/data/testing/webmatrix-quantile.exp
+END
+t-test4.exp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/geworkbench/!svn/ver/3612/trunk/geworkbench/data/testing/t-test4.exp
+END
+ccnd1-anno.csv
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/3459/trunk/geworkbench/data/testing/ccnd1-anno.csv
+END
+ccnd1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/geworkbench/!svn/ver/3459/trunk/geworkbench/data/testing/ccnd1.txt
+END
+iris-norm2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/3508/trunk/geworkbench/data/testing/iris-norm2.txt
+END

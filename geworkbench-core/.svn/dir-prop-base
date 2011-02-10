@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 88
+bak
+classes
+data
+lib
+temp
+JBuilderclasses
+doc
+output_folder
+err.txt
+geworkbench_log.xml
+
+K 13
+svn:mergeinfo
+V 75
+/branches/geworkbench_2_0_0:6674-6785
+/branches/geworkbench_2_1_0:6992-7050
+END

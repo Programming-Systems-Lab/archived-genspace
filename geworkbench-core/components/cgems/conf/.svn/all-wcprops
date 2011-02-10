@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/geworkbench/!svn/ver/2244/trunk/geworkbench/components/cgems/conf
+END
+deploy.wsdd
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/2244/trunk/geworkbench/components/cgems/conf/deploy.wsdd
+END
+client_log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/2244/trunk/geworkbench/components/cgems/conf/client_log4j.properties
+END

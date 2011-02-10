@@ -144,4 +144,10 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	public Transaction sendUsageEvent(AnalysisEvent e) {
 		return ti.logUsageEvent(myUser,e);
 	}
+
+	@Override
+	public List<User> getFriendRequests() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

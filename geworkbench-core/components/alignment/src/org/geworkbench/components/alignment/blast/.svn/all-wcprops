@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/7378/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast
+END
+BlastObj.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/7378/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/BlastObj.java
+END
+NCBIBlastParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/geworkbench/!svn/ver/6673/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/NCBIBlastParser.java
+END
+BlastAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7316/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/BlastAlgorithm.java
+END
+RemoteBlast.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/6930/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/RemoteBlast.java
+END

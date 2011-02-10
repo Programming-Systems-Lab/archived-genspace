@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/geworkbench/!svn/ver/7219/trunk/geworkbench/components/filtering
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/filtering/.cvsignore
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/2399/trunk/geworkbench/components/filtering/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/2155/trunk/geworkbench/components/filtering/.classpath
+END

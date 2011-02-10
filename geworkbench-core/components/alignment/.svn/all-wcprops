@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/geworkbench/!svn/ver/7378/trunk/geworkbench/components/alignment
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/alignment/.cvsignore
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/6989/trunk/geworkbench/components/alignment/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/6109/trunk/geworkbench/components/alignment/.classpath
+END

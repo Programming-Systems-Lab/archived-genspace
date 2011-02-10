@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 36
+classes
+savedParams
+*.ccmproperties
+
+K 13
+svn:mergeinfo
+V 177
+/branches/filter_enhancement/components/filtering:6210-6292
+/branches/geworkbench_2_0_0/components/filtering:6674-6785
+/branches/geworkbench_2_1_0/components/filtering:6992-7050
+END

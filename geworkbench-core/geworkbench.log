@@ -1,0 +1,100 @@
+[geworkbench - Thread-16 (2011-01-20 11:33:52,362)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-89 (2011-01-20 11:41:05,873)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-91 (2011-01-20 11:41:16,469)] WARN org.geworkbench.components.gpmodule.classification.cart.CARTTraining.trainClassifier(116) | org.geworkbench.util.ClassifierException: Case data must be provided
+[geworkbench - Thread-91 (2011-01-20 11:41:16,476)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-97 (2011-01-20 11:42:13,366)] WARN org.geworkbench.bison.datastructure.biocollections.GoAnalysisResult.parseAnnotation(236) | total count of unexpected entrezId 102
+[geworkbench - Thread-98 (2011-01-20 11:45:03,749)] WARN org.geworkbench.bison.datastructure.biocollections.GoAnalysisResult.parseAnnotation(236) | total count of unexpected entrezId 102
+[geworkbench - Thread-101 (2011-01-20 11:45:49,424)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-103 (2011-01-20 11:45:57,300)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-107 (2011-01-20 11:46:11,962)] WARN org.geworkbench.components.gpmodule.classification.knn.KNNTraining.trainClassifier(178) | org.geworkbench.util.ClassifierException: Case data must be provided
+[geworkbench - Thread-107 (2011-01-20 11:46:11,962)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - AWT-EventQueue-0 (2011-01-20 11:47:04,751)] WARN org.geworkbench.components.matrixreduce.MatrixReduceAnalysis.update(665) | Cancelling MatrixREDUCE Analysis.
+[geworkbench - Thread-109 (2011-01-20 11:47:04,764)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-113 (2011-01-20 11:47:09,276)] ERROR org.geworkbench.components.medusa.MedusaAnalysis.execute(235) | java.lang.IllegalArgumentException: ERROR: No regulators found in label file.
+[geworkbench - Thread-121 (2011-01-20 11:48:12,689)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-143 (2011-01-20 11:48:38,123)] WARN org.geworkbench.components.gpmodule.classification.svm.SVMTraining.trainClassifier(122) | org.geworkbench.util.ClassifierException: Case data must be provided
+[geworkbench - Thread-143 (2011-01-20 11:48:38,123)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - Thread-147 (2011-01-20 11:48:57,080)] WARN org.geworkbench.components.gpmodule.classification.wv.WVTraining.trainClassifier(150) | org.geworkbench.util.ClassifierException: Case data must be provided
+[geworkbench - Thread-147 (2011-01-20 11:48:57,080)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:14,251)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:14,261)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:15,086)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:15,743)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:15,744)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:28,926)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:34,310)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: HistoryEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:34,381)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: GeneSelectorEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:34,417)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: ProjectEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:34,556)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: PhenotypeSelectorEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:34,727)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: CommentsEvent
+[geworkbench - AWT-EventQueue-0 (2011-01-20 12:04:46,087)] ERROR org.geworkbench.components.genspace.GenspaceLogger.getEvent(61) | event: AnalysisInvokedEvent
+[geworkbench - main (2011-01-24 11:51:03,335)] ERROR org.apache.commons.digester.Digester.startElement(1273) | Begin event threw error
+java.lang.NoClassDefFoundError: org/apache/axis/types/URI$MalformedURIException
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2389)
+	at java.lang.Class.getDeclaredConstructors(Class.java:1836)
+	at net.sf.cglib.proxy.Enhancer.generateClass(Enhancer.java:443)
+	at net.sf.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)
+	at net.sf.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:215)
+	at net.sf.cglib.proxy.Enhancer.createHelper(Enhancer.java:373)
+	at net.sf.cglib.proxy.Enhancer.create(Enhancer.java:281)
+	at org.geworkbench.engine.management.ComponentRegistry$ComponentExtension.getExtension(ComponentRegistry.java:212)
+	at org.geworkbench.engine.management.ComponentRegistry.createComponent(ComponentRegistry.java:440)
+	at org.geworkbench.engine.config.PluginDescriptor.instantiate(PluginDescriptor.java:159)
+	at org.geworkbench.engine.config.PluginDescriptor.<init>(PluginDescriptor.java:139)
+	at org.geworkbench.engine.config.rules.PluginObject.createPlugin(PluginObject.java:162)
+	at org.geworkbench.engine.config.rules.PluginRule.begin(PluginRule.java:65)
+	at org.apache.commons.digester.Digester.startElement(Digester.java:1268)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2755)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:648)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at org.apache.commons.digester.Digester.parse(Digester.java:1562)
+	at org.geworkbench.engine.ccm.ComponentConfigurationManager.loadComponent(ComponentConfigurationManager.java:280)
+	at org.geworkbench.engine.ccm.ComponentConfigurationManager.loadSelectedComponents(ComponentConfigurationManager.java:244)
+	at org.geworkbench.engine.config.UILauncher.main(UILauncher.java:235)
+Caused by: java.lang.ClassNotFoundException: org.apache.axis.types.URI$MalformedURIException
+	at org.geworkbench.engine.management.ComponentClassLoader.loadClass(ComponentClassLoader.java:69)
+	at org.geworkbench.engine.management.ComponentClassLoader.loadClass(ComponentClassLoader.java:38)
+	... 29 more
+[geworkbench - main (2011-01-24 11:53:42,392)] ERROR org.apache.commons.digester.Digester.startElement(1273) | Begin event threw error
+java.lang.NoClassDefFoundError: org/apache/axis/types/URI$MalformedURIException
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2389)
+	at java.lang.Class.getDeclaredConstructors(Class.java:1836)
+	at net.sf.cglib.proxy.Enhancer.generateClass(Enhancer.java:443)
+	at net.sf.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)
+	at net.sf.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:215)
+	at net.sf.cglib.proxy.Enhancer.createHelper(Enhancer.java:373)
+	at net.sf.cglib.proxy.Enhancer.create(Enhancer.java:281)
+	at org.geworkbench.engine.management.ComponentRegistry$ComponentExtension.getExtension(ComponentRegistry.java:212)
+	at org.geworkbench.engine.management.ComponentRegistry.createComponent(ComponentRegistry.java:440)
+	at org.geworkbench.engine.config.PluginDescriptor.instantiate(PluginDescriptor.java:159)
+	at org.geworkbench.engine.config.PluginDescriptor.<init>(PluginDescriptor.java:139)
+	at org.geworkbench.engine.config.rules.PluginObject.createPlugin(PluginObject.java:162)
+	at org.geworkbench.engine.config.rules.PluginRule.begin(PluginRule.java:65)
+	at org.apache.commons.digester.Digester.startElement(Digester.java:1268)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2755)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:648)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at org.apache.commons.digester.Digester.parse(Digester.java:1562)
+	at org.geworkbench.engine.ccm.ComponentConfigurationManager.loadComponent(ComponentConfigurationManager.java:280)
+	at org.geworkbench.engine.ccm.ComponentConfigurationManager.loadSelectedComponents(ComponentConfigurationManager.java:244)
+	at org.geworkbench.engine.config.UILauncher.main(UILauncher.java:235)
+Caused by: java.lang.ClassNotFoundException: org.apache.axis.types.URI$MalformedURIException
+	at org.geworkbench.engine.management.ComponentClassLoader.loadClass(ComponentClassLoader.java:69)
+	at org.geworkbench.engine.management.ComponentClassLoader.loadClass(ComponentClassLoader.java:38)
+	... 29 more

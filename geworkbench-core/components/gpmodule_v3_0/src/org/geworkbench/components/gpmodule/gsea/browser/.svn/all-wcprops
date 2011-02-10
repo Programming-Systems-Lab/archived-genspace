@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/browser
+END
+GSEABrowser.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/geworkbench/!svn/ver/5798/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/browser/GSEABrowser.java
+END
+GSEABrowser.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/browser/GSEABrowser.cwb.xml
+END
+CloseableTabbedPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/5384/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/browser/CloseableTabbedPane.java
+END
+MyStatusBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/geworkbench/!svn/ver/5485/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/browser/MyStatusBar.java
+END
+TabBrowser.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/5484/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/browser/TabBrowser.java
+END

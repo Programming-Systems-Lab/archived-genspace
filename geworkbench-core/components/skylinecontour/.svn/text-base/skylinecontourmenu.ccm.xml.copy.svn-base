@@ -1,0 +1,21 @@
+<geaw-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ConfigurationFile Schema.xsd">
+
+	<component name="SkyLineContourMenu"
+		class="org.geworkbench.components.skylinecontour.SkyLineContourMenu" version="1.0"
+		author="C2B2" authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		description="=====" license="-----" loadByDefault="true" />
+
+	<plugin id="SkyLineContourMenu" name="SkyLineContourMenu"
+		class="org.geworkbench.components.skylinecontour.SkyLineContourMenu" source="skylinecontour" />
+
+	<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+		<component class="org.geworkbench.engine.config.SkyLineContourMenu">
+			<menu-item path="Tools.skylineContour" mode="always" var="Tools.skylineContour" />
+		</component>
+	</component-descriptor>
+
+</geaw-config>
+

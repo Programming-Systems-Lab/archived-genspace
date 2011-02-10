@@ -1,0 +1,112 @@
+# The security policy for running the JVM needs to be modified for
+# performing caBIO queries
+java.security.policy=java.policy
+
+# Required for caBIO
+gov.nih.nci.caBIO.manager.dir=coreMgrDir.txt
+
+# Please modify to set path to your browser executable
+browser.path="C\:\\Program Files\\Internet Explorer\\IEXPLORE.EXE"
+
+# This is the file name where analyses parameter indices are stored
+analyses.parameter.file.name=parameterDB.index
+
+# This is the directory where temporary files are created
+temporary.files.directory=temp/GEAW
+
+# This is the application configuration file that the application will
+# default to if none is provided as a command line argument.
+component.configuration.file=all.xml
+
+# This has the Class definitions of components used in the application
+class.definition.file=class-def.xml
+
+# Directory where datafiles are stored that come with distribution, not for temporary files
+data.files.dir=data
+
+# URL where the master help set file is located. It is necessary that
+# this file is present, in order for the online help system to operate
+# properly. If this file is not found, then attempts to dynamically remove
+# components from the application (after the application has been started)
+# may incapacitate the online help.
+master.help.set=org/geworkbench/engine/help/master.hs
+
+# Flag to specify if the "exp" formatted expression dataset needs to
+# have a p-value column
+expressionMA.usePValue=false
+
+#Content of the File is a directory where datafiles are stored
+userSettings=userSettings.config
+
+#Content of the File is a directory where housekeeping genes config file is stored
+housekeepingnormalizerSettings=temp/GEAW/housekeepingnormalizerSettings.config
+# MySQL database Affy probes and GO bindings
+affy.data.manager.db=jdbc:mysql://localhost/c2b2pnp
+
+# The title string shown on the application framework
+application.title=geWorkbench {0} - An Open Extensible Platform for BioMedical Informatics
+application.version=Development
+
+# The URL where sequence alignment SOAP server located.
+sequence.server.endpoint=http://adparacel.cu-genome.org/axis/servlet/AxisServlet
+
+# The URL where columbia globus is located.
+globus.url=http://gridgate.genomecenter.columbia.edu:18080
+caarray.indexservice=/ogsa/services/edu/columbia/CaARRAYIndexService
+
+# The URL where dispatcher service is located.
+
+## production
+
+### nci
+
+## indexServer.url=http://cagrid-index.nci.nih.gov:8080/wsrf/services/DefaultIndexService
+indexServer.url=http://cagridnode.c2b2.columbia.edu:8080/v2.0.0/wsrf/services/DefaultIndexService
+dispatcher.url=http://cagridnode.c2b2.columbia.edu:8080/v2.0.0/wsrf/services/cagrid/Dispatcher
+
+## luna
+#dispatcher.url=http://luna.bioc.columbia.edu:8081/wsrf/services/cagrid/Dispatcher
+#indexServer.url=http://luna.bioc.columbia.edu:8081/wsrf/services/DefaultIndexService
+
+## development
+#indexServer.url=http://afdev.c2b2.columbia.edu:8080/wsrf/services/DefaultIndexService
+#dispatcher.url=http://afdev.c2b2.columbia.edu:8080/wsrf/services/cagrid/Dispatcher
+
+#supported host types
+supported.host.type=splash blast
+
+# The responding Class name of QueryFactory for different server
+blast=org.geworkbench.util.session.server.BlastSessionQueryFactory
+splash=org.geworkbench.util.session.server.SplashSessionQueryFactory
+
+# caBIO stuff
+DefaultPersistenceManagerClass=REMOTE
+DefaultObjectManagerClass=REMOTE
+
+# Default utility file download site
+data.download.site=http://amdec-bioinfo.cu-genome.org/html/caWorkBench/data/
+
+# For dynamic instantiation of Expression Markers
+expression.marker.type=org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker
+
+# For SOAP based ARACNe invocation
+aracne.nonmpi.host=reverse-eng.cu-genome.org
+aracne.mpi.host=reverse-eng-mpi.cu-genome.org
+
+# Axis SOAP URL that links to a web service to obtain Protein-Protein and Protein-DNA interactions in Human
+interactions.endpoint=http://interactions.cu-genome.org/axis/services/interactions
+
+#cnkb interactions servlet url 
+interactions_servlet_url=http://cagridnode.c2b2.columbia.edu:8080/cknb/InteractionsServlet_new/InteractionsServlet
+ 
+# 3000 milliseconds
+interactions_servlet_connection_timeout=3000
+# reasonable number of interactions for create cytoscape network 
+max_interaction_number=2000
+# Cnkb interaction flag. If value is set to 0, then draw pair interactions use cnkb version1 method.
+# If value is set to 1, the draw interactions use cnkb version2 method.
+interaction_flag=1
+
+
+# user setting directory
+user.setting.directory=.geworkbench

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7362/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
+END
+IdeaProbeGene.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7305/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaProbeGene.java
+END
+DSBioObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/DSBioObject.java
+END
+DSClassification.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/1115/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/DSClassification.java
+END
+IdeaResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/7346/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaResult.java
+END
+DSPValued.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/geworkbench/!svn/ver/1115/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/DSPValued.java
+END
+IdeaEdge.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/7296/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaEdge.java
+END
