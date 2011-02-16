@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/geworkbench/!svn/ver/6866/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
+END
+GenSpaceRegistration.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/geworkbench/!svn/ver/5140/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceRegistration.java
+END
+DataVisibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/6866/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/DataVisibility.java
+END
+NetworkVisibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/NetworkVisibility.java
+END
+LoginManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/5245/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/LoginManager.java
+END
+GenSpaceGeneralProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/5245/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceGeneralProfile.java
+END
+GenSpaceSecurityPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/geworkbench/!svn/ver/4844/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceSecurityPanel.java
+END
+GenSpaceLogin.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/5794/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceLogin.java
+END

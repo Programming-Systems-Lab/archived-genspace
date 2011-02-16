@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.5.4  Built on : Dec 19, 2010 (08:18:42 CET) -->
+<serviceGroup>
+    <service name="MTOMSample">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="sample.mtom.service.MTOMSampleMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">sample.mtom.service.MTOMSampleSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="attachment" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ws.apache.org/axis2/mtomsample/">
+            <actionMapping>attachment</actionMapping>
+            <outputActionMapping>//schemas.xmlsoap.org/wsdl/MTOMServicePortType/AttachmentResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

@@ -1,0 +1,17 @@
+<serviceGroup>
+	<service name="WorkspaceService">
+		<description>
+			This is a Web Service to download the Attachments
+			API of Axis2.
+		</description>
+		<parameter name="enableSwA">true</parameter>
+		<parameter name="ServiceClass" locked="false">
+			sample.service.WorkspaceService
+		</parameter>
+		<operation name="getWorkspace">
+			<actionMapping>urn:getWorkspace</actionMapping>
+			<messageReceiver
+				class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
+		</operation>
+	</service>
+</serviceGroup>

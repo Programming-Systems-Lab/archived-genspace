@@ -26,7 +26,6 @@ import org.geworkbench.components.genspace.entity.AnalysisEventParameter;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.util.FilePathnameUtils;
-import org.jfree.date.DateUtilities;
 
 /**
  * The event logger

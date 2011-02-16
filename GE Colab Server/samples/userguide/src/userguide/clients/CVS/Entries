@@ -1,0 +1,12 @@
+/ClientForWebServiceWithModule.java/1.1/Wed Feb  2 20:30:31 2011//
+/ClientSideModuleEngagement.java/1.1/Wed Feb  2 20:30:32 2011//
+/ClientUtil.java/1.1/Wed Feb  2 20:30:32 2011//
+/EchoBlockingClient.java/1.1/Wed Feb  2 20:30:32 2011//
+/EchoBlockingDualClient.java/1.1/Wed Feb  2 20:30:32 2011//
+/EchoBlockingWsaBasedClient.java/1.1/Wed Feb  2 20:30:32 2011//
+/EchoNonBlockingClient.java/1.1/Wed Feb  2 20:30:32 2011//
+/EchoNonBlockingDualClient.java/1.1/Wed Feb  2 20:30:31 2011//
+/MailClient.java/1.1/Wed Feb  2 20:30:31 2011//
+/PingClient.java/1.1/Wed Feb  2 20:30:32 2011//
+/RESTClient.java/1.1/Wed Feb  2 20:30:32 2011//
+/TCPClient.java/1.1/Wed Feb  2 20:30:32 2011//

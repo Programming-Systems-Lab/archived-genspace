@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/docking.jar"/>
 	<classpathentry kind="src" path="ejbModule"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
@@ -42,7 +44,6 @@
 	<classpathentry kind="lib" path="lib/jung-graph-impl-2.0.jar"/>
 	<classpathentry kind="lib" path="lib/jung-visualization-2.0.jar"/>
 	<classpathentry kind="lib" path="lib/junit-4.5.jar"/>
-	<classpathentry kind="lib" path="lib/log4j.jar"/>
 	<classpathentry kind="lib" path="lib/MANIFEST.MF"/>
 	<classpathentry kind="lib" path="lib/mina-core-1.1.7.jar"/>
 	<classpathentry kind="lib" path="lib/msnm.jar"/>

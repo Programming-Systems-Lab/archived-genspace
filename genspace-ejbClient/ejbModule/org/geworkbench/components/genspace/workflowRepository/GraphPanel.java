@@ -527,7 +527,8 @@ public class GraphPanel extends JPanel implements VisualPlugin {
 					toolsInWorkflow = DomainUtil
 							.fromWorkflowStringToList(workflowString);
 				}
-				popup.initialize(selectedNode.getToolName(), toolsInWorkflow);
+//				popup.initialize(selectedNode.getToolName(), toolsInWorkflow);
+				//TODO
 				popup.show(GraphPanel.this, (int) rect.getCenterX(),
 						(int) rect.getCenterY());
 			}
