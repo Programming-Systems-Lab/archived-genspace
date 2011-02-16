@@ -1,14 +1,14 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-12-22T20:18:43.433357Z
-7369
+2011-02-11T19:41:01.648866Z
+7449
 zji
 
 
@@ -94,6 +94,9 @@ has-props
 
 576
 
+help
+dir
+
 HierClusterViewAppComponent.java
 file
 
@@ -128,19 +131,16 @@ has-props
 
 6420
 
-help
-dir
-
 HierClusterTree.java
 file
 
 
 
 
-2011-01-24T18:12:13.000000Z
-60965a82cd580601a082008b9530fa8c
-2010-07-23T22:42:55.975467Z
-6905
+2011-02-16T22:18:19.000000Z
+36b9f34ffcd20fb59774fe541cca5157
+2011-02-11T19:41:01.648866Z
+7449
 zji
 has-props
 
@@ -163,7 +163,7 @@ has-props
 
 
 
-16325
+15720
 
 HierClusterLabels.java
 file
@@ -239,10 +239,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-19d7f3ce69013e288d0204ea6b8186c4
-2010-12-22T17:06:09.863058Z
-7368
+2011-02-16T22:18:19.000000Z
+a96b33a195dbc51c4d3b61d4d3e7e3ea
+2011-01-28T21:02:21.478325Z
+7390
 zji
 has-props
 
@@ -265,7 +265,7 @@ has-props
 
 
 
-4225
+3716
 
 HierClusterDisplay.java
 file
@@ -273,10 +273,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-268859e9d85261d63ac7df2ccbb557d4
-2010-12-22T20:18:43.433357Z
-7369
+2011-02-16T22:18:19.000000Z
+09869655c49210e51311f36543ac1bf3
+2011-02-11T19:41:01.648866Z
+7449
 zji
 has-props
 
@@ -299,7 +299,7 @@ has-props
 
 
 
-17479
+10998
 
 HierClusterFactory.java
 file
@@ -341,10 +341,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-57ecc3402f37a0065e73f1bdf80ae88d
-2010-10-14T20:03:53.389142Z
-7121
+2011-02-16T22:18:19.000000Z
+b7fe4bd1a5ca40613c960f9f2b04ca85
+2011-02-09T15:07:04.872224Z
+7429
 zji
 
 
@@ -367,7 +367,7 @@ zji
 
 
 
-10975
+9385
 
 FastHierClustAnalysis.java
 file
@@ -375,11 +375,12 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-7e432afa276a6198d196bba55e5f0fbc
-2010-12-22T17:06:09.863058Z
-7368
+2011-02-16T22:18:19.000000Z
+c6502c85feaa94d81497a2ac9e38f2eb
+2011-02-07T22:54:45.474406Z
+7418
 zji
+has-props
 
 
 
@@ -400,8 +401,7 @@ zji
 
 
 
-
-12186
+12185
 
 bulb_icon_gold.gif
 file
@@ -477,10 +477,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-7a181126bacb9d3b71410c14cef4bd69
-2010-07-28T17:51:54.337505Z
-6925
+2011-02-16T22:18:19.000000Z
+c99c9af6793b142c716c5bd4438a7c5d
+2011-02-11T19:41:01.648866Z
+7449
 zji
 has-props
 
@@ -503,7 +503,7 @@ has-props
 
 
 
-28480
+27876
 
 SortStruct.java
 file

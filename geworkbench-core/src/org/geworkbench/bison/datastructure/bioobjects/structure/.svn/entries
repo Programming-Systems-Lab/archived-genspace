@@ -1,15 +1,15 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2009-05-15T20:33:24.000000Z
-5122
-chiangy
+2011-02-10T22:37:06.426301Z
+7445
+zji
 
 
 
@@ -66,11 +66,12 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-4794b7255b5d3ca69486bf9353d21d8f
-2009-03-06T20:23:36.000000Z
-4896
-jiz
+2011-02-16T22:18:20.000000Z
+2213aad9421ee8b36f3b65044de4faa1
+2011-02-10T22:37:06.426301Z
+7445
+zji
+has-props
 
 
 
@@ -91,8 +92,7 @@ jiz
 
 
 
-
-1112
+1105
 
 CSPrtAnnotResultSet.java
 file

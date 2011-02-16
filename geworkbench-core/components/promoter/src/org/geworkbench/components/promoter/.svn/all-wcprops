@@ -1,19 +1,61 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7353/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
+/svn/geworkbench/!svn/ver/7461/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
+END
+Distribution.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/Distribution.java
+END
+JASPAR_download_info.txt
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/5488/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/JASPAR_download_info.txt
+END
+PromoterViewPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/7461/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterViewPanel.java
+END
+PromoterView.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/7240/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.java
+END
+Matrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/Matrix.java
+END
+TFListPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/geworkbench/!svn/ver/6324/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/TFListPanel.java
+END
+TFListModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/geworkbench/!svn/ver/6786/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/TFListModel.java
+END
+MatrixScrollPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/MatrixScrollPane.java
 END
 PromoterView.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 129
 /svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.cwb.xml
-END
-PromoterViewPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/7353/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterViewPanel.java
 END
 PromoterPatternDB.java
 K 25
@@ -27,47 +69,11 @@ svn:wc:ra_dav:version-url
 V 122
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/MatchStats.java
 END
-TFListModel.java
+SequenceFileReader.java
 K 25
 svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/6786/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/TFListModel.java
-END
-PromoterView.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/7240/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.java
-END
-MatrixScrollPane.java
-K 25
-svn:wc:ra_dav:version-url
-V 130
-/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/MatrixScrollPane.java
-END
-Distribution.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/Distribution.java
-END
-TFListPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/6324/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/TFListPanel.java
-END
-JASPAR_download_info.txt
-K 25
-svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/5488/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/JASPAR_download_info.txt
-END
-Matrix.java
-K 25
-svn:wc:ra_dav:version-url
-V 120
-/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/Matrix.java
+V 132
+/svn/geworkbench/!svn/ver/7461/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/SequenceFileReader.java
 END
 SequencePatternDisplayPanel.java
 K 25

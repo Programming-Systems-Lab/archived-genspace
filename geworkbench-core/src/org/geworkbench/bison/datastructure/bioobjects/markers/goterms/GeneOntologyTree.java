@@ -18,7 +18,7 @@ import org.apache.commons.logging.LogFactory;
  * 
  * @author John Watkinson
  * @author Xiaoqing Zhang
- * @version $Id: GeneOntologyTree.java 6385 2010-04-20 21:06:05Z zji $
+ * @version $Id: GeneOntologyTree.java 7439 2011-02-10 21:13:36Z zji $
  */
 public class GeneOntologyTree {
 	
@@ -219,7 +219,7 @@ public class GeneOntologyTree {
 			goterm.setName(term.getName());
 			terms.put(id, goterm);
 			List<Integer> parents = term.getParents();
-			if (term.isRoot) {
+			if (term.isRoot()) {
 				roots.put(term.getName(), goterm);
 			}
 			for (int j = 0; j < parents.size(); j++) {

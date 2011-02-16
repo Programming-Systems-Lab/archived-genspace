@@ -24,9 +24,17 @@ public class SaveTree implements Serializable {
 
 	List<DataSetSaveNode> nodes;
 	private DSDataSet selected;
+	private int wspId=0;
+	private boolean dirty = false;
+	private String checkout = null;
+	private String lastchange = null;
 
-	public SaveTree(ProjectPanel panel, DSDataSet selected) {
+	public SaveTree(ProjectPanel panel, DSDataSet selected, int rid, boolean d, String co, String lc) {
 		this.selected = selected;
+		this.wspId = rid;
+		this.dirty = d;
+		this.checkout = co;
+		this.lastchange = lc;
 		nodes = new ArrayList<DataSetSaveNode>();
 		selected = panel.getDataSet();
 		DefaultTreeModel model = panel.projectTreeModel;
@@ -66,9 +74,9 @@ public class SaveTree implements Serializable {
 				// FIXME don't like how objects are stored by class name.
 				PendingTreeNode childNode = (PendingTreeNode) treeNode;
 				dataSet = new CSDataSet();
-				dataSet.addObject(childNode.getGridEpr().getClass().getName(),
+				dataSet.addObject(childNode.getGridEpr().getClass(),
 						childNode.getGridEpr());
-				dataSet.addObject(String.class.getName(), childNode
+				dataSet.addObject(String.class, childNode
 						.getDescription());
 				dataSet.setID(RandomNumberGenerator.getID());
 				dataSet.setLabel(PendingTreeNode.class.getName());
@@ -91,5 +99,18 @@ public class SaveTree implements Serializable {
 
 	public DSDataSet getSelected() {
 		return selected;
+	}
+
+	public int getWspId(){
+		return wspId;
+	}
+	public boolean getDirty(){
+		return dirty;
+	}
+	public String getCheckout(){
+		return checkout;
+	}
+	public String getLastchange(){
+		return lastchange;
 	}
 }

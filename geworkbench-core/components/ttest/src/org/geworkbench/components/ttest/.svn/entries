@@ -1,15 +1,15 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-01-14T22:01:56.882464Z
-7381
-maz
+2011-02-04T20:53:25.894957Z
+7412
+zji
 
 
 
@@ -25,40 +25,6 @@ maz
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-MasterRegulatorPanel.java
-file
-
-
-
-
-2011-01-24T18:12:07.000000Z
-48b77ee2c805679dffe9565bc036b454
-2011-01-14T22:01:56.882464Z
-7381
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17710
 
 TtestAnalysis.cwb.xml
 file
@@ -94,17 +60,17 @@ has-props
 
 1360
 
-MasterRegulatorViewer.java
+MasterRegulatorPanel.java
 file
 
 
 
 
 2011-01-24T18:12:07.000000Z
-e392ef45b3da6499cb444dadcf45127e
-2010-08-03T20:21:29.479829Z
-6943
-zji
+48b77ee2c805679dffe9565bc036b454
+2011-01-14T22:01:56.882464Z
+7381
+maz
 has-props
 
 
@@ -126,18 +92,18 @@ has-props
 
 
 
-20268
+17710
 
-MultiTTestAnalysis.java
+TTestUtil.java
 file
 
 
 
 
-2011-01-24T18:12:07.000000Z
-7ec3a4fd8250f1fdca611ef34ad7e4bc
-2010-08-03T20:40:21.071834Z
-6945
+2011-02-16T22:18:16.000000Z
+62804144ae6be6fdc80b32ad80dfcc4f
+2011-02-04T17:04:30.485025Z
+7409
 zji
 has-props
 
@@ -160,7 +126,7 @@ has-props
 
 
 
-13808
+23563
 
 MultiTTestAnalysisPanel.java
 file
@@ -195,6 +161,210 @@ has-props
 
 
 5763
+
+MasterRegulatorViewer.java
+file
+
+
+
+
+2011-01-24T18:12:07.000000Z
+e392ef45b3da6499cb444dadcf45127e
+2010-08-03T20:21:29.479829Z
+6943
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20268
+
+TtestAnalysis.java
+file
+
+
+
+
+2011-02-16T22:18:16.000000Z
+3ec94b1843d7f25b2d31c4a45c4bb60b
+2011-02-04T17:04:30.485025Z
+7409
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28076
+
+TableViewer.java
+file
+
+
+
+
+2011-01-24T18:12:07.000000Z
+fa87a57c1c57d7f3c92781ea6eaed4e1
+2010-08-03T20:21:29.479829Z
+6943
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11120
+
+DetailedTFGraphViewer.java
+file
+
+
+
+
+2011-01-24T18:12:07.000000Z
+3fe71c93727603262f0120b2c2de10b0
+2010-08-03T20:21:29.479829Z
+6943
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5818
+
+MasterRegulatorAnalysis.cwb.xml
+file
+
+
+
+
+2011-01-24T18:12:07.000000Z
+2ae8f486742819c062ea38323a363f9f
+2010-05-12T19:50:51.283670Z
+6530
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1542
+
+MultiTTestAnalysis.java
+file
+
+
+
+
+2011-01-24T18:12:07.000000Z
+7ec3a4fd8250f1fdca611ef34ad7e4bc
+2010-08-03T20:40:21.071834Z
+6945
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13808
 
 MRATtestPanel.java
 file
@@ -236,11 +406,11 @@ file
 
 
 
-2011-01-24T18:12:07.000000Z
-aabbcb05a124ee3bfcfc5c088364626a
-2011-01-14T22:01:56.882464Z
-7381
-maz
+2011-02-16T22:18:16.000000Z
+7713c05b75838dbbbe9677d85dfa8193
+2011-02-04T20:53:25.894957Z
+7412
+zji
 has-props
 
 
@@ -262,41 +432,7 @@ has-props
 
 
 
-12671
-
-TtestAnalysis.java
-file
-
-
-
-
-2011-01-24T18:12:07.000000Z
-e7da3c2a4d9a793ac329779c60c33c04
-2010-09-13T18:40:31.482484Z
-7052
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-53376
+12555
 
 TtestAnalysisPanel.java
 file
@@ -366,74 +502,6 @@ has-props
 
 2863
 
-DetailedTFGraphViewer.java
-file
-
-
-
-
-2011-01-24T18:12:07.000000Z
-3fe71c93727603262f0120b2c2de10b0
-2010-08-03T20:21:29.479829Z
-6943
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5818
-
-TableViewer.java
-file
-
-
-
-
-2011-01-24T18:12:07.000000Z
-fa87a57c1c57d7f3c92781ea6eaed4e1
-2010-08-03T20:21:29.479829Z
-6943
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11120
-
 MasterRegulatorViewer.cwb.xml
 file
 
@@ -467,38 +535,4 @@ has-props
 
 
 1400
-
-MasterRegulatorAnalysis.cwb.xml
-file
-
-
-
-
-2011-01-24T18:12:07.000000Z
-2ae8f486742819c062ea38323a363f9f
-2010-05-12T19:50:51.283670Z
-6530
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1542
 

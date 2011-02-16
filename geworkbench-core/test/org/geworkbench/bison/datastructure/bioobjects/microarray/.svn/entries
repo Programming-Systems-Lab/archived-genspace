@@ -1,15 +1,15 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/test/org/geworkbench/bison/datastructure/bioobjects/microarray
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2009-01-09T15:51:45.000000Z
-4625
-chiangy
+2011-02-04T20:28:55.594139Z
+7411
+zji
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-01-24T18:12:16.000000Z
-30589dcc5d5b515b40a37edfccfe7e35
-2009-01-09T15:51:45.000000Z
-4625
-chiangy
+2011-02-16T22:18:22.000000Z
+205b7663afe5e6d869ee7c67ad3602c3
+2011-02-04T20:28:55.594139Z
+7411
+zji
+has-props
 
 
 
@@ -57,6 +58,5 @@ chiangy
 
 
 
-
-15120
+14385
 

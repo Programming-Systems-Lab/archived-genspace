@@ -1,14 +1,14 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/markus/src/org/geworkbench/components/markus
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-11-28T01:14:41.732765Z
-7233
+2011-02-10T21:27:58.968009Z
+7442
 zji
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-01-24T18:12:06.000000Z
-1a359685b48e7cecd04d4ce83313dc18
-2008-07-07T22:19:56.000000Z
-3974
-wangm
+2011-02-16T22:18:16.000000Z
+ddac07ea4fcd25574892cb8e164130ea
+2011-02-10T21:27:58.968009Z
+7442
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ wangm
 
 
 
-
-20399
+20658
 
 MarkUsAnalysis.cwb.xml
 file
@@ -273,11 +273,12 @@ file
 
 
 
-2011-01-24T18:12:06.000000Z
-7b98f8da486ee01225c3157b5a16b04d
-2008-07-07T22:19:56.000000Z
-3974
-wangm
+2011-02-16T22:18:16.000000Z
+a1c271a7007a96ae4d78a20948edfd40
+2011-02-10T21:24:31.905023Z
+7441
+zji
+has-props
 
 
 
@@ -298,6 +299,5 @@ wangm
 
 
 
-
-2240
+2553
 

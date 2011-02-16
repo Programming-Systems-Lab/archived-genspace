@@ -1,15 +1,15 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-01-14T22:01:56.882464Z
-7381
-maz
+2011-02-10T21:18:46.926012Z
+7440
+zji
 
 
 
@@ -134,11 +134,12 @@ file
 
 
 
-2011-01-24T18:12:10.000000Z
-2f5a82792953f7a9472028273c603660
-2011-01-14T22:01:56.882464Z
-7381
-maz
+2011-02-16T22:18:18.000000Z
+45622677b1e164c7a00ae38ba3e1ed20
+2011-02-10T21:18:46.926012Z
+7440
+zji
+has-props
 
 
 
@@ -159,8 +160,7 @@ maz
 
 
 
-
-11354
+11233
 
 GoAnalysisParameterPanel.java
 file

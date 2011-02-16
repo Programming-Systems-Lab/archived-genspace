@@ -57,7 +57,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  * Volcano plot.
  *
  * @author Matt Hall, John Watkinson
- * @version $Id: VolcanoPlot.java 7147 2010-10-20 21:08:52Z zji $
+ * @version $Id: VolcanoPlot.java 7452 2011-02-11 20:47:15Z zji $
  */
 @AcceptTypes({DSTTestResultSet.class})
 public class VolcanoPlot implements VisualPlugin {
@@ -194,7 +194,6 @@ public class VolcanoPlot implements VisualPlugin {
 		}
 	}
 
-    @SuppressWarnings("unchecked")
 	private void generateChart() {
         DSMicroarraySet<DSMicroarray> set = significance.getParentDataSet();
         String[] caseLabels = significance.getLabels(DSTTestResultSet.CASE);

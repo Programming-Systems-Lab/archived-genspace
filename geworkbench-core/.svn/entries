@@ -1,15 +1,15 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-01-20T17:53:20.151059Z
-7383
-bellj
+2011-02-16T21:09:49.060524Z
+7464
+wangmen
 has-props
 
 
@@ -236,44 +236,10 @@ file
 
 
 
-2011-01-18T20:35:26.000000Z
-e51d6123b7398d0b2875fe7df0942f7c
-2010-12-16T14:42:15.026003Z
-7335
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24943
-
-.classpath
-file
-
-
-
-
-2011-01-18T20:35:26.000000Z
-e00c7e9bc844123ae040d5c9c95008a4
-2010-09-27T21:11:29.120976Z
-7085
+2011-02-16T22:18:22.000000Z
+fc86d564955847732dfced1b4ae1b909
+2011-02-07T21:09:27.484806Z
+7417
 zji
 has-props
 
@@ -296,7 +262,27 @@ has-props
 
 
 
-3342
+25020
+
+.classpath
+file
+
+
+
+
+
+e30b39edf2b9a5478fab048217e0e498
+2011-02-04T15:19:55.009606Z
+7407
+wangmen
+has-props
+
+
+
+
+.classpath.r7383
+.classpath.r7464
+.classpath.mine
 
 caWorkbenchLicense.txt
 file

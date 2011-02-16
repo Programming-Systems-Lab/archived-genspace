@@ -37,10 +37,10 @@ import org.geworkbench.util.SpearmanRankDistance;
 /**
  * 
  * @author unattributable
- * @version $Id: FastHierClustAnalysis.java,v 1.4 2009-09-10 16:40:26 chiangy Exp $
+ * @version $Id: FastHierClustAnalysis.java 7418 2011-02-07 22:54:45Z zji $
  * 
  */
-class FastHierClustAnalysis extends AbstractGridAnalysis implements
+public class FastHierClustAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
 
 	private static final long serialVersionUID = 4486758109656693283L;

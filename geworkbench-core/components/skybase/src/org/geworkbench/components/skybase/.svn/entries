@@ -1,14 +1,14 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/skybase/src/org/geworkbench/components/skybase
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-11-28T01:14:41.732765Z
-7233
+2011-02-10T22:38:40.406059Z
+7446
 zji
 
 
@@ -66,11 +66,12 @@ file
 
 
 
-2011-01-24T18:12:11.000000Z
-36a09597f629880d4d16786372c49490
-2010-09-13T14:40:56.329012Z
-7051
+2011-02-16T22:18:18.000000Z
+ddc4962c7d8b037984f4b8f5b9c6b48d
+2011-02-10T22:38:40.406059Z
+7446
 zji
+has-props
 
 
 
@@ -91,8 +92,7 @@ zji
 
 
 
-
-6754
+6253
 
 SkyBaseAnalysis.cwb.xml
 file

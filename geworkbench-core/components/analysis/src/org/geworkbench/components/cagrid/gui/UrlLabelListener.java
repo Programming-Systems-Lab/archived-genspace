@@ -28,7 +28,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * DispatcherLabelListener and IndexServiceListener).
  * 
  * @author zji
- * @version $Id: UrlLabelListener.java 7188 2010-11-16 16:07:06Z zji $
+ * @version $Id: UrlLabelListener.java 7386 2011-01-25 20:21:53Z zji $
  * 
  */
 public class UrlLabelListener implements MouseListener {
@@ -43,6 +43,7 @@ public class UrlLabelListener implements MouseListener {
 		this.GRID_HOST_KEY = GRID_HOST_KEY;
 		this.urlId = urlId;
 		gridServicePanel.url[urlId] = System.getProperty(DEFAULT_URL_KEY);
+		readProperties();
 	}
 
 	/*

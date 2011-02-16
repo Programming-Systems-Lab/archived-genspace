@@ -1,11 +1,15 @@
 package org.geworkbench.bison.model.clusters;
 
-import org.apache.commons.collections15.map.HashedMap;
-import org.geworkbench.bison.util.DefaultIdentifiable;
-
-import java.lang.reflect.Array;
-import java.util.*;
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+
+import org.apache.commons.collections15.map.HashedMap;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
@@ -14,7 +18,7 @@ import java.io.Serializable;
  * Default implementation of the <code>Cluster</code> interface.
  *
  * @author First Genetic Trust
- * @version $Id: AbstractCluster.java 7365 2010-12-22 15:21:22Z zji $
+ * @version $Id: AbstractCluster.java 7427 2011-02-08 22:28:38Z zji $
  */
 public abstract class AbstractCluster implements Cluster, Serializable {
 
@@ -29,11 +33,6 @@ public abstract class AbstractCluster implements Cluster, Serializable {
      * as a child
      */
     protected Cluster parent = null;
-
-    /**
-     * Unique ID acting as a key for this <code>Cluster</code>
-     */
-    protected org.geworkbench.bison.util.DefaultIdentifiable clusterID = new DefaultIdentifiable();
 
     /**
      * Gets the <code>Cluster</code> which contains this <code>Cluster</code> as
@@ -190,24 +189,6 @@ public abstract class AbstractCluster implements Cluster, Serializable {
             }
         }
         return map;
-    }
-
-    /**
-     * Gets the Unique ID of this <code>Cluster</code>
-     *
-     * @return unique ID
-     */
-    public String getID() {
-        return clusterID.getID();
-    }
-
-    /**
-     * Sets the Unique ID of this <code>Cluster</code>
-     *
-     * @param id unique ID
-     */
-    public void setID(String id) {
-        clusterID.setID(id, "Cluster");
     }
 
 }

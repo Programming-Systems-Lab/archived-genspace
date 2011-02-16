@@ -1,7 +1,7 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -94,16 +94,16 @@ has-props
 
 5889
 
-ExpressionThresholdFilterPanel.java
+GenepixFlagsFilterPanel.java
 file
 
 
 
 
 2011-01-24T18:12:08.000000Z
-47e195fa55588b919955ce69030020fb
-2010-11-23T17:18:18.087510Z
-7219
+a7afccf3eb205918b1f7c067b2163d1a
+2010-07-27T13:53:04.152962Z
+6911
 zji
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-9019
+14620
 
 GenepixExpressionThresholdFilter.java
 file
@@ -162,16 +162,16 @@ has-props
 
 4327
 
-GenepixFlagsFilterPanel.java
+ExpressionThresholdFilterPanel.java
 file
 
 
 
 
 2011-01-24T18:12:08.000000Z
-a7afccf3eb205918b1f7c067b2163d1a
-2010-07-27T13:53:04.152962Z
-6911
+47e195fa55588b919955ce69030020fb
+2010-11-23T17:18:18.087510Z
+7219
 zji
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-14620
+9019
 
 FilteringPanel.java
 file
@@ -230,40 +230,6 @@ has-props
 
 22891
 
-CoefficientOfVariationFilterPanel.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-82ff108a93ee316ef51115b1fc5204a7
-2010-08-06T18:45:11.592777Z
-6960
-maz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5876
-
 AffyDetectionCallFilterPanel.java
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 9577
+
+CoefficientOfVariationFilterPanel.java
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+82ff108a93ee316ef51115b1fc5204a7
+2010-08-06T18:45:11.592777Z
+6960
+maz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5876
 
 DeviationBasedFilterPanel.java
 file
@@ -335,40 +335,6 @@ has-props
 help
 dir
 
-ExpressionThresholdFilter.cwb.xml
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-9c00bc4cd74e0268ccf7f004142781d6
-2010-09-13T14:40:56.329012Z
-7051
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1271
-
 GenepixFlagsFilter.cwb.xml
 file
 
@@ -403,14 +369,14 @@ zji
 
 1148
 
-CoefficientOfVariationFilter.cwb.xml
+ExpressionThresholdFilter.cwb.xml
 file
 
 
 
 
 2011-01-24T18:12:08.000000Z
-a0a7828756ae2380825cb7bc4adacff8
+9c00bc4cd74e0268ccf7f004142781d6
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -435,7 +401,41 @@ zji
 
 
 
-1290
+1271
+
+MissingValuesFilterPanel.java
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+302374278bb9383b6a6cbbbc415aacdf
+2010-06-24T15:03:09.921560Z
+6822
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4889
 
 AffyDetectionCallFilter.cwb.xml
 file
@@ -471,18 +471,17 @@ zji
 
 1355
 
-MissingValuesFilterPanel.java
+CoefficientOfVariationFilter.cwb.xml
 file
 
 
 
 
 2011-01-24T18:12:08.000000Z
-302374278bb9383b6a6cbbbc415aacdf
-2010-06-24T15:03:09.921560Z
-6822
-youmi
-has-props
+a0a7828756ae2380825cb7bc4adacff8
+2010-09-13T14:40:56.329012Z
+7051
+zji
 
 
 
@@ -503,7 +502,8 @@ has-props
 
 
 
-4889
+
+1290
 
 DeviationBasedFilter.cwb.xml
 file

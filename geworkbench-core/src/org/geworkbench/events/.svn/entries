@@ -1,7 +1,7 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/events
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -604,40 +604,6 @@ has-props
 
 3372
 
-ProjectNodeAddedEvent.java
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-d7e191958bb9d1b540ed17b6702a7a1c
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1144
-
 ProjectNodeRemovedEvent.java
 file
 
@@ -671,6 +637,40 @@ chiangy
 
 
 1148
+
+ProjectNodeAddedEvent.java
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+d7e191958bb9d1b540ed17b6702a7a1c
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1144
 
 HistoryEvent.java
 file

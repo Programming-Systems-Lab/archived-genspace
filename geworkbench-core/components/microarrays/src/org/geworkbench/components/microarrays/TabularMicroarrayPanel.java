@@ -38,7 +38,7 @@ import org.geworkbench.util.microarrayutils.MicroarrayViewEventBase;
  *
  * @author Adam Margolin
  * @author zji
- * @version $Id: TabularMicroarrayPanel.java 7310 2010-12-08 16:51:54Z zji $
+ * @version $Id: TabularMicroarrayPanel.java 7416 2011-02-07 20:49:47Z zji $
  */
 @AcceptTypes({DSMicroarraySet.class})
 public class TabularMicroarrayPanel extends MicroarrayViewEventBase {
@@ -122,18 +122,18 @@ public class TabularMicroarrayPanel extends MicroarrayViewEventBase {
             	return "";
             }
 
-            DSGeneMarker stats = uniqueMarkers.get(row);
-			if (stats != null) {
+            DSGeneMarker marker = uniqueMarkers.get(row);
+			if (marker != null) {
 				if (col == 0) {
-					return stats.toString();
+					return marker.toString();
 				} else {
 					DSMicroarray array = maSetView.get(col - 1);
-					DSMarkerValue value = array.getMarkerValue(stats);
+					DSMarkerValue value = array.getMarkerValue(marker);
 
 					if (value.isMissing())
 						return "n/a";
 					else
-						return nf.format(maSetView.getValue(row, col - 1));
+						return nf.format(value.getValue());
 				}
 			} else {
 				return "Invalid";

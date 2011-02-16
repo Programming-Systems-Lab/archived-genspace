@@ -1,14 +1,14 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-09-30T15:51:18.155052Z
-7092
+2011-01-31T23:37:23.963954Z
+7397
 shteynbo
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-08923a02e85573e9d72c7a1da4ba78c8
-2010-09-21T22:41:38.819314Z
-7063
-zji
+2011-02-16T22:18:17.000000Z
+5e20374695496f1df9a0d746fd88481d
+2011-01-31T23:37:23.963954Z
+7397
+shteynbo
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-14176
+14425
 
 AbstractSequenceDiscoveryAlgorithm.java
 file

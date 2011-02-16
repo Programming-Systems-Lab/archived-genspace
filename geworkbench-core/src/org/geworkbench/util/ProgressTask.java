@@ -10,7 +10,7 @@ import javax.swing.SwingWorker;
  * and may call pb.setMessage() in process() if applicable.
  * 
  * Once a subProgressTask is created, use progressDialog.executeTask(subProgressTask) to start it.
- * $Id: ProgressTask.java 7183 2010-11-10 21:07:57Z wangmen $
+ * $Id: ProgressTask.java 7389 2011-01-28 17:13:06Z zji $
  */
 
 public abstract class ProgressTask<T, V> extends SwingWorker<T, V> {
@@ -28,7 +28,7 @@ public abstract class ProgressTask<T, V> extends SwingWorker<T, V> {
 		pb.start();
 		
 		if (pbtype == ProgressItem.BOUNDED_TYPE)
-			addPropertyChangeListener(new BoundedProgressListener(pb));
+			addPropertyChangeListener( pb );
 	}
 	
 	public ProgressItem getProgressItem(){

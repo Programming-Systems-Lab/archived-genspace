@@ -44,7 +44,7 @@ import org.geworkbench.util.associationdiscovery.cluster.CSMatchedMatrixPattern;
  * This class is used in CMHRuler, CNVRuler and ColorMosaicPanel.
  * 
  * @author Manjunath Kustagi
- * @version $Id: ColorMosaicImage.java 7270 2010-12-03 20:54:22Z zji $
+ * @version $Id: ColorMosaicImage.java 7414 2011-02-07 17:01:46Z wangmen $
  */
 
 public class ColorMosaicImage extends JPanel implements Scrollable {
@@ -214,9 +214,14 @@ public class ColorMosaicImage extends JPanel implements Scrollable {
 		if (stopIndex > geneNo) {
 			stopIndex = geneNo;
 		}
+		if (this.significanceResultSet!=null) {
+			for (int i = 0; i < geneNo; i++) {
+				DSGeneMarker stats = cluster.getGeneLabel(i);
+				 markerList.add(stats);
+			}
+		}
 		for (int i = startIndex; i < stopIndex; i++) {
 			DSGeneMarker stats = cluster.getGeneLabel(i);
-			if (this.significanceResultSet!=null)  markerList.add(stats);
 			if(stats==null)continue;
 			
 			DSGeneMarker mkInfo = microarraySet.getMarkers().get(

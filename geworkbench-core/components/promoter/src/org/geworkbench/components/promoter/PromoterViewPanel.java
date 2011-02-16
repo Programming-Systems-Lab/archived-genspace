@@ -82,7 +82,6 @@ import org.geworkbench.bison.datastructure.complex.pattern.DSMatchedPattern;
 import org.geworkbench.bison.datastructure.complex.pattern.DSPattern;
 import org.geworkbench.bison.datastructure.complex.pattern.DSPatternMatch;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.CSSeqRegistration;
-import org.geworkbench.components.promoter.modulediscovery.SequenceFileReader;
 import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.SequenceDiscoveryTableEvent;
 import org.geworkbench.util.FilePathnameUtils;
@@ -102,7 +101,7 @@ import com.larvalabs.chart.PSAMPlot;
  * <p>Company: Califano Lab</p>
  *
  * @author Xuegong Wang, manjunath at genomecenter dot columbia dot edu, Xiaoqing Zhang
- * @version $Id: PromoterViewPanel.java 7353 2010-12-20 21:00:11Z zji $
+ * @version $Id: PromoterViewPanel.java 7461 2011-02-16 16:07:25Z zji $
  */
 public final class PromoterViewPanel extends JPanel {
 	private static final long serialVersionUID = -6523545577029722522L;

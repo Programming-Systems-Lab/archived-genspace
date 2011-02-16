@@ -1,23 +1,5 @@
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svn/geworkbench/!svn/ver/7349/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/modulediscovery
-END
-SequenceFileReader.java
-K 25
-svn:wc:ra_dav:version-url
-V 146
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/modulediscovery/SequenceFileReader.java
-END
-PatternKey.java
-K 25
-svn:wc:ra_dav:version-url
-V 138
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/modulediscovery/PatternKey.java
-END
-CSMultiSeqPattern.java
-K 25
-svn:wc:ra_dav:version-url
-V 147
-/svn/geworkbench/!svn/ver/7238/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/modulediscovery/CSMultiSeqPattern.java
+/svn/geworkbench/!svn/ver/7461/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/modulediscovery
 END

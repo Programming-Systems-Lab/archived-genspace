@@ -3,7 +3,7 @@ package org.geworkbench.bison.model.clusters;
 /**
  * 
  * Copyright (c) 2006 Columbia University
- * @version $Id: DefaultHierCluster.java 7365 2010-12-22 15:21:22Z zji $ 
+ * @version $Id: DefaultHierCluster.java 7426 2011-02-08 22:25:24Z zji $ 
  *
  */
 
@@ -15,6 +15,7 @@ import java.io.Serializable;
  * analysis method
  * 
  * @author First Genetic Trust
+ * @version $Id: DefaultHierCluster.java 7426 2011-02-08 22:25:24Z zji $
  */
 public class DefaultHierCluster extends AbstractCluster implements HierCluster,
 		Serializable {
@@ -24,8 +25,6 @@ public class DefaultHierCluster extends AbstractCluster implements HierCluster,
 	private double height = 0.0;
 	private int depth = 0;
 	private double maxHeight = 0.0;
-
-	// private int order = 0;
 
 	/**
 	 * Sets the Algorithmic Height of this <code>Cluster</code>
@@ -129,7 +128,4 @@ public class DefaultHierCluster extends AbstractCluster implements HierCluster,
 		return 0;
 	}
 
-	public String toString() {
-		return getID();
-	}
 }

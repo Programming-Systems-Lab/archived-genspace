@@ -1,25 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/7358/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
+/svn/geworkbench/!svn/ver/7438/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
 END
-DSMicroarraySet.java
+CSAffyMicroarraySet.java
 K 25
 svn:wc:ra_dav:version-url
-V 136
-/svn/geworkbench/!svn/ver/7332/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/DSMicroarraySet.java
-END
-CSMicroarraySet.java
-K 25
-svn:wc:ra_dav:version-url
-V 136
-/svn/geworkbench/!svn/ver/7332/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSMicroarraySet.java
-END
-CSChipchipSet.java
-K 25
-svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/3284/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSChipchipSet.java
+V 140
+/svn/geworkbench/!svn/ver/5812/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSAffyMicroarraySet.java
 END
 CSExprMicroarraySet.java
 K 25
@@ -27,11 +15,17 @@ svn:wc:ra_dav:version-url
 V 140
 /svn/geworkbench/!svn/ver/7358/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSExprMicroarraySet.java
 END
-CSAffyMicroarraySet.java
+CSMicroarraySet.java
 K 25
 svn:wc:ra_dav:version-url
-V 140
-/svn/geworkbench/!svn/ver/5812/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSAffyMicroarraySet.java
+V 136
+/svn/geworkbench/!svn/ver/7332/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSMicroarraySet.java
+END
+DSMicroarraySet.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7332/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/DSMicroarraySet.java
 END
 CSMicroarraySet.jbx
 K 25

@@ -1,0 +1,41 @@
+To install in Glassfish:
+1 - Create a JDBC data source from the template provided:
+<glassfish-install>/bin/asadmin add-resources genspace-ejb/ejbModule/META-INF/mysql-resource.xml
+2 - Deploy the app
+3 - Add the following lines to the bottom of <glassfish-folder>/domains/<your
+domain>/config/login.conf:
+
+GELogin {
+    org.geworkbench.components.genspace.server.auth.GELoginModule required
+	debug=true;
+};
+
+4 - Add the following lines to the bottom of <glassfish-folder>/domains/<your
+domain>/config/server.policy:
+grant {
+   permission javax.security.auth.AuthPermission "modifyPrincipals";
+   permission javax.security.auth.AuthPermission "getSubject";
+};
+
+5 - Within the domains/<your domain>/config/domain.xml file, find the
+following line:
+<security-service .....
+
+Change it so that it reads:
+<security-service default-realm="GELogin"
+activate-default-principal-to-role-mapping="true">
+
+After the line that reads:
+<auth-realm
+classname="com.sun.enterprise.security.auth.realm.certificate.CertificateRealm"
+name="certificate" />
+
+Add the following lines:
+<auth-realm
+		classname="org.geworkbench.components.genspace.server.auth.GERealm"
+		name="GELogin">
+	<property name="jaas-context" value="GELogin" />
+	<property name="auth-type" value="GELogin" />
+</auth-realm>
+
+6 - Restart GlassFish.

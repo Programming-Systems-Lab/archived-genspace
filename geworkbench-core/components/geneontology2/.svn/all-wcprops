@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/geworkbench/!svn/ver/7381/trunk/geworkbench/components/geneontology2
-END
-.project
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/5583/trunk/geworkbench/components/geneontology2/.project
+/svn/geworkbench/!svn/ver/7440/trunk/geworkbench/components/geneontology2
 END
 .classpath
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/geworkbench/!svn/ver/5583/trunk/geworkbench/components/geneontology2/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/5583/trunk/geworkbench/components/geneontology2/.project
 END

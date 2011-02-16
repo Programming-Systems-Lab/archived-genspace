@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svn/geworkbench/!svn/ver/3027/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels
+/svn/geworkbench/!svn/ver/7435/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels
+END
+CSItemList.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/1543/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSItemList.java
 END
 DSItemList.java
 K 25
@@ -9,11 +15,11 @@ svn:wc:ra_dav:version-url
 V 117
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/DSItemList.java
 END
-CSSequentialItemList.java
+DSAnnotatedPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/1529/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSSequentialItemList.java
+V 123
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/DSAnnotatedPanel.java
 END
 CSAnnotPanel.java
 K 25
@@ -21,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 119
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSAnnotPanel.java
 END
+CSPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/7435/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSPanel.java
+END
 DSAnnotPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 119
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/DSAnnotPanel.java
-END
-DSAnnotatedPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 123
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/DSAnnotatedPanel.java
 END
 DSPanel.java
 K 25
@@ -39,15 +45,9 @@ svn:wc:ra_dav:version-url
 V 116
 /svn/geworkbench/!svn/ver/3027/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/DSPanel.java
 END
-CSPanel.java
+CSSequentialItemList.java
 K 25
 svn:wc:ra_dav:version-url
-V 116
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSPanel.java
-END
-CSItemList.java
-K 25
-svn:wc:ra_dav:version-url
-V 119
-/svn/geworkbench/!svn/ver/1543/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSItemList.java
+V 129
+/svn/geworkbench/!svn/ver/1529/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/panels/CSSequentialItemList.java
 END

@@ -6,13 +6,12 @@ import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarr
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.properties.CSDescribable;
 import org.geworkbench.bison.datastructure.properties.CSExtendable;
-import org.geworkbench.bison.util.DefaultIdentifiable;
 import org.geworkbench.bison.util.RandomNumberGenerator;
 
 /**
  * 
  * @author zji
- * @version $Id: CSMicroarray.java 7359 2010-12-21 21:16:04Z zji $
+ * @version $Id: CSMicroarray.java 7432 2011-02-09 15:49:56Z zji $
  *
  */
 public class CSMicroarray implements DSMicroarray, Serializable {
@@ -35,7 +34,7 @@ public class CSMicroarray implements DSMicroarray, Serializable {
     /**
      * Used in the implementation of the <code>Identifiable</code> interface.
      */
-    protected org.geworkbench.bison.util.DefaultIdentifiable arrayId = new DefaultIdentifiable();
+    private String arrayId = null;
     /**
      * Used in the implementation of the <code>Extendable</code> interface.
      */
@@ -137,19 +136,11 @@ public class CSMicroarray implements DSMicroarray, Serializable {
     }
 
     public String getID() {
-        return arrayId.getID();
+        return arrayId;
     }
 
     public void setID(String id) {
-        arrayId.setID(id, "Microarray");
-    }
-
-    public String getName() {
-        return arrayId.getLabel();
-    }
-
-    public void setName(String name) {
-        arrayId.setLabel(name);
+        arrayId = id;
     }
 
     public String toString() {

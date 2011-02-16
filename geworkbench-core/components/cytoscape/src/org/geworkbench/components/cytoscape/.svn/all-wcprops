@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/7330/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
+/svn/geworkbench/!svn/ver/7433/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
 END
-CytoscapeWidget.cwb.xml
+HistogramGraph.java
 K 25
 svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/6159/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.cwb.xml
+V 130
+/svn/geworkbench/!svn/ver/7419/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/HistogramGraph.java
 END
 InitParam.java
 K 25
@@ -15,21 +15,45 @@ svn:wc:ra_dav:version-url
 V 125
 /svn/geworkbench/!svn/ver/6844/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/InitParam.java
 END
-ExpandMenuListener.java
+NetworkRedrawWindow.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/7433/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/NetworkRedrawWindow.java
+END
+CytoscapeWidget.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/7016/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/ExpandMenuListener.java
+/svn/geworkbench/!svn/ver/6159/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.cwb.xml
+END
+ArraysSelectionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7419/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/ArraysSelectionPanel.java
+END
+MarkerSelectionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7396/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/MarkerSelectionPanel.java
 END
 TTestResultSelectionPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 141
-/svn/geworkbench/!svn/ver/7155/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/TTestResultSelectionPanel.java
+/svn/geworkbench/!svn/ver/7420/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/TTestResultSelectionPanel.java
+END
+ExpandMenuListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/7419/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/ExpandMenuListener.java
 END
 CytoscapeWidget.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/7330/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.java
+/svn/geworkbench/!svn/ver/7419/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.java
 END

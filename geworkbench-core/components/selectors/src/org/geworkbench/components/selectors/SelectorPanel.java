@@ -71,7 +71,7 @@ import org.geworkbench.util.visualproperties.VisualPropertiesDialog;
 
 /**
  * @author John Watkinson
- * @version $Id: SelectorPanel.java 6915 2010-07-27 19:16:27Z youmi $
+ * @version $Id: SelectorPanel.java 7462 2011-02-16 19:27:33Z zji $
  */
 public abstract class SelectorPanel<T extends DSSequential> implements
 		VisualPlugin, MenuListener {
@@ -96,7 +96,7 @@ public abstract class SelectorPanel<T extends DSSequential> implements
 	// Menu items
 	protected JPopupMenu itemListPopup = new JPopupMenu();
 	protected JMenuItem addToPanelItem = new JMenuItem("Add to Set");
-	protected JMenuItem clearSelectionItem = new JMenuItem("Clear Selection");
+	protected JMenuItem clearSelectionItem = new JMenuItem("Clear \"Selection\" Set");
 	protected JPopupMenu treePopup = new JPopupMenu();
 	protected JMenuItem renamePanelItem = new JMenuItem("Rename");
 	protected JMenuItem copyPanelItem = new JMenuItem("Copy");
@@ -234,7 +234,7 @@ public abstract class SelectorPanel<T extends DSSequential> implements
 			}
 		};
 		clearSelectionItem.addActionListener(clearListener);
-		menuListeners.put("View.Clear Selection", clearListener);
+		menuListeners.put("Commands.Clear \"Selection\" Set", clearListener);
 		ActionListener renameListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				renameLabelPressed(rightClickedPath);

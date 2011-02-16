@@ -13,7 +13,7 @@ import java.io.*;
  * <p>Company: Columbia University</p>
  *
  * @author not attributable
- * @version $Id: CSGeneMarker.java 7322 2010-12-10 17:22:50Z zji $
+ * @version $Id: CSGeneMarker.java 7408 2011-02-04 16:14:50Z zji $
  */
 
 public class CSGeneMarker implements DSGeneMarker, Serializable {
@@ -120,7 +120,7 @@ public class CSGeneMarker implements DSGeneMarker, Serializable {
         ois.defaultReadObject();
     }
 
-    public boolean equals(DSGeneMarker marker) {
+    public boolean equals(Object marker) {
         if (marker instanceof CSGeneMarker) {
             CSGeneMarker mInfo = (CSGeneMarker) marker;
 

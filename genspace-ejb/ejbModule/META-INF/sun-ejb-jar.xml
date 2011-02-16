@@ -5,5 +5,5 @@
      <role-name>user</role-name>
      <group-name>users</group-name>
    </security-role-mapping>
-
+  <enterprise-beans/>
 </sun-ejb-jar>

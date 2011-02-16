@@ -35,6 +35,8 @@ import javax.swing.JTree;
 import javax.swing.SwingConstants;
 import javax.swing.ToolTipManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.TreeModelEvent;
+import javax.swing.event.TreeModelListener;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
@@ -112,7 +114,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 7382 2011-01-19 22:18:37Z maz $
+ * @version $Id: ProjectPanel.java 7464 2011-02-16 21:09:49Z wangmen $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -395,6 +397,31 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 
 		jProjectMenu.addSeparator();
 		jProjectMenu.add(jRemoveProjectItem);
+		
+		projectTreeModel.addTreeModelListener(new TreeModelListener(){
+			public void treeNodesChanged(TreeModelEvent arg0) {
+				RWspHandler.treeModified();
+			}
+			public void treeNodesInserted(TreeModelEvent arg0) {
+				RWspHandler.treeModified();
+			}
+			public void treeNodesRemoved(TreeModelEvent arg0) {
+				TreePath[] tps = projectTree.getSelectionPaths();
+				int pns = 0;
+				for (TreePath tp: tps){
+					if (tp.getLastPathComponent() instanceof ProjectNode)
+						pns++;
+				}
+				if (pns == childcount){
+					RWspHandler.wspId = 0;
+					RWspHandler.lastchange = "";
+				}
+				RWspHandler.treeModified();
+			}
+			public void treeStructureChanged(TreeModelEvent arg0) {
+				RWspHandler.treeModified();
+			}			
+		});
 	}
 
 	void populateFromSaveTree(SaveTree saveTree) {
@@ -419,10 +446,9 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 					// FIXME These are stored by class name in SaveTree. Not
 					// sure I like this.
 					GridEndpointReferenceType pendingGridEpr = (GridEndpointReferenceType) dataSet
-							.getObject(GridEndpointReferenceType.class
-									.getName());
+							.getObject(GridEndpointReferenceType.class);
 					addPendingNode(pendingGridEpr, (String) dataSet
-							.getObject(String.class.getName()), dataSet
+							.getObject(String.class), dataSet
 							.getDescriptions()[0], true);
 					pendingGridEprs.add(pendingGridEpr);
 				}
@@ -447,13 +473,12 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 						// sure I like this.
 						GridEndpointReferenceType pendingGridEpr = (GridEndpointReferenceType) ancNode
 								.getDataSet().getObject(
-										GridEndpointReferenceType.class
-												.getName());
+										GridEndpointReferenceType.class);
 						String history = (String) ancNode.getDataSet()
-								.getObject(String.class.getName());
+								.getObject(String.class);
 						addPendingNode(pendingGridEpr,
 								(String) ancNode.getDataSet().getObject(
-										String.class.getName()), history, true);
+										String.class), history, true);
 						pendingGridEprs.add(pendingGridEpr);
 					} else {
 						DSAncillaryDataSet<? extends DSBioObject> ancSet = null;
@@ -1005,17 +1030,22 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 			if (path != null && selectedNode != clickedNode) {
 				setNodeSelection(clickedNode);
 			}
-			else if ((clickedNode != null) && clickedNode instanceof ImageNode) {
-					if (e.getClickCount() == 1) {
-						publishImageSnapshot(new ImageSnapshotEvent(
-								"Image Node Selected",
-								((ImageNode) clickedNode).image,
-								ImageSnapshotEvent.Action.SHOW));
-						sendCommentsEvent(clickedNode);
-					}
-			}			
+			if ((clickedNode != null) && clickedNode instanceof DataSetSubNode) {
+				// DSAncillaryDataSet ds = ((DataSetSubNode)
+				// clickedNode)._aDataSet;
+				// publishProjectEvent(new ProjectEvent("ProjectNode", ds));
+			}
+			if ((clickedNode != null) && clickedNode instanceof ImageNode) {
+				if (e.getClickCount() == 1) {
+					publishImageSnapshot(new ImageSnapshotEvent(
+							"Image Node Selected",
+							((ImageNode) clickedNode).image,
+							ImageSnapshotEvent.Action.SHOW));
+					sendCommentsEvent(clickedNode);
+				}
+			}
+			sendCommentsEvent(clickedNode);
 		}
-		
 	}
 
 	private boolean isPathSelected(TreePath path) {
@@ -1079,6 +1109,12 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 					this.jSaveMenuItem.setEnabled(true);
 					this.jEditItem.setEnabled(true);
 					this.jViewAnnotations.setEnabled(true);
+
+					if ((RWspHandler.wspId > 0 && RWspHandler.dirty == false)
+					|| (mNode == root && mNode.getChildCount() == 0))
+						jUploadWspItem.setEnabled(false);
+					else
+						jUploadWspItem.setEnabled(true);
 				}
 
 				if ((mNode == null) || (mNode == root)) {
@@ -1669,12 +1705,14 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 		return event;
 	}
 
+	private int childcount = 0;
 	/**
 	 * Action listener handling user requests for removing a project.
 	 *
 	 * @param e
 	 */
 	protected void projectRemove_actionPerformed(ProjectNode node) {
+		childcount = root.getChildCount();
 		if (node.getChildCount() > 0) {
 			for (Enumeration en = node.children(); en.hasMoreElements();) {
 				ProjectTreeNode childNode = (ProjectTreeNode) en
@@ -2160,6 +2198,8 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 
 	protected JMenuItem jLoadProjectItem = new JMenuItem();
 
+	protected JMenuItem jUploadWspItem = new JMenuItem();
+
 	protected JMenuItem jNewProjectItem = new JMenuItem();
 
 	protected JMenuItem jLoadMArrayItem = new JMenuItem();
@@ -2261,7 +2301,18 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 		listeners.put("File.OpenRemotePDB.File", listener);
 		jOpenRemotePDBItem.addActionListener(listener);
 
+		jUploadWspItem.setText("Upload to server");
+		listener = new java.awt.event.ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RWspHandler ws = new RWspHandler();
+				ws.uploadWsp();
+			}
+
+		};
+		jUploadWspItem.addActionListener(listener);	
+
 		jRootMenu.add(jNewProjectItem);
+		jRootMenu.add(jUploadWspItem);
 		jProjectMenu.add(jLoadMArrayItem);
 		jProjectMenu.addSeparator();
 		jProjectMenu.add(jOpenRemotePDBItem);
@@ -2300,6 +2351,20 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 
 		};
 		listeners.put("File.Open.Workspace", listener);
+		listener = new java.awt.event.ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RWspHandler ws = new RWspHandler();
+				ws.listWsp(true);
+			}
+		};
+		listeners.put("File.Open.Remote Workspace", listener);
+		listener = new java.awt.event.ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RWspHandler ws = new RWspHandler();
+				ws.listWsp(false);
+			}
+		};
+		listeners.put("Tools.My Account", listener);
 		listener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				newWorkspace_actionPerformed(e);

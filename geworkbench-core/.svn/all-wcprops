@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svn/geworkbench/!svn/ver/7383/trunk/geworkbench
+/svn/geworkbench/!svn/ver/7464/trunk/geworkbench
 END
 java.policy
 K 25
@@ -127,13 +127,13 @@ build.xml
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/svn/geworkbench/!svn/ver/7335/trunk/geworkbench/build.xml
+/svn/geworkbench/!svn/ver/7417/trunk/geworkbench/build.xml
 END
 .classpath
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/svn/geworkbench/!svn/ver/7085/trunk/geworkbench/.classpath
+/svn/geworkbench/!svn/ver/7407/trunk/geworkbench/.classpath
 END
 caWorkbenchLicense.txt
 K 25

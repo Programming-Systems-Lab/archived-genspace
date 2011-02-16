@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/geworkbench/!svn/ver/7253/trunk/geworkbench/components/somclustering
+/svn/geworkbench/!svn/ver/7399/trunk/geworkbench/components/somclustering
 END
-.cvsignore
+.classpath
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/somclustering/.cvsignore
+/svn/geworkbench/!svn/ver/4534/trunk/geworkbench/components/somclustering/.classpath
 END
 .project
 K 25
@@ -15,9 +15,9 @@ svn:wc:ra_dav:version-url
 V 82
 /svn/geworkbench/!svn/ver/4534/trunk/geworkbench/components/somclustering/.project
 END
-.classpath
+.cvsignore
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/geworkbench/!svn/ver/4534/trunk/geworkbench/components/somclustering/.classpath
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/somclustering/.cvsignore
 END

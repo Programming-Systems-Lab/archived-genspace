@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/7147/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots
+/svn/geworkbench/!svn/ver/7452/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots
+END
+VolcanoPlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/7452/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/VolcanoPlot.java
 END
 ScatterPlot.java
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/geworkbench/!svn/ver/5011/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/ScatterPlot.java
-END
-ScatterPlot.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 122
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/ScatterPlot.cwb.xml
+/svn/geworkbench/!svn/ver/7451/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/ScatterPlot.java
 END
 GMTColorPalette.java
 K 25
@@ -27,9 +27,9 @@ svn:wc:ra_dav:version-url
 V 122
 /svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/VolcanoPlot.cwb.xml
 END
-VolcanoPlot.java
+ScatterPlot.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 119
-/svn/geworkbench/!svn/ver/7147/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/VolcanoPlot.java
+V 122
+/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/ScatterPlot.cwb.xml
 END

@@ -1,13 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/7253/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering
+/svn/geworkbench/!svn/ver/7399/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering
 END
 SOMAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/geworkbench/!svn/ver/5541/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMAnalysis.java
+/svn/geworkbench/!svn/ver/7398/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMAnalysis.java
+END
+SOMDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/7399/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMDisplay.java
 END
 SOMAnalysis.cwb.xml
 K 25
@@ -21,21 +27,15 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/geworkbench/!svn/ver/6386/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMDisplay.cwb.xml
 END
+SOMPlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/7399/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMPlot.java
+END
 SOMPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 132
 /svn/geworkbench/!svn/ver/7120/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMPanel.java
-END
-SOMPlot.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/5187/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMPlot.java
-END
-SOMDisplay.java
-K 25
-svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/7253/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMDisplay.java
 END

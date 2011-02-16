@@ -1,15 +1,15 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-12-20T20:24:37.774951Z
-7352
-zji
+2011-02-14T21:02:47.060028Z
+7457
+shteynbo
 
 
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SequenceDiscoveryViewWidget.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-f8a3c9a34cc1495000ead26bb339f83e
-2010-12-20T20:24:37.774951Z
-7352
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25573
 
 ParameterTranslation.java
 file
@@ -94,6 +60,40 @@ has-props
 
 4228
 
+SequenceDiscoveryViewWidget.java
+file
+
+
+
+
+2011-02-16T22:18:17.000000Z
+eba9239861fd9afccb597d58326d5876
+2011-02-14T21:02:47.060028Z
+7457
+shteynbo
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25679
+
 ParameterPanel.java
 file
 
@@ -128,40 +128,6 @@ has-props
 
 24123
 
-SequenceDiscoveryViewWidget.jbx
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-b2d6363244647522b38b8086bd326371
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2530
-
 ParametersHandler.java
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 6134
+
+SequenceDiscoveryViewWidget.jbx
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+b2d6363244647522b38b8086bd326371
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2530
 
 load.gif
 file
@@ -233,9 +233,6 @@ has-props
 algorithm
 dir
 
-help
-dir
-
 SequenceDiscoveryViewAppComponent.cwb.xml
 file
 
@@ -269,6 +266,9 @@ smithken
 
 
 1252
+
+help
+dir
 
 stop.gif
 file

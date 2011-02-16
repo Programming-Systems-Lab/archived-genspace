@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svn/geworkbench/!svn/ver/7092/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm
+/svn/geworkbench/!svn/ver/7397/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm
+END
+RegularDiscoveryFileLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/7092/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm/RegularDiscoveryFileLoader.java
 END
 AlgorithmStub.java
 K 25
@@ -13,13 +19,7 @@ ServerBaseDiscovery.java
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/geworkbench/!svn/ver/7063/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm/ServerBaseDiscovery.java
-END
-RegularDiscoveryFileLoader.java
-K 25
-svn:wc:ra_dav:version-url
-V 152
-/svn/geworkbench/!svn/ver/7092/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm/RegularDiscoveryFileLoader.java
+/svn/geworkbench/!svn/ver/7397/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm/ServerBaseDiscovery.java
 END
 AbstractSequenceDiscoveryAlgorithm.java
 K 25

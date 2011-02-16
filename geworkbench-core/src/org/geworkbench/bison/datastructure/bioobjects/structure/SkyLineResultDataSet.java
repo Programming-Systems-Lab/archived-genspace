@@ -11,9 +11,9 @@ import java.io.*;
  * This is necessary for the Dispatcher framework (used in PollingThread).
  * 
  * @author zji
- * @version $Id: SkyLineResultDataSet.java,v 1.2 2009-03-06 20:21:44 jiz Exp $
+ * @version $Id: SkyLineResultDataSet.java 7445 2011-02-10 22:37:06Z zji $
  */
-public class SkyLineResultDataSet<T> extends CSAncillaryDataSet<DSBioObject> {
+public class SkyLineResultDataSet extends CSAncillaryDataSet<DSBioObject> {
 	private static final long serialVersionUID = -630087506848526523L;
 	
 	String result = null;

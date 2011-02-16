@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/7381/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
-END
-GoAnalysisParameterPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 148
-/svn/geworkbench/!svn/ver/7381/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisParameterPanel.java
+/svn/geworkbench/!svn/ver/7440/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
 END
 GoTermMatcher.java
 K 25
@@ -15,17 +9,11 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/geworkbench/!svn/ver/7091/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTermMatcher.java
 END
-GoTreeNode.java
+GoAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/7091/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTreeNode.java
-END
-GoTermTreeModel.java
-K 25
-svn:wc:ra_dav:version-url
-V 139
-/svn/geworkbench/!svn/ver/7091/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTermTreeModel.java
+V 137
+/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.cwb.xml
 END
 GoAnalysisResultView.java
 K 25
@@ -37,23 +25,35 @@ GoAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/7381/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.java
+/svn/geworkbench/!svn/ver/7440/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.java
 END
-GoAnalysis.cwb.xml
+GoAnalysisParameterPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 137
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.cwb.xml
+V 148
+/svn/geworkbench/!svn/ver/7381/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisParameterPanel.java
 END
-GoTableModel.java
+GoTreeNode.java
 K 25
 svn:wc:ra_dav:version-url
-V 136
-/svn/geworkbench/!svn/ver/7220/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTableModel.java
+V 134
+/svn/geworkbench/!svn/ver/7091/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTreeNode.java
 END
 GoAnalysisResultView.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 147
 /svn/geworkbench/!svn/ver/7164/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisResultView.cwb.xml
+END
+GoTermTreeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/7091/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTermTreeModel.java
+END
+GoTableModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7220/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoTableModel.java
 END

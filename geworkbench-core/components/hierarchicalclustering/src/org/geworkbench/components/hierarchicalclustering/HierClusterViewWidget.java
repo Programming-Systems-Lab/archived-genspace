@@ -78,7 +78,7 @@ import com.jgoodies.forms.builder.ButtonBarBuilder;
  * <p>Genetics</p>
  *
  * @author First Genetic Trust
- * @version $Id: HierClusterViewWidget.java 6925 2010-07-28 17:51:54Z zji $
+ * @version $Id: HierClusterViewWidget.java 7449 2011-02-11 19:41:01Z zji $
  */
 public class HierClusterViewWidget extends JPanel implements HierClusterModelEventListener {
 	private static final long serialVersionUID = 3261372914974476040L;
@@ -320,7 +320,6 @@ public class HierClusterViewWidget extends JPanel implements HierClusterModelEve
      */
     @SuppressWarnings("unchecked")
 	public void hierClusterModelChange(HierClusterModelEvent hcme) {
-    	display.resetVariables();	//fix mantis #1578
         mASet = hcme.getMicroarraySet();
         originalMarkerCluster = hcme.getMarkerCluster();
         originalArrayCluster = hcme.getMicroarrayCluster();
@@ -329,7 +328,7 @@ public class HierClusterViewWidget extends JPanel implements HierClusterModelEve
     	clusterSet = hcme.getClusterSet();
         zoomEnabled = hcme.getSelectionEnabled();
         jCheckBox1.setSelected(zoomEnabled);
-        display.setChips(mASet);
+    	display.resetVariables(mASet);
         markerDendrogram.setChips(mASet);
         arrayDendrogram.setChips(mASet);
         arrayNames.setChips(mASet);
@@ -484,12 +483,12 @@ public class HierClusterViewWidget extends JPanel implements HierClusterModelEve
         jPanel2.add(display, BorderLayout.CENTER);
         display.addMouseMotionListener(motionListener);
         display.addMouseListener(mouseListener);
-        markerDendrogram = new HierClusterTree(this, null, HierClusterTree.HORIZONTAL);
+        markerDendrogram = new HierClusterTree(this, null, HierClusterTree.Orientation.HORIZONTAL);
         markerDendrogram.addMouseListener(dendrogramListener);
         markerDendrogram.addMouseMotionListener(motionListener);
         markerDendrogram.addMouseListener(mouseListener);
         jPanel2.add(markerDendrogram, BorderLayout.WEST);
-        arrayDendrogram = new HierClusterTree(this, null, HierClusterTree.VERTICAL);
+        arrayDendrogram = new HierClusterTree(this, null, HierClusterTree.Orientation.VERTICAL);
         arrayDendrogram.addMouseListener(dendrogramListener);
         arrayDendrogram.addMouseMotionListener(motionListener);
         arrayDendrogram.addMouseListener(mouseListener);
@@ -688,21 +687,14 @@ public class HierClusterViewWidget extends JPanel implements HierClusterModelEve
      */
     private void saveImage_actionPerformed(ActionEvent e) {
         if ((markerDendrogram != null) && (arrayDendrogram != null) && (display != null)) {
-            display.imageSnapshot = markerDendrogram.imageSnapshot = arrayDendrogram.imageSnapshot = arrayNames.imageSnapshot = true;
-            display.paint(this.getGraphics());
-            arrayNames.paint(this.getGraphics());
-            repaint();
 
-            int w = display.image.getWidth() + markerDendrogram.getWidth();
-            int h = arrayDendrogram.getHeight() + display.image.getHeight() + arrayNames.image.getHeight();
+            int w = display.getWidth() + markerDendrogram.getWidth();
+            int h = arrayDendrogram.getHeight() + display.getHeight() + arrayNames.getHeight();
             BufferedImage tempImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
             Graphics2D ig = tempImage.createGraphics();
-            ig.setColor(Color.white);
             jPanel2.paint(ig);
-            ig.drawImage(display.image, null, markerDendrogram.getWidth(), arrayDendrogram.getHeight() + arrayNames.image.getHeight());
 
             ImageIcon newIcon = new ImageIcon(tempImage, "Hierarchical Clustering Image : " + mASet.getDataSet().getLabel());
-            display.imageSnapshot = markerDendrogram.imageSnapshot = arrayDendrogram.imageSnapshot = arrayNames.imageSnapshot = false;
             firePropertyChange(SAVEIMAGE_PROPERTY, null, newIcon);
         }
     }

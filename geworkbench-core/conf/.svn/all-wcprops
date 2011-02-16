@@ -1,19 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/geworkbench/!svn/ver/7328/trunk/geworkbench/conf
-END
-application.properties
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svn/geworkbench/!svn/ver/7152/trunk/geworkbench/conf/application.properties
-END
-.cvsignore
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svn/geworkbench/!svn/ver/2683/trunk/geworkbench/conf/.cvsignore
+/svn/geworkbench/!svn/ver/7387/trunk/geworkbench/conf
 END
 client-config.wsdd
 K 25
@@ -21,11 +9,11 @@ svn:wc:ra_dav:version-url
 V 72
 /svn/geworkbench/!svn/ver/2201/trunk/geworkbench/conf/client-config.wsdd
 END
-log4j.properties
+jdic.properties
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/geworkbench/!svn/ver/6597/trunk/geworkbench/conf/log4j.properties
+V 69
+/svn/geworkbench/!svn/ver/5104/trunk/geworkbench/conf/jdic.properties
 END
 ConfigurationFile Schema.xsd
 K 25
@@ -39,15 +27,27 @@ svn:wc:ra_dav:version-url
 V 61
 /svn/geworkbench/!svn/ver/7328/trunk/geworkbench/conf/all.xml
 END
-jdic.properties
+log4j.properties
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svn/geworkbench/!svn/ver/5104/trunk/geworkbench/conf/jdic.properties
+V 70
+/svn/geworkbench/!svn/ver/6597/trunk/geworkbench/conf/log4j.properties
 END
 Descriptor Schema.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 77
 /svn/geworkbench/!svn/ver/6114/trunk/geworkbench/conf/Descriptor%20Schema.xsd
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/geworkbench/!svn/ver/2683/trunk/geworkbench/conf/.cvsignore
+END
+application.properties
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/7387/trunk/geworkbench/conf/application.properties
 END

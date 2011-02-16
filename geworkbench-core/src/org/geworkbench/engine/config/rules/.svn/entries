@@ -1,14 +1,14 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine/config/rules
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-11-30T19:29:27.911999Z
-7258
+2011-02-16T19:27:33.547412Z
+7462
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-ccd7128d3e234fb7f30d30eeea8e1253
-2010-08-11T13:32:12.895188Z
-6978
+2011-02-16T22:18:19.000000Z
+270d86331634dd109d0f9664a2bf21b5
+2011-02-16T19:27:33.547412Z
+7462
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-12829
+12876
 
 GeawConfigRule.java
 file

@@ -78,7 +78,7 @@ import polgara.soapPD_wsdl.Parameters;
  * </p>
  *
  * @author
- * @version $Id: SequenceDiscoveryViewWidget.java 7352 2010-12-20 20:24:37Z zji $
+ * @version $Id: SequenceDiscoveryViewWidget.java 7457 2011-02-14 21:02:47Z shteynbo $
  */
 public class SequenceDiscoveryViewWidget extends JPanel implements
 		StatusChangeListener, PropertyChangeListener, ProgressChangeListener {
@@ -426,7 +426,11 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		} else {
 			// set Default View
 			setCurrentView(DEFAULT_VIEW);
-			setCurrentParameterPanel(new ParameterPanel());
+			ParameterPanel paramP = new ParameterPanel();
+
+			//bug 2425
+			paramP.setMaxSeqNumber(getSequenceDB().size());
+			setCurrentParameterPanel(paramP);
 		}
 	}
 

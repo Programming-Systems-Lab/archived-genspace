@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/geworkbench/!svn/ver/7270/trunk/geworkbench/components/colormosaic
+/svn/geworkbench/!svn/ver/7414/trunk/geworkbench/components/colormosaic
 END
-.cvsignore
+.classpath
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/colormosaic/.cvsignore
+/svn/geworkbench/!svn/ver/2155/trunk/geworkbench/components/colormosaic/.classpath
 END
 .project
 K 25
@@ -15,9 +15,9 @@ svn:wc:ra_dav:version-url
 V 80
 /svn/geworkbench/!svn/ver/2399/trunk/geworkbench/components/colormosaic/.project
 END
-.classpath
+.cvsignore
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/geworkbench/!svn/ver/2155/trunk/geworkbench/components/colormosaic/.classpath
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/colormosaic/.cvsignore
 END

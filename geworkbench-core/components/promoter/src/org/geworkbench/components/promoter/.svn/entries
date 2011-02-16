@@ -1,14 +1,14 @@
 10
 
 dir
-7383
+7464
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-12-20T21:00:11.734708Z
-7353
+2011-02-16T16:07:25.210848Z
+7461
 zji
 
 
@@ -97,40 +97,6 @@ has-props
 help
 dir
 
-PromoterPatternDB.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-909b432927e221722bf24a05194baf65
-2006-05-15T19:37:10.000000Z
-1535
-keshav
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3098
-
 MatchStats.java
 file
 
@@ -164,6 +130,40 @@ has-props
 
 
 495
+
+PromoterPatternDB.java
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+909b432927e221722bf24a05194baf65
+2006-05-15T19:37:10.000000Z
+1535
+keshav
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3098
 
 SequencePatternDisplayPanel.java
 file
@@ -273,10 +273,10 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-9bac981c73f871e1ab6b3b95a11a7b1b
-2010-12-20T21:00:11.734708Z
-7353
+2011-02-16T22:18:16.000000Z
+8c429fecb8d0806df18483d7ad71dd8a
+2011-02-16T16:07:25.210848Z
+7461
 zji
 has-props
 
@@ -299,7 +299,7 @@ has-props
 
 
 
-88936
+88857
 
 TFListPanel.java
 file
@@ -436,6 +436,40 @@ smithken
 
 
 1171
+
+SequenceFileReader.java
+file
+
+
+
+
+2011-02-16T22:18:16.000000Z
+9a47e0c9fd432141b96353ecb1771083
+2011-02-16T16:07:25.210848Z
+7461
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8938
 
 modulediscovery
 dir

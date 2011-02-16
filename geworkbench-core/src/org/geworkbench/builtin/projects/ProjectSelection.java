@@ -2,7 +2,6 @@ package org.geworkbench.builtin.projects;
 
 import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.structure.CSProteinStructure;
 import org.geworkbench.engine.config.rules.GeawConfigObject;
@@ -15,7 +14,7 @@ import org.geworkbench.events.ProjectEvent;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version 1.0
+ * @version $Id: ProjectSelection.java 7437 2011-02-10 20:56:44Z zji $
  */
 
 public class ProjectSelection {
@@ -48,7 +47,7 @@ public class ProjectSelection {
         selectedDataSetSubNode = null;
         selectedNode = null;
         menuNode = null;
-        throwEvent("receiveProjectSelection", "Project Cleared");
+        throwEvent(ProjectEvent.CLEARED);
     }
 
 
@@ -77,7 +76,8 @@ public class ProjectSelection {
         menuNode = node;
     }
 
-    public DSDataSet getDataSet() {
+    @SuppressWarnings("rawtypes")
+	public DSDataSet getDataSet() {
         if (selectedDataSetNode != null) {
             return selectedDataSetNode.dataFile;
         } else {
@@ -85,7 +85,8 @@ public class ProjectSelection {
         }
     }
 
-    public DSAncillaryDataSet getDataSubSet() {
+    @SuppressWarnings("rawtypes")
+	public DSAncillaryDataSet getDataSubSet() {
         if (selectedDataSetSubNode != null) {
             return selectedDataSetSubNode._aDataSet;
         } else {
@@ -99,7 +100,7 @@ public class ProjectSelection {
      * @param parentPath
      * @return
      */
-    public ProjectTreeNode getNodeOfClass(ProjectTreeNode node, Class aClass) {
+    private ProjectTreeNode getNodeOfClass(ProjectTreeNode node, Class<?> aClass) {
         if (node == null) {
             return null;
         }
@@ -118,7 +119,8 @@ public class ProjectSelection {
      * @param pNode
      * @param node
      */
-    public void setNodeSelection(ProjectTreeNode node) {
+    @SuppressWarnings("unchecked")
+	public void setNodeSelection(ProjectTreeNode node) {
         if (selectedNode != node) {
             selectedNode = node;
             menuNode = node;
@@ -130,9 +132,9 @@ public class ProjectSelection {
                 GeawConfigObject.getGuiWindow().setVisualizationType(selectedDataSetNode.dataFile);
                 checkProjectNode();
                 if(selectedDataSetNode.dataFile instanceof CSProteinStructure){
-                	throwEvent("receiveProjectSelection", ProjectEvent.CLEARED);
+                	throwEvent(ProjectEvent.CLEARED);
                 }
-                else throwEvent("receiveProjectSelection", ProjectEvent.SELECTED);
+                else throwEvent(ProjectEvent.SELECTED);
             } else if (node instanceof DataSetSubNode) {
                 selectedDataSetSubNode = (DataSetSubNode) node;
                 selectedDataSetNode = (DataSetNode) getNodeOfClass(node, DataSetNode.class);
@@ -140,11 +142,18 @@ public class ProjectSelection {
                 GeawConfigObject.getGuiWindow().setVisualizationType(selectedDataSetSubNode._aDataSet);
                 checkProjectNode();
                 throwSubNodeEvent("receiveProjectSelection");
+            } else if (node instanceof PendingTreeNode) {
+                selectedDataSetNode = (DataSetNode) getNodeOfClass(node, DataSetNode.class);
+                AnnotationParser.setCurrentDataSet(selectedDataSetNode.dataFile);
+                GeawConfigObject.getGuiWindow().setVisualizationType(null);
+                checkProjectNode();
+                throwEvent(ProjectEvent.SELECTED);
             } else  {
                 selectedDataSetNode = null;
                 selectedDataSetSubNode = null;
-                GeawConfigObject.getGuiWindow().setVisualizationType(null);
-                throwEvent("receiveProjectSelection", ProjectEvent.CLEARED);
+                GeawConfigObject.getGuiWindow().setVisualizationType(null);                
+                checkProjectNode();
+                panel.publishProjectEvent(new ProjectEvent(ProjectEvent.CLEARED, null, null));                
             }            
         }
     }
@@ -193,26 +202,15 @@ public class ProjectSelection {
      *
      * @param message
      */
-    public void throwEvent(String method, String message) {
-        // Notify all listeners of the change in selection
-        DSMicroarraySet maSet = null;
-        
+    private void throwEvent(String message) {
         if (selectedDataSetNode != null) {
-            if (selectedDataSetNode.dataFile instanceof DSMicroarraySet) {
-                maSet = (DSMicroarraySet) selectedDataSetNode.dataFile;
-                panel.publishProjectEvent(new ProjectEvent(message, maSet, selectedDataSetNode));
-            } else {
-                panel.publishProjectEvent(new ProjectEvent(message, selectedDataSetNode.dataFile, selectedDataSetNode));
-            }
-            
+        	panel.publishProjectEvent(new ProjectEvent(message, selectedDataSetNode.dataFile, selectedDataSetNode));
         }
-        else{        	
-        	panel.publishProjectEvent(new ProjectEvent(message,null,selectedDataSetNode));
-        }
+        
         panel.sendCommentsEvent(selectedNode);
     }
 
-    public void throwSubNodeEvent(String message) {
+    private void throwSubNodeEvent(String message) {
         if ((selectedDataSetSubNode != null) && (selectedDataSetSubNode._aDataSet != null)) {
             panel.publishProjectEvent(new ProjectEvent(message, selectedDataSetSubNode._aDataSet, selectedDataSetSubNode));           
         }

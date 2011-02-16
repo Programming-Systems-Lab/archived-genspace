@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Map;
 
 import org.geworkbench.bison.datastructure.properties.DSDescribable;
-import org.geworkbench.bison.datastructure.properties.DSIdentifiable;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
@@ -33,9 +32,9 @@ import org.geworkbench.bison.datastructure.properties.DSIdentifiable;
  * @author First Genetic Trust Inc.
  * @author keshav
  * @author yc2480
- * @version $Id: Analysis.java 7118 2010-10-14 19:14:37Z zji $
+ * @version $Id: Analysis.java 7423 2011-02-08 22:00:37Z zji $
  */
-public interface Analysis extends DSDescribable, DSIdentifiable {
+public interface Analysis extends DSDescribable {
     /**
      * returns a GUI for entering analysis-specific parameter values.
      *

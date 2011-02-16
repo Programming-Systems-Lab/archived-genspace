@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svn/geworkbench/!svn/ver/7147/trunk/geworkbench/components/plots
+/svn/geworkbench/!svn/ver/7452/trunk/geworkbench/components/plots
 END
-.cvsignore
+.classpath
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/plots/.cvsignore
+/svn/geworkbench/!svn/ver/2156/trunk/geworkbench/components/plots/.classpath
 END
 .project
 K 25
@@ -15,9 +15,9 @@ svn:wc:ra_dav:version-url
 V 74
 /svn/geworkbench/!svn/ver/2400/trunk/geworkbench/components/plots/.project
 END
-.classpath
+.cvsignore
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/geworkbench/!svn/ver/2156/trunk/geworkbench/components/plots/.classpath
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/plots/.cvsignore
 END

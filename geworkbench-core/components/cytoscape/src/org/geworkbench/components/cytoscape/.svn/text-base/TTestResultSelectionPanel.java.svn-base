@@ -49,17 +49,15 @@ import giny.view.NodeView;
 public class TTestResultSelectionPanel extends JPanel {
 	private Log log = LogFactory.getLog(this.getClass());
 	public JDialog parent = null;
-	public CytoscapeWidget cytoscapeWidget = null;
+	//public CytoscapeWidget cytoscapeWidget = null;
 	private JList list;
 	private List<String> TTestNameList = new ArrayList<String>();
 	protected Map<String, CSSignificanceResultSet<DSGeneMarker>> ttestResultMap;
     protected DSMicroarraySet<? extends DSMicroarray> maSet;
-	public TTestResultSelectionPanel(JDialog parent,CytoscapeWidget cytoscapeWidget,
-			Map<String, CSSignificanceResultSet<DSGeneMarker>> map, DSMicroarraySet<? extends DSMicroarray> maSet) {
+	public TTestResultSelectionPanel(JDialog parent, Map<String, CSSignificanceResultSet<DSGeneMarker>> map, DSMicroarraySet<? extends DSMicroarray> maSet) {
 		setLayout(new BorderLayout());
 
-		this.parent = parent;
-		this.cytoscapeWidget = cytoscapeWidget;
+		this.parent = parent;		 
 		this.ttestResultMap = map;
 		this.maSet = maSet;		
 		init();
@@ -105,7 +103,8 @@ public class TTestResultSelectionPanel extends JPanel {
 		String selectedTTestName = list.getSelectedValue().toString().trim();
 		Map<String, List<Object>> tTestResultSetColorMap = new HashMap<String, List<Object>>();
 
-		CSSignificanceResultSet<DSGeneMarker> ttestResultSet = ttestResultMap
+		CSSignificanceResultSet<DSGeneMarker> ttestResultSet =
+			ttestResultMap
 				.get(selectedTTestName);		
 		
 		tTestResultSetColorMap = getTTestResultSetColorMap(ttestResultSet);
@@ -113,7 +112,7 @@ public class TTestResultSelectionPanel extends JPanel {
 		if (view != null && Cytoscape.getCurrentNetwork() != null) {
 			CyAttributes attrs = Cytoscape.getNodeAttributes();			 
 			Iterator<?> iter = view.getNodeViewsIterator();
-			cytoscapeWidget.publishEnabled = false;
+			CytoscapeWidget.getInstance().publishEnabled = false;
 			while (iter.hasNext()) {
 				NodeView nodeView = (NodeView) iter.next();				 
 				String id = nodeView.getNode().getIdentifier();
@@ -124,16 +123,17 @@ public class TTestResultSelectionPanel extends JPanel {
 						Color c = (Color)tTestResultSetColorMap.get(id.trim().toUpperCase()).get(1);						 
 						attrs.setAttribute(id, CytoscapeWidget.NODE_FILL_COLOR, ObjectToString.getStringValue(c));
 						 
-						nodeView.setUnselectedPaint(c);
+						//nodeView.setUnselectedPaint(c);
 						//nodeView.setSelectedPaint(c);
 						//nodeView.select();
 						nodeView.unselect();
 				} else
 					    nodeView.unselect();
 		
-			}				
-			cytoscapeWidget.getComponent().repaint();
-			cytoscapeWidget.publishEnabled = true;
+			}	
+			Cytoscape.getCurrentNetworkView().redrawGraph(false, true);
+			//CytoscapeWidget.getInstance().getComponent().repaint();
+			CytoscapeWidget.getInstance().publishEnabled = true;
 		}		
 		
 		this.parent.dispose();
@@ -210,13 +210,13 @@ public class TTestResultSelectionPanel extends JPanel {
 	}
 	
 	private Color calculateColor(int numMarkers, int numOfPositiveTValues, double minTValue, double maxTValue, int rank, double tValue){
-		int Y = (int)Math.max(minTValue,maxTValue);
+		int maxAbs = (int)Math.max(Math.abs(minTValue),Math.abs(maxTValue));
 		//System.out.println(numMarkers+","+minTValue+","+maxTValue+","+rank+","+tValue);
 		int disToZero = 0;
 		Color result = null;
-		disToZero = numOfPositiveTValues - rank;
-		if (Y!=0){
-			int colorindex = (int)(255 * (tValue) / (maxTValue-minTValue));
+	 
+		if (maxAbs!=0){
+			int colorindex = (int)(255 * (tValue) /Math.abs(maxAbs));
 			if (colorindex < 0){
 				colorindex = Math.abs(colorindex);
 				if (colorindex > 255) colorindex =255;
@@ -236,7 +236,7 @@ public class TTestResultSelectionPanel extends JPanel {
 	}
 	
 	
-
+   
 	ListModel listModel = new AbstractListModel() {
 		public Object getElementAt(int index) {
 			return TTestNameList.get(index);
