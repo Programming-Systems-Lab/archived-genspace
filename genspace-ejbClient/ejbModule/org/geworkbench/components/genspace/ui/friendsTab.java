@@ -2,7 +2,10 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
+import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.entity.Network;
+import org.geworkbench.components.genspace.entity.User;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -15,18 +18,18 @@ import java.util.concurrent.ExecutionException;
  * change this template use File | Settings | File Templates.
  */
 public class friendsTab extends SocialTab {
-	private JList pendingRequestsList;
-	private JButton acceptButton;
-	private JButton rejectButton;
+//	private JList pendingRequestsList;
+//	private JButton acceptButton;
+//	private JButton rejectButton;
 	private JList myFriendsList;
-	private String network = null;
+	private Network networkFilter = null;
 
 	public friendsTab() {
 
 	}
 
-	public friendsTab(String filteredNetwork, SocialNetworksHome parentFrame) {
-		network = filteredNetwork;
+	public friendsTab(Network filteredNetwork, SocialNetworksHome parentFrame) {
+		networkFilter = filteredNetwork;
 		this.parentFrame = parentFrame;
 	}
 
@@ -38,52 +41,41 @@ public class friendsTab extends SocialTab {
 					Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
 				JPanel pan = new JPanel(); 
-				//TODO
-//				Friend t;
-//				Profile p;
-//				boolean visible;
-//				if (network == null) {
-//					t = (Friend) value;
-//					p = t.profile;
-//					visible = t.details.equals("YES");
-//				} else {
-//					p = (Profile) value;
-//					visible = p.details.equals("YES");
-//				}
-//				pan.setLayout(new BoxLayout(pan, BoxLayout.Y_AXIS));
-//
-//				JLabel label = new JLabel(p.profile.get("first_name")
-//						+ " " + p.profile.get("last_name"));
-//				Font f = new Font(label.getFont().getName(), Font.BOLD, 18);
-//				label.setFont(f);
-//				label.setForeground(new Color(-16777012));
-//
-//				pan.add(label);
-//				String byline = "";
-//				if (p.profile.get("work_title") != "") {
-//					byline += p.profile.get("work_title") + " ";
-//					if (p.profile.get("lab_affiliation") != "")
-//						byline += "at ";
-//				}
-//				if (p.profile.get("lab_affiliation") != "") {
-//					byline += p.profile.get("lab_affiliation") + " ";
-//				}
-//				if (p.profile.get("city") != "") {
-//					byline += p.profile.get("city");
-//					if (p.profile.get("state") != "")
-//						byline += ", ";
-//					else
-//						byline += " ";
-//
-//				}
-//				if (p.profile.get("state") != "")
-//					byline += p.profile.get("state");
-//				JLabel label2 = new JLabel(byline);
-//				if (visible)
-//					pan.add(label2);
-//				pan.add(new JSeparator(SwingConstants.HORIZONTAL));
-//				if (isSelected)
-//					pan.setBackground(new Color(251, 251, 228));
+				
+				User u = (User) value;
+				pan.setLayout(new BoxLayout(pan, BoxLayout.Y_AXIS));
+
+				JLabel label = new JLabel(u.getFullName());
+				Font f = new Font(label.getFont().getName(), Font.BOLD, 18);
+				label.setFont(f);
+				label.setForeground(new Color(-16777012));
+
+				pan.add(label);
+				String byline = "";
+				if (u.getWorkTitle() != null && !u.getWorkTitle().equals("")) {
+					byline += u.getWorkTitle() + " ";
+					if (u.getLabAffiliation() != null && !u.getLabAffiliation().equals(""))
+						byline += "at ";
+				}
+				if (u.getLabAffiliation() != null && !u.getLabAffiliation().equals(""))
+					byline += u.getLabAffiliation() + " ";
+
+				if (u.getCity() != null && !u.getCity().equals("")) {
+					byline += u.getCity();
+					if (u.getState() != null && !u.getState().equals(""))
+						byline += ", ";
+					else
+						byline += " ";
+
+				}
+				if (u.getState() != null && !u.getState().equals(""))
+					byline += u.getState();
+				JLabel label2 = new JLabel(byline);
+				if (LoginManager.isVisible(u))
+					pan.add(label2);
+				pan.add(new JSeparator(SwingConstants.HORIZONTAL));
+				if (isSelected)
+					pan.setBackground(new Color(251, 251, 228));
 				return pan;
 			}
 		});
@@ -91,40 +83,26 @@ public class friendsTab extends SocialTab {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 2) {
-					viewProfileTab viewProfileTab;
-//					if (network == null)
-//						viewProfileTab = new viewProfileTab(
-//								(Friend) myFriendsList.getSelectedValue());
-//					else
-//						viewProfileTab = new viewProfileTab(
-//								(Profile) myFriendsList.getSelectedValue());
-					//TODO
-//					parentFrame.setContent(viewProfileTab);
+					viewProfileTab viewProfileTab = new viewProfileTab(
+							(User) myFriendsList.getSelectedValue());
+					parentFrame.setContent(viewProfileTab);
 				}
 			}
 		});
@@ -140,37 +118,37 @@ public class friendsTab extends SocialTab {
 
 	@Override
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn()) { //TODO
-//			SwingWorker<List<NetworkMessage>, Void> worker = new SwingWorker<List<NetworkMessage>, Void>() {
-//
-//				@Override
-//				protected List<NetworkMessage> doInBackground()
-//						throws Exception {
-//					if (network == null)
-//						return f.getFriends();
-//					else
-//						return nf.listUsersByNetwork(network);
-//				}
-//
-//				@Override
-//				protected void done() {
-//					List<NetworkMessage> lst = null;
-//					try {
-//						lst = get();
-//					} catch (InterruptedException e) {
-//						GenSpace.logger.error("Error",e);
-//					} catch (ExecutionException e) {
-//						GenSpace.logger.error("Error",e);
-//					}
-//					DefaultListModel model = new DefaultListModel();
-//					for (NetworkMessage t : lst) {
-//						model.addElement(t);
-//					}
-//					myFriendsList.setModel(model);
-//				}
-//
-//			};
-//			worker.execute();
+		if (LoginManager.isLoggedIn()) {
+			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
+
+				@Override
+				protected List<User> doInBackground()
+						throws Exception {
+					if (networkFilter == null)
+						return LoginManager.getFriendOps().getFriendsProfiles();
+					else
+						return LoginManager.getNetworkOps().getProfilesByNetwork(networkFilter);
+				}
+
+				@Override
+				protected void done() {
+					List<User> lst = null;
+					try {
+						lst = get();
+					} catch (InterruptedException e) {
+						GenSpace.logger.error("Error",e);
+					} catch (ExecutionException e) {
+						GenSpace.logger.error("Error",e);
+					}
+					DefaultListModel model = new DefaultListModel();
+					for (User t : lst) {
+						model.addElement(t);
+					}
+					myFriendsList.setModel(model);
+				}
+
+			};
+			worker.execute();
 		}
 	}
 	/**
@@ -215,9 +193,8 @@ public class friendsTab extends SocialTab {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		if (network != null)
-			return "Users in network " + network;
+		if (networkFilter != null)
+			return "Users in network " + networkFilter.getName();
 		else
 			return "My Friends";
 	}

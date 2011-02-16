@@ -33,7 +33,7 @@ import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
 import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
-import org.geworkbench.components.genspace.server.ToolInformationRemote;
+import org.geworkbench.components.genspace.server.UsageInformationRemote;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowNode;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.jgraph.JGraph;
@@ -70,11 +70,11 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 	private DefaultGraphCell[] cells;
 
 	private WorkflowVisualizationPopup popup = new WorkflowVisualizationPopup();
-	private static ToolInformationRemote facade;
-	public static ToolInformationRemote getFacade()
+	private static UsageInformationRemote facade;
+	public static UsageInformationRemote getFacade()
 	{
 		if(facade == null)
-			facade = (ToolInformationRemote) GenSpace.getRemote("ToolInformation");
+			facade = (UsageInformationRemote) GenSpace.getRemote("ToolInformation");
 		return facade;
 	}
 	public static final String[] NUMBERS = { "No", "One", "Two", "Three",
@@ -107,7 +107,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			}
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getFacade().getAllTools();
+				return LoginManager.getUsageOps().getAllTools();
 			}
 			
 		};
@@ -135,7 +135,6 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 
 	private void handleOneWorkflow(Workflow w, Tool t)
 	{
-		System.out.println("In handle one");
 		Node[] nodes = new Node[w.getTools().size()];
 
 		int i = 0;
@@ -267,11 +266,11 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					String action = actions.getSelectedItem().toString();
 	System.out.println("Chekcing + " + action);
 					if (action.equals("All workflows including")) {
-						return LoginManager.getFacade().getAllWorkflowsIncluding(tool);
+						return LoginManager.getUsageOps().getAllWorkflowsIncluding(tool);
 					} else if(action.equals("Most common workflow starting with")){
-						return LoginManager.getFacade().getMostPopularWorkflowStartingWith(tool);
+						return LoginManager.getUsageOps().getMostPopularWorkflowStartingWith(tool);
 					} else if(action.equals("Most common workflow including")){
-						return LoginManager.getFacade().getMostPopularWorkflowIncluding(tool);
+						return LoginManager.getUsageOps().getMostPopularWorkflowIncluding(tool);
 					}
 					else
 					{
@@ -333,7 +332,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		// create the Nodes. Do a preliminary (random) layout.
 		int count = 0;
 		for (int i = 0; i < nodes.length; i++) {
-			String node = nodes[i].value.getName();
+			Tool node = nodes[i].value;
 
 			// figure out the factor to multiply by the height
 			double factor = (edges == null) ? 0.5 : Math.random();
@@ -349,17 +348,17 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			int myHeight = (node.equals(target)) ? 60 : 40;
 			// use the number of characters to figure out the width
 			int minWidth = 80;
-			int tempWidth = node.trim().length() * 7; // figure 7 pixels per
+			int tempWidth = node.getName().trim().length() * 7; // figure 7 pixels per
 														// character
 			int myWidth = (tempWidth < minWidth) ? minWidth : tempWidth;
 			if (node.equals(target))
 				myWidth *= 1.5;
 			backGraph.addVertex(count);
-			cells[count] = createNode(node, node, new Rectangle2D.Double(
+			cells[count] = createNode(node, node.getName(), new Rectangle2D.Double(
 					avgWidth * count + 50, height * factor, myWidth, myHeight),
 					myColor);
-			map.put(node, count);
-			reverseMap.add(node);
+			map.put(node.getName(), count);
+			reverseMap.add(node.getName());
 			// increment the counter
 			count++;
 		}
@@ -394,7 +393,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		count = 0;
 		int[] shifts = new int[nodes.length];
 		for (int i = 0; i < nodes.length; i++) {
-			String node = nodes[i].value.getName();
+			Tool node = nodes[i].value;
 
 			// figure out which color - default is gray
 			Color myColor = Color.gray;
@@ -404,11 +403,11 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			int myHeight = (node.equals(target)) ? 60 : 40;
 			// use the number of characters to figure out the width
 			int minWidth = 80;
-			String toDisplay = node;
-			if (node.trim().length() > 21) {
+			String toDisplay = node.getName();
+			if (node.getName().trim().length() > 21) {
 				// Add a line break
-				toDisplay = "<html>" + node.trim().substring(0, 20) + "-<br>"
-						+ node.trim().substring(20) + "</html>";
+				toDisplay = "<html>" + node.getName().trim().substring(0, 20) + "-<br>"
+						+ node.getName().trim().substring(20) + "</html>";
 			}
 			int tempWidth = 23 * 7; // figure 7 pixels per character
 			int myWidth = (tempWidth < minWidth) ? minWidth : tempWidth;
@@ -490,15 +489,15 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 											// + ":" + target.getUserObject());
 		edge.setSource(source.getChildAt(0));
 		edge.setTarget(target.getChildAt(0));
-		edge.sourceNode = ((GraphNode) source).toolName.toString();
-		edge.destNode = ((GraphNode) target).toolName.toString();
+		edge.sourceNode = ((GraphNode) source).tool.getName();
+		edge.destNode = ((GraphNode) target).tool.getName();
 		int arrow = GraphConstants.ARROW_CLASSIC;
 		GraphConstants.setLineEnd(edge.getAttributes(), arrow);
 		GraphConstants.setEndFill(edge.getAttributes(), true);
 		return edge;
 	}
 
-	private DefaultGraphCell createNode(String label, String toDisplay,
+	private DefaultGraphCell createNode(Tool label, String toDisplay,
 			Rectangle2D bounds, Color color) {
 		GraphNode cell = new GraphNode(label, toDisplay, color);
 
@@ -775,14 +774,15 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				// Added by Flavio
 				// popup.hideWorkflowOptions();
 				// popup.hideWorkflowRating();
-				ArrayList<String> workflow = null;
+				Workflow workflow = null;
 				if (workflows != null && workflows.size() > 0) {
 					popup.showWorkflowOptions();
 					popup.showWorkflowRating();
-					workflow = DomainUtil.fromWorkflowStringToList(workflows
-							.get(0));
+//					workflow = DomainUtil.fromWorkflowStringToList(workflows
+//							.get(0));
+					//TODO
 				}
-				popup.initialize(selectedNode.getToolName(), workflow);
+				popup.initialize(selectedNode.tool, workflow);
 				popup.show(WorkflowVisualization.this, (int) rect.getCenterX(),
 						(int) rect.getCenterY());
 			}
@@ -823,16 +823,16 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		 */
 		private static final long serialVersionUID = 3097669686400262078L;
 		Color color;
-		String toolName;
+		Tool tool;
 		String toDisplay;
 
 		public String getToolName() {
-			return toolName;
+			return tool.getName();
 		}
 
-		public GraphNode(String label, String toDisplay, Color c) {
+		public GraphNode(Tool label, String toDisplay, Color c) {
 			super(toDisplay);
-			toolName = label;
+			tool = label;
 			this.toDisplay = toDisplay;
 			color = c;
 		}

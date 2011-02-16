@@ -122,7 +122,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 			}
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getFacade().getAllTools();
+				return LoginManager.getUsageOps().getAllTools();
 			}
 			
 		};
@@ -165,14 +165,14 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 								ret += "Total usage rate at start of workflow: "
 										+ usageRateAsWFHead + " <br>";
 
-								Tool mostPopularNextTool = LoginManager.getFacade().getMostPopularNextTool(tool);
+								Tool mostPopularNextTool = LoginManager.getUsageOps().getMostPopularNextTool(tool);
 								if(mostPopularNextTool == null)
 									ret += "No tools are used after this one"+ "<br>";
 								else
 									ret += "The most popular tool used next to this tool: "
 										+ mostPopularNextTool.getName() + "<br>";
 
-								Tool mostPopularPreviousTool = LoginManager.getFacade().getMostPopularPreviousTool(tool);
+								Tool mostPopularPreviousTool = LoginManager.getUsageOps().getMostPopularPreviousTool(tool);
 								if(mostPopularPreviousTool == null)
 									ret += "No tools are used before this one"+ "<br>";
 								else

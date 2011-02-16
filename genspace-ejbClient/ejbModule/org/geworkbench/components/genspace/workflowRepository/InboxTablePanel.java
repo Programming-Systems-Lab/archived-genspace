@@ -58,7 +58,6 @@ import javax.swing.table.AbstractTableModel;
 
 import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.ServerRequest;
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserWorkflow;

@@ -19,7 +19,9 @@ import javax.swing.border.MatteBorder;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.ServerRequest;
+import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
 import org.geworkbench.util.BrowserLauncher;
 
@@ -36,26 +38,20 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 	private JMenuItem contactEU = new JMenuItem();
 
 	// tool rating
-	private StarRatingPanel toolSRP = new StarRatingPanel(this,
-			RuntimeEnvironmentSettings.TOOL_SERVER, "getToolRating",
-			"writeToolRating");
+	private StarRatingPanel toolSRP = new StarRatingPanel(this);
 
 	// workflow specific
 	private TitleItem workflowTitle = new TitleItem("Workflow");
 	private JMenuItem viewWorkflowCommentsPage = new JMenuItem(
 			"View/add workflow comments");
-	private StarRatingPanel workflowSRP = new StarRatingPanel(this,
-			RuntimeEnvironmentSettings.ISBU_SERVER, "getWFRating",
-			"writeWFRating");
+	private StarRatingPanel workflowSRP = new StarRatingPanel(this);
 	private JMenuItem addWorkflowRepository = new JMenuItem(
 			"Add workflow to your repository");
 
 	// we store the tool name each time the menu is invoked
 	// so we can speed up the process
-	private String toolName;
-	private int toolId = -1;
-	private ArrayList<String> workflow;
-	private int wni = -1;
+	private Tool tool;
+	private Workflow workflow;
 
 	public WorkflowVisualizationPopup() {
 		super();
@@ -70,51 +66,38 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 		return this;
 	}
 
-	public void initialize(final String tn, final ArrayList<String> workflow) {
+	public void initialize(final Tool tn, final Workflow workflow) {
 
 		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 
 				// only perform setup if we need to
-				if (toolName == null || !toolName.equals(tn)) {
+				if (tool == null) {
 
 					getThisPopupMenu().removeAll();
-					toolName = tn;
-					toolSRP.setTitle("Rate " + tn);
+					tool = tn;
+					toolSRP.setTitle("Rate " + tn.getName());
 
 					if (toolOptions) {
-
-						ArrayList toolServerArgs = new ArrayList();
-						toolServerArgs.add(tn);
-						Integer id = (Integer) ServerRequest.get(
-								RuntimeEnvironmentSettings.TOOL_SERVER,
-								"getToolId", toolServerArgs);
-						if (id != null && id.intValue() != 0) {
-							toolId = id;
-							gotoToolPage
-									.setText("Goto GenSpace page for " + tn);
-							add(gotoToolPage);
-						} else {
-							toolId = -1;
-						}
+						gotoToolPage
+								.setText("Goto GenSpace page for " + tn.getName());
+						add(gotoToolPage);
 
 						// add username for expert user request
-						toolServerArgs.add(LoginManager.getUsername());
-						String expertUser = (String) ServerRequest.get(
-								RuntimeEnvironmentSettings.TOOL_SERVER,
-								"getExpertUser", toolServerArgs);
 
-						if (expertUser != null && !expertUser.equals("none")) {
+						User expert = LoginManager.getUsageOps().getExpertUserFor(tn);
+
+						if (expert != null) {
 							contactEU.setText("Contact Expert User - ("
-									+ expertUser + ")");
+									+ expert.getFullName() + ")");
 							add(contactEU);
 						}
 					}
 
-					if (toolRating && toolId > 0) {
+					if (toolRating && tool.getId() > 0) {
 						toolSRP.setTitle("Rate " + tn);
-						toolSRP.loadRating(toolId);
+						toolSRP.loadRating(tn);
 						add(toolSRP);
 					}
 				}
@@ -123,16 +106,9 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 					if (workflowOptions) {
 						workflowTitle.setVisible(true);
 						add(workflowTitle);
-						Integer id = (Integer) ServerRequest.get(
-								RuntimeEnvironmentSettings.ISBU_SERVER,
-								"getWFId", workflow);
-						if (id != null)
-							wni = id;
-						else
-							wni = -1;
-
+					
 						// display only if we have a good id
-						if (id != null && id > 0) {
+						if (workflow.getId() > 0) {
 							addWorkflowRepository.setVisible(true);
 							add(addWorkflowRepository);
 							viewWorkflowCommentsPage.setVisible(true);
@@ -141,9 +117,9 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 							viewWorkflowCommentsPage.setVisible(false);
 
 					}
-					if (workflowRating && wni > 0) {
+					if (workflowRating && workflow.getId() > 0) {
 						workflowSRP.setTitle("Rate workflow until here");
-						workflowSRP.loadRating(wni);
+						workflowSRP.loadRating(workflow);
 						add(workflowSRP);
 					}
 				}
@@ -209,10 +185,10 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 
 		JMenuItem item = (JMenuItem) event.getSource();
 		boolean browser = true;
-		if (item == gotoToolPage && toolId > 0)
-			args = "tool/index/" + toolId;
-		else if (item == viewWorkflowCommentsPage && wni > 0)
-			args = "workflow/index/" + wni;
+		if (item == gotoToolPage && tool.getId() > 0)
+			args = "tool/index/" + tool.getId();
+		else if (item == viewWorkflowCommentsPage && workflow.getId() > 0)
+			args = "workflow/index/" + workflow.getId();
 		else if (item == contactEU) {
 			JOptionPane
 					.showMessageDialog(
@@ -221,7 +197,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 									+ "Please use the messaging plugin to contact the expert user.",
 							"Warning", JOptionPane.WARNING_MESSAGE);
 			return;
-		} else if (item == addWorkflowRepository && wni != -1) {
+		} else if (item == addWorkflowRepository && workflow.getId() > 0) {
 			browser = false;
 			addWorkFlowToRepository();
 		}

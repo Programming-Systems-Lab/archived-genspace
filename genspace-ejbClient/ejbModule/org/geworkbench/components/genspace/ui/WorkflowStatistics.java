@@ -7,7 +7,7 @@ import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
-import org.geworkbench.components.genspace.server.ToolInformationRemote;
+import org.geworkbench.components.genspace.server.UsageInformationRemote;
 import org.geworkbench.engine.config.VisualPlugin;
 
 import java.awt.Component;
@@ -56,6 +56,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					List<Tool>results = get();
 					DefaultComboBoxModel m = new DefaultComboBoxModel();
 					m.addElement("");
+					if(results != null)
 					for (Tool s : results) {
 						m.addElement(s);
 					}
@@ -70,7 +71,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getFacade().getAllTools();
+				return LoginManager.getUsageOps().getAllTools();
 			}
 
 		};
@@ -86,6 +87,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					List<Tool> results = get();
 					DefaultComboBoxModel m = new DefaultComboBoxModel();
 					int lim = 10;
+					if(results != null)
 					for (Tool s : results) {
 						m.addElement(s.getName());
 						lim--;
@@ -103,7 +105,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getFacade().getToolsByPopularity();
+				return LoginManager.getUsageOps().getToolsByPopularity();
 			}
 
 		};
@@ -119,6 +121,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					List<Workflow> results = get();
 					DefaultComboBoxModel m = new DefaultComboBoxModel();
 					int lim = 10;
+					if(results != null)
 					for (Workflow s : results) {
 						m.addElement(s.toString());
 						lim--;
@@ -136,7 +139,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			@Override
 			protected List<Workflow> doInBackground() throws Exception {
 
-				return LoginManager.getFacade().getWorkflowsByPopularity();
+				return LoginManager.getUsageOps().getWorkflowsByPopularity();
 			}
 
 		};
@@ -152,6 +155,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					List<Tool> results = get();
 					DefaultComboBoxModel m = new DefaultComboBoxModel();
 					int lim = 10;
+					if(results != null)
 					for (Tool s : results) {
 						m.addElement(s.getName());
 						lim--;
@@ -169,7 +173,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getFacade().getMostPopularWFHeads();
+				return LoginManager.getUsageOps().getMostPopularWFHeads();
 			}
 
 		};
@@ -215,14 +219,14 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 				ret += "Total usage rate at start of workflow: "
 						+ usageRateAsWFHead + " <br>";
 
-				Tool mostPopularNextTool = LoginManager.getFacade().getMostPopularNextTool(tool);
+				Tool mostPopularNextTool = LoginManager.getUsageOps().getMostPopularNextTool(tool);
 				if(mostPopularNextTool == null)
 					ret += "No tools are used after this one"+ "<br>";
 				else
 					ret += "The most popular tool used next to this tool: "
 						+ mostPopularNextTool.getName() + "<br>";
 
-				Tool mostPopularPreviousTool = LoginManager.getFacade().getMostPopularPreviousTool(tool);
+				Tool mostPopularPreviousTool = LoginManager.getUsageOps().getMostPopularPreviousTool(tool);
 				if(mostPopularPreviousTool == null)
 					ret += "No tools are used before this one"+ "<br>";
 				else
@@ -508,11 +512,11 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 	public Component getComponent() {
 		return this;
 	}
-	private static ToolInformationRemote facade;
-	public static ToolInformationRemote getFacade()
+	private static UsageInformationRemote facade;
+	public static UsageInformationRemote getFacade()
 	{
 		if(facade == null)
-			facade = (ToolInformationRemote) GenSpace.getRemote("ToolInformation");
+			facade = (UsageInformationRemote) GenSpace.getRemote("ToolInformation");
 		return facade;
 	}
 

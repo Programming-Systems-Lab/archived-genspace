@@ -26,6 +26,8 @@ public class Tool implements Serializable {
 	private int mostCommonParametersCount;
 	private int usageCount;
 	private int wfCountHead;
+	private int sumRating =0;
+	private int numRating =0;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -89,12 +91,23 @@ public class Tool implements Serializable {
 	public void setWfCountHead(int wfCountHead) {
 		this.wfCountHead = wfCountHead;
 	}
-	
+	private void setSumRating(int sumRating) {
+		this.sumRating = sumRating;
+	}
+	public int getSumRating() {
+		return sumRating;
+	}
+	private void setNumRating(int numRating) {
+		this.numRating = numRating;
+	}
+	public int getNumRating() {
+		return numRating;
+	}
 	@Override
 	public boolean equals(Object o) {
 		if (o instanceof Tool) {
 			Tool t = (Tool) o;
-			return t.name.equals(this.name);
+			return t.name.equals(this.name) && t.id == this.id;
 		}
 		return false;
 	}
@@ -108,4 +121,26 @@ public class Tool implements Serializable {
 	public String toString() {
 		return getName();
 	}
+	
+	public void updateRatingCache()
+	{
+		//TODO make this called automatically on save of ratings?
+		int numRating =0;
+		int totalRating =0;
+		for(ToolRating tr : getRatings())
+		{
+			numRating++;
+			totalRating += tr.getRating();
+		}
+		setNumRating(numRating);
+		setSumRating(totalRating);
+	}
+	
+	public double getOverallRating() {
+		if(getNumRating() == 0)
+			return 0;
+		else
+			return getSumRating() / getNumRating();
+	}
+
 }

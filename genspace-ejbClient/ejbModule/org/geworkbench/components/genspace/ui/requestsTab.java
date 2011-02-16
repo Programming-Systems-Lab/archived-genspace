@@ -2,6 +2,12 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
+import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.entity.Network;
+import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.UserNetwork;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,77 +38,71 @@ public class requestsTab extends SocialTab {
 	
 	@Override
 	public void updateFormFields() {
-//		if (p.amLoggedIn()) {
-//
-//			SwingWorker<List<NetworkMessage>, Void> worker = new SwingWorker<List<NetworkMessage>, Void>() {
-//
-//				@Override
-//				protected List<NetworkMessage> doInBackground()
-//						throws Exception {
-//					List<NetworkMessage> myNetworks = n.listMyNetworks();
-//					LinkedList<NetworkMessage> ret = new LinkedList<NetworkMessage>();
-//					for (NetworkMessage t : myNetworks) {
-//						Network nt = (Network) t;
-//						if (nt.creator.equals(p.getMyUsername()))
-//							ret.addAll(n.listPendingUsersByNetwork(t.subject));
-//					}
-//					return ret;
-//				}
-//
-//				@Override
-//				protected void done() {
-//					List<NetworkMessage> requests = null;
-//					try {
-//						requests = get();
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					} catch (ExecutionException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					DefaultListModel model = new DefaultListModel();
-//					for (NetworkMessage t : requests) {
-//						model.addElement(t);
-//					}
-//					networksList.setModel(model);
-//				}
-//
-//			};
-//			worker.execute();
-//
-//			SwingWorker<List<NetworkMessage>, Void> worker2 = new SwingWorker<List<NetworkMessage>, Void>() {
-//
-//				@Override
-//				protected List<NetworkMessage> doInBackground()
-//						throws Exception {
-//					return f.getPendingRequests();
-//				}
-//
-//				@Override
-//				protected void done() {
-//					List<NetworkMessage> requests = null;
-//					try {
-//						requests = get();
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					} catch (ExecutionException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					DefaultListModel model = new DefaultListModel();
-//					for (NetworkMessage t : requests) {
-//						model.addElement(t);
-//					}
-//					friendsList.setModel(model);
-//				}
-//
-//			};
-//			worker2.execute();
-//
-//		}
-		//TODO
+		if (LoginManager.isLoggedIn()) {
+
+			SwingWorker<List<UserNetwork>, Void> worker = new SwingWorker<List<UserNetwork>, Void>() {
+
+				@Override
+				protected List<UserNetwork> doInBackground()
+						throws Exception {
+					LinkedList<UserNetwork> ret = new LinkedList<UserNetwork>();
+					for (UserNetwork t : LoginManager.getUser().getNetworks()) {
+						Network nt = t.getNetwork();
+						if (nt.getOwner().equals(LoginManager.getUser()))
+							ret.addAll(LoginManager.getNetworkOps().getNetworkRequests(nt));
+					}
+					return ret;
+				}
+
+				@Override
+				protected void done() {
+					List<UserNetwork> requests = null;
+					try {
+						requests = get();
+					} catch (InterruptedException e) {
+						GenSpace.logger.error("Error talking to server",e);
+					} catch (ExecutionException e) {
+						GenSpace.logger.error("Error talking to server",e);
+					}
+					DefaultListModel model = new DefaultListModel();
+					for (UserNetwork t : requests) {
+						model.addElement(t);
+					}
+					networksList.setModel(model);
+				}
+
+			};
+			worker.execute();
+
+			SwingWorker<List<User>, Void> worker2 = new SwingWorker<List<User>, Void>() {
+
+				@Override
+				protected List<User> doInBackground()
+						throws Exception {
+					return LoginManager.getFriendOps().getFriendRequests();
+				}
+
+				@Override
+				protected void done() {
+					List<User> requests = null;
+					try {
+						requests = get();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					} catch (ExecutionException e) {
+						e.printStackTrace();
+					}
+					DefaultListModel model = new DefaultListModel();
+					for (User t : requests) {
+						model.addElement(t);
+					}
+					friendsList.setModel(model);
+				}
+
+			};
+			worker2.execute();
+
+		}
 	}
 
 	private void initListeners() {
@@ -112,18 +112,14 @@ public class requestsTab extends SocialTab {
 			public Component getListCellRendererComponent(JList list,
 					Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
-				// TODO Auto-generated method stub
-//				Friend n = (Friend) value;
+				User n = (User) value;
 				JLabel ret = (JLabel) new DefaultListCellRenderer()
 						.getListCellRendererComponent(list, value, index,
 								isSelected, cellHasFocus);
-//				ret.setText(n.profile.profile.get("first_name") + " "
-//						+ n.profile.profile.get("last_name") + " (" + n.subject
-//						+ ")");
-//				
-//				if (isSelected)
-//					ret.setBackground(new Color(205, 220, 243));
-				//TODO
+				ret.setText(n.getFullName());
+				
+				if (isSelected)
+					ret.setBackground(new Color(205, 220, 243));
 				return ret;
 			}
 		});
@@ -137,11 +133,9 @@ public class requestsTab extends SocialTab {
 				JLabel ret = (JLabel) new DefaultListCellRenderer()
 						.getListCellRendererComponent(list, value, index,
 								isSelected, cellHasFocus);
-//				Profile n = (Profile) value;
-//				ret.setText(n.details + ": " + n.profile.get("first_name")
-//						+ " " + n.profile.get("last_name") + " (" + n.subject
-//						+ ")");
-				//TODO
+				UserNetwork n = (UserNetwork) value;
+				ret.setText(n.getNetwork().getName() + ": " + n.getUser().getFullName());
+
 				if (isSelected)
 					ret.setBackground(new Color(205, 220, 243));
 				return ret;
@@ -151,35 +145,27 @@ public class requestsTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				if (networksList.getSelectedValue() != null) {
-//					n.acceptNetworkRequest(((Profile) networksList
-//							.getSelectedValue()).details,
-//							((Profile) networksList.getSelectedValue()).profile
-//									.get("username"));
-//					updateFormFields();
-//				}
-			//TODO
+				if (networksList.getSelectedValue() != null) {
+					LoginManager.getNetworkOps().acceptNetworkRequest((UserNetwork) networksList.getSelectedValue());
+					updateFormFields();
+				}
 			}
 		});
 		rejectButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				if (networksList.getSelectedValue() != null) {
-//					n.rejectNetworkRequest(((Profile) networksList
-//							.getSelectedValue()).details,
-//							((Profile) networksList.getSelectedValue()).profile
-//									.get("username"));
-//					updateFormFields();
-//				}
-				//TODO
+				if (networksList.getSelectedValue() != null) {
+					LoginManager.getNetworkOps().rejectNetworkRequest((UserNetwork) networksList.getSelectedValue());
+					updateFormFields();
+				}
 			}
 		});
 		acceptFriendButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				f.addFriend(((Friend) friendsList.getSelectedValue()).subject);
+				LoginManager.getFriendOps().addFriend((User) friendsList.getSelectedValue());
 				updateFormFields();
 
 			}
@@ -188,7 +174,7 @@ public class requestsTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				f.addFriend(((Friend) friendsList.getSelectedValue()).subject);
+				LoginManager.getFriendOps().rejectFriend((User) friendsList.getSelectedValue());
 				updateFormFields();
 			}
 		});
@@ -333,7 +319,6 @@ public class requestsTab extends SocialTab {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return "Pending Requests";
 	}
 }

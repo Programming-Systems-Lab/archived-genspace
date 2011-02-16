@@ -7,18 +7,13 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -26,10 +21,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
-import javax.swing.SwingWorker;
 import javax.swing.border.MatteBorder;
 
-import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
@@ -48,7 +41,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 	public static Workflow cwf = null;
 	public static ArrayList<Workflow> usedWorkFlowToday = new ArrayList<Workflow>();
-	private static String currentTid = null;
+//	private static String currentTid = null;
 
 	private static JPanel workflowViewerPanel = new JPanel();
 	private static JPanel workflowNodePanel = new JPanel(new FlowLayout());
@@ -254,7 +247,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 		displayCWF();
 		
 		WorkflowViewerPanelNode newNode = new WorkflowViewerPanelNode(
-			newCWF.getLastToolName(), newCWF.getTools().size() - 1);
+			newCWF.getLastTool(), newCWF.getTools().size() - 1,newCWF);
 
 				newNode.addMouseListener(new MouseListener() {
 
@@ -269,11 +262,8 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 						WorkflowViewerPanelNode node = (WorkflowViewerPanelNode) event
 								.getSource();
 
-						ArrayList<String> workflow = new ArrayList();
-						for (int i = 0; i <= node.getIndex(); i++)
-							workflow.add(cwf.getTools().get(i).getTool().getName());
 
-						popup.initialize(node.getText(), workflow);
+						popup.initialize(node.getTool(), node.getWorkflow());
 						popup.show(node, event.getX(), event.getY());
 
 					}
@@ -300,7 +290,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 	private static List<Workflow> getRealTimeWorkFlowSuggestion(Workflow cwf) {
 		
-		return LoginManager.getFacade().getToolSuggestion(cwf);
+		return LoginManager.getUsageOps().getToolSuggestion(cwf);
 	}
 
 	/*
@@ -338,14 +328,24 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 class WorkflowViewerPanelNode extends JButton {
 
+	private static final long serialVersionUID = -1326037460164805701L;
 	private int index;
-
-	public WorkflowViewerPanelNode(String title, int index) {
-		super(title);
+	private Workflow wkflw;
+	private Tool tool;
+	public WorkflowViewerPanelNode(Tool tool, int index,Workflow workflow) {
+		super(tool.getName());
 		this.putClientProperty("is3DEnabled", Boolean.FALSE);
 		this.index = index;
+		this.wkflw = workflow;
+		this.tool = tool;
 	}
 
+	public Tool getTool() {
+		return tool;
+	}
+	public Workflow getWorkflow() {
+		return wkflw;
+	}
 	public int getIndex() {
 		return index;
 	}

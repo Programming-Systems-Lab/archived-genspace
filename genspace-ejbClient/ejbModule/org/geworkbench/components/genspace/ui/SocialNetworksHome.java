@@ -1,14 +1,10 @@
 package org.geworkbench.components.genspace.ui;
 
-import javax.swing.*;
-
-
-import org.geworkbench.components.genspace.LoginManager;
-import org.geworkbench.components.genspace.entity.Friend;
-import org.geworkbench.components.genspace.entity.User;
-import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -17,13 +13,27 @@ import java.util.List;
 import java.util.Stack;
 import java.util.concurrent.ExecutionException;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingWorker;
+
+import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
+
 /**
  * Created by IntelliJ IDEA. User: jon Date: Aug 28, 2010 Time: 11:45:56 AM To
  * change this template use File | Settings | File Templates.
  */
 public class SocialNetworksHome {
 	private JLabel a1FriendRequestLabel;
-	private JLabel a1NetworkRequestLabel;
+//	private JLabel a1NetworkRequestLabel;
 	private JButton button1;
 	private JLabel friendsLink;
 	private JLabel requestsLink;
@@ -42,7 +52,7 @@ public class SocialNetworksHome {
 	private SocialTab profile;
 	private SocialTab settings;
 	private SocialTab networks;
-	private SocialTab viewProfile;
+//	private SocialTab viewProfile;
 	private Stack<SocialTab> last = new Stack<SocialTab>();
 	private JPanel shownPanel;
 
@@ -95,13 +105,11 @@ public class SocialNetworksHome {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
@@ -123,37 +131,36 @@ public class SocialNetworksHome {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-//				if (f.amLoggedIn()) {
-//					SwingWorker<Profile, Void> worker = new SwingWorker<Profile, Void>() {
-//
-//						@Override
-//						protected Profile doInBackground() throws Exception {
-//							return p.getUsersProfile(friendsSearch.getText());
-//						}
-//
-//						@Override
-//						protected void done() {
-//							Profile prof = null;
-//							try {
-//								prof = get();
-//							} catch (InterruptedException e) {
-//								GenSpace.logger.error("Error",e);
-//							} catch (ExecutionException e) {
-//								GenSpace.logger.error("Error",e);
-//							}
-//							if (prof == null || prof.subject == null
-//									|| prof.subject == "") {
-//								JOptionPane
-//										.showMessageDialog(panel1,
-//												"Error: Could not find user's profile!");
-//							} else
-//								setContent(new viewProfileTab(prof));
-//						}
-//
-//					};
-//					worker.execute();
-//				}
-			}//TODO
+				if (LoginManager.isLoggedIn()) {
+					SwingWorker<User, Void> worker = new SwingWorker<User, Void>() {
+
+						@Override
+						protected User doInBackground() throws Exception {
+							return LoginManager.getUserOps().getProfile(friendsSearch.getText());
+						}
+
+						@Override
+						protected void done() {
+							User prof = null;
+							try {
+								prof = get();
+							} catch (InterruptedException e) {
+								GenSpace.logger.error("Error",e);
+							} catch (ExecutionException e) {
+								GenSpace.logger.error("Error",e);
+							}
+							if (prof == null) {
+								JOptionPane
+										.showMessageDialog(panel1,
+												"Error: Could not find user's profile!");
+							} else
+								setContent(new viewProfileTab(prof));
+						}
+
+					};
+					worker.execute();
+				}
+			}
 		});
 		networksLink.addMouseListener(listener);
 		profileLink.addMouseListener(listener);
@@ -226,57 +233,34 @@ public class SocialNetworksHome {
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
-					return LoginManager.getFacade().getFriendRequests();
+					return LoginManager.getFriendOps().getFriendRequests();
 				}
-//
-//				@Override
-//				protected void done() {
-//					List<NetworkMessage> lst = null;
-//					try {
-//						lst = get();
-//					} catch (InterruptedException e) {
-//						GenSpace.logger.error("Error",e);
-//					} catch (ExecutionException e) {
-//						GenSpace.logger.error("Error",e);
-//					}
-//					friendsSearch.setText("");
-//					Model m = (Model) friendsSearch.getModel();
-//					m.data.clear();
-//					for (NetworkMessage t : lst) {
-//						m.data.add(t.subject);
-//					}
-//				}
-//
+
+				@Override
+				protected void done() {
+					List<User> lst = null;
+					try {
+						lst = get();
+					} catch (InterruptedException e) {
+						GenSpace.logger.error("Error",e);
+					} catch (ExecutionException e) {
+						GenSpace.logger.error("Error",e);
+					}
+					friendsSearch.setText("");
+					Model m = (Model) friendsSearch.getModel();
+					m.data.clear();
+					if(lst != null)
+					for (User t : lst) {
+						m.data.add(t.getFullName());
+					}
+					int size = lst.size();
+					a1FriendRequestLabel.setText("" + size + " Request"
+							+ (size == 1 ? "" : "s"));
+				}
 			};
 			worker.execute();
-//
-//			SwingWorker<Integer, Void> worker2 = new SwingWorker<Integer, Void>() {
-//
-//				@Override
-//				protected Integer doInBackground() throws Exception {
-//					return p.getNumRequests();
-//				}
-//
-//				@Override
-//				protected void done() {
-//					Integer lst = null;
-//					try {
-//						lst = get();
-//					} catch (InterruptedException e) {
-//						GenSpace.logger.error("Error",e);
-//					} catch (ExecutionException e) {
-//						GenSpace.logger.error("Error",e);
-//					}
-//					if (lst == null)
-//						lst = 0;
-//					a1FriendRequestLabel.setText("" + lst + " Request"
-//							+ (lst == 1 ? "" : "s"));
-//				}
-//
-//			};
-//			worker2.execute();
 		}
-		//TODO
+
 	}
 
 	/**

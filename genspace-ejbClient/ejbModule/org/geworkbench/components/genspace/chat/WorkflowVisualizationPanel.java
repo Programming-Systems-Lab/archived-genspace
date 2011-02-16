@@ -10,6 +10,10 @@ import java.util.HashMap;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowTool;
 import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
 import org.jgraph.JGraph;
 import org.jgraph.event.GraphModelEvent;
@@ -40,10 +44,11 @@ public class WorkflowVisualizationPanel extends JPanel {
 
 	private JGraph graph;
 	private DefaultGraphCell[] cells;
-	private ArrayList<String> workflows = new ArrayList<String>();
+	private ArrayList<Workflow> workflows = new ArrayList<Workflow>();
 	private JPanel graphPanel = new JPanel();
 	private WorkflowVisualizationPopup popup = new WorkflowVisualizationPopup();
-
+	private Workflow workflow;
+	
 	public static void main(String[] args) {
 		JFrame test = new JFrame();
 		test.setSize(600, 500);
@@ -51,22 +56,21 @@ public class WorkflowVisualizationPanel extends JPanel {
 
 		test.add(p);
 		p.setSize(600, 500);
-		p.render("Aracne,Aracne,Aracne", "test");
+//		p.render("Aracne,Aracne,Aracne", "test");
 
 		test.setVisible(true);
 	}
 
-	public void render(String workflow, String name) {
-
-		workflows.add(workflow);
-		// separate all the names
-		String[] nodeNames = workflow.split(",");
-		// create an array of Nodes
-		Node[] nodes = new Node[nodeNames.length];
-
-		// populate the array of Nodes
-		for (int i = 0; i < nodes.length; i++) {
-			nodes[i] = new Node(nodeNames[i]);
+	public void render(Workflow w, String name) {
+		workflows.add(w);
+		Node[] nodes = new Node[w.getTools().size()];
+		workflow = w;
+		int i = 0;
+		for(WorkflowTool to : w.getTools())
+		{
+			nodes[i] = new Node(to.getTool());
+			System.out.println(to.getTool());
+			i++;
 		}
 
 		// mark the starting node
@@ -112,7 +116,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 		// create the Nodes. Do a preliminary (random) layout.
 		int count = 0;
 		for (int i = 0; i < nodes.length; i++) {
-			String node = nodes[i].value;
+			Tool node = nodes[i].value;
 
 			// figure out the factor to multiply by the height
 			double factor = (edges == null) ? 0.5 : Math.random();
@@ -123,15 +127,15 @@ public class WorkflowVisualizationPanel extends JPanel {
 			int myHeight = 40;
 			// use the number of characters to figure out the width
 			int minWidth = 80;
-			int tempWidth = node.trim().length() * 7; // figure 7 pixels per
+			int tempWidth = node.getName().trim().length() * 7; // figure 7 pixels per
 														// character
 			int myWidth = (tempWidth < minWidth) ? minWidth : tempWidth;
 			backGraph.addVertex(count);
-			cells[count] = createNode(node, node, new Rectangle2D.Double(
+			cells[count] = createNode(node, node.getName(), new Rectangle2D.Double(
 					avgWidth * count + 50, height * factor, myWidth, myHeight),
 					myColor);
-			map.put(node, count);
-			reverseMap.add(node);
+			map.put(node.getName(), count);
+			reverseMap.add(node.getName());
 			// increment the counter
 			count++;
 		}
@@ -168,7 +172,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 		count = 0;
 		int[] shifts = new int[nodes.length];
 		for (int i = 0; i < nodes.length; i++) {
-			String node = nodes[i].value;
+			Tool node = nodes[i].value;
 
 			// figure out which color - default is gray
 			Color myColor = Color.gray;
@@ -176,11 +180,11 @@ public class WorkflowVisualizationPanel extends JPanel {
 			int myHeight = 40;
 			// use the number of characters to figure out the width
 			int minWidth = 80;
-			String toDisplay = node;
-			if (node.trim().length() > 21) {
+			String toDisplay = node.getName();
+			if (node.getName().trim().length() > 21) {
 				// Add a line break
-				toDisplay = "<html>" + node.trim().substring(0, 20) + "-<br>"
-						+ node.trim().substring(20) + "</html>";
+				toDisplay = "<html>" + node.getName().trim().substring(0, 20) + "-<br>"
+						+ node.getName().trim().substring(20) + "</html>";
 			}
 			int tempWidth = 23 * 7; // figure 7 pixels per character
 			int myWidth = (tempWidth < minWidth) ? minWidth : tempWidth;
@@ -266,7 +270,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 		return edge;
 	}
 
-	private DefaultGraphCell createNode(String label, String toDisplay,
+	private DefaultGraphCell createNode(Tool label, String toDisplay,
 			Rectangle2D bounds, Color color) {
 		GraphNode cell = new GraphNode(label, toDisplay, color);
 
@@ -305,7 +309,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 
 	class Node {
 		// the value to be displayed in the node
-		String value;
+		Tool value;
 		// the total sum of the position numbers for this node
 		private int totalPos = 0;
 		// the number of workflows in which this node appears
@@ -315,7 +319,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 		// whether it's a starting node
 		boolean isStart = false;
 
-		public Node(String v) {
+		public Node(Tool v) {
 			value = v;
 		}
 
@@ -393,25 +397,26 @@ public class WorkflowVisualizationPanel extends JPanel {
 				// loop through all the workflows and all the highlighted nodes
 				// to get the set of edges
 				int count = 0;
-				for (String workflow : workflows) {
-					// see if it contains the nodes that have been highlighted
-					if (contains(workflow, highlightedNodes)) {
-						count++;
-						// if so, get all the edges for that workflow
-						String[] nodes = workflow.split(",");
-						for (int i = 0; i < nodes.length; i++) {
-							// create an edge between this one and the next,
-							// only if the edge doesn't already exist
-							if (i < nodes.length - 1) {
-								Edge edge = new Edge(nodes[i], nodes[i + 1]);
-								if (workflowEdges.contains(edge) == false) {
-									workflowEdges.add(edge);
-								}
-							}
-						}
-					}
-				}
-
+//				for (Workflows workflow : workflows) {
+//					// see if it contains the nodes that have been highlighted
+//					if (contains(workflow, highlightedNodes)) {
+//						count++;
+//						// if so, get all the edges for that workflow
+//						String[] nodes = workflow.split(",");
+//						for (int i = 0; i < nodes.length; i++) {
+//							// create an edge between this one and the next,
+//							// only if the edge doesn't already exist
+//							if (i < nodes.length - 1) {
+//								Edge edge = new Edge(nodes[i], nodes[i + 1]);
+//								if (workflowEdges.contains(edge) == false) {
+//									workflowEdges.add(edge);
+//								}
+//							}
+//						}
+//					}
+//				}
+//TODO
+				
 				// put together the String with the list of all the selected
 				// nodes
 				String highlighted = "";
@@ -513,7 +518,7 @@ public class WorkflowVisualizationPanel extends JPanel {
 				popup.showToolRating();
 				popup.hideWorkflowOptions();
 				popup.hideWorkflowRating();
-				popup.initialize(selectedNode.getToolName(), null);
+				popup.initialize(selectedNode.tool, workflow);
 				popup.show(WorkflowVisualizationPanel.this,
 						(int) rect.getCenterX(), (int) rect.getCenterY());
 			}
@@ -546,17 +551,21 @@ public class WorkflowVisualizationPanel extends JPanel {
 	}
 
 	class GraphNode extends DefaultGraphCell {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 3097669686400262078L;
 		Color color;
-		String toolName;
+		Tool tool;
 		String toDisplay;
 
 		public String getToolName() {
-			return toolName;
+			return tool.getName();
 		}
 
-		public GraphNode(String label, String toDisplay, Color c) {
+		public GraphNode(Tool label, String toDisplay, Color c) {
 			super(toDisplay);
-			toolName = label;
+			tool = label;
 			this.toDisplay = toDisplay;
 			color = c;
 		}

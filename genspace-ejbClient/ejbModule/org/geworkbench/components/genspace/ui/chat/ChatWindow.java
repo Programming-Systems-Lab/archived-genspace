@@ -259,7 +259,8 @@ public class ChatWindow extends javax.swing.JFrame {
 		fr.add(p);
 		fr.setSize(600, 500);
 		p.setSize(600, 500);
-		p.render(m.getBody(), "Workflow from " + m.getFrom());
+//		p.render(m.getBody(), "Workflow from " + m.getFrom());
+		//TODO
 		fr.setVisible(true);
 	}
 

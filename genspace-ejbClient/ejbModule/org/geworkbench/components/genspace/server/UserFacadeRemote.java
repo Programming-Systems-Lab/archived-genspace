@@ -1,36 +1,31 @@
 package org.geworkbench.components.genspace.server;
+import java.util.Collection;
 import java.util.List;
 
 import javax.ejb.Remote;
 
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
+import org.geworkbench.components.genspace.entity.Friend;
+import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.ToolRating;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowRating;
 
 @Remote
 public interface UserFacadeRemote {
 	public boolean userExists(String username);
-	public User register(User u);
-	public User login(String username, String password);
+
+	public User getMe();
 	public void updateUser(User user);
+	public User getProfile(String who);	
 	
-	public List<Tool> getToolsByPopularity();
+	
+	
 
-	public List<Workflow> getWorkflowsByPopularity();
-
-	public List<Tool> getMostPopularWFHeads();
-
-	public Tool getMostPopularNextTool(Tool tool);
-
-	public Tool getMostPopularPreviousTool(Tool tool);
-	public List<Tool> getAllTools();
-	public List<Workflow> getMostPopularWorkflowStartingWith(Tool tool);
-	public List<Workflow> getMostPopularWorkflowIncluding(Tool tool);
-	public List<Workflow> getAllWorkflowsIncluding(Tool tool);
-	public List<Workflow> getToolSuggestion(Workflow cwf);
-	public Transaction sendUsageEvent(AnalysisEvent e);
-	public List<User> getFriendRequests();
+	
 	
 }

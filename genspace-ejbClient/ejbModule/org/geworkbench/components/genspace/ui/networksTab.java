@@ -2,7 +2,10 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
+import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.entity.Network;
+import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
 
 import java.awt.*;
@@ -37,21 +40,20 @@ public class networksTab extends SocialTab {
 					Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
 				JPanel pan = new JPanel();
-//				NetworkMessage t = (NetworkMessage) value;
-//				pan.setLayout(new BoxLayout(pan, BoxLayout.Y_AXIS));
-//				JLabel label = new JLabel(t.subject);
-//				Font f = new Font(label.getFont().getName(), Font.BOLD, 18);
-//				label.setFont(f);
-//				label.setForeground(new Color(-16777012));
-//
-//				pan.add(label);
-//				JLabel label2 = new JLabel("Moderated by " + t.details);
-//				pan.add(label2);
-//				pan.add(new JSeparator(SwingConstants.HORIZONTAL));
-//				if (isSelected)
-//					pan.setBackground(new Color(251, 251, 228));
-				
-				//TODO
+				UserNetwork un = (UserNetwork) value;
+				pan.setLayout(new BoxLayout(pan, BoxLayout.Y_AXIS));
+				JLabel label = new JLabel(un.getNetwork().getName());
+				Font f = new Font(label.getFont().getName(), Font.BOLD, 18);
+				label.setFont(f);
+				label.setForeground(new Color(-16777012));
+
+				pan.add(label);
+				JLabel label2 = new JLabel("Moderated by " + un.getNetwork().getOwner().getFullName());
+				pan.add(label2);
+				pan.add(new JSeparator(SwingConstants.HORIZONTAL));
+				if (isSelected)
+					pan.setBackground(new Color(251, 251, 228));
+
 				return pan;
 			}
 		});
@@ -59,80 +61,99 @@ public class networksTab extends SocialTab {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-//				if (e.getClickCount() == 2)
-//					parentFrame.setContent(new friendsTab(
-//							((NetworkMessage) lstMyNetworks.getSelectedValue()).subject,
-//							parentFrame));
-				//TODO
+				if (e.getClickCount() == 2)
+					parentFrame.setContent(new friendsTab(
+							((Network) lstMyNetworks.getSelectedValue()),
+							parentFrame));
 			}
 		});
 		button1.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				boolean found = false;
-//				for (NetworkMessage m : cachedAllNetworks) {
-//					if (m.subject.equals(chooseNetwork.getText())) {
-//						found = true;
-//						break;
-//					}
-//				}
-//				for (NetworkMessage m : cachedMyNetworks) {
-//					if (m.subject.equals(chooseNetwork.getText())) {
-//						return;
-//					}
-//				}
-//				if (found) {
-//					// Join
-//					f.joinNetwork(chooseNetwork.getText());
-//					JOptionPane
-//							.showMessageDialog(
-//									panel1,
-//									"A request has been sent to the network's owner for approval. It will not show up in your list until you have been approved.");
-//				} else {
-//					// create
-//					f.createNetwork(chooseNetwork.getText());
-//					JOptionPane.showMessageDialog(panel1, "The network "
-//							+ chooseNetwork.getText() + " has been created");
-//				}
-//				updateFormFields();
-//				chooseNetwork.setText("");
-				//TODO
+				boolean found = false;
+				for (Network m : cachedAllNetworks) {
+					if (m.getName().equals(chooseNetwork.getText())) {
+						found = true;
+						break;
+					}
+				}
+				for (UserNetwork m : cachedMyNetworks) {
+					if (m.getNetwork().getName().equals(chooseNetwork.getText())) {
+						return;
+					}
+				}
+				if (found) {
+					// Join
+					SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
+					{
+						@Override
+						protected Void doInBackground() throws Exception {
+							LoginManager.getNetworkOps().joinNetwork(chooseNetwork.getText());
+							return null;
+						}
+						@Override
+						protected void done() {
+							JOptionPane
+							.showMessageDialog(
+									panel1,
+									"A request has been sent to the network's owner for approval. It will not show up in your list until you have been approved.");
+							super.done();
+						}
+					};
+					worker.run();
+				} else {
+					// create
+					SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
+					{
+						@Override
+						protected Void doInBackground() throws Exception {
+							LoginManager.getNetworkOps().createNetwork(chooseNetwork.getText());
+							return null;
+						}
+						@Override
+						protected void done() {
+							JOptionPane.showMessageDialog(panel1, "The network "
+									+ chooseNetwork.getText() + " has been created");
+							super.done();
+						}
+					};
+					worker.run();
+					
+				}
+				updateFormFields();
+				chooseNetwork.setText("");
+
 			}
 		});
 		button2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				NetworkMessage selected = (NetworkMessage) lstMyNetworks
-//						.getSelectedValue();
-//				if (selected != null)
-//					f.leaveNetwork(selected.subject);
-				//TODO
+				UserNetwork selected = (UserNetwork) lstMyNetworks
+						.getSelectedValue();
+				if (selected != null)
+					LoginManager.getNetworkOps().leaveNetwork(selected);
 				updateFormFields();
 			}
 		});
@@ -247,65 +268,65 @@ public class networksTab extends SocialTab {
 	}
 
 	private List<Network> cachedAllNetworks;
-	private List<Network> cachedMyNetworks;
+	private List<UserNetwork> cachedMyNetworks;
 
 	@Override
 	public void updateFormFields() {
-//		if (p.amLoggedIn()) {
-//			SwingWorker<List<NetworkMessage>, Void> worker2 = new SwingWorker<List<NetworkMessage>, Void>() {
-//
-//				@Override
-//				protected List<NetworkMessage> doInBackground()
-//						throws Exception {
-//					return f.listMyNetworks();
-//				}
-//
-//				@Override
-//				protected void done() {
-//					try {
-//						cachedMyNetworks = get();
-//					} catch (InterruptedException e) {
-//						GenSpace.logger.error("Error",e);
-//					} catch (ExecutionException e) {
-//						GenSpace.logger.error("Error",e);
-//					}
-//					DefaultListModel model = new DefaultListModel();
-//					for (NetworkMessage t : cachedMyNetworks) {
-//						model.addElement(t);
-//					}
-//					lstMyNetworks.setModel(model);
-//				}
-//
-//			};
-//			worker2.execute();
-//			SwingWorker<List<NetworkMessage>, Void> worker = new SwingWorker<List<NetworkMessage>, Void>() {
-//
-//				@Override
-//				protected List<NetworkMessage> doInBackground()
-//						throws Exception {
-//					return f.listAllNetworks();
-//				}
-//
-//				@Override
-//				protected void done() {
-//					try {
-//						cachedAllNetworks = get();
-//					} catch (InterruptedException e) {
-//						GenSpace.logger.error("Error",e);
-//					} catch (ExecutionException e) {
-//						GenSpace.logger.error("Error",e);
-//					}
-//					Model m = (Model) chooseNetwork.getModel();
-//					m.data.clear();
-//					for (NetworkMessage t : cachedAllNetworks) {
-//						m.data.add(t.subject);
-//					}
-//					chooseNetwork.setText("");
-//				}
-//
-//			};
-//			worker.execute();
-//		}
+		if (LoginManager.isLoggedIn()) {
+			SwingWorker<List<UserNetwork>, Void> worker2 = new SwingWorker<List<UserNetwork>, Void>() {
+
+				@Override
+				protected List<UserNetwork> doInBackground()
+						throws Exception {
+					return LoginManager.getNetworkOps().getMyNetworks();
+				}
+
+				@Override
+				protected void done() {
+					try {
+						cachedMyNetworks = get();
+					} catch (InterruptedException e) {
+						GenSpace.logger.error("Error",e);
+					} catch (ExecutionException e) {
+						GenSpace.logger.error("Error",e);
+					}
+					DefaultListModel model = new DefaultListModel();
+					for (UserNetwork t : cachedMyNetworks) {
+						model.addElement(t);
+					}
+					lstMyNetworks.setModel(model);
+				}
+
+			};
+			worker2.execute();
+			SwingWorker<List<Network>, Void> worker = new SwingWorker<List<Network>, Void>() {
+
+				@Override
+				protected List<Network> doInBackground()
+						throws Exception {
+					return LoginManager.getNetworkOps().getAllNetworks();
+				}
+
+				@Override
+				protected void done() {
+					try {
+						cachedAllNetworks = get();
+					} catch (InterruptedException e) {
+						GenSpace.logger.error("Error",e);
+					} catch (ExecutionException e) {
+						GenSpace.logger.error("Error",e);
+					}
+					Model m = (Model) chooseNetwork.getModel();
+					m.data.clear();
+					for (Network t : cachedAllNetworks) {
+						m.data.add(t.getName());
+					}
+					chooseNetwork.setText("");
+				}
+
+			};
+			worker.execute();
+		}
 		//TODO
 	}
 }

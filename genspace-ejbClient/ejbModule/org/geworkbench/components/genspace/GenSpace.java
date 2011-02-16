@@ -1,10 +1,21 @@
 package org.geworkbench.components.genspace;
 
 import java.awt.Frame;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Properties;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.security.auth.callback.Callback;
+import javax.security.auth.callback.CallbackHandler;
+import javax.security.auth.callback.NameCallback;
+import javax.security.auth.callback.PasswordCallback;
+import javax.security.auth.callback.TextOutputCallback;
+import javax.security.auth.callback.UnsupportedCallbackException;
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,11 +48,14 @@ public class GenSpace {
 			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
 		}	
 		try {
-		if(ctx == null)
-			ctx = new InitialContext();
-		return ctx.lookup("org.geworkbench.components.genspace.server."+remoteName+"Remote");
+			if(ctx == null)
+			{
+				ctx = new InitialContext();
+			}
+			return ctx.lookup("org.geworkbench.components.genspace.server."+remoteName+"Remote");
 		} catch (NamingException e) {
 			logger.error("Unable find remote object for " + remoteName,e);
+		
 		}
 		return null;
 	}

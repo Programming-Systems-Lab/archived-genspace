@@ -2,8 +2,14 @@ package org.geworkbench.components.genspace.server;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.ejb.SessionContext;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.geworkbench.components.genspace.entity.User;
 
 /**
  * Borrowed from Netbeans wizard :)
@@ -15,6 +21,29 @@ public abstract class AbstractFacade<T> {
     private Class<T> entityClass; 
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
     
+    private User cachedUser = null;
+    @Resource
+    SessionContext ctx;
+    protected User getUser()
+    {
+    	if(cachedUser != null)
+    		return cachedUser;
+    	Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
+    	System.out.println("Doing select for user " +  ctx.getCallerPrincipal().getName());
+		q.setParameter("user", ctx.getCallerPrincipal().getName());
+		User r = null;
+		try
+		{
+		r = (User) q.getSingleResult();
+		System.out.println("Have result " + r.getFullName() + r.getLabAffiliation());
+		}
+		catch(NoResultException e)
+		{
+			System.err.println("Unable to find user record for logged in user " +  ctx.getCallerPrincipal().getName());
+		}
+		cachedUser = r;
+		return cachedUser;
+    }
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
     }

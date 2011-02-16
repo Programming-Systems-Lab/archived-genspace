@@ -1,10 +1,8 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -16,15 +14,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowNode;
 
 @Entity
@@ -51,7 +48,7 @@ public class User implements Serializable{
 	private int logData;
 	private int dataVisibility;
 	private java.util.Date createdAt;
-	private Set<Friend> friends = new HashSet<Friend>(); 
+	private List<Friend> friends = new ArrayList<Friend>(); 
 	private List<UserNetwork> networks = new ArrayList<UserNetwork>();
 	
 	private Set<Workflow> workflows = new HashSet<Workflow>();
@@ -214,10 +211,10 @@ public class User implements Serializable{
 	}
 	
 	@OneToMany(mappedBy="leftUser")
-	public Set<Friend> getFriends() { 
+	public List<Friend> getFriends() { 
 		return friends;
 	}
-	public void setFriends(Set<Friend> friends) {
+	public void setFriends(List<Friend> friends) {
 		this.friends = friends;
 	}
 	@OneToMany(mappedBy="user")
@@ -334,7 +331,7 @@ public class User implements Serializable{
 		// Whenever a folder was added in the ADD function the list of folders
 		// is ordered by name
 		// so we don't worry about it here.Å
-		for (WorkflowFolder f : this.folders) {
+		for (WorkflowFolder f : this.getFolders()) {
 			DefaultMutableTreeNode fnode = new DefaultMutableTreeNode(f);
 			folders.put(f.getName(), fnode);
 			rootNode.add(fnode);
@@ -382,5 +379,50 @@ public class User implements Serializable{
 		             sb.append(HEX_DIGITS.charAt(b >>> 4)).append(HEX_DIGITS.charAt(b & 0xF));
 		        }
 		        return sb.toString();	
+	}
+	public String getFullName() {
+		return this.getFirstName() + " " + this.getLastName();
+	}
+	public Friend isFriendsWith(User u) {
+		for(Friend f: getFriends())
+		{
+			if(f.getRightUser().equals(u))
+				return f;
+		}
+		return null;
+	}
+	public String toHTML() {
+		String r = "<html><body><b>" + getFirstName() + " "
+		+ getLastName() + " (" + getUsername() + ")</b><br>";
+		if (LoginManager.isVisible(this)) {
+			r += "<i>"
+					+ (getWorkTitle() != null
+							&& getWorkTitle() != "" ? getWorkTitle() + " at " : "")
+					+ (getLabAffiliation() != null ? getLabAffiliation():  " (affiliation not disclosed)") + "</i><br><br>";
+			r += "<b>Research Interests:</b><br />"
+					+getInterests() + "<br><br>";
+			r += "<b>Contact information:</b><br /><br>Phone: "
+					+ getPhone() + "<br>Email: "
+					+getEmail() + "<br><br>Mailing Address:<br>"
+					+ getAddr1() + "<br>" +getAddr2()
+					+ "<br>" + getCity() + ", "
+					+ getState() + ", " + getZipcode();
+		} else {
+			r += "This user is not visible to you. Please add them as a friend or join one of their networks to see their profile.";
+		}
+		r += "</body>";
+		r += "</html>";
+		return r;
+	}
+	public String getShortName() {
+		if(getFirstName() != null && !getFirstName().equals(""))
+			return getFirstName();
+		return getUsername();
+	}
+	public List<User> getFriendsProfiles() {
+		ArrayList<User> ret = new ArrayList<User>();
+		for(Friend f: getFriends())
+			ret.add(f.getRightUser());
+		return ret;
 	}
 }

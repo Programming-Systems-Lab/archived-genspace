@@ -1,24 +1,42 @@
 package org.geworkbench.components.genspace.server;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateful;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import javax.security.auth.callback.Callback;
+import javax.security.auth.callback.CallbackHandler;
+import javax.security.auth.callback.NameCallback;
+import javax.security.auth.callback.PasswordCallback;
+import javax.security.auth.callback.TextOutputCallback;
+import javax.security.auth.callback.UnsupportedCallbackException;
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
 
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
+import org.geworkbench.components.genspace.entity.Friend;
+import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.ToolRating;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowRating;
 
 /**
  * Session Bean implementation class UserFacade
  */
 @Stateful
+@RolesAllowed("user")
 public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote {
-	private User myUser = null;
+	
 	
     /**
      * Default constructor. 
@@ -32,27 +50,12 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		return findByUserName(username) != null;
 	}
 
-	@Override
-	public User register(User u) {
-		if(userExists(u.getUsername()))
-			return null;
-		if(u.getId() > 0)
-			return null;
-		create(u);
-		myUser = findByUserName(u.getUsername());
-		myUser = fullySerialize(myUser);
-		return myUser;
-	}
+	
 
+	@Resource SessionContext ctx;
 	@Override
-	public User login(String username, String password) {
-		User u = findByUserName(username);
-		if(u != null && u.passwordMatches(password))
-		{
-			myUser = fullySerialize(u);
-			return (myUser);
-		}
-		return null;
+	public User getMe() {
+		return fullySerialize(getUser());
 	}
 
 	public User fullySerialize(User u) {
@@ -86,68 +89,10 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		}
 		return r;
 	}
-	@EJB
-	ToolInformationLocal ti;
-	
-	@Override
-	public List<Tool> getToolsByPopularity() {
-		return ti.getToolsByPopularity(myUser);
-	}
 
 	@Override
-	public List<Workflow> getWorkflowsByPopularity() {
-		return ti.getWorkflowsByPopularity(myUser);
-	}
-
-	@Override
-	public List<Tool> getMostPopularWFHeads() {
-		return ti.getMostPopularWFHeads(myUser);
-	}
-
-	@Override
-	public Tool getMostPopularNextTool(Tool tool) {
-		return ti.getMostPopularNextTool(myUser,tool);
-	}
-
-	@Override
-	public Tool getMostPopularPreviousTool(Tool tool) {
-		return ti.getMostPopularPreviousTool(myUser,tool);
-	}
-	@Override
-	public List<Tool> getAllTools() {
-		
-		return ti.getAllTools();
-	}
-
-	@Override
-	public List<Workflow> getAllWorkflowsIncluding(Tool tool) {
-		return ti.getAllWorkflowsIncluding(myUser, tool);
-	}
-
-	@Override
-	public List<Workflow> getMostPopularWorkflowStartingWith(Tool tool) {
-		return ti.getMostPopularWorkflowStartingWith(myUser, tool);
-	}
-
-	@Override
-	public List<Workflow> getMostPopularWorkflowIncluding(Tool tool) {
-		return ti.getMostPopularWorkflowIncluding(myUser, tool);
-
-	}
-
-	@Override
-	public List<Workflow> getToolSuggestion(Workflow cwf) {
-		return ti.getToolSuggestion(myUser,cwf);
-	}
-
-	@Override
-	public Transaction sendUsageEvent(AnalysisEvent e) {
-		return ti.logUsageEvent(myUser,e);
-	}
-
-	@Override
-	public List<User> getFriendRequests() {
+	public User getProfile(String who) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	} 
 }

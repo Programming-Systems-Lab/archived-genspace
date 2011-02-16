@@ -36,6 +36,9 @@ public class Workflow implements Serializable {
 	private int usageCount;
 	private Workflow parent;
 	
+	private int numRating = 0;
+	private int sumRating = 0;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
@@ -135,9 +138,45 @@ public class Workflow implements Serializable {
 	public void setParent(Workflow parent) {
 		this.parent = parent;
 	}
+	public int getNumRating() {
+		return numRating;
+	}
+	private void setNumRating(int numRating) {
+		this.numRating = numRating;
+	}
+	public int getSumRating() {
+		return sumRating;
+	}
+	private void setSumRating(int sumRating) {
+		this.sumRating = sumRating;
+	}
 	
+	public void updateRatingsCache()
+	{
+		//TODO make this called automatically
+		int numRating =0;
+		int totalRating =0;
+		for(WorkflowRating tr : getRatings())
+		{
+			numRating++;
+			totalRating += tr.getRating();
+		}
+		setNumRating(numRating);
+		setSumRating(totalRating);
+	}
+	public Tool getLastTool()
+	{
+		return this.getTools().get(this.getTools().size() -1).getTool();
+	}
 	public String getLastToolName()
 	{
-		return this.getTools().get(this.getTools().size() -1).getTool().getName();
+		return this.getLastTool().getName();
 	}
+	public double getOverallRating() {
+		if(getNumRating() == 0)
+			return 0;
+		else
+			return getSumRating() / getNumRating();
+	}
+	
 }

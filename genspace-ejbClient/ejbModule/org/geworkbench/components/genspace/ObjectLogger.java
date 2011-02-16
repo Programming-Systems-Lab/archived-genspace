@@ -98,7 +98,7 @@ public class ObjectLogger {
 					e.setParameters(params);
 					try
 					{
-						Transaction retTrans = LoginManager.getFacade().sendUsageEvent(e); //try to send the log event
+						Transaction retTrans = LoginManager.getUsageOps().sendUsageEvent(e); //try to send the log event
 						if(retTrans != null)
 							return retTrans;
 						

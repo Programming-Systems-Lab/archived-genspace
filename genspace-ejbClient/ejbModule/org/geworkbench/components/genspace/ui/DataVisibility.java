@@ -5,19 +5,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.ObjectHandler;
@@ -30,6 +24,11 @@ import org.geworkbench.engine.properties.PropertiesManager;
  */
 public class DataVisibility extends JPanel implements VisualPlugin,
 		ActionListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7554634436096470168L;
 
 	static final String PROPERTY_KEY = "genSpace_logging_preferences"; // the
 																		// key
@@ -55,7 +54,6 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			String pref = properties.getProperty(DataVisibility.class,
 					PROPERTY_KEY, null);
 
-			LoginManager lm = new LoginManager();
 			username = LoginManager.getUsername();
 
 			if (pref == null) {
@@ -153,7 +151,7 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		String option = "";
+//		String option = "";
 
 		/*
 		 * if (e.getSource() == dataVisibilityOptions) { option =

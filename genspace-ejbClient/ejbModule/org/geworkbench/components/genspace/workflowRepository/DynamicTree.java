@@ -26,7 +26,6 @@ import javax.swing.tree.TreeSelectionModel;
 
 import org.geworkbench.components.genspace.LoginManager;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.ServerRequest;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 
@@ -260,7 +259,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 							int option = JOptionPane
 									.showConfirmDialog(null,
 											"All workflows in the folder will be lost. Continue?");
-							if (option == JOptionPane.YES_OPTION) {
+							if (option == JOptionPane.YES_OPTION	) {
 								String folderName = currentNode.getUserObject()
 										.toString();
 								ArrayList<Object> params = new ArrayList<Object>();
