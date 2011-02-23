@@ -3,7 +3,7 @@ package org.geworkbench.components.genspace.ui;
 import javax.swing.*;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.User;
 
@@ -71,7 +71,7 @@ public class friendsTab extends SocialTab {
 				if (u.getState() != null && !u.getState().equals(""))
 					byline += u.getState();
 				JLabel label2 = new JLabel(byline);
-				if (LoginManager.isVisible(u))
+				if (LoginFactory.isVisible(u))
 					pan.add(label2);
 				pan.add(new JSeparator(SwingConstants.HORIZONTAL));
 				if (isSelected)
@@ -118,16 +118,16 @@ public class friendsTab extends SocialTab {
 
 	@Override
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn()) {
+		if (LoginFactory.isLoggedIn()) {
 			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
 
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
 					if (networkFilter == null)
-						return LoginManager.getFriendOps().getFriendsProfiles();
+						return LoginFactory.getFriendOps().getFriendsProfiles();
 					else
-						return LoginManager.getNetworkOps().getProfilesByNetwork(networkFilter);
+						return LoginFactory.getNetworkOps().getProfilesByNetwork(networkFilter);
 				}
 
 				@Override
@@ -141,9 +141,10 @@ public class friendsTab extends SocialTab {
 						GenSpace.logger.error("Error",e);
 					}
 					DefaultListModel model = new DefaultListModel();
-					for (User t : lst) {
-						model.addElement(t);
-					}
+					if(lst != null)
+						for (User t : lst) {
+							model.addElement(t);
+						}
 					myFriendsList.setModel(model);
 				}
 

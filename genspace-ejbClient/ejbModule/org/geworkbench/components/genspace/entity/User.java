@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowNode;
 
 @Entity
@@ -48,17 +48,18 @@ public class User implements Serializable{
 	private int logData;
 	private int dataVisibility;
 	private java.util.Date createdAt;
+	private WorkflowFolder rootFolder;
+	
 	private List<Friend> friends = new ArrayList<Friend>(); 
 	private List<UserNetwork> networks = new ArrayList<UserNetwork>();
 	
 	private Set<Workflow> workflows = new HashSet<Workflow>();
-	private Set<WorkflowFolder> folders = new HashSet<WorkflowFolder>();
-	private Set<WorkflowComment> workflowComments = new HashSet<WorkflowComment>();
-	private Set<ToolComment> toolComments = new HashSet<ToolComment>();
-	private Set<Transaction> transactions = new HashSet<Transaction>();
+	private List<WorkflowFolder> folders = new ArrayList<WorkflowFolder>();
+	private List<WorkflowComment> workflowComments = new ArrayList<WorkflowComment>();
+	private List<ToolComment> toolComments = new ArrayList<ToolComment>();
+	private List<Transaction> transactions = new ArrayList<Transaction>();
 	private List<IncomingWorkflow> incomingWorkflows = new ArrayList<IncomingWorkflow>();
-	private Set<IncomingWorkflow> outgoingWorkflows = new HashSet<IncomingWorkflow>();
-	private Set<UserWorkflow> myWorkflows = new HashSet<UserWorkflow>();
+	private List<IncomingWorkflow> outgoingWorkflows = new ArrayList<IncomingWorkflow>();
 	private Set<Network> myOwnedNetworks = new HashSet<Network>();
 	
 	@Id
@@ -234,34 +235,34 @@ public class User implements Serializable{
 	}
 	
 	@OneToMany(mappedBy="owner")
-	public Set<WorkflowFolder> getFolders() {
+	public List<WorkflowFolder> getFolders() {
 		return folders;
 	}
-	public void setFolders(Set<WorkflowFolder> folders) {
+	public void setFolders(List<WorkflowFolder> folders) {
 		this.folders = folders;
 	}
 	
 	@OneToMany(mappedBy="creator")
-	public Set<WorkflowComment> getWorkflowComments() {
+	public List<WorkflowComment> getWorkflowComments() {
 		return workflowComments;
 	}
-	public void setWorkflowComments(Set<WorkflowComment> workflowComments) {
+	public void setWorkflowComments(List<WorkflowComment> workflowComments) {
 		this.workflowComments = workflowComments;
 	}
 	
 	@OneToMany(mappedBy="creator")
-	public Set<ToolComment> getToolComments() {
+	public List<ToolComment> getToolComments() {
 		return toolComments;
 	}
-	public void setToolComments(Set<ToolComment> toolComments) {
+	public void setToolComments(List<ToolComment> toolComments) {
 		this.toolComments = toolComments;
 	}
 	
 	@OneToMany(mappedBy="user")
-	public Set<Transaction> getTransactions() {
+	public List<Transaction> getTransactions() {
 		return transactions;
 	}
-	public void setTransactions(Set<Transaction> transactions) {
+	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
 	}
 	
@@ -274,20 +275,13 @@ public class User implements Serializable{
 	}
 	
 	@OneToMany(mappedBy="sender")
-	public Set<IncomingWorkflow> getOutgoingWorkflows() {
+	public List<IncomingWorkflow> getOutgoingWorkflows() {
 		return outgoingWorkflows;
 	}
-	public void setOutgoingWorkflows(Set<IncomingWorkflow> outgoingWorkflows) {
+	public void setOutgoingWorkflows(List<IncomingWorkflow> outgoingWorkflows) {
 		this.outgoingWorkflows = outgoingWorkflows;
 	}
 	
-	@OneToMany(mappedBy="owner")
-	public Set<UserWorkflow> getMyWorkflows() {
-		return myWorkflows;
-	}
-	public void setMyWorkflows(Set<UserWorkflow> myWorkflows) {
-		this.myWorkflows = myWorkflows;
-	}
 	
 	@OneToMany(mappedBy="owner")
 	public Set<Network> getMyOwnedNetworks() {
@@ -297,13 +291,20 @@ public class User implements Serializable{
 		this.myOwnedNetworks = myOwnedNetworks;
 	}
 	
+	public WorkflowFolder getRootFolder() {
+		return rootFolder;
+	}
+	public void setRootFolder(WorkflowFolder rootFolder) {
+		this.rootFolder = rootFolder;
+	}
+	
 	@Override
 	public String toString() {
 		String result = "User - username: " + username + "\n";
 		result += "UserWorkflows: " + workflows.size() + "\n";
-		for (UserWorkflow uw : myWorkflows) {
-			result += uw.toString() + "\n";
-		}
+//		for (UserWorkflow uw : myWorkflows) {
+//			result += uw.toString() + "\n";
+//		}
 
 		result += "Inbox: " + incomingWorkflows.size() + "\n";
 		for (IncomingWorkflow wi : incomingWorkflows) {
@@ -324,33 +325,7 @@ public class User implements Serializable{
 	}
 
 
-	public void addUserWorkflowTree(WorkflowNode rootNode) {
-
-		HashMap<String, DefaultMutableTreeNode> folders = new HashMap<String, DefaultMutableTreeNode>();
-		// first add all folders
-		// Whenever a folder was added in the ADD function the list of folders
-		// is ordered by name
-		// so we don't worry about it here.Å
-		for (WorkflowFolder f : this.getFolders()) {
-			DefaultMutableTreeNode fnode = new DefaultMutableTreeNode(f);
-			folders.put(f.getName(), fnode);
-			rootNode.add(fnode);
-		}
-		// add workflows to folders
-		for (UserWorkflow w : myWorkflows) {
-			if (w.getFolder() == null) {
-				rootNode.add(new WorkflowNode(w));
-			} else {
-				DefaultMutableTreeNode folderNode = folders.get(w.getFolder());
-				if (folderNode == null) {
-					folderNode = new DefaultMutableTreeNode(w.getFolder());
-					folders.put(w.getFolder().getName(), folderNode);
-					rootNode.add(folderNode);
-				}
-				folderNode.add(new WorkflowNode(w));
-			}
-		}
-	}
+	
 	
 	protected final static String HEX_DIGITS = "0123456789abcdef";
 
@@ -391,10 +366,19 @@ public class User implements Serializable{
 		}
 		return null;
 	}
+	public UserNetwork isInNetwork(Network n) {
+		for(UserNetwork un : getNetworks())
+		{
+			if(un.getNetwork().equals(n))
+				return un;
+		}
+		return null;
+	}
+	
 	public String toHTML() {
 		String r = "<html><body><b>" + getFirstName() + " "
 		+ getLastName() + " (" + getUsername() + ")</b><br>";
-		if (LoginManager.isVisible(this)) {
+		if (LoginFactory.isVisible(this)) {
 			r += "<i>"
 					+ (getWorkTitle() != null
 							&& getWorkTitle() != "" ? getWorkTitle() + " at " : "")
@@ -424,5 +408,11 @@ public class User implements Serializable{
 		for(Friend f: getFriends())
 			ret.add(f.getRightUser());
 		return ret;
+	}
+	public boolean containsFolderByName(String folderName) {
+		for(WorkflowFolder f : getFolders())
+			if(f.getName().equals(folderName))
+				return true;
+		return false;
 	}
 }

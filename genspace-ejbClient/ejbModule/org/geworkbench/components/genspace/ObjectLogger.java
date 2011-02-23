@@ -54,9 +54,10 @@ public class ObjectLogger {
 
 					} catch (ExecutionException e) {
 					}
-					RealTimeWorkFlowSuggestion.cwfUpdated(ret.getWorkflow());
+					
 					if(ret != null)
 					{
+						RealTimeWorkFlowSuggestion.cwfUpdated(ret.getWorkflow());
 						curTransaction = ret;
 					}
 					
@@ -78,7 +79,7 @@ public class ObjectLogger {
 						curTransaction.setDate(new Date());
 						curTransaction.setClientID(transactionId);
 						curTransaction.setHostname(hostname);
-						curTransaction.setUser(LoginManager.getUser());
+						curTransaction.setUser(LoginFactory.getUser());
 					}
 					
 					AnalysisEvent e = new AnalysisEvent();
@@ -97,7 +98,7 @@ public class ObjectLogger {
 					e.setParameters(params);
 					try
 					{
-						Transaction retTrans = LoginManager.getUsageOps().sendUsageEvent(e); //try to send the log event
+						Transaction retTrans = LoginFactory.getUsageOps().sendUsageEvent(e); //try to send the log event
 						if(retTrans != null)
 							return retTrans;
 						
@@ -119,7 +120,7 @@ public class ObjectLogger {
 
 						// fw.write("<measurement>");
 						fw.write("\t<metric name=\"analysis\">");
-						fw.write("\n\t\t<user name=\"" + LoginManager.getUsername() + "\" genspace=\""
+						fw.write("\n\t\t<user name=\"" + LoginFactory.getUsername() + "\" genspace=\""
 								+1+ "\"/>");
 												
 						fw.write("\n\t\t<host name=\""

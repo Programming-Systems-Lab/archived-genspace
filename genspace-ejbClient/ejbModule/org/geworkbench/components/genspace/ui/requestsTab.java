@@ -3,7 +3,7 @@ package org.geworkbench.components.genspace.ui;
 import javax.swing.*;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
@@ -38,7 +38,7 @@ public class requestsTab extends SocialTab {
 	
 	@Override
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn()) {
+		if (LoginFactory.isLoggedIn()) {
 
 			SwingWorker<List<UserNetwork>, Void> worker = new SwingWorker<List<UserNetwork>, Void>() {
 
@@ -46,10 +46,10 @@ public class requestsTab extends SocialTab {
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
 					LinkedList<UserNetwork> ret = new LinkedList<UserNetwork>();
-					for (UserNetwork t : LoginManager.getUser().getNetworks()) {
+					for (UserNetwork t : LoginFactory.getUser().getNetworks()) {
 						Network nt = t.getNetwork();
-						if (nt.getOwner().equals(LoginManager.getUser()))
-							ret.addAll(LoginManager.getNetworkOps().getNetworkRequests(nt));
+						if (nt.getOwner().equals(LoginFactory.getUser()))
+							ret.addAll(LoginFactory.getNetworkOps().getNetworkRequests(nt));
 					}
 					return ret;
 				}
@@ -65,6 +65,7 @@ public class requestsTab extends SocialTab {
 						GenSpace.logger.error("Error talking to server",e);
 					}
 					DefaultListModel model = new DefaultListModel();
+					if(requests != null)
 					for (UserNetwork t : requests) {
 						model.addElement(t);
 					}
@@ -79,7 +80,7 @@ public class requestsTab extends SocialTab {
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
-					return LoginManager.getFriendOps().getFriendRequests();
+					return LoginFactory.getFriendOps().getFriendRequests();
 				}
 
 				@Override
@@ -93,9 +94,10 @@ public class requestsTab extends SocialTab {
 						e.printStackTrace();
 					}
 					DefaultListModel model = new DefaultListModel();
-					for (User t : requests) {
-						model.addElement(t);
-					}
+					if(requests != null)
+						for (User t : requests) {
+							model.addElement(t);
+						}
 					friendsList.setModel(model);
 				}
 
@@ -146,7 +148,7 @@ public class requestsTab extends SocialTab {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (networksList.getSelectedValue() != null) {
-					LoginManager.getNetworkOps().acceptNetworkRequest((UserNetwork) networksList.getSelectedValue());
+					LoginFactory.getNetworkOps().acceptNetworkRequest((UserNetwork) networksList.getSelectedValue());
 					updateFormFields();
 				}
 			}
@@ -156,7 +158,7 @@ public class requestsTab extends SocialTab {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (networksList.getSelectedValue() != null) {
-					LoginManager.getNetworkOps().rejectNetworkRequest((UserNetwork) networksList.getSelectedValue());
+					LoginFactory.getNetworkOps().rejectNetworkRequest((UserNetwork) networksList.getSelectedValue());
 					updateFormFields();
 				}
 			}
@@ -165,7 +167,7 @@ public class requestsTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				LoginManager.getFriendOps().addFriend((User) friendsList.getSelectedValue());
+				LoginFactory.getFriendOps().addFriend((User) friendsList.getSelectedValue());
 				updateFormFields();
 
 			}
@@ -174,7 +176,7 @@ public class requestsTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				LoginManager.getFriendOps().rejectFriend((User) friendsList.getSelectedValue());
+				LoginFactory.getFriendOps().rejectFriend((User) friendsList.getSelectedValue());
 				updateFormFields();
 			}
 		});

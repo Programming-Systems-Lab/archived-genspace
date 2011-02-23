@@ -34,6 +34,7 @@ import net.eleritec.docking.defaults.DefaultDockingPort;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.config.events.Event;
@@ -468,9 +469,9 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		}
 	}
 
-	public void updateUser(User user) {
+	public void updateUser() {
 		repositoryPanel.tree.recalculateAndReload();
-		inboxTable.setData(user);
+		inboxTable.setData(LoginFactory.getUser());
 		// whatever was selected, shouldn't be anymore
 		clearWorkflowData();
 	}

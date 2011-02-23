@@ -1,12 +1,15 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -19,6 +22,7 @@ public class UserWorkflow implements Serializable {
 	private User owner;
 	private Workflow workflow;
 	private String name;
+	private Date createdAt;
 	private WorkflowFolder folder;
 	
 	@Id
@@ -49,17 +53,25 @@ public class UserWorkflow implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	@ManyToOne
 	public WorkflowFolder getFolder() {
 		return folder;
 	}
 	public void setFolder(WorkflowFolder folder) {
 		this.folder = folder;
 	}
-	
 	@Override
 	public String toString() {
 		return "UserWorkflow - name: " + name + ", " + owner.getUsername() + ", "
-				+ workflow + ", " + folder;
+				+ workflow;
 	}
 
 	@Override

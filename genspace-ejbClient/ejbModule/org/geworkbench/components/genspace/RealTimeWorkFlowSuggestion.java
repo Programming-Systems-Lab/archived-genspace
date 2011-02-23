@@ -290,7 +290,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 	private static List<Workflow> getRealTimeWorkFlowSuggestion(Workflow cwf) {
 		
-		return LoginManager.getUsageOps().getToolSuggestion(cwf);
+		return LoginFactory.getUsageOps().getToolSuggestion(cwf);
 	}
 
 	/*

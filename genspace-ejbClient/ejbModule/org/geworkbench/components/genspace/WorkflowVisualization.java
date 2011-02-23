@@ -107,7 +107,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			}
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getUsageOps().getAllTools();
+				return LoginFactory.getUsageOps().getAllTools();
 			}
 			
 		};
@@ -266,11 +266,11 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					String action = actions.getSelectedItem().toString();
 	System.out.println("Chekcing + " + action);
 					if (action.equals("All workflows including")) {
-						return LoginManager.getUsageOps().getAllWorkflowsIncluding(tool);
+						return LoginFactory.getUsageOps().getAllWorkflowsIncluding(tool);
 					} else if(action.equals("Most common workflow starting with")){
-						return LoginManager.getUsageOps().getMostPopularWorkflowStartingWith(tool);
+						return LoginFactory.getUsageOps().getMostPopularWorkflowStartingWith(tool);
 					} else if(action.equals("Most common workflow including")){
-						return LoginManager.getUsageOps().getMostPopularWorkflowIncluding(tool);
+						return LoginFactory.getUsageOps().getMostPopularWorkflowIncluding(tool);
 					}
 					else
 					{

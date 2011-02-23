@@ -3,7 +3,7 @@ package org.geworkbench.components.genspace.ui;
 import javax.swing.*;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
@@ -109,7 +109,7 @@ public class networksTab extends SocialTab {
 					{
 						@Override
 						protected Void doInBackground() throws Exception {
-							LoginManager.getNetworkOps().joinNetwork(chooseNetwork.getText());
+							LoginFactory.getNetworkOps().joinNetwork(chooseNetwork.getText());
 							return null;
 						}
 						@Override
@@ -128,7 +128,7 @@ public class networksTab extends SocialTab {
 					{
 						@Override
 						protected Void doInBackground() throws Exception {
-							LoginManager.getNetworkOps().createNetwork(chooseNetwork.getText());
+							LoginFactory.getNetworkOps().createNetwork(chooseNetwork.getText());
 							return null;
 						}
 						@Override
@@ -153,7 +153,7 @@ public class networksTab extends SocialTab {
 				UserNetwork selected = (UserNetwork) lstMyNetworks
 						.getSelectedValue();
 				if (selected != null)
-					LoginManager.getNetworkOps().leaveNetwork(selected);
+					LoginFactory.getNetworkOps().leaveNetwork(selected);
 				updateFormFields();
 			}
 		});
@@ -272,13 +272,13 @@ public class networksTab extends SocialTab {
 
 	@Override
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn()) {
+		if (LoginFactory.isLoggedIn()) {
 			SwingWorker<List<UserNetwork>, Void> worker2 = new SwingWorker<List<UserNetwork>, Void>() {
 
 				@Override
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
-					return LoginManager.getNetworkOps().getMyNetworks();
+					return LoginFactory.getNetworkOps().getMyNetworks();
 				}
 
 				@Override
@@ -304,7 +304,7 @@ public class networksTab extends SocialTab {
 				@Override
 				protected List<Network> doInBackground()
 						throws Exception {
-					return LoginManager.getNetworkOps().getAllNetworks();
+					return LoginFactory.getNetworkOps().getAllNetworks();
 				}
 
 				@Override

@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.ObjectHandler;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.properties.PropertiesManager;
@@ -54,7 +54,7 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			String pref = properties.getProperty(DataVisibility.class,
 					PROPERTY_KEY, null);
 
-			username = LoginManager.getUsername();
+			username = LoginFactory.getUsername();
 
 			if (pref == null) {
 				// if the preferences are not set, then show the pop up window
@@ -89,7 +89,7 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 	}
 
 	private void initComponents() {
-		if(LoginManager.isLoggedIn())
+		if(LoginFactory.isLoggedIn())
 		{
 			this.setSize(500, 600);
 
@@ -105,7 +105,7 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			logPreferences.addItem("Log My Analysis Events");
 			logPreferences.addItem("Log My Analysis Events Anonymously");
 			logPreferences.addItem("Do Not Log My Analysis Events");
-			int preference = LoginManager.getUser().getLogData();
+			int preference = LoginFactory.getUser().getLogData();
 			logPreferences.setSelectedIndex(preference + 1);
 
 			try {
@@ -198,13 +198,13 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 						// version of the security module
 						dataVisibilityOptions.setSelectedIndex(2);
 						
-						LoginManager.getUser().setDataVisibility((short) (dataVisibilityOptions
+						LoginFactory.getUser().setDataVisibility((short) (dataVisibilityOptions
 								.getSelectedIndex() - 1));
 
-						LoginManager.getUser().setLogData((short) (logPreferences
+						LoginFactory.getUser().setLogData((short) (logPreferences
 								.getSelectedIndex() - 1));
 
-						if (LoginManager.userUpdate()) {
+						if (LoginFactory.userUpdate()) {
 							String msg = "Data Visibility Saved";
 
 							JOptionPane.showMessageDialog(null, msg);

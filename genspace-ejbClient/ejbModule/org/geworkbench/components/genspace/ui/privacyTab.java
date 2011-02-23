@@ -21,7 +21,7 @@ import javax.swing.ListCellRenderer;
 import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.UserNetwork;
 
@@ -151,7 +151,7 @@ public class privacyTab extends SocialTab {
 					@Override
 					protected Void doInBackground() throws Exception {
 						for (Integer i : s.keySet()) {
-							LoginManager.getNetworkOps().updateNetworkVisibility(
+							LoginFactory.getNetworkOps().updateNetworkVisibility(
 									((UserNetwork) model.get(i)),
 									s.get(i));
 						}
@@ -176,7 +176,7 @@ public class privacyTab extends SocialTab {
 					@Override
 					protected Void doInBackground() throws Exception {
 						for (Integer i : s2.keySet()) {
-							LoginManager.getFriendOps().updateFriendVisibility(
+							LoginFactory.getFriendOps().updateFriendVisibility(
 									((Friend) model2.get(i)),
 									s2.get(i));
 						}
@@ -225,14 +225,14 @@ public class privacyTab extends SocialTab {
 
 	@Override
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn()) {
+		if (LoginFactory.isLoggedIn()) {
 
 			SwingWorker<List<Friend>, Void> worker = new SwingWorker<List<Friend>, Void>() {
 
 				@Override
 				protected List<Friend> doInBackground()
 						throws Exception {
-					return LoginManager.getUser().getFriends();
+					return LoginFactory.getUser().getFriends();
 				}
 
 				@Override
@@ -271,7 +271,7 @@ public class privacyTab extends SocialTab {
 				@Override
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
-					return LoginManager.getUser().getNetworks();
+					return LoginFactory.getUser().getNetworks();
 				}
 
 				@Override

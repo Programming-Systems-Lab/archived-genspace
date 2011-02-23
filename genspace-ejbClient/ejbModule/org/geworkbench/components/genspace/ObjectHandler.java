@@ -20,7 +20,7 @@ import org.geworkbench.util.FilePathnameUtils;
  * A handler used to log events.
  * 
  * @author sheths
- * @version $Id: ObjectHandler.java,v 1.1 2011/02/07 18:09:55 jsb2125 Exp $
+ * @version $Id: ObjectHandler.java,v 1.2 2011/02/21 21:36:34 jsb2125 Exp $
  */
 public class ObjectHandler {
 

@@ -2,7 +2,7 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.User;
 
 import java.awt.*;
@@ -329,24 +329,24 @@ public class profileTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				LoginManager.getUser().setFirstName(myNameTextField1.getText());
-				LoginManager.getUser().setLastName(myNameTextField2.getText());
-				LoginManager.getUser().setWorkTitle(jobTitleTextField.getText());
-				LoginManager.getUser().setEmail(emailAddressTextField.getText());
-				LoginManager.getUser().setPhone(phoneTextField.getText());
-				LoginManager.getUser().setAddr1(addressTextField.getText());
-				LoginManager.getUser().setAddr2(address2TextField.getText());
-				LoginManager.getUser().setCity(cityTextField.getText());
-				LoginManager.getUser().setState(stateTextField.getText());
-				LoginManager.getUser().setZipcode(postalCodeTextField.getText());
-				LoginManager.getUser().setLabAffiliation(myLabTextField.getText());
-				LoginManager.getUser().setInterests(myResearchInterestsTextArea.getText());
+				LoginFactory.getUser().setFirstName(myNameTextField1.getText());
+				LoginFactory.getUser().setLastName(myNameTextField2.getText());
+				LoginFactory.getUser().setWorkTitle(jobTitleTextField.getText());
+				LoginFactory.getUser().setEmail(emailAddressTextField.getText());
+				LoginFactory.getUser().setPhone(phoneTextField.getText());
+				LoginFactory.getUser().setAddr1(addressTextField.getText());
+				LoginFactory.getUser().setAddr2(address2TextField.getText());
+				LoginFactory.getUser().setCity(cityTextField.getText());
+				LoginFactory.getUser().setState(stateTextField.getText());
+				LoginFactory.getUser().setZipcode(postalCodeTextField.getText());
+				LoginFactory.getUser().setLabAffiliation(myLabTextField.getText());
+				LoginFactory.getUser().setInterests(myResearchInterestsTextArea.getText());
 				SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
 				{
 
 					@Override
 					protected Void doInBackground() throws Exception {
-						LoginManager.userUpdate();
+						LoginFactory.userUpdate();
 						return null;
 					}
 					
@@ -368,8 +368,8 @@ public class profileTab extends SocialTab {
 
 	@Override
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn()) {
-			User u = LoginManager.getUser();
+		if (LoginFactory.isLoggedIn()) {
+			User u = LoginFactory.getUser();
 			myNameTextField1.setText(u.getFirstName());
 			myNameTextField2.setText(u.getLastName());
 			emailAddressTextField.setText(u.getEmail());

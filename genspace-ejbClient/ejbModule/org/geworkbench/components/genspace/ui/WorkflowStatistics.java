@@ -4,7 +4,7 @@ package org.geworkbench.components.genspace.ui;
 import javax.swing.*;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.server.UsageInformationRemote;
@@ -71,7 +71,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getUsageOps().getAllTools();
+				return LoginFactory.getUsageOps().getAllTools();
 			}
 
 		};
@@ -105,7 +105,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getUsageOps().getToolsByPopularity();
+				return LoginFactory.getUsageOps().getToolsByPopularity();
 			}
 
 		};
@@ -139,7 +139,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			@Override
 			protected List<Workflow> doInBackground() throws Exception {
 
-				return LoginManager.getUsageOps().getWorkflowsByPopularity();
+				return LoginFactory.getUsageOps().getWorkflowsByPopularity();
 			}
 
 		};
@@ -173,7 +173,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginManager.getUsageOps().getMostPopularWFHeads();
+				return LoginFactory.getUsageOps().getMostPopularWFHeads();
 			}
 
 		};
@@ -219,14 +219,14 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 				ret += "Total usage rate at start of workflow: "
 						+ usageRateAsWFHead + " <br>";
 
-				Tool mostPopularNextTool = LoginManager.getUsageOps().getMostPopularNextTool(tool);
+				Tool mostPopularNextTool = LoginFactory.getUsageOps().getMostPopularNextTool(tool);
 				if(mostPopularNextTool == null)
 					ret += "No tools are used after this one"+ "<br>";
 				else
 					ret += "The most popular tool used next to this tool: "
 						+ mostPopularNextTool.getName() + "<br>";
 
-				Tool mostPopularPreviousTool = LoginManager.getUsageOps().getMostPopularPreviousTool(tool);
+				Tool mostPopularPreviousTool = LoginFactory.getUsageOps().getMostPopularPreviousTool(tool);
 				if(mostPopularPreviousTool == null)
 					ret += "No tools are used before this one"+ "<br>";
 				else

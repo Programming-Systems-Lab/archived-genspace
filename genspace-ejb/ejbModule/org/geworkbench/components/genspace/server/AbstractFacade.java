@@ -44,6 +44,23 @@ public abstract class AbstractFacade<T> {
 		cachedUser = r;
 		return cachedUser;
     }
+    
+    protected User findByUserName(String username)
+	{
+		Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
+		q.setParameter("user", username);
+		User r = null;
+		try
+		{
+		r = (User) q.getSingleResult();
+		}
+		catch(NoResultException e)
+		{
+			
+		}
+		return r;
+	}
+    
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
     }

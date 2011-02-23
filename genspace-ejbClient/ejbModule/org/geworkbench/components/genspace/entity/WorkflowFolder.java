@@ -1,14 +1,16 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-public class WorkflowFolder implements Serializable{
+public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	/**
 	 * 
 	 */
@@ -17,6 +19,7 @@ public class WorkflowFolder implements Serializable{
 	private User owner;
 	private String name;
 	private WorkflowFolder parent;
+	private List<UserWorkflow> workflows;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -44,6 +47,16 @@ public class WorkflowFolder implements Serializable{
 	public void setParent(WorkflowFolder parent) {
 		this.parent = parent;
 	}
-	
+	@Override
+	public int compareTo(WorkflowFolder o) {
+		return this.getName().compareTo(o.getName());
+	}
+	@OneToMany(mappedBy="folder")
+	public List<UserWorkflow> getWorkflows() {
+		return workflows;
+	}
+	public void setWorkflows(List<UserWorkflow> workflows) {
+		this.workflows = workflows;
+	}
 	 
 }

@@ -17,7 +17,7 @@ import javax.swing.SwingWorker;
 import javax.swing.border.MatteBorder;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.User;
@@ -86,7 +86,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 
 						// add username for expert user request
 
-						User expert = LoginManager.getUsageOps().getExpertUserFor(tn);
+						User expert = LoginFactory.getUsageOps().getExpertUserFor(tn);
 
 						if (expert != null) {
 							contactEU.setText("Contact Expert User - ("

@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.ToolRating;
 import org.geworkbench.components.genspace.entity.Workflow;
@@ -98,7 +98,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 			@Override
 			public WorkflowRating doInBackground() {
 
-				return LoginManager.getPrivUsageFacade().getMyRating(workflow);
+				return LoginFactory.getPrivUsageFacade().getMyRating(workflow);
 			}
 			@Override
 			protected void done() {
@@ -140,7 +140,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 			@Override
 			public ToolRating doInBackground() {
 
-				return LoginManager.getPrivUsageFacade().getMyRating(tool);
+				return LoginFactory.getPrivUsageFacade().getMyRating(tool);
 			}
 			@Override
 			protected void done() {
@@ -206,7 +206,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				WorkflowRating tr = new WorkflowRating();
 				tr.setWorkflow(workflow);
 				tr.setRating(rating);
-				return LoginManager.getPrivUsageFacade().saveRating(tr);
+				return LoginFactory.getPrivUsageFacade().saveRating(tr);
 			}
 			@Override
 			protected void done() {
@@ -244,7 +244,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				ToolRating tr = new ToolRating();
 				tr.setTool(tool);
 				tr.setRating(rating);
-				return LoginManager.getPrivUsageFacade().saveRating(tr);
+				return LoginFactory.getPrivUsageFacade().saveRating(tr);
 			}
 			@Override
 			protected void done() {

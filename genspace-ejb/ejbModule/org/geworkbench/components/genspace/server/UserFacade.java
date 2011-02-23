@@ -65,7 +65,6 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		u.getWorkflowComments().size();
 		u.getWorkflows().size();
 		u.getNetworks().size();
-		u.getMyWorkflows().size();
 		return u;
 	}
 
@@ -74,21 +73,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		this.edit(user);
 	}
 	
-	private User findByUserName(String username)
-	{
-		Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
-		q.setParameter("user", username);
-		User r = null;
-		try
-		{
-		r = (User) q.getSingleResult();
-		}
-		catch(NoResultException e)
-		{
-			
-		}
-		return r;
-	}
+	
 
 	@Override
 	public User getProfile(String who) {

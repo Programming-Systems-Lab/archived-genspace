@@ -23,7 +23,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
 
@@ -131,12 +131,12 @@ public class SocialNetworksHome {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				if (LoginManager.isLoggedIn()) {
+				if (LoginFactory.isLoggedIn()) {
 					SwingWorker<User, Void> worker = new SwingWorker<User, Void>() {
 
 						@Override
 						protected User doInBackground() throws Exception {
-							return LoginManager.getUserOps().getProfile(friendsSearch.getText());
+							return LoginFactory.getUserOps().getProfile(friendsSearch.getText());
 						}
 
 						@Override
@@ -217,23 +217,23 @@ public class SocialNetworksHome {
 	private boolean showingDecoy = true;
 
 	public void updateFormFields() {
-		if (LoginManager.isLoggedIn() && showingDecoy) {
+		if (LoginFactory.isLoggedIn() && showingDecoy) {
 			shownPanel.removeAll();
 			shownPanel.add(panel1);
 			showingDecoy = false;
-		} else if (LoginManager.isLoggedIn() && !showingDecoy) {
+		} else if (LoginFactory.isLoggedIn() && !showingDecoy) {
 			shownPanel.removeAll();
 			shownPanel.add(decoyPanel);
 			showingDecoy = true;
 		}
-		if (LoginManager.isLoggedIn()) {
+		if (LoginFactory.isLoggedIn()) {
 			current.updateFormFields();
 			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
 
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
-					return LoginManager.getFriendOps().getFriendRequests();
+					return LoginFactory.getFriendOps().getFriendRequests();
 				}
 
 				@Override
@@ -253,7 +253,9 @@ public class SocialNetworksHome {
 					for (User t : lst) {
 						m.data.add(t.getFullName());
 					}
-					int size = lst.size();
+					int size = 0;
+					if(lst != null)
+					size = lst.size();
 					a1FriendRequestLabel.setText("" + size + " Request"
 							+ (size == 1 ? "" : "s"));
 				}
