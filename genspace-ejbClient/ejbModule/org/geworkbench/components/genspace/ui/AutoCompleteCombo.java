@@ -19,6 +19,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.JTextComponent;
 import javax.swing.text.PlainDocument;
 import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 
@@ -39,7 +40,7 @@ public class AutoCompleteCombo extends JComboBox {
 	private boolean updatePopup;
 
 	public AutoCompleteCombo() {
-
+		logger.setLevel(Level.DEBUG);
 		setEditable(true);
 
 		logger.debug("setPattern() called from constructor");

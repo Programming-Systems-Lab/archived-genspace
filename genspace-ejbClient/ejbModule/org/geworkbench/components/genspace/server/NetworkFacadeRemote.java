@@ -24,4 +24,5 @@ public interface NetworkFacadeRemote {
 	public void rejectNetworkRequest(UserNetwork selectedValue);
 	public void updateNetworkVisibility(UserNetwork userNetwork,
 			Boolean boolean1);
+	public int getNumberOfNetworkRequests();
 }

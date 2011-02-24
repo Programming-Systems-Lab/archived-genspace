@@ -15,4 +15,5 @@ public interface FriendFacadeRemote {
 
 	public void updateFriendVisibility(Friend friend, Boolean boolean1);
 	public List<User> getFriendsProfiles();
+	public void removeFriend(User u);
 }

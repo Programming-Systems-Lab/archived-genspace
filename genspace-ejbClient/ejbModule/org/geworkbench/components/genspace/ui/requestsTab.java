@@ -94,7 +94,6 @@ public class requestsTab extends SocialTab {
 						e.printStackTrace();
 					}
 					DefaultListModel model = new DefaultListModel();
-					if(requests != null)
 						for (User t : requests) {
 							model.addElement(t);
 						}
@@ -148,6 +147,7 @@ public class requestsTab extends SocialTab {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (networksList.getSelectedValue() != null) {
+					System.out.println("Sending accept request");
 					LoginFactory.getNetworkOps().acceptNetworkRequest((UserNetwork) networksList.getSelectedValue());
 					updateFormFields();
 				}

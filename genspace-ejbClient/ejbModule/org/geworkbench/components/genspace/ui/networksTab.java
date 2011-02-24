@@ -83,7 +83,7 @@ public class networksTab extends SocialTab {
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 2)
 					parentFrame.setContent(new friendsTab(
-							((Network) lstMyNetworks.getSelectedValue()),
+							((UserNetwork) lstMyNetworks.getSelectedValue()).getNetwork(),
 							parentFrame));
 			}
 		});
@@ -291,9 +291,10 @@ public class networksTab extends SocialTab {
 						GenSpace.logger.error("Error",e);
 					}
 					DefaultListModel model = new DefaultListModel();
-					for (UserNetwork t : cachedMyNetworks) {
-						model.addElement(t);
-					}
+					if(cachedMyNetworks != null)
+						for (UserNetwork t : cachedMyNetworks) {
+							model.addElement(t);
+						}
 					lstMyNetworks.setModel(model);
 				}
 

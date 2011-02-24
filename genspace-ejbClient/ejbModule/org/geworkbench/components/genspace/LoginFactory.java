@@ -103,12 +103,12 @@ public class LoginFactory {
 			return true;
 		return false;
 	}
-
+	static ProgrammaticLogin pm = new ProgrammaticLogin();
 	public static boolean userLogin(String username, String password) {
 		
 		System.setProperty("java.security.auth.login.config", "login.conf");
 		try {
-			ProgrammaticLogin pm = new ProgrammaticLogin();
+			
 			pm.login(username, password,"GELogin",true);
 			InitialContext ctx = new InitialContext();
 			ctx.lookup("org.geworkbench.components.genspace.server.UserFacadeRemote");
@@ -156,6 +156,12 @@ public class LoginFactory {
 	}
 
 	public static void logout() {
+		try {
+			pm.logout(true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		user = null;
 	}
 

@@ -325,7 +325,14 @@ public class User implements Serializable{
 	}
 
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof User)
+		{
+			return ((User) obj).getId() == this.getId();
+		}
+		return false;
+	}
 	
 	protected final static String HEX_DIGITS = "0123456789abcdef";
 
@@ -374,7 +381,25 @@ public class User implements Serializable{
 		}
 		return null;
 	}
-	
+	public boolean isVisibleTo(User other)
+	{
+		Friend f = this.isFriendsWith(other);
+		if(f != null && f.isVisible())
+		{
+			return true;
+		}
+		//Check the networks
+		for(UserNetwork u1 : this.getNetworks())
+		{
+			if(u1.isVisible())
+				for(UserNetwork u2 : other.getNetworks())
+				{
+					if(u2.getNetwork().equals(u1.getNetwork()))
+						return true;
+				}
+		}
+		return false;
+	}
 	public String toHTML() {
 		String r = "<html><body><b>" + getFirstName() + " "
 		+ getLastName() + " (" + getUsername() + ")</b><br>";

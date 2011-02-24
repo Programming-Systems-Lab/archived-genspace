@@ -20,7 +20,16 @@ import org.geworkbench.components.genspace.entity.User;
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass; 
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
-    
+    public User fullySerialize(User u) {
+		u.getFolders().size();
+		u.getFriends().size();
+		u.getIncomingWorkflows().size();
+		u.getWorkflowComments().size();
+		u.getWorkflows().size();
+		u.getNetworks().size();
+		return u;
+	}
+
     private User cachedUser = null;
     @Resource
     SessionContext ctx;

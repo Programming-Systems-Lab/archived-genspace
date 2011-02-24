@@ -221,7 +221,7 @@ public class SocialNetworksHome {
 			shownPanel.removeAll();
 			shownPanel.add(panel1);
 			showingDecoy = false;
-		} else if (LoginFactory.isLoggedIn() && !showingDecoy) {
+		} else if (!	LoginFactory.isLoggedIn() && !showingDecoy) {
 			shownPanel.removeAll();
 			shownPanel.add(decoyPanel);
 			showingDecoy = true;
@@ -246,7 +246,7 @@ public class SocialNetworksHome {
 					} catch (ExecutionException e) {
 						GenSpace.logger.error("Error",e);
 					}
-					friendsSearch.setText("");
+//					friendsSearch.setText("");
 					Model m = (Model) friendsSearch.getModel();
 					m.data.clear();
 					if(lst != null)
@@ -261,6 +261,30 @@ public class SocialNetworksHome {
 				}
 			};
 			worker.execute();
+			SwingWorker<Integer, Void> worker2 = new SwingWorker<Integer, Void>() {
+
+				@Override
+				protected Integer doInBackground()
+						throws Exception {
+					return LoginFactory.getFriendOps().getFriendRequests().size() + LoginFactory.getNetworkOps().getNumberOfNetworkRequests();
+				}
+
+				@Override
+				protected void done() {
+					Integer res = null;
+					try {
+						res = get();
+					} catch (InterruptedException e) {
+						GenSpace.logger.error("Error",e);
+					} catch (ExecutionException e) {
+						GenSpace.logger.error("Error",e);
+					}
+				
+					a1FriendRequestLabel.setText("" + res + " Request"
+							+ (res == 1 ? "" : "s"));
+				}
+			};
+			worker2.execute();
 		}
 
 	}

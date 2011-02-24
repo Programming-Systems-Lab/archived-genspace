@@ -235,9 +235,10 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					GenSpace.logger.error("Unable to talk to server: ", e);
 				} catch (ExecutionException e) {
 					GenSpace.logger.error("Unable to talk to server: ", e);
-				}				
+				}
+				
 				// make sure we got some results!
-				if (ret.size() == 0) {
+				if (ret == null || ret.size() == 0) {
 					// no results came back!
 					JOptionPane.showMessageDialog(null,
 							"There are no workflows matching that criteria");

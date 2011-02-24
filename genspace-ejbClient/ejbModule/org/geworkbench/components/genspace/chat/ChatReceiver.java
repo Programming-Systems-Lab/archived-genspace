@@ -129,6 +129,7 @@ public class ChatReceiver implements MessageListener, ChatManagerListener {
 	}
 
 	public void logout() {
+		if(connection != null)
 		connection.disconnect();
 	}
 }

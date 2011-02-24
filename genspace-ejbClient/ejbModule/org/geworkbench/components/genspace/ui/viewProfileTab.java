@@ -53,6 +53,7 @@ public class viewProfileTab extends SocialTab {
 						protected Void doInBackground()
 							 {
 							LoginFactory.removeFriend(u);
+							LoginFactory.getFriendOps().removeFriend(u);
 							return null;
 							
 						}
@@ -81,6 +82,7 @@ public class viewProfileTab extends SocialTab {
 						@Override
 						protected Void doInBackground()
 								 {
+								LoginFactory.getFriendOps().addFriend(u);
 								LoginFactory.addFriend(u);
 								return null;
 						}
@@ -92,7 +94,7 @@ public class viewProfileTab extends SocialTab {
 											panel1,
 											"A friend sent for "
 													+ u.getShortName()
-													+ "'s approval. You will not become friends until he or her accepts your request.");
+													+ "'s approval. You will not become friends until he or she accepts your request.");
 						}
 
 					};

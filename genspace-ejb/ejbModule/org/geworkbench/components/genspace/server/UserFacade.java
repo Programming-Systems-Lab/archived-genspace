@@ -58,16 +58,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		return fullySerialize(getUser());
 	}
 
-	public User fullySerialize(User u) {
-		u.getFolders().size();
-		u.getFriends().size();
-		u.getIncomingWorkflows().size();
-		u.getWorkflowComments().size();
-		u.getWorkflows().size();
-		u.getNetworks().size();
-		return u;
-	}
-
+	
 	@Override
 	public void updateUser(User user) {
 		this.edit(user);
@@ -77,7 +68,10 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 
 	@Override
 	public User getProfile(String who) {
-		// TODO Auto-generated method stub
-		return null;
+		User o = findByUserName(who);
+		if(o == null)
+			return null;
+//		if(o.isVisibleTo(getUser()))
+		return fullySerialize(o);
 	} 
 }
