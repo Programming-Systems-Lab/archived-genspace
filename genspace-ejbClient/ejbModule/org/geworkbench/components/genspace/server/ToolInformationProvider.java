@@ -9,10 +9,23 @@ import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
 
 public interface ToolInformationProvider {
+	
+	/**
+	 * Get a list of tools, ordered by popularity
+	 * @return
+	 */
 	public List<Tool> getToolsByPopularity();
 
+	/**
+	 * Get a list of all workflows, ordered by popularity
+	 * @return
+	 */
 	public List<Workflow> getWorkflowsByPopularity();
 
+	/**
+	 * Get the most popular tools for starting new workflows
+	 * @return
+	 */
 	public List<Tool> getMostPopularWFHeads();
 
 	public Tool getMostPopularNextTool(Tool tool);

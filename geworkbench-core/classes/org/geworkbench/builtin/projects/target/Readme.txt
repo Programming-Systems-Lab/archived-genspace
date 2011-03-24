@@ -1,1 +1,0 @@
-This folder contains output for tests in this package.

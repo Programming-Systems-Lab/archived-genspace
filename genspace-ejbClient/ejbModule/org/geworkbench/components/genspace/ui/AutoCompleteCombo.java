@@ -240,7 +240,8 @@ public class AutoCompleteCombo extends JComboBox {
 			void clear() {
 				list.clear();
 				lowercase.clear();
-				filtered.clear();
+				if(filtered != null)
+					filtered.clear();
 			}
 
 			void add(String s) {

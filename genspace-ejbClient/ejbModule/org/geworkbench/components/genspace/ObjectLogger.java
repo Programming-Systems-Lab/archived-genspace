@@ -57,7 +57,6 @@ public class ObjectLogger {
 					
 					if(ret != null)
 					{
-						RealTimeWorkFlowSuggestion.cwfUpdated(ret.getWorkflow());
 						curTransaction = ret;
 					}
 					
@@ -100,8 +99,10 @@ public class ObjectLogger {
 					{
 						Transaction retTrans = LoginFactory.getUsageOps().sendUsageEvent(e); //try to send the log event
 						if(retTrans != null)
+						{
+							RealTimeWorkFlowSuggestion.cwfUpdated(retTrans.getWorkflow());
 							return retTrans;
-						
+						}
 					}
 					catch(Exception ex)
 					{

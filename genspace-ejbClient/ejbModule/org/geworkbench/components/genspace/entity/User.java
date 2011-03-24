@@ -167,7 +167,7 @@ public class User implements Serializable{
 		this.state = state;
 	}
 	
-	@Column(length=5)
+	@Column(length=7)
 	public String getZipcode() {
 		return zipcode;
 	}

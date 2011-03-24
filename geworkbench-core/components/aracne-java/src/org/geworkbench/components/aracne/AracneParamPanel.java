@@ -48,7 +48,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 /**
  * @author mhall
  * @author yc2480
- * @version $Id: AracneParamPanel.java 7381 2011-01-14 22:01:56Z maz $
+ * @version $Id: AracneParamPanel.java 7468 2011-02-18 20:52:38Z zji $
  */
 public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = 4023695671471667725L;
@@ -842,9 +842,9 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
 		return DATASETNAME_ALGORITHM_kernel_file;
 	}
 	
-	void setSelectorPanel(AracneParamPanel aspp, DSPanel<DSGeneMarker> ap) {
-		aspp.selectorPanel = ap;		
-		String currentTargetSet = (String) aspp.markerSetCombo.getSelectedItem();
+	void setSelectorPanel(DSPanel<DSGeneMarker> ap) {
+		selectorPanel = ap;		
+		String currentTargetSet = (String) markerSetCombo.getSelectedItem();
 		DefaultComboBoxModel targetComboModel = (DefaultComboBoxModel) markerSetCombo.getModel();
 		targetComboModel.removeAllElements();
 		targetComboModel.addElement(" ");

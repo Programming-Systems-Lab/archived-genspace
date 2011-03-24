@@ -1,14 +1,14 @@
 10
 
 dir
-7464
+7514
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/aracne-java/src/org/geworkbench/components/aracne
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-09T15:24:22.826566Z
-7430
+2011-03-02T16:25:00.256527Z
+7514
 zji
 
 
@@ -103,44 +103,10 @@ file
 
 
 
-2011-01-24T18:12:12.000000Z
-014857665be703306c70e79500cf68e5
-2011-01-14T22:01:56.882464Z
-7381
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29955
-
-AracneAnalysis.java
-file
-
-
-
-
-2011-02-16T22:18:18.000000Z
-c996f617b598f1084b4a4f3e7636cd16
-2011-02-09T15:24:22.826566Z
-7430
+2011-02-24T19:13:51.000000Z
+d1af69d29895bbdc5f69ac3558c43e5e
+2011-02-18T20:52:38.054734Z
+7468
 zji
 has-props
 
@@ -163,7 +129,41 @@ has-props
 
 
 
-26428
+29922
+
+AracneAnalysis.java
+file
+
+
+
+
+2011-03-02T18:12:50.000000Z
+4621aa7c42031cd68bdfb4a7a541d41f
+2011-03-02T16:25:00.256527Z
+7514
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26379
 
 AracneProgress.java
 file

@@ -1,31 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svn/geworkbench/!svn/ver/7259/trunk/geworkbench/src/org/geworkbench/engine/skin
-END
-dock_grey.gif
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock_grey.gif
-END
-undock.gif
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock.gif
-END
-min_grey.gif
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min_grey.gif
-END
-close_active.gif
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/close_active.gif
+/svn/geworkbench/!svn/ver/7489/trunk/geworkbench/src/org/geworkbench/engine/skin
 END
 dock_active.gif
 K 25
@@ -33,17 +9,23 @@ svn:wc:ra_dav:version-url
 V 94
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock_active.gif
 END
-min.gif
+max_grey.gif
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min.gif
+V 91
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_grey.gif
 END
-undock_grey.gif
+ShortCutMenu.java
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_grey.gif
+V 98
+/svn/geworkbench/!svn/ver/6192/trunk/geworkbench/src/org/geworkbench/engine/skin/ShortCutMenu.java
+END
+undock_active.gif
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_active.gif
 END
 min_active.gif
 K 25
@@ -57,35 +39,17 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock.gif
 END
-blue_sphere.bmp
+Skin.java
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/blue_sphere.bmp
+V 90
+/svn/geworkbench/!svn/ver/7489/trunk/geworkbench/src/org/geworkbench/engine/skin/Skin.java
 END
-ShortCutMenu.java
+max_active.gif
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/6192/trunk/geworkbench/src/org/geworkbench/engine/skin/ShortCutMenu.java
-END
-ShortCutMenu.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/geworkbench/!svn/ver/6192/trunk/geworkbench/src/org/geworkbench/engine/skin/ShortCutMenu.cwb.xml
-END
-close.gif
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/close.gif
-END
-undock_active.gif
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_active.gif
+V 93
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_active.gif
 END
 Thumbs.db
 K 25
@@ -93,23 +57,17 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/Thumbs.db
 END
-max_grey.gif
+min.gif
 K 25
 svn:wc:ra_dav:version-url
-V 91
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_grey.gif
+V 86
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min.gif
 END
-Skin.java
+undock.gif
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/7259/trunk/geworkbench/src/org/geworkbench/engine/skin/Skin.java
-END
-max_active.gif
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_active.gif
+V 89
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock.gif
 END
 max.gif
 K 25
@@ -122,4 +80,46 @@ K 25
 svn:wc:ra_dav:version-url
 V 93
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/close_grey.gif
+END
+close_active.gif
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/close_active.gif
+END
+close.gif
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/close.gif
+END
+ShortCutMenu.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/geworkbench/!svn/ver/6192/trunk/geworkbench/src/org/geworkbench/engine/skin/ShortCutMenu.cwb.xml
+END
+blue_sphere.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/blue_sphere.bmp
+END
+dock_grey.gif
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock_grey.gif
+END
+undock_grey.gif
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_grey.gif
+END
+min_grey.gif
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min_grey.gif
 END

@@ -17,7 +17,7 @@ CREATE TABLE registration (
   addr2 varchar(50) default NULL,
   city varchar(50) default NULL,
   state varchar(50) default NULL,
-  zipcode varchar(5) default NULL,
+  zipcode varchar(7) default NULL,
   online_status int(11) default NULL,
   interests text,
   createdat datetime default NULL,

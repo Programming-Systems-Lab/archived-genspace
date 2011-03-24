@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/geworkbench/!svn/ver/7464/trunk/geworkbench/src/org/geworkbench/builtin/projects
+/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects
 END
 generic16x16.gif
 K 25
@@ -67,13 +67,13 @@ SaveTree.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7456/trunk/geworkbench/src/org/geworkbench/builtin/projects/SaveTree.java
+/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects/SaveTree.java
 END
 WorkspaceServiceClient.java
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/7459/trunk/geworkbench/src/org/geworkbench/builtin/projects/WorkspaceServiceClient.java
+/svn/geworkbench/!svn/ver/7497/trunk/geworkbench/src/org/geworkbench/builtin/projects/WorkspaceServiceClient.java
 END
 Client.java
 K 25
@@ -241,7 +241,7 @@ ProjectPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svn/geworkbench/!svn/ver/7464/trunk/geworkbench/src/org/geworkbench/builtin/projects/ProjectPanel.java
+/svn/geworkbench/!svn/ver/7497/trunk/geworkbench/src/org/geworkbench/builtin/projects/ProjectPanel.java
 END
 workspace16x16.gif
 K 25
@@ -259,7 +259,7 @@ RWspHandler.java
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/7459/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHandler.java
+/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHandler.java
 END
 MicroarraySetNode.java
 K 25
@@ -271,7 +271,7 @@ RWspHelper.java
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/geworkbench/!svn/ver/7463/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHelper.java
+/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHelper.java
 END
 SaveFileFilterFactory.java
 K 25
@@ -295,5 +295,5 @@ RegPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7424/trunk/geworkbench/src/org/geworkbench/builtin/projects/RegPanel.java
+/svn/geworkbench/!svn/ver/7497/trunk/geworkbench/src/org/geworkbench/builtin/projects/RegPanel.java
 END

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7383/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
 END
 jClaim.java
 K 25
@@ -31,13 +31,13 @@ ObjectHandler.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svn/geworkbench/!svn/ver/6866/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectHandler.java
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectHandler.java
 END
 RealTimeWorkFlowSuggestion.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/5205/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/RealTimeWorkFlowSuggestion.java
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/RealTimeWorkFlowSuggestion.java
 END
 ObjectLogger.java
 K 25
@@ -85,7 +85,7 @@ ISBUWorkFlowVisualization.java
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/5274/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ISBUWorkFlowVisualization.java
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ISBUWorkFlowVisualization.java
 END
 Inbox.java
 K 25
@@ -139,7 +139,7 @@ WorkflowVisualization.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/geworkbench/!svn/ver/6790/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/WorkflowVisualization.java
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/WorkflowVisualization.java
 END
 ServerConfig.java
 K 25

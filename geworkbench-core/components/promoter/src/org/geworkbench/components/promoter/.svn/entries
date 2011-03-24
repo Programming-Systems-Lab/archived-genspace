@@ -1,14 +1,14 @@
 10
 
 dir
-7464
+7514
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-16T16:07:25.210848Z
-7461
+2011-02-23T19:53:05.257180Z
+7480
 zji
 
 
@@ -25,6 +25,40 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+ImagePanel.java
+file
+
+
+
+
+2011-02-24T19:13:49.000000Z
+a146bfd3bae52d9012af17d7c9470b32
+2011-02-23T19:53:05.257180Z
+7480
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2101
 
 PromoterView.java
 file
@@ -131,40 +165,6 @@ has-props
 
 495
 
-PromoterPatternDB.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-909b432927e221722bf24a05194baf65
-2006-05-15T19:37:10.000000Z
-1535
-keshav
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3098
-
 SequencePatternDisplayPanel.java
 file
 
@@ -205,11 +205,11 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-1969526fcfd02f967ea279e10db4e1d6
-2009-09-24T14:21:40.000000Z
-5599
-tgarben
+2011-02-24T19:13:49.000000Z
+96de7b52030456e62d2d08bb7182995f
+2011-02-23T19:53:05.257180Z
+7480
+zji
 has-props
 
 
@@ -231,7 +231,7 @@ has-props
 
 
 
-4578
+4382
 
 JASPAR_download_info.txt
 file
@@ -273,10 +273,10 @@ file
 
 
 
-2011-02-16T22:18:16.000000Z
-8c429fecb8d0806df18483d7ad71dd8a
-2011-02-16T16:07:25.210848Z
-7461
+2011-02-24T19:13:49.000000Z
+f0ccb401670def794770437c1faa3b80
+2011-02-23T19:53:05.257180Z
+7480
 zji
 has-props
 
@@ -299,7 +299,7 @@ has-props
 
 
 
-88857
+83453
 
 TFListPanel.java
 file
@@ -375,11 +375,11 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-581fa00de0ef3fb5d58ec37e76c6a210
-2009-09-24T14:21:40.000000Z
-5599
-tgarben
+2011-02-24T19:13:49.000000Z
+0aa6e3faa621f1ccf8fe1abc7fdca5bb
+2011-02-23T19:53:05.257180Z
+7480
+zji
 has-props
 
 
@@ -401,7 +401,7 @@ has-props
 
 
 
-3420
+3147
 
 PromoterView.cwb.xml
 file
@@ -436,40 +436,6 @@ smithken
 
 
 1171
-
-SequenceFileReader.java
-file
-
-
-
-
-2011-02-16T22:18:16.000000Z
-9a47e0c9fd432141b96353ecb1771083
-2011-02-16T16:07:25.210848Z
-7461
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8938
 
 modulediscovery
 dir

@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/7412/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
+/svn/geworkbench/!svn/ver/7472/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
+END
+MasterRegulatorPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/7469/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MasterRegulatorPanel.java
 END
 TtestAnalysis.cwb.xml
 K 25
@@ -9,23 +15,11 @@ svn:wc:ra_dav:version-url
 V 124
 /svn/geworkbench/!svn/ver/6530/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.cwb.xml
 END
-MasterRegulatorPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 128
-/svn/geworkbench/!svn/ver/7381/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MasterRegulatorPanel.java
-END
 TTestUtil.java
 K 25
 svn:wc:ra_dav:version-url
 V 117
 /svn/geworkbench/!svn/ver/7409/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TTestUtil.java
-END
-MasterRegulatorViewer.java
-K 25
-svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/6943/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MasterRegulatorViewer.java
 END
 MultiTTestAnalysisPanel.java
 K 25
@@ -33,23 +27,29 @@ svn:wc:ra_dav:version-url
 V 131
 /svn/geworkbench/!svn/ver/7203/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MultiTTestAnalysisPanel.java
 END
+MasterRegulatorViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/6943/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MasterRegulatorViewer.java
+END
 TtestAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
 /svn/geworkbench/!svn/ver/7409/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.java
 END
-DetailedTFGraphViewer.java
-K 25
-svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/6943/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/DetailedTFGraphViewer.java
-END
 TableViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 119
 /svn/geworkbench/!svn/ver/6943/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TableViewer.java
+END
+DetailedTFGraphViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/6943/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/DetailedTFGraphViewer.java
 END
 MasterRegulatorAnalysis.cwb.xml
 K 25
@@ -73,7 +73,7 @@ MasterRegulatorAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/7412/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MasterRegulatorAnalysis.java
+/svn/geworkbench/!svn/ver/7472/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MasterRegulatorAnalysis.java
 END
 TtestAnalysisPanel.java
 K 25

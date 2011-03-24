@@ -1,15 +1,15 @@
 10
 
 dir
-7464
+7514
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/util/visualproperties
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2008-11-13T21:13:04.000000Z
-4458
-jiz
+2011-02-24T17:52:12.654036Z
+7494
+zji
 
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-ad3444ed3b669d23af6be6b3f8fd75be
-2008-11-13T21:13:04.000000Z
-4458
-jiz
+2011-02-24T19:13:57.000000Z
+d9bc4ee0ee7a1e4aa30fd32d174ce23f
+2011-02-24T17:05:34.893808Z
+7493
+zji
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-6091
+5843
 
 JShapeButton.java
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-efba3e64ae4714781b300770b7180760
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2011-02-24T19:13:57.000000Z
+ddbfc7dd66e39428e6d3ea8b4e79ea86
+2011-02-24T17:52:12.654036Z
+7494
+zji
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-3507
+3832
 
 JShapeDialog.java
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-5554e3c5f9bca765b507c8c1656c2c9f
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2011-02-24T19:13:57.000000Z
+62b4495155020cf02e8004f688952aba
+2011-02-24T17:52:12.654036Z
+7494
+zji
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3477
+2974
 
 PanelVisualPropertiesManager.java
 file

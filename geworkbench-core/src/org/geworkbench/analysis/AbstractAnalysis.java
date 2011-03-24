@@ -44,7 +44,7 @@ import org.geworkbench.util.FilePathnameUtils;
  * @author keshav
  * @author yc2480
  * @author os2201
- * @version $Id: AbstractAnalysis.java 7423 2011-02-08 22:00:37Z zji $
+ * @version $Id: AbstractAnalysis.java 7503 2011-02-28 21:46:01Z maz $
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractAnalysis implements Analysis, Serializable,
@@ -123,6 +123,8 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
     public static final int PUDGE_TYPE = 30;
     
     public static final int MEDUSA_TYPE = 31;
+    
+    public static final int FOLD_CHANGE_TYPE=32;
 	/**
 	 * Parameters will be saved as XML files in "savedParams" directory under
 	 * each component directory.

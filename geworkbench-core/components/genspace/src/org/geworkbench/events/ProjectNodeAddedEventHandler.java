@@ -54,7 +54,6 @@ public class ProjectNodeAddedEventHandler implements EventHandler {
 	 * 
 	 * @see org.geworkbench.events.EventHandler#log()
 	 */
-	@Override
 	public void log() {
 		log.warn("Logging information for " + this.getClass().getName());
 

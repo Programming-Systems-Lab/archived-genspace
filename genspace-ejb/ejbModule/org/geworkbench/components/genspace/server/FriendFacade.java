@@ -24,6 +24,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
         super(Friend.class);
     }
 
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getFriendRequests() {

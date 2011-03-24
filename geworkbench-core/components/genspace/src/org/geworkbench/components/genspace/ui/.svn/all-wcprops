@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/svn/geworkbench/!svn/ver/6866/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
 END
 GenSpaceRegistration.java
 K 25
@@ -43,5 +43,5 @@ GenSpaceLogin.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/5794/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceLogin.java
+/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceLogin.java
 END

@@ -1,15 +1,15 @@
 10
 
 dir
-7464
+7514
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-10T22:37:06.426301Z
-7445
-zji
+2011-02-28T21:46:32.576552Z
+7504
+maz
 
 
 
@@ -241,4 +241,38 @@ has-props
 
 
 2054
+
+FoldChangeResult.java
+file
+
+
+
+
+2011-03-02T18:12:51.000000Z
+8644ec6bcb040e6ac5ca55d367531d2c
+2011-02-28T21:46:32.576552Z
+7504
+maz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+808
 

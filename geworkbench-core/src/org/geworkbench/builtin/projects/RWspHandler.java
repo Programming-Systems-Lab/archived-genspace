@@ -49,11 +49,11 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * Remote Workspace Handler
  * @author mw2518
- * $Id: RWspHandler.java 7459 2011-02-15 22:24:31Z wangmen $
+ * $Id: RWspHandler.java 7513 2011-03-01 22:23:37Z wangmen $
  */
 public class RWspHandler {
 	protected static final String USER_INFO_DELIMIETER = "==";
-	private static final String USER_INFO = "userinfo";
+	protected static final String USER_INFO = "userinfo";
 	protected static final String META_DELIMIETER = "::";
 	protected static String userInfo = null;
 	private JDialog loginDialog;
@@ -84,7 +84,7 @@ public class RWspHandler {
 	private JTable jtgroup = new JTable();
 	private JTextField groupName = new JTextField(20);
 	private JTextField groupUser = new JTextField(20);
-	protected static final int LocalID = 0, IdID = 1, LockID=5, LkUsrID=6, DirtyID=7, SyncID=8, LastSyncID=9;
+	protected static final int LocalID = 0, IdID = 1, AccessID=4, LkUsrID=5, DirtyID=6, SyncID=7, LastSyncID=8, LastChangeID=9;
 	protected static final int LDWidth = 790, LDHeight = 330, SLDHeight = 300; 
 
 	protected static String checkoutstr = "";
@@ -98,7 +98,7 @@ public class RWspHandler {
 	protected static JDialog listDialog;
 
 	protected void getUserInfo() {
-		FormLayout layout = new FormLayout("left:max(25dlu;pref), 5dlu, 70dlu");
+		FormLayout layout = new FormLayout("left:max(25dlu;pref), 5dlu, 78dlu");
 		DefaultFormBuilder builder = new DefaultFormBuilder(layout);
 		builder.setDefaultDialogBorder();
 		loginDialog = new JDialog();
@@ -106,7 +106,7 @@ public class RWspHandler {
 		passwordField = new JPasswordField(20);
 		builder.append("Username", usernameField);
 		builder.append("Password", passwordField);
-		JButton login = new JButton("OK");
+		JButton login = new JButton("Login");
 		login.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				String username = usernameField.getText();
@@ -148,6 +148,15 @@ public class RWspHandler {
 			}
 		});
 		builder.append(register, buttons);
+		
+		JButton skip = new JButton("Skip Authentication");
+		skip.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				userInfo = "local";
+				loginDialog.dispose();
+			}
+		});
+		builder.append("", skip);
 		
 		PropertiesManager pm = PropertiesManager.getInstance();
 		String savedUserInfo = null;
@@ -406,21 +415,22 @@ public class RWspHandler {
 	             int colIndex = columnAtPoint(p);
 	             int realColumnIndex = convertColumnIndexToModel(colIndex);
 
-	             if (realColumnIndex != IdID && realColumnIndex != LockID &&
+	             if (realColumnIndex != IdID &&
 	            		 realColumnIndex != DirtyID && realColumnIndex != SyncID)
 	            	 return (String)getModel().getValueAt(rowIndex, realColumnIndex);
 	             else	return null;
 			 }
 		};
+		jt.setDefaultRenderer(Object.class, new RWspHelper.ColorRenderer());
 		jt.removeColumn(jt.getColumnModel().getColumn(jt.getColumnCount()-1));
 	    jt.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-	    jt.getColumnModel().getColumn(1).setMaxWidth(30);
-	    jt.getColumnModel().getColumn(4).setMaxWidth(50);
-	    for (int i=5; i<9; i++)
-	    	if (i!=6) jt.getColumnModel().getColumn(i).setMaxWidth(40);
-	    jt.getColumnModel().getColumn(9).setPreferredWidth(140);
-	    jt.getColumnModel().getColumn(10).setPreferredWidth(140);
+	    jt.getColumnModel().getColumn(IdID).setMaxWidth(30);
+	    jt.getColumnModel().getColumn(AccessID).setMaxWidth(50);
+	    jt.getColumnModel().getColumn(DirtyID).setMaxWidth(40);
+	    jt.getColumnModel().getColumn(SyncID).setMaxWidth(40);
+	    jt.getColumnModel().getColumn(LastSyncID).setPreferredWidth(140);
+	    jt.getColumnModel().getColumn(LastChangeID).setPreferredWidth(140);
 
 	    jt.setPreferredScrollableViewportSize(jt.getPreferredSize());
 	    ListSelectionListener listener = new ListSelectionListener(){
@@ -445,7 +455,7 @@ public class RWspHandler {
 				String selectedco = jt.getModel().getValueAt(selectedRow, LastSyncID).toString();
 				listDialog.dispose();
 
-				saveLocalwsp();
+				saveLocalwsp(false);
 
 				openWsp(remoteId, selectedco);
 			}
@@ -459,7 +469,7 @@ public class RWspHandler {
 				String wsFilename = wspdir+localwspname;
 				listDialog.dispose();
 
-				saveLocalwsp();
+				saveLocalwsp(false);
 
 				OpenTask openTask = ws.new OpenTask(ProgressItem.INDETERMINATE_TYPE, "Workspace is being loaded.", wsFilename);
 				pdnonmodal.executeTask(openTask);
@@ -489,8 +499,15 @@ public class RWspHandler {
 								"Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 						if (n == JOptionPane.CANCEL_OPTION || n == JOptionPane.NO_OPTION)
 							return;
+						if (!nf.delete()){
+							JOptionPane.showMessageDialog(null, "Failed to delete old file "+newName);
+							return;
+						}
 					}
-					f.renameTo(nf);
+					if (!f.renameTo(nf)){
+						JOptionPane.showMessageDialog(null, "Failed to rename file to "+newName);
+						return;
+					}
 					listDialog.dispose();
 					int id = Integer.valueOf(jt.getValueAt(selectedRow, IdID).toString());
 					WorkspaceServiceClient.wsprenames.put(id, newName);
@@ -612,15 +629,23 @@ public class RWspHandler {
 		if (localwspname!=null && !localwspname.equals("")){
 			openLocalBtn.setEnabled(true);
 			renameLocalBtn.setEnabled(true);
+		} else {
+			openLocalBtn.setEnabled(false);
+			renameLocalBtn.setEnabled(false);
 		}
-		if (((Boolean)jt.getValueAt(selectedRow, LockID))==Boolean.TRUE){
-			releaselockBtn.setEnabled(true);
-			breaklockBtn.setEnabled(true);
-		} else
-			removeBtn.setEnabled(true);
-
 		String lkusr = (String)jt.getValueAt(selectedRow, LkUsrID);
 		if (lkusr!=null && !lkusr.equals("")){
+			releaselockBtn.setEnabled(true);
+			breaklockBtn.setEnabled(true);
+			removeBtn.setEnabled(false);
+		} else {
+			releaselockBtn.setEnabled(false);
+			breaklockBtn.setEnabled(false);
+			removeBtn.setEnabled(true);
+		}
+
+		String access = (String)jt.getValueAt(selectedRow, AccessID);
+		if (access!=null && !access.equals("")){
 			downloadBtn.setEnabled(true);
 			descbtn.setEnabled(true);
 			addannobtn.setEnabled(true);
@@ -658,8 +683,20 @@ public class RWspHandler {
 	}
 
 	//save current local wsp and release lock before opening another remote wsp
-	private void saveLocalwsp(){
-		if (wspId == 0) return;
+	protected static void saveLocalwsp(boolean terminating){
+		if (!doSaveLocal(terminating)) return;
+
+		//if workspace being closed is locked by current user
+		if (userInfo.equals("local")){
+			RWspHelper.CheckReleaseRemoteTask releaseTask = new RWspHelper.CheckReleaseRemoteTask(ProgressItem.INDETERMINATE_TYPE, 
+					"Checking remote workspace "+wspId+" lock before release.", wspId);
+			pdnonmodal.executeTask(releaseTask);
+		}
+		//reset wspId
+		resetWsp();
+	}
+	protected static boolean doSaveLocal(boolean terminating){
+		if (wspId == 0) return false;
 		String fname = wspId+".wsp";
 		String rename = WorkspaceServiceClient.wsprenames.get(wspId); 
 		if (rename!=null) fname=rename;
@@ -671,19 +708,19 @@ public class RWspHandler {
 				filetime.setNanos(0);
 				//System.out.println(wsFilename+": "+Timestamp.valueOf(lastchange)+"; "+filetime);
 				if (Timestamp.valueOf(lastchange).after(filetime)){
-					SaveTask task = new WorkspaceHandler().new SaveTask(ProgressItem.INDETERMINATE_TYPE, "Workspace is being saved.", wsFilename, false);
+					SaveTask task = new WorkspaceHandler().new SaveTask(ProgressItem.INDETERMINATE_TYPE, "Workspace is being saved.", wsFilename, terminating);
 					pdmodal.executeTask(task);
 				}
 			}
 		}
+		return true;
+	}
 
-		//if workspace being closed is locked by current user
-		RWspHelper.CheckReleaseRemoteTask releaseTask = new RWspHelper.CheckReleaseRemoteTask(ProgressItem.INDETERMINATE_TYPE, 
-				"Checking remote workspace "+wspId+" lock before release.", wspId);
-		pdnonmodal.executeTask(releaseTask);
-
-		//reset wspId
+	protected static void resetWsp(){
 		wspId = 0;
+		dirty = false;
+		checkoutstr = "";
+		lastchange = "";
 	}
 
 	private void releaseLock(String type){

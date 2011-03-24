@@ -101,3 +101,5 @@ Caused by: java.lang.ClassNotFoundException: org.apache.axis.types.URI$Malformed
 [geworkbench - SwingWorker-pool-2-thread-2 (2011-02-16 17:27:00,390)] ERROR org.geworkbench.parsers.TabDelimitedDataMatrixFileFormat.checkFormat(139) | Duplicate Markers: aml8_924_hu68_110200_ab
 [geworkbench - AWT-EventQueue-0 (2011-02-16 17:28:08,254)] WARN org.geworkbench.components.hierarchicalclustering.HierClusterDisplay.paintComponent(152) | unexpected null microarraySet
 [geworkbench - AWT-EventQueue-0 (2011-02-16 17:28:08,340)] WARN org.geworkbench.components.hierarchicalclustering.HierClusterDisplay.paintComponent(152) | unexpected null microarraySet
+[geworkbench - AWT-EventQueue-0 (2011-03-02 13:18:28,551)] WARN org.geworkbench.components.hierarchicalclustering.HierClusterDisplay.paintComponent(152) | unexpected null microarraySet
+[geworkbench - AWT-EventQueue-0 (2011-03-02 13:18:28,664)] WARN org.geworkbench.components.hierarchicalclustering.HierClusterDisplay.paintComponent(152) | unexpected null microarraySet

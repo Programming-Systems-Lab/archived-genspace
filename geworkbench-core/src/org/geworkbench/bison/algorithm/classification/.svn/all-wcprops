@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/6479/trunk/geworkbench/src/org/geworkbench/bison/algorithm/classification
+/svn/geworkbench/!svn/ver/7484/trunk/geworkbench/src/org/geworkbench/bison/algorithm/classification
 END
 CSClassifier.java
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/geworkbench/!svn/ver/2085/trunk/geworkbench/src/org/geworkbench/bison/algorithm/classification/CSClassifier.java
+/svn/geworkbench/!svn/ver/7484/trunk/geworkbench/src/org/geworkbench/bison/algorithm/classification/CSClassifier.java
 END
 CSVisualClassifier.java
 K 25

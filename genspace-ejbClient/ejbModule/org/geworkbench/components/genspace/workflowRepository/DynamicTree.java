@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
+import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
@@ -37,7 +38,7 @@ import org.geworkbench.components.genspace.entity.WorkflowFolder;
 public class DynamicTree extends JPanel implements ActionListener,
 		TreeSelectionListener {
 
-	protected WorkflowNode rootNode;
+	protected DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode();
 	protected DefaultTreeModel treeModel;
 	protected JTree tree;
 	private Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -88,25 +89,30 @@ public class DynamicTree extends JPanel implements ActionListener,
 
 	public void recalculateTree() {
 		User u = LoginFactory.getUser();
-		UserWorkflow fake = new UserWorkflow();
-		fake.setName("Workflow Repository");
-		rootNode = new WorkflowNode(fake);
 		if (u != null) {
-			addUserWorkflowTree(u,rootNode);
+			rootNode = new DefaultMutableTreeNode(u.getRootFolder());
+			addUserWorkflowTree(u);
 		}
 	}
 
-	private void addUserWorkflowTree(User u, WorkflowNode rootNode) {
+	private void addUserWorkflowTree(User u) {
 
-		HashMap<String, DefaultMutableTreeNode> folders = new HashMap<String, DefaultMutableTreeNode>();
+		HashMap<WorkflowFolder, DefaultMutableTreeNode> folders = new HashMap<WorkflowFolder, DefaultMutableTreeNode>();
+		folders.put(u.getRootFolder(), rootNode);
 		// first add all folders
 		// Whenever a folder was added in the ADD function the list of folders
 		// is ordered by name
 		// so we don't worry about it here.Å
 		for (WorkflowFolder f : u.getFolders()) {
-			DefaultMutableTreeNode fnode = new DefaultMutableTreeNode(f);
-			folders.put(f.getName(), fnode);
-			rootNode.add(fnode);
+			DefaultMutableTreeNode fnode;
+			if(f.getParent() != null)
+			{
+				fnode = new DefaultMutableTreeNode(f);
+				folders.put(f, fnode);
+				folders.get(f.getParent()).add(fnode);
+			}
+			else
+				fnode = rootNode;
 			for(UserWorkflow w : f.getWorkflows())
 			{
 				fnode.add(new WorkflowNode(w));
@@ -142,7 +148,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 		addWorkflowObject(rootNode, child, true);
 	}
 
-	private void addWorkflowObject(WorkflowNode parent, UserWorkflow workflow,
+	private void addWorkflowObject(DefaultMutableTreeNode parent, UserWorkflow workflow,
 			boolean visibile) {
 		WorkflowNode childNode = new WorkflowNode(workflow);
 		treeModel.insertNodeInto(childNode, parent, parent.getChildCount());
@@ -379,11 +385,13 @@ public class DynamicTree extends JPanel implements ActionListener,
 				&& !LoginFactory.getUser().containsFolderByName(folderName)) {
 			// send add_folder to the server
 			SwingWorker<WorkflowFolder, Void> worker = new SwingWorker<WorkflowFolder, Void>() {
-				protected WorkflowFolder doInBackground() throws Exception {
+				protected WorkflowFolder doInBackground() {
 					WorkflowFolder folder = new WorkflowFolder();
 					folder.setName(folderName);
 					folder.setOwner(LoginFactory.getUser());
-					return LoginFactory.getWorkflowOps().addFolder(folder);
+					WorkflowFolder ret = LoginFactory.getWorkflowOps().addFolder(folder);
+					LoginFactory.updateCachedUser();
+					return ret;
 				};
 
 				protected void done() {
@@ -391,12 +399,14 @@ public class DynamicTree extends JPanel implements ActionListener,
 					try {
 						result = get();
 					} catch (InterruptedException e) {
+						e.printStackTrace();
 						GenSpace.logger.error("Error talking to server", e);
 					} catch (ExecutionException e) {
+						e.printStackTrace();
 						GenSpace.logger.error("Error talking to server", e);
 					}
 					if (result == null || result.equals("")) {
-						LoginFactory.getUser().getFolders().add(result);
+//						LoginFactory.getUser().getFolders().add(result);
 						Collections.sort(LoginFactory.getUser().getFolders());
 						recalculateAndReload();
 						// addObject(rootNode, folderName);
@@ -406,7 +416,6 @@ public class DynamicTree extends JPanel implements ActionListener,
 				};
 			};
 			worker.run();
-
 		}
 
 	}

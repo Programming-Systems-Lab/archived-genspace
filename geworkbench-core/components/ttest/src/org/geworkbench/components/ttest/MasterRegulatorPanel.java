@@ -44,7 +44,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  *	Parameter Panel used for Master Regulator Analysis
  *	@author yc2480 
- *  @version $Id: MasterRegulatorPanel.java 7381 2011-01-14 22:01:56Z maz $
+ *  @version $Id: MasterRegulatorPanel.java 7469 2011-02-18 20:53:04Z zji $
  */
 public class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = -6160058089960168299L;
@@ -327,6 +327,11 @@ public class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 		adjModel.add(adjDataSet.getDataSetName());
 	}
 
+	public void clearAdjMatrixCombobox(){
+		adjacencymatrixDataSets.clear();
+		adjModel.clear();
+	}
+	
 	public void removeAdjMatrixToCombobox(AdjacencyMatrixDataSet adjDataSet){		
 		try
 		{

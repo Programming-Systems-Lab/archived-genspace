@@ -11,7 +11,7 @@ import java.util.RandomAccess;
 
 /**
  * @author John Watkinson
- * @version $Id: DSSequenceSet.java 7238 2010-11-29 04:50:09Z zji $
+ * @version $Id: DSSequenceSet.java 7487 2011-02-24 14:48:09Z zji $
  */
 public interface DSSequenceSet<T extends DSSequence> extends RandomAccess, Cloneable, Serializable, DSDataSet<T>, List<T> {
 
@@ -35,5 +35,4 @@ public interface DSSequenceSet<T extends DSSequence> extends RandomAccess, Clone
 
     int[] getReverseIndex();
 
-    DSSequenceSet createSubSetSequenceDB(boolean[] included);
 }

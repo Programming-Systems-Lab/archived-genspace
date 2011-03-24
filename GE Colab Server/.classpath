@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="samples/databinding/client/src"/>
-	<classpathentry kind="src" path="samples/databinding/service/src"/>
-	<classpathentry kind="src" path="samples/faulthandling/client/src"/>
-	<classpathentry kind="src" path="samples/faulthandling/service/src"/>
-	<classpathentry kind="src" path="samples/java_first_jaxws/src/main"/>
-	<classpathentry kind="src" path="samples/jaxws-addressbook/src"/>
-	<classpathentry excluding="org/apache/axis2/jaxws/calculator/|org/apache/axis2/jaxws/calculator/client/" kind="src" path="samples/jaxws-calculator/src"/>
-	<classpathentry excluding="client/" kind="src" path="samples/jaxws-calculator/src/org/apache/axis2/jaxws/calculator"/>
-	<classpathentry kind="src" path="samples/jaxws-calculator/src/org/apache/axis2/jaxws/calculator/client"/>
-	<classpathentry kind="src" path="samples/jaxws-dynamic/src"/>
-	<classpathentry excluding="org/datacontract/schemas/_2004/_07/system/" kind="src" path="samples/jaxws-interop/src"/>
-	<classpathentry kind="src" path="samples/jaxws-interop/src/org/datacontract/schemas/_2004/_07/system"/>
-	<classpathentry excluding="org/apache/axis2/jaxws/samples/echo/|org/apache/axis2/jaxws/samples/ping/|org/apache/axis2/jaxws/samples/mtom/" kind="src" path="samples/jaxws-samples/src/main"/>
-	<classpathentry kind="src" path="samples/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/echo"/>
-	<classpathentry kind="src" path="samples/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/mtom"/>
-	<classpathentry kind="src" path="samples/jaxws-samples/src/main/org/apache/axis2/jaxws/samples/ping"/>
-	<classpathentry kind="src" path="samples/jaxws-version/src"/>
-	<classpathentry kind="src" path="samples/mtom/build/service/src"/>
 	<classpathentry kind="src" path="samples/mtom/src"/>
-	<classpathentry kind="src" path="samples/pojo/src"/>
-	<classpathentry kind="src" path="samples/pojoguide/src"/>
-	<classpathentry kind="src" path="samples/pojoguidespring/src"/>
-	<classpathentry kind="src" path="samples/quickstart/src"/>
-	<classpathentry kind="src" path="samples/quickstartadb/src"/>
-	<classpathentry kind="src" path="samples/quickstartaxiom/src"/>
-	<classpathentry kind="src" path="samples/quickstartjibx/src"/>
-	<classpathentry kind="src" path="samples/quickstartxmlbeans/src"/>
-	<classpathentry kind="src" path="samples/servicelifecycle/src"/>
-	<classpathentry kind="src" path="samples/soapwithattachments/src"/>
 	<classpathentry kind="src" path="samples/testdld/src"/>
-	<classpathentry kind="src" path="samples/userguide/src"/>
-	<classpathentry kind="src" path="samples/version/src"/>
-	<classpathentry kind="src" path="samples/yahoojsonsearch/src"/>
-	<classpathentry kind="src" path="samples/yahoorestsearch/src"/>
 	<classpathentry kind="lib" path="lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/antlr-2.7.7.jar"/>
 	<classpathentry kind="lib" path="lib/axiom-api-1.2.10.jar"/>
@@ -102,5 +70,12 @@
 	<classpathentry kind="lib" path="samples/version/target/version-1.5.4-sources.jar"/>
 	<classpathentry kind="lib" path="war/mysql-connector-java-5.1.14-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.sun.enterprise.jst.server.runtimeTarget/GlassFish Server Open Source Edition 3 (Java EE 6)">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="samples/version/target/classes"/>
 </classpath>

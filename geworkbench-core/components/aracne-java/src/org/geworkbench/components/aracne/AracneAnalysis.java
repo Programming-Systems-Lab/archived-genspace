@@ -48,7 +48,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 
 /**
  * @author Matt Hall
- * @version $Id: AracneAnalysis.java 7430 2011-02-09 15:24:22Z zji $
+ * @version $Id: AracneAnalysis.java 7514 2011-03-02 16:25:00Z zji $
  */
 public class AracneAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -275,8 +275,8 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 	 */
 	private AdjacencyMatrix convert(WeightedGraph graph,
 			DSMicroarraySet<DSMicroarray> mSet) {
-		AdjacencyMatrix matrix = new AdjacencyMatrix();
-		matrix.setMicroarraySet(mSet);
+		AdjacencyMatrix matrix = new AdjacencyMatrix(null, mSet);
+
 		for (String node : graph.getNodes()) {
 			DSGeneMarker marker = mSet.getMarkers().get(node);
 			matrix.addGeneRow(marker.getSerial());
@@ -716,7 +716,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 	public void receive(GeneSelectorEvent e, Object source) {
 		if (e.getPanel() != null) {
 			DSPanel<DSGeneMarker> selectorPanel = e.getPanel();
-			((AracneParamPanel) aspp).setSelectorPanel(((AracneParamPanel) aspp), selectorPanel);
+			((AracneParamPanel) aspp).setSelectorPanel(selectorPanel);
 		} else
 			log.debug("Aracne Received Gene Selector Event: Selection panel sent was null");
 	}

@@ -28,7 +28,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.engine.config.VisualPlugin;
 
-import javax.swing.SwingWorker.*;
+import javax.swing.SwingWorker;
 
 public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 Runnable {

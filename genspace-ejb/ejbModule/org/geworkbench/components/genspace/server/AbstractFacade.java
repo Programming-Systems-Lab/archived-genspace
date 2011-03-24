@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.WorkflowFolder;
 
 /**
  * Borrowed from Netbeans wizard :)
@@ -22,6 +23,10 @@ public abstract class AbstractFacade<T> {
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
     public User fullySerialize(User u) {
 		u.getFolders().size();
+		for(WorkflowFolder wf : u.getFolders())
+		{
+			wf.getWorkflows().size();
+		}
 		u.getFriends().size();
 		u.getIncomingWorkflows().size();
 		u.getWorkflowComments().size();

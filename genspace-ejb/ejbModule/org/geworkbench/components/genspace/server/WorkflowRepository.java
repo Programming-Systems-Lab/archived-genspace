@@ -47,9 +47,10 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 
 	@Override
 	public WorkflowFolder addFolder(WorkflowFolder folder) {
+		System.out.println("Adding " + folder);
 		folder.setOwner(getUser());
 		getEntityManager().persist(folder);
-		getEntityManager().refresh(folder);
+//		getEntityManager().refresh(folder);
 		return folder;
 	}
 
@@ -65,13 +66,13 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 
 	@Override
 	public UserWorkflow addToRepository(IncomingWorkflow wi) {
-		UserWorkflow uw = new UserWorkflow();
+		UserWorkflow uw = new UserWorkflow(); 
 		uw.setWorkflow(wi.getWorkflow());
 		uw.setFolder(getUser().getRootFolder());
 		uw.setCreatedAt(new Date());
 		uw.setName(wi.getName());
 		getEntityManager().persist(uw);
-		getEntityManager().refresh(uw);
+//		getEntityManager().refresh(uw);
 		return uw;
 	}
 

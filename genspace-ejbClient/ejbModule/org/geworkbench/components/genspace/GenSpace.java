@@ -45,7 +45,8 @@ public class GenSpace {
 	{
 		if(Thread.currentThread().getName().contains("AWT-EventQueue"))
 		{
-			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
+			System.err.println(">>>>>>>>>"+Thread.currentThread().getName());
+//			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
 		}	
 		try {
 			if(ctx == null)
@@ -62,10 +63,6 @@ public class GenSpace {
 	
 	public static void main(String[] args) {
 		GenSpace g = new GenSpace();
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("P1", "V1");
-		params.put("P2", "V2");
-		ObjectLogger l = new ObjectLogger("testAnalysis", "testaDataSet", "fooTransaction2", params);
 	}
 
 	public static SocialNetworksHome networksPanels = new SocialNetworksHome();

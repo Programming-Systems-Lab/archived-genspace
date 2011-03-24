@@ -17,6 +17,7 @@ import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeqPattern;
+import org.geworkbench.bison.util.RandomNumberGenerator;
 
 /**
  * <p>Title: Sequence and Pattern Plugin</p>
@@ -25,7 +26,7 @@ import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeq
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PatternDB.java 7160 2010-11-08 16:23:43Z shteynbo $
+ * @version $Id: PatternDB.java 7473 2011-02-18 21:53:46Z shteynbo $
  */
 
 public class PatternDB extends CSAncillaryDataSet<DSSequence> implements Serializable {
@@ -38,6 +39,8 @@ public class PatternDB extends CSAncillaryDataSet<DSSequence> implements Seriali
     public PatternDB(File _seqFile, DSDataSet<DSSequence> parent) {
         super(parent, "PatternDB");
         dataSetFile = _seqFile;
+        String idString =  RandomNumberGenerator.getID();
+        setID(idString);
     }
 
     public boolean read(File _file) {

@@ -58,5 +58,18 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	public void setWorkflows(List<UserWorkflow> workflows) {
 		this.workflows = workflows;
 	}
-	 
+	@Override
+	public String toString() {
+		return this.getName();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof WorkflowFolder)
+			return ((WorkflowFolder) obj).getId() == getId();
+		return false;
+	}
+	@Override
+	public int hashCode() {
+		return new Integer(id).hashCode();
+	}
 }
