@@ -30,7 +30,7 @@ public abstract class AbstractFacade<T> {
 		u.getFriends().size();
 		u.getIncomingWorkflows().size();
 		u.getWorkflowComments().size();
-		u.getWorkflows().size();
+		u.getWorkflows().size(); 
 		u.getNetworks().size();
 		return u;
 	}

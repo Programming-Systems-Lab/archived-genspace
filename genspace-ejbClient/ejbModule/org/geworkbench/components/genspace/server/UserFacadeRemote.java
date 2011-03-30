@@ -13,6 +13,7 @@ import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowFolder;
 import org.geworkbench.components.genspace.entity.WorkflowRating;
 
 @Remote
@@ -22,7 +23,7 @@ public interface UserFacadeRemote {
 	public User getMe();
 	public void updateUser(User user);
 	public User getProfile(String who);	
-	
+	public WorkflowFolder getRootFolder();
 	
 	
 

@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
@@ -21,6 +22,7 @@ import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
 import org.geworkbench.util.BrowserLauncher;
@@ -67,13 +69,14 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 	}
 
 	public void initialize(final Tool tn, final Workflow workflow) {
-
+		this.workflow = workflow;
+		this.tool = tool;
 		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
 			@Override
 			public Void doInBackground() {
 
 				// only perform setup if we need to
-				if (tool == null) {
+				if (tool != null) {
 
 					getThisPopupMenu().removeAll();
 					tool = tn;
@@ -197,7 +200,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 									+ "Please use the messaging plugin to contact the expert user.",
 							"Warning", JOptionPane.WARNING_MESSAGE);
 			return;
-		} else if (item == addWorkflowRepository && workflow.getId() > 0) {
+		} else if (item == addWorkflowRepository && workflow != null && workflow.getId() > 0) {
 			browser = false;
 			addWorkFlowToRepository();
 		}
@@ -213,52 +216,40 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 	}
 
 	private void addWorkFlowToRepository() {
-//		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
-//			@Override
-//			public Void doInBackground() {
-//				User u = UserSession.getInstance();
-//				if (u != null) {
-//					String name = JOptionPane.showInputDialog(this,
-//							"Type a name for the workflow to be added:");
-//					if (name != null && name.trim().length() > 0) {
-//						ArrayList<Object> params = new ArrayList<Object>();
-//						params.add(u.username);
-//						params.add(wni);
-//						params.add(name);
-//						UserWorkflow uw = (UserWorkflow) ServerRequest.get(
-//								RuntimeEnvironmentSettings.ISBU_SERVER,
-//								"addUWF", params);
-//						if (uw == null) {
-//							JOptionPane
-//									.showMessageDialog(
-//											null,
-//											"Operation cancelled: Make sure that the Workflow is not already present in your repository.");
-//						} else {
-//							if (!u.workflows.contains(uw)) {
-//								u.workflows.add(uw);
-//								WorkflowRepository wr = GenSpace.getInstance()
-//										.getWorkflowRepository();
-//								wr.repositoryPanel.tree.recalculateAndReload();
-//								// wr.repositoryPanel.tree.addWorkflowToRoot(uw);
-//								JOptionPane
-//										.showMessageDialog(null,
-//												"Workflow added succesfully to repository");
-//							}
-//						}
-//					} else {
-//						JOptionPane
-//								.showMessageDialog(null,
-//										"Operation cancelled: A valid name has to be specified");
-//					}
-//				} else {
-//					JOptionPane
-//							.showMessageDialog(null,
-//									"You need to be logged in to manage the repository.");
-//				}
-//				return null;
-//			}
-//		};
-//		worker.execute();
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+			@Override
+			public Void doInBackground() {
+				if (LoginFactory.isLoggedIn()) {
+					String name = JOptionPane.showInputDialog("Type a name for the workflow to be added:",
+							"");
+					if (name != null && name.trim().length() > 0) {
+						UserWorkflow uw = new UserWorkflow();
+						uw.setName(name);
+						uw.setWorkflow(workflow);
+						uw.setFolder(LoginFactory.getUser().getRootFolder());
+						uw.setOwner(LoginFactory.getUser());
+						uw.setCreatedAt(new Date());
+						
+						LoginFactory.getWorkflowOps().addWorkflow(uw, LoginFactory.getUser().getRootFolder());
+						LoginFactory.updateCachedUser();
+							JOptionPane
+							.showMessageDialog(null,
+									"Workflow added succesfully to repository");
+						
+					} else {
+						JOptionPane
+								.showMessageDialog(null,
+										"Operation cancelled: A valid name has to be specified");
+					}
+				} else {
+					JOptionPane
+							.showMessageDialog(null,
+									"You need to be logged in to manage the repository.");
+				}
+				return null;
+			}
+		};
+		worker.execute();
 		//TODO
 	}
 

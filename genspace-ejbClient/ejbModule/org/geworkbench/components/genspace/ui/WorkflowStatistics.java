@@ -75,7 +75,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			}
 
 		};
-		worker.run();
+		worker.execute();
 	}
 
 	private void updatePopularTools() {
@@ -109,7 +109,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			}
 
 		};
-		worker.run();
+		worker.execute();
 	}
 
 	private void updatePopularWorkflows() {
@@ -143,7 +143,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			}
 
 		};
-		worker.run();
+		worker.execute();
 	}
 
 	private void updatePopularWFHeads() {
@@ -177,7 +177,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			}
 
 		};
-		worker.run();
+		worker.execute();
 	}
 
 	public void updateFormFields() {
@@ -237,7 +237,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			}
 
 		};
-		worker.run();
+		worker.execute();
 	}
 
 

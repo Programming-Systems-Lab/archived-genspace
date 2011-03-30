@@ -90,7 +90,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 	public void recalculateTree() {
 		User u = LoginFactory.getUser();
 		if (u != null) {
-			rootNode = new DefaultMutableTreeNode(u.getRootFolder());
+			rootNode = new DefaultMutableTreeNode(LoginFactory.getUserOps().getRootFolder());
 			addUserWorkflowTree(u);
 		}
 	}
@@ -283,7 +283,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 							}
 						};
 					};
-					worker.run();
+					worker.execute();
 				} else {
 					// removing a folder
 					int option = JOptionPane
@@ -312,7 +312,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 								}
 							};
 						};
-						worker.run();
+						worker.execute();
 						} 
 					}
 				}
@@ -367,7 +367,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 							}
 						};
 					};
-					worker.run();
+					worker.execute();
 				}
 			}
 		} else {
@@ -415,7 +415,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 					}
 				};
 			};
-			worker.run();
+			worker.execute();
 		}
 
 	}
@@ -433,7 +433,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 			if (node instanceof WorkflowNode) {
 				WorkflowNode wf = (WorkflowNode) node;
 				repositoryPanel.workflowRepository.graphPanel
-						.setAndPaintWorkflow(wf.userWorkflow.getWorkflow());
+						.render(wf.userWorkflow.getWorkflow());
 				repositoryPanel.workflowRepository.workflowDetailsPanel
 						.setAndPrintWorkflow(wf.userWorkflow.getWorkflow());
 				repositoryPanel.workflowRepository.workflowCommentsPanel

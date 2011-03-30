@@ -351,7 +351,7 @@ public class profileTab extends SocialTab {
 					}
 					
 				};
-				worker.run();
+				worker.execute();
 			}
 		});
 

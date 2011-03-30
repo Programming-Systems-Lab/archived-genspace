@@ -41,8 +41,10 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		uw.setCreatedAt(new Date());
 		uw.setOwner(getUser());
 		getEntityManager().persist(uw);
-		getEntityManager().refresh(folder);
-		return folder;
+//		getEntityManager().refresh(folder);
+		
+		WorkflowFolder ret = getEntityManager().find(WorkflowFolder.class, folder.getId());
+		return ret;
 	}
 
 	@Override

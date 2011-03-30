@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,6 +42,8 @@ public class UserWorkflow implements Serializable {
 	public void setOwner(User owner) {
 		this.owner = owner;
 	}
+	
+	@ManyToOne(fetch = FetchType.EAGER)
 	public Workflow getWorkflow() {
 		return workflow;
 	}

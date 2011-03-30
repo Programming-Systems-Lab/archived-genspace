@@ -127,7 +127,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 			
 		};
 		
-		worker.run();
+		worker.execute();
 		
 		tools.addItemListener(new ItemListener() {
 			@Override
@@ -188,7 +188,7 @@ public class ISBUWorkFlowVisualization extends JPanel implements VisualPlugin,
 						return null;
 					}
 				};
-				worker.run();
+				worker.execute();
 			}
 		});
 		/* K added (END)-singleTool */

@@ -170,7 +170,7 @@ VisualPlugin {
 				}
 			};
 		};
-		worker.run();
+		worker.execute();
 	}
 
 	private void addToRepository(final IncomingWorkflow wi,
@@ -200,7 +200,7 @@ VisualPlugin {
 				}
 			};
 		};
-		worker.run();
+		worker.execute();
 
 	}
 
@@ -213,7 +213,7 @@ private class RowListener implements ListSelectionListener {
 		if (i != -1) {
 			MyTableModel model = (MyTableModel) table.getModel();
 			IncomingWorkflow wi = model.getWorkflowAtRow(i);
-			workflowRepository.graphPanel.setAndPaintWorkflow(wi.getWorkflow());
+			workflowRepository.graphPanel.render(wi.getWorkflow());
 			workflowRepository.workflowDetailsPanel
 			.setAndPrintWorkflow(wi.getWorkflow());
 			workflowRepository.workflowCommentsPanel.setData(wi.getWorkflow());

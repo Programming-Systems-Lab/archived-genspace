@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 
 @Entity
@@ -18,6 +19,7 @@ public class Tool implements Serializable {
 	 */
 	private static final long serialVersionUID = -6971084517255287450L;
 	private int id;
+
 	private String name;
 	private String description;
 	private List<ToolComment> comments = new ArrayList<ToolComment>();
@@ -37,6 +39,7 @@ public class Tool implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@OrderBy
 	public String getName() {
 		return name;
 	}

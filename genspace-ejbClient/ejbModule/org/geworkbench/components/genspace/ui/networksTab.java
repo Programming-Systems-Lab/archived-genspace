@@ -121,7 +121,7 @@ public class networksTab extends SocialTab {
 							super.done();
 						}
 					};
-					worker.run();
+					worker.execute();
 				} else {
 					// create
 					SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
@@ -138,7 +138,7 @@ public class networksTab extends SocialTab {
 							super.done();
 						}
 					};
-					worker.run();
+					worker.execute();
 					
 				}
 				updateFormFields();

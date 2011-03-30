@@ -47,6 +47,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 	private JLabel l1, l2, l3;
 	private JTextField tf;
 	private JPasswordField pf;
+	private LoadingPanel loader = new LoadingPanel();
 	private JButton b1, b2, b3;
 	private String filename = "genspace.txt";
 	private String hash = "MD5";
@@ -88,6 +89,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		b1 = new JButton("Login");
 		b2 = new JButton("Clear");
 		b3 = new JButton("Register");
+		loader.setSize(100, 100);
 		l3.setVisible(true);
 		lPanel.add(l1);
 		lPanel.add(tf);
@@ -96,6 +98,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		lPanel.add(b1);
 		lPanel.add(b2);
 		lPanel.add(b3);
+		lPanel.add(loader);
 		lPanel.add(l3);
 		b1.addActionListener(this);
 		b2.addActionListener(this);
@@ -154,12 +157,13 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 						getThisPanel().add(p);
 						// this.setSize(500, 500);
 						getThisPanel().revalidate();
+						loader.stop();
 					}
 					super.done();
 				}
 				@Override
 				public User doInBackground() {
-
+					loader.start();
 					b1.setEnabled(false);
 
 					try {
@@ -172,17 +176,20 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 								return LoginFactory.getUser();
 
 							} else {
+								loader.stop();
 								String msg = "User Log in failed.";
 								JOptionPane.showMessageDialog(getComponent(),
 										msg);
 							}
 						} else {
+							loader.stop();
 							JOptionPane.showMessageDialog(getComponent(),
 									errMsg.toString(), "Error Information",
 									JOptionPane.INFORMATION_MESSAGE);
 							getThisPanel().revalidate();
 						}
 					} catch (Exception ex) {
+						loader.stop();
 						ex.printStackTrace();
 					}
 					b1.setEnabled(true);

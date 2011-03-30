@@ -27,7 +27,9 @@ import org.geworkbench.components.genspace.entity.ToolRating;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
+import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowFolder;
 import org.geworkbench.components.genspace.entity.WorkflowRating;
 
 /**
@@ -73,5 +75,30 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 			return null;
 //		if(o.isVisibleTo(getUser()))
 		return fullySerialize(o);
+	}
+
+	@Override
+	public WorkflowFolder getRootFolder() {
+		WorkflowFolder ret = getMe().getRootFolder();
+		for(WorkflowFolder r : ret.getChildren())
+		{
+			for(UserWorkflow uw : r.getWorkflows())
+			{
+				uw.getWorkflow().getTools().size();
+				if(uw.getWorkflow().getCreator() != null)
+					uw.getWorkflow().getCreator().getUsername();
+				uw.getWorkflow().getRatings().size();
+				uw.getWorkflow().getComments().size();
+			}
+		}
+		for(UserWorkflow uw : ret.getWorkflows())
+		{
+			uw.getWorkflow().getTools().size();
+			if(uw.getWorkflow().getCreator() != null)
+				uw.getWorkflow().getCreator().getUsername();
+			uw.getWorkflow().getRatings().size();
+			uw.getWorkflow().getComments().size();
+		}
+		return ret;
 	} 
 }

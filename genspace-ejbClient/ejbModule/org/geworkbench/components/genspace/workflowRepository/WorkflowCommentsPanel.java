@@ -161,7 +161,7 @@ ActionListener {
 				}
 			};
 		};
-		worker.run();
+		worker.execute();
 
 	}
 
@@ -197,7 +197,7 @@ ActionListener {
 					}
 				};
 			};
-			worker.run();
+			worker.execute();
 		} 
 	}
 

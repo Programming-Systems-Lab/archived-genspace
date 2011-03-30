@@ -21,7 +21,7 @@ import org.geworkbench.components.genspace.bean.DomainUtil;
 import org.geworkbench.components.genspace.bean.RatingBean;
 
 @Entity
-public class Workflow implements Serializable {
+public class Workflow implements Serializable,Cloneable {
 	/**
 	 * 
 	 */
@@ -35,7 +35,8 @@ public class Workflow implements Serializable {
 	private List<WorkflowRating> ratings = new ArrayList<WorkflowRating>();
 	private int usageCount;
 	private Workflow parent;
-	
+	private List<Workflow> children;
+
 	private int numRating = 0;
 	private int sumRating = 0;
 	
@@ -78,7 +79,14 @@ public class Workflow implements Serializable {
 		this.tools = tools;
 	}
 	
-	@OneToMany(mappedBy="workflow")
+	@OneToMany(mappedBy="parent",fetch=FetchType.EAGER)
+	public List<Workflow> getChildren() {
+		return children;
+	}
+	public void setChildren(List<Workflow> children) {
+		this.children = children;
+	}
+	@OneToMany(mappedBy="workflow", fetch=FetchType.EAGER)
 	public List<WorkflowComment> getComments() {
 		return comments;
 	}
@@ -86,7 +94,7 @@ public class Workflow implements Serializable {
 		this.comments = comments;
 	}
 	
-	@OneToMany(mappedBy="workflow")
+	@OneToMany(mappedBy="workflow", fetch=FetchType.EAGER)
 	public List<WorkflowRating> getRatings() {
 		return ratings;
 	}
@@ -99,17 +107,7 @@ public class Workflow implements Serializable {
 	public void setUsageCount(int usageCount) {
 		this.usageCount = usageCount;
 	}
-	private String cachedIdentifier;
 
-	
-	@Transient
-	public String getIdentifier() {
-//		if (cachedIdentifier == null)
-//			cachedIdentifier = DomainUtil.getStringID(tools);
-//		return cachedIdentifier;
-		return "FIXME";
-	}
-	
 	public double getAvgRating() {
 		double result = 0;
 		if (ratings.size() > 0) {
@@ -178,5 +176,4 @@ public class Workflow implements Serializable {
 		else
 			return getSumRating() / getNumRating();
 	}
-	
 }

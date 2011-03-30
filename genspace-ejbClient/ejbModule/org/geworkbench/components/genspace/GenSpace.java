@@ -3,6 +3,7 @@ package org.geworkbench.components.genspace;
 import java.awt.Frame;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 import javax.naming.Context;
@@ -22,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import org.apache.log4j.Logger;
+import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
@@ -115,10 +117,10 @@ public class GenSpace {
 
 		jframe.add(jtp);
 
-		// jframe.setSize(800, 600);
+		 jframe.setSize(1000, 600);
 		// Added by Flavio
 		jframe.pack();
-		jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
+//		jframe.setExtendedState(Frame.MAXIMIZED_BOTH);
 		jframe.setVisible(true);
 
 		// Moved here by Flavio
@@ -131,6 +133,8 @@ public class GenSpace {
 		Thread wfr_thread = new Thread(workflowRepository);
 		wfr_thread.start();
 
+		List<Tool> tools = LoginFactory.getUsageOps().getAllTools();
+		System.out.println(LoginFactory.getUsageOps().getExpertUserFor(tools.get(0)));
 		/*
 		 * System.out.println("wv: " + wv_thread.getId());
 		 * System.out.println("isbu: " + isbu_thread.getId());

@@ -171,7 +171,7 @@ public class ObjectLogger {
 					return null;
 				}
 			};
-			worker.run();
+			worker.execute();
 	
 	}
 

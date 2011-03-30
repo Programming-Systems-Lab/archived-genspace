@@ -357,8 +357,23 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 
 	@Override
 	public User getExpertUserFor(Tool tn) {
-		// TODO
-		return null;
+		Query q;
+		int n = tn.getId();
+			q = getEntityManager().createNativeQuery("select r.* from registration r " +
+					"inner join `TRANSACTION` t on t.user_id=r.id " +
+					"inner join ANALYSISEVENT e on e.transaction_id=t.id " +
+					"where e.tool_id="+n+" group by r.id order by count(*) DESC LIMIT 1",User.class);
+		User r = null;
+		try
+		{
+			r = (User) q.getSingleResult();
+			r = fullySerialize(r);
+		}
+		catch(NoResultException e)
+		{
+			e.printStackTrace();
+		}
+		return r;
 	}
 
 

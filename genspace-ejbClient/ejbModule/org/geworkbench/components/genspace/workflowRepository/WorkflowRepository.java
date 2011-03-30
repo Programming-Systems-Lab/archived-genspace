@@ -35,7 +35,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
+import org.geworkbench.components.genspace.WorkflowVisualization;
 import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.config.events.Event;
 import org.geworkbench.engine.skin.Skin;
@@ -68,7 +70,7 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	private DefaultDockingPort repositoryDock = new DefaultDockingPort();
 
 	public RepositoryPanel repositoryPanel;
-	public GraphPanel graphPanel;
+	public WorkflowVisualizationPanel graphPanel;
 	public WorkflowDetailsPanel workflowDetailsPanel;
 	public WorkflowCommentsPanel workflowCommentsPanel;
 	public InboxTablePanel inboxTable;
@@ -102,12 +104,14 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 
 	@Override
 	public void run() {
+		System.out.println("Starting init");
 		registerAreas();
 		try {
 			initComponents();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("Finished init");
 	}
 
 	private void initComponents() throws Exception {
@@ -161,9 +165,9 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		repositoryPanel = new RepositoryPanel(this);
 		addToContainer(REPOSITORY_AREA, repositoryPanel.getComponent(),
 				"Repository", RepositoryPanel.class);
-		graphPanel = new GraphPanel(this);
+		graphPanel = new WorkflowVisualizationPanel();
 		addToContainer(VISUAL_AREA, graphPanel.getComponent(), "Workflow",
-				GraphPanel.class);
+				WorkflowVisualizationPanel.class);
 		inboxTable = new InboxTablePanel(this);
 		addToContainer(INBOX_AREA, inboxTable.getComponent(), "Inbox",
 				InboxTablePanel.class);
@@ -173,6 +177,7 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		addToContainer(DETAILS_AREA, workflowCommentsPanel.getComponent(),
 				"Workflow Comments", WorkflowCommentsPanel.class);
 		workflowDetailsPanel = new WorkflowDetailsPanel(this);
+		System.out.println("Inited details panel");
 		addToContainer(DETAILS_AREA, workflowDetailsPanel.getComponent(),
 				"Workflow Details", WorkflowDetailsPanel.class);
 	}
@@ -470,16 +475,21 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	}
 
 	public void updateUser() {
-		repositoryPanel.tree.recalculateAndReload();
-		inboxTable.setData(LoginFactory.getUser());
+		if(repositoryPanel != null && repositoryPanel.tree != null)
+			repositoryPanel.tree.recalculateAndReload();
+		if(inboxTable != null)
+			inboxTable.setData(LoginFactory.getUser());
 		// whatever was selected, shouldn't be anymore
 		clearWorkflowData();
 	}
 
 	public void clearWorkflowData() {
-		workflowCommentsPanel.clearData();
-		workflowDetailsPanel.clearData();
-		graphPanel.clearData();
+		if(workflowCommentsPanel != null)
+			workflowCommentsPanel.clearData();
+		if(workflowDetailsPanel != null)
+			workflowDetailsPanel.clearData();
+		if(graphPanel != null)
+			graphPanel.clearData();
 	}
 
 }

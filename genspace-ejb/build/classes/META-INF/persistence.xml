@@ -30,6 +30,7 @@
 		<property name="eclipselink.ddl-generation" value="create-tables"/>
 		<property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
 		<property name="eclipselink.ddl-generation.output-mode" value="sql-script" />
+		<property name="eclipselink.ddl-generation.table-creation-suffix" value=" engine=InnoDB" />
 		<property name="eclipselink.application-location" value="/Users/jon/Documents/PSL/genspace/"/>
            </properties>
      </persistence-unit>

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -20,6 +21,8 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	private String name;
 	private WorkflowFolder parent;
 	private List<UserWorkflow> workflows;
+	
+	private List<WorkflowFolder> children;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -41,6 +44,14 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	public void setName(String name) {
 		this.name = name;
 	}
+	@OneToMany(mappedBy="parent")
+	public List<WorkflowFolder> getChildren(){
+		return children;
+	}
+	public void setChildren(List<WorkflowFolder> children) {
+		this.children = children;
+	}
+	@ManyToOne
 	public WorkflowFolder getParent() {
 		return parent;
 	}
