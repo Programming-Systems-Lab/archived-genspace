@@ -1,6 +1,7 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class Transaction implements Serializable {
 	private String hostname;
 	private java.util.Date date;
 	private User user;
-	private Set<AnalysisEvent> analysisEvents;
+	private List<AnalysisEvent> analysisEvents;
 	private String dataSetName;
 	private Workflow workflow;
 	
@@ -62,10 +63,10 @@ public class Transaction implements Serializable {
 	}
 	
 	@OneToMany(mappedBy="transaction")
-	public Set<AnalysisEvent> getAnalysisEvents() {
+	public List<AnalysisEvent> getAnalysisEvents() {
 		return analysisEvents;
 	}
-	public void setAnalysisEvents(Set<AnalysisEvent> analysisEvents) {
+	public void setAnalysisEvents(List<AnalysisEvent> analysisEvents) {
 		this.analysisEvents = analysisEvents;
 	}
 	

@@ -212,7 +212,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 			 */
 
 			int index = e.getChildIndices()[0];
-			node = (DefaultMutableTreeNode) (node.getChildAt(index));
+//			node = (DefaultMutableTreeNode) (node.getChildAt(index));
 
 			// System.out.println("The user has finished editing the node.");
 			// System.out.println("New value: " + node.getUserObject());
@@ -325,8 +325,8 @@ public class DynamicTree extends JPanel implements ActionListener,
 				.showInputDialog("Input a folder name:");
 		if (folderName != null && !folderName.trim().equals("")
 				|| LoginFactory.getUser().containsFolderByName(folderName)) {
-			DefaultMutableTreeNode root = (DefaultMutableTreeNode) tree
-					.getModel().getRoot();
+//			DefaultMutableTreeNode root = (DefaultMutableTreeNode) tree
+//					.getModel().getRoot();
 			// if (folderName.equalsIgnoreCase(root.getUserObject()
 			// .toString())) {
 			// folderName = null;

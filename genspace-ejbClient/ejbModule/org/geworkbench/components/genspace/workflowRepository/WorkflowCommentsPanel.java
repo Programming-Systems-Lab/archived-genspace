@@ -206,10 +206,6 @@ ActionListener {
 private class RowListener implements ListSelectionListener {
 	@Override
 	public void valueChanged(ListSelectionEvent event) {
-		int i = table.getSelectedRow();
-		if (i != -1) {
-			// selected a row
-		}
 		if (event.getValueIsAdjusting()) {
 			return;
 		}

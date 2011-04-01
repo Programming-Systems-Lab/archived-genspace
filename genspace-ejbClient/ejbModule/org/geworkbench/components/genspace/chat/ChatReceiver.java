@@ -93,6 +93,7 @@ public class ChatReceiver implements MessageListener, ChatManagerListener {
 			}
 			
 		};
+		worker.execute();
 	}
 
 	public RosterFrame rf;

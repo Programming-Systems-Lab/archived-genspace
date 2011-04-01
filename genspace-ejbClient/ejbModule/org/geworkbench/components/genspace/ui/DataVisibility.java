@@ -80,7 +80,6 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 
 			// set the logging level
 			ObjectHandler.setLogStatus(Integer.parseInt(pref));
-			ObjectHandler.setUserName(username);
 			preference = Integer.parseInt(pref);
 		} catch (Exception e) {
 		}
@@ -116,7 +115,6 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			}
 
 			ObjectHandler.setLogStatus(preference);
-			ObjectHandler.setUserName(username);
 
 			c.gridwidth = GridBagConstraints.REMAINDER;
 			gridbag.setConstraints(logPreferences, c);
@@ -177,7 +175,6 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 
 						preference = logPreferences.getSelectedIndex() - 1;
 						ObjectHandler.setLogStatus(preference);
-						ObjectHandler.setUserName(username);
 
 						// write it to the properties file
 						try {

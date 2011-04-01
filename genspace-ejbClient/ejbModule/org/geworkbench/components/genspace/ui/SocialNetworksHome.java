@@ -62,7 +62,10 @@ public class SocialNetworksHome {
 	public JComponent $$$getRootComponent$$$() {
 		return shownPanel;
 	}
-
+	
+	public void bringUpProfile(User u) {
+		setContent(new viewProfileTab(u));
+	}
 
 	private void createUIComponents() {
 		friendsSearch = new AutoCompleteCombo();
@@ -530,4 +533,7 @@ public class SocialNetworksHome {
 						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
 						friendsSearch.getSize(), null, null, 0, false));
 	}
+
+
+
 }

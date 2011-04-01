@@ -1,22 +1,10 @@
 package org.geworkbench.components.genspace;
 
-import java.awt.Frame;
-import java.io.IOException;
-import java.util.HashMap;
+import java.awt.Dimension;
 import java.util.List;
-import java.util.Properties;
 
-import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
-import javax.security.auth.callback.PasswordCallback;
-import javax.security.auth.callback.TextOutputCallback;
-import javax.security.auth.callback.UnsupportedCallbackException;
-import javax.security.auth.login.LoginContext;
-import javax.security.auth.login.LoginException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,6 +12,7 @@ import javax.swing.JTabbedPane;
 
 import org.apache.log4j.Logger;
 import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
@@ -73,7 +62,11 @@ public class GenSpace {
 		instance = this;
 		initComponents();
 	}
-
+	public static void bringUpProfile(User u)
+	{
+		getInstance().jtp.setSelectedComponent(networksPanels.$$$getRootComponent$$$());
+		networksPanels.bringUpProfile(u);
+	}
 	public static GenSpace getInstance() {
 		return instance;
 	}
@@ -94,7 +87,8 @@ public class GenSpace {
 		jframe = new JFrame("genSpace");
 
 		jtp = new JTabbedPane();
-
+		jtp.setSize(1024,768);
+		jtp.setPreferredSize(new Dimension(1024,768));
 		WorkflowVisualization wv = new WorkflowVisualization();
 
 		WorkflowStatistics stats = new WorkflowStatistics();
@@ -114,10 +108,10 @@ public class GenSpace {
 		jtp.addTab("Social Center", networksPanels.$$$getRootComponent$$$());
 		jtp.addTab("Workflow Repository", needLoginPanel);
 		// jtp.addTab("Message", new Message());
-
+		jframe.setSize(1024,768);
 		jframe.add(jtp);
 
-		 jframe.setSize(1000, 600);
+		
 		// Added by Flavio
 		jframe.pack();
 //		jframe.setExtendedState(Frame.MAXIMIZED_BOTH);

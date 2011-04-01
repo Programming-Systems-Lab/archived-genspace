@@ -324,7 +324,10 @@ public class User implements Serializable{
 		return this.getEncryptedPassword(password.toCharArray()).equals(this.getPassword());
 	}
 
-
+	@Override
+	public int hashCode() {
+		return this.getId();
+	}
 	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof User)

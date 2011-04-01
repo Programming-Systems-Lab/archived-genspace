@@ -22,6 +22,11 @@ import org.geworkbench.engine.config.VisualPlugin;
 public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 		ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9002035453385092032L;
+
 	private JFrame jframe;
 
 	private JTextField fname;
@@ -44,20 +49,13 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 	GenSpaceLogin login;
 
 	public GenSpaceGeneralProfile() {
-		// read the preferences from the properties file
-		try {
-			// ideally this should also be in the properties file
-			String title = "General Profile Settings";
-
-		} catch (Exception e) {
-		}
+		
 
 		initComponents();
 	}
 
 	private void initComponents() {
 		// String username = LoginManager.loggedInUser;
-		String username = LoginFactory.getUsername();
 		User u = LoginFactory.getUser();
 		this.setLayout(new GridLayout(15, 2));
 
@@ -111,7 +109,6 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 		add(j8);
 		add(zipcode);
 
-		JPanel saveReset;
 
 		save = new JButton("Save");
 		save.addActionListener(this);

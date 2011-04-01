@@ -1,7 +1,28 @@
-package org.geworkbench.components.genspace.ui;
+ package org.geworkbench.components.genspace.ui;
 
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Insets;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JTextPane;
+import javax.swing.ListCellRenderer;
+import javax.swing.SwingWorker;
+import javax.swing.UIManager;
+import javax.swing.text.html.HTMLDocument;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
@@ -10,36 +31,27 @@ import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.server.UsageInformationRemote;
 import org.geworkbench.engine.config.VisualPlugin;
 
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Insets;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
-
 class ToolCellRenderer implements ListCellRenderer {
 
 	@Override
 	public Component getListCellRendererComponent(JList list, Object value,
 			int index, boolean isSelected, boolean cellHasFocus) {
-		JLabel ret = new JLabel((index + 1) + ": " + (String) value);
+		JLabel ret = new JLabel("<html>"+(index + 1) + ": " + (String) value+"</html>");
+//		ret.setPreferredSize(new Dimension((int) list.getParent().getSize().getWidth(),20));
+//		ret.set
+//		ret.setPreferredSize(new Dimension(list.getSize().width,10));
 		return ret;
 	}
-
 }
 
 public class WorkflowStatistics extends JPanel implements VisualPlugin {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6212607358147972583L;
 	private JList popularFirstTools;
 	private JList popularTools;
-	private JList popularWorkflows;
+	private JTextPane popWorkflows;
 	private JComboBox toolListing;
 	private JLabel toolStats;
 	private JPanel popToolsPanel;
@@ -119,16 +131,22 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			protected void done() {
 				try {
 					List<Workflow> results = get();
-					DefaultComboBoxModel m = new DefaultComboBoxModel();
 					int lim = 10;
+					int i = 1;
+					String txt = "";
 					if(results != null)
 					for (Workflow s : results) {
-						m.addElement(s.toString());
+						txt = txt + "<li>" + s.toString() + "</li>";
 						lim--;
+						i++;
 						if (lim <= 0)
 							break;
 					}
-					popularWorkflows.setModel(m);
+					txt =txt.substring(0, txt.length()-5);
+					popWorkflows.setText("<html><body><ol>"+txt+"</ol></body></html>");
+					popWFPanel.revalidate();
+					revalidate();
+					repaint();
 				} catch (InterruptedException e) {
 					GenSpace.logger.fatal(e);
 				} catch (ExecutionException e) {
@@ -249,11 +267,21 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 		popularFirstTools.setBackground(this.getBackground());
 		popularFirstTools.setCellRenderer(new ToolCellRenderer());
 
-		popularWorkflows.setBackground(this.getBackground());
-		popularWorkflows.setCellRenderer(new ToolCellRenderer());
 		popToolsPanel.setBorder(BorderFactory.createEtchedBorder());
 		popFirstToolsPan.setBorder(BorderFactory.createEtchedBorder());
 		popWFPanel.setBorder(BorderFactory.createEtchedBorder());
+		
+		popWorkflows.setDisabledTextColor(Color.black);
+		popWorkflows.setBackground(this.getBackground());
+
+		 Font font = UIManager.getFont("Label.font");
+	        String bodyRule = "body { font-family: " + font.getFamily() + "; " +
+	                "font-size: " + font.getSize() + "pt; padding: 0; margin: 0;} ";
+	        ((HTMLDocument)popWorkflows.getDocument()).getStyleSheet().addRule(bodyRule);
+	        String liRule = "ol { font-family: " + font.getFamily() + "; " +
+            "font-size: " + font.getSize() + "pt; padding: 1em; margin: 20px;} ";
+    ((HTMLDocument)popWorkflows.getDocument()).getStyleSheet().addRule(liRule);
+
 		statsPan.setBorder(BorderFactory.createEtchedBorder());
 		toolListing.addItemListener(new ItemListener() {
 			@Override
@@ -261,251 +289,66 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 				updateItemStats();
 			}
 		});
+		
 		toolListing.setRenderer(new NameRenderer());
 		updateFormFields();
 	}
 
 	private void $$$setupUI$$$() {
 		JPanel panel1 = this;
-		panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5,
-				4, new Insets(0, 0, 0, 0), -1, -1));
-		popWFPanel = new JPanel();
-		popWFPanel
-				.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(
-						2, 1, new Insets(0, 0, 0, 0), -1, -1));
-		panel1.add(
-				popWFPanel,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						1,
-						1,
-						1,
-						2,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-						null, null, null, 0, false));
-		final JLabel label1 = new JLabel();
-		label1.setFont(new Font(label1.getFont().getName(), Font.BOLD, 16));
-		label1.setText("Most Popular Workflows");
-		popWFPanel
-				.add(label1,
-						new com.intellij.uiDesigner.core.GridConstraints(
-								0,
-								0,
-								1,
-								1,
-								com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-								com.intellij.uiDesigner.core.GridConstraints.FILL_NONE,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								null, null, null, 0, false));
-		popularWorkflows = new JList();
-		popWFPanel
-				.add(popularWorkflows,
-						new com.intellij.uiDesigner.core.GridConstraints(
-								1,
-								0,
-								1,
-								1,
-								com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-								com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								null, new Dimension(150, 200), null, 0, false));
-		popToolsPanel = new JPanel();
-		popToolsPanel
-				.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(
-						2, 1, new Insets(0, 0, 0, 0), -1, -1));
-		panel1.add(
-				popToolsPanel,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						0,
-						1,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK
-								| com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-						null, null, null, 0, false));
-		final JLabel label2 = new JLabel();
-		label2.setFont(new Font(label2.getFont().getName(), Font.BOLD, 16));
-		label2.setText("Most Popular Tools");
-		popToolsPanel
-				.add(label2,
-						new com.intellij.uiDesigner.core.GridConstraints(
-								0,
-								0,
-								1,
-								1,
-								com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-								com.intellij.uiDesigner.core.GridConstraints.FILL_NONE,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								null, new Dimension(175, 17), null, 0, false));
-		popularTools = new JList();
-		popToolsPanel
-				.add(popularTools,
-						new com.intellij.uiDesigner.core.GridConstraints(
-								1,
-								0,
-								1,
-								1,
-								com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-								com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								null, new Dimension(175, 200), null, 0, false));
-		popFirstToolsPan = new JPanel();
-		popFirstToolsPan
-				.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(
-						2, 1, new Insets(0, 0, 0, 0), -1, -1));
-		panel1.add(
-				popFirstToolsPan,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						0,
-						2,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK
-								| com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-						1, null, null, null, 0, false));
-		final JLabel label3 = new JLabel();
-		label3.setFont(new Font(label3.getFont().getName(), Font.BOLD, 16));
-		label3.setText("Most Popular Tools at Start of Workflow");
-		popFirstToolsPan
-				.add(label3,
-						new com.intellij.uiDesigner.core.GridConstraints(
-								0,
-								0,
-								1,
-								1,
-								com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-								com.intellij.uiDesigner.core.GridConstraints.FILL_NONE,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								null, null, null, 0, false));
-		popularFirstTools = new JList();
-		popFirstToolsPan
-				.add(popularFirstTools,
-						new com.intellij.uiDesigner.core.GridConstraints(
-								1,
-								0,
-								1,
-								1,
-								com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-								com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-								com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-								null, new Dimension(175, 200), null, 0, false));
-		final JSeparator separator1 = new JSeparator();
-		panel1.add(
-				separator1,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						2,
-						1,
-						1,
-						2,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-						null, null, null, 0, false));
-		statsPan = new JPanel();
-		statsPan.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(
-				3, 1, new Insets(0, 0, 0, 0), -1, -1));
-		panel1.add(
-				statsPan,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						3,
-						1,
-						1,
-						2,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK
-								| com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK
-								| com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-						null, null, null, 0, false));
-		final JLabel label4 = new JLabel();
-		label4.setFont(new Font(label4.getFont().getName(), Font.BOLD, 16));
-		label4.setText("Individual Tool Statistics");
-		statsPan.add(label4, new com.intellij.uiDesigner.core.GridConstraints(
-				0, 0, 1, 1,
-				com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-				com.intellij.uiDesigner.core.GridConstraints.FILL_NONE,
-				com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-				com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-				null, null, null, 0, false));
-		toolListing = new JComboBox();
-		statsPan.add(
-				toolListing,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						1,
-						0,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-						null, null, null, 0, false));
-		toolStats = new JLabel();
-		toolStats.setText("Select a tool to see its statistics");
-		statsPan.add(
-				toolStats,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						2,
-						0,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED,
-						null, null, null, 0, false));
-		final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-		panel1.add(
-				spacer1,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						1,
-						3,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						1, null, null, null, 0, false));
-		final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
-		panel1.add(
-				spacer2,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						1,
-						0,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						1, null, new Dimension(78, 11), null, 0, false));
-		final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
-		panel1.add(
-				spacer3,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						4,
-						2,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						null, null, null, 0, false));
+		panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 4, new Insets(0, 0, 0, 0), -1, -1));
+        panel1.setEnabled(false);
+        popWFPanel = new JPanel();
+        popWFPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
+        panel1.add(popWFPanel, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final JLabel label1 = new JLabel();
+        label1.setFont(new Font(label1.getFont().getName(), Font.BOLD, 16));
+        label1.setText("Most Popular Workflows");
+        popWFPanel.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        popWorkflows = new JTextPane();
+        popWorkflows.setContentType("text/html");
+        popWorkflows.setEditable(false);
+        popWorkflows.setEnabled(false);
+        popWorkflows.setText("<html>\n  <head>\n    \n  </head>\n  <body>\n    <p style=\"margin-top: 0\">\n      Loading...\n    </p>\n  </body>\n</html>\n");
+        popWFPanel.add(popWorkflows, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(250, 200), null, 0, false));
+        popToolsPanel = new JPanel();
+        popToolsPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
+        panel1.add(popToolsPanel, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label2 = new JLabel();
+        label2.setFont(new Font(label2.getFont().getName(), Font.BOLD, 16));
+        label2.setText("Most Popular Tools");
+        popToolsPanel.add(label2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(175, 17), null, 0, false));
+        popularTools = new JList();
+        popToolsPanel.add(popularTools, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(175, 200), null, 0, false));
+        popFirstToolsPan = new JPanel();
+        popFirstToolsPan.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
+        panel1.add(popFirstToolsPan, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
+        final JLabel label3 = new JLabel();
+        label3.setFont(new Font(label3.getFont().getName(), Font.BOLD, 16));
+        label3.setText("Most Popular Tools at Start of Workflow");
+        popFirstToolsPan.add(label3, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        popularFirstTools = new JList();
+        popFirstToolsPan.add(popularFirstTools, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(175, 200), null, 0, false));
+        final JSeparator separator1 = new JSeparator();
+        panel1.add(separator1, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        statsPan = new JPanel();
+        statsPan.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
+        panel1.add(statsPan, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        final JLabel label4 = new JLabel();
+        label4.setFont(new Font(label4.getFont().getName(), Font.BOLD, 16));
+        label4.setText("Individual Tool Statistics");
+        statsPan.add(label4, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        toolListing = new JComboBox();
+        statsPan.add(toolListing, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        toolStats = new JLabel();
+        toolStats.setText("Select a tool to see its statistics");
+        statsPan.add(toolStats, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
+        panel1.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
+        panel1.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 1, false));
+        final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
+        panel1.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(4, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
 	}
 
 	@Override

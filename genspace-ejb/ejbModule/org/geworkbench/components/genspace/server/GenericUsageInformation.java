@@ -28,7 +28,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 
 	@SuppressWarnings("unchecked")
 	public List<Tool> getToolsByPopularity() {
-		Query q = getEntityManager().createQuery("select object(c) from Tool as c order by c.usageCount");
+		Query q = getEntityManager().createQuery("select object(c) from Tool as c order by c.usageCount desc");
         List<Tool> r = q.getResultList();
         return r;
         
@@ -50,7 +50,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	
 	@SuppressWarnings("unchecked")
 	public List<Tool> getMostPopularWFHeads() {
-		Query q = getEntityManager().createQuery("select object(c) from Tool as c order by c.wfCountHead");
+		Query q = getEntityManager().createQuery("select object(c) from Tool as c order by c.wfCountHead desc");
         List<Tool> r = q.getResultList();
         return r;
 	}
@@ -107,7 +107,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	public List<Workflow> getAllWorkflowsIncluding(Tool tool) {
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
-				"where wt.tool_id=? order by w.usageCount", Workflow.class);
+				"where wt.tool_id=? order by w.usageCount desc", Workflow.class);
 		q.setParameter(1, tool.getId());
 		List<Workflow> wf = null;
         try

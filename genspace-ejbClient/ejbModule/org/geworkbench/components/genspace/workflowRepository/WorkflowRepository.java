@@ -256,7 +256,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		visualRegistry.remove(visualPluginComponent);
 	}
 
-	@SuppressWarnings("unchecked")
 	public void addToContainer(String areaName, Component visualPlugin,
 			String pluginName, Class mainPluginClass) {
 		visualPlugin.setName(pluginName);

@@ -25,10 +25,6 @@ import org.geworkbench.util.FilePathnameUtils;
 public class ObjectHandler {
 
 	private Log log = LogFactory.getLog(this.getClass());
-	private String host = RuntimeEnvironmentSettings.EVENT_SERVER.getHost();
-	private int port = RuntimeEnvironmentSettings.EVENT_SERVER.getPort();
-	private String lookupServer = RuntimeEnvironmentSettings.LOOKUP_HOST;
-	private int lookupPort = RuntimeEnvironmentSettings.LOOKUP_PORT;
 	private int frequency = 2;
 	private static int count = 0;
 	private static String lastRunDataSetName = "";
@@ -37,7 +33,6 @@ public class ObjectHandler {
 	private static String lastTransactionId = "0";
 	private static int logStatus = 1; // 0 = log, 1 = log anonymously, 2 = dont
 										// log
-	private static String userName = "";
 
 	public ObjectHandler(Object event, Object source) {
 
@@ -204,8 +199,7 @@ public class ObjectHandler {
 	 */
 	private void incrementTransactionId() {
 		Random r = new Random();
-		int i = Math.abs(r.nextInt());
-		Integer j = new Integer(i);
+		Integer j = Integer.valueOf(r.nextInt(Integer.MAX_VALUE));
 		lastTransactionId = j.toString();
 	}
 
@@ -215,9 +209,4 @@ public class ObjectHandler {
 		// System.out.println(logStatus);
 	}
 
-	public static void setUserName(String name) {
-		// System.out.println(userName);
-		userName = name;
-		// System.out.println(userName);
-	}
 }

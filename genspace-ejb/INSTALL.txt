@@ -15,6 +15,9 @@ domain>/config/server.policy:
 grant {
    permission javax.security.auth.AuthPermission "modifyPrincipals";
    permission javax.security.auth.AuthPermission "getSubject";
+   permission java.lang.RuntimePermission "createClassLoader";
+   permission java.lang.RuntimePermission "shutdownHooks";
+   
 };
 
 5 - Within the domains/<your domain>/config/domain.xml file, find the
@@ -39,3 +42,15 @@ Add the following lines:
 </auth-realm>
 
 6 - Restart GlassFish.
+
+
+To setup the AXIS web services:
+
+Download this file:
+http://archive.apache.org/dist/axis/axis2/java/core/1.5.3/axis2-1.5.3-war.zip
+
+BE ABSOLUTELY CERTAIN THAT YOU DID STEP 4 ABOVE FROM SETTING UP GENSPACE!
+
+Load the GlassFish administration console and deploy the axis2 war as a web app
+
+

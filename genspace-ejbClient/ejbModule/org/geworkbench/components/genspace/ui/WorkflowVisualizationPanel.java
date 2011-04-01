@@ -2,7 +2,6 @@ package org.geworkbench.components.genspace.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.ComponentEvent;
@@ -16,9 +15,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
-import java.util.Random;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -30,16 +27,11 @@ import org.geworkbench.components.genspace.ui.graph.myGraph;
 import org.geworkbench.components.genspace.ui.graph.myStackLayout;
 import org.geworkbench.engine.config.VisualPlugin;
 
-import com.mxgraph.layout.mxStackLayout;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxPoint;
-import com.mxgraph.util.mxUtils;
-import com.mxgraph.view.mxGraph;
-import com.mxgraph.view.mxLayoutManager;
-import com.mxgraph.view.mxSwimlaneManager;
 
 /**
  * This is used to display received workflows.

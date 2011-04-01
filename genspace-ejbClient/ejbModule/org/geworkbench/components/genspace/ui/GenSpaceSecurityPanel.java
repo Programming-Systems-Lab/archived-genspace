@@ -16,6 +16,10 @@ import org.geworkbench.engine.config.VisualPlugin;
 public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin,
 		ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9094613520505076713L;
 	private JButton logout;
 
 	@Override

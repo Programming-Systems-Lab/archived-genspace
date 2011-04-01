@@ -21,7 +21,7 @@ import org.geworkbench.components.genspace.bean.DomainUtil;
 import org.geworkbench.components.genspace.bean.RatingBean;
 
 @Entity
-public class Workflow implements Serializable,Cloneable {
+public class Workflow implements Serializable {
 	/**
 	 * 
 	 */
@@ -126,7 +126,8 @@ public class Workflow implements Serializable,Cloneable {
 		{
 			r += wt.getTool().getName() + ", ";
 		}
-		r = r.substring(0,r.length()-2);
+		if(r.length() > 2)
+			r = r.substring(0,r.length()-2);
 		return r;
 	}
 	

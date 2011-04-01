@@ -76,9 +76,14 @@ public class UserWorkflow implements Serializable {
 		return "UserWorkflow - name: " + name + ", " + owner.getUsername() + ", "
 				+ workflow;
 	}
-
+	@Override
+	public int hashCode() {
+		return this.getId();
+	}
 	@Override
 	public boolean equals(Object o) {
+		if(o == null)
+			return false;
 		try {
 			UserWorkflow uw = (UserWorkflow) o;
 			return owner.equals(uw.owner) && workflow.equals(uw.workflow);

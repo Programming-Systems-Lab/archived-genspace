@@ -30,6 +30,10 @@ import org.apache.log4j.PatternLayout;
  */
 public class AutoCompleteCombo extends JComboBox {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6005100835716590271L;
 	private static final Logger logger = Logger
 			.getLogger(AutoCompleteCombo.class);
 	private Model model = new Model();
@@ -68,6 +72,10 @@ public class AutoCompleteCombo extends JComboBox {
 
 	private class AutoCompleteDocument extends PlainDocument {
 
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -2993581620833419800L;
 		boolean arrowKeyPressed = false;
 
 		public AutoCompleteDocument() {
@@ -226,6 +234,10 @@ public class AutoCompleteCombo extends JComboBox {
 
 	class Model extends AbstractListModel implements ComboBoxModel {
 
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -9054376228162938660L;
 		// String pattern;
 		String selected;
 		final String delimiter = ";;;";

@@ -1,20 +1,21 @@
 package org.geworkbench.components.genspace.ui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class LoadingPanel extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4223462006648987555L;
 	int time = 0;
 	public static void main(String[] args) {
 		JFrame f = new JFrame();

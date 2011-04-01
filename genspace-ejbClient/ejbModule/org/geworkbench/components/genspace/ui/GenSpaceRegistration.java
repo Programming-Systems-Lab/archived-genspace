@@ -23,6 +23,11 @@ import org.geworkbench.engine.config.VisualPlugin;
 
 public class GenSpaceRegistration extends JPanel implements VisualPlugin,
 		ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6627550806528655509L;
+
 	private JFrame jframe;
 
 	private JTextField userId;
@@ -48,13 +53,6 @@ public class GenSpaceRegistration extends JPanel implements VisualPlugin,
 	GenSpaceLogin login;
 
 	public GenSpaceRegistration() {
-		// read the preferences from the properties file
-		try {
-			// ideally this should also be in the properties file
-			String title = "Please enter your registration information below.";
-		} catch (Exception e) {
-		}
-
 		initComponents();
 	}
 
@@ -138,7 +136,6 @@ public class GenSpaceRegistration extends JPanel implements VisualPlugin,
 		add(j8);
 		add(zipcode);
 
-		JPanel saveReset;
 
 		save = new JButton("Save");
 		save.addActionListener(this);

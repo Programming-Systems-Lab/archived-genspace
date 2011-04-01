@@ -6,13 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,7 +23,6 @@ import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.chat.ChatReceiver;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.engine.config.VisualPlugin;
-import org.geworkbench.util.FilePathnameUtils;
 
 /**
  * This is an example geWorkbench component.
@@ -42,6 +35,11 @@ import org.geworkbench.util.FilePathnameUtils;
 // @AcceptTypes({DSMicroarraySet.class})
 public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		ActionListener, Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1072570766485376819L;
+
 	public static ChatReceiver chatHandler = new ChatReceiver();
 
 	private JLabel l1, l2, l3;
@@ -49,8 +47,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 	private JPasswordField pf;
 	private LoadingPanel loader = new LoadingPanel();
 	private JButton b1, b2, b3;
-	private String filename = "genspace.txt";
-	private String hash = "MD5";
+	
 	private JLabel msgText, msgText1, msgText2, msgText3, msgText4, msgText5,
 			msgText6;
 
@@ -72,7 +69,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 
 	@Override
 	public void run() {
-		this.setSize(500, 500);
 
 		JPanel onePanel = new JPanel();
 		onePanel.setSize(150, 150);
