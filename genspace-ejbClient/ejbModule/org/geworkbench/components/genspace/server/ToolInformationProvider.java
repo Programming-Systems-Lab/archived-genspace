@@ -37,6 +37,6 @@ public interface ToolInformationProvider {
 	public List<Workflow> getAllWorkflowsIncluding(Tool tool);
 	public List<Workflow> getToolSuggestion(Workflow cwf);
 	public Transaction sendUsageEvent(AnalysisEvent e);
-	
+	public Transaction sendUsageLog(List<AnalysisEvent> e);
 	public User getExpertUserFor(Tool tn);
 }

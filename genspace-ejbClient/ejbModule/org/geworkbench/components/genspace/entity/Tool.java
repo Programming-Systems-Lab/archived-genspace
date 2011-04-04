@@ -145,5 +145,8 @@ public class Tool implements Serializable {
 		else
 			return getSumRating() / getNumRating();
 	}
+	public void incrementUsageCount() {
+		setUsageCount(getUsageCount() + 1);
+	}
 
 }

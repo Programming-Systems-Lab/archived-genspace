@@ -9,6 +9,7 @@ import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -80,7 +81,30 @@ public class ObjectLogger {
 						curTransaction.setHostname(hostname);
 						curTransaction.setUser(LoginFactory.getUser());
 					}
-					
+					File f = new File(FilePathnameUtils.getUserSettingDirectoryPath()
+							+ "geworkbench_log.xml");
+					if(f.exists())
+					{
+						//Try to send up the log file
+						XMLLoader loader =new XMLLoader();
+						ArrayList<AnalysisEvent> pending = loader.readAndLoad(FilePathnameUtils.getUserSettingDirectoryPath()
+								+ "geworkbench_log.xml");
+						Transaction done = null;
+						try
+						{
+							done= LoginFactory.getUsageOps().sendUsageLog(pending);
+						}
+						catch(Exception ex)
+						{
+							//be silent
+						}
+						if(done != null)
+						{
+							f.delete();
+							RealTimeWorkFlowSuggestion.cwfUpdated(done.getWorkflow());
+							curTransaction = done;
+						}
+					}
 					AnalysisEvent e = new AnalysisEvent();
 					e.setToolname(analysisName);
 					e.setCreatedAt(new Date());
@@ -110,9 +134,10 @@ public class ObjectLogger {
 					}
 					
 					try {
-						File f = new File(FilePathnameUtils.getUserSettingDirectoryPath()
-								+ "geworkbench_log.xml");
-
+						
+						if(!f.exists())
+							f.createNewFile();
+						
 						FileWriter fw = new FileWriter(f, true);
 
 						// log only the file extension and not the filename

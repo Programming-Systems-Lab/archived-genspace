@@ -2,6 +2,8 @@ package org.geworkbench.components.genspace.server;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.annotation.security.PermitAll;
@@ -199,7 +201,27 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	}
 
 
-
+	@Override
+	public Transaction sendUsageLog(List<AnalysisEvent> e)
+	{
+		HashMap<String,Transaction> trans = new HashMap<String, Transaction>();
+		Transaction ret = null;
+		for(AnalysisEvent ev : e)
+		{
+			Transaction t;
+			if(!trans.containsKey(ev.getTransaction().getClientID()))
+			{
+				ev.getTransaction().setUser(getUser());
+				t = createOrFindTransaction(ev.getTransaction());
+				trans.put(ev.getTransaction().getClientID(), t);
+			}
+			t = trans.get(ev.getTransaction().getClientID());
+			ev.setTransaction(t);
+			ret = sendUsageEvent(ev);
+		}
+		return ret;
+	}
+	
 	@Override
 	public Transaction sendUsageEvent(AnalysisEvent e) {
 		if(
@@ -264,7 +286,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 
 	/**
 	 * Returns a workflow that is based on the given workflow, PLUS the tool specified
-	 * Createst the workflow if it doesn't exist already
+	 * Creates the workflow if it doesn't exist already
 	 * @param workflow
 	 * @param tool
 	 * @return

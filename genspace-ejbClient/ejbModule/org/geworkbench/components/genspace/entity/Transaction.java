@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class Transaction implements Serializable {
@@ -82,5 +83,14 @@ public class Transaction implements Serializable {
 	}
 	public Workflow getWorkflow() {
 		return workflow;
+	}
+	
+	private String userName;
+	@Transient
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 }
