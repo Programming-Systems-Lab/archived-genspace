@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/7416/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
+/svn/geworkbench/!svn/ver/7692/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
 END
 ExpressionProfilePanel.java
 K 25
@@ -13,13 +13,13 @@ MicroarrayPanel.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/MicroarrayPanel.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/MicroarrayPanel.cwb.xml
 END
 TabularMicroarrayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 142
-/svn/geworkbench/!svn/ver/7416/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.java
+/svn/geworkbench/!svn/ver/7692/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.java
 END
 bulb_icon_gold.gif
 K 25
@@ -37,7 +37,7 @@ EVDPanel.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/7100/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/EVDPanel.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/EVDPanel.cwb.xml
 END
 MicroarrayPanel.java
 K 25
@@ -49,13 +49,13 @@ ExpressionProfilePanel.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/geworkbench/!svn/ver/7099/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/ExpressionProfilePanel.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/ExpressionProfilePanel.cwb.xml
 END
 TabularMicroarrayPanel.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/geworkbench/!svn/ver/6549/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.cwb.xml
 END
 SimpleTTest.java
 K 25

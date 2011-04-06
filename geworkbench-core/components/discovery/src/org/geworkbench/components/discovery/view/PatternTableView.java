@@ -1,23 +1,9 @@
 package org.geworkbench.components.discovery.view;
 
-import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
-import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
-import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeqPattern;
-import org.geworkbench.bison.datastructure.complex.pattern.Parameters;
-import org.geworkbench.components.discovery.PatFilter;
-import org.geworkbench.components.discovery.SequenceDiscoveryViewWidget;
-import org.geworkbench.components.discovery.ParameterTranslation;
-import org.geworkbench.components.discovery.model.PatternTableModelWrapper;
-import org.geworkbench.events.listeners.ProgressChangeListener;
-import org.geworkbench.util.patterns.PatternDB;
-import org.geworkbench.util.patterns.PatternOperations;
-import org.geworkbench.util.patterns.PatternTableModel;
-import org.geworkbench.util.remote.SPLASHDefinition;
-
-import javax.swing.*;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumnModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,6 +12,29 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.JFileChooser;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumnModel;
+
+import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
+import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
+import org.geworkbench.bison.datastructure.complex.pattern.PatternResult;
+import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeqPattern;
+import org.geworkbench.components.discovery.ParameterTranslation;
+import org.geworkbench.components.discovery.PatFilter;
+import org.geworkbench.components.discovery.SequenceDiscoveryViewWidget;
+import org.geworkbench.components.discovery.model.PatternTableModelWrapper;
+import org.geworkbench.events.listeners.ProgressChangeListener;
+import org.geworkbench.util.patterns.PatternOperations;
+import org.geworkbench.util.patterns.PatternTableModel;
+import org.geworkbench.util.remote.SPLASHDefinition;
+
 /**
  * <p>Title: Sequence and Pattern Plugin</p>
  * <p>Description: This view is used to display patterns in a table format.</p>
@@ -33,7 +42,7 @@ import java.io.IOException;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PatternTableView.java 7236 2010-11-29 04:16:30Z zji $
+ * @version $Id: PatternTableView.java 7626 2011-03-24 13:43:50Z zji $
  */
 
 public class PatternTableView extends JPanel {
@@ -264,7 +273,7 @@ public class PatternTableView extends JPanel {
                     //disable menu item and save
                     jSavePatternsWInfoItem.setEnabled(false);
                     updateFileProperty(chooser.getSelectedFile().getAbsolutePath());
-                    org.geworkbench.util.patterns.PatternDB patternDB = (saveAllPatterns) ? getPatternDB() : getPatternDB(patternTable.getSelectedRows());
+                    PatternResult patternDB = (saveAllPatterns) ? getPatternDB() : getPatternDB(patternTable.getSelectedRows());
 
                     saveAllPatterns = false;
 
@@ -297,9 +306,9 @@ public class PatternTableView extends JPanel {
         t.start();
     }
 
-    private PatternDB getPatternDB() {
+    private PatternResult getPatternDB() {
         DSSequenceSet<? extends DSSequence> db = widget.getSequenceDB();
-        org.geworkbench.util.patterns.PatternDB patternDB = new PatternDB(db.getFile(), null);
+        PatternResult patternDB = new PatternResult(db.getFile(), null);
 
         for (int i = 0; i < model.size(); i++) {
             DSMatchedSeqPattern pattern = model.getPattern(i);
@@ -310,9 +319,9 @@ public class PatternTableView extends JPanel {
         return patternDB;
     }
 
-    private org.geworkbench.util.patterns.PatternDB getPatternDB(int[] rows) {
+    private PatternResult getPatternDB(int[] rows) {
         DSSequenceSet<? extends DSSequence> db = widget.getSequenceDB();
-        org.geworkbench.util.patterns.PatternDB patternDB = new PatternDB(db.getFile(), null);
+        PatternResult patternDB = new PatternResult(db.getFile(), null);
 
         for (int i = 0; i < rows.length; i++) {
             DSMatchedSeqPattern pattern = model.getPattern(rows[i]);
@@ -325,7 +334,7 @@ public class PatternTableView extends JPanel {
     }
 
     private void addPatToProj_actionPerformed() {
-        org.geworkbench.util.patterns.PatternDB db = getPatternDB();
+        PatternResult db = getPatternDB();
         widget.getAppComponent().createNewNode(db);
     }
 
@@ -384,22 +393,3 @@ public class PatternTableView extends JPanel {
         model.mask(null, true);
     }
 }
-
-
-/** file filter class */
-/*class PatFilter
-    extends FileFilter{
-  public boolean accept(File f){
-    if(f.isDirectory()){
-      return true;
-    }
-    if(f.getName().endsWith("pat")){
-      return true;
-    }
-    return false;
-  }
-
-  public String getDescription(){
-    return "Motif Files";
-  };
- }*/

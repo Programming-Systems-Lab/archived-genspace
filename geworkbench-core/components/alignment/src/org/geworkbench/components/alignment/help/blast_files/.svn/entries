@@ -1,7 +1,7 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,14 +60,14 @@ has-props
 
 59575
 
-blast_sequence_uploading.png
+blast_job_running.png
 file
 
 
 
 
 2011-01-24T18:12:13.000000Z
-d068d1c89df939e57309522c421d4b05
+eb5842c50ffad95a88fe1fd017ef14b2
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -92,41 +92,7 @@ has-props
 
 
 
-23006
-
-T_SequenceAlignment_BLAST_general_controls.png
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-15cc38ad9c72a9d5fed588801c27a59a
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1721
+23904
 
 blast_blastp_advanced.png
 file
@@ -162,14 +128,14 @@ has-props
 
 41119
 
-blast_job_running.png
+T_SequenceAlignment_BLAST_general_controls.png
 file
 
 
 
 
 2011-01-24T18:12:13.000000Z
-eb5842c50ffad95a88fe1fd017ef14b2
+15cc38ad9c72a9d5fed588801c27a59a
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -194,7 +160,41 @@ has-props
 
 
 
-23904
+1721
+
+blast_sequence_uploading.png
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+d068d1c89df939e57309522c421d4b05
+2010-09-13T14:40:56.329012Z
+7051
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23006
 
 blast_blastn_blastn_advanced.png
 file
@@ -230,40 +230,6 @@ has-props
 
 33968
 
-T_SequenceAlignment_BLAST_start_stop.png
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-3cdd2570f807aa40afa953545419bc1e
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1057
-
 blast_blastx_main_options.png
 file
 
@@ -298,14 +264,14 @@ has-props
 
 23520
 
-blast_blastx_advanced.png
+T_SequenceAlignment_BLAST_start_stop.png
 file
 
 
 
 
 2011-01-24T18:12:13.000000Z
-ba3e586fe8d6f0461fa50dc3da2d4522
+3cdd2570f807aa40afa953545419bc1e
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -330,7 +296,7 @@ has-props
 
 
 
-28823
+1057
 
 blast_result_projects_folder.png
 file
@@ -365,6 +331,40 @@ has-props
 
 
 13162
+
+blast_blastx_advanced.png
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+ba3e586fe8d6f0461fa50dc3da2d4522
+2010-09-13T14:40:56.329012Z
+7051
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28823
 
 blast_Wilms_NM_result.png
 file

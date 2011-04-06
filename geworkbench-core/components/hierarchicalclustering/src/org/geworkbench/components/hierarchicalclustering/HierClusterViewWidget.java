@@ -78,7 +78,7 @@ import com.jgoodies.forms.builder.ButtonBarBuilder;
  * <p>Genetics</p>
  *
  * @author First Genetic Trust
- * @version $Id: HierClusterViewWidget.java 7449 2011-02-11 19:41:01Z zji $
+ * @version $Id: HierClusterViewWidget.java 7679 2011-03-29 15:14:13Z zji $
  */
 public class HierClusterViewWidget extends JPanel implements HierClusterModelEventListener {
 	private static final long serialVersionUID = 3261372914974476040L;
@@ -318,7 +318,6 @@ public class HierClusterViewWidget extends JPanel implements HierClusterModelEve
      *
      * @param hcme the new model wrapping the clustering data
      */
-    @SuppressWarnings("unchecked")
 	public void hierClusterModelChange(HierClusterModelEvent hcme) {
         mASet = hcme.getMicroarraySet();
         originalMarkerCluster = hcme.getMarkerCluster();

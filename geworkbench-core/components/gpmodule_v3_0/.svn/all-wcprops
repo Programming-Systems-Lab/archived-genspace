@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/geworkbench/!svn/ver/7200/trunk/geworkbench/components/gpmodule_v3_0
+/svn/geworkbench/!svn/ver/7698/trunk/geworkbench/components/gpmodule_v3_0
 END
-.cvsignore
+.classpath
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/gpmodule_v3_0/.cvsignore
+/svn/geworkbench/!svn/ver/5720/trunk/geworkbench/components/gpmodule_v3_0/.classpath
 END
 .project
 K 25
@@ -15,9 +15,9 @@ svn:wc:ra_dav:version-url
 V 82
 /svn/geworkbench/!svn/ver/3488/trunk/geworkbench/components/gpmodule_v3_0/.project
 END
-.classpath
+.cvsignore
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/geworkbench/!svn/ver/5720/trunk/geworkbench/components/gpmodule_v3_0/.classpath
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/gpmodule_v3_0/.cvsignore
 END

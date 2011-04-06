@@ -1,6 +1,7 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,9 +21,9 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	private User owner;
 	private String name;
 	private WorkflowFolder parent;
-	private List<UserWorkflow> workflows;
+	private List<UserWorkflow> workflows = new ArrayList<UserWorkflow>();
 	
-	private List<WorkflowFolder> children;
+	private List<WorkflowFolder> children = new ArrayList<WorkflowFolder>();
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

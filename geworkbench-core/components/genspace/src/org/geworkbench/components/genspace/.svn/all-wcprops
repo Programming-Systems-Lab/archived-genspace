@@ -1,19 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
-END
-jClaim.java
-K 25
-svn:wc:ra_dav:version-url
-V 120
-/svn/geworkbench/!svn/ver/5995/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/jClaim.java
-END
-XmlClient.java
-K 25
-svn:wc:ra_dav:version-url
-V 123
-/svn/geworkbench/!svn/ver/6846/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/XmlClient.java
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
 END
 TransactionElement.java
 K 25
@@ -21,11 +9,23 @@ svn:wc:ra_dav:version-url
 V 132
 /svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/TransactionElement.java
 END
+XmlClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/geworkbench/!svn/ver/6846/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/XmlClient.java
+END
+jClaim.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/5995/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/jClaim.java
+END
 GenSpaceMenu.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svn/geworkbench/!svn/ver/6207/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.cwb.xml
 END
 ObjectHandler.java
 K 25
@@ -51,17 +51,17 @@ svn:wc:ra_dav:version-url
 V 136
 /svn/geworkbench/!svn/ver/5250/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceLogPreferences.java
 END
-GenSpaceMenu.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/4887/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.java
-END
 ComposeMessage.java
 K 25
 svn:wc:ra_dav:version-url
 V 128
 /svn/geworkbench/!svn/ver/6790/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ComposeMessage.java
+END
+GenSpaceMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/4887/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.java
 END
 NetworkVisualization.java
 K 25
@@ -69,29 +69,29 @@ svn:wc:ra_dav:version-url
 V 134
 /svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/NetworkVisualization.java
 END
+GenspaceLogger.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenspaceLogger.cwb.xml
+END
 genspaceLogin.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/5995/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/genspaceLogin.java
 END
-GenspaceLogger.cwb.xml
+Inbox.java
 K 25
 svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/6207/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenspaceLogger.cwb.xml
+V 119
+/svn/geworkbench/!svn/ver/6790/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/Inbox.java
 END
 ISBUWorkFlowVisualization.java
 K 25
 svn:wc:ra_dav:version-url
 V 139
 /svn/geworkbench/!svn/ver/7496/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ISBUWorkFlowVisualization.java
-END
-Inbox.java
-K 25
-svn:wc:ra_dav:version-url
-V 119
-/svn/geworkbench/!svn/ver/6790/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/Inbox.java
 END
 ServerRequest.java
 K 25

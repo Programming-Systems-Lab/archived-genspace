@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 109
-/svn/geworkbench/!svn/ver/7445/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure
+/svn/geworkbench/!svn/ver/7641/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure
 END
 PudgeResultSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svn/geworkbench/!svn/ver/5103/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/PudgeResultSet.java
+/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/PudgeResultSet.java
 END
 SkyLineResultDataSet.java
 K 25
@@ -15,45 +15,27 @@ svn:wc:ra_dav:version-url
 V 135
 /svn/geworkbench/!svn/ver/7445/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/SkyLineResultDataSet.java
 END
-CSPrtAnnotResultSet.java
-K 25
-svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSPrtAnnotResultSet.java
-END
 CSProteinStructure.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
-/svn/geworkbench/!svn/ver/5122/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSProteinStructure.java
+/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSProteinStructure.java
 END
 MarkUsResultDataSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/4834/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/MarkUsResultDataSet.java
-END
-DSPrtAnnotResultSet.java
-K 25
-svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSPrtAnnotResultSet.java
+/svn/geworkbench/!svn/ver/7641/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/MarkUsResultDataSet.java
 END
 DSProteinStructure.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
-/svn/geworkbench/!svn/ver/3973/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSProteinStructure.java
+/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSProteinStructure.java
 END
-CSPrtDBResultSet.java
+SkybaseResultSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/CSPrtDBResultSet.java
-END
-DSPrtDBResultSet.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/4518/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/DSPrtDBResultSet.java
+/svn/geworkbench/!svn/ver/7609/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/structure/SkybaseResultSet.java
 END

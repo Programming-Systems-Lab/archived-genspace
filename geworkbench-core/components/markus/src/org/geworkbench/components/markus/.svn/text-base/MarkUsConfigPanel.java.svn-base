@@ -3,18 +3,23 @@ package org.geworkbench.components.markus;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
@@ -24,6 +29,8 @@ import javax.swing.border.TitledBorder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractSaveableParameterPanel;
+import org.geworkbench.bison.datastructure.bioobjects.structure.MarkUsResultDataSet;
+import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.events.listeners.ParameterActionListener;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
@@ -45,6 +52,9 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 	JCheckBox skan = new JCheckBox("", true);
 	JCheckBox dali = new JCheckBox();
 	JCheckBox screen = new JCheckBox("", true);
+	JCheckBox vasp = new JCheckBox("", true);
+	JCheckBox lbias = new JCheckBox("", true);
+	JCheckBox predus = new JCheckBox("", true);
 	JCheckBox delphi = new JCheckBox("", true);
 
 	// sequence analysis
@@ -55,6 +65,7 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 	JCheckBox consurf4 = new JCheckBox("", false);
 
 	JComboBox cbxChain = new JComboBox(new String[] { "A" });
+	JCheckBox cbkey = new JCheckBox("", false);
 
 	// delphi parameters
 	JFormattedTextField gridsize = new JFormattedTextField();
@@ -80,6 +91,10 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 	JFormattedTextField filter4 = new JFormattedTextField();
 	JComboBox msa3 = new JComboBox(new String[] { "Muscle", "ClustalW" });
 	JComboBox msa4 = new JComboBox(new String[] { "Muscle", "ClustalW" });
+	
+	private JFormattedTextField priorTf = new JFormattedTextField();
+	private JFormattedTextField keyTf = new JFormattedTextField();
+	private static final Pattern pattern = Pattern.compile("^MUS\\d+");
 
 	// markus parameters 1st part - totally 9
 	public boolean getskanValue() {
@@ -120,6 +135,10 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 
 	public String getChain() {
 		return (String) cbxChain.getSelectedItem();
+	}
+
+	public boolean getkeyValue() {
+		return cbkey.isSelected();
 	}
 
 	// delphi part - totally 10
@@ -222,6 +241,7 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 		tp.addTab("DelPhi Parameters", buildDelphiPanel());
 		tp.addTab("Add Customized ConSurf analysis 3", buildConsurf3Panel());
 		tp.addTab("Add Customized ConSurf analysis 4", buildConsurf4Panel());
+		tp.addTab("Retrieve Prior", buildPriorPanel());
 
 		ToolTipManager.sharedInstance().setDismissDelay(1000 * 120);
 
@@ -246,6 +266,7 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 		consurf4.addActionListener(parameterActionListener);
 
 		cbxChain.addActionListener(parameterActionListener);
+		cbkey.addActionListener(parameterActionListener);
 
 		// delphi parameters
 		gridsize.addPropertyChangeListener(parameterActionListener);
@@ -283,6 +304,7 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 						+ "left:max(25dlu;pref), 2dlu, max(25dlu;pref)", "");
 		DefaultFormBuilder builder = new DefaultFormBuilder(layout);
 		builder.append("Chain", cbxChain);
+		builder.append("Private Key", cbkey);
 		jp.add(builder.getPanel());
 		return jp;
 	}
@@ -295,7 +317,7 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 		builder.setDefaultDialogBorder();
 
 		// JComponent sp = builder.appendSeparator("Structure Homologs");
-		JLabel sh = new JLabel("Structure Homologs");
+		JLabel sh = new JLabel("Structure Neighbors");
 		sh.setForeground(Color.blue);
 		sh
 				.setToolTipText("<html>Structure relationships are identified by the structure alignment method Skan. The reference database combines SCOP<br>domains and PDB entries filtered by 60% sequence identity. In addition the Dali structure alignment method can be used.</html>");
@@ -308,11 +330,31 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 		sh = new JLabel("Cavity Analysis");
 		sh.setForeground(Color.blue);
 		sh
-				.setToolTipText("<html>SCREEN is used to identify protein cavities that are capable of binding chemical compounds. SCREEN will provide an<br>assessment of the druggability of each surface cavity based on its properties.</html>");
+				.setToolTipText("<html>SCREEN is used to identify protein cavities that are capable of binding chemical compounds. SCREEN will provide an<br>assessment of the druggability of each surface cavity based on its properties.<br>VASP is a volumetric analysis tool for the comparison of binding sites in aligned protein structures.</html>");
 		builder.append(sh);
 
 		screen.setEnabled(false);
 		builder.append("SCREEN", screen);
+		vasp.setEnabled(false);
+		builder.append("VASP", vasp);
+		builder.nextLine();
+		
+		sh = new JLabel("Ligand Analysis");
+		sh.setForeground(Color.blue);
+		sh
+				.setToolTipText("<html>LBias evaluates binding site similarities of ligands for aligned protein structures.</html>");
+		builder.append(sh);
+		lbias.setEnabled(false);
+		builder.append("LBias", lbias);
+		builder.nextLine();
+		
+		sh = new JLabel("Protein Protein Interactions");
+		sh.setForeground(Color.blue);
+		sh
+				.setToolTipText("<html>PredUs is a template-based protein interface prediction method. Potential interfacial residues are identified by<br>iteratively 'mapping' interaction sites of structural neighbors involved in a complex to individual residues in the query protein.</html>");
+		builder.append(sh);
+		predus.setEnabled(false);
+		builder.append("PredUs", predus);
 		builder.nextLine();
 
 		sh = new JLabel("Electrostatic Potential");
@@ -337,7 +379,7 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 		DefaultFormBuilder builder = new DefaultFormBuilder(layout);
 		builder.setDefaultDialogBorder();
 
-		JLabel sh = new JLabel("Sequence Homologs");
+		JLabel sh = new JLabel("Sequence Neighbors");
 		sh.setForeground(Color.blue);
 		sh
 				.setToolTipText("<html>Proteins sharing sequence similarity with the target protein are identified by running three PSI BLAST iterations (E-value<br>0.001) against the UniProt reference database. Additionally sequence domain and motif databases are searched using the<br>InterProScan service at the EBI.</html>");
@@ -429,6 +471,37 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 		builder.append("Multiple Sequence Alignment", msa4);
 
 		return builder.getPanel();
+	}
+
+	private JComponent buildPriorPanel() {
+		FormLayout layout = new FormLayout(
+				"left:max(25dlu;pref), 10dlu, max(60dlu;pref), 10dlu, left:max(35dlu;pref), 20dlu, left:max(35dlu;pref)", "");
+		DefaultFormBuilder builder = new DefaultFormBuilder(layout);
+		JButton priorBtn = new JButton("Retrieve Prior Result");
+		builder.append("MarkUs ID", priorTf);
+		builder.append(priorBtn, new JLabel("MarkUs job results are only retained for 90 days on the server."));
+		builder.nextLine();
+		builder.append("Private Key", keyTf);
+
+		priorBtn.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				String results = priorTf.getText().toUpperCase();
+				if (!pattern.matcher(results).find()){
+					JOptionPane.showMessageDialog(null, "Not a valid MarkUs ID!", "Invalid MUS ID", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				String key = keyTf.getText();
+				if (key.length()>0) results = results+"&key="+key;
+				MarkUsResultDataSet resultset = new MarkUsResultDataSet(null, results);
+				resultset.setResult(results);			
+				ProjectPanel.getInstance().addDataSetSubNode(resultset);
+			}
+		});
+		JPanel jp = new JPanel();
+		jp.add(builder.getPanel());
+
+		return jp;
+
 	}
 
 	private void setDefaultParameters() {
@@ -601,6 +674,9 @@ public class MarkUsConfigPanel extends AbstractSaveableParameterPanel {
 			}
 			if (key.equals("cbxChain")) {
 				cbxChain.setSelectedItem((String) value);
+			}
+			if (key.equals("cbkey")) {
+				cbkey.setSelected((Boolean) value);
 			}
 			if (key.equals("gridsize")) {
 				gridsize.setValue((Integer) value);

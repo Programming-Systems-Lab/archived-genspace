@@ -1,15 +1,15 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-14T21:02:47.060028Z
-7457
-shteynbo
+2011-03-25T19:02:00.180283Z
+7646
+zji
 
 
 
@@ -26,51 +26,17 @@ shteynbo
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-ParameterTranslation.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-a303801afa30cb509851430746febcb6
-2008-02-27T07:50:25.000000Z
-3548
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4228
-
 SequenceDiscoveryViewWidget.java
 file
 
 
 
 
-2011-02-16T22:18:17.000000Z
-eba9239861fd9afccb597d58326d5876
-2011-02-14T21:02:47.060028Z
-7457
-shteynbo
+2011-04-06T19:56:02.000000Z
+a27648edd62d503666bcfc7d55140feb
+2011-03-25T14:31:49.551812Z
+7638
+zji
 has-props
 
 
@@ -92,7 +58,41 @@ has-props
 
 
 
-25679
+27031
+
+ParameterTranslation.java
+file
+
+
+
+
+2011-04-06T19:56:02.000000Z
+9e3506065e7d31ba765000edabb0e3ab
+2011-03-18T17:33:45.195884Z
+7608
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2184
 
 ParameterPanel.java
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-36bd51a5d537a4fd64229e358c58de7c
-2010-06-10T02:39:43.512944Z
-6786
+2011-04-06T19:56:02.000000Z
+84a600c8e0226ba906f5ec9e85cf64bd
+2011-03-11T20:12:21.718263Z
+7565
 zji
 has-props
 
@@ -126,75 +126,7 @@ has-props
 
 
 
-24123
-
-ParametersHandler.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-c8a303b7eeba3e34801af55bc0431ea5
-2010-07-19T16:07:30.191029Z
-6879
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6134
-
-SequenceDiscoveryViewWidget.jbx
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-b2d6363244647522b38b8086bd326371
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2530
+20889
 
 load.gif
 file
@@ -233,16 +165,19 @@ has-props
 algorithm
 dir
 
+help
+dir
+
 SequenceDiscoveryViewAppComponent.cwb.xml
 file
 
 
 
 
-2011-01-24T18:12:08.000000Z
-49946e6dd3c4824de0f792c1d809edc3
-2010-03-29T23:11:57.396890Z
-6255
+2011-04-06T19:56:02.000000Z
+ef77829f58537b4a5bd39627877306a8
+2011-03-21T22:24:24.377666Z
+7617
 smithken
 
 
@@ -265,10 +200,7 @@ smithken
 
 
 
-1252
-
-help
-dir
+1241
 
 stop.gif
 file
@@ -310,10 +242,10 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-e8a7cf015444a5a0c6c6430806e5377d
-2010-11-29T04:41:30.096845Z
-7237
+2011-04-06T19:56:02.000000Z
+1dc462447d4ab91fe32e10052b414cf8
+2011-03-25T19:02:00.180283Z
+7646
 zji
 has-props
 
@@ -336,7 +268,7 @@ has-props
 
 
 
-15806
+15911
 
 model
 dir

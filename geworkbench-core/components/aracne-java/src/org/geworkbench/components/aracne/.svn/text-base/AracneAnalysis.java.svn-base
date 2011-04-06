@@ -31,7 +31,6 @@ import org.geworkbench.bison.model.analysis.ParamValidationResults;
 import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
-import org.geworkbench.events.AdjacencyMatrixEvent;
 import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.ProjectNodeAddedEvent;
 import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrix;
@@ -52,10 +51,8 @@ import edu.columbia.c2b2.aracne.Parameter;
  */
 public class AracneAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = -4501531893816533232L;
 
 	private static final int MINIMUM_ARRAY_NUMBER = 100;
 
@@ -205,30 +202,25 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			DSMicroarraySetView<DSGeneMarker, DSMicroarray> mSet) {
 		WeightedGraph graph = new WeightedGraph(adjMatrix.getNetworkName());
 		AdjacencyMatrix matrix = adjMatrix.getMatrix();
-		HashMap<Integer, HashMap<Integer, Float>> geneRows = matrix
-				.getGeneRows();
+
 		DSItemList<DSGeneMarker> markers = mSet.markers();
 		for (DSGeneMarker marker : markers) {
 			log.debug(marker.getLabel() + "added");
 			graph.addEdge(marker.getLabel(), marker.getLabel(), 0);
 		}
-		for (Map.Entry<Integer, HashMap<Integer, Float>> entry : geneRows
-				.entrySet()) {
-			DSGeneMarker gene1 = mSet.allMarkers().get(entry.getKey());
+		for (AdjacencyMatrix.Edge edge : matrix.getEdges()) {
+			DSGeneMarker gene1 = mSet.allMarkers().get(edge.node1);
 			if (gene1 != null) {
-				HashMap<Integer, Float> destGenes = entry.getValue();
-				for (Map.Entry<Integer, Float> destEntry : destGenes.entrySet()) {
-					DSGeneMarker destGene = mSet.allMarkers().get(destEntry.getKey());
-					if (destGene != null) {
-						graph.addEdge(gene1.getLabel(), destGene.getLabel(),
-								destEntry.getValue());
-					} else {
-						log.debug("Gene with index " + destEntry.getKey()
-								+ " not found in selected genes, skipping.");
-					}
+				DSGeneMarker destGene = mSet.allMarkers().get(edge.node2);
+				if (destGene != null) {
+					graph.addEdge(gene1.getLabel(), destGene.getLabel(),
+							edge.info.value);
+				} else {
+					log.debug("Gene with index " + edge.node2
+							+ " not found in selected genes, skipping.");
 				}
 			} else {
-				log.debug("Gene with index " + entry.getKey()
+				log.debug("Gene with index " + edge.node1
 						+ " not found in selected genes, skipping.");
 			}
 		}
@@ -285,20 +277,9 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			DSGeneMarker marker1 = mSet.getMarkers().get(graphEdge.getNode1());
 			DSGeneMarker marker2 = mSet.getMarkers().get(graphEdge.getNode2());
 			matrix.add(marker1.getSerial(), marker2.getSerial(), graphEdge
-					.getWeight());
+					.getWeight(), null);
 		}
 		return matrix;
-	}
-
-	/**
-	 *
-	 * @param ae
-	 * @return
-	 */
-	@Publish
-	public AdjacencyMatrixEvent publishAdjacencyMatrixEvent(
-			AdjacencyMatrixEvent ae) {
-		return ae;
 	}
 
 	/**
@@ -356,7 +337,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			if (weightedGraph.getEdges().size() > 0) {
 				AdjacencyMatrixDataSet dataSet = new AdjacencyMatrixDataSet(
 						convert(weightedGraph, mSetView.getMicroarraySet()),
-						-1, 0, 1000, "Adjacency Matrix", "ARACNE Set", mSetView
+						0, "Adjacency Matrix", "ARACNE Set", mSetView
 								.getMicroarraySet());
 				StringBuilder paramDescB = new StringBuilder(
 						"Generated with ARACNE run with data:\n");
@@ -364,15 +345,11 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 				ProjectPanel.addToHistory(dataSet,
 						"Generated with ARACNE run with paramters:\n"
 								+ p.getParamterDescription()
+								+ dpiTargetListDescription()+"\n"
 								+ hubMarkersDescription(p)
 								+ paramDescB.toString());
 				publishProjectNodeAddedEvent(new ProjectNodeAddedEvent(
 						"Adjacency Matrix Added", null, dataSet));
-
-				publishAdjacencyMatrixEvent(new AdjacencyMatrixEvent(convert(
-						weightedGraph, mSetView.getMicroarraySet()),
-						"ARACNE Set", -1, 2, 0.5f,
-						AdjacencyMatrixEvent.Action.DRAW_NETWORK));
 			} else {
 				tellUserToRelaxThresholds();
 			}
@@ -393,6 +370,13 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 				builder.append(", " + subnet.get(i));
 			builder.append("\n");
 			return builder.toString();
+		}
+		
+		private String dpiTargetListDescription(){
+			String listString="[PARA] DPI Target List: ";
+			AracneParamPanel params = (AracneParamPanel) aspp;
+			listString+=params.getTargetGeneString();		
+			return listString;
 		}
 
 		/**
@@ -457,14 +441,14 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 		}
 		if (params.isThresholdMI()) {
 			try {
-				if ((0 <= params.getThreshold())
-						&& (params.getThreshold() <= 1)) {
-				} else
+				if ( 0 <= params.getThreshold() ) {
+				} else {
 					return new ParamValidationResults(false,
-							"Threshold Mutual Info. should between 0.0 and 1.0");
+							"Threshold Mutual Info. should be larger than or equal to zero.");
+				}
 			} catch (NumberFormatException nfe) {
 				return new ParamValidationResults(false,
-						"Threshold Mutual Info. should be a float number between 0.0 and 1.0.");
+						"Threshold Mutual Info. should be a float number larger than or equal to zero.");
 			}
 			;
 		} else {
@@ -473,7 +457,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 						&& (params.getThreshold() <= 1)) {
 				} else
 					return new ParamValidationResults(false,
-							"Threshold P-Value should between 0.0 and 1.0");
+							"Threshold P-Value should be between 0.0 and 1.0");
 			} catch (NumberFormatException nfe) {
 				return new ParamValidationResults(false,
 						"Threshold P-Value should be a float number between 0.0 and 1.0.");
@@ -507,13 +491,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			}
 			;
 		}
-		if (params.isTargetListSpecified()) {
-			if (params.getTargetGenes() == null
-					|| params.getTargetGenes().size() == 0) {
-				return new ParamValidationResults(false,
-						"You did not load any target genes.");
-			}
-		}
+		
 		if (params.getBootstrapNumber() <= 0) {
 			return new ParamValidationResults(false,
 					"Bootstrap number is not valid.");
@@ -571,13 +549,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 				targetGene += ",";
 			String gene = (String) iterator.next();
 			targetGene += gene;
-		}
-		bisonParameters.put("isTargetListSpecified", paramPanel
-				.isTargetListSpecified());
-		if (paramPanel.isTargetListSpecified())
-			bisonParameters.put("target", targetGene);
-		else
-			bisonParameters.put("target", "");
+		}		
 
 		bisonParameters.put("isMI", paramPanel.isThresholdMI());
 

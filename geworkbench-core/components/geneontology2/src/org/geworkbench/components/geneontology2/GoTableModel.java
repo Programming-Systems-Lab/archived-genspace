@@ -18,7 +18,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 /**
  * 
  * @author zji
- * @version $Id: GoTableModel.java 7499 2011-02-24 22:16:50Z zji $
+ * @version $Id: GoTableModel.java 7636 2011-03-24 21:21:00Z zji $
  *
  */
 class GoTableModel extends AbstractTableModel {
@@ -55,13 +55,13 @@ class GoTableModel extends AbstractTableModel {
 		
 		GOTerm term = geneOntologyTree.getTerm(id);
 		if(term==null) {
-			log.error("No GO term for ID "+id);
+			log.info("No GO term for ID "+id);
 			return;
 		}
 			
 		String name = geneOntologyTree.getTerm(id).getName();
 		if(name==null) {
-			log.error("GO term name is null for ID "+id);
+			log.info("GO term name is null for ID "+id);
 			return;
 		}
 			

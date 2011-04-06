@@ -33,7 +33,7 @@ import java.text.NumberFormat;
  * <code>SOMCluster</code>
  *
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: SOMPlot.java 7399 2011-02-01 15:32:04Z zji $
+ * @version $Id: SOMPlot.java 7694 2011-03-31 14:07:03Z maz $
  */
 
 public class SOMPlot extends ChartPanel {
@@ -65,6 +65,7 @@ public class SOMPlot extends ChartPanel {
 
 
     static String PLOT_MOUSE_CLICKED = "SOMMouseClicked";
+    private String titleText;
 
     /**
      * Constructor
@@ -73,6 +74,8 @@ public class SOMPlot extends ChartPanel {
      */
     public SOMPlot(JFreeChart chart) {
         super(chart, false);
+        titleText=chart.getTitle().getText();
+        chart.setTitle("");
         this.setLayout(new BorderLayout());
         JPopupMenu popup = createPopupMenu(true, false, false, true);
         setPopupMenu(popup);
@@ -146,7 +149,7 @@ public class SOMPlot extends ChartPanel {
 					for (int maCtr = 0; maCtr < arrays.size(); maCtr++)
 						alist[maCtr] = arrays.get(maCtr).getLabel() + " ";
 					chart.getXYPlot().setDomainAxis(
-							new SymbolAxis("Experiment", alist));
+							new SymbolAxis("Cluster "+titleText, alist));
 					chart.getXYPlot().getDomainAxis().setVerticalTickLabels(
 							true);
 

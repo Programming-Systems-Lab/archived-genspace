@@ -12,7 +12,6 @@ import org.geworkbench.events.ProgressBarEvent;
 import org.geworkbench.events.ProgressChangeEvent;
 import org.geworkbench.events.StatusBarEvent;
 import org.geworkbench.util.patterns.CSMatchedSeqPattern;
-import org.geworkbench.util.patterns.PatternDB;
 import org.geworkbench.util.patterns.PatternFetchException;
 import org.geworkbench.util.patterns.PatternOperations;
 import org.geworkbench.util.patterns.SequentialPatternSource;
@@ -29,7 +28,7 @@ import polgara.soapPD_wsdl.Parameters;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: ServerBaseDiscovery.java 7397 2011-01-31 23:37:23Z shteynbo $
+ * @version $Id: ServerBaseDiscovery.java 7626 2011-03-24 13:43:50Z zji $
  */
 
 public final class ServerBaseDiscovery extends
@@ -280,7 +279,7 @@ public final class ServerBaseDiscovery extends
             	return;
             }
 
-            writeToResultfile();
+            updateResult();
         } catch (SessionOperationException ex) {
             System.out.println(ex.toString());
             ex.printStackTrace();
@@ -416,25 +415,21 @@ public final class ServerBaseDiscovery extends
 
     }
 
-    public boolean writeToResultfile(){
-         try{
-        DiscoverySession session = getSession();
-        org.geworkbench.util.patterns.PatternDB patternDB = new PatternDB(sequenceInputData.getFile(), null);
-        int totalPatternNum = session.getPatternNo();
-        for (int i = 0; i <totalPatternNum; i++) {
-            DSMatchedSeqPattern pattern = getPattern(i);
-            PatternOperations.fill(pattern, sequenceInputData);
-            patternDB.add(pattern);
-        }
-        //patternDB.setParameters(widget.getParameters());
-        patternDB.write(resultFile);
-        result.setPatternDB(patternDB);
-
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-        return true;
-    }
+	private void updateResult() {
+		DiscoverySession session = getSession();
+		//result = new PatternResult(sequenceInputData.getFile(), null);
+		int totalPatternNum;
+		try {
+			totalPatternNum = session.getPatternNo();
+			for (int i = 0; i < totalPatternNum; i++) {
+				DSMatchedSeqPattern pattern = getPattern(i);
+				PatternOperations.fill(pattern, sequenceInputData);
+				result.add(pattern);
+			}
+		} catch (SessionOperationException e) {
+			e.printStackTrace();
+		}
+	}
 
     private String algorithmType = null;
 }

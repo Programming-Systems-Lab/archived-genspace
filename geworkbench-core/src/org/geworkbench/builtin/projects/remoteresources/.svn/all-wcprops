@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/geworkbench/!svn/ver/7192/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources
+/svn/geworkbench/!svn/ver/7645/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources
 END
 RemoteResourceDialog.java
 K 25
@@ -9,15 +9,15 @@ svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/7192/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/RemoteResourceDialog.java
 END
-RemoteResourceManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 128
-/svn/geworkbench/!svn/ver/7192/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/RemoteResourceManager.java
-END
 RemoteResource.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
 /svn/geworkbench/!svn/ver/7192/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/RemoteResource.java
+END
+RemoteResourceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/7192/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/RemoteResourceManager.java
 END

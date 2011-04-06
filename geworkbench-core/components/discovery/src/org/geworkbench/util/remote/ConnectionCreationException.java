@@ -7,11 +7,13 @@ package org.geworkbench.util.remote;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version 1.0
+ * @version $Id: ConnectionCreationException.java 7567 2011-03-11 21:46:06Z zji $
  */
 
 public class ConnectionCreationException extends Exception {
-    public ConnectionCreationException() {
+	private static final long serialVersionUID = 3851927404373223292L;
+
+	public ConnectionCreationException() {
     }
 
     public ConnectionCreationException(String message) {

@@ -49,7 +49,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.bioobjects.structure.CSProteinStructure;
-import org.geworkbench.bison.datastructure.bioobjects.structure.DSPrtDBResultSet;
+import org.geworkbench.bison.datastructure.bioobjects.structure.SkybaseResultSet;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Publish;
@@ -87,11 +87,11 @@ import org.jmol.api.JmolSimpleViewer;
  * Display SkyBase blast results in table, bar chart and jmol
  * 
  * @author mw2518
- * @version $Id: SkyBaseViewer.java 7447 2011-02-10 22:51:52Z zji $
+ * @version $Id: SkyBaseViewer.java 7609 2011-03-18 17:57:28Z zji $
  * 
  */
 
-@AcceptTypes( { DSPrtDBResultSet.class })
+@AcceptTypes( { SkybaseResultSet.class })
 public class SkyBaseViewer implements VisualPlugin {
 	private Log log = LogFactory.getLog(this.getClass());
 	private JPanel mainPanel = new JPanel();
@@ -112,7 +112,7 @@ public class SkyBaseViewer implements VisualPlugin {
 	JTable table;
 	ChartPanel cp;
 	String pdburl;
-	String pdbroot = "http://156.145.102.40/";
+	String pdbroot = "http://skybase.c2b2.columbia.edu/nesg3/skynesg/";
 	String seqid = null;
 	//String blastroot = "http://skyline.c2b2.columbia.edu:8080/SkyBaseData/tmpblast/";
 	String blastroot = "http://cagridnode.c2b2.columbia.edu:8080/v2.0.0/SkyBaseData/tmpblast/";
@@ -148,8 +148,8 @@ public class SkyBaseViewer implements VisualPlugin {
 	@Subscribe
 	public void receive(ProjectEvent event, Object source) {
 		DSDataSet<?> dataset = event.getDataSet();
-		if (dataset instanceof DSPrtDBResultSet) {
-			result = ((DSPrtDBResultSet) dataset).getDataSetName();
+		if (dataset instanceof SkybaseResultSet) {
+			result = ((SkybaseResultSet) dataset).getDataSetName();
 			qname = trimdot(result);
 			try {
 				jbInit(result);
@@ -193,6 +193,10 @@ public class SkyBaseViewer implements VisualPlugin {
 			mPanel.add(new JTextArea(""));
 		} else {
 			try {
+				String indexurl = System.getProperty("indexServer.url");
+				int id = 0;
+				if (indexurl!=null && (id = indexurl.indexOf("/wsrf/")) > -1)
+					blastroot = indexurl.substring(0, id)+"/SkyBaseData/tmpblast/";
 				URL url = new URL(blastroot + result);
 				URLConnection uc = url.openConnection();
 

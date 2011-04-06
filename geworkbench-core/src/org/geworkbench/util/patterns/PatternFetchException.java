@@ -9,12 +9,14 @@ package org.geworkbench.util.patterns;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version 1.0
+ * @version $Id: PatternFetchException.java 7660 2011-03-28 14:13:03Z zji $
  */
 
 public class PatternFetchException extends RuntimeException {
 
-    public PatternFetchException() {
+	private static final long serialVersionUID = -6269930506232901690L;
+
+	public PatternFetchException() {
     }
 
     public PatternFetchException(String message) {

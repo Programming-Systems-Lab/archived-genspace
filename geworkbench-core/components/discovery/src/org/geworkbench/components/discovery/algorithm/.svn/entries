@@ -1,15 +1,15 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/algorithm
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-01-31T23:37:23.963954Z
-7397
-shteynbo
+2011-03-24T13:43:50.511431Z
+7626
+zji
 
 
 
@@ -32,112 +32,10 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-25ba1bf55abe2f0ca04a37c93894f42d
-2010-09-30T15:51:18.155052Z
-7092
-shteynbo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5447
-
-AlgorithmStub.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-19804256e05e437b8d0ad0f2b5e0ae1b
-2006-01-13T22:48:38.000000Z
-1120
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4405
-
-ServerBaseDiscovery.java
-file
-
-
-
-
-2011-02-16T22:18:17.000000Z
-5e20374695496f1df9a0d746fd88481d
-2011-01-31T23:37:23.963954Z
-7397
-shteynbo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14425
-
-AbstractSequenceDiscoveryAlgorithm.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-12ec264eb6b89e0c912065292fe13c92
-2010-09-21T22:41:38.819314Z
-7063
+2011-04-06T19:56:02.000000Z
+bee30e93506b06e88889a20bc4733682
+2011-03-24T13:43:50.511431Z
+7626
 zji
 has-props
 
@@ -160,5 +58,107 @@ has-props
 
 
 
-8634
+5261
+
+AlgorithmStub.java
+file
+
+
+
+
+2011-04-06T19:56:02.000000Z
+bf82d277d9a810dbbd7062ee542d3a3a
+2011-03-11T21:46:06.152592Z
+7567
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4354
+
+ServerBaseDiscovery.java
+file
+
+
+
+
+2011-04-06T19:56:02.000000Z
+79d1952c0b5e71573846290f99821b3e
+2011-03-24T13:43:50.511431Z
+7626
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14114
+
+AbstractSequenceDiscoveryAlgorithm.java
+file
+
+
+
+
+2011-04-06T19:56:02.000000Z
+643f556e2e3337eb682932cc1d2e8d10
+2011-03-24T13:43:50.511431Z
+7626
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8339
 

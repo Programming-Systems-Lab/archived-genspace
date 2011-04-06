@@ -2,7 +2,6 @@ package org.geworkbench.components.ei;
 
 import java.io.Serializable;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,7 +35,7 @@ import edu.columbia.c2b2.evidenceinegration.EvidenceIntegration;
 
 /**
  * @author mhall
- * @version $Id: EvidenceIntegrationAnalysis.java 7233 2010-11-28 01:14:41Z zji $
+ * @version $Id: EvidenceIntegrationAnalysis.java 7526 2011-03-02 22:00:20Z zji $
  */
 public class EvidenceIntegrationAnalysis extends AbstractGridAnalysis implements ClusteringAnalysis {
 
@@ -145,27 +144,27 @@ public class EvidenceIntegrationAnalysis extends AbstractGridAnalysis implements
     public Evidence convert(AdjacencyMatrixDataSet adjMatrix, DSMicroarraySetView<DSGeneMarker, DSMicroarray> mSet) {
         Evidence evidence = new Evidence(adjMatrix.getLabel());
         AdjacencyMatrix matrix = adjMatrix.getMatrix();
-        HashMap<Integer, HashMap<Integer, Float>> geneRows = matrix.getGeneRows();
+
         DSItemList<DSGeneMarker> markers = mSet.markers();
-        for (Map.Entry<Integer, HashMap<Integer, Float>> entry : geneRows.entrySet()) {
-            DSGeneMarker gene1 = markers.get(entry.getKey());
-            if (gene1 != null) {
-                HashMap<Integer, Float> destGenes = entry.getValue();
-                for (Map.Entry<Integer, Float> destEntry : destGenes.entrySet()) {
-                    DSGeneMarker destGene = markers.get(destEntry.getKey());
-                    if (destGene != null) {
-                        log.debug("Adding evidence: " + gene1.getGeneId() + ", " + destGene.getGeneId() + ", " + destEntry.getValue());
-                        evidence.addEdge(gene1.getGeneId(), destGene.getGeneId(), destEntry.getValue());
-//                        graph.addEdge(gene1.getShortName(), destGene.getShortName(), destEntry.getValue());
-                    } else {
-                        log.debug("Gene with index " + destEntry.getKey() + " not found in selected genes, skipping.");
-                    }
-                }
-            } else {
-                log.debug("Gene with index " + entry.getKey() + " not found in selected genes, skipping.");
-            }
-        }
-        return evidence;
+		for (AdjacencyMatrix.Edge edge : matrix.getEdges()) {
+			DSGeneMarker gene1 = markers.get(edge.node1);
+			if (gene1 != null) {
+				DSGeneMarker destGene = markers.get(edge.node2);
+				if (destGene != null) {
+					log.debug("Adding evidence: " + gene1.getGeneId() + ", "
+							+ destGene.getGeneId() + ", " + edge.info.value);
+					evidence.addEdge(gene1.getGeneId(), destGene.getGeneId(),
+							edge.info.value);
+				} else {
+					log.debug("Gene with index " + edge.node2
+							+ " not found in selected genes, skipping.");
+				}
+			} else {
+				log.debug("Gene with index " + edge.node1
+						+ " not found in selected genes, skipping.");
+			}
+		}
+		return evidence;
     }
 
     @Publish

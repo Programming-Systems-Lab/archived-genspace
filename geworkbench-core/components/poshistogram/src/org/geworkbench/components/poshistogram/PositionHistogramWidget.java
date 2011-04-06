@@ -39,7 +39,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PositionHistogramWidget.java 7237 2010-11-29 04:41:30Z zji $
+ * @version $Id: PositionHistogramWidget.java 7676 2011-03-28 21:42:55Z zji $
  */
 
 public final class PositionHistogramWidget extends JPanel {
@@ -65,8 +65,8 @@ public final class PositionHistogramWidget extends JPanel {
     private JTextField jStepBox = new JTextField(5);
     private Component component6;
     private Component component7;
-    @SuppressWarnings("rawtypes")
-	private DSSequenceSet sequenceDB = null;
+
+	private DSSequenceSet<DSSequence> sequenceDB = null;
     private PositionHistogramAppComponent parentComponent;
 
     public PositionHistogramWidget(PositionHistogramAppComponent positionHistogramAppComponent) {
@@ -210,8 +210,7 @@ public final class PositionHistogramWidget extends JPanel {
         }
     }
 
-    @SuppressWarnings("rawtypes")
-	public void setSequenceDB(DSSequenceSet sDB) {
+	public void setSequenceDB(DSSequenceSet<DSSequence> sDB) {
         sequenceDB = sDB;
     }
 }

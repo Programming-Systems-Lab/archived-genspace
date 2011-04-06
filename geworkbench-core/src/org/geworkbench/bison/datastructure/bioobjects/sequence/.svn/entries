@@ -1,14 +1,14 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/sequence
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-04-01T18:54:10.859029Z
-6278
+2011-03-14T15:20:27.814396Z
+7579
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-1c6dc86512daebbf459669e79fbea32f
-2010-04-01T18:54:10.859029Z
-6278
+2011-04-06T19:56:07.000000Z
+fe1a05f895d004741948ebf0601446d2
+2011-03-14T15:20:27.814396Z
+7579
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3164
+3610
 
 DSSequence.java
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-4a40dff438df639db0890622a94b96a5
-2006-01-13T22:48:38.000000Z
-1120
-watkin
+2011-04-06T19:56:07.000000Z
+e3a5a41da05de05260e8e4d54527d40d
+2011-03-12T15:27:59.845248Z
+7572
+zji
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-381
+536
 
 CSSequence.java
 file

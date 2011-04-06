@@ -1,6 +1,7 @@
 package org.geworkbench.components.foldchange;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -36,6 +37,8 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
     private JRadioButton logBtn=new JRadioButton();
     private JRadioButton ratioBtn=new JRadioButton();
     private JRadioButton diffBtn=new JRadioButton();
+    private JLabel noteTitle=new JLabel();
+    private JLabel aNote=new JLabel();
     
 	/*
 	 * (non-Javadoc)
@@ -64,6 +67,9 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
 			if (key.equals("diffBtn")){
 				diffBtn.setSelected((Boolean)value);
 			}
+			if(key.equals("aNote")){
+				aNote.setText((String)value);
+			}
 			
 		}
     }
@@ -80,6 +86,7 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
 		parameters.put("logBtn", logBtn.isSelected());
 		parameters.put("ratioBtn", ratioBtn.isSelected());
 		parameters.put("diffBtn", diffBtn.isSelected());
+		parameters.put("aNote", aNote.getText());
 		
 		return parameters;
 	}
@@ -93,7 +100,7 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
     	logBtn.setSelected(false);
     	linearBtn.setSelected(true);
     	ratioBtn.setText("Ratio");    	
-    	diffBtn.setText("Difference");    	
+    	diffBtn.setText("Difference of average log2 values");    	
     	group2.add(ratioBtn);
     	group2.add(diffBtn);
     	diffBtn.setSelected(false);
@@ -112,7 +119,7 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
 		builder.setDefaultDialogBorder();
 
 		builder.appendSeparator("Fold Change Parameters");	
-		builder.append("Criterion");   	
+		builder.append("Criterion");		
 		alpha.setText(Double.toString(ALPHA_DEFAULT));
 		alpha.setToolTipText("The value is given in linear measure, regardless of the state of the data.");
 		builder.append(alpha);
@@ -124,9 +131,43 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
 		builder.append(new JLabel("Calculation Method: "));
 		builder.append(ratioBtn);
 		builder.append(diffBtn);
+		builder.nextLine();
+		builder.append(new JLabel(" "));
+		builder.nextLine();
+		builder.append(" ",noteTitle,aNote);
+		noteTitle.setVisible(false);
+		aNote.setVisible(false);
        
 		selectionPanel.add(builder.getPanel(), BorderLayout.CENTER);
+		
+		linearBtn.addActionListener( new BtnActionListener());
+		logBtn.addActionListener( new BtnActionListener());
+		ratioBtn.addActionListener( new BtnActionListener());
+		diffBtn.addActionListener( new BtnActionListener());
+       
     }
+    
+    private class BtnActionListener implements
+	java.awt.event.ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if(isLinear()&&!isRatio()) {
+				noteTitle.setText("Please note:");
+				aNote.setText("Log2 of values will be taken.            ");
+				noteTitle.setVisible(true);
+				aNote.setVisible(true);
+			}
+			else if(!isLinear()&&isRatio()) {
+				noteTitle.setText("Please note:");
+				aNote.setText("Antilog2 of values will be taken.");
+				noteTitle.setVisible(true);
+				aNote.setVisible(true);
+			}
+			else {
+				noteTitle.setVisible(false);
+				aNote.setVisible(false);
+			}
+		}
+	}
 
     public String getAlpha() {
        return alpha.getText();
@@ -143,7 +184,7 @@ public class FoldChangePanel extends AbstractSaveableParameterPanel {
     public boolean isDiff() {
         return diffBtn.isSelected();
     }
-   
+    
    
 	@Override
 	public void fillDefaultValues(Map<Serializable, Serializable> parameters) {

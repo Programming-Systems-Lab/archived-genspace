@@ -3,6 +3,7 @@
 	<classpathentry kind="lib" path="lib/log4j.jar"/>
 	<classpathentry kind="lib" path="lib/docking.jar"/>
 	<classpathentry kind="lib" path="lib/jgraphx.jar"/>
+	<classpathentry kind="lib" path="lib/jimi.jar"/>
 	<classpathentry kind="src" path="ejbModule"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
@@ -16,47 +17,15 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="/Users/jon/glassfishv3/glassfish/modules/gf-client-module.jar"/>
-	<classpathentry kind="lib" path="/Users/jon/glassfishv3/glassfish/modules/gf-client.jar"/>
-	<classpathentry kind="lib" path="lib/cindy.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
-	<classpathentry kind="lib" path="lib/cos.jar"/>
-	<classpathentry kind="lib" path="lib/daim.jar"/>
-	<classpathentry kind="lib" path="lib/db-ojb-1.0.4.jar"/>
-	<classpathentry kind="lib" path="lib/genspace-communicator.jar"/>
-	<classpathentry kind="lib" path="lib/hyperapplet.jar"/>
 	<classpathentry kind="lib" path="lib/intellij.jar"/>
-	<classpathentry kind="lib" path="lib/jaimlib.jar"/>
-	<classpathentry kind="lib" path="lib/jazzy-core.eng.jar"/>
-	<classpathentry kind="lib" path="lib/jdic_misc.dll"/>
-	<classpathentry kind="lib" path="lib/jdic_misc.jar"/>
-	<classpathentry kind="lib" path="lib/jdic_stub.jar"/>
-	<classpathentry kind="lib" path="lib/jdic.dll"/>
-	<classpathentry kind="lib" path="lib/jdic.jar"/>
-	<classpathentry kind="lib" path="lib/jimi.jar"/>
-	<classpathentry kind="lib" path="lib/jml.jar"/>
-	<classpathentry kind="lib" path="lib/joscar-client.jar"/>
-	<classpathentry kind="lib" path="lib/joscar-common.jar"/>
-	<classpathentry kind="lib" path="lib/joscar-protocol.jar"/>
-	<classpathentry kind="lib" path="lib/jsocks-klea.jar"/>
-	<classpathentry kind="lib" path="lib/jung-algorithms-2.0.jar"/>
-	<classpathentry kind="lib" path="lib/jung-api-2.0.jar"/>
-	<classpathentry kind="lib" path="lib/jung-graph-impl-2.0.jar"/>
-	<classpathentry kind="lib" path="lib/jung-visualization-2.0.jar"/>
-	<classpathentry kind="lib" path="lib/junit-4.5.jar"/>
 	<classpathentry kind="lib" path="lib/MANIFEST.MF"/>
 	<classpathentry kind="lib" path="lib/mina-core-1.1.7.jar"/>
-	<classpathentry kind="lib" path="lib/msnm.jar"/>
-	<classpathentry kind="lib" path="lib/natelib.jar"/>
-	<classpathentry kind="lib" path="lib/openymsg.jar"/>
-	<classpathentry kind="lib" path="lib/Pack200Task.jar"/>
 	<classpathentry kind="lib" path="lib/smack.jar"/>
 	<classpathentry kind="lib" path="lib/smackx.jar"/>
-	<classpathentry kind="lib" path="lib/substance.jar"/>
 	<classpathentry kind="lib" path="lib/swing-layout-1.0.3.jar"/>
 	<classpathentry kind="lib" path="lib/swing-worker-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/tray.dll"/>
-	<classpathentry kind="lib" path="lib/ymsg_network_v0_6.jar"/>
-	<classpathentry kind="lib" path="lib/ymsg_support_v0_6.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-core"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

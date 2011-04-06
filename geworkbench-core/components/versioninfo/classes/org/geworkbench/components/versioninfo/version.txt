@@ -1,3 +1,0 @@
-#Version Information:
-version=Development
-#buildTime=Friday November 7 22:22:58 EST 2008

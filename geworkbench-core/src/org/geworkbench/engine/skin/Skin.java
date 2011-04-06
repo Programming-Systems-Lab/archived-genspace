@@ -81,7 +81,7 @@ import org.geworkbench.util.JAutoList;
  * <p>Company: Columbia University</p>
  *
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: Skin.java 7489 2011-02-24 16:36:33Z zji $
+ * @version $Id: Skin.java 7562 2011-03-10 21:21:08Z wangmen $
  */
 public class Skin extends GUIFramework {
 	private static final String YES = "yes";
@@ -192,7 +192,13 @@ public class Skin extends GUIFramework {
     private void setApplicationTitle() {
     	MessageFormat format = new MessageFormat(System.getProperty("application.title"));
     	Object[] version = { VERSION };
-    	setTitle(format.format(version));
+    	appTitle = format.format(version);
+    	setTitle(appTitle);
+    }
+
+    private String appTitle = "";
+    public String getApplicationTitle() {
+    	return appTitle;
     }
     
     private void jbInit() throws Exception {
@@ -795,5 +801,5 @@ public class Skin extends GUIFramework {
     }
 
 	private static final String WELCOME_SCREEN_KEY = "Welcome Screen ";
-	private static final String VERSION = System.getProperty("application.version");
+	public static final String VERSION = System.getProperty("application.version");
 }

@@ -56,15 +56,13 @@ public class AdjacencyMatrixFileFormat extends DataSetFileFormat {
 		return ds;
 	}
 
-	@SuppressWarnings("unused")
 	@Override
 	public DSDataSet<? extends DSBioObject> getDataFile(File[] files)
 			throws InputFileFormatException {
 		return null;
 	}
 
-	@SuppressWarnings({ "unchecked", "unused" })
-	@Override
+	@SuppressWarnings({ "unchecked" })
 	public DSDataSet<? extends DSBioObject> getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
 
@@ -99,7 +97,7 @@ public class AdjacencyMatrixFileFormat extends DataSetFileFormat {
 				AdjacencyMatrix matrix = AdjacencyMatrixDataSet
 						.parseAdjacencyMatrix(adjMatrixFileStr, mASet);
 
-				adjMatrixDS = new AdjacencyMatrixDataSet(matrix, 0, 0, 0,
+				adjMatrixDS = new AdjacencyMatrixDataSet(matrix, 0,
 						fileName, "network loaded", mASet);
 
 			}
@@ -158,6 +156,9 @@ public class AdjacencyMatrixFileFormat extends DataSetFileFormat {
     public FileFilter getFileFilter() {
         return adjMatrixFilter;
     }
+    
+    
+    public boolean isMergeSupported() {return false;}
 
     class AdjacencyMatrixFileFilter extends FileFilter {
         public String getDescription() {

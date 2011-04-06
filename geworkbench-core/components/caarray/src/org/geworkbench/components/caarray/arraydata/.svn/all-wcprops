@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/7289/trunk/geworkbench/components/caarray/src/org/geworkbench/components/caarray/arraydata
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/caarray/src/org/geworkbench/components/caarray/arraydata
+END
+CaArray2Component.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/caarray/src/org/geworkbench/components/caarray/arraydata/CaArray2Component.cwb.xml
 END
 CaArrayClient.java
 K 25
@@ -14,10 +20,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 139
 /svn/geworkbench/!svn/ver/7254/trunk/geworkbench/components/caarray/src/org/geworkbench/components/caarray/arraydata/CaArray2Component.java
-END
-CaArray2Component.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 142
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/caarray/src/org/geworkbench/components/caarray/arraydata/CaArray2Component.cwb.xml
 END

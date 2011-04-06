@@ -1,14 +1,14 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-23T19:53:05.257180Z
-7480
+2011-03-24T13:43:50.511431Z
+7626
 zji
 
 
@@ -25,6 +25,40 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+PromoterView.java
+file
+
+
+
+
+2011-04-06T19:56:01.000000Z
+2f93c89c7524cddd4b7fec27ee793acf
+2011-03-24T13:43:50.511431Z
+7626
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2632
 
 ImagePanel.java
 file
@@ -59,40 +93,6 @@ has-props
 
 
 2101
-
-PromoterView.java
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-b9be6ae934254ec9a474bd0682b709ed
-2010-11-29T05:39:20.813059Z
-7240
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2638
 
 Matrix.java
 file
@@ -409,10 +409,10 @@ file
 
 
 
-2011-01-24T18:12:08.000000Z
-5ca6b05cdfa07e98c8968bc3144b74df
-2010-03-29T23:11:57.396890Z
-6255
+2011-04-06T19:56:01.000000Z
+371f37d5cf72750e5967f3dc59930aa1
+2011-03-21T22:24:24.377666Z
+7617
 smithken
 
 
@@ -435,7 +435,7 @@ smithken
 
 
 
-1171
+1156
 
 modulediscovery
 dir

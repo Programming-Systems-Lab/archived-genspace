@@ -1,14 +1,14 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/test/org/geworkbench/builtin/projects
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-04-06T15:33:51.639161Z
-6309
+2011-03-03T19:59:05.201162Z
+7537
 zji
 
 
@@ -28,38 +28,4 @@ zji
 
 target
 dir
-
-ProjectPanelGuiTest.java
-file
-
-
-
-
-2011-01-24T18:12:16.000000Z
-3a3408e4c294b8227a08f28740a053fb
-2010-04-06T15:33:51.639161Z
-6309
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4611
 

@@ -30,7 +30,7 @@ import org.geworkbench.util.ProgressBar;
 /**
  *
  * @author zm2165
- * @version $Id$
+ * @version $Id: FoldChangeAnalysis.java 7674 2011-03-28 21:08:48Z smithken $
  */
 
 public class FoldChangeAnalysis extends AbstractAnalysis implements
@@ -163,7 +163,7 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 		try{
 			alpha = Double.parseDouble(((FoldChangePanel) aspp).getAlpha());
 			isLinear=((FoldChangePanel) aspp).isLinear();			
-			isRatio=((FoldChangePanel) aspp).isRatio();			
+			isRatio=((FoldChangePanel) aspp).isRatio();				
 		}
 		catch(NumberFormatException e){
 			pbFCtest.dispose();
@@ -185,7 +185,7 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 				else if(isLinear&&(!isRatio)){
 					if (data.getValue(i, j)<SMALLDOUBLE) {
 						pbFCtest.dispose();
-						return new AlgorithmExecutionResults(false, "Input data is invalid for the parameter settings", null);
+						return new AlgorithmExecutionResults(false, "Cannot log2 transform this dataset, some values are zero, negative or n/a.", null);
 					}
 					expMatrix[i][j]=Math.log( data.getValue(i, j))/LOG2;
 				}
@@ -236,19 +236,27 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 		groupAndChipsString = totalSelectedGroup + " groups analyzed:\n"
 				+ groupAndChipsString;	
 
-		Vector<Integer> clusterVector = sortGenesBySignificance(pbFCtest);			
-		
-		DSAnnotatedPanel<DSGeneMarker, Float> panelSignificant = new CSAnnotPanel<DSGeneMarker, Float>(
-				"Fold_change_"+alpha);
-		
-		for (Integer index : clusterVector) {
+		Vector<Integer> clusterVectorPositive = sortGenesBySignificancePositive(pbFCtest);		
+		DSAnnotatedPanel<DSGeneMarker, Float> panelSignificantPositive = new CSAnnotPanel<DSGeneMarker, Float>(
+				"Fold_change_pos"+alpha);		
+		for (Integer index : clusterVectorPositive) {
 			DSGeneMarker item = data.markers().get(index);
-			panelSignificant.add(item, new Float(index));			
+			panelSignificantPositive.add(item, new Float(index));
 		}
-		
 		publishSubpanelChangedEvent(new SubpanelChangedEvent<DSGeneMarker>(
-				DSGeneMarker.class, panelSignificant,
-				SubpanelChangedEvent.NEW));			
+				DSGeneMarker.class, panelSignificantPositive,
+				SubpanelChangedEvent.NEW));
+		
+		Vector<Integer> clusterVectorNegative = sortGenesBySignificanceNegative(pbFCtest);		
+		DSAnnotatedPanel<DSGeneMarker, Float> panelSignificantNegative = new CSAnnotPanel<DSGeneMarker, Float>(
+				"Fold_change_neg"+alpha);		
+		for (Integer index : clusterVectorNegative) {
+			DSGeneMarker item = data.markers().get(index);
+			panelSignificantNegative.add(item, new Float(index));
+		}
+		publishSubpanelChangedEvent(new SubpanelChangedEvent<DSGeneMarker>(
+				DSGeneMarker.class, panelSignificantNegative,
+				SubpanelChangedEvent.NEW));		
 	
 		FoldChangeResult analysisResult = new FoldChangeResult(maSet,"Fold_change_"+alpha);
 		AlgorithmExecutionResults results = new AlgorithmExecutionResults(true,
@@ -271,7 +279,7 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 		return event;
 	}
 
-	protected String GenerateHistoryHeader() {
+	private String GenerateHistoryHeader() {
 
 		String histStr = "";
 		// Header
@@ -285,11 +293,11 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 			histStr +="Linear\n";
 		else
 			histStr +="Log2-transformed\n";
-		histStr += "\t" + "Caculation method: ";
+		histStr += "\t" + "Calculation method: ";
 		if (isRatio)
 			histStr +="Ratio" +"\n";
 		else
-			histStr +="Difference" +"\n";
+			histStr +="Difference of average log2 values" +"\n";
 		
 		return histStr;
 	}
@@ -307,20 +315,20 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 		return histStr;
 	}
 
-	String GenerateMarkerString(
+	private String GenerateMarkerString(
 			DSMicroarraySetView<? extends DSGeneMarker, ? extends DSMicroarray> view) {
-		String histStr = null;
+		StringBuffer histStr = new StringBuffer();
 
-		histStr = view.markers().size() + " markers analyzed:\n";
+		histStr .append( view.markers().size() ).append( " markers analyzed:\n");
 		for (DSGeneMarker marker : view.markers()) {
-			histStr += "\t" + marker.getLabel() + "\n";
+			histStr .append( "\t" + marker.getLabel() ).append( "\n");
 		}
 
-		return histStr;
+		return histStr.toString();
 
 	}
 	
-	private Vector<Integer> sortGenesBySignificance(ProgressBar pbFCtest) {
+	private Vector<Integer> sortGenesBySignificancePositive(ProgressBar pbFCtest) {
 
 		Vector<Integer> sigGenes = new Vector<Integer>();
 		for (int i = 0; i < numGenes; i++) {
@@ -329,15 +337,32 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 				return null;
 			}
 
-			if(isSignificant(i))
+			if(isSignificant(i)==1)
 				sigGenes.add(new Integer(i));		
 		}
 		return sigGenes;
 	
 	}
 	
-	private boolean isSignificant(int gene) {
-		boolean sig = false;
+	private Vector<Integer> sortGenesBySignificanceNegative(ProgressBar pbFCtest) {
+
+		Vector<Integer> sigGenes = new Vector<Integer>();
+		for (int i = 0; i < numGenes; i++) {
+			if (this.stopAlgorithm) {
+				pbFCtest.dispose();
+				return null;
+			}
+
+			if(isSignificant(i)==2)
+				sigGenes.add(new Integer(i));		
+		}
+		return sigGenes;
+	
+	}
+	
+	
+	private int isSignificant(int gene) {
+		int sig = 0;
 		double numbValidValuesA = 0;
 		double numbValidValuesB = 0;
 		
@@ -362,8 +387,9 @@ public class FoldChangeAnalysis extends AbstractAnalysis implements
 		else if(!isRatio)
 			fcValue=numbValidValuesA-numbValidValuesB;
 		
-		if (fcValue>alpha) sig=true;
-		
+		if (fcValue>=alpha) sig=1;
+		else if (fcValue<=-alpha) sig=2;
+		else sig=0;
 		return sig;		
 	}	
 

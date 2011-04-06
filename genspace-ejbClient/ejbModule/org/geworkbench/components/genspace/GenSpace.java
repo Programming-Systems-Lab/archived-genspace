@@ -40,6 +40,7 @@ public class GenSpace {
 //			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
 		}	
 		try {
+//			System.setProperty("org.omg.CORBA.ORBInitialHost", "boris.cs.columbia.edu");
 			if(ctx == null)
 			{
 				ctx = new InitialContext();

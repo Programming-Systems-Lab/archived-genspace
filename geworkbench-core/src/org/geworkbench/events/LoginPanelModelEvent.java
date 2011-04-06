@@ -10,12 +10,14 @@ import java.util.EventObject;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version 1.0
+ * @version $Id: LoginPanelModelEvent.java 7677 2011-03-29 13:24:21Z zji $
  */
 
 public class LoginPanelModelEvent extends EventObject {
 
-    public LoginPanelModelEvent(Object source) {
+	private static final long serialVersionUID = -8335038947064419272L;
+
+	public LoginPanelModelEvent(Object source) {
         super(source);
     }
 

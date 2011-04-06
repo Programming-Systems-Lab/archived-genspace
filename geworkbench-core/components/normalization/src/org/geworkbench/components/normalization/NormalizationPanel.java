@@ -41,6 +41,7 @@ import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.ComponentRegistry;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
+import org.geworkbench.events.AnalysisInvokedEvent;
 import org.geworkbench.events.NormalizationEvent;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
@@ -58,7 +59,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * options.
  * 
  * @author First Genetic Trust, keshav, yc2480
- * @version $Id: NormalizationPanel.java 7202 2010-11-18 21:39:44Z zji $
+ * @version $Id: NormalizationPanel.java 7702 2011-04-06 15:23:14Z maz $
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class NormalizationPanel implements VisualPlugin, ReHighlightable {
@@ -592,6 +593,10 @@ public class NormalizationPanel implements VisualPlugin, ReHighlightable {
 						.getResults();
 				publishNormalizationEvent(new NormalizationEvent(maSet,
 						normalizedData, selectedNormalizer.getLabel()));
+				AnalysisInvokedEvent event = new AnalysisInvokedEvent(
+						selectedNormalizer, "");
+				publishAnalysisInvokedEvent(event);
+				
 			} else {
 				log
 						.error("This shouldn't happen. results.getResults() should return a DSMicroarraySet<?>");
@@ -609,6 +614,12 @@ public class NormalizationPanel implements VisualPlugin, ReHighlightable {
 		return event;
 	}
 
+	@Publish
+	public AnalysisInvokedEvent publishAnalysisInvokedEvent(
+			AnalysisInvokedEvent event) {
+		return event;
+	}
+	
 	/**
 	 * Listener invoked when the "Save Parameters" button is pressed
 	 * 

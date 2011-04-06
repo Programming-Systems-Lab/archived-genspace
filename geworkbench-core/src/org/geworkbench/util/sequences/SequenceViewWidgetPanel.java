@@ -33,7 +33,7 @@ import org.geworkbench.util.patterns.PatternSequenceDisplayUtil;
  * sequences as either lines or full sequences of letters. It is only used in
  * SequenceViewWidget.
  *
- * @version $Id: SequenceViewWidgetPanel.java 7376 2011-01-05 17:49:01Z shteynbo $
+ * @version $Id: SequenceViewWidgetPanel.java 7626 2011-03-24 13:43:50Z zji $
  */
 public class SequenceViewWidgetPanel extends JPanel {
 
@@ -212,7 +212,7 @@ public class SequenceViewWidgetPanel extends JPanel {
 					drawPattern(g, theone, reg.x1, xscale, yscale,
 							eachSeqStartRowNum[seqId], cols,
 							PatternOperations.getPatternColor(pl
-									.getIdForDisplay()), reg.value);
+									.getIdForDisplay()), pl);
 
 				} else if (pl.getPatternType().equals(PatternLocations.TFTYPE)) {
 					drawPattern(g, theone, reg.x1, Math.abs(reg.x1 - reg.x2),
@@ -320,7 +320,7 @@ public class SequenceViewWidgetPanel extends JPanel {
 						0,
 						cols,
 						PatternOperations.getPatternColor(pl.getIdForDisplay()),
-						pl.getAscii());
+						pl);
 
 			} else if (pl.getPatternType().equals(PatternLocations.TFTYPE)) {
 				drawPattern(
@@ -527,20 +527,20 @@ public class SequenceViewWidgetPanel extends JPanel {
 	 */
 	private void drawPattern(Graphics g, DSSequence hitSeq, int offset,
 			double xscale, double yscale, int yBase, int cols, Color color,
-			String highlight) {
+			PatternLocations pl) {
 
-		int length = 0; // sp.getRegistration().length(); //very strange, the
-						// length is incorrect.
-		length = highlight.length();
-		// int offset = sp.getRegistration().x1;
+		int length = pl.getAscii().length();
+		String hitSeqStr = hitSeq.getSequence().substring(offset,
+				offset + length);
+		
+		String highlight = hitSeqStr;
+
 		int x = (int) ((6 + offset % cols) * xscale);
 		double y = ((yBase + 2 + (offset / cols)) * yscale);
 		int xb = (int) (length * xscale);
 
 		int height = (int) (1.15 * yscale);
 
-		String hitSeqStr = hitSeq.getSequence().substring(offset,
-				offset + length);
 		if (offset % cols + length <= cols) {
 			g.clearRect(x, (int) y - height / 2, xb, height);
 			g.setColor(SEQUENCEBACKGROUDCOLOR);

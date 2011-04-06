@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/sequences
+/svn/geworkbench/!svn/ver/7661/trunk/geworkbench/src/org/geworkbench/parsers/sequences
 END
 SequenceResource.java
 K 25
@@ -13,5 +13,5 @@ SequenceFileFormat.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/sequences/SequenceFileFormat.java
+/svn/geworkbench/!svn/ver/7661/trunk/geworkbench/src/org/geworkbench/parsers/sequences/SequenceFileFormat.java
 END

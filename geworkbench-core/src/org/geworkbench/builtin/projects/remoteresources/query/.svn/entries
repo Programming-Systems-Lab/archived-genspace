@@ -1,14 +1,14 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/query
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-11-17T20:36:04.573294Z
-7192
+2011-03-25T18:47:54.159987Z
+7645
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-50abc013da8ef33268f6f2d3fe358228
-2010-11-17T20:36:04.573294Z
-7192
+2011-04-06T19:56:06.000000Z
+6f5d6930c6e79db657f9defc3224359f
+2011-03-25T18:47:54.159987Z
+7645
 zji
 has-props
 
@@ -58,5 +58,5 @@ has-props
 
 
 
-19726
+16902
 

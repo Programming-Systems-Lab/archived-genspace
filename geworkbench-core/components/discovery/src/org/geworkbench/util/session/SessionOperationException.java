@@ -7,12 +7,13 @@ package org.geworkbench.util.session;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version 1.0
+ * @version $Id: SessionOperationException.java 7567 2011-03-11 21:46:06Z zji $
  */
 
 public class SessionOperationException extends Exception {
+	private static final long serialVersionUID = -4038098262013841518L;
 
-    public SessionOperationException() {
+	public SessionOperationException() {
     }
 
     public SessionOperationException(String message) {

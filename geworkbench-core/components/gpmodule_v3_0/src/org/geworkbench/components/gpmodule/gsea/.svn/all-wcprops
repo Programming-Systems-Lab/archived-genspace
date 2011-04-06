@@ -1,13 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/7082/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea
+/svn/geworkbench/!svn/ver/7685/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea
+END
+paramDesc.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/5531/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/paramDesc.html
 END
 GSEAAnalysisPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 141
 /svn/geworkbench/!svn/ver/7082/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysisPanel.java
+END
+GSEAAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/6504/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.java
 END
 gsea_common_errors.html
 K 25
@@ -21,21 +33,9 @@ svn:wc:ra_dav:version-url
 V 128
 /svn/geworkbench/!svn/ver/5526/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/help.html
 END
-paramDesc.html
-K 25
-svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/5531/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/paramDesc.html
-END
-GSEAAnalysis.java
-K 25
-svn:wc:ra_dav:version-url
-V 136
-/svn/geworkbench/!svn/ver/6504/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.java
-END
 GSEAAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/7080/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.cwb.xml
 END

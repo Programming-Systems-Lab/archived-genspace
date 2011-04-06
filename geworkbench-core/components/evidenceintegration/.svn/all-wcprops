@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svn/geworkbench/!svn/ver/7233/trunk/geworkbench/components/evidenceintegration
+/svn/geworkbench/!svn/ver/7526/trunk/geworkbench/components/evidenceintegration
 END
-.cvsignore
+.classpath
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/evidenceintegration/.cvsignore
+/svn/geworkbench/!svn/ver/3341/trunk/geworkbench/components/evidenceintegration/.classpath
 END
 .project
 K 25
@@ -15,9 +15,9 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/geworkbench/!svn/ver/3341/trunk/geworkbench/components/evidenceintegration/.project
 END
-.classpath
+.cvsignore
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/3341/trunk/geworkbench/components/evidenceintegration/.classpath
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/evidenceintegration/.cvsignore
 END

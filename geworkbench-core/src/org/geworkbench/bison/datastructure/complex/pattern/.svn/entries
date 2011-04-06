@@ -1,15 +1,15 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-01-05T17:49:01.763501Z
-7376
-shteynbo
+2011-03-24T13:43:50.511431Z
+7626
+zji
 
 
 
@@ -94,40 +94,6 @@ has-props
 
 668
 
-Parameters.java
-file
-
-
-
-
-2011-01-24T18:12:14.000000Z
-a79aecc8794e18e6f6f6f87242907f59
-2008-02-27T07:50:25.000000Z
-3548
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8285
-
 DSPattern.java
 file
 
@@ -202,6 +168,40 @@ has-props
 
 2859
 
+PatternDiscoveryParameters.java
+file
+
+
+
+
+2011-04-06T19:56:07.000000Z
+738ac1e189a33a261902806c010e0fb8
+2011-03-18T17:33:45.195884Z
+7608
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6373
+
 DSMatchedPattern.java
 file
 
@@ -236,17 +236,17 @@ has-props
 
 870
 
-SoapParmsDataSet.java
+PatternResult.java
 file
 
 
 
 
-2011-01-24T18:12:14.000000Z
-93ac060ce645ac25fda0a1c4f908a58e
-2010-09-22T19:38:43.633528Z
-7066
-wangmen
+2011-04-06T19:56:07.000000Z
+3a5d2e27721792ced66568225b8ed522
+2011-03-24T13:43:50.511431Z
+7626
+zji
 has-props
 
 
@@ -268,5 +268,5 @@ has-props
 
 
 
-3797
+5610
 

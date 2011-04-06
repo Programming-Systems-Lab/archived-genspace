@@ -10,7 +10,7 @@ import org.geworkbench.bison.parsers.GenepixParseContext;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: CSGenepixMarkerValue.java 7357 2010-12-21 20:52:44Z zji $
+ * @version $Id: CSGenepixMarkerValue.java 7585 2011-03-15 16:44:44Z zji $
  */
 
 /**
@@ -363,7 +363,8 @@ public class CSGenepixMarkerValue extends CSMarkerValue implements
         return 1;
     }
 
-    public int compareTo(Object o) {
-        return Double.compare(((CSGenepixMarkerValue) o).getValue(), getValue());
-    }
+	//@Override
+	public int compareTo(DSMarkerValue o) {
+      return Double.compare(o.getValue(), getValue());
+	}
 }

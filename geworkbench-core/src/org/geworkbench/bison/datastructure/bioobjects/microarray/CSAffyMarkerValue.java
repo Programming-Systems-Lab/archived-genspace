@@ -11,7 +11,7 @@ import org.geworkbench.bison.parsers.AffyParseContext;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: CSAffyMarkerValue.java 7357 2010-12-21 20:52:44Z zji $
+ * @version $Id: CSAffyMarkerValue.java 7572 2011-03-12 15:27:59Z zji $
  */
 
 /**
@@ -268,8 +268,8 @@ public class CSAffyMarkerValue extends CSExpressionMarkerValue implements
     		   return detectionStatus;
        }
 
-       public int compareTo(Object o) {
-           return Double.compare(((CSAffyMarkerValue) o).getValue(), getValue());
+       public int compareTo(CSAffyMarkerValue o) {
+           return Double.compare(o.getValue(), getValue());
        }
 
 

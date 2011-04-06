@@ -14,7 +14,6 @@ import org.apache.commons.logging.LogFactory;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.*;
 
 @AcceptTypes({DSProteinStructure.class})
 public class JmolComponent extends JPanel implements VisualPlugin {
@@ -69,7 +68,7 @@ public class JmolComponent extends JPanel implements VisualPlugin {
             //    viewer.openFile("../samples/caffeine.xyz");
             //    viewer.openFile("http://database.server/models/1pdb.pdb.gz");
 
-            byte[] fileBytes;
+            /*byte[] fileBytes;
             try {
                 FileInputStream fileIn = new FileInputStream(proteinData.getFile().getAbsolutePath());
                 DataInputStream dataIn = new DataInputStream(fileIn);
@@ -82,7 +81,10 @@ public class JmolComponent extends JPanel implements VisualPlugin {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 return;
             }
-            viewer.openStringInline(new String(fileBytes));
+            viewer.openStringInline(new String(fileBytes));*/
+            String msg = viewer.openFile(proteinData.getFile().getAbsolutePath());
+            if (msg != null && msg.contains("Error"))
+            	JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.ERROR_MESSAGE);
             viewer.evalString(strScript);
 //
 //            revalidate();

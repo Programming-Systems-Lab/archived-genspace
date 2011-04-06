@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/7478/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering
+/svn/geworkbench/!svn/ver/7702/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering
 END
 MissingValuesFilter.java
 K 25
@@ -25,7 +25,7 @@ FilteringPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/7202/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/FilteringPanel.java
+/svn/geworkbench/!svn/ver/7702/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/FilteringPanel.java
 END
 MultipleProbesetFilter.java
 K 25
@@ -49,7 +49,7 @@ CoefficientOfVariationFilter.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 147
-/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/CoefficientOfVariationFilter.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/CoefficientOfVariationFilter.cwb.xml
 END
 MultipleEntrezGeneIDFilterPanel.java
 K 25
@@ -73,13 +73,13 @@ MissingValuesFilter.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MissingValuesFilter.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MissingValuesFilter.cwb.xml
 END
 GenepixExpressionThresholdFilter.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 151
-/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixExpressionThresholdFilter.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixExpressionThresholdFilter.cwb.xml
 END
 FilteringPanel.cwb.xml
 K 25
@@ -91,7 +91,7 @@ MultipleProbesetFilter.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 141
-/svn/geworkbench/!svn/ver/7471/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MultipleProbesetFilter.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MultipleProbesetFilter.cwb.xml
 END
 PreviewDialog.java
 K 25
@@ -117,17 +117,23 @@ svn:wc:ra_dav:version-url
 V 149
 /svn/geworkbench/!svn/ver/6960/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/CoefficientOfVariationFilterPanel.java
 END
-GenepixFlagsFilter.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 137
-/svn/geworkbench/!svn/ver/6786/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixFlagsFilter.cwb.xml
-END
 ExpressionThresholdFilter.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 144
-/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/ExpressionThresholdFilter.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/ExpressionThresholdFilter.cwb.xml
+END
+GenepixFlagsFilter.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixFlagsFilter.cwb.xml
+END
+AffyDetectionCallFilter.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/AffyDetectionCallFilter.cwb.xml
 END
 MissingValuesFilterPanel.java
 K 25
@@ -135,23 +141,17 @@ svn:wc:ra_dav:version-url
 V 140
 /svn/geworkbench/!svn/ver/6822/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MissingValuesFilterPanel.java
 END
-AffyDetectionCallFilter.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 142
-/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/AffyDetectionCallFilter.cwb.xml
-END
 DeviationBasedFilter.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/7051/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/DeviationBasedFilter.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/DeviationBasedFilter.cwb.xml
 END
-GenepixFlagsFilter.java
+GenepixExpressionThresholdFilterPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/6822/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixFlagsFilter.java
+V 153
+/svn/geworkbench/!svn/ver/6956/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixExpressionThresholdFilterPanel.java
 END
 ExpressionThresholdFilter.java
 K 25
@@ -159,11 +159,11 @@ svn:wc:ra_dav:version-url
 V 141
 /svn/geworkbench/!svn/ver/6822/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/ExpressionThresholdFilter.java
 END
-GenepixExpressionThresholdFilterPanel.java
+GenepixFlagsFilter.java
 K 25
 svn:wc:ra_dav:version-url
-V 153
-/svn/geworkbench/!svn/ver/6956/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixExpressionThresholdFilterPanel.java
+V 134
+/svn/geworkbench/!svn/ver/6822/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/GenepixFlagsFilter.java
 END
 MultipleProbesetFilterPanel.java
 K 25
@@ -177,15 +177,15 @@ svn:wc:ra_dav:version-url
 V 139
 /svn/geworkbench/!svn/ver/6822/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/AffyDetectionCallFilter.java
 END
-MultipleEntrezGeneIDFilter.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 145
-/svn/geworkbench/!svn/ver/7470/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MultipleEntrezGeneIDFilter.cwb.xml
-END
 FilterOptionPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
 /svn/geworkbench/!svn/ver/7218/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/FilterOptionPanel.java
+END
+MultipleEntrezGeneIDFilter.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/MultipleEntrezGeneIDFilter.cwb.xml
 END

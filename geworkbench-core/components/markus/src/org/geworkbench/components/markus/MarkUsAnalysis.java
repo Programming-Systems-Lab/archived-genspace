@@ -23,7 +23,6 @@ import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractGridAnalysis;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.views.DSMicroarraySetView;
-import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.structure.DSProteinStructure;
@@ -68,7 +67,6 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
     }
 
     /** implements org.geworkbench.bison.model.analysis.Analysis.execute */
-    @SuppressWarnings("unchecked")
 	public AlgorithmExecutionResults execute(Object input) {
 		if (input == null)
 			return new AlgorithmExecutionResults(false, "Invalid input. ", null);
@@ -87,6 +85,7 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 
 		String results = null;
 		/* for quick display of previous results without doing analysis */
+/*
 		if (pdbname.equals("2pk7.pdb"))
 			results = "MUS569";
 		else if (pdbname.equals("1e09.pdb"))
@@ -101,6 +100,7 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 			results = "MUS670";
 
 		else {
+		*/
 			if(STOPSIG)
 				return new AlgorithmExecutionResults(false, "MarkUs analysis cancelled", null);
 
@@ -127,7 +127,9 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 			} catch (Exception e) {
 				log.warn("MarkUsWeb submitJob error: " + cfgcommand);
 			}
+			/*
 		}
+		*/
 
 		if(results==null)
 			return new AlgorithmExecutionResults(false, "No result for MarkUs analysis", null);
@@ -165,7 +167,7 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 			urlstat = checkUrlStatus(url);
 		}
 
-		MarkUsResultDataSet<DSBioObject> resultset = new MarkUsResultDataSet<DSBioObject>(prt, results);
+		MarkUsResultDataSet resultset = new MarkUsResultDataSet(prt, results);
 		resultset.setResult(results);
 		pBar.stop();
 		return new AlgorithmExecutionResults(true, "No errors", resultset);
@@ -196,6 +198,7 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 		bisonParameters.put("consurf4", paramPanel.getconsurf4Value());
 		// string
 		bisonParameters.put("chain", paramPanel.getChain());
+		bisonParameters.put("key", paramPanel.getkeyValue());
 
 		// delphi
 		bisonParameters.put("grid_size", paramPanel.getgridsizeValue()); // int
@@ -353,12 +356,14 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 					.append(" C4P=").append(mcp.getfilter4Value())
 					.append(" C4MSA=").append(mcp.getmsa4Value());
 		}
+		if (mcp.getkeyValue())
+			cfgcommand.append(" privateKey=1");
 		
 		String chain = mcp.getChain();
 
 		cfgcommand
 				.append(
-						" Skan=1 SkanBox=1 Screen=1 ScreenBox=1 BlastBox=1 IPSBox=1 CBox=1")
+						" Skan=1 SkanBox=1 Screen=1 ScreenBox=1 VASP=1 LBias=1 PredUs=1 BlastBox=1 IPSBox=1 CBox=1")
 				.append(" D1B=")
 				.append(mcp.getibcValue())
 				.append(" D1EX=")
@@ -425,12 +430,12 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 				in = new BufferedReader(new InputStreamReader(
 						dat));
 
-				String line = null; int i=-1;
+				String line = null; int i=-1; int j = -1;
 				while ((line = in.readLine()) != null)
 				{
-				    if ((i = line.indexOf("Submission ID: MUS")) > -1)
+					if ((i = line.indexOf("pdb_id=")) > -1 && (j = line.indexOf("\">")) > -1)
 				    {
-			    		process_id = line.substring(i+15, line.length()-4);
+						process_id = line.substring(i+7, j);
 				    }
 				}
 				in.close();
@@ -463,7 +468,7 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
     	    br = new BufferedReader(new InputStreamReader(uc.getInputStream()));
     	    String tmp = null;
     	    while((tmp = br.readLine()) != null) {
-    	    	if (tmp.indexOf("<div class=\"error\">") > -1) {
+    	    	if (tmp.indexOf("functional annotation is pending") > -1) {
     	    		br.close();
     	    		return UrlStatus.PENDING;
     	    	}

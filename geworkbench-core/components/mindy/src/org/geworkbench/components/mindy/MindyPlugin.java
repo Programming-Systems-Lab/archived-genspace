@@ -62,7 +62,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * @author mhall
  * @ch2514
  * @author oshteynb
- * @version $Id: MindyPlugin.java 7077 2010-09-24 16:07:26Z zji $
+ * @version $Id: MindyPlugin.java 7649 2011-03-25 19:34:29Z zji $
  */
 @SuppressWarnings("serial")
 public class MindyPlugin extends JPanel {
@@ -1033,7 +1033,7 @@ public class MindyPlugin extends JPanel {
 
 				List<DSGeneMarker> modList = mindyData.getModulators();
 				for (DSGeneMarker mod : modList) {
-		            ModulatorInfo modInfo = new ModulatorInfo(mod);
+		            ModulatorInfo modInfo = new ModulatorInfo();
 
 					List<MindyResultRow> tmpRows = mindyData.getRows(mod, markers);
 					for (MindyResultRow mindyResultRow : tmpRows) {

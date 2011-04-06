@@ -1,67 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/7351/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
-END
-AnnotationParser.java
-K 25
-svn:wc:ra_dav:version-url
-V 122
-/svn/geworkbench/!svn/ver/7285/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/AnnotationParser.java
-END
-IDEAViewer.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 119
-/svn/geworkbench/!svn/ver/7225/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.cwb.xml
-END
-IDEAPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/geworkbench/!svn/ver/7347/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAPanel.java
-END
-NullDistribution.java
-K 25
-svn:wc:ra_dav:version-url
-V 122
-/svn/geworkbench/!svn/ver/7350/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/NullDistribution.java
-END
-FisherExact.java
-K 25
-svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/7292/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/FisherExact.java
-END
-IDEAViewer.java
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svn/geworkbench/!svn/ver/7336/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.java
-END
-Phenotype.java
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/geworkbench/!svn/ver/7334/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Phenotype.java
-END
-IdeaLauncher.java
-K 25
-svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/7350/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IdeaLauncher.java
-END
-Gene.java
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/geworkbench/!svn/ver/7265/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Gene.java
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
 END
 IDEAAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/7276/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.cwb.xml
 END
 IdeaNetworkEdge.java
 K 25
@@ -69,15 +15,69 @@ svn:wc:ra_dav:version-url
 V 121
 /svn/geworkbench/!svn/ver/7301/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IdeaNetworkEdge.java
 END
-IDEAAnalysis.java
+IDEAPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/7351/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.java
+V 115
+/svn/geworkbench/!svn/ver/7347/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAPanel.java
 END
 MutualInfo.java
 K 25
 svn:wc:ra_dav:version-url
 V 116
 /svn/geworkbench/!svn/ver/7274/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/MutualInfo.java
+END
+IDEAViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/7336/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.java
+END
+IdeaLauncher.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7350/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IdeaLauncher.java
+END
+FisherExact.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/7292/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/FisherExact.java
+END
+IDEAAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7351/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.java
+END
+AnnotationParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/7285/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/AnnotationParser.java
+END
+NullDistribution.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/7350/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/NullDistribution.java
+END
+Phenotype.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/7334/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Phenotype.java
+END
+IDEAViewer.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.cwb.xml
+END
+Gene.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/geworkbench/!svn/ver/7265/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Gene.java
 END

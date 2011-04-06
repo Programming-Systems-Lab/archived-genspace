@@ -16,11 +16,10 @@ import org.geworkbench.util.PropertiesMonitor;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: LoginPanelModel.java 6672 2010-05-25 02:19:53Z zji $
+ * @version $Id: LoginPanelModel.java 7670 2011-03-28 20:14:58Z zji $
  */
 public class LoginPanelModel {
 	
-    @SuppressWarnings("unchecked")
 	public LoginPanelModel() {
         //parse initial Model data from the properties monitor
         PropertiesMonitor pm = org.geworkbench.util.PropertiesMonitor.getPropertiesMonitor();

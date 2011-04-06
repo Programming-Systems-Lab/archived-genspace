@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7480/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
+/svn/geworkbench/!svn/ver/7626/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 END
 Distribution.java
 K 25
@@ -25,7 +25,7 @@ PromoterView.java
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/7240/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.java
+/svn/geworkbench/!svn/ver/7626/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.java
 END
 ImagePanel.java
 K 25
@@ -61,7 +61,7 @@ PromoterView.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.cwb.xml
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.cwb.xml
 END
 MatchStats.java
 K 25

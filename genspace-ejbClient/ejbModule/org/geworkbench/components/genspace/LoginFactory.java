@@ -158,6 +158,12 @@ public class LoginFactory {
 	public static void logout() {
 		try {
 			pm.logout(true);
+			userFacade = null;
+			usageFacade = null;
+			friendFacade = null;
+			networkFacade = null;
+			publicFacade = null;
+			workflowFacade = null;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

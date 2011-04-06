@@ -11,7 +11,7 @@ import org.geworkbench.engine.config.events.Event;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version 1.0
+ * @version $Id: SubpanelChangedEvent.java 7677 2011-03-29 13:24:21Z zji $
  */
 public class SubpanelChangedEvent <T extends DSNamed> extends Event {
 
@@ -30,7 +30,7 @@ public class SubpanelChangedEvent <T extends DSNamed> extends Event {
         mode = m;
     }
 
-    public DSPanel getPanel() {
+    public DSPanel<T> getPanel() {
         return (subpanel);
     }
 

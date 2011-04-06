@@ -13,7 +13,7 @@ import org.geworkbench.bison.parsers.resources.Resource;
  *
  * @author First Genetic Trust, Inc.
  * @author my2248
- * @version $Id: FileFormat.java 7107 2010-10-08 19:39:26Z zji $
+ * @version $Id: FileFormat.java 7601 2011-03-17 20:24:16Z youmi $
  * 
  * Base class for reading input data files complying to a desired format.
  * Support for any given microarray data format (e.g., Affymetrix MAS 5,
@@ -76,7 +76,11 @@ public abstract class FileFormat {
      */
     public FileFilter getFileFilter() {
         return null;
-    }
+    }    
+     
+    
+    public boolean isMergeSupported() {return true;}
+    
 
 }
 

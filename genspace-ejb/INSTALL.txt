@@ -41,7 +41,13 @@ Add the following lines:
 	<property name="auth-type" value="GELogin" />
 </auth-realm>
 
-6 - Restart GlassFish.
+6 - Copy the "org" folder from the genspace-authPlugin to <glassfish-folder>/domains/<your domain>/lib/classes
+
+7 - Go to the Glassfish config panel (localhost:4848), then 
+
+8 - Copy the mysql-connector-java-3.1.14-bin.jar file to <glassfish-folder>/lib/
+
+9 - Restart GlassFish.
 
 
 To setup the AXIS web services:

@@ -6,15 +6,14 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 /*
  * Extended file chooser with overwrite-warning if a selected file exists
- * $LastChangedDate: 2010-05-07 15:17:38 -0400 (Fri, 07 May 2010) $
+ * $LastChangedDate: 2011-03-17 09:37:54 -0400 (Thu, 17 Mar 2011) $
  * $Author: wangmen $
- * $Revision: 6487 $
+ * $Revision: 7593 $
  */
 public class OWFileChooser extends JFileChooser {
 	private static final long serialVersionUID = -8841673089062156967L;
 
 	public OWFileChooser() {
-		super();
 	}
 
 	public OWFileChooser(String currentDirectory) {

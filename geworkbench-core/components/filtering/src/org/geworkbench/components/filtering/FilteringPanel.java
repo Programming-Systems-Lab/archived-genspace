@@ -46,6 +46,7 @@ import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.ComponentRegistry;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
+import org.geworkbench.events.AnalysisInvokedEvent;
 import org.geworkbench.events.FilteringEvent;
 import org.geworkbench.util.ProgressBar;
 import org.ginkgo.labs.util.FileTools;
@@ -58,7 +59,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * options.
  * 
  * @author First Genetic Trust, yc2480
- * @version $Id: FilteringPanel.java 7202 2010-11-18 21:39:44Z zji $
+ * @version $Id: FilteringPanel.java 7702 2011-04-06 15:23:14Z maz $
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class FilteringPanel implements VisualPlugin, ReHighlightable {
@@ -644,6 +645,9 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 			historyString += FileTools.NEWLINE;
 			
 			progressBar.stop();
+			AnalysisInvokedEvent event = new AnalysisInvokedEvent(
+					selectedFilter,"" );
+			publishAnalysisInvokedEvent(event);
 			publishFilteringEvent(new FilteringEvent(maSet, filteredData,
 					historyString));
 			log.debug("filtering done.");
@@ -659,6 +663,12 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 	 */
 	@Publish
 	public FilteringEvent publishFilteringEvent(FilteringEvent event) {
+		return event;
+	}
+	
+	@Publish
+	public AnalysisInvokedEvent publishAnalysisInvokedEvent(
+			AnalysisInvokedEvent event) {
 		return event;
 	}
 

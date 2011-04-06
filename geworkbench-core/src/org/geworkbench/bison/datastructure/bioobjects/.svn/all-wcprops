@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7504/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
+/svn/geworkbench/!svn/ver/7693/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 END
 IdeaResult.java
 K 25
@@ -44,4 +44,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 121
 /svn/geworkbench/!svn/ver/7504/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/FoldChangeResult.java
+END
+KMeansResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/7693/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResult.java
 END

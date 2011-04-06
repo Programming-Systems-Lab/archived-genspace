@@ -128,8 +128,8 @@
 				<include name="viewers" />
 			</dirset>
 		</subant>
-		<chmod file="./bin/matrixreduce/FitModelMac" perm="700"/>
-		<chmod file="./bin/matrixreduce/FitModel" perm="700"/>
+<!--		<chmod file="./bin/matrixreduce/FitModelMac" perm="700"/>
+		<chmod file="./bin/matrixreduce/FitModel" perm="700"/> -->
 	</target>
 	<!-- ===================================================================== -->
 	<!-- DIST  -->

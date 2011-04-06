@@ -1,9 +1,13 @@
 package org.geworkbench.components.discovery.algorithm;
 
+import java.io.File;
+import java.util.Arrays;
+
+import javax.swing.JOptionPane;
+
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
 import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
-import org.geworkbench.bison.datastructure.complex.pattern.SoapParmsDataSet;
+import org.geworkbench.bison.datastructure.complex.pattern.PatternResult;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeqPattern;
 import org.geworkbench.bison.util.RandomNumberGenerator;
 import org.geworkbench.components.discovery.SequenceDiscoveryViewAppComponent;
@@ -11,12 +15,6 @@ import org.geworkbench.events.ProgressChangeEvent;
 import org.geworkbench.events.StatusBarEvent;
 import org.geworkbench.util.patterns.PatternSorter;
 import org.geworkbench.util.patterns.SequentialPatternSource;
-
-import javax.swing.*;
-
-import java.awt.Component;
-import java.io.File;
-import java.util.Arrays;
 
 /**
  * This class loads saved patterns from a file.
@@ -26,11 +24,11 @@ import java.util.Arrays;
  * <p>Company: Columbia University</p>
  *
  * @author not attributable
- * @version $Id: RegularDiscoveryFileLoader.java 7092 2010-09-30 15:51:18Z shteynbo $
+ * @version $Id: RegularDiscoveryFileLoader.java 7626 2011-03-24 13:43:50Z zji $
  */
 public class RegularDiscoveryFileLoader extends AbstractSequenceDiscoveryAlgorithm implements org.geworkbench.util.patterns.SequentialPatternSource {
     FileDataSource PatternSource = null;
-    org.geworkbench.util.patterns.PatternDB patternDB = null;
+    PatternResult patternDB = null;
 
     File patternFile = null;
     File sequenceFile = null;
@@ -62,7 +60,7 @@ public class RegularDiscoveryFileLoader extends AbstractSequenceDiscoveryAlgorit
             return;
         }
 
-        patternDB = new org.geworkbench.util.patterns.PatternDB(sequenceFile, parent);
+        patternDB = new PatternResult(sequenceFile, parent);
         String idString =  RandomNumberGenerator.getID();
         patternDB.setID(idString);
 
@@ -151,7 +149,7 @@ class FileDataSource implements SequentialPatternSource {
     //Used to sort patterns
     static private PatternSorter sorter = new PatternSorter();
 
-    public FileDataSource(org.geworkbench.util.patterns.PatternDB db) {
+    public FileDataSource(PatternResult db) {
         pattern = new DSMatchedSeqPattern[db.getPatternNo()];
         for (int i = 0; i < pattern.length; ++i) {
             pattern[i] = db.getPattern(i);

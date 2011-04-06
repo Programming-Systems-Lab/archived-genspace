@@ -22,7 +22,7 @@ import java.io.File;
  * </p>
  * 
  * @author not attributable
- * @version $Id: DataSetFileFormat.java 7107 2010-10-08 19:39:26Z zji $
+ * @version $Id: DataSetFileFormat.java 7542 2011-03-04 19:33:50Z zji $
  */
 
 public abstract class DataSetFileFormat extends FileFormat {
@@ -40,17 +40,5 @@ public abstract class DataSetFileFormat extends FileFormat {
 
 	abstract public DSDataSet<? extends DSBioObject> getDataFile(File[] files)
 			throws InputFileFormatException;
-
-	/**
-	 * Generates and returns a <code>MicrorarraySet</code> from the designated
-	 * argument. In <code>file</code> does not conform to the format, returns
-	 * <code>null</code>.
-	 * 
-	 * @param file
-	 *            The file containing the input data.
-	 * @return The corresponding <code>MicroarraySet</code> object.
-	 */
-	public abstract DSDataSet<? extends DSBioObject> getMArraySet(File file)
-			throws InputFileFormatException, InterruptedIOException;
 
 }

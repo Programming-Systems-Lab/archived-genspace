@@ -38,7 +38,7 @@ import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrixData
 
 /**
  * @author yc2480
- * @version $Id: MasterRegulatorAnalysis.java 7472 2011-02-18 21:30:39Z zji $
+ * @version $Id: MasterRegulatorAnalysis.java 7701 2011-04-05 17:53:43Z zji $
  */
 public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -298,9 +298,17 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 					.renameAdjMatrixToCombobox((AdjacencyMatrixDataSet)dataSet, e.getOldName(),e.getNewName());
 		}
 	}
-	@SuppressWarnings({ "rawtypes" })
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Subscribe
 	public void receive(org.geworkbench.events.ProjectEvent e, Object source) {
+		if (e.getMessage().equals(org.geworkbench.events.ProjectEvent.SELECTED)){
+			DSDataSet dataSet = e.getDataSet();
+			if (dataSet instanceof DSMicroarraySet) {
+				this.mraAnalysisPanel.setMicroarraySet((DSMicroarraySet<DSMicroarray>)dataSet);
+			}else{
+				this.mraAnalysisPanel.setMicroarraySet(null);
+			}
+		}
 
         ProjectSelection selection = ((ProjectPanel) source).getSelection();
         DataSetNode dNode = selection.getSelectedDataSetNode();

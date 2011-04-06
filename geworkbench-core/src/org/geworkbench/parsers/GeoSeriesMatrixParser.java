@@ -3,10 +3,11 @@ package org.geworkbench.parsers;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -16,7 +17,6 @@ import javax.swing.ProgressMonitorInputStream;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
@@ -24,9 +24,11 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**  
  * @author Nikhil
+ * @version $Id: GeoSeriesMatrixParser.java 7591 2011-03-16 19:47:16Z zji $
  */
 public class GeoSeriesMatrixParser {
 
@@ -35,22 +37,21 @@ public class GeoSeriesMatrixParser {
 	private static final String commentSign2 = "!";
 	private static final String commentSign3 = "^";
 	private static final String columnSeperator = "\t";
-	private static final String lineSeperator = "\n";
+
 	private static final String duplicateLabelModificator = "_2";
 
 	CSExprMicroarraySet maSet = new CSExprMicroarraySet();
 	List<String> markArrays = new ArrayList<String>();
 	
-	private int possibleMarkers = 0; 
+	private int possibleMarkers = 0;
+	transient private String errorMessage; 
     
 	/*
 	 * (non-Javadoc) 
 	 * @see org.geworkbench.components.parsers.FileFormat#checkFormat(java.io.File)
 	 */
 	public boolean checkFormat(File file) throws InterruptedIOException {
-		boolean columnsMatch = true;
-		boolean noDuplicateMarkers = true;
-		boolean noDuplicateArrays = true;
+
 		BufferedReader reader = null;
 		ProgressMonitorInputStream progressIn = null;
 		try {
@@ -78,8 +79,7 @@ public class GeoSeriesMatrixParser {
 						maSet.addDescription(line.substring(1));
 					}
 				}
-				String[] mark = null;
-				mark = line.split("\t");
+				String[] mark = line.split("\t");
 			    if(mark[0].equals("!Sample_title")){
 			    	for (int i=1;i<mark.length;i++){
 			    		markArrays.add(mark[i]);
@@ -90,38 +90,38 @@ public class GeoSeriesMatrixParser {
 						&& (line.indexOf(commentSign3) != 0)
 						&& (line.length() > 0)) {// we'll skip comments and
 					// anything before header
-					if (headerLineIndex == 0)// no header detected yet, then
+					if (headerLineIndex == 0) {
+						// no header detected yet, then
 						// this is the header.
 						headerLineIndex = lineIndex;
-					String token = null;
+					}
+
 					int columnIndex = 0;
 					int accessionIndex = 0;
-					StringTokenizer st = new StringTokenizer(line,
-							columnSeperator + lineSeperator);
-					while (st.hasMoreTokens()) { // for each column
-						token = st.nextToken().trim();
-						if (token.equals("")) {// header
-							accessionIndex = columnIndex;
-						} else if ((headerLineIndex > 0) && (columnIndex == 0)) {
+					String[] tokens = line.split(columnSeperator);
+					for(String token: tokens) { // for each column
+						token = token.trim();
+						
+						if ((headerLineIndex > 0) && (columnIndex == 0)) {
 							/*
 							 * if this line is after header, then first column
 							 * should be our marker name
 							 */
 							if (markers.contains(token)) {// duplicate markers
-								noDuplicateMarkers = false;
 								log.error("Duplicate Markers: "+token);
+								errorMessage = "Duplicate Markers: "+token;
 								return false;
 							} else {
 								markers.add(token);
 							}
-						} else if (headerLineIndex == lineIndex) {
-							/*
-							 * this is header line for RMA file
-							 */
-							if (arrays.contains(token)) {// duplicate arrays
-								noDuplicateArrays = false;
+						} else if (headerLineIndex == lineIndex) { // header
+							if (token.equals("")) {
+								accessionIndex = columnIndex;
+							} else if (arrays.contains(token)) {// duplicate arrays
 								log.error("Duplicate Arrays labels " + token
 										+ " in " + file.getName());
+								errorMessage = "Duplicate Arrays labels "
+										+ token + " in " + file.getName();
 								return false;
 							} else {
 								arrays.add(token);
@@ -129,20 +129,22 @@ public class GeoSeriesMatrixParser {
 						}
 						columnIndex++;
 						lineIndex++;
-					}
+					} // end of the while loop parsing one line
 					/* check if column match or not */
 					if (headerLineIndex > 0) {
 						/*
 						 * if this line is real data, we assume lines after
 						 * header are real data. (we might have bug here)
 						 */
-						if (totalColumns == 0) /* not been set yet */
+						if (totalColumns == 0) { /* not been set yet */
 							totalColumns = columnIndex - accessionIndex;
-						else if (columnIndex != totalColumns)// if not equal
-							columnsMatch = false;
+						} else if (columnIndex != totalColumns){ // if not equal
+							errorMessage = "Columns do not match: columnIndex="+columnIndex+" totalColumns="+totalColumns+" lineIndex="+lineIndex;
+							return false;
+						}
 					}
-				}
-			}
+				} // end of if block for one line
+			} // end of while loop of read line
 			possibleMarkers = markers.size();
 			fileIn.close();
 		
@@ -151,24 +153,24 @@ public class GeoSeriesMatrixParser {
 			{			    
 				throw ie;				 
 			}			 
-			else
+			else {
 			   ie.printStackTrace();
+			}
 		} catch (Exception e) {
 			log.error("GEO SOFT check file format exception: " + e);
 			e.printStackTrace();
-			 
+			errorMessage = "GEO SOFT check file format exception: " + e;
+			return false;
 		} finally {
     		try {
 				reader.close();
 			} catch (IOException e) {
-				log.error("GEO SOFT file reader close exception: " + e);
+				// no-op
 				e.printStackTrace();
 			}
 		}
-		if (columnsMatch && noDuplicateMarkers && noDuplicateArrays)
-			return true;
-		else
-			return false;
+
+		return true;
 	}
 
 		 
@@ -177,26 +179,19 @@ public class GeoSeriesMatrixParser {
 	 * 
 	 * @see org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	@SuppressWarnings("unchecked")
-	public DSMicroarraySet getMArraySet(File file)
+	public DSMicroarraySet<DSMicroarray> getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
 
 		final int extSeperater = '.';
 
-		try
-		{
-		 if (!checkFormat(file)) {
+		if (!checkFormat(file)) {
 			log
 					.info("SOFTFileFormat::getMArraySet - "
 							+ "Attempting to open a file that does not comply with the "
 							+ "GEO SOFT file format.");
-			 throw new InputFileFormatException(
-					"Attempting to open a file that does not comply with the "
-							+ "SOFT file format.");
+			 throw new InputFileFormatException(errorMessage);
 		 }
-		} catch (InterruptedIOException ie) {
-			throw ie;
-		}
+
 		String fileName = file.getName();
 		int dotIndex = fileName.lastIndexOf(extSeperater);
 		if (dotIndex != -1) {
@@ -261,7 +256,6 @@ public class GeoSeriesMatrixParser {
 							arrayName1, null, null, false,
 							DSMicroarraySet.affyTxtType);
 					maSet.add(array);
-					System.out.print("\n");
 					
 					if (maSet.size() != (i + 1)) {
 						log.info("We got a duplicate label of array");
@@ -392,12 +386,12 @@ public class GeoSeriesMatrixParser {
 
 				}
 			}
-		} catch (InputFileFormatException e) {
-			throw e;
-		} catch (InterruptedIOException ie) {
-			throw ie;
-		} catch (Exception e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return null;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			return null;
 		} finally {
     		try {
 				in.close();
@@ -409,28 +403,5 @@ public class GeoSeriesMatrixParser {
 		return maSet;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-	public List getOptions() {
-		throw new UnsupportedOperationException(
-				"Method getOptions() not yet implemented.");
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.geworkbench.components.parsers.microarray.DataSetFileFormat#getDataFile(java.io.File[])
-	 */
-	@SuppressWarnings("unchecked")
-	public DSDataSet getDataFile(File[] files) {
-		// TODO Implement this
-		// org.geworkbench.components.parsers.microarray.DataSetFileFormat
-		// abstract method
-		throw new UnsupportedOperationException(
-				"Method getDataFile(File[] files) not yet implemented.");
-	}
 }
 

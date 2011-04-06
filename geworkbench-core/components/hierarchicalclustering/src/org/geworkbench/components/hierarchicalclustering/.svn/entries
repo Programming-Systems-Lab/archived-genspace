@@ -1,14 +1,14 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-11T19:41:01.648866Z
-7449
+2011-03-29T15:14:13.323957Z
+7679
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-efc7ddb89a98580fdd0cbe810ca7dc71
-2010-04-20T23:57:53.044360Z
-6386
+2011-04-06T19:56:05.000000Z
+565dd26bcd3f52f9ea22a1d833b8ab29
+2011-03-21T22:24:24.377666Z
+7617
 smithken
 
 
@@ -58,7 +58,7 @@ smithken
 
 
 
-1492
+1481
 
 bulb_icon_grey.gif
 file
@@ -94,9 +94,6 @@ has-props
 
 576
 
-help
-dir
-
 HierClusterViewAppComponent.java
 file
 
@@ -130,6 +127,9 @@ has-props
 
 
 6420
+
+help
+dir
 
 HierClusterTree.java
 file
@@ -205,10 +205,10 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-d92d6b66b662fd82b3449c87986dd18b
-2010-04-20T23:57:53.044360Z
-6386
+2011-04-06T19:56:05.000000Z
+714733410d6bfbc88bcc112fe908ca0d
+2011-03-21T22:24:24.377666Z
+7617
 smithken
 
 
@@ -231,7 +231,7 @@ smithken
 
 
 
-1767
+1756
 
 HierarchicalClustering.java
 file
@@ -375,10 +375,10 @@ file
 
 
 
-2011-02-16T22:18:19.000000Z
-c6502c85feaa94d81497a2ac9e38f2eb
-2011-02-07T22:54:45.474406Z
-7418
+2011-04-06T19:56:05.000000Z
+e93be961a30cf839c70366eb53c5e2e0
+2011-03-17T15:17:31.467267Z
+7598
 zji
 has-props
 
@@ -401,7 +401,7 @@ has-props
 
 
 
-12185
+12671
 
 bulb_icon_gold.gif
 file
@@ -477,10 +477,10 @@ file
 
 
 
-2011-02-16T22:18:19.000000Z
-c99c9af6793b142c716c5bd4438a7c5d
-2011-02-11T19:41:01.648866Z
-7449
+2011-04-06T19:56:05.000000Z
+5afc51ae27c8f52e7e431106b8bd14ab
+2011-03-29T15:14:13.323957Z
+7679
 zji
 has-props
 
@@ -503,7 +503,7 @@ has-props
 
 
 
-27876
+27841
 
 SortStruct.java
 file

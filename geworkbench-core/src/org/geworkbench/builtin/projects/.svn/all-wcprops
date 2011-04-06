@@ -1,13 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects
+/svn/geworkbench/!svn/ver/7682/trunk/geworkbench/src/org/geworkbench/builtin/projects
 END
 generic16x16.gif
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/builtin/projects/generic16x16.gif
+END
+DownloadClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/7582/trunk/geworkbench/src/org/geworkbench/builtin/projects/DownloadClient.java
 END
 pattern16x16.gif
 K 25
@@ -25,7 +31,7 @@ DefaultIconAssignments.java
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/7438/trunk/geworkbench/src/org/geworkbench/builtin/projects/DefaultIconAssignments.java
+/svn/geworkbench/!svn/ver/7626/trunk/geworkbench/src/org/geworkbench/builtin/projects/DefaultIconAssignments.java
 END
 PendingTreeNode.java
 K 25
@@ -67,19 +73,13 @@ SaveTree.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects/SaveTree.java
+/svn/geworkbench/!svn/ver/7537/trunk/geworkbench/src/org/geworkbench/builtin/projects/SaveTree.java
 END
-WorkspaceServiceClient.java
+UploadClient.java
 K 25
 svn:wc:ra_dav:version-url
-V 113
-/svn/geworkbench/!svn/ver/7497/trunk/geworkbench/src/org/geworkbench/builtin/projects/WorkspaceServiceClient.java
-END
-Client.java
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/7406/trunk/geworkbench/src/org/geworkbench/builtin/projects/Client.java
+V 103
+/svn/geworkbench/!svn/ver/7582/trunk/geworkbench/src/org/geworkbench/builtin/projects/UploadClient.java
 END
 ImageFileFilter.java
 K 25
@@ -93,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/1543/trunk/geworkbench/src/org/geworkbench/builtin/projects/ImageNode.java
 END
-psam16x16.gif
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/1589/trunk/geworkbench/src/org/geworkbench/builtin/projects/psam16x16.gif
-END
 structure16x16.gif
 K 25
 svn:wc:ra_dav:version-url
 V 104
 /svn/geworkbench/!svn/ver/1391/trunk/geworkbench/src/org/geworkbench/builtin/projects/structure16x16.gif
+END
+psam16x16.gif
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/1589/trunk/geworkbench/src/org/geworkbench/builtin/projects/psam16x16.gif
 END
 DataSetNode.java
 K 25
@@ -111,11 +111,11 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/1534/trunk/geworkbench/src/org/geworkbench/builtin/projects/DataSetNode.java
 END
-TreeNodeRenderer.java
+WorkspaceHandler.java
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/svn/geworkbench/!svn/ver/6516/trunk/geworkbench/src/org/geworkbench/builtin/projects/TreeNodeRenderer.java
+/svn/geworkbench/!svn/ver/7537/trunk/geworkbench/src/org/geworkbench/builtin/projects/WorkspaceHandler.java
 END
 ProjectTreeNode.java
 K 25
@@ -123,17 +123,17 @@ svn:wc:ra_dav:version-url
 V 106
 /svn/geworkbench/!svn/ver/3398/trunk/geworkbench/src/org/geworkbench/builtin/projects/ProjectTreeNode.java
 END
-WorkspaceHandler.java
+TreeNodeRenderer.java
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/svn/geworkbench/!svn/ver/7456/trunk/geworkbench/src/org/geworkbench/builtin/projects/WorkspaceHandler.java
+/svn/geworkbench/!svn/ver/6516/trunk/geworkbench/src/org/geworkbench/builtin/projects/TreeNodeRenderer.java
 END
 FileOpenHandler.java
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/7345/trunk/geworkbench/src/org/geworkbench/builtin/projects/FileOpenHandler.java
+/svn/geworkbench/!svn/ver/7682/trunk/geworkbench/src/org/geworkbench/builtin/projects/FileOpenHandler.java
 END
 project16x16.gif
 K 25
@@ -141,17 +141,17 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/6517/trunk/geworkbench/src/org/geworkbench/builtin/projects/project16x16.gif
 END
-DataSetSubNode.java
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/DataSetSubNode.java
-END
 Phenotype16x16.gif
 K 25
 svn:wc:ra_dav:version-url
 V 104
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/builtin/projects/Phenotype16x16.gif
+END
+DataSetSubNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/DataSetSubNode.java
 END
 busy.gif
 K 25
@@ -159,23 +159,17 @@ svn:wc:ra_dav:version-url
 V 94
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/builtin/projects/busy.gif
 END
-LoadData.java
+RegisterBean.java
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/7192/trunk/geworkbench/src/org/geworkbench/builtin/projects/LoadData.java
+V 103
+/svn/geworkbench/!svn/ver/7406/trunk/geworkbench/src/org/geworkbench/builtin/projects/RegisterBean.java
 END
 DataSetSaveNode.java
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/geworkbench/!svn/ver/5704/trunk/geworkbench/src/org/geworkbench/builtin/projects/DataSetSaveNode.java
-END
-RegisterBean.java
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/svn/geworkbench/!svn/ver/7406/trunk/geworkbench/src/org/geworkbench/builtin/projects/RegisterBean.java
 END
 Icons.java
 K 25
@@ -241,7 +235,7 @@ ProjectPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svn/geworkbench/!svn/ver/7497/trunk/geworkbench/src/org/geworkbench/builtin/projects/ProjectPanel.java
+/svn/geworkbench/!svn/ver/7682/trunk/geworkbench/src/org/geworkbench/builtin/projects/ProjectPanel.java
 END
 workspace16x16.gif
 K 25
@@ -259,7 +253,13 @@ RWspHandler.java
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHandler.java
+/svn/geworkbench/!svn/ver/7582/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHandler.java
+END
+LoadDataDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/7613/trunk/geworkbench/src/org/geworkbench/builtin/projects/LoadDataDialog.java
 END
 MicroarraySetNode.java
 K 25
@@ -271,7 +271,7 @@ RWspHelper.java
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/geworkbench/!svn/ver/7513/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHelper.java
+/svn/geworkbench/!svn/ver/7582/trunk/geworkbench/src/org/geworkbench/builtin/projects/RWspHelper.java
 END
 SaveFileFilterFactory.java
 K 25
@@ -295,5 +295,5 @@ RegPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7497/trunk/geworkbench/src/org/geworkbench/builtin/projects/RegPanel.java
+/svn/geworkbench/!svn/ver/7614/trunk/geworkbench/src/org/geworkbench/builtin/projects/RegPanel.java
 END

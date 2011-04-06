@@ -1,15 +1,15 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-12-16T16:46:53.281032Z
-7338
-maz
+2011-03-28T20:49:09.224686Z
+7673
+smithken
 
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-1bd93a55fb6522fddbf135eef9431acb
-2010-11-16T20:20:27.434981Z
-7190
-zji
+2011-04-06T19:56:05.000000Z
+7153b6b8ebe36525e68a6b48a04c4e08
+2011-03-28T20:05:18.132977Z
+7668
+smithken
 
 
 
@@ -126,7 +126,7 @@ zji
 
 
 
-1524
+1509
 
 BlastViewComponent.java
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-ed270ca77c2cfd8f23c57c89f5829976
-2010-12-09T19:57:45.788737Z
-7316
-maz
+2011-04-06T19:56:05.000000Z
+64048cf976a44283210c83490671f17b
+2011-03-24T18:57:49.748578Z
+7629
+youmi
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-29313
+29705
 
 BlastViewComponent.cwb.xml
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-24T18:12:13.000000Z
-fef0d9fa4f7f457a69e034708253f48e
-2010-11-16T20:20:27.434981Z
-7190
-zji
+2011-04-06T19:56:05.000000Z
+9323b9ae2098586ef73d6426652fb576
+2011-03-28T20:49:09.224686Z
+7673
+smithken
 
 
 
@@ -296,7 +296,7 @@ zji
 
 
 
-1471
+1469
 
 ParameterSetting.java
 file

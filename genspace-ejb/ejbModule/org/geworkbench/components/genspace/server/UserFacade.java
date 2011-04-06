@@ -80,6 +80,17 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	@Override
 	public WorkflowFolder getRootFolder() {
 		WorkflowFolder ret = getMe().getRootFolder();
+		if(ret == null)
+		{
+			ret = new WorkflowFolder();
+			ret.setOwner(getUser());
+			ret.setName("Root");
+			getEntityManager().persist(ret);
+			User u = getUser();
+			u.setRootFolder(ret);
+			getEntityManager().merge(u);
+			ret = getMe().getRootFolder();
+		}
 		for(WorkflowFolder r : ret.getChildren())
 		{
 			for(UserWorkflow uw : r.getWorkflows())

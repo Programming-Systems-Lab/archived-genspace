@@ -2,14 +2,14 @@ package org.geworkbench.components.interactions.cellularnetwork;
 
 /**
  * @author my2248
- * @version $Id$ 
+ * @version $Id: ExportSelectionPanel.java 7590 2011-03-15 22:05:36Z smithken $ 
  */
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
@@ -29,30 +29,25 @@ import javax.swing.JLabel;
 import javax.swing.SwingWorker;
 
 import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory; 
+import org.apache.commons.logging.LogFactory;
 
 import org.geworkbench.util.ProgressBar;
 
-@SuppressWarnings("unchecked")
 public class ExportSelectionPanel extends JPanel {
 
 	private static final long serialVersionUID = 8300065011440745717L;
 
-	private Log log = LogFactory.getLog(this.getClass());
+	private Log log = LogFactory.getLog(ExportSelectionPanel.class);
 
-	public JDialog parent = null;
+	private final JDialog parent;
 
 	private JComboBox formatJcb = new JComboBox();
 	private JComboBox presentJcb = new JComboBox();
 
-	private ProgressBar computePb = null;
-	private String fileName  = null;
-	private String context = null;
-	private String version = null;
-	private List<String> interactionTypes = null;
-
- 
-	exportWorker worker = null;
+	private String fileName = null;
+	private final String context;
+	private final String version;
+	private final List<String> interactionTypes;
 
 	public ExportSelectionPanel(JDialog parent, String context, String version,
 			List<String> interactionTypes) {
@@ -68,14 +63,13 @@ public class ExportSelectionPanel extends JPanel {
 
 	}
 
-	@SuppressWarnings("unchecked")
 	private void init() {
 
 		JLabel label1 = new JLabel("File Format:    ");
 
 		formatJcb.addItem(Constants.SIF_FORMART);
-		// formatJcb.addItem("adj format");
-		JLabel label2 = new JLabel("Node Present By:   ");
+		formatJcb.addItem(Constants.ADJ_FORMART);
+		JLabel label2 = new JLabel("Node Represented By:   ");
 
 		presentJcb.addItem(Constants.GENE_NAME);
 
@@ -114,19 +108,18 @@ public class ExportSelectionPanel extends JPanel {
 
 	private void continueButtonActionPerformed() {
 
-		
-
 		File f = new File("export_" + context + "_" + version + ".sif");
+		String selectedFormart = formatJcb.getSelectedItem().toString();
+		if (selectedFormart.equals(Constants.ADJ_FORMART))
+			f = new File("export_" + context + "_" + version + ".adj");
 		JFileChooser jFileChooser1 = new JFileChooser(f);
 		jFileChooser1.setSelectedFile(f);
 		String newFileName = null;
 		if (JFileChooser.APPROVE_OPTION == jFileChooser1.showSaveDialog(null)) {
-
 			newFileName = jFileChooser1.getSelectedFile().getPath();
-
-		}
-		else
+		} else {
 			return;
+		}
 
 		if (new File(newFileName).exists()) {
 			int o = JOptionPane.showConfirmDialog(null,
@@ -139,19 +132,19 @@ public class ExportSelectionPanel extends JPanel {
 		}
 
 		parent.dispose();
-		computePb = ProgressBar.create(ProgressBar.INDETERMINATE_TYPE);
+		ProgressBar computePb = ProgressBar
+				.create(ProgressBar.INDETERMINATE_TYPE);
 
-		worker = new exportWorker(computePb, newFileName);
-		worker.execute();
+		new ExportWorker(computePb, newFileName).execute();
 
 	}
 
-	private class exportWorker extends SwingWorker<Void, Void> implements
+	private class ExportWorker extends SwingWorker<Void, Void> implements
 			Observer {
-		
+
 		ProgressBar pb = null;
-		
-		exportWorker(ProgressBar pb, String newFileName) {
+
+		ExportWorker(ProgressBar pb, String newFileName) {
 			super();
 			this.pb = pb;
 			fileName = newFileName;
@@ -163,7 +156,7 @@ public class ExportSelectionPanel extends JPanel {
 				log.info("Exporting task is cancel.");
 
 			} else {
-				log.info("Exporting task is done.");			 
+				log.info("Exporting task is done.");
 				pb.dispose();
 
 			}
@@ -196,25 +189,29 @@ public class ExportSelectionPanel extends JPanel {
 
 				InteractionsConnectionImpl interactionsConnection = new InteractionsConnectionImpl();
 
-				if (selectedFormart.equalsIgnoreCase(Constants.SIF_FORMART)) {
+				for (String interactionType : interactionTypes) {
+					if (isCancelled())
+						break;
+					List<String> lines = new ArrayList<String>();
 
-					
-					for (String interactionType : interactionTypes) {
-						if (isCancelled())
-							break;
-						List<String> sifLines = new ArrayList<String>();
-						sifLines = interactionsConnection
+					if (selectedFormart.equalsIgnoreCase(Constants.SIF_FORMART))
+						lines = interactionsConnection
 								.getInteractionsSifFormat(context, version,
 										interactionType, selectedPresent);
-						for (String line : sifLines) {
-							if (isCancelled())
-								break;
-							writer.write(line);
-							writer.write("\n");
+					else if ((selectedFormart
+							.equalsIgnoreCase(Constants.ADJ_FORMART)))
+						lines = interactionsConnection
+								.getInteractionsAdjFormat(context, version,
+										interactionType, selectedPresent);
 
-						}
-                        writer.flush();
+					for (String line : lines) {
+						if (isCancelled())
+							break;
+						writer.write(line);
+						writer.write("\n");
+
 					}
+					writer.flush();
 				}
 
 				writer.close();
@@ -224,13 +221,8 @@ public class ExportSelectionPanel extends JPanel {
 			} catch (Exception ex) {
 				System.out.println(ex.getMessage());
 			}
-			 
 
 			return null;
-		}
-
-		protected ProgressBar getProgressBar() {
-			return pb;
 		}
 
 		public void update(Observable o, Object arg) {

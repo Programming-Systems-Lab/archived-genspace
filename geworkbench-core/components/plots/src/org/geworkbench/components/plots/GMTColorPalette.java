@@ -1,6 +1,6 @@
 package org.geworkbench.components.plots;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * Color palette generator based on GMT standards, see:
@@ -9,11 +9,13 @@ import java.awt.*;
  * User: mhall
  * Date: Nov 15, 2005
  * Time: 5:31:58 PM
+ * 
+ * @version $Id: GMTColorPalette.java 7597 2011-03-17 14:53:59Z zji $
  */
 public class GMTColorPalette {
 
     public GMTColorPalette(ColorRange[] range) {
-        this(range, Color.CYAN, Color.MAGENTA, Color.BLACK);
+        this(range, range[0].minColor, range[range.length-1].maxColor, Color.BLACK);
     }
 
     public GMTColorPalette(ColorRange[] range, Color smallColor,
@@ -45,7 +47,7 @@ public class GMTColorPalette {
             if(range[i].isInRange(val)) { return range[i].getColor(val); }
         }
         if(val < range[0].min) { return smallColor; }
-        if(val > range[range.length - 1].max) { return largeColor; }
+        if(val >= range[range.length - 1].max) { return largeColor; }
         // assume NaN, probably never happens...
         return NaNColor;
     }

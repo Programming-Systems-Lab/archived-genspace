@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
@@ -16,7 +14,7 @@ import javax.swing.JOptionPane;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
-import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
+import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
@@ -26,8 +24,9 @@ import org.geworkbench.parsers.InputFileFormatException;
 
 /**
  * @author John Watkinson
+ * @version $Id$
  */
-public class AdjacencyMatrixDataSet extends CSAncillaryDataSet implements DSAncillaryDataSet {
+public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 
     static Log log = LogFactory.getLog(AdjacencyMatrixDataSet.class);
 
@@ -36,18 +35,16 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet implements DSAnci
      */
     private static final long serialVersionUID = -6835973287728524201L;
     private AdjacencyMatrix matrix;
-    private int geneId;
-    private double threshold;
-    private int depth;
+
+    private final double threshold;
     private String networkName;
 
-    public AdjacencyMatrixDataSet(AdjacencyMatrix matrix, int geneId, double threshold, int depth, String name, String networkName, DSMicroarraySet parent) {
-        super(parent, name);
+	@SuppressWarnings("unchecked")
+	public AdjacencyMatrixDataSet(final AdjacencyMatrix matrix, final double threshold, final String name, final String networkName, final DSMicroarraySet<? extends DSMicroarray> parent) {
+        super((DSDataSet<DSMicroarray>) parent, name);
         setID(RandomNumberGenerator.getID());
         this.matrix = matrix;
-        this.geneId = geneId;
         this.threshold = threshold;
-        this.depth = depth;
         this.networkName = networkName;
     }
 
@@ -61,21 +58,21 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet implements DSAnci
                 return;
             }
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            DSMicroarraySet mset = matrix.getMicroarraySet();
+            DSMicroarraySet<DSMicroarray> mset = matrix.getMicroarraySet();
             DSItemList<DSGeneMarker> markers = mset.getMarkers();
-            HashMap<Integer, HashMap<Integer, Float>> geneRows = matrix.getGeneRows();
+
             // if entry key is less than 0, for CNKB component, it means the gene is in currently selected microarray.
-            for (Map.Entry<Integer, HashMap<Integer, Float>> entry : geneRows.entrySet()) {
+            for (Integer node1 : matrix.getNodes()) {
                 String geneName = "unknown";
-                if (entry.getKey() >= 0)
-                	geneName = markers.get(entry.getKey()).getLabel();
+                if (node1 >= 0)
+                	geneName = markers.get(node1).getLabel();
                 writer.write(geneName + "\t");
-                HashMap<Integer, Float> destRows = entry.getValue();
-                for (Map.Entry<Integer, Float> entry2 : destRows.entrySet()) {
+
+                for (AdjacencyMatrix.Edge edge : matrix.getEdges(node1)) {
                     String geneName2 = "unknown";
-                    if (entry2.getKey() >= 0)
-                    	geneName2 = markers.get(entry2.getKey()).getLabel();
-                    writer.write(geneName2 + "\t" + entry2.getValue() + "\t");
+                    if (edge.node2 >= 0)
+                    	geneName2 = markers.get(edge.node2).getLabel();
+                    writer.write(geneName2 + "\t" + edge.info.value + "\t");
                 }
                 writer.write("\n");
             }
@@ -142,7 +139,7 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet implements DSAnci
                                     float mi = Float.parseFloat(strMi);
                                     if (geneId1 != geneId2) {
                                         connectionsInstantiated++;
-                                        matrix.add(geneId1, geneId2, mi);
+                                        matrix.add(geneId1, geneId2, mi, null);
                                         // this.addInteractionType2(geneId1, geneId2, mi);
                                     } else {
                                         connectionsIgnored++;
@@ -176,32 +173,8 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet implements DSAnci
         return matrix;
     }
 
-    public void setMatrix(AdjacencyMatrix matrix) {
-        this.matrix = matrix;
-    }
-
-    public int getGeneId() {
-        return geneId;
-    }
-
-    public void setGeneId(int geneId) {
-        this.geneId = geneId;
-    }
-
     public double getThreshold() {
         return threshold;
-    }
-
-    public void setThreshold(double threshold) {
-        this.threshold = threshold;
-    }
-
-    public int getDepth() {
-        return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
     }
 
     public File getDataSetFile() {

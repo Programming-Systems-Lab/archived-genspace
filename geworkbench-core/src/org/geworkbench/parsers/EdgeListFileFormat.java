@@ -15,7 +15,7 @@ import javax.swing.filechooser.FileFilter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
+import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.parsers.resources.EdgeListResource;
 import org.geworkbench.bison.parsers.resources.Resource;
 import org.geworkbench.util.pathwaydecoder.mutualinformation.Edge;
@@ -27,7 +27,6 @@ import org.geworkbench.util.pathwaydecoder.mutualinformation.EdgeListDataSet;
  * @author ch2514
  * @version $Id: EdgeListFileFormat.java,v 1.4 2009-10-07 15:38:48 my2248 Exp $
  */
-@SuppressWarnings("unchecked")
 public class EdgeListFileFormat extends DataSetFileFormat {
 	private Log log = LogFactory.getLog(EdgeListFileFormat.class);
 
@@ -42,7 +41,6 @@ public class EdgeListFileFormat extends DataSetFileFormat {
 	 */
 	String[] elExtensions = { "txt", "TXT", "adj", "ADJ" };
 	EdgeListResource resource = new EdgeListResource();
-	DSMicroarraySet microarraySet = null;
 	/**
 	 * <code>FileFilter</code> for gating Edge List files, based on their
 	 * extension.
@@ -101,23 +99,17 @@ public class EdgeListFileFormat extends DataSetFileFormat {
 	 *            File
 	 * @return DataSet
 	 */
-	public DSDataSet getDataFile(File file) throws InterruptedIOException {
-		DSDataSet ds = null;
+	public DSDataSet<? extends DSBioObject> getDataFile(File file) throws InterruptedIOException {
+		EdgeListDataSet ds = null;
 		try {
-			ds = (DSDataSet) getEdgeListDataSet(file);
+			ds = getEdgeListDataSet(file);
 		} catch (InputFileFormatException ife) {
 			ife.printStackTrace();
 		}
 		return ds;
 	}
 
-	public DSMicroarraySet getMArraySet(File file)
-			throws InputFileFormatException {
-		// no-op
-		return null;
-	}
-
-	public EdgeListDataSet getEdgeListDataSet(File file)
+	private EdgeListDataSet getEdgeListDataSet(File file)
 			throws InputFileFormatException, InterruptedIOException {
 		EdgeListDataSet result = null;
 		if (!checkFormat(file))
@@ -310,7 +302,7 @@ public class EdgeListFileFormat extends DataSetFileFormat {
 	 *            File[]
 	 * @return DataSet
 	 */
-	public DSDataSet getDataFile(File[] files) {
+	public DSDataSet<? extends DSBioObject> getDataFile(File[] files) {
 		// no-op
 		return null;
 	}

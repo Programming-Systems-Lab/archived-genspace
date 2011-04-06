@@ -46,6 +46,8 @@ public class Constants  {
 	public static final String CNKB_SELECTION = "cnkb selection";
 
 	public static final String CNKB_SELECTION_INDEX = "CNKB_SELECTION_INDEX";
+	
+	public static final String CNKB_PREFERENCE = "CNKB_PREFERENCE";
 
 	public static final String SELECTCONTEXT = "Select Context";
 

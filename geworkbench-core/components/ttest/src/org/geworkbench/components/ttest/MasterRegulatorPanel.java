@@ -44,7 +44,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  *	Parameter Panel used for Master Regulator Analysis
  *	@author yc2480 
- *  @version $Id: MasterRegulatorPanel.java 7469 2011-02-18 20:53:04Z zji $
+ *  @version $Id: MasterRegulatorPanel.java 7683 2011-03-29 18:03:37Z zji $
  */
 public class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = -6160058089960168299L;
@@ -196,7 +196,7 @@ public class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 	                chooser.showOpenDialog(MasterRegulatorPanel.this);
 	                if (chooser.getSelectedFile()!=null){
 		                adjMatrixFileStr = chooser.getSelectedFile().getPath();
-		                AdjacencyMatrixDataSet adjMatrix=new AdjacencyMatrixDataSet(null, 0, 0, 0, adjMatrixFileStr, adjMatrixFileStr, maSet); 
+		                AdjacencyMatrixDataSet adjMatrix=new AdjacencyMatrixDataSet(null, 0, adjMatrixFileStr, adjMatrixFileStr, maSet); 
 		                adjMatrix.readFromFile(adjMatrixFileStr, maSet);
 		                this.adjMatrixHolder.remove("adjMatrix");
 		                this.adjMatrixHolder.put("adjMatrix", adjMatrix);
@@ -381,7 +381,7 @@ public class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
     	networkFrom.setSelectedIndex((Integer)parameters.get("networkFrom"));
     	networkTextField.setText((String)parameters.get("networkField"));
     	if (maSet!=null){
-    		AdjacencyMatrixDataSet adjMatrix2=new AdjacencyMatrixDataSet(null, 0, 0, 0, networkTextField.getText(), networkTextField.getText(), maSet); 
+    		AdjacencyMatrixDataSet adjMatrix2=new AdjacencyMatrixDataSet(null, 0, networkTextField.getText(), networkTextField.getText(), maSet); 
     		adjMatrix2.readFromFile(networkTextField.getText(), maSet);
     		this.adjMatrix.remove("adjMatrix");
 			this.adjMatrix.put("adjMatrix", adjMatrix2);

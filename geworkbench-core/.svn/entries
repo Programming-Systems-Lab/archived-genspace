@@ -1,15 +1,15 @@
 10
 
 dir
-7514
+7702
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-02T16:25:00.256527Z
-7514
-zji
+2011-04-06T15:23:14.640812Z
+7702
+maz
 has-props
 
 
@@ -266,7 +266,7 @@ has-props
 
 .classpath
 file
-
+7514
 
 
 
@@ -420,40 +420,6 @@ has-props
 
 17571
 
-geworkbench-lite.ipr
-file
-
-
-
-
-2011-01-18T20:35:55.000000Z
-0961f5b52af0c5237c479a684a981bbf
-2007-05-16T20:46:26.000000Z
-2859
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14878
-
 usage.txt
 file
 
@@ -487,6 +453,40 @@ has-props
 
 
 3098
+
+geworkbench-lite.ipr
+file
+
+
+
+
+2011-01-18T20:35:55.000000Z
+0961f5b52af0c5237c479a684a981bbf
+2007-05-16T20:46:26.000000Z
+2859
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14878
 
 nbproject
 dir
@@ -939,6 +939,12 @@ has-props
 
 25858
 
+conf
+dir
+
+components
+dir
+
 ReleaseNotes_2.0.1.txt
 file
 
@@ -972,12 +978,6 @@ has-props
 
 
 26231
-
-components
-dir
-
-conf
-dir
 
 ReleaseNotes_2.0.2.txt
 file
@@ -1013,6 +1013,9 @@ has-props
 
 26638
 
+src
+dir
+
 caWorkbench_Readme_v3.0.txt
 file
 
@@ -1046,9 +1049,6 @@ has-props
 
 
 2574
-
-src
-dir
 
 ReleaseNotes1.0.5.txt
 file
@@ -1152,40 +1152,6 @@ keshav
 
 19453
 
-ReleaseNotes1.8.0.txt
-file
-
-
-
-
-2011-01-18T20:35:26.000000Z
-89fa8b9f9d6e97ed64267abc8ad487d7
-2009-11-09T17:14:11.000000Z
-5737
-jiz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21345
-
 ReleaseNotes1.6.2.txt
 file
 
@@ -1220,18 +1186,17 @@ keshav
 
 18940
 
-YG_cDNA_annot.csv
+ReleaseNotes1.8.0.txt
 file
 
 
 
 
 2011-01-18T20:35:26.000000Z
-2b4de95ab609266736ff57a56f7b2f6a
-2005-08-22T20:38:15.000000Z
-147
-manju
-has-props
+89fa8b9f9d6e97ed64267abc8ad487d7
+2009-11-09T17:14:11.000000Z
+5737
+jiz
 
 
 
@@ -1252,7 +1217,8 @@ has-props
 
 
 
-1529229
+
+21345
 
 ReleaseNotes1.6.3.txt
 file
@@ -1287,6 +1253,40 @@ ksmith
 
 
 19053
+
+YG_cDNA_annot.csv
+file
+
+
+
+
+2011-01-18T20:35:26.000000Z
+2b4de95ab609266736ff57a56f7b2f6a
+2005-08-22T20:38:15.000000Z
+147
+manju
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1529229
 
 build-component.xml
 file
@@ -1612,9 +1612,6 @@ has-props
 _all
 dir
 
-annotation
-dir
-
 devReadme.txt
 file
 
@@ -1648,6 +1645,9 @@ has-props
 
 
 233
+
+annotation
+dir
 
 Bcell-100.exp_ARACNe_FBW_threshold.txt
 file
