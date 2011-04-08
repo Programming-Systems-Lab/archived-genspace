@@ -295,7 +295,7 @@ public class RosterFrame extends javax.swing.JFrame implements RosterListener {
 //		setJMenuBar(jMenuBar1);
 		setTitle("Buddies");
 		rosterTree = new JTree();
-		
+		rosterTree.setRootVisible(false);
 		rosterTree.setUI(new BasicTreeUI(){
 			@Override
 	        protected AbstractLayoutCache.NodeDimensions createNodeDimensions() {
