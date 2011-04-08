@@ -17,6 +17,10 @@ import org.geworkbench.engine.properties.PropertiesManager;
 public class GenSpaceLogPreferences extends JPanel implements VisualPlugin,
 		ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1021538435104037797L;
 	JRadioButton log, logAnon, noLog;
 	ButtonGroup group;
 	JPanel radioPanel, saveReset;

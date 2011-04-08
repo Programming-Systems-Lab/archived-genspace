@@ -10,15 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
-
-import org.geworkbench.components.genspace.bean.DomainUtil;
-import org.geworkbench.components.genspace.bean.RatingBean;
 
 @Entity
 public class Workflow implements Serializable {

@@ -1,6 +1,7 @@
 package org.geworkbench.components.genspace.chat;
 
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
 import javax.swing.SwingWorker;
@@ -15,7 +16,6 @@ import org.jivesoftware.smack.ChatManagerListener;
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.MessageListener;
 import org.jivesoftware.smack.Roster;
-import org.jivesoftware.smack.SASLAuthentication;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.packet.Message;
@@ -32,7 +32,17 @@ public class ChatReceiver implements MessageListener, ChatManagerListener {
 	public HashMap<String, ChatWindow> chats = new HashMap<String, ChatWindow>();
 	public static ChatManager manager;
 	public static XMPPConnection connection;
+	public static void main(String[] args) {
+//		XMPPConnection.DEBUG_ENABLED = true;
 
+		ChatReceiver rec = new ChatReceiver();
+		rec.login("jontest", "test123");
+		Scanner s = new Scanner(System.in);
+		while(s.hasNextLine())
+		{
+				break;
+		}
+	}
 	public ChatReceiver() {
 	}
 
@@ -61,6 +71,7 @@ public class ChatReceiver implements MessageListener, ChatManagerListener {
 						Roster r = connection.getRoster();
 						r.setSubscriptionMode(Roster.SubscriptionMode.accept_all);
 						rf = new RosterFrame();
+						rf.setSize(240, 500);
 						rf.setRoster(r);
 						rf.setVisible(true);
 
@@ -74,15 +85,16 @@ public class ChatReceiver implements MessageListener, ChatManagerListener {
 			@Override
 			protected Boolean doInBackground() throws Exception {
 				ConnectionConfiguration config = new ConnectionConfiguration(
-						RuntimeEnvironmentSettings.XMPP_HOST, 5228);
+						RuntimeEnvironmentSettings.XMPP_HOST, 5222,"genspace");
 				// SmackConfiguration.setPacketReplyTimeout(1500000);
-				config.setSASLAuthenticationEnabled(false);
+//				config.setSASLAuthenticationEnabled(false);
 
 				connection = new XMPPConnection(config);
 
-				SASLAuthentication.supportSASLMechanism("PLAIN", 0);
+//				SASLAuthentication.supportSASLMechanism("PLAIN", 0);
 				try {
 					connection.connect();
+//					System.out.println("Connected");
 					connection.login(u, p);
 
 				} catch (XMPPException e) {

@@ -79,6 +79,7 @@ public class ScreenShareListener extends IoHandlerAdapter {
 	@Override
 	public void messageReceived(IoSession session, Object message) {
 		// Check that we can service the request context
+		@SuppressWarnings("unchecked")
 		java.util.HashMap<String, Object> m = (HashMap<String, Object>) message;
 		rcv.receiveImageUpdate(m, (Integer) m.get("width"),
 				(Integer) m.get("height"));

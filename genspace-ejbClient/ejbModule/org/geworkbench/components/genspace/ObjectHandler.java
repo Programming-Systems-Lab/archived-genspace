@@ -1,11 +1,9 @@
 package org.geworkbench.components.genspace;
 
 import java.lang.reflect.Method;
-import java.net.Socket;
 import java.util.Calendar;
 import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
 
 import javax.swing.SwingWorker;
 
@@ -13,8 +11,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractAnalysis;
 import org.geworkbench.bison.model.analysis.Analysis;
-import org.geworkbench.components.genspace.entity.User;
-import org.geworkbench.util.FilePathnameUtils;
 
 /**
  * A handler used to log events.
@@ -62,16 +58,19 @@ public class ObjectHandler {
 				ObjectLogger o = null;
 				String analysisName = "";
 				analysisName = ((AbstractAnalysis) analysis).getLabel();
+				@SuppressWarnings("rawtypes")
 				Map parameters = analysis.getParameters();
 
 				if (logStatus == 0) {
 					log.debug("genspace - Logging");
 
-					o = new ObjectLogger(analysisName, dataSetName,
+					o = new ObjectLogger();
+					o.log(analysisName, dataSetName,
 							lastTransactionId, parameters);
 				} else if (logStatus == 1) {
 					log.debug("genspace - Logging anonymously");
-					o = new ObjectLogger(analysisName, dataSetName,
+					o = new ObjectLogger();
+					o.log(analysisName, dataSetName,
 							lastTransactionId, parameters);
 				}
 

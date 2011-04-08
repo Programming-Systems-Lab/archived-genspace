@@ -3,7 +3,6 @@ package org.geworkbench.components.genspace.entity;
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,11 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
-import org.geworkbench.components.genspace.workflowRepository.WorkflowNode;
 
 @Entity
 @Table(name="registration")

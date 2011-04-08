@@ -20,7 +20,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
-import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
 import org.geworkbench.components.genspace.server.UsageInformationRemote;
 import org.geworkbench.components.genspace.ui.LoadingPanel;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
@@ -36,7 +35,6 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 	private JButton button = new JButton("Search");
 	private JLabel label = new JLabel();
 	private JPanel selectPanel = new JPanel();
-	private ArrayList<Workflow> workflows = new ArrayList<Workflow>();
 	private LoadingPanel loader = new LoadingPanel();
 	private static UsageInformationRemote facade;
 	public static UsageInformationRemote getFacade()

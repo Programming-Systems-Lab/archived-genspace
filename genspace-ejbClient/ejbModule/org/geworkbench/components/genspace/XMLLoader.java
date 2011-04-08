@@ -5,16 +5,13 @@ package org.geworkbench.components.genspace;
  * and then using the DatabaseManager to insert those into the database.
  */
 
-import java.io.IOException;
 import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -217,7 +214,6 @@ public class XMLLoader {
 			try {
 				t.setDate(DateFormat.getInstance().parse(timeFormat));
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			t.setHostname(host);
@@ -232,7 +228,6 @@ public class XMLLoader {
 		try {
 			event.setCreatedAt(DateFormat.getInstance().parse(timeFormat));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		event.setToolname(analysis);
@@ -266,16 +261,6 @@ public class XMLLoader {
 		}
 		return textVal;
 	}
-
-
-	/**
-	 * Calls getTextValue and returns a int value
-	 */
-	private int getIntValue(Element ele, String tagName) {
-		//in production application you would catch the exception
-		return Integer.parseInt(getTextValue(ele,tagName));
-	}
-
 
 	/* Only use this as a standalone method. It either reads a single file or, if it's a directory, all files from that directory. */
 	public static void main(String[] args)

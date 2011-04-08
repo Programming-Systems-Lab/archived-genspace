@@ -29,9 +29,9 @@ import javax.swing.WindowConstants;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.RealTimeWorkFlowSuggestion;
-import org.geworkbench.components.genspace.TransactionElement;
 import org.geworkbench.components.genspace.chat.ScreenShareListener;
 import org.geworkbench.components.genspace.chat.ScreenSharePublisher;
+import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.GUIFramework;
@@ -47,6 +47,10 @@ import com.sun.jimi.core.JimiException;
  * @author jsb2125
  */
 public class ChatWindow extends javax.swing.JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6960828216997367807L;
 	private Chat chat;
 	private String chatText = "";
 
@@ -89,7 +93,7 @@ public class ChatWindow extends javax.swing.JFrame {
 	 */
 	public void setChat(Chat c) {
 		this.chat = c;
-		this.setTitle("Chat with " + c.getParticipant());
+		this.setTitle("Chat with " + c.getParticipant().replace("@genspace", ""));
 	}
 
 	private ScreenShareListener screenListener;
@@ -102,7 +106,7 @@ public class ChatWindow extends javax.swing.JFrame {
 	private void processTextMessage(Message m) {
 		if (!last.equals(lastChatter.YOU)) {
 			chatText += "<br><font color=\"green\">"
-					+ chat.getParticipant()
+					+ chat.getParticipant().replace("@genspace", "")
 					+ "      "
 					+ Calendar.getInstance().get(Calendar.HOUR)
 					+ ":"
@@ -128,8 +132,9 @@ public class ChatWindow extends javax.swing.JFrame {
 			// If this window has been hidden, unhide it
 			if (!this.isVisible())
 				this.setVisible(true);
-
-			if (m.getProperty("specialType").equals(messageTypes.CHAT)) {
+			if(m.getProperty("specialType") == null)
+				processTextMessage(m);
+			else if (m.getProperty("specialType").equals(messageTypes.CHAT)) {
 				processTextMessage(m);
 			} else if (m.getProperty("specialType").equals(
 					messageTypes.WORKFLOW)) {
@@ -259,8 +264,8 @@ public class ChatWindow extends javax.swing.JFrame {
 		fr.add(p);
 		fr.setSize(600, 500);
 		p.setSize(600, 500);
+		p.render((Workflow) m.getProperty("workflow"));
 //		p.render(m.getBody(), "Workflow from " + m.getFrom());
-		//TODO
 		fr.setVisible(true);
 	}
 
@@ -460,6 +465,7 @@ public class ChatWindow extends javax.swing.JFrame {
 		}
 		wf = wf.substring(0, wf.length() - 1);
 		m.setBody(wf);
+		m.setProperty("workflow", RealTimeWorkFlowSuggestion.cwf);
 		try {
 			chat.sendMessage(m);
 		} catch (XMPPException e) {
@@ -514,7 +520,7 @@ public class ChatWindow extends javax.swing.JFrame {
 				mnuShareScreenActionPerformed(evt);
 			}
 		});
-		jMenu1.add(mnuShareScreen);
+//		jMenu1.add(mnuShareScreen);
 
 		mnuEndChat.setText("End Chat");
 		mnuEndChat.addActionListener(new java.awt.event.ActionListener() {
@@ -523,6 +529,7 @@ public class ChatWindow extends javax.swing.JFrame {
 				mnuEndChatActionPerformed(evt);
 			}
 		});
+		mnuEndChat.setMnemonic('W');
 		jMenu1.add(mnuEndChat);
 
 		jMenuBar1.add(jMenu1);

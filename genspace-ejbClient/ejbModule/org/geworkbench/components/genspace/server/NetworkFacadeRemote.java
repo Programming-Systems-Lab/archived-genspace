@@ -1,7 +1,6 @@
 package org.geworkbench.components.genspace.server;
 import java.util.List;
 
-import javax.ejb.Local;
 import javax.ejb.Remote;
 
 import org.geworkbench.components.genspace.entity.Network;

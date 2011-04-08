@@ -19,7 +19,6 @@
 
 package org.geworkbench.components.genspace;
 
-import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,10 +36,6 @@ public class GenspaceLogger {
 
 	private Log log = LogFactory.getLog(GenspaceLogger.class);
 
-	private List<Class> hier = null;
-
-	private boolean stop = false;
-
 	/**
 	 * Intercept all events.
 	 * 
@@ -53,6 +48,7 @@ public class GenspaceLogger {
 		if (event != null && event.getClass().equals(AnalysisInvokedEvent.class)) {
 			log.info("event: " + event.getClass().getSimpleName());
 
+			@SuppressWarnings("unused")
 			ObjectHandler logger = new ObjectHandler(event,source);
 		}
 	}

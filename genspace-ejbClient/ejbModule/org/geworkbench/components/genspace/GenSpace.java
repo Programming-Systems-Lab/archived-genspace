@@ -37,10 +37,10 @@ public class GenSpace {
 		if(Thread.currentThread().getName().contains("AWT-EventQueue"))
 		{
 			System.err.println(">>>>>>>>>"+Thread.currentThread().getName());
-//			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
+			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
 		}	
 		try {
-//			System.setProperty("org.omg.CORBA.ORBInitialHost", "boris.cs.columbia.edu");
+			System.setProperty("org.omg.CORBA.ORBInitialHost", RuntimeEnvironmentSettings.SERVER);
 			if(ctx == null)
 			{
 				ctx = new InitialContext();
@@ -54,6 +54,7 @@ public class GenSpace {
 	}
 	
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		GenSpace g = new GenSpace();
 	}
 

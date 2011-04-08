@@ -1,14 +1,9 @@
 package org.geworkbench.components.genspace;
 
-import java.beans.XMLEncoder;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,15 +12,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
-import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.AnalysisEventParameter;
 import org.geworkbench.components.genspace.entity.Transaction;
-import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.util.FilePathnameUtils;
 
 /**
@@ -35,13 +26,17 @@ import org.geworkbench.util.FilePathnameUtils;
  */
 public class ObjectLogger {
 
-	private Log log = LogFactory.getLog(this.getClass());
+//	private Log log = LogFactory.getLog(this.getClass());
 
 	public static Transaction curTransaction = null;
 	
-	public ObjectLogger(final String analysisName,final String dataSetName,
+	public ObjectLogger()
+	{
+		
+	}
+	public void log(final String analysisName,final String dataSetName,
 			final String transactionId,
-			final Map parameters) {
+			@SuppressWarnings("rawtypes") final Map parameters) {
 
 		
 			SwingWorker<Transaction, Void > worker = new SwingWorker<Transaction, Void>()
@@ -71,7 +66,6 @@ public class ObjectLogger {
 						try {
 							hostname = InetAddress.getLocalHost().getHostName();
 						} catch (UnknownHostException e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 						curTransaction = new Transaction();
@@ -168,6 +162,7 @@ public class ObjectLogger {
 						fw.write("\n\t\t</time>");
 
 						// log the parameters
+						@SuppressWarnings("rawtypes")
 						Set keys = parameters.keySet();
 
 						fw.write("\n\t\t<parameters count=\"" + keys.size() + "\">");
