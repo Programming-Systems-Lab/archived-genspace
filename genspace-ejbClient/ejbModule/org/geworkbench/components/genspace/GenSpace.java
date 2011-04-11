@@ -10,12 +10,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
+
+import com.sun.corba.ee.spi.orbutil.logex.Log;
+import com.sun.enterprise.v3.server.CommonClassLoaderServiceImpl;
+import com.sun.logging.LogDomains;
 
 /**
  * This is the main class for genspace. This is a visual plugin and will be a
@@ -61,6 +66,7 @@ public class GenSpace {
 	public static SocialNetworksHome networksPanels = new SocialNetworksHome();
 
 	public GenSpace() {
+		LogDomains.getLogger(CommonClassLoaderServiceImpl.class,LogDomains.LOADER_LOGGER).setLevel(java.util.logging.Level.OFF);
 		instance = this;
 		initComponents();
 	}
@@ -128,9 +134,6 @@ public class GenSpace {
 
 		Thread wfr_thread = new Thread(workflowRepository);
 		wfr_thread.start();
-
-		List<Tool> tools = LoginFactory.getUsageOps().getAllTools();
-		System.out.println(LoginFactory.getUsageOps().getExpertUserFor(tools.get(0)));
 		/*
 		 * System.out.println("wv: " + wv_thread.getId());
 		 * System.out.println("isbu: " + isbu_thread.getId());

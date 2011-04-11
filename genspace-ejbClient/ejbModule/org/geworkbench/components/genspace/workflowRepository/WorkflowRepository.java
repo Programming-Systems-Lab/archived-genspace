@@ -104,14 +104,12 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 
 	@Override
 	public void run() {
-		System.out.println("Starting init");
 		registerAreas();
 		try {
 			initComponents();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Finished init");
 	}
 
 	private void initComponents() throws Exception {
@@ -177,7 +175,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		addToContainer(DETAILS_AREA, workflowCommentsPanel.getComponent(),
 				"Workflow Comments", WorkflowCommentsPanel.class);
 		workflowDetailsPanel = new WorkflowDetailsPanel(this);
-		System.out.println("Inited details panel");
 		addToContainer(DETAILS_AREA, workflowDetailsPanel.getComponent(),
 				"Workflow Details", WorkflowDetailsPanel.class);
 	}
