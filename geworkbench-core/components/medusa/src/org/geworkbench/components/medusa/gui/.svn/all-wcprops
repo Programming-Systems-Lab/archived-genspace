@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7246/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui
+/svn/geworkbench/!svn/ver/7712/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui
+END
+MedusaParamPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/7712/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaParamPanel.java
 END
 TranscriptionFactorInfoBean.java
 K 25
@@ -9,29 +15,11 @@ svn:wc:ra_dav:version-url
 V 141
 /svn/geworkbench/!svn/ver/3157/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/TranscriptionFactorInfoBean.java
 END
-MedusaParamPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 130
-/svn/geworkbench/!svn/ver/7162/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaParamPanel.java
-END
 MedusaVisualizationPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
 /svn/geworkbench/!svn/ver/7211/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaVisualizationPanel.java
-END
-DiscreteHitOrMissHeatMapNamePanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 147
-/svn/geworkbench/!svn/ver/3553/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/DiscreteHitOrMissHeatMapNamePanel.java
-END
-MedusaVisualComponent.java
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/7246/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaVisualComponent.java
 END
 DiscreteHeatMapPanel.java
 K 25
@@ -44,6 +32,18 @@ K 25
 svn:wc:ra_dav:version-url
 V 143
 /svn/geworkbench/!svn/ver/3599/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/DiscreteHitOrMissHeatMapPanel.java
+END
+DiscreteHitOrMissHeatMapNamePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/geworkbench/!svn/ver/3553/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/DiscreteHitOrMissHeatMapNamePanel.java
+END
+MedusaVisualComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/7246/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaVisualComponent.java
 END
 MedusaVisualComponent.cwb.xml
 K 25

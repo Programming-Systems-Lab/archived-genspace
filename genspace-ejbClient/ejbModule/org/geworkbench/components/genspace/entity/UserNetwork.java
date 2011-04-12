@@ -63,6 +63,9 @@ public class UserNetwork implements Serializable {
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
-	
+	@Override
+	public String toString() {
+		return "UserNetwork [user = {"+user.toString()+"}, network={"+network.toString()+"}, visible="+(isVisible() ? "true" : "false")+"]";
+	}
 	
 }

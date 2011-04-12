@@ -1,7 +1,7 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine/skin
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ wangmen
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-max_grey.gif
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-37db8f14e83e6f266c29097434485f5f
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-82
 
 dock_active.gif
 file
@@ -94,6 +60,40 @@ has-props
 
 111
 
+max_grey.gif
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+37db8f14e83e6f266c29097434485f5f
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+82
+
 ShortCutMenu.java
 file
 
@@ -127,40 +127,6 @@ garbent
 
 
 666
-
-min_active.gif
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-ed7f0af14c69de0d17a21bc26d93ea7a
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-64
 
 undock_active.gif
 file
@@ -196,14 +162,14 @@ has-props
 
 109
 
-max_active.gif
+min_active.gif
 file
 
 
 
 
 2011-01-24T18:12:13.000000Z
-cf6b900c9f4c7bba210b5fe9d85d67cd
+ed7f0af14c69de0d17a21bc26d93ea7a
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -228,41 +194,7 @@ has-props
 
 
 
-82
-
-dock.gif
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-eb3e6afd731cab5f0416ed2a3f607b54
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-110
+64
 
 Skin.java
 file
@@ -298,6 +230,74 @@ has-props
 
 31842
 
+dock.gif
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+eb3e6afd731cab5f0416ed2a3f607b54
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+110
+
+max_active.gif
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+cf6b900c9f4c7bba210b5fe9d85d67cd
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+82
+
 Thumbs.db
 file
 
@@ -332,40 +332,6 @@ has-props
 
 6
 
-min.gif
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-be0cc739070bb9279091e2419fa14057
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-64
-
 undock.gif
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 108
+
+min.gif
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+be0cc739070bb9279091e2419fa14057
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+64
 
 max.gif
 file

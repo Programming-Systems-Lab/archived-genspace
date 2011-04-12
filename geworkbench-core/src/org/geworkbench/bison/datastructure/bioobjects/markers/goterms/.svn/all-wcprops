@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/7439/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/goterms
+/svn/geworkbench/!svn/ver/7717/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/goterms
 END
 GeneOntologyTree.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/7439/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/goterms/GeneOntologyTree.java
+/svn/geworkbench/!svn/ver/7717/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/goterms/GeneOntologyTree.java
 END
 GOTerm.java
 K 25

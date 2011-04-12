@@ -1,14 +1,14 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-25T14:47:19.189909Z
-7639
+2011-04-08T16:25:16.509689Z
+7716
 zji
 
 
@@ -168,11 +168,12 @@ file
 
 
 
-2011-02-24T19:13:49.000000Z
-f26e2863fc98cfa077b3002862324e4e
-2011-02-22T16:02:54.142917Z
-7475
+2011-04-11T19:08:44.000000Z
+a4a78aab106a8b154f8b75b8979e6562
+2011-04-08T16:25:16.509689Z
+7716
 zji
+has-props
 
 
 
@@ -193,8 +194,7 @@ zji
 
 
 
-
-29679
+29467
 
 GoTreeNode.java
 file

@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/5406/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea
-END
-DSGSEAResultDataSet.java
-K 25
-svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/5405/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea/DSGSEAResultDataSet.java
+/svn/geworkbench/!svn/ver/7713/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea
 END
 CSGSEAResultDataSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
-/svn/geworkbench/!svn/ver/5406/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea/CSGSEAResultDataSet.java
+/svn/geworkbench/!svn/ver/7713/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea/CSGSEAResultDataSet.java
+END
+DSGSEAResultDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/7707/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea/DSGSEAResultDataSet.java
 END

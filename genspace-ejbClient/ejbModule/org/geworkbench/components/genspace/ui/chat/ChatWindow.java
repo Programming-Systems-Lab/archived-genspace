@@ -93,7 +93,7 @@ public class ChatWindow extends javax.swing.JFrame {
 	 */
 	public void setChat(Chat c) {
 		this.chat = c;
-		this.setTitle("Chat with " + c.getParticipant().replace("@genspace", ""));
+		this.setTitle("Chat with " + c.getParticipant().replace("@genspace", "").replace("/Smack",""));
 	}
 
 	private ScreenShareListener screenListener;
@@ -106,14 +106,12 @@ public class ChatWindow extends javax.swing.JFrame {
 	private void processTextMessage(Message m) {
 		if (!last.equals(lastChatter.YOU)) {
 			chatText += "<br><font color=\"green\">"
-					+ chat.getParticipant().replace("@genspace", "")
+					+ chat.getParticipant().replace("@genspace", "").replace("/Smack", "")
 					+ "      "
-					+ Calendar.getInstance().get(Calendar.HOUR)
+					+ Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
 					+ ":"
 					+ Calendar.getInstance().get(Calendar.MINUTE)
-					+ " "
-					+ (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM ? "am"
-							: "pm") + "</font>";
+					+ "</font>";
 		}
 		last = lastChatter.YOU;
 		chatText += "<br>" + m.getBody();
@@ -287,12 +285,10 @@ public class ChatWindow extends javax.swing.JFrame {
 			}
 			if (!last.equals(lastChatter.ME)) {
 				chatText += "<br><font color=\"green\">You      "
-						+ Calendar.getInstance().get(Calendar.HOUR)
+						+ Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
 						+ ":"
 						+ Calendar.getInstance().get(Calendar.MINUTE)
-						+ " "
-						+ (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM ? "am"
-								: "pm") + "</font>";
+						+ "</font>";
 			}
 			last = lastChatter.ME;
 			chatText += "<br>" + ogm.getText();

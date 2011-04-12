@@ -59,7 +59,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * options.
  * 
  * @author First Genetic Trust, keshav, yc2480
- * @version $Id: NormalizationPanel.java 7702 2011-04-06 15:23:14Z maz $
+ * @version $Id: NormalizationPanel.java 7703 2011-04-06 21:31:07Z maz $
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class NormalizationPanel implements VisualPlugin, ReHighlightable {
@@ -594,7 +594,7 @@ public class NormalizationPanel implements VisualPlugin, ReHighlightable {
 				publishNormalizationEvent(new NormalizationEvent(maSet,
 						normalizedData, selectedNormalizer.getLabel()));
 				AnalysisInvokedEvent event = new AnalysisInvokedEvent(
-						selectedNormalizer, "");
+						selectedNormalizer, maSet.getDataSetName());
 				publishAnalysisInvokedEvent(event);
 				
 			} else {

@@ -1,7 +1,7 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/events
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -604,40 +604,6 @@ has-props
 
 2699
 
-ProjectNodeAddedEvent.java
-file
-
-
-
-
-2011-04-06T19:56:05.000000Z
-91d854f72941b6a341d1c5b776f2f3c8
-2011-03-29T13:24:21.137380Z
-7677
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1358
-
 ProjectNodeRemovedEvent.java
 file
 
@@ -671,6 +637,40 @@ has-props
 
 
 1122
+
+ProjectNodeAddedEvent.java
+file
+
+
+
+
+2011-04-06T19:56:05.000000Z
+91d854f72941b6a341d1c5b776f2f3c8
+2011-03-29T13:24:21.137380Z
+7677
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1358
 
 HistoryEvent.java
 file
@@ -876,40 +876,6 @@ has-props
 
 726
 
-PhenotypeSelectorEvent.java
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-309301dfd1e65389f91b64c061c1abe5
-2006-01-13T22:48:38.000000Z
-1120
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1000
-
 AdjacencyMatrixCancelEvent.java
 file
 
@@ -943,6 +909,40 @@ has-props
 
 
 717
+
+PhenotypeSelectorEvent.java
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+309301dfd1e65389f91b64c061c1abe5
+2006-01-13T22:48:38.000000Z
+1120
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1000
 
 CaArrayReturnHybridizationListEvent.java
 file

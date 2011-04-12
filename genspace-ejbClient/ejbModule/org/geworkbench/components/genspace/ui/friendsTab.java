@@ -10,6 +10,8 @@ import org.geworkbench.components.genspace.entity.User;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -124,6 +126,7 @@ public class friendsTab extends SocialTab {
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
+					System.out.println("Requesting friends");
 					if (networkFilter == null)
 						return LoginFactory.getFriendOps().getFriendsProfiles();
 					else
@@ -135,11 +138,20 @@ public class friendsTab extends SocialTab {
 					List<User> lst = null;
 					try {
 						lst = get();
+						System.out.println("Got " + lst);
 					} catch (InterruptedException e) {
 						GenSpace.logger.error("Error",e);
 					} catch (ExecutionException e) {
 						GenSpace.logger.error("Error",e);
 					}
+					lst.remove(LoginFactory.getUser());
+					Collections.sort(lst,new Comparator<User>() {
+
+						@Override
+						public int compare(User o1, User o2) {
+							return o1.compareTo(o2);
+						}
+					});
 					DefaultListModel model = new DefaultListModel();
 					if(lst != null)
 						for (User t : lst) {
@@ -165,31 +177,13 @@ public class friendsTab extends SocialTab {
 		final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
 		panel1.add(
 				spacer1,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						0,
-						0,
-						1,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						1, null, null, null, 0, false));
+				new com.intellij.uiDesigner.core.GridConstraints(1, 0, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
 		myFriendsList = new JList();
 		myFriendsList.setBackground(panel1.getBackground());
-		JScrollPane jScrollPane1 = new JScrollPane();
-		jScrollPane1.setViewportView(myFriendsList);
 		panel1.add(
-				jScrollPane1,
-				new com.intellij.uiDesigner.core.GridConstraints(
-						1,
-						0,
-						2,
-						1,
-						com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER,
-						com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW,
-						com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW,
-						null, new Dimension(150, 50), null, 0, false));
+				myFriendsList,
+				new com.intellij.uiDesigner.core.GridConstraints(1, 0, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
+		
 	}
 
 	@Override

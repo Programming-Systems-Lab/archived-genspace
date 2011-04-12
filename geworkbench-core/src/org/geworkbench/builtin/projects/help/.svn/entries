@@ -1,7 +1,7 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -94,40 +94,6 @@ has-props
 
 1404
 
-cell.HTML
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-71653e83f27ce290465dd3a852a9049a
-2007-03-23T19:30:59.000000Z
-2616
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1068
-
 Manage Project.HTML
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 2791
+
+cell.HTML
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+71653e83f27ce290465dd3a852a9049a
+2007-03-23T19:30:59.000000Z
+2616
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1068
 
 projectPanelHelpSet.hs
 file
@@ -196,6 +196,9 @@ has-props
 
 601
 
+merge_dataset_files
+dir
+
 Affy File Matrix Format.HTML
 file
 
@@ -230,10 +233,7 @@ has-props
 
 4585
 
-merge_dataset_files
-dir
-
-Manage_workspace_files
+open_dataset_files
 dir
 
 Affy File.HTML
@@ -270,45 +270,11 @@ has-props
 
 1589
 
-open_dataset_files
+Manage_workspace_files
 dir
 
 delete_dataset_files
 dir
-
-RMA Format.HTML
-file
-
-
-
-
-2011-01-24T18:12:13.000000Z
-375d269318c3343af8f1618575be9640
-2008-09-08T11:48:43.000000Z
-4176
-hungc
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2070
 
 projectPaneltoc.xml
 file
@@ -344,6 +310,43 @@ has-props
 
 715
 
+RMA Format.HTML
+file
+
+
+
+
+2011-01-24T18:12:13.000000Z
+375d269318c3343af8f1618575be9640
+2008-09-08T11:48:43.000000Z
+4176
+hungc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2070
+
+rename_dataset_files
+dir
+
 remote.HTML
 file
 
@@ -377,9 +380,6 @@ has-props
 
 
 3207
-
-rename_dataset_files
-dir
 
 user preference_files
 dir

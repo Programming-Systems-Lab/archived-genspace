@@ -1,7 +1,7 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ smithken
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-jClaim.java
-file
-
-
-
-
-2011-02-16T22:18:14.000000Z
-bcd0c043ddba88cd0c0db6307469a000
-2010-02-05T15:08:26.097711Z
-5995
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3595
-
-XmlClient.java
-file
-
-
-
-
-2011-02-16T22:18:14.000000Z
-a757b1708d69df54c8b23117769557c6
-2010-07-08T18:22:00.326229Z
-6846
-ssheth
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3177
 
 TransactionElement.java
 file
@@ -128,6 +60,74 @@ sheths
 
 686
 
+XmlClient.java
+file
+
+
+
+
+2011-02-16T22:18:14.000000Z
+a757b1708d69df54c8b23117769557c6
+2010-07-08T18:22:00.326229Z
+6846
+ssheth
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3177
+
+jClaim.java
+file
+
+
+
+
+2011-02-16T22:18:14.000000Z
+bcd0c043ddba88cd0c0db6307469a000
+2010-02-05T15:08:26.097711Z
+5995
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3595
+
 GenSpaceMenu.cwb.xml
 file
 
@@ -162,9 +162,6 @@ smithken
 
 1338
 
-rating
-dir
-
 ObjectHandler.java
 file
 
@@ -198,6 +195,9 @@ has-props
 
 
 6775
+
+rating
+dir
 
 RealTimeWorkFlowSuggestion.java
 file
@@ -304,40 +304,6 @@ has-props
 
 5013
 
-ComposeMessage.java
-file
-
-
-
-
-2011-02-16T22:18:14.000000Z
-b453cf54ff35eef434cea6ee2cf45d1c
-2010-06-10T04:56:12.819145Z
-6790
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14975
-
 GenSpaceMenu.java
 file
 
@@ -371,6 +337,40 @@ sheths
 
 
 604
+
+ComposeMessage.java
+file
+
+
+
+
+2011-02-16T22:18:14.000000Z
+b453cf54ff35eef434cea6ee2cf45d1c
+2010-06-10T04:56:12.819145Z
+6790
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14975
 
 NetworkVisualization.java
 file
@@ -406,40 +406,6 @@ sheths
 
 4217
 
-genspaceLogin.java
-file
-
-
-
-
-2011-02-16T22:18:14.000000Z
-61a8b289045c1ffc3dbf1463df373749
-2010-02-05T15:08:26.097711Z
-5995
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8043
-
 GenspaceLogger.cwb.xml
 file
 
@@ -473,6 +439,40 @@ smithken
 
 
 1342
+
+genspaceLogin.java
+file
+
+
+
+
+2011-02-16T22:18:14.000000Z
+61a8b289045c1ffc3dbf1463df373749
+2010-02-05T15:08:26.097711Z
+5995
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8043
 
 Inbox.java
 file

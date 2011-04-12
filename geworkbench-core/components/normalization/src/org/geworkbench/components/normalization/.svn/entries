@@ -1,14 +1,14 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-06T15:23:14.640812Z
-7702
+2011-04-06T21:31:07.618229Z
+7703
 maz
 
 
@@ -25,40 +25,6 @@ maz
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-NormalizationPanel.cwb.xml
-file
-
-
-
-
-2011-01-24T18:12:09.000000Z
-2e49982e13420bf3b9b7c3bebbc7bbe9
-2010-06-10T02:39:43.512944Z
-6786
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1074
 
 ThresholdNormalizer.java
 file
@@ -93,6 +59,40 @@ has-props
 
 
 3548
+
+NormalizationPanel.cwb.xml
+file
+
+
+
+
+2011-01-24T18:12:09.000000Z
+2e49982e13420bf3b9b7c3bebbc7bbe9
+2010-06-10T02:39:43.512944Z
+6786
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1074
 
 CenteringNormalizerPanel.java
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2011-04-06T19:56:02.000000Z
-37f071c6842c28ca1aa6a2b764c344fc
-2011-04-06T15:23:14.640812Z
-7702
+2011-04-11T19:08:44.000000Z
+b55c1605a9d1ee7d38e4827cdf51ee63
+2011-04-06T21:31:07.618229Z
+7703
 maz
 has-props
 
@@ -296,7 +296,10 @@ has-props
 
 
 
-21728
+21748
+
+help
+dir
 
 HouseKeepingGeneNormalizerPanel.java
 file
@@ -332,8 +335,39 @@ has-props
 
 31159
 
-help
-dir
+MissingValueNormalizer.java
+file
+
+
+
+
+2011-02-16T22:18:17.000000Z
+efbada1b1227f1e7f51ff3d23cac5c18
+2011-02-11T21:07:52.896917Z
+7453
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5177
 
 DEFAULT_HOUSEKEEPING_GENES.txt
 file
@@ -368,40 +402,6 @@ has-props
 
 
 28
-
-MissingValueNormalizer.java
-file
-
-
-
-
-2011-02-16T22:18:17.000000Z
-efbada1b1227f1e7f51ff3d23cac5c18
-2011-02-11T21:07:52.896917Z
-7453
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5177
 
 MicroarrayCenteringNormalizer.java
 file

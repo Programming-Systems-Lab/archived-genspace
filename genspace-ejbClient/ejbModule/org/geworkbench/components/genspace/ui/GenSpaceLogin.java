@@ -67,6 +67,13 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		run();
 	}
 
+	public void test()
+	{
+		tf.setText("jon");
+		pf.setText("test123");
+		ActionEvent e = new ActionEvent(b1, 1, "foo");
+		actionPerformed(e);
+	}
 	@Override
 	public void run() {
 

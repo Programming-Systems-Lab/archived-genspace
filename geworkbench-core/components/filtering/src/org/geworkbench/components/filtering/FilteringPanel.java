@@ -59,7 +59,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * options.
  * 
  * @author First Genetic Trust, yc2480
- * @version $Id: FilteringPanel.java 7702 2011-04-06 15:23:14Z maz $
+ * @version $Id: FilteringPanel.java 7703 2011-04-06 21:31:07Z maz $
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class FilteringPanel implements VisualPlugin, ReHighlightable {
@@ -646,7 +646,7 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 			
 			progressBar.stop();
 			AnalysisInvokedEvent event = new AnalysisInvokedEvent(
-					selectedFilter,"" );
+					selectedFilter,maSet.getDataSetName() );
 			publishAnalysisInvokedEvent(event);
 			publishFilteringEvent(new FilteringEvent(maSet, filteredData,
 					historyString));

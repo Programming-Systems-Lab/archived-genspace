@@ -102,6 +102,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	@Override
 	public List<User> getFriendsProfiles() {
 		ArrayList<User> res = new ArrayList<User>();
+		System.out.println("request from" + getUser());
 		for(Friend f : getUser().getFriends())
 		{
 			res.add(fullySerialize(f.getRightUser()));

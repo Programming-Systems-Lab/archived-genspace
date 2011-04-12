@@ -8,7 +8,7 @@ import java.util.Vector;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version 1.0
+ * @version $Id: CSDescribable.java 7709 2011-04-07 19:16:31Z zji $
  */
 
 /**
@@ -22,7 +22,7 @@ public class CSDescribable implements DSDescribable, Serializable {
 	/**
      * Contains the description strings.
      */
-    protected Vector descriptions = new Vector();
+    protected Vector<String> descriptions = new Vector<String>();
     /**
      * Serializable fields.
      */

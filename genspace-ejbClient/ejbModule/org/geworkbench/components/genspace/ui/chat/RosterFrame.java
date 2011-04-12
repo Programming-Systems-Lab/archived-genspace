@@ -25,6 +25,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 import javax.swing.BoxLayout;
@@ -39,6 +41,7 @@ import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 
+import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.chat.ChatReceiver;
 import org.geworkbench.components.genspace.ui.GenSpaceLogin;
 import org.jivesoftware.smack.Roster;
@@ -77,17 +80,43 @@ public class RosterFrame extends javax.swing.JFrame implements RosterListener {
 			rootGroups = new ArrayList<RosterGroup>();
 			children = new HashMap<RosterGroup, ArrayList<RosterEntry>>();
 			
-			rootGroups.add(roster.getGroup("Friends"));
+
 			for(RosterGroup g : roster.getGroups())
 			{
-				if(!g.getName().equals("Friends"))
-					rootGroups.add(g);
+				rootGroups.add(g);
 				children.put(g, new ArrayList<RosterEntry>());
 				for(RosterEntry e : g.getEntries())
 				{
-					children.get(g).add(e);
+					if(! e.getUser().equalsIgnoreCase(LoginFactory.getUser().getUsername() + "@genspace"))
+						children.get(g).add(e);
 				}
+				if(children.get(g).size() == 0)
+				{
+					children.remove(g);
+					rootGroups.remove(g);
+				}
+				Collections.sort(children.get(g),new Comparator<RosterEntry>() {
+
+					@Override
+					public int compare(RosterEntry o1, RosterEntry o2) {
+						return o1.getName().compareTo(o2.getName());
+					}
+					
+				});
 			}
+			
+			Collections.sort(rootGroups, new Comparator<RosterGroup>() {
+
+				@Override
+				public int compare(RosterGroup l, RosterGroup r) {
+					if(l.getName().equals("Friends"))
+						return -1;
+					else
+						return l.getName().compareTo(r.getName());
+				}
+				
+		
+			});
 		}
 
 		@Override
@@ -105,18 +134,19 @@ public class RosterFrame extends javax.swing.JFrame implements RosterListener {
 			{
 				return rootGroups.get(index);
 			}
-			return null;
+			return roster;
 		}
 
 		@Override
 		public int getChildCount(Object parent) {
 			if(parent instanceof RosterGroup)
 			{
-				return ((RosterGroup) parent).getEntryCount();				
+				RosterGroup g = (RosterGroup) parent;
+				return children.get(g).size();	
 			}
 			else if(parent instanceof Roster)
 			{
-				return roster.getGroupCount();
+				return rootGroups.size();
 			}
 			return 0;
 		}
@@ -132,7 +162,7 @@ public class RosterFrame extends javax.swing.JFrame implements RosterListener {
 			{
 				return rootGroups.indexOf(child);
 			}
-			return -1;
+			return 0;
 		}
 
 		@Override

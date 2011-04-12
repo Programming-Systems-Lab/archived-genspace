@@ -1,7 +1,9 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Network implements Serializable{
 	private User owner;
 	
 	
-	private Set<UserNetwork> members = new HashSet<UserNetwork>();
+	private List<UserNetwork> members = new ArrayList<UserNetwork>();
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -50,12 +52,24 @@ public class Network implements Serializable{
 	}
 	
 	@OneToMany(mappedBy="network")
-	public Set<UserNetwork> getMembers() {
+	public List<UserNetwork> getMembers() {
 		return members;
 	}
-	public void setMembers(Set<UserNetwork> members) {
+	public void setMembers(List<UserNetwork> members) {
 		this.members = members;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return name;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Network)
+		{
+			Network o = (Network) obj;
+			return o.getId() == getId() && o.getName().equals(getName());
+		}
+		return false;
+	}
 }

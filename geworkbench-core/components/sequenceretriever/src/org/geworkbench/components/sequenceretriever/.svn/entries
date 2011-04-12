@@ -1,15 +1,15 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-21T22:24:24.377666Z
-7617
-smithken
+2011-04-08T21:01:49.341272Z
+7718
+zji
 
 
 
@@ -128,40 +128,6 @@ has-props
 
 6547
 
-chiptypeDatabaseMap.txt
-file
-
-
-
-
-2011-01-24T18:12:11.000000Z
-3813ed31112dbd21549fc47742d07f11
-2010-02-12T13:36:58.301269Z
-6015
-garbent
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-107
-
 RetrievedSequenceDisplayPanel.java
 file
 
@@ -205,10 +171,10 @@ file
 
 
 
-2011-01-24T18:12:11.000000Z
-3999fe7e8ed78145d879c01386291d58
-2010-08-10T20:03:28.312306Z
-6974
+2011-04-11T19:08:44.000000Z
+c7f23461c27a008dd3165a5f27e620b9
+2011-04-08T21:01:49.341272Z
+7718
 zji
 has-props
 
@@ -231,7 +197,7 @@ has-props
 
 
 
-15921
+14060
 
 SequenceRetriever.cwb.xml
 file

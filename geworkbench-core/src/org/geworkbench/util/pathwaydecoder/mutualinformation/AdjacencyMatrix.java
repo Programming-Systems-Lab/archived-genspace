@@ -16,7 +16,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * AdjacencyMatrix. 
  * 
  * @author not attributable
- * @version $Id: AdjacencyMatrix.java 7587 2011-03-15 18:42:18Z zji $
+ * @version $Id: AdjacencyMatrix.java 7719 2011-04-08 22:12:07Z zji $
  */
 
 public class AdjacencyMatrix implements Serializable {
@@ -79,6 +79,9 @@ public class AdjacencyMatrix implements Serializable {
 		if (geneId > 0) {
 			HashMap<Integer, Float> map = new HashMap<Integer, Float>();
 			HashMap<Integer, EdgeInfo> row = geneRows.get(new Integer(geneId));
+			if(row==null) {
+				return null;
+			}
 			for(Integer id: row.keySet()) {
 				EdgeInfo e = row.get(id);
 				map.put(id, e.value);

@@ -23,7 +23,7 @@ import org.geworkbench.components.genspace.LoginFactory;
 
 @Entity
 @Table(name="registration")
-public class User implements Serializable{
+public class User implements Serializable, Comparable<User>{
 	
 	private static final long serialVersionUID = 2972043173442132575L;
 	private int id;
@@ -297,16 +297,7 @@ public class User implements Serializable{
 	
 	@Override
 	public String toString() {
-		String result = "User - username: " + username + "\n";
-		result += "UserWorkflows: " + workflows.size() + "\n";
-//		for (UserWorkflow uw : myWorkflows) {
-//			result += uw.toString() + "\n";
-//		}
-
-		result += "Inbox: " + incomingWorkflows.size() + "\n";
-		for (IncomingWorkflow wi : incomingWorkflows) {
-			result += wi.toString() + "\n";
-		}
+		String result = "User - username: " + username;
 		return result;
 	}
 
@@ -400,6 +391,10 @@ public class User implements Serializable{
 		}
 		return false;
 	}
+	private String na(String s)
+	{
+		return (s == null ? "N/A" : s);
+	}
 	public String toHTML() {
 		String r = "<html><body><b>" + getFirstName() + " "
 		+ getLastName() + " (" + getUsername() + ")</b><br>";
@@ -409,13 +404,13 @@ public class User implements Serializable{
 							&& getWorkTitle() != "" ? getWorkTitle() + " at " : "")
 					+ (getLabAffiliation() != null ? getLabAffiliation():  " (affiliation not disclosed)") + "</i><br><br>";
 			r += "<b>Research Interests:</b><br />"
-					+getInterests() + "<br><br>";
+					+(getInterests() == null ? "(not disclosed)" : getInterests()) + "<br><br>";
 			r += "<b>Contact information:</b><br /><br>Phone: "
-					+ getPhone() + "<br>Email: "
-					+getEmail() + "<br><br>Mailing Address:<br>"
-					+ getAddr1() + "<br>" +getAddr2()
-					+ "<br>" + getCity() + ", "
-					+ getState() + ", " + getZipcode();
+					+ na(getPhone()) + "<br>Email: "
+					+ na(getEmail()) + "<br><br>Mailing Address:<br>"
+					+ na(getAddr1()) + "<br>" + na(getAddr2())
+					+ "<br>" + na(getCity()) + ", "
+					+ na(getState()) + ", " + na(getZipcode());
 		} else {
 			r += "This user is not visible to you. Please add them as a friend or join one of their networks to see their profile.";
 		}
@@ -439,5 +434,12 @@ public class User implements Serializable{
 			if(f.getName().equals(folderName))
 				return true;
 		return false;
+	}
+	@Override
+	public int compareTo(User o) {
+		int r = this.getLastName().compareTo(o.getLastName());
+		if(r == 0)
+			return this.getFirstName().compareTo(o.getFirstName());
+		return r;
 	}
 }

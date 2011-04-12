@@ -112,7 +112,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 7682 2011-03-29 17:41:54Z zji $
+ * @version $Id: ProjectPanel.java 7708 2011-04-07 19:04:17Z wangmen $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -1099,7 +1099,7 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 					this.jViewAnnotations.setEnabled(true);
 
 					if ((RWspHandler.wspId > 0 && RWspHandler.dirty == false)
-					|| (mNode == root && mNode.getChildCount() == 0))
+					|| (RWspHandler.wspId == 0 && mNode == root && mNode.getChildCount() == 0))
 						jUploadWspItem.setEnabled(false);
 					else
 						jUploadWspItem.setEnabled(true);

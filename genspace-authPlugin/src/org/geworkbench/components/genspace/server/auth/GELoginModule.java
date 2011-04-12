@@ -26,7 +26,7 @@ public class GELoginModule extends AppservPasswordLoginModule {
 			{
 				String userName = "genspace";
 			    String password = "g3nsp4c3";
-			    String url = "jdbc:mysql://amos.cs.columbia.edu/genspace";
+			    String url = "jdbc:mysql://localhost/genspace";
 			    Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 			    conn = DriverManager.getConnection (url, userName, password);
 			}

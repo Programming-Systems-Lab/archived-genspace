@@ -1,15 +1,15 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/gsea
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2009-07-09T15:19:20.000000Z
-5406
-marcdanie
+2011-04-08T13:49:33.454652Z
+7713
+zji
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-042d210e1a56fd7fe24f3b51a3dae1e8
-2009-07-09T15:19:20.000000Z
-5406
-marcdanie
+2011-04-11T19:08:45.000000Z
+4983a5ff6ddc70392548fd60c21b5a82
+2011-04-08T13:49:33.454652Z
+7713
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ marcdanie
 
 
 
-
-2140
+2311
 
 DSGSEAResultDataSet.java
 file
@@ -66,11 +66,12 @@ file
 
 
 
-2011-01-24T18:12:14.000000Z
-1859fa7b1a36fbb609f1de06de565edd
-2009-07-09T15:18:55.000000Z
-5405
-marcdanie
+2011-04-11T19:08:45.000000Z
+cf2f038e3d5a10fce8d57ee34987cd43
+2011-04-07T18:38:11.918965Z
+7707
+zji
+has-props
 
 
 
@@ -91,6 +92,5 @@ marcdanie
 
 
 
-
-919
+464
 

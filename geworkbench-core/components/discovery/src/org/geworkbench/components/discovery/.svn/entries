@@ -1,7 +1,7 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -94,6 +94,40 @@ has-props
 
 2184
 
+SequenceDiscoveryViewAppComponent.java
+file
+
+
+
+
+2011-04-06T19:56:02.000000Z
+1dc462447d4ab91fe32e10052b414cf8
+2011-03-25T19:02:00.180283Z
+7646
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15911
+
 ParameterPanel.java
 file
 
@@ -127,6 +161,43 @@ has-props
 
 
 20889
+
+model
+dir
+
+start.gif
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+18140a4a2fbc0dfd3aa41a63e24634bc
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+239
 
 load.gif
 file
@@ -164,6 +235,40 @@ has-props
 
 algorithm
 dir
+
+parameters.gif
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+719d524c441054ce464bef6229696272
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+969
 
 help
 dir
@@ -235,111 +340,6 @@ has-props
 
 
 313
-
-SequenceDiscoveryViewAppComponent.java
-file
-
-
-
-
-2011-04-06T19:56:02.000000Z
-1dc462447d4ab91fe32e10052b414cf8
-2011-03-25T19:02:00.180283Z
-7646
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15911
-
-model
-dir
-
-start.gif
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-18140a4a2fbc0dfd3aa41a63e24634bc
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-239
-
-parameters.gif
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-719d524c441054ce464bef6229696272
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-969
 
 PatFilter.java
 file

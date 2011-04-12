@@ -99,6 +99,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 				if(uw.getWorkflow().getCreator() != null)
 					uw.getWorkflow().getCreator().getUsername();
 				uw.getWorkflow().getRatings().size();
+				uw.getWorkflow().getCreator();
 				uw.getWorkflow().getComments().size();
 			}
 		}
@@ -108,6 +109,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 			if(uw.getWorkflow().getCreator() != null)
 				uw.getWorkflow().getCreator().getUsername();
 			uw.getWorkflow().getRatings().size();
+			uw.getWorkflow().getCreator();
 			uw.getWorkflow().getComments().size();
 		}
 		return ret;

@@ -1,15 +1,15 @@
 10
 
 dir
-7702
+7720
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-14T14:33:32.832894Z
-7577
-maz
+2011-04-07T17:21:11.309605Z
+7706
+zji
 
 
 
@@ -26,17 +26,18 @@ maz
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-PredictionResult.java
+AbstractTraining.java
 file
 
 
 
 
-2011-01-24T18:12:12.000000Z
-4d4237e82bfecef471597a92ba115ed3
-2008-08-27T19:08:16.000000Z
-4134
-marcdanie
+2011-04-11T19:08:45.000000Z
+d1ae9f3b13e073c8c15690495a058a41
+2011-04-07T17:21:11.309605Z
+7706
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ marcdanie
 
 
 
-
-1194
+9189
 
 VisualGPClassifier.java
 file
@@ -94,18 +94,17 @@ mnazaire
 
 2907
 
-PredictionModel.java
+PredictionResult.java
 file
 
 
 
 
 2011-01-24T18:12:12.000000Z
-e1f340822855a670f15da4bbfa8cef5e
-2010-05-03T17:43:48.313069Z
-6445
-mnazaire
-has-props
+4d4237e82bfecef471597a92ba115ed3
+2008-08-27T19:08:16.000000Z
+4134
+marcdanie
 
 
 
@@ -126,7 +125,8 @@ has-props
 
 
 
-2313
+
+1194
 
 GPTraining.java
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-24T18:12:12.000000Z
-bf7d27b95dca2c739f21b2bdaca62cb6
-2010-05-05T23:39:17.697952Z
-6478
-mnazaire
+2011-04-11T19:08:45.000000Z
+f7ca3158e36aac241662f852b5eefc97
+2011-04-07T17:21:11.309605Z
+7706
+zji
 has-props
 
 
@@ -160,41 +160,7 @@ has-props
 
 
 
-8950
-
-GPTrainingPanel.java
-file
-
-
-
-
-2011-01-24T18:12:12.000000Z
-a1de92fcbd3f81b7960401c758eae937
-2010-05-05T20:45:50.339993Z
-6472
-mnazaire
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2713
+8897
 
 GPClassificationUtils.java
 file
@@ -231,12 +197,6 @@ mnazaire
 2515
 
 gui
-dir
-
-images
-dir
-
-svm
 dir
 
 knn
@@ -280,5 +240,147 @@ has-props
 8169
 
 wv
+dir
+
+AbstractTrainingPanel.java
+file
+
+
+
+
+2011-04-11T19:08:45.000000Z
+fa81f225488f0a97403f1734502757ef
+2011-04-07T17:21:11.309605Z
+7706
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13615
+
+PredictionModel.java
+file
+
+
+
+
+2011-01-24T18:12:12.000000Z
+e1f340822855a670f15da4bbfa8cef5e
+2010-05-03T17:43:48.313069Z
+6445
+mnazaire
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2313
+
+GPTrainingPanel.java
+file
+
+
+
+
+2011-04-11T19:08:45.000000Z
+a75ac14b11d74fbfcb83362c8784ebef
+2011-04-07T17:21:11.309605Z
+7706
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2656
+
+KFoldCrossValidation.java
+file
+
+
+
+
+2011-04-11T19:08:45.000000Z
+478cf4223c230df355cca38956cf005d
+2011-04-07T17:21:11.309605Z
+7706
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4238
+
+svm
+dir
+
+images
 dir
 

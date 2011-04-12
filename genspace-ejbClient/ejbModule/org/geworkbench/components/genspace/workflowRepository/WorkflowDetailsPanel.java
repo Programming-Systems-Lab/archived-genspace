@@ -98,7 +98,8 @@ ActionListener {
 	public String getWorkflowDetailsString(Workflow w) {
 		String result = "ID: " + w.getId() + "\n";
 		result += "Creator: " + ( w.getCreator() == null ? "system" : w.getCreator().getUsername()) + "\n";
-		result += "Creation date: " + w.getCreatedAt().toString() + "\n";
+		if(w.getCreatedAt() != null)
+			result += "Creation date: " + w.getCreatedAt().toString()	 + "\n";
 		result += "Average rating; " + w.getAvgRating() + "\n";
 		result += "Usage count: " + w.getUsageCount() + "\n";
 		result += "Comments count: " + w.getComments().size() + "\n";
