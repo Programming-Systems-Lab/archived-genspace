@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -21,7 +22,6 @@ import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.server.UsageInformationRemote;
-import org.geworkbench.components.genspace.ui.LoadingPanel;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
 
@@ -35,7 +35,6 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 	private JButton button = new JButton("Search");
 	private JLabel label = new JLabel();
 	private JPanel selectPanel = new JPanel();
-	private LoadingPanel loader = new LoadingPanel();
 	private static UsageInformationRemote facade;
 	public static UsageInformationRemote getFacade()
 	{
@@ -104,17 +103,21 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		SwingWorker<List<Workflow>, Void> worker = new SwingWorker<List<Workflow>, Void>() {
+			int evt;
 			@Override
 			protected void done() {
+				System.out.println("Returned");
 				List<Workflow> ret = null;
 				try {
 					ret = get();
 				} catch (InterruptedException e) {
+					GenSpace.getStatusBar().stop(evt);
 					GenSpace.logger.error("Unable to talk to server: ", e);
 				} catch (ExecutionException e) {
+					GenSpace.getStatusBar().stop(evt);
 					GenSpace.logger.error("Unable to talk to server: ", e);
 				}
-				
+				System.out.println("Got");
 				// make sure we got some results!
 				if (ret == null || ret.size() == 0) {
 					// no results came back!
@@ -126,9 +129,10 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				if (ret.size() > 1)
 					noun = "workflows";
 				label.setText(ret.size() + " " + noun + " found");
-				remove(loader);
-				loader.stop();
+				GenSpace.getStatusBar().stop(evt);
 
+				if(GenSpace.instrument)
+					System.out.println("Received workflows, size serialized = " + GenSpace.getObjectSize((Serializable) ret));
 				add(vis, BorderLayout.CENTER);
 				revalidate();
 				repaint();
@@ -148,7 +152,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				{
 					Tool tool = (Tool) tools.getSelectedItem();
 					String action = actions.getSelectedItem().toString();
-					
+					evt = GenSpace.getStatusBar().start("Retrieving workflow information");
 					if (action.equals("All workflows including")) {
 						return LoginFactory.getUsageOps().getAllWorkflowsIncluding(tool);
 					} else if(action.equals("Most common workflow starting with")){
@@ -158,6 +162,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					}
 					else
 					{
+						GenSpace.getStatusBar().stop(evt);
 						GenSpace.logger.error("Unknown action selected: " + action);
 					}
 				}
@@ -166,10 +171,6 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			}
 		};
 		remove(vis);
-		add(loader, BorderLayout.CENTER);
-		loader.setSize(this.getSize());
-		loader.start();
-		repaint();
 		worker.execute();	
 	}
 

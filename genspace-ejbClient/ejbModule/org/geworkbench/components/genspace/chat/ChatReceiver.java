@@ -10,6 +10,7 @@ import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.ui.chat.ChatWindow;
 import org.geworkbench.components.genspace.ui.chat.RosterFrame;
+import org.geworkbench.components.genspace.ui.chat.ChatWindow.messageTypes;
 import org.jivesoftware.smack.Chat;
 import org.jivesoftware.smack.ChatManager;
 import org.jivesoftware.smack.ChatManagerListener;
@@ -129,6 +130,8 @@ public class ChatReceiver implements MessageListener, ChatManagerListener {
 	 */
 	@Override
 	public void processMessage(Chat c, Message m) {
+		if((m.getProperty("specialType") == null || m.getProperty("specialType").equals(ChatWindow.messageTypes.CHAT)) && (m.getBody() == null || m.getBody().equals("")))
+			return;
 		if (chats.containsKey(c.getParticipant())) {
 			chats.get(c.getParticipant()).processMessage(m);
 		} else {

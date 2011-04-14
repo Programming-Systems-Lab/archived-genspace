@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7720/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
+/svn/geworkbench/!svn/ver/7728/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 END
 IdeaResult.java
 K 25
@@ -19,7 +19,7 @@ KMeansResultMarkers.java
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svn/geworkbench/!svn/ver/7720/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResultMarkers.java
+/svn/geworkbench/!svn/ver/7728/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResultMarkers.java
 END
 DSBioObject.java
 K 25

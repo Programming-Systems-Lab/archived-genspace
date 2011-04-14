@@ -7,7 +7,6 @@ import java.util.List;
 import javax.naming.InitialContext;
 
 
-import org.geworkbench.components.genspace.chat.ChatReceiver;
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
@@ -18,11 +17,8 @@ import org.geworkbench.components.genspace.server.ToolInformationProvider;
 import org.geworkbench.components.genspace.server.UsageInformationRemote;
 import org.geworkbench.components.genspace.server.UserFacadeRemote;
 import org.geworkbench.components.genspace.server.WorkflowRepositoryRemote;
-import org.geworkbench.components.genspace.ui.GenSpaceLogin;
 import org.geworkbench.engine.properties.PropertiesManager;
-import org.jivesoftware.smack.Roster;
-import org.jivesoftware.smack.RosterEntry;
-import org.jivesoftware.smack.XMPPException;
+
 
 import com.sun.appserv.security.ProgrammaticLogin;
 
@@ -123,8 +119,8 @@ public class LoginFactory {
 				try {
 					PropertiesManager properties = PropertiesManager
 							.getInstance();
-					properties.setProperty(GenSpaceLogin.class,
-							PROPERTY_GENSPACE_LOGIN_USER, user.getUsername()); //todo: probably unused
+//					properties.setProperty(GenSpaceLogin.class,
+//							PROPERTY_GENSPACE_LOGIN_USER, user.getUsername()); //todo: probably unused
 				} catch (Exception ex) {
 				}
 
@@ -193,35 +189,6 @@ public class LoginFactory {
 				}
 		}
 		return false;
-	}
-
-	public static void removeFriend(User u) {
-		Roster r = ChatReceiver.connection.getRoster();
-		RosterEntry e = r.getEntry(u.getUsername()
-				+ "@boris.cs.columbia.edu");
-		if (e != null)
-			try {
-				ChatReceiver.connection.getRoster()
-						.removeEntry(e);
-			} catch (XMPPException e1) {
-				GenSpace.logger.error("Unable to remove friend from roster",e1);
-			}
-	}
-
-	public static void addFriend(User u) {
-		try {
-			ChatReceiver.connection.getRoster()
-			.createEntry(
-					u.getUsername()
-							+ "@boris.cs.columbia.edu",
-					u.getFirstName()
-							+ " "
-							+ u.getLastName(),
-					null);
-		} catch (XMPPException e) {
-			GenSpace.logger.error("Unable to add friend to roster",e);
-		}
-		
 	}
 
 	

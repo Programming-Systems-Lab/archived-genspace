@@ -42,7 +42,6 @@ public class DynamicTree extends JPanel implements ActionListener,
 	protected DefaultTreeModel treeModel;
 	protected JTree tree;
 	private Toolkit toolkit = Toolkit.getDefaultToolkit();
-	private static String ADD_COMMAND = "add";
 	private static String REMOVE_COMMAND = "remove";
 	private static String NEW_COMMAND = "new";
 	RepositoryPanel repositoryPanel;
@@ -52,15 +51,13 @@ public class DynamicTree extends JPanel implements ActionListener,
 		repositoryPanel = rp;
 		JPanel treePanel = new JPanel(new GridLayout(1, 0));
 
-		JButton addButton = new JButton("Add");
-		addButton.setActionCommand(ADD_COMMAND);
-		addButton.addActionListener(this);
 
-		JButton newButton = new JButton("New");
-		newButton.setActionCommand(NEW_COMMAND);
-		newButton.addActionListener(this);
+//
+//		JButton newButton = new JButton("New Folder");
+//		newButton.setActionCommand(NEW_COMMAND);
+//		newButton.addActionListener(this);
 
-		JButton removeButton = new JButton("Delete");
+		JButton removeButton = new JButton("Delete Selected");
 		removeButton.setActionCommand(REMOVE_COMMAND);
 		removeButton.addActionListener(this);
 
@@ -68,11 +65,9 @@ public class DynamicTree extends JPanel implements ActionListener,
 		// treePanel.setPreferredSize(new Dimension(300, 150));
 		add(treePanel, BorderLayout.CENTER);
 
-		JPanel panel = new JPanel(new GridLayout(0, 3));
-		panel.add(newButton);
-		panel.add(addButton);
-		panel.add(removeButton);
-		add(panel, BorderLayout.SOUTH);
+//		panel.add(newButton);
+//		panel.add(removeButton);
+		add(removeButton, BorderLayout.SOUTH);
 
 		recalculateTree();
 		treeModel = new DefaultTreeModel(rootNode);
@@ -90,26 +85,38 @@ public class DynamicTree extends JPanel implements ActionListener,
 	public void recalculateTree() {
 		User u = LoginFactory.getUser();
 		if (u != null) {
-			rootNode = new DefaultMutableTreeNode(LoginFactory.getUserOps().getRootFolder());
-			addUserWorkflowTree(u);
+			WorkflowFolder root = LoginFactory.getUserOps().getRootFolder();
+			rootNode = new DefaultMutableTreeNode(root);
+			addUserWorkflowTree(root);
+			repaint();
 		}
 	}
 
-	private void addUserWorkflowTree(User u) {
+	private void addUserWorkflowTree(WorkflowFolder r) {
 
 		HashMap<WorkflowFolder, DefaultMutableTreeNode> folders = new HashMap<WorkflowFolder, DefaultMutableTreeNode>();
-		folders.put(u.getRootFolder(), rootNode);
+		folders.put(r, rootNode);
 		// first add all folders
 		// Whenever a folder was added in the ADD function the list of folders
 		// is ordered by name
 		// so we don't worry about it here.Å
-		for (WorkflowFolder f : u.getFolders()) {
+		
+		ArrayList<WorkflowFolder> flders = new ArrayList<WorkflowFolder>();
+		flders.add(r);
+		System.out.println(r.getChildren());
+		for(WorkflowFolder f : r.getChildren())
+		{
+			flders.add(f);
+		}
+		for (WorkflowFolder f : flders) {
 			DefaultMutableTreeNode fnode;
+			System.out.println(f.getChildren());
 			if(f.getParent() != null)
 			{
 				fnode = new DefaultMutableTreeNode(f);
 				folders.put(f, fnode);
 				folders.get(f.getParent()).add(fnode);
+				System.out.println("Adding " + f.getName() + " to " + folders.get(f.getParent()).getUserObject());
 			}
 			else
 				fnode = rootNode;
@@ -216,7 +223,6 @@ public class DynamicTree extends JPanel implements ActionListener,
 
 			// System.out.println("The user has finished editing the node.");
 			// System.out.println("New value: " + node.getUserObject());
-			// TODO change the name in the DB
 		}
 
 		@Override
@@ -241,8 +247,6 @@ public class DynamicTree extends JPanel implements ActionListener,
 
 			if (NEW_COMMAND.equals(command)) {
 				newCommand();
-			} else if (ADD_COMMAND.equals(command)) {
-				addCommand();
 			} else if (REMOVE_COMMAND.equals(command)) {
 				removeCommand();
 			}
@@ -265,7 +269,13 @@ public class DynamicTree extends JPanel implements ActionListener,
 						protected Boolean doInBackground() throws Exception {
 							boolean ret = LoginFactory.getWorkflowOps()
 									.deleteMyWorkflow(uw);
+							if(ret)
+								System.out.println("success");
+							else
+								System.out.println("ret false");
 							LoginFactory.userUpdate();
+							GenSpace.getInstance().getWorkflowRepository().updateUser();
+
 							return ret;
 						};
 
@@ -320,62 +330,6 @@ public class DynamicTree extends JPanel implements ActionListener,
 		}
 	
 
-	private void addCommand() {
-		final String folderName = JOptionPane
-				.showInputDialog("Input a folder name:");
-		if (folderName != null && !folderName.trim().equals("")
-				|| LoginFactory.getUser().containsFolderByName(folderName)) {
-//			DefaultMutableTreeNode root = (DefaultMutableTreeNode) tree
-//					.getModel().getRoot();
-			// if (folderName.equalsIgnoreCase(root.getUserObject()
-			// .toString())) {
-			// folderName = null;
-			// }
-			TreePath currentSelection = tree.getSelectionPath();
-			if (currentSelection != null) {
-				DefaultMutableTreeNode currentNode = (DefaultMutableTreeNode) (currentSelection
-						.getLastPathComponent());
-				if (currentNode instanceof WorkflowNode) {
-					WorkflowNode wf = (WorkflowNode) currentNode;
-					final UserWorkflow uw = wf.userWorkflow;
-					SwingWorker<WorkflowFolder, Void> worker = new SwingWorker<WorkflowFolder, Void>() {
-						protected WorkflowFolder doInBackground()
-								throws Exception {
-							WorkflowFolder folder = new WorkflowFolder();
-							folder.setName(folderName);
-							folder.setOwner(LoginFactory.getUser());
-							return LoginFactory.getWorkflowOps().addWorkflow(
-									uw, folder);
-						};
-
-						protected void done() {
-							WorkflowFolder result = null;
-							try {
-								result = get();
-							} catch (InterruptedException e) {
-								GenSpace.logger.error(
-										"Error talking to server", e);
-							} catch (ExecutionException e) {
-								GenSpace.logger.error(
-										"Error talking to server", e);
-							}
-							if (result != null) {
-								uw.setFolder(result);
-								recalculateAndReload();
-							} else {
-								JOptionPane.showMessageDialog(null, "Success");
-							}
-						};
-					};
-					worker.execute();
-				}
-			}
-		} else {
-			JOptionPane.showMessageDialog(null,
-					"Input an existing folder name.");
-		}
-	}
-
 	private void newCommand() {
 		// Adds a folder as a child of the root folder
 		// Add button clicked
@@ -389,8 +343,10 @@ public class DynamicTree extends JPanel implements ActionListener,
 					WorkflowFolder folder = new WorkflowFolder();
 					folder.setName(folderName);
 					folder.setOwner(LoginFactory.getUser());
+					folder.setParent(LoginFactory.getUser().getRootFolder());
 					WorkflowFolder ret = LoginFactory.getWorkflowOps().addFolder(folder);
 					LoginFactory.updateCachedUser();
+					GenSpace.getInstance().getWorkflowRepository().updateUser();
 					return ret;
 				};
 

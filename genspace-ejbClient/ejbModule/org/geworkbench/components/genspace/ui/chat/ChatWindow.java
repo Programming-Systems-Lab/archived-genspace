@@ -63,7 +63,7 @@ public class ChatWindow extends javax.swing.JFrame {
 	private HashMap<Integer, Integer> tileHashes = new HashMap<Integer, Integer>();
 	private final static int TILE_SIZE = 32;
 
-	private enum messageTypes {
+	public enum messageTypes {
 		WORKFLOW, SCREEN_REQUEST, SCREEN_HANDSHAKE, CHAT, SCREEN_TX_END, SCREEN_RX_END
 	};
 

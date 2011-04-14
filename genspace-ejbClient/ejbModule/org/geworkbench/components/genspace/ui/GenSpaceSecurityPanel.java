@@ -50,16 +50,16 @@ public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin,
 		if (e.getSource() == logout) {
 			
 			GenSpace.getInstance().handleLogout();
-//			GenSpaceLogin.chatHandler.logout();
-//			GenSpaceLogin.chatHandler.rf.setVisible(false);
-//			GenSpaceLogin.chatHandler.rf = null;
-//			for (ChatWindow w : GenSpaceLogin.chatHandler.chats.values()) {
-//				if (w != null) {
-//					w.setVisible(false);
-//					w = null;
-//				}
-//			}
-//			GenSpaceLogin.chatHandler.chats.clear();
+			GenSpaceLogin.chatHandler.logout();
+			GenSpaceLogin.chatHandler.rf.setVisible(false);
+			GenSpaceLogin.chatHandler.rf = null;
+			for (ChatWindow w : GenSpaceLogin.chatHandler.chats.values()) {
+				if (w != null) {
+					w.setVisible(false);
+					w = null;
+				}
+			}
+			GenSpaceLogin.chatHandler.chats.clear();
 
 			LoginFactory.logout();
 			GenSpaceLogin p = new GenSpaceLogin();

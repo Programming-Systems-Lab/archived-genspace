@@ -52,7 +52,7 @@ import org.geworkbench.engine.skin.Skin;
  * 
  */
 public class WorkflowRepository extends JPanel implements VisualPlugin,
-		ActionListener, Runnable {
+		 Runnable {
 
 	private static JFrame frame;
 
@@ -190,18 +190,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-
-		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
-			@Override
-			public Void doInBackground() {
-				return null;
-			}
-		};
-		worker.execute();
-	}
-
-	@Override
 	public Component getComponent() {
 		// In this case, this object is also the GUI component.
 		return this;
@@ -229,16 +217,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 
 	public String getVisualArea(Component visualPlugin) {
 		return visualRegistry.get(visualPlugin);
-	}
-
-	// Is this used?
-	public void addToContainer(String areaName, Component visualPlugin) {
-		DockableImpl wrapper = new DockableImpl(visualPlugin,
-				visualPlugin.getName());
-		DockingManager.registerDockable(wrapper);
-		DefaultDockingPort port = areas.get(areaName);
-		port.dock(wrapper, DockingPort.CENTER_REGION);
-		visualRegistry.put(visualPlugin, areaName);
 	}
 
 	/**
@@ -474,7 +452,9 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		if(repositoryPanel != null && repositoryPanel.tree != null)
 			repositoryPanel.tree.recalculateAndReload();
 		if(inboxTable != null)
+		{
 			inboxTable.setData(LoginFactory.getUser());
+		}
 		// whatever was selected, shouldn't be anymore
 		clearWorkflowData();
 	}

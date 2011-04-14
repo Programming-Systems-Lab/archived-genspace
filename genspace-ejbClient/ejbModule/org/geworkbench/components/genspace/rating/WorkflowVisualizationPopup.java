@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
+import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
@@ -24,22 +26,19 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 
 
 	private static final long serialVersionUID = 2674054526848758204L;
-	private boolean toolOptions = false;
-	private boolean toolRating = false;
-	private boolean workflowOptions = false;
-	private boolean workflowRating = false;
+
 
 	// tool options
 	private JMenuItem gotoToolPage = new JMenuItem();
 	private JMenuItem contactEU = new JMenuItem();
 
 	// tool rating
-	private StarRatingPanel toolSRP = new StarRatingPanel(this);
+	private StarRatingPanel toolSRP = new StarRatingPanel();
 
 	// workflow specific
 	private JMenuItem viewWorkflowCommentsPage = new JMenuItem(
 			"View/add workflow comments");
-	private StarRatingPanel workflowSRP = new StarRatingPanel(this);
+	private StarRatingPanel workflowSRP = new StarRatingPanel();
 	private JMenuItem addWorkflowRepository = new JMenuItem(
 			"Add workflow to your repository");
 
@@ -61,41 +60,64 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 		return this;
 	}
 	private User expert;
-	public void initialize(Tool tn, Workflow workflow) {
+	public void initialize(final Tool tn, Workflow workflow) {
 		this.workflow = workflow;
 		this.tool = tn;
-		getThisPopupMenu().removeAll();
+//		getThisPopupMenu().removeAll();
+		removeAll();
 
 		if (tool != null) {
 
 			tool = tn;
 			toolSRP.setTitle("Rate " + tn.getName());
 
-			if (toolOptions) {
 				gotoToolPage
 						.setText("Goto GenSpace page for " + tn.getName());
 				add(gotoToolPage);
 
 				// add username for expert user request
+					
+				SwingWorker<User, Void> wk = new SwingWorker<User, Void>()
+				{
 
-				expert = LoginFactory.getUsageOps().getExpertUserFor(tn);
+					@Override
+					protected User doInBackground() throws Exception {
+						return LoginFactory.getUsageOps().getExpertUserFor(tn);
+					}
+					@Override
+					protected void done() {
+						try {
+							expert = get();
+						} catch (InterruptedException e) {
+
+						} catch (ExecutionException e) {
+
+						}
+						if(expert != null)
+						contactEU.setText("Contact Expert User - ("
+								+ expert.getFullName() + ")");
+					}
+					
+				};
+				wk.execute();
 
 				if (expert != null) {
-					contactEU.setText("Contact Expert User - ("
-							+ expert.getFullName() + ")");
+					contactEU.setText("Contact Expert User (Loading)");
 					add(contactEU);
 				}
-			}
 
-			if (toolRating && tool.getId() > 0) {
+
+			if (tool.getId() > 0) {
+				System.out.println("Adding tool rating");
+				toolSRP = new StarRatingPanel();
 				toolSRP.setTitle("Rate " + tn);
 				toolSRP.loadRating(tn);
+				add(new JMenuItem().add(toolSRP));
 				add(toolSRP);
 			}
 		}
 
 		if (workflow != null) {
-			if (workflowOptions) {
 			
 				// display only if we have a good id
 				if (workflow.getId() > 0) {
@@ -106,8 +128,9 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 				} else
 					viewWorkflowCommentsPage.setVisible(false);
 
-			}
-			if (workflowRating && workflow.getId() > 0) {
+			if (workflow.getId() > 0) {
+				System.out.println("Add workflow rate");
+				workflowSRP = new StarRatingPanel();
 				workflowSRP.setTitle("Rate workflow until here");
 				workflowSRP.loadRating(workflow);
 				add(workflowSRP);
@@ -116,51 +139,6 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 		
 	}
 
-	public void showWorkflowRating() {
-		workflowRating = true;
-		workflowSRP.setVisible(true);
-	}
-
-	public void showWorkflowOptions() {
-		workflowOptions = true;
-		viewWorkflowCommentsPage.setVisible(true);
-		addWorkflowRepository.setVisible(true);
-	}
-
-	public void showToolOptions() {
-		toolOptions = true;
-
-		gotoToolPage.setVisible(true);
-		contactEU.setVisible(true);
-	}
-
-	public void showToolRating() {
-		toolRating = true;
-		toolSRP.setVisible(true);
-	}
-
-	public void hideWorkflowRating() {
-		workflowRating = false;
-		workflowSRP.setVisible(false);
-	}
-
-	public void hideWorkflowOptions() {
-		workflowOptions = false;
-		viewWorkflowCommentsPage.setVisible(false);
-		addWorkflowRepository.setVisible(false);
-	}
-
-	public void hideToolOptions() {
-		toolOptions = false;
-
-		gotoToolPage.setVisible(false);
-		contactEU.setVisible(false);
-	}
-
-	public void hideToolRating() {
-		toolRating = false;
-		toolSRP.setVisible(false);
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
@@ -213,6 +191,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 						
 						LoginFactory.getWorkflowOps().addWorkflow(uw, LoginFactory.getUser().getRootFolder());
 						LoginFactory.updateCachedUser();
+						GenSpace.getInstance().getWorkflowRepository().updateUser();
 							JOptionPane
 							.showMessageDialog(null,
 									"Workflow added succesfully to repository");
@@ -231,7 +210,6 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 			}
 		};
 		worker.execute();
-		//TODO
 	}
 
 }

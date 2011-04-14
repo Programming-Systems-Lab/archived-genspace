@@ -29,7 +29,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	public boolean deleteMyWorkflow(UserWorkflow uw) {
 		if(uw.getOwner().equals(getUser()))
 		{
+			uw = getEntityManager().merge(uw);
 			getEntityManager().remove(uw);
+			invalidateCache();
 			return true;
 		}
 		return false;
@@ -42,7 +44,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		uw.setOwner(getUser());
 		getEntityManager().persist(uw);
 //		getEntityManager().refresh(folder);
-		
+		invalidateCache();
 		WorkflowFolder ret = getEntityManager().find(WorkflowFolder.class, folder.getId());
 		return ret;
 	}
@@ -52,6 +54,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		System.out.println("Adding " + folder);
 		folder.setOwner(getUser());
 		getEntityManager().persist(folder);
+		invalidateCache();
 //		getEntityManager().refresh(folder);
 		return folder;
 	}
@@ -60,9 +63,11 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	public boolean deleteFromInbox(IncomingWorkflow wi) {
 		if(wi.getReceiver().equals(getUser()))
 		{
+			wi = getEntityManager().merge(wi);
 			getEntityManager().remove(wi);
 			return true;
 		}
+		invalidateCache();
 		return false;
 	}
 
@@ -73,7 +78,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		uw.setFolder(getUser().getRootFolder());
 		uw.setCreatedAt(new Date());
 		uw.setName(wi.getName());
+		uw.setOwner(getUser());
 		getEntityManager().persist(uw);
+		invalidateCache();
 //		getEntityManager().refresh(uw);
 		return uw;
 	}
@@ -82,7 +89,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	public boolean removeComment(WorkflowComment wc) {
 		if(wc.getCreator().equals(getUser()))
 		{
+			wc = getEntityManager().merge(wc);
 			getEntityManager().remove(wc);
+			invalidateCache();
 			return true;
 		}
 		return false;
@@ -93,7 +102,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		wc.setCreatedAt(new Date());
 		wc.setCreator(getUser());
 		getEntityManager().persist(wc);
-		getEntityManager().refresh(wc);
+		wc = getEntityManager().merge(wc);
+		invalidateCache();
 		return wc;
 	}
 
@@ -109,6 +119,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		newW.setSender(getUser());
 		newW.setCreatedAt(new Date());
 		getEntityManager().persist(newW);
+		invalidateCache();
 		return true;
 	}
 
@@ -121,6 +132,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 				getEntityManager().remove(uw);
 			}
 			getEntityManager().remove(folder);
+			invalidateCache();
 			return true;
 		}
 		return false;

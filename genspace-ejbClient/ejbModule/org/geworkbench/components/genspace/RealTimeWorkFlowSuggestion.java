@@ -254,10 +254,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 					// @Override
 					@Override
 					public void mouseClicked(MouseEvent event) {
-						popup.showToolOptions();
-						popup.showToolRating();
-						popup.showWorkflowOptions();
-						popup.showWorkflowRating();
+
 
 						WorkflowViewerPanelNode node = (WorkflowViewerPanelNode) event
 								.getSource();

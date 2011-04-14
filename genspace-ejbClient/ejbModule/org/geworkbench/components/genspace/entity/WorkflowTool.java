@@ -44,7 +44,10 @@ public class WorkflowTool implements Serializable{
 	public void setOrder(int order) {
 		this.order = order;
 	}
-	
+	@Override
+	public String toString() {
+		return tool.toString();
+	}
 	
 }
  

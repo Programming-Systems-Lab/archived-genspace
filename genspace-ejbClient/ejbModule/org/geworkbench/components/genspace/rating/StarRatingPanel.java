@@ -48,11 +48,11 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 //	private JComponent parent;
 
-	public StarRatingPanel(JComponent parent) {
-		this(parent, "", null);
+	public StarRatingPanel() {
+		this("", null);
 	}
 
-	public StarRatingPanel(JComponent parent, String titleText, Tool tool) {
+	public StarRatingPanel(String titleText, Tool tool) {
 
 
 		contentPanel
@@ -74,12 +74,12 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 		contentPanel.add(ratingInfo, BorderLayout.EAST);
 
 		// add stars
-		stars = new Star[5];
-		for (int i = 0; i < 5; i++)
-			stars[i] = new Star(this, i + 1);
-		contentPanel.add(starPanel, BorderLayout.WEST);
-		for (int i = 0; i < 5; i++)
-			starPanel.add(stars[i]);
+//		stars = new Star[5];
+//		for (int i = 0; i < 5; i++)
+//			stars[i] = new Star(this, i + 1);
+//		contentPanel.add(starPanel, BorderLayout.WEST);
+//		for (int i = 0; i < 5; i++)
+//			starPanel.add(stars[i]);
 	}
 
 	public void setTitle(String t) {
@@ -130,11 +130,12 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 		this.tool = tn;
 		// see if we can even execute the query
-		if (tn == null || tn.getId() < 1) {
-			setVisible(false);
-			return;
-		} else
-			setVisible(true);
+//		if (tn == null || tn.getId() < 1) {
+//			System.out.println("Setting not visible");
+//			setVisible(false);
+//			return;
+//		} else
+//			setVisible(true);
 
 		SwingWorker<ToolRating, Void> worker = new SwingWorker<ToolRating, Void>() {
 			@Override

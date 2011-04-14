@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/7716/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
+/svn/geworkbench/!svn/ver/7724/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
 END
 GoTermMatcher.java
 K 25
@@ -25,13 +25,13 @@ GoAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/7475/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.java
+/svn/geworkbench/!svn/ver/7724/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.java
 END
 GoAnalysisParameterPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 148
-/svn/geworkbench/!svn/ver/7716/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisParameterPanel.java
+/svn/geworkbench/!svn/ver/7724/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisParameterPanel.java
 END
 GoTreeNode.java
 K 25

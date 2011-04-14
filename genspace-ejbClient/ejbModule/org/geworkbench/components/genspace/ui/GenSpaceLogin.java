@@ -45,7 +45,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 	private JLabel l1, l2, l3;
 	private JTextField tf;
 	private JPasswordField pf;
-	private LoadingPanel loader = new LoadingPanel();
 	private JButton b1, b2, b3;
 	
 	private JLabel msgText, msgText1, msgText2, msgText3, msgText4, msgText5,
@@ -92,7 +91,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		b1 = new JButton("Login");
 		b2 = new JButton("Clear");
 		b3 = new JButton("Register");
-		loader.setSize(100, 100);
 		l3.setVisible(true);
 		lPanel.add(l1);
 		lPanel.add(tf);
@@ -101,7 +99,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		lPanel.add(b1);
 		lPanel.add(b2);
 		lPanel.add(b3);
-		lPanel.add(loader);
 		lPanel.add(l3);
 		b1.addActionListener(this);
 		b2.addActionListener(this);
@@ -143,6 +140,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 		if (e.getSource() == b1) {
 
 			javax.swing.SwingWorker<User, Void> worker = new javax.swing.SwingWorker<User, Void>() {
+				int evt;
 				@Override
 				protected void done() {
 					if(LoginFactory.getUser() != null)
@@ -160,13 +158,13 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 						getThisPanel().add(p);
 						// this.setSize(500, 500);
 						getThisPanel().revalidate();
-						loader.stop();
+						GenSpace.getStatusBar().stop(evt);
 					}
 					super.done();
 				}
 				@Override
 				public User doInBackground() {
-					loader.start();
+					evt = GenSpace.getStatusBar().start("Logging in");
 					b1.setEnabled(false);
 
 					try {
@@ -179,20 +177,20 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 								return LoginFactory.getUser();
 
 							} else {
-								loader.stop();
+								GenSpace.getStatusBar().stop(evt);
 								String msg = "User Log in failed.";
 								JOptionPane.showMessageDialog(getComponent(),
 										msg);
 							}
 						} else {
-							loader.stop();
+							GenSpace.getStatusBar().stop(evt);
 							JOptionPane.showMessageDialog(getComponent(),
 									errMsg.toString(), "Error Information",
 									JOptionPane.INFORMATION_MESSAGE);
 							getThisPanel().revalidate();
 						}
 					} catch (Exception ex) {
-						loader.stop();
+						GenSpace.getStatusBar().stop(evt);
 						ex.printStackTrace();
 					}
 					b1.setEnabled(true);

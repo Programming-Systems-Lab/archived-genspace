@@ -9,6 +9,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.WorkflowFolder;
 
@@ -25,31 +26,42 @@ public abstract class AbstractFacade<T> {
 		u.getFolders().size();
 		for(WorkflowFolder wf : u.getFolders())
 		{
+			getEntityManager().refresh(wf);
 			wf.getWorkflows().size();
+			for(WorkflowFolder f : wf.getChildren())
+			{
+				f.getWorkflows().size();
+			}
 		}
 		u.getFriends().size();
 		u.getIncomingWorkflows().size();
+		System.out.println("Incoming workflows:");
+		for(IncomingWorkflow w : u.getIncomingWorkflows())
+		{
+			System.out.println(w);
+		}
 		u.getWorkflowComments().size();
 		u.getWorkflows().size(); 
 		u.getNetworks().size();
 		return u;
 	}
-
+    protected void invalidateCache()
+    {
+    	cachedUser = null;
+    }
     private User cachedUser = null;
     @Resource
     SessionContext ctx;
     protected User getUser()
     {
-    	if(cachedUser != null)
-    		return cachedUser;
+//    	if(cachedUser != null)
+//    		return cachedUser;
     	Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
-    	System.out.println("Doing select for user " +  ctx.getCallerPrincipal().getName());
 		q.setParameter("user", ctx.getCallerPrincipal().getName());
 		User r = null;
 		try
 		{
 		r = (User) q.getSingleResult();
-		System.out.println("Have result " + r.getFullName() + r.getLabAffiliation());
 		}
 		catch(NoResultException e)
 		{

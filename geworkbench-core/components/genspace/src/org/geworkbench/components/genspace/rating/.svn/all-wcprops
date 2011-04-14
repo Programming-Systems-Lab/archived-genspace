@@ -7,7 +7,13 @@ WorkflowVisualizationPopup.java
 K 25
 svn:wc:ra_dav:version-url
 V 147
-/svn/geworkbench/!svn/ver/4878/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/WorkflowVisualizationPopup.java
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/WorkflowVisualizationPopup.java
+END
+TitleItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/TitleItem.java
 END
 empty.png
 K 25
@@ -25,19 +31,13 @@ Star.java
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/Star.java
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/Star.java
 END
 arrow_right.png
 K 25
 svn:wc:ra_dav:version-url
 V 131
 /svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/arrow_right.png
-END
-Rater.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/4878/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/Rater.java
 END
 half.png
 K 25
@@ -49,5 +49,5 @@ StarRatingPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/4878/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/StarRatingPanel.java
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/StarRatingPanel.java
 END

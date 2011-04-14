@@ -3,95 +3,203 @@ svn:wc:ra_dav:version-url
 V 72
 /svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib
 END
-jdic.jar
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jdic.jar
-END
-graph-chris.xml
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/graph-chris.xml
-END
-swing-worker-1.2.jar
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/4868/trunk/geworkbench/components/genspace/lib/swing-worker-1.2.jar
-END
-ymsg_support_v0_6.jar
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/ymsg_support_v0_6.jar
-END
-ymsg_network_v0_6.jar
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/ymsg_network_v0_6.jar
-END
-jazzy-core.eng.jar
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jazzy-core.eng.jar
-END
-junit-4.5.jar
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/junit-4.5.jar
-END
-cindy.jar
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/cindy.jar
-END
-jdic.dll
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jdic.dll
-END
-colt-1.2.0.jar
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib/colt-1.2.0.jar
-END
-daim.jar
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/daim.jar
-END
-natelib.jar
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/natelib.jar
-END
-jgraph.jar
+config.jar
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svn/geworkbench/!svn/ver/4271/trunk/geworkbench/components/genspace/lib/jgraph.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/config.jar
 END
-msnm.jar
+deployment-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/deployment-common.jar
+END
+security.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/security.jar
+END
+config-types.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/config-types.jar
+END
+javax.ejb.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.ejb.jar
+END
+osgi-jpa.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/osgi-jpa.jar
+END
+glassfish-corba-codegen.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-codegen.jar
+END
+grizzly-lzma.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-lzma.jar
+END
+config-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/config-api.jar
+END
+jta.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jta.jar
+END
+tray.dll
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/msnm.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/tray.dll
 END
-concurrent-1.3.4.jar
+osgi-adapter.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/osgi-adapter.jar
+END
+log4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/log4j.jar
+END
+ldapbp-repackaged.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/ldapbp-repackaged.jar
+END
+glassfish-corba-orb.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-orb.jar
+END
+jimi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jimi.jar
+END
+glassfish-corba-internal-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-internal-api.jar
+END
+auto-depends.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/auto-depends.jar
+END
+glassfish-naming.jar
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib/concurrent-1.3.4.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-naming.jar
+END
+ha-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/ha-api.jar
+END
+jts.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jts.jar
+END
+org.eclipse.persistence.jpa.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.eclipse.persistence.jpa.jar
+END
+grizzly-utils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-utils.jar
+END
+container-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/container-common.jar
+END
+intellij.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/intellij.jar
+END
+monitoring-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/monitoring-core.jar
+END
+mina-core-1.1.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/mina-core-1.1.7.jar
+END
+javax.security.jacc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.security.jacc.jar
+END
+simple-glassfish-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/simple-glassfish-api.jar
+END
+hk2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/hk2.jar
+END
+appclient.security.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/appclient.security.jar
+END
+logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/logging.jar
+END
+libpam4j-repackaged.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/libpam4j-repackaged.jar
 END
 smackx.jar
 K 25
@@ -99,177 +207,549 @@ svn:wc:ra_dav:version-url
 V 83
 /svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/smackx.jar
 END
-jgraph-latest-lgpl-src.jar
+javax.servlet.jsp.jar
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jgraph-latest-lgpl-src.jar
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.servlet.jsp.jar
 END
-graph-swap.xml
+javax.mail.jar
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/graph-swap.xml
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.mail.jar
 END
-smack.jar
+gf-client-module.jar
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/smack.jar
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/gf-client-module.jar
 END
-substance.jar
+work-management.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/work-management.jar
+END
+jaspic.provider.framework.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jaspic.provider.framework.jar
+END
+cmp-internal-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/cmp-internal-api.jar
+END
+javax.jms.jar
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/substance.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.jms.jar
 END
-joscar-client.jar
+osgi-javaee-base.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/osgi-javaee-base.jar
+END
+org.apache.felix.scr.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.apache.felix.scr.jar
+END
+common-util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/common-util.jar
+END
+grizzly-framework.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-framework.jar
+END
+persistence-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/persistence-common.jar
+END
+orb-connector.jar
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/joscar-client.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/orb-connector.jar
 END
-openymsg.jar
+org.eclipse.persistence.asm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.eclipse.persistence.asm.jar
+END
+admin-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/admin-core.jar
+END
+glassfish-corba-orbgeneric.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-orbgeneric.jar
+END
+bean-validator.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/bean-validator.jar
+END
+pkg-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/pkg-client.jar
+END
+el-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/el-impl.jar
+END
+javax.management.j2ee.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.management.j2ee.jar
+END
+asm-all-repackaged.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/asm-all-repackaged.jar
+END
+grizzly-config.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-config.jar
+END
+jms-core.jar
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/openymsg.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jms-core.jar
 END
-jung-algorithms-2.0.jar
+ejb-container.jar
 K 25
 svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib/jung-algorithms-2.0.jar
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/ejb-container.jar
 END
-jdic_misc.jar
+ejb-internal-api.jar
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jdic_misc.jar
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/ejb-internal-api.jar
 END
-jung-api-2.0.jar
+flashlight-agent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/flashlight-agent.jar
+END
+internal-api.jar
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib/jung-api-2.0.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/internal-api.jar
 END
-jdic_stub.jar
+webservices-api-osgi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/webservices-api-osgi.jar
+END
+connectors-inbound-runtime.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/connectors-inbound-runtime.jar
+END
+org.eclipse.persistence.jpa.modelgen.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.eclipse.persistence.jpa.modelgen.jar
+END
+ssl-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/ssl-impl.jar
+END
+jgraphx.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jgraphx.jar
+END
+transaction-internal-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/transaction-internal-api.jar
+END
+ejb.security.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/ejb.security.jar
+END
+gf-client.jar
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jdic_stub.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/gf-client.jar
+END
+kernel.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/kernel.jar
+END
+grizzly-websockets.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-websockets.jar
+END
+javax.enterprise.deploy.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.enterprise.deploy.jar
+END
+glassfish.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish.jar
+END
+woodstox-osgi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/woodstox-osgi.jar
+END
+jaxb-api-osgi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jaxb-api-osgi.jar
+END
+glassfish-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-api.jar
+END
+jsp-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jsp-impl.jar
+END
+javax.servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.servlet.jar
+END
+javax.persistence.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.persistence.jar
+END
+jaxrpc-api-osgi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jaxrpc-api-osgi.jar
+END
+deployment-javaee-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/deployment-javaee-core.jar
+END
+glassfish-corba-csiv2-idl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-csiv2-idl.jar
+END
+class-model.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/class-model.jar
+END
+grizzly-portunif.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-portunif.jar
+END
+docking.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/docking.jar
+END
+osgi-ejb-container.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/osgi-ejb-container.jar
+END
+org.eclipse.persistence.core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.eclipse.persistence.core.jar
+END
+mimepull.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/mimepull.jar
+END
+glassfish-corba-asm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-asm.jar
+END
+glassfish-registration.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-registration.jar
+END
+swing-worker-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/4868/trunk/geworkbench/components/genspace/lib/swing-worker-1.2.jar
 END
 commons-logging.jar
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/commons-logging.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/commons-logging.jar
 END
-Pack200Task.jar
+jpa-connector.jar
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/Pack200Task.jar
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/jpa-connector.jar
 END
-tray.dll
+admin-util.jar
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/tray.dll
+V 87
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/admin-util.jar
 END
-joscar-protocol.jar
+grizzly-http-servlet.jar
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/joscar-protocol.jar
+V 97
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-http-servlet.jar
 END
-jdic_misc.dll
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jdic_misc.dll
-END
-jung-visualization-2.0.jar
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib/jung-visualization-2.0.jar
-END
-GraphXML.dtd
+hk2-core.jar
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/GraphXML.dtd
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/hk2-core.jar
 END
-db-ojb-1.0.4.jar
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/db-ojb-1.0.4.jar
-END
-jsocks-klea.jar
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jsocks-klea.jar
-END
-foo.jar
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/foo.jar
-END
-hyperapplet.jar
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/hyperapplet.jar
-END
-cos.jar
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/cos.jar
-END
-jml.jar
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jml.jar
-END
-jaimlib.jar
+stats77.jar
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/jaimlib.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/stats77.jar
 END
-sample.properties
+org.eclipse.persistence.antlr.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.eclipse.persistence.antlr.jar
+END
+grizzly-comet.jar
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/sample.properties
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-comet.jar
 END
-graph.xml
+orb-iiop.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/orb-iiop.jar
+END
+flashlight-framework.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/flashlight-framework.jar
+END
+javax.annotation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.annotation.jar
+END
+gmbal.jar
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/graph.xml
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/gmbal.jar
 END
-MANIFEST.MF
+management-api.jar
 K 25
 svn:wc:ra_dav:version-url
-V 84
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/MANIFEST.MF
+V 91
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/management-api.jar
 END
-jung-graph-impl-2.0.jar
+orb-enabler.jar
 K 25
 svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/5310/trunk/geworkbench/components/genspace/lib/jung-graph-impl-2.0.jar
+V 88
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/orb-enabler.jar
 END
-joscar-common.jar
+grizzly-rcm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-rcm.jar
+END
+acc-config.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/acc-config.jar
+END
+smack.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/smack.jar
+END
+connectors-internal-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/connectors-internal-api.jar
+END
+connectors-runtime.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/connectors-runtime.jar
+END
+swing-layout-1.0.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/swing-layout-1.0.3.jar
+END
+javax.resource.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.resource.jar
+END
+osgi-ee-resources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/osgi-ee-resources.jar
+END
+org.eclipse.persistence.oracle.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/org.eclipse.persistence.oracle.jar
+END
+gms-bootstrap.jar
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/joscar-common.jar
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/gms-bootstrap.jar
+END
+scattered-archive-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/scattered-archive-api.jar
+END
+annotation-framework.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/annotation-framework.jar
+END
+dol.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/dol.jar
+END
+glassfish-ee-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-ee-api.jar
+END
+glassfish-corba-omgapi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-omgapi.jar
+END
+grizzly-http.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/grizzly-http.jar
+END
+javax.transaction.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.transaction.jar
+END
+glassfish-corba-newtimer.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/glassfish-corba-newtimer.jar
+END
+shoal-gms-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/shoal-gms-api.jar
+END
+javax.security.auth.message.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/lib/javax.security.auth.message.jar
 END

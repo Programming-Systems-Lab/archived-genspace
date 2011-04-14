@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -58,7 +59,8 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 	private JPanel popWFPanel;
 	private JPanel popFirstToolsPan;
 	private JPanel statsPan;
-
+	private boolean instrument = true;
+	
 	private void updateAllToolList() {
 		SwingWorker<List<Tool>, Void> worker = new SwingWorker<List<Tool>, Void>() {
 
@@ -73,6 +75,8 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 						m.addElement(s);
 					}
 					toolListing.setModel(m);
+					if(instrument)
+						System.out.println("Entire tool list size: " + GenSpace.getObjectSize((Serializable) results));
 				} catch (InterruptedException e) {
 					GenSpace.logger.fatal("Error talking to server: ",e);
 				} catch (ExecutionException e) {
@@ -107,6 +111,8 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 							break;
 					}
 					popularTools.setModel(m);
+					if(instrument)
+						System.out.println("Popular tools size: " + GenSpace.getObjectSize((Serializable) results));
 				} catch (InterruptedException e) {
 					GenSpace.logger.fatal("Error talking to server: ",e);
 				} catch (ExecutionException e) {
@@ -147,6 +153,8 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					popWFPanel.revalidate();
 					revalidate();
 					repaint();
+					if(instrument)
+						System.out.println("Popular workflows size: " + GenSpace.getObjectSize((Serializable) results));
 				} catch (InterruptedException e) {
 					GenSpace.logger.fatal(e);
 				} catch (ExecutionException e) {
@@ -180,6 +188,8 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 						if (lim <= 0)
 							break;
 					}
+					if(instrument)
+						System.out.println("Popular first tools size: " + GenSpace.getObjectSize((Serializable) results));
 					popularFirstTools.setModel(m);
 				} catch (InterruptedException e) {
 					GenSpace.logger.fatal("Error talking to server: ",e);

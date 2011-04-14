@@ -79,7 +79,9 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 
 	@Override
 	public WorkflowFolder getRootFolder() {
-		WorkflowFolder ret = getMe().getRootFolder();
+		invalidateCache();
+		WorkflowFolder ret = getUser().getRootFolder();
+		getEntityManager().refresh(ret);
 		if(ret == null)
 		{
 			ret = new WorkflowFolder();
@@ -95,6 +97,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		{
 			for(UserWorkflow uw : r.getWorkflows())
 			{
+				getEntityManager().refresh(uw.getWorkflow());
 				uw.getWorkflow().getTools().size();
 				if(uw.getWorkflow().getCreator() != null)
 					uw.getWorkflow().getCreator().getUsername();
@@ -105,6 +108,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		}
 		for(UserWorkflow uw : ret.getWorkflows())
 		{
+			System.out.println("Wkflw name: " + uw.getName());
 			uw.getWorkflow().getTools().size();
 			if(uw.getWorkflow().getCreator() != null)
 				uw.getWorkflow().getCreator().getUsername();

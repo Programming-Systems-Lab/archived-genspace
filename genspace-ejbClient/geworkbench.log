@@ -10825,3 +10825,20 @@ Caused by: java.lang.NullPointerException
 	at org.geworkbench.components.genspace.GenSpace.<init>(GenSpace.java:75)
 	at org.geworkbench.components.genspace.GenSpace.main(GenSpace.java:64)
 [geworkbench - AWT-EventQueue-0 (2011-02-16 15:03:41,783)] FATAL org.geworkbench.components.genspace.ui.WorkflowStatistics$3.done(132) | java.util.concurrent.ExecutionException: java.lang.NullPointerException
+[geworkbench - main (2011-04-13 19:46:02,709)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 19:46:02,772)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 19:46:02,808)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 19:46:02,812)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 19:46:03,655)] ERROR org.geworkbench.components.genspace.GenSpaceImp.<init>(113) | Logging...
+[geworkbench - main (2011-04-13 20:12:41,102)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:12:41,131)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:12:41,181)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:12:41,184)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:12:42,066)] ERROR org.geworkbench.components.genspace.GenSpaceImp.<init>(113) | Logging...
+[geworkbench - main (2011-04-13 20:14:35,557)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:14:35,575)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:14:35,607)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:14:35,610)] DEBUG org.geworkbench.components.genspace.ui.AutoCompleteCombo.<init>(50) | setPattern() called from constructor
+[geworkbench - main (2011-04-13 20:14:36,555)] ERROR org.geworkbench.components.genspace.GenSpaceImp.<init>(113) | Logging...
+[geworkbench - main (2011-04-13 20:15:46,389)] ERROR org.geworkbench.components.genspace.GenSpaceImp.<init>(113) | Logging...
+[geworkbench - main (2011-04-13 20:17:37,843)] ERROR org.geworkbench.components.genspace.GenSpace.<init>(113) | Logging...

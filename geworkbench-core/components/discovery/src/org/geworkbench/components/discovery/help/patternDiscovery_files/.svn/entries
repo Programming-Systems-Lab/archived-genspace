@@ -1,7 +1,7 @@
 10
 
 dir
-7720
+7729
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -128,40 +128,6 @@ has-props
 
 8040
 
-T_PatternDiscovery_RunProgress.png
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-2cab1d12a867f7334de65c51a987200f
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7584
-
 T_PatternDiscovery_Params_Advanced_BLOSUM.png
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 6510
+
+T_PatternDiscovery_RunProgress.png
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+2cab1d12a867f7334de65c51a987200f
+2010-09-13T14:40:56.329012Z
+7051
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7584
 
 T_PatternDiscovery_Params_Basic_histone_result_exact_seqs.png
 file
@@ -298,40 +298,6 @@ has-props
 
 68363
 
-T_PatternDiscovery_SessionConnect.png
-file
-
-
-
-
-2011-01-24T18:12:08.000000Z
-57665acd404c84e851f6b9915e5445c1
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-23838
-
 T_PatternDiscovery_Params_Basic_initial.png
 file
 
@@ -366,14 +332,14 @@ has-props
 
 13900
 
-T_PatternDiscovery_Histones_Result_exact_2.png
+T_PatternDiscovery_SessionConnect.png
 file
 
 
 
 
 2011-01-24T18:12:08.000000Z
-5849a0d6f011d3ccb7d994c978029464
+57665acd404c84e851f6b9915e5445c1
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -398,7 +364,7 @@ has-props
 
 
 
-23131
+23838
 
 T_PatternDiscovery_Params_Basic_histone_result_exact.png
 file
@@ -434,14 +400,14 @@ has-props
 
 32433
 
-T_PatternDiscovery_Params_Basic_histone_result_blosum50.png
+T_PatternDiscovery_Histones_Result_exact_2.png
 file
 
 
 
 
 2011-01-24T18:12:08.000000Z
-8a652a8809f298caad2f44994dc22756
+5849a0d6f011d3ccb7d994c978029464
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -466,7 +432,7 @@ has-props
 
 
 
-38179
+23131
 
 T_PatternDiscovery_Params_Basic_histone_run.png
 file
@@ -501,6 +467,40 @@ has-props
 
 
 13939
+
+T_PatternDiscovery_Params_Basic_histone_result_blosum50.png
+file
+
+
+
+
+2011-01-24T18:12:08.000000Z
+8a652a8809f298caad2f44994dc22756
+2010-09-13T14:40:56.329012Z
+7051
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38179
 
 T_PatternDiscovery_Params_Limits.png
 file

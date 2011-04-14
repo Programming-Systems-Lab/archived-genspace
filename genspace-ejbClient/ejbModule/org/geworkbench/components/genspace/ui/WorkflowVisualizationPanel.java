@@ -57,9 +57,7 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 		this.addComponentListener(new ComponentListener() {
 			
 			@Override
-			public void componentShown(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void componentShown(ComponentEvent e) {				
 			}
 			
 			@Override
@@ -68,15 +66,11 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 			}
 			
 			@Override
-			public void componentMoved(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void componentMoved(ComponentEvent e) {				
 			}
 			
 			@Override
 			public void componentHidden(ComponentEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 		});
 	}
@@ -163,33 +157,17 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 							mxCell mx = (mxCell) cell;
 							cell = mx.getValue();
 						}
-						if(cell.getClass().equals(Tool.class))
+						if(cell.getClass().equals(WorkflowTool.class))
 						{
-							Tool selected = (Tool) cell;
-							System.out.println("Selected " + cell);
-							Workflow workflow = null;
-							if (workflows != null && workflows.size() > 0) {
-								workflow = workflows.get(workflows.size() -1 );
-								popup.showWorkflowOptions();
-								popup.showWorkflowRating();
-								popup.showToolOptions();
-								popup.showToolRating();
-								popup.initialize(selected, workflow);
-								popup.show(WorkflowVisualizationPanel.this, (int) e.getX(),
-										(int) e.getY());
-
-							}
-						}
-						else
-						{
-							System.out.println("Not a tool selected: " + cell.getClass());
+							WorkflowTool selected = (WorkflowTool) cell;
+							popup.initialize(selected.getTool(), selected.getWorkflow());
+							popup.show(WorkflowVisualizationPanel.this, (int) e.getX(),
+									(int) e.getY());
 						}
 					}
 				}
 			});
-			
-			refreshLayout();
-			refreshLayout();
+		refreshLayout();
 	}
 	@Override
 	public Component getComponent() {
@@ -281,7 +259,7 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 			else
 				styl = "WORKFLOW";
 			Rectangle2D r = f.getStringBounds(to.getTool().getName(), ((Graphics2D) this.getGraphics()).getFontRenderContext());
-			Object v1 = graph.insertVertex(parent, null, to.getTool(), 10, 10, r.getWidth()+10, r.getHeight()+10,styl);
+			Object v1 = graph.insertVertex(parent, null, to, 10, 10, r.getWidth()+10, r.getHeight()+10,styl);
 			if(lastCell != null)
 				graph.insertEdge(parent, null, "", lastCell, v1,"editable=0");
 			else if(drawFrom != null)

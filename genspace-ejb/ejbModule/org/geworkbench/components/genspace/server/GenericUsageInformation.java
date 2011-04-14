@@ -18,6 +18,7 @@ import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
 
+
 public abstract class GenericUsageInformation extends AbstractFacade<Tool>  implements ToolInformationProvider{
 
 	public GenericUsageInformation() {
@@ -37,18 +38,21 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	}
 
 	public List<Workflow> getWorkflowsByPopularity() {
+		System.out.println("Gettign workflows by popularity");
+		long start = System.currentTimeMillis();
 		CriteriaQuery<Object> cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(Workflow.class));
+        cq.select(cq.from(Workflow.class));//.joinList("tools")); 
         List<Object> r = getEntityManager().createQuery(cq).getResultList();
         List<Workflow> wr = new ArrayList<Workflow>();
         for(Object o : r)
         {
         	wr.add((Workflow) o);
-        	
+        	 
         	((Workflow) o).getTools().size();
-        }
+        } 
+        System.out.println("Finished getting workflows in time " + ((System.currentTimeMillis() - start)/1000));
         return wr;
-	}
+	} 
 	
 	@SuppressWarnings("unchecked")
 	public List<Tool> getMostPopularWFHeads() {
@@ -158,17 +162,21 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMostPopularWorkflowIncluding(Tool tool) {
+		System.out.println("Starting to get most popular workflow including " + tool);
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
 				"where wt.tool_id=? order by w.usageCount desc limit 1", Workflow.class);
 		q.setParameter(1, tool.getId());
 		List<Workflow> wf = null;
+		System.out.println("Ran query");
         try
 		{
         	wf = q.getResultList();
+        	System.out.println("have list");
         	for(Workflow w : wf)
         		for(WorkflowTool wft : w.getTools())
         			wft.getTool();
+        	System.out.println("returning");
 		}
 		catch(NoResultException e)
 		{

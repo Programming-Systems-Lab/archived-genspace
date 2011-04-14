@@ -154,8 +154,11 @@ VisualPlugin {
 			final MyTableModel model) {
 		SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
 			protected Boolean doInBackground() throws Exception {
-				return LoginFactory.getWorkflowOps()
+				Boolean ret =  LoginFactory.getWorkflowOps()
 						.deleteFromInbox(wi);
+				LoginFactory.updateCachedUser();
+				workflowRepository.updateUser();
+				return ret;
 			};
 
 			protected void done() {
@@ -181,6 +184,7 @@ VisualPlugin {
 				UserWorkflow ret = LoginFactory.getWorkflowOps()
 						.addToRepository(wi);
 				LoginFactory.updateCachedUser();
+				workflowRepository.updateUser();
 				return ret;
 			};
 

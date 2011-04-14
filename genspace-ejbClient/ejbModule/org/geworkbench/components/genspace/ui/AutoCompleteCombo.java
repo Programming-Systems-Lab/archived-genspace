@@ -47,7 +47,7 @@ public class AutoCompleteCombo extends JComboBox {
 		logger.setLevel(Level.DEBUG);
 		setEditable(true);
 
-		logger.debug("setPattern() called from constructor");
+//		logger.debug("setPattern() called from constructor");
 		setPattern(null);
 		updatePopup = false;
 
@@ -89,7 +89,6 @@ public class AutoCompleteCombo extends JComboBox {
 						// there is no such element in the model for now
 						String text = textComponent.getText();
 						if (!model.data.contains(text)) {
-							logger.debug("addToTop() called from keyPressed()");
 							addToTop(text);
 						}
 					} else if (key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN) {
@@ -182,8 +181,7 @@ public class AutoCompleteCombo extends JComboBox {
 
 		if (previousPattern == null && pattern == null || pattern != null
 				&& pattern.equals(previousPattern)) {
-			logger.debug("[setPatter] pattern is the same as previous: "
-					+ previousPattern);
+
 			return;
 		}
 
