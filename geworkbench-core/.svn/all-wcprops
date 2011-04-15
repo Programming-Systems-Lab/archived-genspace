@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svn/geworkbench/!svn/ver/7729/trunk/geworkbench
+/svn/geworkbench/!svn/ver/7732/trunk/geworkbench
 END
 java.policy
 K 25
@@ -93,23 +93,17 @@ svn:wc:ra_dav:version-url
 V 70
 /svn/geworkbench/!svn/ver/4453/trunk/geworkbench/ReleaseNotes1.6.1.txt
 END
-ReleaseNotes1.8.0.txt
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svn/geworkbench/!svn/ver/5737/trunk/geworkbench/ReleaseNotes1.8.0.txt
-END
 ReleaseNotes1.6.2.txt
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/geworkbench/!svn/ver/4470/trunk/geworkbench/ReleaseNotes1.6.2.txt
 END
-ReleaseNotes1.6.3.txt
+ReleaseNotes1.8.0.txt
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/geworkbench/!svn/ver/4599/trunk/geworkbench/ReleaseNotes1.6.3.txt
+/svn/geworkbench/!svn/ver/5737/trunk/geworkbench/ReleaseNotes1.8.0.txt
 END
 YG_cDNA_annot.csv
 K 25
@@ -117,17 +111,23 @@ svn:wc:ra_dav:version-url
 V 65
 /svn/geworkbench/!svn/ver/147/trunk/geworkbench/YG_cDNA_annot.csv
 END
-build-component.xml
+ReleaseNotes1.6.3.txt
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/geworkbench/!svn/ver/7318/trunk/geworkbench/build-component.xml
+V 70
+/svn/geworkbench/!svn/ver/4599/trunk/geworkbench/ReleaseNotes1.6.3.txt
 END
 build.xml
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/geworkbench/!svn/ver/7726/trunk/geworkbench/build.xml
+END
+build-component.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/geworkbench/!svn/ver/7318/trunk/geworkbench/build-component.xml
 END
 .classpath
 K 25
@@ -171,17 +171,17 @@ svn:wc:ra_dav:version-url
 V 61
 /svn/geworkbench/!svn/ver/1160/trunk/geworkbench/makeGear.bat
 END
-geworkbench-lite.ipr
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/geworkbench/!svn/ver/2859/trunk/geworkbench/geworkbench-lite.ipr
-END
 usage.txt
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/geworkbench/!svn/ver/1679/trunk/geworkbench/usage.txt
+END
+geworkbench-lite.ipr
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/geworkbench/!svn/ver/2859/trunk/geworkbench/geworkbench-lite.ipr
 END
 caWorkbench_ReleaseNotes_V3.0.txt
 K 25

@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -21,7 +22,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
-import org.geworkbench.components.genspace.server.UsageInformationRemote;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
 
@@ -35,13 +35,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 	private JButton button = new JButton("Search");
 	private JLabel label = new JLabel();
 	private JPanel selectPanel = new JPanel();
-	private static UsageInformationRemote facade;
-	public static UsageInformationRemote getFacade()
-	{
-		if(facade == null)
-			facade = (UsageInformationRemote) GenSpace.getRemote("ToolInformation");
-		return facade;
-	}
+
 	public static final String[] NUMBERS = { "No", "One", "Two", "Three",
 			"Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" };
 
@@ -64,15 +58,19 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			@Override
 			protected void done() {
 				try {
+					RuntimeEnvironmentSettings.tools = new HashMap<Integer, Tool>();
 					for (Tool tool : get())
+					{
 						tools.addItem(tool);
+						RuntimeEnvironmentSettings.tools.put(tool.getId(), tool);
+					}
 				} catch (InterruptedException e) {
 				} catch (ExecutionException e) {
 				}
 			}
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return LoginFactory.getUsageOps().getAllTools();
+				return GenSpaceServerFactory.getUsageOps().getAllTools();
 			}
 			
 		};
@@ -106,7 +104,6 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			int evt;
 			@Override
 			protected void done() {
-				System.out.println("Returned");
 				List<Workflow> ret = null;
 				try {
 					ret = get();
@@ -117,7 +114,6 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					GenSpace.getStatusBar().stop(evt);
 					GenSpace.logger.error("Unable to talk to server: ", e);
 				}
-				System.out.println("Got");
 				// make sure we got some results!
 				if (ret == null || ret.size() == 0) {
 					// no results came back!
@@ -125,6 +121,8 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 							"There are no workflows matching that criteria");
 					label.setText("No Workflows found");
 				}
+				for(Workflow zz : ret)
+					zz.loadToolsFromCache();
 				String noun = "workflow";
 				if (ret.size() > 1)
 					noun = "workflows";
@@ -154,11 +152,11 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					String action = actions.getSelectedItem().toString();
 					evt = GenSpace.getStatusBar().start("Retrieving workflow information");
 					if (action.equals("All workflows including")) {
-						return LoginFactory.getUsageOps().getAllWorkflowsIncluding(tool);
+						return GenSpaceServerFactory.getUsageOps().getAllWorkflowsIncluding(tool.getId());
 					} else if(action.equals("Most common workflow starting with")){
-						return LoginFactory.getUsageOps().getMostPopularWorkflowStartingWith(tool);
+						return GenSpaceServerFactory.getUsageOps().getMostPopularWorkflowStartingWith(tool.getId());
 					} else if(action.equals("Most common workflow including")){
-						return LoginFactory.getUsageOps().getMostPopularWorkflowIncluding(tool);
+						return GenSpaceServerFactory.getUsageOps().getMostPopularWorkflowIncluding(tool.getId());
 					}
 					else
 					{

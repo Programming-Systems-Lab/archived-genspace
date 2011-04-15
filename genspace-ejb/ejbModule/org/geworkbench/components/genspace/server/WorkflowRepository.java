@@ -26,7 +26,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
     }
 
 	@Override
-	public boolean deleteMyWorkflow(UserWorkflow uw) {
+	public boolean deleteMyWorkflow(int uw_id) {
+		UserWorkflow uw = getEntityManager().find(UserWorkflow.class, uw_id);
 		if(uw.getOwner().equals(getUser()))
 		{
 			uw = getEntityManager().merge(uw);
@@ -38,7 +39,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
-	public WorkflowFolder addWorkflow(UserWorkflow uw, WorkflowFolder folder) {
+	public WorkflowFolder addWorkflow(UserWorkflow uw, int folder_id) {
+		WorkflowFolder folder = getEntityManager().find(WorkflowFolder.class, folder_id);
 		uw.setFolder(folder);
 		uw.setCreatedAt(new Date());
 		uw.setOwner(getUser());
@@ -60,7 +62,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
-	public boolean deleteFromInbox(IncomingWorkflow wi) {
+	public boolean deleteFromInbox(int wiid) {
+		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
 		if(wi.getReceiver().equals(getUser()))
 		{
 			wi = getEntityManager().merge(wi);
@@ -72,7 +75,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
-	public UserWorkflow addToRepository(IncomingWorkflow wi) {
+	public UserWorkflow addToRepository(int wiid) {
+		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
+
 		UserWorkflow uw = new UserWorkflow(); 
 		uw.setWorkflow(wi.getWorkflow());
 		uw.setFolder(getUser().getRootFolder());
@@ -86,7 +91,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
-	public boolean removeComment(WorkflowComment wc) {
+	public boolean removeComment(int wcid) {
+		WorkflowComment wc = getEntityManager().find(WorkflowComment.class, wcid);
+
 		if(wc.getCreator().equals(getUser()))
 		{
 			wc = getEntityManager().merge(wc);
@@ -115,6 +122,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 
 	@Override
 	public boolean sendWorkflow(IncomingWorkflow newW, String receiver) {
+		
 		newW.setReceiver(findByUserName(receiver));
 		newW.setSender(getUser());
 		newW.setCreatedAt(new Date());
@@ -124,7 +132,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
-	public boolean deleteMyFolder(WorkflowFolder folder) {
+	public boolean deleteMyFolder(int folderid) {
+		WorkflowFolder folder = getEntityManager().find(WorkflowFolder.class, folderid);
+
 		if(folder.getOwner().equals(getUser()))
 		{
 			for(UserWorkflow uw : folder.getWorkflows())

@@ -32,7 +32,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 
 
 	@Override
-	public List<User> getProfilesByNetwork(Network networkFilter) {
+	public List<User> getProfilesByNetwork(int networkFilter_id) {
+		Network networkFilter = getEntityManager().find(Network.class, networkFilter_id);
 		ArrayList<User> ret = new ArrayList<User>();
 		networkFilter = find(networkFilter.getId());
 		for(UserNetwork un : networkFilter.getMembers())
@@ -44,8 +45,9 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	}
 
 	@Override
-	public void joinNetwork(Network n) {
+	public void joinNetwork(int n_id) {
 		User me = getUser();
+		Network n = getEntityManager().find(Network.class, n_id);
 		if(me.isInNetwork(n) == null)
 		{
 			UserNetwork un = new UserNetwork();
@@ -81,13 +83,14 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 			n.setName(name);
 			n.setOwner(getUser());
 			getEntityManager().persist(n);
-			joinNetwork(n);
+			joinNetwork(n.getId());
 		}
 	}
 
 	@Override
-	public void leaveNetwork(UserNetwork selected) {
+	public void leaveNetwork(int usernetwork_id) {
 		User me = getUser();
+		UserNetwork selected = getEntityManager().find(UserNetwork.class, usernetwork_id);
 		if (selected != null && selected.getUser().equals(me))
 		{
 			getEntityManager().merge(selected);
@@ -110,18 +113,18 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	public void joinNetwork(String text) {
 		Network n = findByName(text);
 		if(n != null)
-			joinNetwork(n);
+			joinNetwork(n.getId());
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<UserNetwork> getNetworkRequests(Network nt) {
+	public List<UserNetwork> getNetworkRequests(int network_id) {
 		User me = getUser();
 		Query q = getEntityManager().createNativeQuery("select c.* from User_Network as c " +
 				"inner join NETWORK as n on n.id=c.network_id " +
 				"where n.owner=? and n.id=? and c.verified= 0",UserNetwork.class);
 		q.setParameter(1, me.getId());
-		q.setParameter(2, nt.getId());
+		q.setParameter(2, network_id);
 		List<UserNetwork> r = null;
 		try
 		{
@@ -135,7 +138,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	}
 
 	@Override
-	public void acceptNetworkRequest(UserNetwork un) {
+	public void acceptNetworkRequest(int un_id) {
+		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
 		if(un.getNetwork().getOwner().equals(getUser()))
 		{
 			un.setVerified(true);
@@ -144,7 +148,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	}
 
 	@Override
-	public void rejectNetworkRequest(UserNetwork un) {
+	public void rejectNetworkRequest(int un_id) {
+		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
 		if(un.getNetwork().getOwner().equals(getUser()))
 		{
 			getEntityManager().merge(un);
@@ -153,8 +158,9 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	}
 
 	@Override
-	public void updateNetworkVisibility(UserNetwork un,
+	public void updateNetworkVisibility(int un_id,
 			Boolean v) {
+		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
 		if(un.getUser().equals(getUser()))
 		{
 			un.setVisible(v);

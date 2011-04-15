@@ -21,7 +21,7 @@ import javax.swing.ListCellRenderer;
 import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.LoginFactory;
+import org.geworkbench.components.genspace.GenSpaceServerFactory;
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.UserNetwork;
 
@@ -151,8 +151,8 @@ public class privacyTab extends SocialTab {
 					@Override
 					protected Void doInBackground() throws Exception {
 						for (Integer i : s.keySet()) {
-							LoginFactory.getNetworkOps().updateNetworkVisibility(
-									((UserNetwork) model.get(i)),
+							GenSpaceServerFactory.getNetworkOps().updateNetworkVisibility(
+									((UserNetwork) model.get(i)).getId(),
 									s.get(i));
 						}
 						return null;
@@ -176,8 +176,8 @@ public class privacyTab extends SocialTab {
 					@Override
 					protected Void doInBackground() throws Exception {
 						for (Integer i : s2.keySet()) {
-							LoginFactory.getFriendOps().updateFriendVisibility(
-									((Friend) model2.get(i)),
+							GenSpaceServerFactory.getFriendOps().updateFriendVisibility(
+									((Friend) model2.get(i)).getId(),
 									s2.get(i));
 						}
 						return null;
@@ -225,14 +225,14 @@ public class privacyTab extends SocialTab {
 
 	@Override
 	public void updateFormFields() {
-		if (LoginFactory.isLoggedIn()) {
+		if (GenSpaceServerFactory.isLoggedIn()) {
 
 			SwingWorker<List<Friend>, Void> worker = new SwingWorker<List<Friend>, Void>() {
 
 				@Override
 				protected List<Friend> doInBackground()
 						throws Exception {
-					return LoginFactory.getUser().getFriends();
+					return GenSpaceServerFactory.getUser().getFriends();
 				}
 
 				@Override
@@ -271,7 +271,7 @@ public class privacyTab extends SocialTab {
 				@Override
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
-					return LoginFactory.getUser().getNetworks();
+					return GenSpaceServerFactory.getUser().getNetworks();
 				}
 
 				@Override

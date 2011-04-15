@@ -46,9 +46,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
         List<Workflow> wr = new ArrayList<Workflow>();
         for(Object o : r)
         {
-        	wr.add((Workflow) o);
-        	 
-        	((Workflow) o).getTools().size();
+        	wr.add(((Workflow) o).slimDown());
         } 
         System.out.println("Finished getting workflows in time " + ((System.currentTimeMillis() - start)/1000));
         return wr;
@@ -61,14 +59,16 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
         return r;
 	}
 
-	public Tool getMostPopularNextTool(Tool tool) {
+	public Tool getMostPopularNextTool(int id) {
+		System.out.println("Selecting next popular tool for " + id);
+		long start = System.currentTimeMillis();
 		Query q = getEntityManager().createNativeQuery("select t.* from TOOL t " +
 				"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
 				"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality-1 " +
 				"inner join TOOL t2 on t2.id=wt2.tool_id " +
 				"inner join WORKFLOW w on w.id=wt.workflow_id " +
 				"where t2.id=? order by w.usageCount desc limit 1", Tool.class);
-		q.setParameter(1, tool.getId());
+		q.setParameter(1, id);
         Tool r = null;
         try
 		{
@@ -78,17 +78,18 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		{
 			
 		}
+		System.out.println("Finished after " + (System.currentTimeMillis() - start) + " secs");
 		return r;
 	}
 
-	public Tool getMostPopularPreviousTool(Tool tool) {
+	public Tool getMostPopularPreviousTool(int tool) {
 		Query q = getEntityManager().createNativeQuery("select t.* from TOOL t " +
 				"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
 				"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality+1 " +
 				"inner join TOOL t2 on t2.id=wt2.tool_id " +
 				"inner join WORKFLOW w on w.id=wt.workflow_id " +
 				"where t2.id=? order by w.usageCount desc limit 1", Tool.class);
-		q.setParameter(1, tool.getId());
+		q.setParameter(1, tool);
         Tool r = null;
         try
 		{
@@ -110,102 +111,104 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Workflow> getAllWorkflowsIncluding(Tool tool) {
+	public List<Workflow> getAllWorkflowsIncluding(int tool) {
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
 				"where wt.tool_id=? order by w.usageCount desc", Workflow.class);
-		q.setParameter(1, tool.getId());
+		q.setParameter(1, tool);
+		System.out.println("Fetching all wf with " + tool);
 		List<Workflow> wf = null;
+		ArrayList<Workflow> ret = new ArrayList<Workflow>();
         try
 		{
         	wf = q.getResultList();
         	for(Workflow w : wf)
-        		for(WorkflowTool wft : w.getTools())
-        			wft.getTool();
+        	{
+        		System.out.println("Found wf " + w.toString());
+        		ret.add(w.slimDown());
+        	}
 		}
 		catch(NoResultException e)
 		{
 			
 		}
-		return wf;
+		return ret;
 	}
 
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMostPopularWorkflowStartingWith(
-			Tool tool) {
+			int tool) {
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
 				"where wt.tool_id=? and wt.cardinality=0 order by w.usageCount desc limit 1", Workflow.class);
-		q.setParameter(1, tool.getId());
+		q.setParameter(1, tool);
 		List<Workflow> wf = null;
+		ArrayList<Workflow> ret = new ArrayList<Workflow>();
         try
 		{
         	wf = q.getResultList();
         	for(Workflow w : wf)
-        		for(WorkflowTool wft : w.getTools())
-        		{
-        			System.out.println(wft.getTool());
-        			wft.getTool();
-        		}
+        	{
+        		ret.add(w.slimDown());
+        	}
 		}
 		catch(NoResultException e)
 		{
-			System.err.println("No result");
+			
 		}
-		return wf;
+		return ret;
 	}
 
 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Workflow> getMostPopularWorkflowIncluding(Tool tool) {
+	public List<Workflow> getMostPopularWorkflowIncluding(int tool) {
 		System.out.println("Starting to get most popular workflow including " + tool);
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
 				"where wt.tool_id=? order by w.usageCount desc limit 1", Workflow.class);
-		q.setParameter(1, tool.getId());
+		q.setParameter(1, tool);
 		List<Workflow> wf = null;
-		System.out.println("Ran query");
+		ArrayList<Workflow> ret = new ArrayList<Workflow>();
         try
 		{
         	wf = q.getResultList();
-        	System.out.println("have list");
         	for(Workflow w : wf)
-        		for(WorkflowTool wft : w.getTools())
-        			wft.getTool();
-        	System.out.println("returning");
+        	{
+        		ret.add(w.slimDown());
+        	}
 		}
 		catch(NoResultException e)
 		{
 			
 		}
-		return wf;
+		return ret;
 	}
 
 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Workflow> getToolSuggestion(Workflow cwf) {
+	public List<Workflow> getToolSuggestion(int cwf) {
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"where w.parent_id=? order by w.usageCount desc", Workflow.class);
-		q.setParameter(1, cwf.getId());
+		q.setParameter(1, cwf);
 		List<Workflow> wf = null;
+		List<Workflow> ret = new ArrayList<Workflow>();
         try
 		{
         	wf = q.getResultList();
         	for(Workflow w : wf)
-        		for(WorkflowTool wft : w.getTools())
-        			wft.getTool();
+        		ret.add(w.slimDown());
 		}
 		catch(NoResultException e)
 		{
 			
 		}
-		return wf;
+		return ret;
 	}
 
 
@@ -386,13 +389,12 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 
 
 	@Override
-	public User getExpertUserFor(Tool tn) {
+	public User getExpertUserFor(int tn) {
 		Query q;
-		int n = tn.getId();
 			q = getEntityManager().createNativeQuery("select r.* from registration r " +
 					"inner join `TRANSACTION` t on t.user_id=r.id " +
 					"inner join ANALYSISEVENT e on e.transaction_id=t.id " +
-					"where e.tool_id="+n+" group by r.id order by count(*) DESC LIMIT 1",User.class);
+					"where e.tool_id="+tn+" group by r.id order by count(*) DESC LIMIT 1",User.class);
 		User r = null;
 		try
 		{

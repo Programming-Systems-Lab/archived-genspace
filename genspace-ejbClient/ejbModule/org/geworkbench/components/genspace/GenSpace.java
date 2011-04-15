@@ -20,7 +20,7 @@ import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
-
+import javax.rmi.PortableRemoteObject;
 /**
  * This is the main class for genspace. This is a visual plugin and will be a
  * tabbed pane. All other genspace components will be part of the tabbed pane.

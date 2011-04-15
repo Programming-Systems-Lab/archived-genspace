@@ -21,17 +21,17 @@ svn:wc:ra_dav:version-url
 V 103
 /svn/geworkbench/!svn/ver/3517/trunk/geworkbench/src/org/geworkbench/events/StructureAnalysisEvent.java
 END
-PendingNodeLoadedFromWorkspaceEvent.java
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svn/geworkbench/!svn/ver/7257/trunk/geworkbench/src/org/geworkbench/events/PendingNodeLoadedFromWorkspaceEvent.java
-END
 ProjectEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/ProjectEvent.java
+END
+PendingNodeLoadedFromWorkspaceEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/7257/trunk/geworkbench/src/org/geworkbench/events/PendingNodeLoadedFromWorkspaceEvent.java
 END
 CaArrayQueryEvent.java
 K 25
@@ -51,17 +51,17 @@ svn:wc:ra_dav:version-url
 V 108
 /svn/geworkbench/!svn/ver/7237/trunk/geworkbench/src/org/geworkbench/events/SequenceDiscoveryTableEvent.java
 END
-HierClusterModelEvent.java
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/HierClusterModelEvent.java
-END
 ProgressChangeEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/4401/trunk/geworkbench/src/org/geworkbench/events/ProgressChangeEvent.java
+END
+HierClusterModelEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/HierClusterModelEvent.java
 END
 CaArraySuccessEvent.java
 K 25
@@ -195,17 +195,17 @@ svn:wc:ra_dav:version-url
 V 101
 /svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/SubpanelChangedEvent.java
 END
-CommentsEvent.java
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/events/CommentsEvent.java
-END
 PendingNodeCancelledEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/geworkbench/!svn/ver/7263/trunk/geworkbench/src/org/geworkbench/events/PendingNodeCancelledEvent.java
+END
+CommentsEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/events/CommentsEvent.java
 END
 CaArrayRequestHybridizationListEvent.java
 K 25

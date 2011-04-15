@@ -49,42 +49,42 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		}
 		return r;
 	}
-	
+	private User getUser(int id)
+	{
+		return getEntityManager().find(User.class,id);
+	}
 	@Override
-	public void addFriend(User o) {
-		System.out.println("Called");
+	public void addFriend(int o) {
 		User me = getUser();
-		if(me.equals(o))
+		if(me.getId() == o)
 			return;
-		Friend f = o.isFriendsWith(me);
+		User other = getUser(o);
+		Friend f = other.isFriendsWith(me);
 		boolean mutual = false;
 		if(f != null)
 		{
-			System.out.println("Mutual relationship");
 			mutual = true;
 			//Annotate their relationship to be mutual
 			f.setMutual(true);
 			getEntityManager().merge(f);
 		}
-		f = me.isFriendsWith(o);
+		f = me.isFriendsWith(other);
 		if(f == null)
 		{
-			System.out.println("Not already friends");
 			//Add our relation iff we are not already friends
 			f = new Friend();
 			f.setLeftUser(me);
-			f.setRightUser(o);
+			f.setRightUser(other);
 			f.setMutual(mutual);
 			f.setVisible(true);
 			getEntityManager().persist(f);
 		}
-		else
-			System.out.println("ALready friends");
+
 	}
 	@Override
-	public void rejectFriend(User o) {
+	public void rejectFriend(int o) {
 		User me = getUser();
-		Friend f = o.isFriendsWith(me);
+		Friend f = getUser(o).isFriendsWith(me);
 		if(f != null)
 		{
 			getEntityManager().remove(f);
@@ -92,7 +92,8 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 
 	}
 	@Override
-	public void updateFriendVisibility(Friend friend, Boolean boolean1) {
+	public void updateFriendVisibility(int friend_id, Boolean boolean1) {
+		Friend friend = getEntityManager().find(Friend.class, friend_id);
 		if(friend.getLeftUser().equals(getUser()))
 		{
 			friend.setVisible(boolean1);
@@ -111,8 +112,9 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	}
 
 	@Override
-	public void removeFriend(User u) {
+	public void removeFriend(int uid) {
 		User me = getUser();
+		User u = getUser(uid);
 		Friend f = u.isFriendsWith(me);
 		if(f != null)
 		{
