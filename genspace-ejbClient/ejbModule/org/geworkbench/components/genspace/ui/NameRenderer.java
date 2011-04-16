@@ -1,6 +1,9 @@
 package org.geworkbench.components.genspace.ui;
 
+<<<<<<< HEAD
 import java.awt.Color;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import java.awt.Component;
 
 import javax.swing.JLabel;

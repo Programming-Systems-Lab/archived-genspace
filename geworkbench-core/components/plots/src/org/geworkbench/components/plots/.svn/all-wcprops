@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots
+END
+VolcanoPlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/7452/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/VolcanoPlot.java
+END
+ScatterPlot.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/7451/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/ScatterPlot.java
+END
+GMTColorPalette.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/geworkbench/!svn/ver/7597/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/GMTColorPalette.java
+END
+VolcanoPlot.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/VolcanoPlot.cwb.xml
+END
+ScatterPlot.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/plots/src/org/geworkbench/components/plots/ScatterPlot.cwb.xml
+END

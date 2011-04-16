@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="module_tprofiler" default="compile.module.tprofiler">
+  <dirname property="module.tprofiler.basedir" file="${ant.file.module_tprofiler}"/>
+  
+  <property name="module.jdk.home.tprofiler" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.tprofiler" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.tprofiler" value="${compiler.args}"/>
+  
+  <property name="tprofiler.output.dir" value="${module.tprofiler.basedir}/classes"/>
+  <property name="tprofiler.testoutput.dir" value="${module.tprofiler.basedir}/classes"/>
+  
+  <path id="tprofiler.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="tprofiler.module.classpath">
+    <path refid="${module.jdk.classpath.tprofiler}"/>
+    <path refid="library.base.classpath"/>
+    <pathelement location="${geworkbench.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.tprofiler">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.tprofiler">
+    <patternset refid="excluded.from.module.tprofiler"/>
+  </patternset>
+  
+  <path id="tprofiler.module.sourcepath">
+    <dirset dir="${module.tprofiler.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.tprofiler" depends="compile.module.tprofiler.production,compile.module.tprofiler.tests" description="Compile module tprofiler"/>
+  
+  <target name="compile.module.tprofiler.production" depends="compile.module.geworkbench" description="Compile module tprofiler; production classes">
+    <mkdir dir="${tprofiler.output.dir}"/>
+    <javac2 destdir="${tprofiler.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.tprofiler}/bin/javac">
+      <compilerarg line="${compiler.args.tprofiler}"/>
+      <bootclasspath refid="tprofiler.module.bootclasspath"/>
+      <classpath refid="tprofiler.module.classpath"/>
+      <src refid="tprofiler.module.sourcepath"/>
+    </javac2>
+    
+    <copy todir="${tprofiler.output.dir}">
+      <fileset dir="${module.tprofiler.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.tprofiler.tests" depends="compile.module.tprofiler.production" description="compile module tprofiler; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.tprofiler" description="cleanup module">
+    <delete dir="${tprofiler.output.dir}"/>
+    <delete dir="${tprofiler.testoutput.dir}"/>
+  </target>
+</project>

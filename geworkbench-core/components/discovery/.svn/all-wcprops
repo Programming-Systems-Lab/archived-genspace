@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/geworkbench/!svn/ver/7670/trunk/geworkbench/components/discovery
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/6430/trunk/geworkbench/components/discovery/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/2398/trunk/geworkbench/components/discovery/.project
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/discovery/.cvsignore
+END

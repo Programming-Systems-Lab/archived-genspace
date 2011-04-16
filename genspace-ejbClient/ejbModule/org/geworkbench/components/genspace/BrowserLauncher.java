@@ -23,7 +23,13 @@ public class BrowserLauncher {
 		String osName = System.getProperty("os.name");
 		try {
 			if (osName.startsWith("Mac OS")) {
+<<<<<<< HEAD
 				Class fileMgr = Class.forName("com.apple.eio.FileManager");
+=======
+				@SuppressWarnings("rawtypes")
+				Class fileMgr = Class.forName("com.apple.eio.FileManager");
+				@SuppressWarnings("unchecked")
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				Method openURL = fileMgr.getDeclaredMethod("openURL",
 						new Class[] { String.class });
 				openURL.invoke(null, new Object[] { url });

@@ -15,13 +15,25 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingWorker;
 
+<<<<<<< HEAD
 import org.geworkbench.components.genspace.LoginManager;
+=======
+import org.geworkbench.components.genspace.LoginFactory;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.engine.config.VisualPlugin;
 
 public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 		ActionListener {
 
+<<<<<<< HEAD
+=======
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9002035453385092032L;
+
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private JFrame jframe;
 
 	private JTextField fname;
@@ -44,6 +56,7 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 	GenSpaceLogin login;
 
 	public GenSpaceGeneralProfile() {
+<<<<<<< HEAD
 		// read the preferences from the properties file
 		try {
 			// ideally this should also be in the properties file
@@ -51,14 +64,21 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 
 		} catch (Exception e) {
 		}
+=======
+		
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 		initComponents();
 	}
 
 	private void initComponents() {
 		// String username = LoginManager.loggedInUser;
+<<<<<<< HEAD
 		String username = LoginManager.getUsername();
 		User u = LoginManager.getUser();
+=======
+		User u = LoginFactory.getUser();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.setLayout(new GridLayout(15, 2));
 
 		JLabel j2 = new JLabel("First Name");
@@ -111,7 +131,10 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 		add(j8);
 		add(zipcode);
 
+<<<<<<< HEAD
 		JPanel saveReset;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 		save = new JButton("Save");
 		save.addActionListener(this);
@@ -123,6 +146,7 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 
 	private void applyProfileChanges() {
 
+<<<<<<< HEAD
 		LoginManager.getUser().setFirstName(fname.getText());
 		LoginManager.getUser().setLastName(lname.getText());
 		LoginManager.getUser().setLabAffiliation(labaff.getText());
@@ -133,6 +157,18 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 		LoginManager.getUser().setCity(city.getText());
 		LoginManager.getUser().setState(state.getText());
 		LoginManager.getUser().setZipcode(zipcode.getText());
+=======
+		LoginFactory.getUser().setFirstName(fname.getText());
+		LoginFactory.getUser().setLastName(lname.getText());
+		LoginFactory.getUser().setLabAffiliation(labaff.getText());
+		LoginFactory.getUser().setEmail(email.getText());
+		LoginFactory.getUser().setPhone(phone.getText());
+		LoginFactory.getUser().setAddr1(addr1.getText());
+		LoginFactory.getUser().setAddr2(addr2.getText());
+		LoginFactory.getUser().setCity(city.getText());
+		LoginFactory.getUser().setState(state.getText());
+		LoginFactory.getUser().setZipcode(zipcode.getText());
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	@Override
@@ -150,7 +186,11 @@ public class GenSpaceGeneralProfile extends JPanel implements VisualPlugin,
 						if (isValid(errMsg)) {
 							applyProfileChanges();							
 							// System.out.println("valid");
+<<<<<<< HEAD
 							if (LoginManager.userUpdate()) {
+=======
+							if (LoginFactory.userUpdate()) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 								String msg = "Information updated";
 
 								JOptionPane.showMessageDialog(null, msg);

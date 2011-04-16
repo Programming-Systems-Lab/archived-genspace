@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/3946/trunk/geworkbench/components/matrixreduce/lib
+END
+chart-0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/1621/trunk/geworkbench/components/matrixreduce/lib/chart-0.1.jar
+END
+cygblas.dll
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/1644/trunk/geworkbench/components/matrixreduce/lib/cygblas.dll
+END
+MatrixREDUCE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/3946/trunk/geworkbench/components/matrixreduce/lib/MatrixREDUCE.jar
+END
+cyglapack.dll
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/1644/trunk/geworkbench/components/matrixreduce/lib/cyglapack.dll
+END
+cyggsl-0.dll
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/2994/trunk/geworkbench/components/matrixreduce/lib/cyggsl-0.dll
+END
+cygwin1.dll
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/2994/trunk/geworkbench/components/matrixreduce/lib/cygwin1.dll
+END

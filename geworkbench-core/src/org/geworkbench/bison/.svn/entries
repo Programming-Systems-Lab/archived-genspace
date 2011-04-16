@@ -1,0 +1,46 @@
+10
+
+dir
+7732
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison
+https://ncisvn.nci.nih.gov/svn/geworkbench
+
+
+
+2011-04-13T19:27:09.903471Z
+7728
+maz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8b29bb6e-589a-435a-9a12-3ab907be3462
+
+parsers
+dir
+
+model
+dir
+
+algorithm
+dir
+
+annotation
+dir
+
+datastructure
+dir
+
+util
+dir
+

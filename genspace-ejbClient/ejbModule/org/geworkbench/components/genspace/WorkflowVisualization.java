@@ -3,6 +3,7 @@ package org.geworkbench.components.genspace;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+<<<<<<< HEAD
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,16 +19,30 @@ import java.util.concurrent.ExecutionException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+=======
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.JButton;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+<<<<<<< HEAD
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.swing.SwingWorker;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+<<<<<<< HEAD
 import org.geworkbench.components.genspace.bean.DomainUtil;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Workflow;
@@ -53,16 +68,28 @@ import org.jgraph.graph.GraphModel;
 import edu.uci.ics.jung.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung.graph.DirectedOrderedSparseMultigraph;
 import edu.uci.ics.jung.graph.util.Pair;
+=======
+import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.server.UsageInformationRemote;
+import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
+import org.geworkbench.engine.config.VisualPlugin;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		ActionListener, Runnable {
 
+<<<<<<< HEAD
+=======
+	private static final long serialVersionUID = -7354810678034537180L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private Log log = LogFactory.getLog(this.getClass());
 	private JComboBox tools = new JComboBox();
 	private JComboBox actions = new JComboBox();
 	private JButton button = new JButton("Search");
 	private JLabel label = new JLabel();
 	private JPanel selectPanel = new JPanel();
+<<<<<<< HEAD
 	private JPanel graphPanel = new JPanel();
 	private JScrollPane scroller = new JScrollPane();;
 	private ArrayList<String> workflows;
@@ -75,6 +102,13 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 	{
 		if(facade == null)
 			facade = (ToolInformationRemote) GenSpace.getRemote("ToolInformation");
+=======
+	private static UsageInformationRemote facade;
+	public static UsageInformationRemote getFacade()
+	{
+		if(facade == null)
+			facade = (UsageInformationRemote) GenSpace.getRemote("ToolInformation");
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		return facade;
 	}
 	public static final String[] NUMBERS = { "No", "One", "Two", "Three",
@@ -107,11 +141,19 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 			}
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
+<<<<<<< HEAD
 				return LoginManager.getFacade().getAllTools();
 			}
 			
 		};
 		worker.run();
+=======
+				return LoginFactory.getUsageOps().getAllTools();
+			}
+			
+		};
+		worker.execute();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 
 		actions.addItem("-- select action --");
@@ -129,6 +171,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		selectPanel.add(label);
 
 		add(selectPanel, BorderLayout.NORTH);
+<<<<<<< HEAD
 
 		add(scroller, BorderLayout.CENTER);
 	}
@@ -223,22 +266,48 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 		// finally, we draw the thing
 		draw(nodes, edges.toArray(new Edge[edges.size()]), t);
 	}
+=======
+	
+		add(vis, BorderLayout.CENTER);
+		vis.setBackground(Color.white);
+	}
+	WorkflowVisualizationPanel vis = new WorkflowVisualizationPanel();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		SwingWorker<List<Workflow>, Void> worker = new SwingWorker<List<Workflow>, Void>() {
+<<<<<<< HEAD
 			@Override
 			protected void done() {
+=======
+			int evt;
+			@Override
+			protected void done() {
+				System.out.println("Returned");
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				List<Workflow> ret = null;
 				try {
 					ret = get();
 				} catch (InterruptedException e) {
+<<<<<<< HEAD
 					GenSpace.logger.error("Unable to talk to server: ", e);
 				} catch (ExecutionException e) {
 					GenSpace.logger.error("Unable to talk to server: ", e);
 				}				
 				// make sure we got some results!
 				if (ret.size() == 0) {
+=======
+					GenSpace.getStatusBar().stop(evt);
+					GenSpace.logger.error("Unable to talk to server: ", e);
+				} catch (ExecutionException e) {
+					GenSpace.getStatusBar().stop(evt);
+					GenSpace.logger.error("Unable to talk to server: ", e);
+				}
+				System.out.println("Got");
+				// make sure we got some results!
+				if (ret == null || ret.size() == 0) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 					// no results came back!
 					JOptionPane.showMessageDialog(null,
 							"There are no workflows matching that criteria");
@@ -248,6 +317,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				if (ret.size() > 1)
 					noun = "workflows";
 				label.setText(ret.size() + " " + noun + " found");
+<<<<<<< HEAD
 
 				System.out.println(ret.size());
 				if(ret.size() == 1)
@@ -255,6 +325,21 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				else if(ret.size() > 1)
 					handleMultipleWorkflows(ret,(Tool) tools.getSelectedItem());
 
+=======
+				GenSpace.getStatusBar().stop(evt);
+
+				if(GenSpace.instrument)
+					System.out.println("Received workflows, size serialized = " + GenSpace.getObjectSize((Serializable) ret));
+				add(vis, BorderLayout.CENTER);
+				revalidate();
+				repaint();
+				
+				if(ret.size() == 1)
+					vis.render(ret.get(0),((Tool) tools.getSelectedItem()));
+				else if(ret.size() > 1)
+					vis.render(ret,((Tool) tools.getSelectedItem()));
+				
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				super.done();
 			}
 			@Override
@@ -265,6 +350,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				{
 					Tool tool = (Tool) tools.getSelectedItem();
 					String action = actions.getSelectedItem().toString();
+<<<<<<< HEAD
 	System.out.println("Chekcing + " + action);
 					if (action.equals("All workflows including")) {
 						return LoginManager.getFacade().getAllWorkflowsIncluding(tool);
@@ -275,6 +361,19 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 					}
 					else
 					{
+=======
+					evt = GenSpace.getStatusBar().start("Retrieving workflow information");
+					if (action.equals("All workflows including")) {
+						return LoginFactory.getUsageOps().getAllWorkflowsIncluding(tool);
+					} else if(action.equals("Most common workflow starting with")){
+						return LoginFactory.getUsageOps().getMostPopularWorkflowStartingWith(tool);
+					} else if(action.equals("Most common workflow including")){
+						return LoginFactory.getUsageOps().getMostPopularWorkflowIncluding(tool);
+					}
+					else
+					{
+						GenSpace.getStatusBar().stop(evt);
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 						GenSpace.logger.error("Unknown action selected: " + action);
 					}
 				}
@@ -282,11 +381,17 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 				return new ArrayList<Workflow>();
 			}
 		};
+<<<<<<< HEAD
 		worker.run();	
+=======
+		remove(vis);
+		worker.execute();	
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	@Override
 	public Component getComponent() {
+<<<<<<< HEAD
 		// In this case, this object is also the GUI component.
 		return this;
 	}
@@ -839,4 +944,8 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 
 	}
 
+=======
+		return this;
+	}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

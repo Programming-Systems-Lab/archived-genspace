@@ -2,6 +2,7 @@ package org.geworkbench.components.genspace;
 
 public class RuntimeEnvironmentSettings {
 
+<<<<<<< HEAD
 	public static final String YORK = "york.cs.columbia.edu";
 	public static final String BORIS = "boris.cs.columbia.edu";
 	public static final String BAMBI = "bambi.cs.columbia.edu";
@@ -39,6 +40,13 @@ public class RuntimeEnvironmentSettings {
 
 	public static final String XMPP_HOST = DEVEL_HOST;
 	public static final String DEFAULT_USER = "";
+=======
+	public static final String PROD_HOST = "genspace.cs.columbia.edu";
+	public static final String DEVEL_HOST = "amos.cs.columbia.edu";
+	public static final String LOCAL_HOST = "localhost";
+	public static final String SERVER = DEVEL_HOST;
+	public static final String XMPP_HOST = DEVEL_HOST;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	public static final String GS_WEB_ROOT_PROD = "http://bambi.cs.columbia.edu/";
 	public static final String GS_WEB_ROOT_DEVEL = "http://lenox.cs.columbia.edu/genspace/";

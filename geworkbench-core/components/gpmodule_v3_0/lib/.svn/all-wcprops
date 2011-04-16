@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/geworkbench/!svn/ver/7688/trunk/geworkbench/components/gpmodule_v3_0/lib
+END
+axis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/axis.jar
+END
+wsdl4j-1.5.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/wsdl4j-1.5.1.jar
+END
+jdic.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5505/trunk/geworkbench/components/gpmodule_v3_0/lib/jdic.jar
+END
+mev-algorithm-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/3195/trunk/geworkbench/components/gpmodule_v3_0/lib/mev-algorithm-impl.jar
+END
+libtray.so
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/5505/trunk/geworkbench/components/gpmodule_v3_0/lib/libtray.so
+END
+GenePattern.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/GenePattern.jar
+END
+commons-discovery-0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/commons-discovery-0.2.jar
+END
+tray.dll
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5518/trunk/geworkbench/components/gpmodule_v3_0/lib/tray.dll
+END
+MAGEstk-2003-10-24-v1.1-compatible.jar
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/MAGEstk-2003-10-24-v1.1-compatible.jar
+END
+concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5518/trunk/geworkbench/components/gpmodule_v3_0/lib/concurrent.jar
+END
+swingx-0.9.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/4143/trunk/geworkbench/components/gpmodule_v3_0/lib/swingx-0.9.3.jar
+END
+mev-algorithm-support.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/3200/trunk/geworkbench/components/gpmodule_v3_0/lib/mev-algorithm-support.jar
+END
+jaxrpc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/5506/trunk/geworkbench/components/gpmodule_v3_0/lib/jaxrpc.jar
+END
+mozembed-linux-gtk2
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/5517/trunk/geworkbench/components/gpmodule_v3_0/lib/mozembed-linux-gtk2
+END
+libjdic.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/7688/trunk/geworkbench/components/gpmodule_v3_0/lib/libjdic.jnilib
+END
+IeEmbed.exe
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/5518/trunk/geworkbench/components/gpmodule_v3_0/lib/IeEmbed.exe
+END
+mev-base.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/3190/trunk/geworkbench/components/gpmodule_v3_0/lib/mev-base.jar
+END
+mev-util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/3153/trunk/geworkbench/components/gpmodule_v3_0/lib/mev-util.jar
+END
+Jama-1.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/Jama-1.0.1.jar
+END
+axis-url.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/5518/trunk/geworkbench/components/gpmodule_v3_0/lib/axis-url.jar
+END
+libjdic.so
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/5505/trunk/geworkbench/components/gpmodule_v3_0/lib/libjdic.so
+END
+jdic_stub.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/7688/trunk/geworkbench/components/gpmodule_v3_0/lib/jdic_stub.jar
+END
+MozEmbed.exe
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/5505/trunk/geworkbench/components/gpmodule_v3_0/lib/MozEmbed.exe
+END
+mev-gui-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/3153/trunk/geworkbench/components/gpmodule_v3_0/lib/mev-gui-impl.jar
+END
+jdic.dll
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5506/trunk/geworkbench/components/gpmodule_v3_0/lib/jdic.dll
+END
+gp-modules.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/gp-modules.jar
+END
+saaj.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5506/trunk/geworkbench/components/gpmodule_v3_0/lib/saaj.jar
+END
+addressing-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/5518/trunk/geworkbench/components/gpmodule_v3_0/lib/addressing-1.0.jar
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/mail.jar
+END
+mev-gui-support.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/3153/trunk/geworkbench/components/gpmodule_v3_0/lib/mev-gui-support.jar
+END
+commons-httpclient-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/commons-httpclient-3.0.1.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/commons-codec-1.3.jar
+END
+mozembed-linux-gtk1.2
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/5517/trunk/geworkbench/components/gpmodule_v3_0/lib/mozembed-linux-gtk1.2
+END
+libmozembed-linux-gtk1.2.so
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/5517/trunk/geworkbench/components/gpmodule_v3_0/lib/libmozembed-linux-gtk1.2.so
+END
+libmozembed-linux-gtk2.so
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/5517/trunk/geworkbench/components/gpmodule_v3_0/lib/libmozembed-linux-gtk2.so
+END
+activation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5371/trunk/geworkbench/components/gpmodule_v3_0/lib/activation.jar
+END
+libtray.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5505/trunk/geworkbench/components/gpmodule_v3_0/lib/libtray.jnilib
+END

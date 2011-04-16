@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.OrderBy;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 @Entity
 public class WorkflowTool implements Serializable{
@@ -45,7 +48,14 @@ public class WorkflowTool implements Serializable{
 	public void setOrder(int order) {
 		this.order = order;
 	}
+<<<<<<< HEAD
 	
+=======
+	@Override
+	public String toString() {
+		return tool.toString();
+	}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	
 }
  

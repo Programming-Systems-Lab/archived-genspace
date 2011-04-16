@@ -4,7 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>genspace-ejb</project>
-		<project>genspace-ejbClient</project>
+		<project>geworkbench-core</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,11 +1,17 @@
 package org.geworkbench.components.genspace;
 
 import java.lang.reflect.Method;
+<<<<<<< HEAD
 import java.net.Socket;
 import java.util.Calendar;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
+=======
+import java.util.Calendar;
+import java.util.Map;
+import java.util.Random;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.swing.SwingWorker;
 
@@ -13,22 +19,32 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractAnalysis;
 import org.geworkbench.bison.model.analysis.Analysis;
+<<<<<<< HEAD
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.util.FilePathnameUtils;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 /**
  * A handler used to log events.
  * 
  * @author sheths
+<<<<<<< HEAD
  * @version $Id: ObjectHandler.java,v 1.1 2011/02/07 18:09:55 jsb2125 Exp $
+=======
+ * @version $Id: ObjectHandler.java,v 1.2 2011/02/21 21:36:34 jsb2125 Exp $
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
  */
 public class ObjectHandler {
 
 	private Log log = LogFactory.getLog(this.getClass());
+<<<<<<< HEAD
 	private String host = RuntimeEnvironmentSettings.EVENT_SERVER.getHost();
 	private int port = RuntimeEnvironmentSettings.EVENT_SERVER.getPort();
 	private String lookupServer = RuntimeEnvironmentSettings.LOOKUP_HOST;
 	private int lookupPort = RuntimeEnvironmentSettings.LOOKUP_PORT;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private int frequency = 2;
 	private static int count = 0;
 	private static String lastRunDataSetName = "";
@@ -37,7 +53,10 @@ public class ObjectHandler {
 	private static String lastTransactionId = "0";
 	private static int logStatus = 1; // 0 = log, 1 = log anonymously, 2 = dont
 										// log
+<<<<<<< HEAD
 	private static String userName = "";
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	public ObjectHandler(Object event, Object source) {
 
@@ -67,16 +86,30 @@ public class ObjectHandler {
 				ObjectLogger o = null;
 				String analysisName = "";
 				analysisName = ((AbstractAnalysis) analysis).getLabel();
+<<<<<<< HEAD
+=======
+				@SuppressWarnings("rawtypes")
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				Map parameters = analysis.getParameters();
 
 				if (logStatus == 0) {
 					log.debug("genspace - Logging");
 
+<<<<<<< HEAD
 					o = new ObjectLogger(analysisName, dataSetName,
 							lastTransactionId, parameters);
 				} else if (logStatus == 1) {
 					log.debug("genspace - Logging anonymously");
 					o = new ObjectLogger(analysisName, dataSetName,
+=======
+					o = new ObjectLogger();
+					o.log(analysisName, dataSetName,
+							lastTransactionId, parameters);
+				} else if (logStatus == 1) {
+					log.debug("genspace - Logging anonymously");
+					o = new ObjectLogger();
+					o.log(analysisName, dataSetName,
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 							lastTransactionId, parameters);
 				}
 
@@ -204,8 +237,12 @@ public class ObjectHandler {
 	 */
 	private void incrementTransactionId() {
 		Random r = new Random();
+<<<<<<< HEAD
 		int i = Math.abs(r.nextInt());
 		Integer j = new Integer(i);
+=======
+		Integer j = Integer.valueOf(r.nextInt(Integer.MAX_VALUE));
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		lastTransactionId = j.toString();
 	}
 
@@ -215,9 +252,12 @@ public class ObjectHandler {
 		// System.out.println(logStatus);
 	}
 
+<<<<<<< HEAD
 	public static void setUserName(String name) {
 		// System.out.println(userName);
 		userName = name;
 		// System.out.println(userName);
 	}
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

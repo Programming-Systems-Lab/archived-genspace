@@ -2,8 +2,16 @@ package org.geworkbench.components.genspace.server;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.ejb.SessionContext;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.geworkbench.components.genspace.entity.IncomingWorkflow;
+import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.WorkflowFolder;
 
 /**
  * Borrowed from Netbeans wizard :)
@@ -14,6 +22,70 @@ import javax.persistence.PersistenceContext;
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass; 
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
+    public User fullySerialize(User u) {
+		u.getFolders().size();
+		for(WorkflowFolder wf : u.getFolders())
+		{
+			getEntityManager().refresh(wf);
+			wf.getWorkflows().size();
+			for(WorkflowFolder f : wf.getChildren())
+			{
+				f.getWorkflows().size();
+			}
+		}
+		u.getFriends().size();
+		u.getIncomingWorkflows().size();
+		System.out.println("Incoming workflows:");
+		for(IncomingWorkflow w : u.getIncomingWorkflows())
+		{
+			System.out.println(w);
+		}
+		u.getWorkflowComments().size();
+		u.getWorkflows().size(); 
+		u.getNetworks().size();
+		return u;
+	}
+    protected void invalidateCache()
+    {
+    	cachedUser = null;
+    }
+    private User cachedUser = null;
+    @Resource
+    SessionContext ctx;
+    protected User getUser()
+    {
+//    	if(cachedUser != null)
+//    		return cachedUser;
+    	Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
+		q.setParameter("user", ctx.getCallerPrincipal().getName());
+		User r = null;
+		try
+		{
+		r = (User) q.getSingleResult();
+		}
+		catch(NoResultException e)
+		{
+			System.err.println("Unable to find user record for logged in user " +  ctx.getCallerPrincipal().getName());
+		}
+		cachedUser = r;
+		return cachedUser;
+    }
+    
+    protected User findByUserName(String username)
+	{
+		Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
+		q.setParameter("user", username);
+		User r = null;
+		try
+		{
+		r = (User) q.getSingleResult();
+		}
+		catch(NoResultException e)
+		{
+			
+		}
+		return r;
+	}
     
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/geworkbench/!svn/ver/7079/trunk/geworkbench/components/discovery/lib
+END
+polgara.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/2197/trunk/geworkbench/components/discovery/lib/polgara.jar
+END
+ogsa.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/2149/trunk/geworkbench/components/discovery/lib/ogsa.jar
+END
+xmlsec.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/249/trunk/geworkbench/components/discovery/lib/xmlsec.jar
+END
+cog-jglobus.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/7079/trunk/geworkbench/components/discovery/lib/cog-jglobus.jar
+END
+xalan.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/6418/trunk/geworkbench/components/discovery/lib/xalan.jar
+END
+axis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/2149/trunk/geworkbench/components/discovery/lib/axis.jar
+END

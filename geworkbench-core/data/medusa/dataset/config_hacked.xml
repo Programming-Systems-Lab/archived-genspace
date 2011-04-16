@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medusa file_state="" verbose="true">
+    <input file_labels="data/medusa/dataset/web100_test.labels">
+        <fasta_files>
+            <file dimers_allowed="false" dimers_largest="5" dimers_maximum_gap="3" dimers_smallest="3" file_fasta="data/medusa/dataset/web100_test.fasta" kmers_largest="7" kmers_smallest="3" lbound="0" min_motif_count_per_window="0" motif_type="iterative" nchoose="0" ubound="0" window_size="0"/>
+        </fasta_files>
+    </input>
+    <parameters fewest_trim="0" holdout_percent="10" holdout_type="random" is_corrected="false" iterations="5" most_trim="0" pssms="true" pssms_maximum_length="17" pssms_number_to_agglomerate="20" report_agglomeration="false" reverse_complement_matches_complement="false" save_features="true" stumps_only="false"/>
+    <output continuous_write="true" dir_experiment="/Users/jon/.geworkbench/temp/GEAW/temp/medusa/dataset/output" file_rules="rules.xml" run_name="run_1295542028938"/>
+</medusa>

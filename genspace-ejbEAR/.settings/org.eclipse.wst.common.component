@@ -6,7 +6,7 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="genspace-ejbClient.jar" deploy-path="/" handle="module:/resource/genspace-ejbClient/genspace-ejbClient">
+        <dependent-module archiveName="geworkbench-core.jar" deploy-path="/lib" handle="module:/resource/geworkbench-core/geworkbench-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

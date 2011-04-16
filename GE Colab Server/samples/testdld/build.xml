@@ -1,0 +1,46 @@
+<project name="WorkspaceService" default="generate.service">
+	<property environment="env" />
+	<property name="axis2.home" value="${env.AXIS2_HOME}" />
+	<property name="axis2.repo" value="${env.AXIS2_HOME}/repository" />
+	<property name="build.dir" value="build" />
+	<property name="client.classes.dir" value="${build.dir}/classes" />
+	
+	<path id="axis.classpath">
+		<fileset dir="${axis2.home}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="build/workspace-service-client.jar" />
+	</path>
+
+	<target name="generate.service" depends="compile">
+		<jar destfile="${build.dir}/download-workspace-service.aar">	
+			<fileset dir="resources/">
+				<include name="META-INF/services.xml" />
+			</fileset>
+			<fileset dir="${build.dir}/classes">
+				<include name="sample/service/**/*.class" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${client.classes.dir}" />
+		<javac debug="on"  srcdir="src" destdir="${client.classes.dir}">
+			<classpath refid="axis.classpath" />
+		</javac>
+	</target>
+
+	<target name="run.client"  depends="compile">
+		<jar destfile="${build.dir}/workspace-service-client.jar">
+			<fileset dir="${build.dir}/classes">
+				<include name="sample/client/**/*.class" />
+			</fileset>
+		</jar>
+		<java classname="sample.client.WorkspaceServiceClient" classpathref="axis.classpath" fork="true">
+			<arg value="${project}" />
+		</java>
+	</target>
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+</project>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis
+END
+AnalysisPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/7256/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/AnalysisPanel.java
+END
+AnalysisPanel.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/AnalysisPanel.cwb.xml
+END
+PollingThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/7362/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/PollingThread.java
+END

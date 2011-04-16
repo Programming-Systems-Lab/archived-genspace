@@ -33,9 +33,15 @@ public class ProjectNodeAddedEventHandler implements EventHandler {
 
 	private Log log = LogFactory.getLog(this.getClass());
 
+<<<<<<< HEAD
 	private Object event = null;
 
 	private Object source = null;
+=======
+//	private Object event = null;
+//
+//	private Object source = null;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	/**
 	 * 
@@ -44,9 +50,15 @@ public class ProjectNodeAddedEventHandler implements EventHandler {
 	 */
 	public ProjectNodeAddedEventHandler(Object event, Object source) {
 
+<<<<<<< HEAD
 		this.event = event;
 
 		this.source = source;
+=======
+//		this.event = event;
+//
+//		this.source = source;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	/*

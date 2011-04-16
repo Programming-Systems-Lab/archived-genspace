@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/geworkbench/!svn/ver/7070/trunk/geworkbench/components/cgems
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/5190/trunk/geworkbench/components/cgems/.cvsignore
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/geworkbench/!svn/ver/2244/trunk/geworkbench/components/cgems/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/7070/trunk/geworkbench/components/cgems/.classpath
+END

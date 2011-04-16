@@ -2,7 +2,16 @@ package org.geworkbench.components.genspace.bean;
 
 import java.io.Serializable;
 
+<<<<<<< HEAD
 public class RatingBean implements Serializable, Comparable {
+=======
+public class RatingBean implements Serializable, Comparable<RatingBean> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4515026175616921380L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	// the primary key of the object being rated
 	private int identifier;
@@ -67,7 +76,11 @@ public class RatingBean implements Serializable, Comparable {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public int compareTo(Object arg0) {
+=======
+	public int compareTo(RatingBean arg0) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		RatingBean other = (RatingBean) arg0;
 		if (this.overallRating > other.overallRating)
 			return 1;
