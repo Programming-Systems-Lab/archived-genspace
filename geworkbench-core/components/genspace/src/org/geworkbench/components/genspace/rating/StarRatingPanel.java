@@ -72,12 +72,12 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 		contentPanel.add(ratingInfo, BorderLayout.EAST);
 
 		// add stars
-//		stars = new Star[5];
-//		for (int i = 0; i < 5; i++)
-//			stars[i] = new Star(this, i + 1);
-//		contentPanel.add(starPanel, BorderLayout.WEST);
-//		for (int i = 0; i < 5; i++)
-//			starPanel.add(stars[i]);
+		stars = new Star[5];
+		for (int i = 0; i < 5; i++)
+			stars[i] = new Star(this, i + 1);
+		contentPanel.add(starPanel, BorderLayout.WEST);
+		for (int i = 0; i < 5; i++)
+			starPanel.add(stars[i]);
 	}
 
 	public void setTitle(String t) {
