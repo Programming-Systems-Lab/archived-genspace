@@ -46,4 +46,6 @@ public interface FriendFacadeRemote {
 	 * @param u User to defriend
 	 */
 	public void removeFriend(int u);
+
+	public List<Friend> getFriends();
 }

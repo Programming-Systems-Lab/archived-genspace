@@ -39,7 +39,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		for(UserNetwork un : networkFilter.getMembers())
 		{
 			if(un.isVisible() && un.isVerified())
-				ret.add(fullySerialize(un.getUser()));
+				ret.add(un.getUser().loadVisibility(getUser()));
 		}
 		return ret;
 	}
@@ -101,6 +101,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	@Override
 	public List<UserNetwork> getMyNetworks() {
 		getUser().getNetworks().size();
+		
 		return getUser().getNetworks();
 	}
 
@@ -129,6 +130,10 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		try
 		{
 			r = q.getResultList();
+			for(UserNetwork un : r)
+			{
+				un.getUser();
+			}
 		}
 		catch(NoResultException e)
 		{

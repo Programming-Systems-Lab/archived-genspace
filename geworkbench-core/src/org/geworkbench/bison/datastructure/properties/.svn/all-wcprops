@@ -9,6 +9,12 @@ svn:wc:ra_dav:version-url
 V 114
 /svn/geworkbench/!svn/ver/1550/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSUnigene.java
 END
+CSExtendable.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/7709/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSExtendable.java
+END
 DSSequential.java
 K 25
 svn:wc:ra_dav:version-url
@@ -20,12 +26,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 112
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSUnigene.java
-END
-CSExtendable.java
-K 25
-svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/7709/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSExtendable.java
 END
 DSExtendable.java
 K 25

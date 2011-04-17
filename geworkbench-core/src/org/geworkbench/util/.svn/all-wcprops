@@ -51,29 +51,29 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/6429/trunk/geworkbench/src/org/geworkbench/util/AlgorithmSelectionPanel.java
 END
-PrintUtils.java
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/4141/trunk/geworkbench/src/org/geworkbench/util/PrintUtils.java
-END
 RegularExpressionVerifier.java
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/RegularExpressionVerifier.java
 END
-Cursor.java
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/Cursor.java
-END
 ProgressBarT.java
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svn/geworkbench/!svn/ver/3850/trunk/geworkbench/src/org/geworkbench/util/ProgressBarT.java
+END
+PrintUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/4141/trunk/geworkbench/src/org/geworkbench/util/PrintUtils.java
+END
+Cursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/Cursor.java
 END
 FilePathnameUtils.java
 K 25
@@ -99,17 +99,17 @@ svn:wc:ra_dav:version-url
 V 89
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/Combinations.java
 END
-ColorScale.java
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/4717/trunk/geworkbench/src/org/geworkbench/util/ColorScale.java
-END
 ProgressGraph.java
 K 25
 svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/ProgressGraph.java
+END
+ColorScale.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/4717/trunk/geworkbench/src/org/geworkbench/util/ColorScale.java
 END
 Debug.java
 K 25
@@ -183,17 +183,17 @@ svn:wc:ra_dav:version-url
 V 91
 /svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/SplashBitmap.java
 END
-ProgressBar.java
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/ProgressBar.java
-END
 BaseException.java
 K 25
 svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/BaseException.java
+END
+ProgressBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7667/trunk/geworkbench/src/org/geworkbench/util/ProgressBar.java
 END
 Distance.java
 K 25
@@ -207,6 +207,12 @@ svn:wc:ra_dav:version-url
 V 98
 /svn/geworkbench/!svn/ver/7390/trunk/geworkbench/src/org/geworkbench/util/CorrelationDistance.java
 END
+SpearmanRankDistance.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/7390/trunk/geworkbench/src/org/geworkbench/util/SpearmanRankDistance.java
+END
 BaseRuntimeException.java
 K 25
 svn:wc:ra_dav:version-url
@@ -218,12 +224,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 90
 /svn/geworkbench/!svn/ver/7051/trunk/geworkbench/src/org/geworkbench/util/splashscreen.png
-END
-SpearmanRankDistance.java
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/7390/trunk/geworkbench/src/org/geworkbench/util/SpearmanRankDistance.java
 END
 TrainingTask.java
 K 25

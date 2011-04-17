@@ -31,7 +31,7 @@ import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
  * Created by IntelliJ IDEA. User: jon Date: Aug 28, 2010 Time: 11:45:56 AM To
  * change this template use File | Settings | File Templates.
  */
-public class SocialNetworksHome {
+public class SocialNetworksHome implements UpdateablePanel {
 	private JLabel a1FriendRequestLabel;
 //	private JLabel a1NetworkRequestLabel;
 	private JButton button1;
@@ -100,7 +100,7 @@ public class SocialNetworksHome {
 					setContent(settings);
 				} else if (source.equals("Back")) {
 					setContent(last.pop());
-				} else if (source.equals("(View Requests)")) {
+				} else if (source.equals("View Requests")) {
 					setContent(requests);
 				}
 
@@ -232,16 +232,19 @@ public class SocialNetworksHome {
 		if (GenSpaceServerFactory.isLoggedIn()) {
 			current.updateFormFields();
 			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
-
+				int evt;
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
+					evt = GenSpace.getStatusBar().start("Refreshing social tab");
+					System.out.println("Getting friends list");
 					return GenSpaceServerFactory.getFriendOps().getFriendRequests();
 				}
 
 				@Override
 				protected void done() {
 					List<User> lst = null;
+					GenSpace.getStatusBar().stop(evt);
 					try {
 						lst = get();
 					} catch (InterruptedException e) {
@@ -255,6 +258,7 @@ public class SocialNetworksHome {
 					if(lst != null)
 					for (User t : lst) {
 						m.data.add(t.getFullName());
+						System.out.println("Into the list: " + t.getFullName());
 					}
 					int size = 0;
 					if(lst != null)

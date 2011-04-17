@@ -84,9 +84,11 @@ public class DynamicTree extends JPanel implements ActionListener,
 	}
 
 	public void recalculateTree() {
-		User u = GenSpaceServerFactory.getUser();
-		if (u != null) {
+		if (GenSpaceServerFactory.isLoggedIn()) {
 			WorkflowFolder root = GenSpaceServerFactory.getUserOps().getRootFolder();
+			for(UserWorkflow uw : root.getWorkflows())
+				uw.getWorkflow().loadToolsFromCache();
+
 			rootNode = new DefaultMutableTreeNode(root);
 			addUserWorkflowTree(root);
 			repaint();
@@ -267,8 +269,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 						protected Boolean doInBackground() throws Exception {
 							boolean ret = GenSpaceServerFactory.getWorkflowOps()
 									.deleteMyWorkflow(uw.getId());
-							GenSpaceServerFactory.userUpdate();
-							GenSpace.getInstance().getWorkflowRepository().updateUser();
+							GenSpace.getInstance().getWorkflowRepository().updateFormFields();
 
 							return ret;
 						};
@@ -339,8 +340,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 					folder.setOwner(GenSpaceServerFactory.getUser());
 					folder.setParent(GenSpaceServerFactory.getUser().getRootFolder());
 					WorkflowFolder ret = GenSpaceServerFactory.getWorkflowOps().addFolder(folder);
-					GenSpaceServerFactory.updateCachedUser();
-					GenSpace.getInstance().getWorkflowRepository().updateUser();
+					GenSpace.getInstance().getWorkflowRepository().updateFormFieldsBG();
 					return ret;
 				};
 

@@ -61,7 +61,6 @@ import javax.swing.table.AbstractTableModel;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
-import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.engine.config.VisualPlugin;
 
@@ -122,10 +121,10 @@ VisualPlugin {
 		return this;
 	}
 
-	public void setData(User u) {
+	public void setData(List<IncomingWorkflow> list) {
 		MyTableModel model = (MyTableModel) table.getModel();
-		if (u != null)
-			model.setData(u.getIncomingWorkflows());
+		if (list != null)
+			model.setData(list);
 		else
 			clearData();
 
@@ -161,8 +160,7 @@ VisualPlugin {
 			protected Boolean doInBackground() throws Exception {
 				Boolean ret =  GenSpaceServerFactory.getWorkflowOps()
 						.deleteFromInbox(wi.getId());
-				GenSpaceServerFactory.updateCachedUser();
-				workflowRepository.updateUser();
+				workflowRepository.updateFormFieldsBG();
 				return ret;
 			};
 
@@ -188,8 +186,7 @@ VisualPlugin {
 			protected UserWorkflow doInBackground() throws Exception {
 				UserWorkflow ret = GenSpaceServerFactory.getWorkflowOps()
 						.addToRepository(wi.getId());
-				GenSpaceServerFactory.updateCachedUser();
-				workflowRepository.updateUser();
+				workflowRepository.updateFormFieldsBG();
 				return ret;
 			};
 

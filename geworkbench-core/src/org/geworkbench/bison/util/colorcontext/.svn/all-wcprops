@@ -3,11 +3,11 @@ svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext
 END
-DefaultColorContext.java
+ExpressionPValueColorContext.java
 K 25
 svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/DefaultColorContext.java
+V 126
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/ExpressionPValueColorContext.java
 END
 ColorContext.java
 K 25
@@ -15,11 +15,11 @@ svn:wc:ra_dav:version-url
 V 109
 /svn/geworkbench/!svn/ver/693/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/ColorContext.java
 END
-ExpressionPValueColorContext.java
+ExpressionColorContext.java
 K 25
 svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/ExpressionPValueColorContext.java
+V 120
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/ExpressionColorContext.java
 END
 ColorContextUtils.java
 K 25
@@ -27,9 +27,9 @@ svn:wc:ra_dav:version-url
 V 115
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/ColorContextUtils.java
 END
-ExpressionColorContext.java
+DefaultColorContext.java
 K 25
 svn:wc:ra_dav:version-url
-V 120
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/ExpressionColorContext.java
+V 117
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/util/colorcontext/DefaultColorContext.java
 END

@@ -268,6 +268,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 	public WorkflowStatistics() {
 		$$$setupUI$$$();
+		popularTools.setOpaque(false);
+		popularFirstTools.setOpaque(false);
+		popWorkflows.setOpaque(false);
 		popularTools.setBackground(this.getBackground());
 		popularTools.setCellRenderer(new ToolCellRenderer());
 

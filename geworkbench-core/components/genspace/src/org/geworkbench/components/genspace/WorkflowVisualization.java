@@ -51,7 +51,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 
 	private void initComponents() {
 		setLayout(new BorderLayout());
-
+		
 		tools.addItem("-- select tool --");
 		// the rest of the app
 		SwingWorker<List<Tool>, Void> worker = new SwingWorker<List<Tool>, Void>(){

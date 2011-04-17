@@ -174,7 +174,6 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 						{
 
 							if (GenSpaceServerFactory.userLogin(tf.getText(),new String(pf.getPassword()))) {
-								GenSpace.getInstance().getWorkflowRepository().updateUser();
 								return GenSpaceServerFactory.getUser();
 
 							} else {

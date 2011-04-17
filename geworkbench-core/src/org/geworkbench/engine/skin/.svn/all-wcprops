@@ -39,17 +39,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_active.gif
 END
-Skin.java
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/7562/trunk/geworkbench/src/org/geworkbench/engine/skin/Skin.java
-END
 dock.gif
 K 25
 svn:wc:ra_dav:version-url
 V 87
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock.gif
+END
+Skin.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/7562/trunk/geworkbench/src/org/geworkbench/engine/skin/Skin.java
 END
 Thumbs.db
 K 25
@@ -57,17 +57,17 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/Thumbs.db
 END
-undock.gif
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock.gif
-END
 min.gif
 K 25
 svn:wc:ra_dav:version-url
 V 86
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min.gif
+END
+undock.gif
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock.gif
 END
 max.gif
 K 25
@@ -99,27 +99,27 @@ svn:wc:ra_dav:version-url
 V 101
 /svn/geworkbench/!svn/ver/6192/trunk/geworkbench/src/org/geworkbench/engine/skin/ShortCutMenu.cwb.xml
 END
-blue_sphere.bmp
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/blue_sphere.bmp
-END
 dock_grey.gif
 K 25
 svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock_grey.gif
 END
-undock_grey.gif
+blue_sphere.bmp
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_grey.gif
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/blue_sphere.bmp
 END
 min_grey.gif
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min_grey.gif
+END
+undock_grey.gif
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_grey.gif
 END

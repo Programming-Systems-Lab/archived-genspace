@@ -3,29 +3,17 @@ svn:wc:ra_dav:version-url
 V 109
 /svn/geworkbench/!svn/ver/2616/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files
 END
-affyMas5GcosFormat.png
-K 25
-svn:wc:ra_dav:version-url
-V 132
-/svn/geworkbench/!svn/ver/2036/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/affyMas5GcosFormat.png
-END
-AffyFileMatrix.png
-K 25
-svn:wc:ra_dav:version-url
-V 128
-/svn/geworkbench/!svn/ver/2071/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/AffyFileMatrix.png
-END
-affy.png
-K 25
-svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/2009/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/affy.png
-END
 image001.jpg
 K 25
 svn:wc:ra_dav:version-url
 V 122
 /svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/image001.jpg
+END
+affyMas5GcosFormat.png
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/2036/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/affyMas5GcosFormat.png
 END
 image002.jpg
 K 25
@@ -39,9 +27,21 @@ svn:wc:ra_dav:version-url
 V 130
 /svn/geworkbench/!svn/ver/2043/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/RMAExpressFormat.png
 END
+affy.png
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/2009/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/affy.png
+END
 T_CEL_viewer.png
 K 25
 svn:wc:ra_dav:version-url
 V 126
 /svn/geworkbench/!svn/ver/2616/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/T_CEL_viewer.png
+END
+AffyFileMatrix.png
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/2071/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/open_dataset_files/AffyFileMatrix.png
 END

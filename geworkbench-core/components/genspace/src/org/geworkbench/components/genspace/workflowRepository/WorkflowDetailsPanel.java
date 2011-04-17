@@ -113,7 +113,7 @@ ActionListener {
 			if (o.equals(sendButton)) {
 				send();
 			} else if (o.equals(refreshButton)) {
-				refresh();
+				workflowRepository.updateFormFields();
 			} else if (o.equals(importButton)) {
 				importWorkflow();
 			} else if (o.equals(exportButton)) {
@@ -196,14 +196,6 @@ ActionListener {
 		messageUser("Workflow exported successfully");
 	}
 
-	private String refresh() {
-		// TODO: there should be a thread in background that calls this
-		// function periodically to refresh stuff automatically
-		GenSpaceServerFactory.updateCachedUser();
-		GenSpace.getInstance().getWorkflowRepository()
-		.updateUser();
-		return "User data has been refreshed successfully"; 
-	}
 
 	private void send() {
 		TreePath currentSelection = workflowRepository.repositoryPanel.tree.tree

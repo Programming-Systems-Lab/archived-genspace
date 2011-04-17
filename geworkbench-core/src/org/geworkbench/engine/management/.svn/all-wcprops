@@ -81,17 +81,17 @@ svn:wc:ra_dav:version-url
 V 103
 /svn/geworkbench/!svn/ver/7680/trunk/geworkbench/src/org/geworkbench/engine/management/AcceptTypes.java
 END
-ComponentObjectInputStream.java
-K 25
-svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/engine/management/ComponentObjectInputStream.java
-END
 Module.java
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/management/Module.java
+END
+ComponentObjectInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/engine/management/ComponentObjectInputStream.java
 END
 Synchronous.java
 K 25
@@ -99,15 +99,15 @@ svn:wc:ra_dav:version-url
 V 101
 /svn/geworkbench/!svn/ver/60/trunk/geworkbench/src/org/geworkbench/engine/management/Synchronous.java
 END
-Asynchronous.java
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/geworkbench/!svn/ver/60/trunk/geworkbench/src/org/geworkbench/engine/management/Asynchronous.java
-END
 ComponentRegistry.java
 K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/geworkbench/!svn/ver/7489/trunk/geworkbench/src/org/geworkbench/engine/management/ComponentRegistry.java
+END
+Asynchronous.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/60/trunk/geworkbench/src/org/geworkbench/engine/management/Asynchronous.java
 END

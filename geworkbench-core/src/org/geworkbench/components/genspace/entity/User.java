@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
@@ -360,8 +361,12 @@ public class User implements Serializable, Comparable<User>{
 		for(Friend f: getFriends())
 		{
 			if(f.getRightUser().equals(u))
+			{
+				setFriends(true);
 				return f;
+			}
 		}
+		setFriends(false);
 		return null;
 	}
 	public UserNetwork isInNetwork(Network n) {
@@ -372,7 +377,7 @@ public class User implements Serializable, Comparable<User>{
 		}
 		return null;
 	}
-	public boolean isVisibleTo(User other)
+	private boolean isVisibleTo(User other)
 	{
 		Friend f = this.isFriendsWith(other);
 		if(f != null && f.isVisible())
@@ -441,5 +446,27 @@ public class User implements Serializable, Comparable<User>{
 		if(r == 0)
 			return this.getFirstName().compareTo(o.getFirstName());
 		return r;
+	}
+	public User loadVisibility(User from) {
+		setVisible(isVisibleTo(from));
+		return this;
+	}
+	
+
+	private boolean isVisible;
+	@Transient
+	public boolean isVisible() {
+		return isVisible;
+	}
+	public void setVisible(boolean isVisible) {
+		this.isVisible = isVisible;
+	}
+	private boolean isFriends;
+	@Transient
+	public boolean isFriends() {
+		return isFriends;
+	}
+	public void setFriends(boolean isFriends) {
+		this.isFriends = isFriends;
 	}
 }

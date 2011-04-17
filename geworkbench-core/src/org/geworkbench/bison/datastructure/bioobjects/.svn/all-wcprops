@@ -39,17 +39,17 @@ svn:wc:ra_dav:version-url
 V 113
 /svn/geworkbench/!svn/ver/7296/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaEdge.java
 END
-IdeaProbeGene.java
-K 25
-svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/7305/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaProbeGene.java
-END
 FoldChangeResult.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
 /svn/geworkbench/!svn/ver/7504/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/FoldChangeResult.java
+END
+IdeaProbeGene.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7305/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaProbeGene.java
 END
 KMeansResult.java
 K 25

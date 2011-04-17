@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 90
 /svn/geworkbench/!svn/ver/1003/trunk/geworkbench/src/org/geworkbench/engine/visualArea.png
 END
-selectionArea.png
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/1003/trunk/geworkbench/src/org/geworkbench/engine/selectionArea.png
-END
 EngineIcons.java
 K 25
 svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/1003/trunk/geworkbench/src/org/geworkbench/engine/EngineIcons.java
+END
+selectionArea.png
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/1003/trunk/geworkbench/src/org/geworkbench/engine/selectionArea.png
 END
 projectArea.png
 K 25

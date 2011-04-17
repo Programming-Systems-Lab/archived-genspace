@@ -67,7 +67,6 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 		if (tool != null) {
 
 			tool = tn;
-			toolSRP.setTitle("Rate " + tn.getName());
 
 				gotoToolPage
 						.setText("Goto GenSpace page for " + tn.getName());
@@ -105,11 +104,10 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 				}
 
 
-			if (tool.getId() > 0) {
+			if (tool.getId() > 0 && GenSpaceServerFactory.isLoggedIn()) {
 				toolSRP = new StarRatingPanel();
 				toolSRP.setTitle("Rate " + tn);
 				toolSRP.loadRating(tn);
-				add(new JMenuItem().add(toolSRP));
 				add(toolSRP);
 			}
 		}
@@ -125,7 +123,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 				} else
 					viewWorkflowCommentsPage.setVisible(false);
 
-			if (workflow.getId() > 0) {
+			if (workflow.getId() > 0 && GenSpaceServerFactory.isLoggedIn()) {
 				workflowSRP = new StarRatingPanel();
 				workflowSRP.setTitle("Rate workflow until here");
 				workflowSRP.loadRating(workflow);
@@ -181,10 +179,8 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 						uw.setFolder(GenSpaceServerFactory.getUser().getRootFolder());
 						uw.setOwner(GenSpaceServerFactory.getUser());
 						uw.setCreatedAt(new Date());
-						
 						GenSpaceServerFactory.getWorkflowOps().addWorkflow(uw, GenSpaceServerFactory.getUser().getRootFolder().getId());
-						GenSpaceServerFactory.updateCachedUser();
-						GenSpace.getInstance().getWorkflowRepository().updateUser();
+						GenSpace.getInstance().getWorkflowRepository().updateFormFieldsBG();
 							JOptionPane
 							.showMessageDialog(null,
 									"Workflow added succesfully to repository");

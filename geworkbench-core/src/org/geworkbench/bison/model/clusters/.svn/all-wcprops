@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 117
 /svn/geworkbench/!svn/ver/6940/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/NonRecursiveClusterSet.java
 END
-AbstractCluster.java
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/geworkbench/!svn/ver/7427/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/AbstractCluster.java
-END
 DefaultSOMCluster.java
 K 25
 svn:wc:ra_dav:version-url
 V 112
 /svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/DefaultSOMCluster.java
+END
+AbstractCluster.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/geworkbench/!svn/ver/7427/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/AbstractCluster.java
 END
 DSClusterDataSet.java
 K 25

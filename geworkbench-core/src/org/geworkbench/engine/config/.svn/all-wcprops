@@ -45,17 +45,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/1962/trunk/geworkbench/src/org/geworkbench/engine/config/GUIFramework.java
 END
-default.xml
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/2117/trunk/geworkbench/src/org/geworkbench/engine/config/default.xml
-END
 ComponentMetadata.java
 K 25
 svn:wc:ra_dav:version-url
 V 105
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/engine/config/ComponentMetadata.java
+END
+default.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/2117/trunk/geworkbench/src/org/geworkbench/engine/config/default.xml
 END
 MenuListener.java
 K 25

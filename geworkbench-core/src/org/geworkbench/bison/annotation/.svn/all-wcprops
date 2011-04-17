@@ -3,12 +3,6 @@ svn:wc:ra_dav:version-url
 V 85
 /svn/geworkbench/!svn/ver/7132/trunk/geworkbench/src/org/geworkbench/bison/annotation
 END
-CSAnnotationContext.java
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/geworkbench/!svn/ver/7129/trunk/geworkbench/src/org/geworkbench/bison/annotation/CSAnnotationContext.java
-END
 CSAnnotationContextManager.java
 K 25
 svn:wc:ra_dav:version-url
@@ -20,6 +14,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 117
 /svn/geworkbench/!svn/ver/7129/trunk/geworkbench/src/org/geworkbench/bison/annotation/DSAnnotationContextManager.java
+END
+CSAnnotationContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/geworkbench/!svn/ver/7129/trunk/geworkbench/src/org/geworkbench/bison/annotation/CSAnnotationContext.java
 END
 DSAnnotationContext.java
 K 25

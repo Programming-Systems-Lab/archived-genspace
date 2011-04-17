@@ -399,7 +399,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		try
 		{
 			r = (User) q.getSingleResult();
-			r = fullySerialize(r);
+			r.loadVisibility(getUser());
 		}
 		catch(NoResultException e)
 		{

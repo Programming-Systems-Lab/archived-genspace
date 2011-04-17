@@ -2,6 +2,10 @@
 package org.geworkbench.components.genspace;
 
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
@@ -46,19 +50,18 @@ public class GenSpaceServerFactory {
 		}	
 		try {
 			System.setProperty("org.omg.CORBA.ORBInitialHost", RuntimeEnvironmentSettings.SERVER);
-			System.setProperty("com.sun.CORBA.encoding.ORBEnableJavaSerialization","true");
+//			System.setProperty("com.sun.corba.ee.encoding.ORBEnableJavaSerialization","true");
+//			System.setProperty("com.sun.CORBA.encoding.ORBEnableJavaSerialization", "true");
 			System.setProperty("org.omg.CORBA.ORBInitialPort", "3700");
 //			System.setProperty("com.sun.CORBA.giop.ORBFragmentSize","1024000");
 //			System.setProperty("com.sun.CORBA.giop.ORBBufferSize","1024000");
-			System.setProperty("com.sun.corba.ee.transport.ORBMaximumReadByteBufferSize", "3000000");
+//			System.setProperty("com.sun.corba.ee.transport.ORBMaximumReadByteBufferSize", "3000000");
 			System.setProperty("java.naming.factory.initial", "com.sun.enterprise.naming.SerialInitContextFactory");
 			System.setProperty("java.naming.factory.url.pkgs", "com.sun.enterprise.naming");
 			System.setProperty("java.naming.factory.state", "com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl");
 			if(ctx == null)
 			{
-				System.out.println("getting context");
 				ctx = new InitialContext();
-				System.out.println("have context");
 			}
 			if(RuntimeEnvironmentSettings.tools == null)
 			{
@@ -133,10 +136,24 @@ public class GenSpaceServerFactory {
 		return user;
 	}
 	public static boolean userRegister(User u) {
+		System.out.println("Sending up user of size " + getObjectSize(u));
 		user = getPublicFacade().register(u);
 		if(user != null)
 			return true;
 		return false;
+	}
+	public static String getObjectSize(Serializable s)
+	{
+		 ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		 ObjectOutputStream oos;
+		try {
+			oos = new ObjectOutputStream(baos);
+			oos.writeObject(s);
+			oos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		 
+		 return " " + ((double) baos.size())/(1024) + " KB";
 	}
 	static ProgrammaticLogin pm = new ProgrammaticLogin();
 	@SuppressWarnings("deprecation")
@@ -145,8 +162,6 @@ public class GenSpaceServerFactory {
 		System.setProperty("java.security.auth.login.config", "components/genspace/src/org/geworkbench/components/genspace/login.conf");
 		try {
 			pm.login(username, password,"GELogin",true);
-			InitialContext ctx = new InitialContext();
-			ctx.lookup("org.geworkbench.components.genspace.server.UserFacadeRemote");
 			user = getUserOps().getMe();
 		} catch (Exception e) {
 			return false;
@@ -199,22 +214,7 @@ public class GenSpaceServerFactory {
 	 * @return
 	 */
 	public static boolean isVisible(User user2) {
-		Friend f = user2.isFriendsWith(getUser());
-		if(f != null && f.isVisible())
-		{
-			return true;
-		}
-		//Check the networks
-		for(UserNetwork u1 : user2.getNetworks())
-		{
-			if(u1.isVisible())
-				for(UserNetwork u2 : getUser().getNetworks())
-				{
-					if(u2.getNetwork().equals(u1.getNetwork()))
-						return true;
-				}
-		}
-		return false;
+		return user2.isVisible();
 	}
 
 	

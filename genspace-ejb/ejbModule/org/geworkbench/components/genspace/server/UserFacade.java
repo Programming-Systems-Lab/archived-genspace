@@ -1,6 +1,7 @@
 package org.geworkbench.components.genspace.server;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -21,6 +22,7 @@ import javax.security.auth.login.LoginException;
 
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Friend;
+import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.ToolRating;
@@ -57,7 +59,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	@Resource SessionContext ctx;
 	@Override
 	public User getMe() {
-		return fullySerialize(getUser());
+		return getUser();
 	}
 
 	
@@ -74,7 +76,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		if(o == null)
 			return null;
 //		if(o.isVisibleTo(getUser()))
-		return fullySerialize(o);
+		return o.loadVisibility(getUser());
 	}
 
 	@Override
@@ -93,29 +95,35 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 			getEntityManager().merge(u);
 			ret = getMe().getRootFolder();
 		}
-		for(WorkflowFolder r : ret.getChildren())
-		{
-			for(UserWorkflow uw : r.getWorkflows())
-			{
-				getEntityManager().refresh(uw.getWorkflow());
-				uw.getWorkflow().getTools().size();
-				if(uw.getWorkflow().getCreator() != null)
-					uw.getWorkflow().getCreator().getUsername();
-				uw.getWorkflow().getRatings().size();
-				uw.getWorkflow().getCreator();
-				uw.getWorkflow().getComments().size();
-			}
-		}
+		
+		WorkflowFolder retz = new WorkflowFolder();
+		retz.setId(ret.getId());
+		retz.setName(ret.getName());
+		retz.setOwner(ret.getOwner());
+		retz.setWorkflows(new ArrayList<UserWorkflow>());
+//		for(WorkflowFolder r : ret.getChildren())
+//		{
+//			for(UserWorkflow uw : r.getWorkflows())
+//			{
+//				getEntityManager().refresh(uw.getWorkflow());
+//				uw.getWorkflow().getTools().size();
+//				if(uw.getWorkflow().getCreator() != null)
+//					uw.getWorkflow().getCreator().getUsername();
+//				uw.getWorkflow().getRatings().size();
+//				uw.getWorkflow().getCreator();
+//				uw.getWorkflow().getComments().size();
+//			}
+//		}
 		for(UserWorkflow uw : ret.getWorkflows())
 		{
-			System.out.println("Wkflw name: " + uw.getName());
-			uw.getWorkflow().getTools().size();
-			if(uw.getWorkflow().getCreator() != null)
-				uw.getWorkflow().getCreator().getUsername();
-			uw.getWorkflow().getRatings().size();
-			uw.getWorkflow().getCreator();
-			uw.getWorkflow().getComments().size();
+			UserWorkflow uww = new UserWorkflow();
+			uww.setWorkflow(uw.getWorkflow().slimDown());
+			uww.getWorkflow().getComments().size();
+			uww.getWorkflow().getCreator();
+			uww.setName(uw.getName());
+			retz.getWorkflows().add(uww);
 		}
-		return ret;
+		getEntityManager().clear();
+		return retz;
 	} 
 }

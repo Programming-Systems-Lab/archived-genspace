@@ -232,7 +232,7 @@ public class privacyTab extends SocialTab {
 				@Override
 				protected List<Friend> doInBackground()
 						throws Exception {
-					return GenSpaceServerFactory.getUser().getFriends();
+					return GenSpaceServerFactory.getFriendOps().getFriends();
 				}
 
 				@Override

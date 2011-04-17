@@ -3,6 +3,12 @@ svn:wc:ra_dav:version-url
 V 98
 /svn/geworkbench/!svn/ver/921/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help
 END
+annotationPaneltoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/annotationPaneltoc.xml
+END
 annotationPanelMap.jhm
 K 25
 svn:wc:ra_dav:version-url
@@ -21,17 +27,11 @@ svn:wc:ra_dav:version-url
 V 123
 /svn/geworkbench/!svn/ver/626/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/Dataset%20annotation.htm
 END
-annotationPanel.gif
+annotationPanelHelpSet.hs
 K 25
 svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/annotationPanel.gif
-END
-annotationPaneltoc.xml
-K 25
-svn:wc:ra_dav:version-url
-V 120
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/annotationPaneltoc.xml
+V 123
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/annotationPanelHelpSet.hs
 END
 User Comments.htm
 K 25
@@ -39,9 +39,9 @@ svn:wc:ra_dav:version-url
 V 118
 /svn/geworkbench/!svn/ver/921/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/User%20Comments.htm
 END
-annotationPanelHelpSet.hs
+annotationPanel.gif
 K 25
 svn:wc:ra_dav:version-url
-V 123
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/annotationPanelHelpSet.hs
+V 117
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/builtin/projects/comments/help/annotationPanel.gif
 END

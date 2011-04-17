@@ -1,4 +1,6 @@
 package org.geworkbench.components.genspace.server;
+import java.util.ArrayList;
+
 import javax.ejb.Remote;
 
 import org.geworkbench.components.genspace.entity.User;
@@ -13,6 +15,7 @@ public interface UserFacadeRemote {
 	public User getProfile(String who);	
 	public WorkflowFolder getRootFolder();
 	
+
 	
 
 	

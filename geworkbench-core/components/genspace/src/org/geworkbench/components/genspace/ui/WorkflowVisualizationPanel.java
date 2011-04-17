@@ -53,6 +53,8 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 
 	public WorkflowVisualizationPanel()
 	{
+		setOpaque(false);
+		
 		add(scroller, BorderLayout.CENTER);
 		this.addComponentListener(new ComponentListener() {
 			
@@ -230,7 +232,7 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 				{
 					Object lane = graph.insertVertex(pool, null, "", 0, 0, this.getWidth(), 10,"SWIMLANE");
 					swimlanes.put(w, (mxICell) lane);
-					renderSingleWorkflow(w,selected,lane,wkflwCache.get(w.getCachedParentId()).getCachedChildrenCount(),wkflTails.get(wkflwCache.get(w.getCachedParentId())));
+					renderSingleWorkflow(w,selected,lane,wkflwCache.get(w.getCachedParentId()).getTools().size(),wkflTails.get(wkflwCache.get(w.getCachedParentId())));
 					renderAsSubs(ret, selected, true, w);
 				}
 			}
@@ -328,11 +330,11 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 		
 		
 		Hashtable<String, Object> style3 = new Hashtable<String, Object>();
-		style3.put(mxConstants.STYLE_FILLCOLOR, "#E8E8E8");
+		style3.put(mxConstants.STYLE_FILLCOLOR, "#E1E2E6");
 		style3.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 		style3.put(mxConstants.STYLE_STROKEWIDTH, .5);
 		style3.put(mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_CENTER);
-		style3.put(mxConstants.STYLE_OPACITY, "0");
+//		style3.put(mxConstants.STYLE_OPACITY, "0");
 		graph.getStylesheet().putCellStyle("SWIMLANE", style3);
 		
 		Hashtable<String, Object> style4 = new Hashtable<String, Object>();

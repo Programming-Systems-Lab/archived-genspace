@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 120
 /svn/geworkbench/!svn/ver/7663/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/EdgeList.java
 END
-ModulatorStatistics.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/ModulatorStatistics.java
-END
 MindyGeneMarker.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/7492/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyGeneMarker.java
+END
+ModulatorStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/ModulatorStatistics.java
 END
 ModulatorInfo.java
 K 25
@@ -39,17 +39,17 @@ svn:wc:ra_dav:version-url
 V 116
 /svn/geworkbench/!svn/ver/7663/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/Edge.java
 END
-EdgeListDataSet.java
-K 25
-svn:wc:ra_dav:version-url
-V 127
-/svn/geworkbench/!svn/ver/7663/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/EdgeListDataSet.java
-END
 AdjacencyMatrix.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/7719/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/AdjacencyMatrix.java
+END
+EdgeListDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/7663/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/EdgeListDataSet.java
 END
 MindyDataSet.java
 K 25

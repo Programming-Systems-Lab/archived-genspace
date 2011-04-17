@@ -2,6 +2,7 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
+import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
 import org.geworkbench.components.genspace.entity.User;
 
@@ -343,9 +344,15 @@ public class profileTab extends SocialTab {
 				GenSpaceServerFactory.getUser().setInterests(myResearchInterestsTextArea.getText());
 				SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>()
 				{
-
+					int evt;
+					
+					@Override
+					protected void done() {
+						GenSpace.getStatusBar().stop(evt);
+					}
 					@Override
 					protected Void doInBackground() throws Exception {
+						evt = GenSpace.getStatusBar().start("Saving profile");
 						GenSpaceServerFactory.userUpdate();
 						return null;
 					}

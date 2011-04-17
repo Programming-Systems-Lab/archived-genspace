@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 125
 /svn/geworkbench/!svn/ver/7408/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/CSGeneMarker.java
 END
-DSGeneMarker.java
-K 25
-svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/7314/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/DSGeneMarker.java
-END
 CSExpressionMarker.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
 /svn/geworkbench/!svn/ver/7321/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/CSExpressionMarker.java
+END
+DSGeneMarker.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/geworkbench/!svn/ver/7314/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/DSGeneMarker.java
 END
 SequenceMarker.java
 K 25

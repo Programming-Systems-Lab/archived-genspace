@@ -2,7 +2,7 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.JPanel;
 
-public abstract class SocialTab {
+public abstract class SocialTab implements UpdateablePanel {
 	protected JPanel panel1;
 	SocialNetworksHome parentFrame;
 

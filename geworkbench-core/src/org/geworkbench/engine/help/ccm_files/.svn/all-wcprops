@@ -3,6 +3,12 @@ svn:wc:ra_dav:version-url
 V 90
 /svn/geworkbench/!svn/ver/7051/trunk/geworkbench/src/org/geworkbench/engine/help/ccm_files
 END
+CCM_by_type.png
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/6786/trunk/geworkbench/src/org/geworkbench/engine/help/ccm_files/CCM_by_type.png
+END
 CCM_Main.png
 K 25
 svn:wc:ra_dav:version-url
@@ -20,10 +26,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 125
 /svn/geworkbench/!svn/ver/6786/trunk/geworkbench/src/org/geworkbench/engine/help/ccm_files/CCM_adding_GO_dependency_check.png
-END
-CCM_by_type.png
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/geworkbench/!svn/ver/6786/trunk/geworkbench/src/org/geworkbench/engine/help/ccm_files/CCM_by_type.png
 END

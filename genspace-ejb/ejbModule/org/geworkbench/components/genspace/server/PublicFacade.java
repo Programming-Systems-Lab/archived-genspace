@@ -33,22 +33,13 @@ public class PublicFacade extends GenericUsageInformation implements PublicFacad
 	public User register(User u) {
 		if(userExists(u.getUsername()))
 			return null;
-		if(u.getId() > 0)
-			return null;
+		System.out.println("Saving a new user");
 		getEntityManager().persist(u);
 		User myUser = findByUserName(u.getUsername());
-		myUser = fullySerialize(myUser);
+		getEntityManager().detach(myUser);
+		getEntityManager().clear();
+System.out.println("Returning");
 		return myUser;
-	}
-   
-	public User fullySerialize(User u) {
-		u.getFolders().size();
-		u.getFriends().size();
-		u.getIncomingWorkflows().size();
-		u.getWorkflowComments().size();
-		u.getWorkflows().size();
-		u.getNetworks().size();
-		return u;
 	}
 
 }

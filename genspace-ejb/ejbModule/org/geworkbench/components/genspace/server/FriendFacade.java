@@ -38,15 +38,12 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		try
 		{
 			r = q.getResultList();
-			for(User u : r)
-			{
-				fullySerialize(u);
-			}
 		}
 		catch(NoResultException e)
 		{
 			return new ArrayList<User>();
 		}
+		getEntityManager().clear();
 		return r;
 	}
 	private User getUser(int id)
@@ -59,6 +56,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		if(me.getId() == o)
 			return;
 		User other = getUser(o);
+
 		Friend f = other.isFriendsWith(me);
 		boolean mutual = false;
 		if(f != null)
@@ -106,7 +104,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		System.out.println("request from" + getUser());
 		for(Friend f : getUser().getFriends())
 		{
-			res.add(fullySerialize(f.getRightUser()));
+			res.add(f.getRightUser().loadVisibility(getUser()));
 		}
 		return res;
 	}
@@ -128,6 +126,19 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 			getEntityManager().remove(f);
 		}
 
+	}
+
+
+	@Override
+	public List<Friend> getFriends() {
+		User ret = getUser();
+		for(Friend f : ret.getFriends())
+		{
+			f.getRightUser().loadVisibility(getUser());
+		}
+		getEntityManager().detach(ret);
+		getEntityManager().clear();
+		return ret.getFriends();
 	}
 
 }

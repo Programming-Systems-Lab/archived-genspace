@@ -3,12 +3,6 @@ svn:wc:ra_dav:version-url
 V 103
 /svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files
 END
-image001.png
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files/image001.png
-END
 image001.jpg
 K 25
 svn:wc:ra_dav:version-url
@@ -21,15 +15,21 @@ svn:wc:ra_dav:version-url
 V 115
 /svn/geworkbench/!svn/ver/725/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files/image002.jpg
 END
-image001.gif
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/geworkbench/!svn/ver/893/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files/image001.gif
-END
 Thumbs.db
 K 25
 svn:wc:ra_dav:version-url
 V 113
 /svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files/Thumbs.db
+END
+image001.png
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files/image001.png
+END
+image001.gif
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/893/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote_files/image001.gif
 END

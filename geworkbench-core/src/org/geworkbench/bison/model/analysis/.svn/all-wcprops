@@ -63,6 +63,12 @@ svn:wc:ra_dav:version-url
 V 119
 /svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/AlgorithmExecutionResults.java
 END
+NormalizingAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/NormalizingAnalysis.java
+END
 ParamValidationResults.java
 K 25
 svn:wc:ra_dav:version-url
@@ -74,10 +80,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 118
 /svn/geworkbench/!svn/ver/5107/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/ProteinSequenceAnalysis.java
-END
-NormalizingAnalysis.java
-K 25
-svn:wc:ra_dav:version-url
-V 113
-/svn/geworkbench/!svn/ver/151/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/NormalizingAnalysis.java
 END

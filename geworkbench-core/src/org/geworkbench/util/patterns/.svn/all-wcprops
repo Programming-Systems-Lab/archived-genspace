@@ -27,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 107
 /svn/geworkbench/!svn/ver/7251/trunk/geworkbench/src/org/geworkbench/util/patterns/CSMatchedSeqPattern.java
 END
-PatternTableModel.java
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/geworkbench/!svn/ver/7653/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternTableModel.java
-END
 PatternFetchException.java
 K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/geworkbench/!svn/ver/7660/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternFetchException.java
+END
+PatternTableModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/7653/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternTableModel.java
 END
 PatternLocations.java
 K 25

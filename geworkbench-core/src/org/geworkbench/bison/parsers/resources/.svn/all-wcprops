@@ -3,11 +3,11 @@ svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/6906/trunk/geworkbench/src/org/geworkbench/bison/parsers/resources
 END
-AbstractResource.java
+GenepixResource.java
 K 25
 svn:wc:ra_dav:version-url
-V 114
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/parsers/resources/AbstractResource.java
+V 112
+/svn/geworkbench/!svn/ver/111/trunk/geworkbench/src/org/geworkbench/bison/parsers/resources/GenepixResource.java
 END
 Resource.java
 K 25
@@ -21,11 +21,11 @@ svn:wc:ra_dav:version-url
 V 114
 /svn/geworkbench/!svn/ver/3178/trunk/geworkbench/src/org/geworkbench/bison/parsers/resources/EdgeListResource.java
 END
-GenepixResource.java
+AbstractResource.java
 K 25
 svn:wc:ra_dav:version-url
-V 112
-/svn/geworkbench/!svn/ver/111/trunk/geworkbench/src/org/geworkbench/bison/parsers/resources/GenepixResource.java
+V 114
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/bison/parsers/resources/AbstractResource.java
 END
 AffyResource.java
 K 25

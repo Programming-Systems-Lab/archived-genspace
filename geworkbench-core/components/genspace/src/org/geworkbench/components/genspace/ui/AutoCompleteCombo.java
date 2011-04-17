@@ -44,7 +44,6 @@ public class AutoCompleteCombo extends JComboBox {
 	private boolean updatePopup;
 
 	public AutoCompleteCombo() {
-		logger.setLevel(Level.DEBUG);
 		setEditable(true);
 
 //		logger.debug("setPattern() called from constructor");
@@ -85,7 +84,6 @@ public class AutoCompleteCombo extends JComboBox {
 				public void keyPressed(KeyEvent e) {
 					int key = e.getKeyCode();
 					if (key == KeyEvent.VK_ENTER) {
-						logger.debug("[key listener] enter key pressed");
 						// there is no such element in the model for now
 						String text = textComponent.getText();
 						if (!model.data.contains(text)) {
@@ -93,7 +91,6 @@ public class AutoCompleteCombo extends JComboBox {
 						}
 					} else if (key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN) {
 						arrowKeyPressed = true;
-						logger.debug("arrow key pressed");
 					}
 				}
 			});
@@ -103,16 +100,13 @@ public class AutoCompleteCombo extends JComboBox {
 		public void remove(int offs, int len) throws BadLocationException {
 
 			if (modelFilling) {
-				logger.debug("[remove] model is being filled now");
 				return;
 			}
 
 			super.remove(offs, len);
 			if (arrowKeyPressed) {
 				arrowKeyPressed = false;
-				logger.debug("[remove] arrow key was pressed, updateModel() was NOT called");
 			} else {
-				logger.debug("[remove] calling updateModel()");
 				updateModel();
 			}
 			clearSelection();
@@ -120,7 +114,6 @@ public class AutoCompleteCombo extends JComboBox {
 
 		void updateModel() throws BadLocationException {
 			String textToMatch = getText(0, getLength());
-			logger.debug("setPattern() called from updateModel()");
 			setPattern(textToMatch);
 		}
 
@@ -129,7 +122,6 @@ public class AutoCompleteCombo extends JComboBox {
 				throws BadLocationException {
 
 			if (modelFilling) {
-				logger.debug("[insert] model is being filled now");
 				return;
 			}
 
@@ -144,13 +136,9 @@ public class AutoCompleteCombo extends JComboBox {
 
 			String text = getText(0, getLength());
 			if (arrowKeyPressed) {
-				logger.debug("[insert] arrow key was pressed, updateModel() was NOT called");
 				model.setSelectedItem(text);
-				logger.debug(String.format(
-						"[insert] model.setSelectedItem(%s)", text));
 				arrowKeyPressed = false;
 			} else if (!text.equals(getSelectedItem())) {
-				logger.debug("[insert] calling updateModel()");
 				updateModel();
 			}
 
@@ -192,22 +180,8 @@ public class AutoCompleteCombo extends JComboBox {
 
 		model.setPattern(pattern);
 
-		if (logger.isDebugEnabled()) {
-			StringBuilder b = new StringBuilder(100);
-			b.append("pattern filter '")
-					.append(pattern == null ? "null" : pattern)
-					.append("' set:\n");
-			for (int i = 0; i < model.getSize(); i++) {
-				b.append(", ").append('[').append(model.getElementAt(i))
-						.append(']');
-			}
-			int ind = b.indexOf(", ");
-			if (ind != -1) {
-				b.delete(ind, ind + 2);
-			}
-			// b.append('\n');
-			logger.debug(b);
-		}
+
+		
 		// logger.debug("setPattern(): end");
 		modelFilling = false;
 		if (pattern != null)
@@ -288,8 +262,7 @@ public class AutoCompleteCombo extends JComboBox {
 					filtered = list;
 					AutoCompleteCombo.this.setSelectedItem(model
 							.getElementAt(0));
-					logger.debug(String
-							.format("[setPattern] combo.setSelectedItem(null)"));
+
 				} else {
 					filtered = new ArrayList<String>(limit);
 					pattern = pattern.toLowerCase();
@@ -300,11 +273,8 @@ public class AutoCompleteCombo extends JComboBox {
 						}
 					}
 					AutoCompleteCombo.this.setSelectedItem(pattern);
-					logger.debug(String.format(
-							"[setPattern] combo.setSelectedItem(%s)", pattern));
 				}
-				logger.debug(String.format("pattern:'%s', filtered: %s",
-						pattern, filtered));
+
 			}
 
 			boolean contains(String s) {

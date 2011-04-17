@@ -23,7 +23,7 @@ public class viewProfileTab extends SocialTab {
 		this.u = p;
 
 		
-		this.isFriend = GenSpaceServerFactory.getUser().isFriendsWith(p) != null;
+		this.isFriend = GenSpaceServerFactory.getUser().isFriends();
 		
 		String desc = p.toHTML();
 		JLabel profile = new JLabel(desc);

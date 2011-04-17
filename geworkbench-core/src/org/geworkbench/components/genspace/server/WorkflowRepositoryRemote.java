@@ -1,4 +1,6 @@
 package org.geworkbench.components.genspace.server;
+import java.util.List;
+
 import javax.ejb.Remote;
 
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
@@ -28,5 +30,7 @@ public interface WorkflowRepositoryRemote {
 	boolean sendWorkflow(IncomingWorkflow newW, String receiver);
 
 	boolean deleteMyFolder(int folder);
-
+	
+	List<IncomingWorkflow> getIncomingWorkflows();
+	
 }

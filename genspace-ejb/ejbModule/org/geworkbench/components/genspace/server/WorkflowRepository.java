@@ -1,6 +1,8 @@
 package org.geworkbench.components.genspace.server;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
@@ -146,6 +148,22 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public List<IncomingWorkflow> getIncomingWorkflows() {
+		ArrayList<IncomingWorkflow> ret = new ArrayList<IncomingWorkflow>();
+		for(IncomingWorkflow w : getUser().getIncomingWorkflows())
+		{
+			IncomingWorkflow w2 = new IncomingWorkflow();
+			w2.setId(w.getId());
+			w2.setName(w.getName());
+			w2.setReceiver(w.getReceiver());
+			w2.setSender(w.getSender());
+			w.setWorkflow(w.getWorkflow().slimDown());
+		}
+		getEntityManager().clear();
+		return ret;
 	}
 
 }

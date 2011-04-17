@@ -54,15 +54,20 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 
 	@Override
 	@RolesAllowed("user")
-	public Tool saveRating(ToolRating tr) {
-		ToolRating t = getMyToolRating(tr.getTool().getId());
+	public Tool saveToolRating(int tool, int rating) {
+		ToolRating t = getMyToolRating(tool);
 		if(t != null)
 		{
 			getEntityManager().remove(t);
 		}
-		getEntityManager().persist(tr);
-		getEntityManager().refresh(tr.getTool());
-		return tr.getTool();
+		t = new ToolRating();
+		t.setCreator(getUser());
+		t.setCreatedAt(new Date());
+		t.setTool(getEntityManager().find(Tool.class, tool));
+		t.setRating(rating);
+		getEntityManager().persist(t);
+		getEntityManager().refresh(t.getTool());
+		return t.getTool();
 	}
 
 
@@ -87,14 +92,19 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 
 	@Override
 	@RolesAllowed("user")
-	public Workflow saveRating(WorkflowRating tr) {
-		WorkflowRating t = getMyWorkflowRating(tr.getWorkflow().getId());
+	public Workflow saveWorkflowRating(int workflow, int rating) {
+		WorkflowRating t = getMyWorkflowRating(workflow);
 		if(t != null)
 		{
 			getEntityManager().remove(t);
 		}
-		getEntityManager().persist(tr);
-		getEntityManager().refresh(tr.getWorkflow());
-		return tr.getWorkflow();
+		t = new WorkflowRating();
+		t.setCreator(getUser());
+		t.setCreatedAt(new Date());
+		t.setWorkflow(getEntityManager().find(Workflow.class, workflow));
+		t.setRating(rating);
+		getEntityManager().persist(t);
+		getEntityManager().refresh(t.getWorkflow());
+		return t.getWorkflow();
 	}
 }

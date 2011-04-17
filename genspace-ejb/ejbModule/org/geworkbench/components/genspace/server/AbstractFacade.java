@@ -1,5 +1,10 @@
 package org.geworkbench.components.genspace.server;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -22,29 +27,7 @@ import org.geworkbench.components.genspace.entity.WorkflowFolder;
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass; 
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
-    public User fullySerialize(User u) {
-		u.getFolders().size();
-		for(WorkflowFolder wf : u.getFolders())
-		{
-			getEntityManager().refresh(wf);
-			wf.getWorkflows().size();
-			for(WorkflowFolder f : wf.getChildren())
-			{
-				f.getWorkflows().size();
-			}
-		}
-		u.getFriends().size();
-		u.getIncomingWorkflows().size();
-		System.out.println("Incoming workflows:");
-		for(IncomingWorkflow w : u.getIncomingWorkflows())
-		{
-			System.out.println(w);
-		}
-		u.getWorkflowComments().size();
-		u.getWorkflows().size(); 
-		u.getNetworks().size();
-		return u;
-	}
+   
     protected void invalidateCache()
     {
     	cachedUser = null;

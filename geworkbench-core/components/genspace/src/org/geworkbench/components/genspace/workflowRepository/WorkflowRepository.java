@@ -24,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
+import javax.swing.SwingWorker;
 
 import net.eleritec.docking.DockableAdapter;
 import net.eleritec.docking.DockingManager;
@@ -35,6 +36,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.config.events.Event;
@@ -50,7 +52,7 @@ import org.geworkbench.engine.skin.Skin;
  * 
  */
 public class WorkflowRepository extends JPanel implements VisualPlugin,
-		 Runnable {
+		 Runnable,UpdateablePanel {
 
 	/**
 	 * 
@@ -451,15 +453,26 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		}
 	}
 
-	public void updateUser() {
-		if(repositoryPanel != null && repositoryPanel.tree != null)
-			repositoryPanel.tree.recalculateAndReload();
-		if(inboxTable != null)
-		{
-			inboxTable.setData(GenSpaceServerFactory.getUser());
-		}
-		// whatever was selected, shouldn't be anymore
-		clearWorkflowData();
+	/**
+	 * Must NOT be called from a worker thread
+	 */
+	public void updateFormFields() {
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>(){
+			int evt;
+			@Override
+			protected void done() {
+				GenSpace.getStatusBar().stop(evt);
+				super.done();
+			}
+			@Override
+			protected Void doInBackground() throws Exception {
+				evt = GenSpace.getStatusBar().start("Updating workflow repository");
+				updateFormFieldsBG();
+				return null;
+			}
+			
+		};
+		worker.execute();
 	}
 
 	public void clearWorkflowData() {
@@ -469,6 +482,20 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 			workflowDetailsPanel.clearData();
 		if(graphPanel != null)
 			graphPanel.clearData();
+	}
+
+	/**
+	 * Must be called from a worker thread
+	 */
+	public void updateFormFieldsBG() {
+		if(repositoryPanel != null && repositoryPanel.tree != null)
+			repositoryPanel.tree.recalculateAndReload();
+		if(inboxTable != null)
+		{
+			inboxTable.setData(GenSpaceServerFactory.getWorkflowOps().getIncomingWorkflows());
+		}
+		// whatever was selected, shouldn't be anymore
+		clearWorkflowData();
 	}
 
 }

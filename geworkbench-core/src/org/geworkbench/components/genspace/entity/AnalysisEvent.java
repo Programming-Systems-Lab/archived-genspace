@@ -1,6 +1,7 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +31,17 @@ public class AnalysisEvent implements Serializable {
 	private Set<AnalysisEventParameter> parameters = new HashSet<AnalysisEventParameter>();
 	private String toolname;
 	
+//	@Override
+//	protected Object clone() throws CloneNotSupportedException {
+//		AnalysisEvent ret = new AnalysisEvent();
+//		
+//		ret.id = id;
+//		ret.createdAt = (Date) createdAt.clone();
+//		ret.transaction = (Transaction) transaction.clone();
+//		ret.parameters = parameters;
+//		ret.toolname = toolname.cl
+//		return ret;
+//	}
 	@Transient
 	public String getToolname() {
 		if(tool != null)
