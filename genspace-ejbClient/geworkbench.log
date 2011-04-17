@@ -2389,6 +2389,8 @@ Caused by: java.lang.ClassCastException: java.lang.String cannot be cast to org.
 	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
 	... 28 more
 [geworkbench - AWT-EventQueue-0 (2011-02-09 17:18:55,824)] ERROR org.geworkbench.components.genspace.WorkflowVisualization$2.doInBackground(281) | Unknown tool selected: -- select tool --
+<<<<<<< HEAD
+=======
 [geworkbench - main (2011-02-15 15:48:56,533)] ERROR org.geworkbench.components.genspace.GenSpace.getRemote(44) | Unable find remote object for UserFacade
 javax.naming.NamingException: Lookup failed for 'org.geworkbench.components.genspace.server.UserFacadeRemote' in SerialContext ,orb'sInitialHost=localhost,orb'sInitialPort=3700 [Root exception is javax.naming.NameNotFoundException: org.geworkbench.components.genspace.server.UserFacadeRemote not found]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:442)
@@ -11949,3 +11951,4 @@ Caused by: javax.resource.spi.SecurityException: No PasswordCredential found
 	... 71 more
 [geworkbench - SwingWorker-pool-1-thread-6 (2011-04-14 21:10:10,180)] ERROR org.geworkbench.components.genspace.WorkflowVisualization$2.doInBackground(166) | Unknown action selected: -- select action --
 [geworkbench - SwingWorker-pool-1-thread-6 (2011-04-14 21:10:10,183)] ERROR org.geworkbench.components.genspace.WorkflowVisualization$2.doInBackground(169) | Unknown tool selected: Anova Analysis
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7

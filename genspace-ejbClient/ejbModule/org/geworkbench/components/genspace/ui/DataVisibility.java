@@ -5,15 +5,31 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+<<<<<<< HEAD
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+<<<<<<< HEAD
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import org.geworkbench.components.genspace.LoginManager;
+=======
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import org.geworkbench.components.genspace.LoginFactory;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.components.genspace.ObjectHandler;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.properties.PropertiesManager;
@@ -25,11 +41,14 @@ import org.geworkbench.engine.properties.PropertiesManager;
 public class DataVisibility extends JPanel implements VisualPlugin,
 		ActionListener {
 
+<<<<<<< HEAD
+=======
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 7554634436096470168L;
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	static final String PROPERTY_KEY = "genSpace_logging_preferences"; // the
 																		// key
 																		// in
@@ -54,7 +73,12 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			String pref = properties.getProperty(DataVisibility.class,
 					PROPERTY_KEY, null);
 
+<<<<<<< HEAD
+			LoginManager lm = new LoginManager();
+			username = LoginManager.getUsername();
+=======
 			username = LoginFactory.getUsername();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 			if (pref == null) {
 				// if the preferences are not set, then show the pop up window
@@ -80,6 +104,10 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 
 			// set the logging level
 			ObjectHandler.setLogStatus(Integer.parseInt(pref));
+<<<<<<< HEAD
+			ObjectHandler.setUserName(username);
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			preference = Integer.parseInt(pref);
 		} catch (Exception e) {
 		}
@@ -88,7 +116,11 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 	}
 
 	private void initComponents() {
+<<<<<<< HEAD
+		if(LoginManager.isLoggedIn())
+=======
 		if(LoginFactory.isLoggedIn())
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		{
 			this.setSize(500, 600);
 
@@ -104,7 +136,11 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			logPreferences.addItem("Log My Analysis Events");
 			logPreferences.addItem("Log My Analysis Events Anonymously");
 			logPreferences.addItem("Do Not Log My Analysis Events");
+<<<<<<< HEAD
+			int preference = LoginManager.getUser().getLogData();
+=======
 			int preference = LoginFactory.getUser().getLogData();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			logPreferences.setSelectedIndex(preference + 1);
 
 			try {
@@ -115,6 +151,10 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 			}
 
 			ObjectHandler.setLogStatus(preference);
+<<<<<<< HEAD
+			ObjectHandler.setUserName(username);
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 			c.gridwidth = GridBagConstraints.REMAINDER;
 			gridbag.setConstraints(logPreferences, c);
@@ -149,7 +189,11 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
+<<<<<<< HEAD
+		String option = "";
+=======
 //		String option = "";
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 		/*
 		 * if (e.getSource() == dataVisibilityOptions) { option =
@@ -175,6 +219,10 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 
 						preference = logPreferences.getSelectedIndex() - 1;
 						ObjectHandler.setLogStatus(preference);
+<<<<<<< HEAD
+						ObjectHandler.setUserName(username);
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 						// write it to the properties file
 						try {
@@ -195,6 +243,15 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 						// version of the security module
 						dataVisibilityOptions.setSelectedIndex(2);
 						
+<<<<<<< HEAD
+						LoginManager.getUser().setDataVisibility((short) (dataVisibilityOptions
+								.getSelectedIndex() - 1));
+
+						LoginManager.getUser().setLogData((short) (logPreferences
+								.getSelectedIndex() - 1));
+
+						if (LoginManager.userUpdate()) {
+=======
 						LoginFactory.getUser().setDataVisibility((short) (dataVisibilityOptions
 								.getSelectedIndex() - 1));
 
@@ -202,6 +259,7 @@ public class DataVisibility extends JPanel implements VisualPlugin,
 								.getSelectedIndex() - 1));
 
 						if (LoginFactory.userUpdate()) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 							String msg = "Data Visibility Saved";
 
 							JOptionPane.showMessageDialog(null, msg);

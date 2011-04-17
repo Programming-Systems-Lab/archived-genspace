@@ -1,7 +1,11 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+<<<<<<< HEAD
+import java.util.Set;
+=======
 import java.util.List;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+<<<<<<< HEAD
+=======
 import javax.persistence.Transient;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 @Entity
 public class Transaction implements Serializable {
@@ -24,7 +31,11 @@ public class Transaction implements Serializable {
 	private String hostname;
 	private java.util.Date date;
 	private User user;
+<<<<<<< HEAD
+	private Set<AnalysisEvent> analysisEvents;
+=======
 	private List<AnalysisEvent> analysisEvents;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private String dataSetName;
 	private Workflow workflow;
 	
@@ -63,10 +74,17 @@ public class Transaction implements Serializable {
 	}
 	
 	@OneToMany(mappedBy="transaction")
+<<<<<<< HEAD
+	public Set<AnalysisEvent> getAnalysisEvents() {
+		return analysisEvents;
+	}
+	public void setAnalysisEvents(Set<AnalysisEvent> analysisEvents) {
+=======
 	public List<AnalysisEvent> getAnalysisEvents() {
 		return analysisEvents;
 	}
 	public void setAnalysisEvents(List<AnalysisEvent> analysisEvents) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.analysisEvents = analysisEvents;
 	}
 	
@@ -83,6 +101,8 @@ public class Transaction implements Serializable {
 	public Workflow getWorkflow() {
 		return workflow;
 	}
+<<<<<<< HEAD
+=======
 	
 	private String userName;
 	@Transient
@@ -92,4 +112,5 @@ public class Transaction implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

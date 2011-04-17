@@ -5,10 +5,13 @@ import javax.swing.JLabel;
 
 public class Star extends JLabel {
 
+<<<<<<< HEAD
+=======
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1764644076700819427L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private static ImageIcon fullStar = new ImageIcon(
 			"components/genspace/src/org/geworkbench/components/genspace/rating/full.png");
 	private static ImageIcon halfStar = new ImageIcon(
@@ -21,7 +24,11 @@ public class Star extends JLabel {
 	public static final int EMPTY = 3;
 
 	private int value;
+<<<<<<< HEAD
+	private StarRatingPanel parent;
+=======
 //	private StarRatingPanel parent;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	public int getValue() {
 		return value;
@@ -44,7 +51,11 @@ public class Star extends JLabel {
 	}
 
 	public Star(StarRatingPanel panel, int value) {
+<<<<<<< HEAD
+		this.parent = panel;
+=======
 //		this.parent = panel;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		addMouseListener(panel);
 		this.value = value;
 		setStar(EMPTY);

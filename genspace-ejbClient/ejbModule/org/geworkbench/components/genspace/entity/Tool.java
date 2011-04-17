@@ -9,7 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+<<<<<<< HEAD
+=======
 import javax.persistence.OrderBy;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 
 @Entity
@@ -19,7 +22,10 @@ public class Tool implements Serializable {
 	 */
 	private static final long serialVersionUID = -6971084517255287450L;
 	private int id;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private String name;
 	private String description;
 	private List<ToolComment> comments = new ArrayList<ToolComment>();
@@ -28,8 +34,11 @@ public class Tool implements Serializable {
 	private int mostCommonParametersCount;
 	private int usageCount;
 	private int wfCountHead;
+<<<<<<< HEAD
+=======
 	private int sumRating =0;
 	private int numRating =0;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -39,7 +48,10 @@ public class Tool implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+<<<<<<< HEAD
+=======
 	@OrderBy
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public String getName() {
 		return name;
 	}
@@ -94,6 +106,9 @@ public class Tool implements Serializable {
 	public void setWfCountHead(int wfCountHead) {
 		this.wfCountHead = wfCountHead;
 	}
+<<<<<<< HEAD
+	
+=======
 	private void setSumRating(int sumRating) {
 		this.sumRating = sumRating;
 	}
@@ -106,11 +121,16 @@ public class Tool implements Serializable {
 	public int getNumRating() {
 		return numRating;
 	}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	@Override
 	public boolean equals(Object o) {
 		if (o instanceof Tool) {
 			Tool t = (Tool) o;
+<<<<<<< HEAD
+			return t.name.equals(this.name);
+=======
 			return t.name.equals(this.name) && t.id == this.id;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		}
 		return false;
 	}
@@ -124,6 +144,8 @@ public class Tool implements Serializable {
 	public String toString() {
 		return getName();
 	}
+<<<<<<< HEAD
+=======
 	
 	public void updateRatingCache()
 	{
@@ -149,4 +171,5 @@ public class Tool implements Serializable {
 		setUsageCount(getUsageCount() + 1);
 	}
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

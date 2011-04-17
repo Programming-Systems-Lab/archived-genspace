@@ -19,7 +19,10 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.JTextComponent;
 import javax.swing.text.PlainDocument;
 import org.apache.log4j.ConsoleAppender;
+<<<<<<< HEAD
+=======
 import org.apache.log4j.Level;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 
@@ -30,10 +33,13 @@ import org.apache.log4j.PatternLayout;
  */
 public class AutoCompleteCombo extends JComboBox {
 
+<<<<<<< HEAD
+=======
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6005100835716590271L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private static final Logger logger = Logger
 			.getLogger(AutoCompleteCombo.class);
 	private Model model = new Model();
@@ -44,10 +50,17 @@ public class AutoCompleteCombo extends JComboBox {
 	private boolean updatePopup;
 
 	public AutoCompleteCombo() {
+<<<<<<< HEAD
+
+		setEditable(true);
+
+		logger.debug("setPattern() called from constructor");
+=======
 		logger.setLevel(Level.DEBUG);
 		setEditable(true);
 
 //		logger.debug("setPattern() called from constructor");
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		setPattern(null);
 		updatePopup = false;
 
@@ -72,10 +85,13 @@ public class AutoCompleteCombo extends JComboBox {
 
 	private class AutoCompleteDocument extends PlainDocument {
 
+<<<<<<< HEAD
+=======
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = -2993581620833419800L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		boolean arrowKeyPressed = false;
 
 		public AutoCompleteDocument() {
@@ -89,6 +105,10 @@ public class AutoCompleteCombo extends JComboBox {
 						// there is no such element in the model for now
 						String text = textComponent.getText();
 						if (!model.data.contains(text)) {
+<<<<<<< HEAD
+							logger.debug("addToTop() called from keyPressed()");
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 							addToTop(text);
 						}
 					} else if (key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN) {
@@ -181,7 +201,12 @@ public class AutoCompleteCombo extends JComboBox {
 
 		if (previousPattern == null && pattern == null || pattern != null
 				&& pattern.equals(previousPattern)) {
+<<<<<<< HEAD
+			logger.debug("[setPatter] pattern is the same as previous: "
+					+ previousPattern);
+=======
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			return;
 		}
 
@@ -232,10 +257,13 @@ public class AutoCompleteCombo extends JComboBox {
 
 	class Model extends AbstractListModel implements ComboBoxModel {
 
+<<<<<<< HEAD
+=======
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = -9054376228162938660L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		// String pattern;
 		String selected;
 		final String delimiter = ";;;";
@@ -250,8 +278,12 @@ public class AutoCompleteCombo extends JComboBox {
 			void clear() {
 				list.clear();
 				lowercase.clear();
+<<<<<<< HEAD
+				filtered.clear();
+=======
 				if(filtered != null)
 					filtered.clear();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 
 			void add(String s) {

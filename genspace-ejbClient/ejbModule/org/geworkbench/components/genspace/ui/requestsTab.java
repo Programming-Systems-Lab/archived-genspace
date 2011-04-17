@@ -2,12 +2,15 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
+<<<<<<< HEAD
+=======
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,6 +41,79 @@ public class requestsTab extends SocialTab {
 	
 	@Override
 	public void updateFormFields() {
+<<<<<<< HEAD
+//		if (p.amLoggedIn()) {
+//
+//			SwingWorker<List<NetworkMessage>, Void> worker = new SwingWorker<List<NetworkMessage>, Void>() {
+//
+//				@Override
+//				protected List<NetworkMessage> doInBackground()
+//						throws Exception {
+//					List<NetworkMessage> myNetworks = n.listMyNetworks();
+//					LinkedList<NetworkMessage> ret = new LinkedList<NetworkMessage>();
+//					for (NetworkMessage t : myNetworks) {
+//						Network nt = (Network) t;
+//						if (nt.creator.equals(p.getMyUsername()))
+//							ret.addAll(n.listPendingUsersByNetwork(t.subject));
+//					}
+//					return ret;
+//				}
+//
+//				@Override
+//				protected void done() {
+//					List<NetworkMessage> requests = null;
+//					try {
+//						requests = get();
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					} catch (ExecutionException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//					DefaultListModel model = new DefaultListModel();
+//					for (NetworkMessage t : requests) {
+//						model.addElement(t);
+//					}
+//					networksList.setModel(model);
+//				}
+//
+//			};
+//			worker.execute();
+//
+//			SwingWorker<List<NetworkMessage>, Void> worker2 = new SwingWorker<List<NetworkMessage>, Void>() {
+//
+//				@Override
+//				protected List<NetworkMessage> doInBackground()
+//						throws Exception {
+//					return f.getPendingRequests();
+//				}
+//
+//				@Override
+//				protected void done() {
+//					List<NetworkMessage> requests = null;
+//					try {
+//						requests = get();
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					} catch (ExecutionException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//					DefaultListModel model = new DefaultListModel();
+//					for (NetworkMessage t : requests) {
+//						model.addElement(t);
+//					}
+//					friendsList.setModel(model);
+//				}
+//
+//			};
+//			worker2.execute();
+//
+//		}
+		//TODO
+=======
 		if (LoginFactory.isLoggedIn()) {
 
 			SwingWorker<List<UserNetwork>, Void> worker = new SwingWorker<List<UserNetwork>, Void>() {
@@ -104,6 +180,7 @@ public class requestsTab extends SocialTab {
 			worker2.execute();
 
 		}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	private void initListeners() {
@@ -113,6 +190,20 @@ public class requestsTab extends SocialTab {
 			public Component getListCellRendererComponent(JList list,
 					Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
+<<<<<<< HEAD
+				// TODO Auto-generated method stub
+//				Friend n = (Friend) value;
+				JLabel ret = (JLabel) new DefaultListCellRenderer()
+						.getListCellRendererComponent(list, value, index,
+								isSelected, cellHasFocus);
+//				ret.setText(n.profile.profile.get("first_name") + " "
+//						+ n.profile.profile.get("last_name") + " (" + n.subject
+//						+ ")");
+//				
+//				if (isSelected)
+//					ret.setBackground(new Color(205, 220, 243));
+				//TODO
+=======
 				User n = (User) value;
 				JLabel ret = (JLabel) new DefaultListCellRenderer()
 						.getListCellRendererComponent(list, value, index,
@@ -121,6 +212,7 @@ public class requestsTab extends SocialTab {
 				
 				if (isSelected)
 					ret.setBackground(new Color(205, 220, 243));
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				return ret;
 			}
 		});
@@ -134,9 +226,17 @@ public class requestsTab extends SocialTab {
 				JLabel ret = (JLabel) new DefaultListCellRenderer()
 						.getListCellRendererComponent(list, value, index,
 								isSelected, cellHasFocus);
+<<<<<<< HEAD
+//				Profile n = (Profile) value;
+//				ret.setText(n.details + ": " + n.profile.get("first_name")
+//						+ " " + n.profile.get("last_name") + " (" + n.subject
+//						+ ")");
+				//TODO
+=======
 				UserNetwork n = (UserNetwork) value;
 				ret.setText(n.getNetwork().getName() + ": " + n.getUser().getFullName());
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				if (isSelected)
 					ret.setBackground(new Color(205, 220, 243));
 				return ret;
@@ -146,28 +246,54 @@ public class requestsTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+//				if (networksList.getSelectedValue() != null) {
+//					n.acceptNetworkRequest(((Profile) networksList
+//							.getSelectedValue()).details,
+//							((Profile) networksList.getSelectedValue()).profile
+//									.get("username"));
+//					updateFormFields();
+//				}
+			//TODO
+=======
 				if (networksList.getSelectedValue() != null) {
 					System.out.println("Sending accept request");
 					LoginFactory.getNetworkOps().acceptNetworkRequest((UserNetwork) networksList.getSelectedValue());
 					updateFormFields();
 				}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 		});
 		rejectButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+//				if (networksList.getSelectedValue() != null) {
+//					n.rejectNetworkRequest(((Profile) networksList
+//							.getSelectedValue()).details,
+//							((Profile) networksList.getSelectedValue()).profile
+//									.get("username"));
+//					updateFormFields();
+//				}
+				//TODO
+=======
 				if (networksList.getSelectedValue() != null) {
 					LoginFactory.getNetworkOps().rejectNetworkRequest((UserNetwork) networksList.getSelectedValue());
 					updateFormFields();
 				}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 		});
 		acceptFriendButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+//				f.addFriend(((Friend) friendsList.getSelectedValue()).subject);
+=======
 				LoginFactory.getFriendOps().addFriend((User) friendsList.getSelectedValue());
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				updateFormFields();
 
 			}
@@ -176,7 +302,11 @@ public class requestsTab extends SocialTab {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+//				f.addFriend(((Friend) friendsList.getSelectedValue()).subject);
+=======
 				LoginFactory.getFriendOps().rejectFriend((User) friendsList.getSelectedValue());
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				updateFormFields();
 			}
 		});
@@ -321,6 +451,10 @@ public class requestsTab extends SocialTab {
 
 	@Override
 	public String getName() {
+<<<<<<< HEAD
+		// TODO Auto-generated method stub
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		return "Pending Requests";
 	}
 }

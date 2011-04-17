@@ -1,5 +1,8 @@
 package org.geworkbench.components.genspace.server;
 
+<<<<<<< HEAD
+import javax.ejb.Stateless;
+=======
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +10,7 @@ import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.User;
@@ -15,7 +19,10 @@ import org.geworkbench.components.genspace.entity.User;
  * Session Bean implementation class FriendFacade
  */
 @Stateless
+<<<<<<< HEAD
+=======
 @RolesAllowed("user")
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 public class FriendFacade extends AbstractFacade<Friend> implements FriendFacadeRemote  {
     /**
      * Default constructor. 
@@ -23,6 +30,12 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
     public FriendFacade() {
         super(Friend.class);
     }
+<<<<<<< HEAD
+	@Override
+	public void createNewUser() {
+		User u = new User();
+		getEntityManager().persist(u);
+=======
 
 
 	@SuppressWarnings("unchecked")
@@ -128,6 +141,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 			getEntityManager().remove(f);
 		}
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 }

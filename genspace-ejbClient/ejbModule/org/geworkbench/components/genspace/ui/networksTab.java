@@ -2,10 +2,14 @@ package org.geworkbench.components.genspace.ui;
 
 import javax.swing.*;
 
+<<<<<<< HEAD
+import org.geworkbench.components.genspace.entity.Network;
+=======
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.UserNetwork;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
 
 import java.awt.*;
@@ -40,6 +44,23 @@ public class networksTab extends SocialTab {
 					Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
 				JPanel pan = new JPanel();
+<<<<<<< HEAD
+//				NetworkMessage t = (NetworkMessage) value;
+//				pan.setLayout(new BoxLayout(pan, BoxLayout.Y_AXIS));
+//				JLabel label = new JLabel(t.subject);
+//				Font f = new Font(label.getFont().getName(), Font.BOLD, 18);
+//				label.setFont(f);
+//				label.setForeground(new Color(-16777012));
+//
+//				pan.add(label);
+//				JLabel label2 = new JLabel("Moderated by " + t.details);
+//				pan.add(label2);
+//				pan.add(new JSeparator(SwingConstants.HORIZONTAL));
+//				if (isSelected)
+//					pan.setBackground(new Color(251, 251, 228));
+				
+				//TODO
+=======
 				UserNetwork un = (UserNetwork) value;
 				pan.setLayout(new BoxLayout(pan, BoxLayout.Y_AXIS));
 				JLabel label = new JLabel(un.getNetwork().getName());
@@ -54,6 +75,7 @@ public class networksTab extends SocialTab {
 				if (isSelected)
 					pan.setBackground(new Color(251, 251, 228));
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				return pan;
 			}
 		});
@@ -61,36 +83,90 @@ public class networksTab extends SocialTab {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
+<<<<<<< HEAD
+				// TODO Auto-generated method stub
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
+<<<<<<< HEAD
+				// TODO Auto-generated method stub
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
+<<<<<<< HEAD
+				// TODO Auto-generated method stub
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
+<<<<<<< HEAD
+				// TODO Auto-generated method stub
+=======
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 			}
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
+<<<<<<< HEAD
+//				if (e.getClickCount() == 2)
+//					parentFrame.setContent(new friendsTab(
+//							((NetworkMessage) lstMyNetworks.getSelectedValue()).subject,
+//							parentFrame));
+				//TODO
+=======
 				if (e.getClickCount() == 2)
 					parentFrame.setContent(new friendsTab(
 							((UserNetwork) lstMyNetworks.getSelectedValue()).getNetwork(),
 							parentFrame));
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 		});
 		button1.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+//				boolean found = false;
+//				for (NetworkMessage m : cachedAllNetworks) {
+//					if (m.subject.equals(chooseNetwork.getText())) {
+//						found = true;
+//						break;
+//					}
+//				}
+//				for (NetworkMessage m : cachedMyNetworks) {
+//					if (m.subject.equals(chooseNetwork.getText())) {
+//						return;
+//					}
+//				}
+//				if (found) {
+//					// Join
+//					f.joinNetwork(chooseNetwork.getText());
+//					JOptionPane
+//							.showMessageDialog(
+//									panel1,
+//									"A request has been sent to the network's owner for approval. It will not show up in your list until you have been approved.");
+//				} else {
+//					// create
+//					f.createNetwork(chooseNetwork.getText());
+//					JOptionPane.showMessageDialog(panel1, "The network "
+//							+ chooseNetwork.getText() + " has been created");
+//				}
+//				updateFormFields();
+//				chooseNetwork.setText("");
+				//TODO
+=======
 				boolean found = false;
 				for (Network m : cachedAllNetworks) {
 					if (m.getName().equals(chooseNetwork.getText())) {
@@ -144,16 +220,25 @@ public class networksTab extends SocialTab {
 				updateFormFields();
 				chooseNetwork.setText("");
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 		});
 		button2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+//				NetworkMessage selected = (NetworkMessage) lstMyNetworks
+//						.getSelectedValue();
+//				if (selected != null)
+//					f.leaveNetwork(selected.subject);
+				//TODO
+=======
 				UserNetwork selected = (UserNetwork) lstMyNetworks
 						.getSelectedValue();
 				if (selected != null)
 					LoginFactory.getNetworkOps().leaveNetwork(selected);
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				updateFormFields();
 			}
 		});
@@ -268,6 +353,67 @@ public class networksTab extends SocialTab {
 	}
 
 	private List<Network> cachedAllNetworks;
+<<<<<<< HEAD
+	private List<Network> cachedMyNetworks;
+
+	@Override
+	public void updateFormFields() {
+//		if (p.amLoggedIn()) {
+//			SwingWorker<List<NetworkMessage>, Void> worker2 = new SwingWorker<List<NetworkMessage>, Void>() {
+//
+//				@Override
+//				protected List<NetworkMessage> doInBackground()
+//						throws Exception {
+//					return f.listMyNetworks();
+//				}
+//
+//				@Override
+//				protected void done() {
+//					try {
+//						cachedMyNetworks = get();
+//					} catch (InterruptedException e) {
+//						GenSpace.logger.error("Error",e);
+//					} catch (ExecutionException e) {
+//						GenSpace.logger.error("Error",e);
+//					}
+//					DefaultListModel model = new DefaultListModel();
+//					for (NetworkMessage t : cachedMyNetworks) {
+//						model.addElement(t);
+//					}
+//					lstMyNetworks.setModel(model);
+//				}
+//
+//			};
+//			worker2.execute();
+//			SwingWorker<List<NetworkMessage>, Void> worker = new SwingWorker<List<NetworkMessage>, Void>() {
+//
+//				@Override
+//				protected List<NetworkMessage> doInBackground()
+//						throws Exception {
+//					return f.listAllNetworks();
+//				}
+//
+//				@Override
+//				protected void done() {
+//					try {
+//						cachedAllNetworks = get();
+//					} catch (InterruptedException e) {
+//						GenSpace.logger.error("Error",e);
+//					} catch (ExecutionException e) {
+//						GenSpace.logger.error("Error",e);
+//					}
+//					Model m = (Model) chooseNetwork.getModel();
+//					m.data.clear();
+//					for (NetworkMessage t : cachedAllNetworks) {
+//						m.data.add(t.subject);
+//					}
+//					chooseNetwork.setText("");
+//				}
+//
+//			};
+//			worker.execute();
+//		}
+=======
 	private List<UserNetwork> cachedMyNetworks;
 
 	@Override
@@ -328,6 +474,7 @@ public class networksTab extends SocialTab {
 			};
 			worker.execute();
 		}
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		//TODO
 	}
 }

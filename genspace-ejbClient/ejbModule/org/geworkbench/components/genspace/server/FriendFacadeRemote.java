@@ -1,5 +1,12 @@
 package org.geworkbench.components.genspace.server;
 
+<<<<<<< HEAD
+import javax.ejb.Remote;
+
+@Remote
+public interface FriendFacadeRemote {
+	void createNewUser();
+=======
 import java.util.List;
 
 import javax.ejb.Remote;
@@ -46,4 +53,5 @@ public interface FriendFacadeRemote {
 	 * @param u User to defriend
 	 */
 	public void removeFriend(User u);
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

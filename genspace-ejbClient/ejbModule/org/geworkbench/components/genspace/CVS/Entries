@@ -1,4 +1,24 @@
 /BrowserLauncher.java/1.1/Thu Jan 20 15:50:19 2011//
+<<<<<<< HEAD
+/GenSpace.java/1.1/Thu Feb  3 21:41:35 2011//
+/GenSpaceLogPreferences.java/1.1/Thu Jan 20 15:51:44 2011//
+/GenSpaceMenu.cwb.xml/1.1/Tue Jan 18 20:33:03 2011//
+/GenSpaceMenu.java/1.1/Wed Feb  2 20:21:34 2011//
+/GenSpaceSSLSocketFactory.java/-1.1/Wed Feb  2 20:21:34 2011//
+/GenspaceLogger.cwb.xml/1.1/Tue Jan 18 20:33:04 2011//
+/GenspaceLogger.java/1.1/Mon Feb  7 18:09:54 2011//
+/NetworkVisualization.java/-1.1/Wed Feb  2 20:21:34 2011//
+/ObjectHandler.java/1.1/Mon Feb  7 18:09:55 2011//
+/ObjectLogger.java/1.1/Wed Feb  2 20:21:33 2011//
+/RealTimeWorkFlowSuggestion.java/1.1/Wed Feb  2 20:21:35 2011//
+/RuntimeEnvironmentSettings.java/1.1/Tue Feb  1 23:00:03 2011//
+/ServerConfig.java/1.1/Tue Jan 18 21:04:58 2011//
+/ServerRequest.java/1.1/Wed Feb  2 20:21:34 2011//
+/Tester.java/-1.1/Tue Feb  1 23:17:28 2011//
+/TransactionElement.java/1.1/Thu Jan 20 15:50:11 2011//
+/WorkflowVisualization.java/1.1/Fri Feb  4 00:12:08 2011//
+/XmlClient.java/-1.1/Wed Feb  2 20:21:34 2011//
+=======
 /GenSpace.java/1.2/Tue Feb 15 22:58:27 2011//
 /GenSpaceLogPreferences.java/1.1/Thu Jan 20 15:51:44 2011//
 /GenSpaceMenu.cwb.xml/1.1/Tue Jan 18 20:33:03 2011//
@@ -14,6 +34,7 @@
 /TransactionElement.java/1.1/Thu Jan 20 15:50:11 2011//
 /WorkflowVisualization.java/1.3/Thu Feb 24 16:45:13 2011//
 /XMLLoader.java/0/dummy timestamp//
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 D/bean////
 D/chat////
 D/entity////

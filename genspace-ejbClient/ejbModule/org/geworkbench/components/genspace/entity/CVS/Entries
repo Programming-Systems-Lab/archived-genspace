@@ -1,8 +1,26 @@
+<<<<<<< HEAD
+/AnalysisEvent.java/1.1/Wed Feb  2 20:54:04 2011//
+=======
 /AnalysisEvent.java/1.2/Wed Feb  9 17:45:00 2011//
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 /AnalysisEventParameter.java/1.1/Wed Feb  2 20:53:51 2011//
 /Friend.java/1.1/Wed Feb  2 20:53:39 2011//
 /IncomingWorkflow.java/1.1/Wed Feb  2 20:53:28 2011//
 /Network.java/1.1/Wed Feb  2 20:53:17 2011//
+<<<<<<< HEAD
+/Tool.java/1.1/Thu Feb  3 21:33:41 2011//
+/ToolComment.java/1.1/Wed Feb  2 20:52:54 2011//
+/ToolRating.java/1.1/Wed Feb  2 20:52:23 2011//
+/Transaction.java/1.1/Wed Feb  2 20:52:32 2011//
+/User.java/1.1/Wed Feb  2 20:58:53 2011//
+/UserNetwork.java/1.1/Wed Feb  2 20:52:01 2011//
+/UserWorkflow.java/1.1/Wed Feb  2 20:51:48 2011//
+/Workflow.java/1.1/Thu Feb  3 23:34:04 2011//
+/WorkflowComment.java/1.1/Wed Feb  2 20:54:12 2011//
+/WorkflowFolder.java/1.1/Wed Feb  2 20:51:13 2011//
+/WorkflowRating.java/1.1/Wed Feb  2 20:51:00 2011//
+/WorkflowTool.java/1.1/Thu Feb  3 22:58:06 2011//
+=======
 /Tool.java/1.2/Tue Feb 15 16:13:24 2011//
 /ToolComment.java/1.1/Wed Feb  2 20:52:54 2011//
 /ToolRating.java/1.1/Wed Feb  2 20:52:23 2011//
@@ -15,3 +33,4 @@
 /WorkflowFolder.java/1.3/Wed Feb 23 20:14:31 2011//
 /WorkflowRating.java/1.1/Wed Feb  2 20:51:00 2011//
 /WorkflowTool.java/1.2/Wed Feb  9 20:14:58 2011//
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7

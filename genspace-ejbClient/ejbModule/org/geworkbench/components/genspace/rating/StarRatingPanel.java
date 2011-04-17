@@ -5,7 +5,10 @@ import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.DecimalFormat;
+<<<<<<< HEAD
+=======
 import java.util.concurrent.ExecutionException;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -13,6 +16,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 
+<<<<<<< HEAD
+import org.geworkbench.components.genspace.LoginManager;
+import org.geworkbench.components.genspace.ServerConfig;
+import org.geworkbench.components.genspace.bean.RatingBean;
+=======
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.entity.Tool;
@@ -20,14 +28,18 @@ import org.geworkbench.components.genspace.entity.ToolRating;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowRating;
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.swing.SwingWorker;
 
 public class StarRatingPanel extends JPanel implements MouseListener {
 
+<<<<<<< HEAD
+=======
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 7212044466813119614L;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public static final int SMALL = 1;
 	public static final int MEDIUM = 2;
 	public static final int LARGE = 3;
@@ -35,16 +47,40 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 	private boolean clickable = true;
 	private Star[] stars;
 	private double value = 0;
+<<<<<<< HEAD
+	private int size = SMALL;
+	private int id;
+	private JLabel title;
+	private JLabel ratingInfo;
+	private Rater rater;
+=======
 //	private int size = SMALL;
 	private Workflow workflow;
 	private Tool tool;
 	private JLabel title;
 	private JLabel ratingInfo;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	private Font titleFont = new Font("Verdana", Font.BOLD, 9);
 	private Font ratingFont = new Font("Verdana", Font.PLAIN, 9);
 	private JPanel starPanel = new JPanel();
 	private JPanel contentPanel = new JPanel();
+<<<<<<< HEAD
+	private ServerConfig server;
+	private String getCommand;
+	private String writeCommand;
+	private JComponent parent;
+
+	public StarRatingPanel(JComponent parent, ServerConfig server,
+			String getCommand, String writeCommand) {
+		this(parent, "", -1, server, getCommand, writeCommand);
+	}
+
+	public StarRatingPanel(JComponent parent, String titleText, int id,
+			ServerConfig server, String getCommand, String writeCommand) {
+
+		rater = new Rater(server, writeCommand, getCommand);
+=======
 
 //	private JComponent parent;
 
@@ -54,6 +90,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 	public StarRatingPanel(String titleText, Tool tool) {
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 		contentPanel
 				.setBorder(new MatteBorder(2, 2, 2, 2, this.getBackground()));
@@ -61,7 +98,11 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 		// basic setup
 		contentPanel.setLayout(new BorderLayout());
+<<<<<<< HEAD
+		this.id = id;
+=======
 		this.tool = tool;
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 		// add title
 		title = new JLabel(titleText);
@@ -74,26 +115,57 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 		contentPanel.add(ratingInfo, BorderLayout.EAST);
 
 		// add stars
+<<<<<<< HEAD
+		stars = new Star[5];
+		for (int i = 0; i < 5; i++)
+			stars[i] = new Star(this, i + 1);
+		contentPanel.add(starPanel, BorderLayout.WEST);
+		for (int i = 0; i < 5; i++)
+			starPanel.add(stars[i]);
+=======
 //		stars = new Star[5];
 //		for (int i = 0; i < 5; i++)
 //			stars[i] = new Star(this, i + 1);
 //		contentPanel.add(starPanel, BorderLayout.WEST);
 //		for (int i = 0; i < 5; i++)
 //			starPanel.add(stars[i]);
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	public void setTitle(String t) {
 		this.title.setText(t);
 	}
+<<<<<<< HEAD
+
+	public void loadRating(final int id) {
+
+		this.id = id;
+		final String username = LoginManager.getUsername();
+
+		// see if we can even execute the query
+		if (id == -1) {
+=======
 	public void loadRating(Workflow wf) {
 		this.workflow = wf;
 		// see if we can even execute the query
 		if (workflow == null || workflow.getId() < 1) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			setVisible(false);
 			return;
 		} else
 			setVisible(true);
 
+<<<<<<< HEAD
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+			@Override
+			public Void doInBackground() {
+
+				RatingBean rating = rater.getRating(id, username);
+
+				if (rating != null) {
+					setVisible(true);
+					if (rating.getUserRating() != 0)
+=======
 		SwingWorker<WorkflowRating, Void> worker = new SwingWorker<WorkflowRating, Void>() {
 			@Override
 			public WorkflowRating doInBackground() {
@@ -113,10 +185,19 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				if (rating != null) {
 					setVisible(true);
 					if (rating.getRating() != 0)
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 						setClickable(false);
 					else
 						setClickable(true);
 
+<<<<<<< HEAD
+					setRatingValue(rating.getOverallRating(),
+							rating.getTotalRatings());
+				} else
+					setVisible(false);
+
+				return null;
+=======
 					setRatingValue(tool.getOverallRating(),
 							tool.getNumRating());
 				} else
@@ -165,6 +246,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				} else
 					setVisible(false);
 				super.done();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 		};
 		worker.execute();
@@ -199,6 +281,21 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 	public JPanel getThisPanel() {
 		return this;
 	}
+<<<<<<< HEAD
+
+	public void rate(final int rating) {
+
+		SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+			@Override
+			public Void doInBackground() {
+
+				String username = LoginManager.getUsername();
+
+				// perform rating here
+				RatingBean newRating = rater.writeRating(id, username, rating);
+
+				if (newRating == null) {
+=======
 	public void rateWorkflow(final int rating) {
 
 		SwingWorker<Workflow, Void> worker = new SwingWorker<Workflow, Void>() {
@@ -258,19 +355,30 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 					GenSpace.logger.error("Unable to talk to server",e);
 				}
 				if (result == null) {
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 					JOptionPane
 							.showMessageDialog(null,
 									"There was a problem in sending your rating.  Check your internet connection.");
 				} else {
+<<<<<<< HEAD
+					setStarValue(newRating.getOverallRating());
+					setRatingValue(newRating.getOverallRating(),
+							newRating.getTotalRatings());
+=======
 					setStarValue(result.getOverallRating());
 					setRatingValue(result.getOverallRating(),
 							result.getNumRating());
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 					// user can no longer rate now
 					clickable = false;
 					setTitle("Thanks!");
 					getThisPanel().repaint();
 				}
+<<<<<<< HEAD
+				return null;
+=======
 				super.done();
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 		};
 		worker.execute();
@@ -287,10 +395,14 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (clickable)
+<<<<<<< HEAD
+			rate(((Star) e.getComponent()).getValue());
+=======
 			if(workflow != null)
 				rateWorkflow(((Star) e.getComponent()).getValue());
 			else
 				rateTool(((Star) e.getComponent()).getValue());
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	@Override
@@ -323,6 +435,9 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 	public void mouseReleased(MouseEvent e) {
 	}
 
+<<<<<<< HEAD
+=======
 	
 
+>>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }
