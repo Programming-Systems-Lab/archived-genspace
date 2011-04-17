@@ -18,10 +18,7 @@ public class GenSpaceMenu implements MenuListener {
 			return new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
-=======
 					@SuppressWarnings("unused")
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 					GenSpace genspace = new GenSpace();
 				}
 			};

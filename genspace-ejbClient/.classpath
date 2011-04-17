@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="ejbModule"/>
-<<<<<<< HEAD
-=======
 	<classpathentry kind="lib" path="lib/glassfish-corba-orb.jar"/>
 	<classpathentry kind="lib" path="lib/glassfish-corba-orbgeneric.jar"/>
 	<classpathentry kind="lib" path="lib/log4j.jar"/>
@@ -19,7 +17,6 @@
 	<classpathentry kind="lib" path="lib/osgi-javaee-base.jar"/>
 	<classpathentry kind="lib" path="lib/osgi-jpa.jar"/>
 	<classpathentry kind="lib" path="lib/glassfish-registration.jar"/>
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>

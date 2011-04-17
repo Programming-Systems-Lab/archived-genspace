@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-/.classpath/1.1/Wed Feb  2 20:17:56 2011//
-/.project/1.1/Tue Feb  1 16:50:14 2011//
-D/.settings////
-D/build////
-/devkey/1.1/Thu Jan 20 21:26:39 2011/-kb/
-D/ejbModule////
-D/lib////
-=======
 /.classpath/1.2/Wed Feb 16 23:22:04 2011//
 /.project/1.1/Tue Feb  1 16:50:14 2011//
 D/.settings////
@@ -14,4 +5,3 @@ D/build////
 D/ejbModule////
 D/lib////
 /login.conf/1.1/Wed Feb 16 17:20:32 2011//
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7

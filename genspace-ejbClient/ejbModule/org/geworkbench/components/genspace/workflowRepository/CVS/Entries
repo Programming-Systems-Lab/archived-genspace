@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-/DynamicTree.java/1.1/Wed Feb  2 20:31:46 2011//
-/GraphPanel.java/1.1/Wed Feb  2 19:53:14 2011//
-/InboxTablePanel.java/1.1/Wed Feb  2 20:59:56 2011//
-/RepositoryPanel.java/1.1/Thu Jan 20 15:51:46 2011//
-/TableSelectionDemo.java/1.1/Thu Jan 20 15:51:45 2011//
-/WorkflowCommentsPanel.java/1.1/Wed Feb  2 20:04:16 2011//
-/WorkflowDetailsPanel.java/1.1/Wed Feb  2 20:01:27 2011//
-/WorkflowNode.java/1.1/Wed Feb  2 18:40:11 2011//
-/WorkflowRepository.java/1.1/Wed Feb  2 18:32:50 2011//
-=======
 /DynamicTree.java/1.3/Wed Feb 23 20:55:33 2011//
 /GraphPanel.java/-1.2/Wed Feb 16 23:22:51 2011//
 /InboxTablePanel.java/1.2/Mon Feb 21 21:29:32 2011//
@@ -18,4 +7,3 @@
 /WorkflowDetailsPanel.java/1.2/Mon Feb 21 21:29:57 2011//
 /WorkflowNode.java/1.1/Wed Feb  2 18:40:11 2011//
 /WorkflowRepository.java/1.2/Fri Feb 18 18:11:18 2011//
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7

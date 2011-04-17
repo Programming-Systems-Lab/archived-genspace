@@ -10,21 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-<<<<<<< HEAD
-import javax.persistence.ManyToMany;
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-<<<<<<< HEAD
-import javax.persistence.Transient;
-
-import org.geworkbench.components.genspace.bean.DomainUtil;
-import org.geworkbench.components.genspace.bean.RatingBean;
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 @Entity
 public class Workflow implements Serializable {
@@ -41,13 +30,10 @@ public class Workflow implements Serializable {
 	private List<WorkflowRating> ratings = new ArrayList<WorkflowRating>();
 	private int usageCount;
 	private Workflow parent;
-<<<<<<< HEAD
-=======
 	private List<Workflow> children;
 
 	private int numRating = 0;
 	private int sumRating = 0;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -88,9 +74,6 @@ public class Workflow implements Serializable {
 		this.tools = tools;
 	}
 	
-<<<<<<< HEAD
-	@OneToMany(mappedBy="workflow")
-=======
 	@OneToMany(mappedBy="parent",fetch=FetchType.EAGER)
 	public List<Workflow> getChildren() {
 		return children;
@@ -99,7 +82,6 @@ public class Workflow implements Serializable {
 		this.children = children;
 	}
 	@OneToMany(mappedBy="workflow", fetch=FetchType.EAGER)
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public List<WorkflowComment> getComments() {
 		return comments;
 	}
@@ -107,11 +89,7 @@ public class Workflow implements Serializable {
 		this.comments = comments;
 	}
 	
-<<<<<<< HEAD
-	@OneToMany(mappedBy="workflow")
-=======
 	@OneToMany(mappedBy="workflow", fetch=FetchType.EAGER)
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public List<WorkflowRating> getRatings() {
 		return ratings;
 	}
@@ -124,21 +102,7 @@ public class Workflow implements Serializable {
 	public void setUsageCount(int usageCount) {
 		this.usageCount = usageCount;
 	}
-<<<<<<< HEAD
-	private String cachedIdentifier;
 
-	
-	@Transient
-	public String getIdentifier() {
-//		if (cachedIdentifier == null)
-//			cachedIdentifier = DomainUtil.getStringID(tools);
-//		return cachedIdentifier;
-		return "FIXME";
-	}
-	
-=======
-
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public double getAvgRating() {
 		double result = 0;
 		if (ratings.size() > 0) {
@@ -157,12 +121,8 @@ public class Workflow implements Serializable {
 		{
 			r += wt.getTool().getName() + ", ";
 		}
-<<<<<<< HEAD
-		r = r.substring(0,r.length()-2);
-=======
 		if(r.length() > 2)
 			r = r.substring(0,r.length()-2);
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		return r;
 	}
 	
@@ -172,12 +132,6 @@ public class Workflow implements Serializable {
 	public void setParent(Workflow parent) {
 		this.parent = parent;
 	}
-<<<<<<< HEAD
-	
-	public String getLastToolName()
-	{
-		return this.getTools().get(this.getTools().size() -1).getTool().getName();
-=======
 	public int getNumRating() {
 		return numRating;
 	}
@@ -217,6 +171,5 @@ public class Workflow implements Serializable {
 			return 0;
 		else
 			return getSumRating() / getNumRating();
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 }

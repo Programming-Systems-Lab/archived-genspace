@@ -10,10 +10,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutionException;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -22,42 +19,26 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
-<<<<<<< HEAD
-=======
 import javax.swing.SwingWorker;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
 
-<<<<<<< HEAD
-import org.geworkbench.components.genspace.LoginManager;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.ServerRequest;
-=======
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowComment;
 import org.geworkbench.engine.config.VisualPlugin;
 
 public class WorkflowCommentsPanel extends JPanel implements VisualPlugin,
-<<<<<<< HEAD
-		ActionListener {
-
-	public JTable table;
-	private WorkflowRepository workflowRepository;
-=======
 ActionListener {
 
 
 	private static final long serialVersionUID = 4975744972196562645L;
 	public JTable table;
 //	private WorkflowRepository workflowRepository;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	final public JButton newButton = new JButton("New");
 	final public JButton removeButton = new JButton("Remove");
 	public Workflow workflow;
@@ -67,12 +48,6 @@ ActionListener {
 		// setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(BorderFactory.createTitledBorder(
 				BorderFactory.createEmptyBorder(), "Workflow Comments"));
-<<<<<<< HEAD
-		workflowRepository = wr;
-
-		table = new JTable(new MyTableModel()) {
-
-=======
 //		workflowRepository = wr;
 
 		table = new JTable(new MyTableModel()) {
@@ -80,7 +55,6 @@ ActionListener {
 
 			private static final long serialVersionUID = 2666623917953696650L;
 
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			@Override
 			public String getToolTipText(MouseEvent e) {
 				java.awt.Point p = e.getPoint();
@@ -100,11 +74,7 @@ ActionListener {
 		table.getSelectionModel().addListSelectionListener(new RowListener());
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.getColumnModel().getSelectionModel()
-<<<<<<< HEAD
-				.addListSelectionListener(new ColumnListener());
-=======
 		.addListSelectionListener(new ColumnListener());
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		JScrollPane jsp = new JScrollPane(table);
 
 		TableColumn columnUser = table.getColumnModel().getColumn(0);
@@ -147,217 +117,6 @@ ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		final Object source = e.getSource();
-<<<<<<< HEAD
-		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
-			@Override
-			public Void doInBackground() {
-				String result = "";
-				try {
-					User u = LoginManager.getUser();
-					if (u != null) {
-						MyTableModel model = (MyTableModel) table.getModel();
-						if (source.equals(newButton)) {
-							newComment(u, model);
-						} else if (source.equals(removeButton)) {
-							int i = table.getSelectedRow();
-							if (i != -1) {
-								WorkflowComment wc = model
-										.getWorkflowCommentAtRow(i);
-								removeComment(u, wc, model);
-							} else
-								result = "Select a comment to delete";
-						}
-					} else
-						result = "Please login first.";
-				} catch (Exception e) {
-					e.printStackTrace();
-					result = e.getMessage();
-				}
-				if (result != null && !result.trim().equals(""))
-					JOptionPane.showMessageDialog(null, result);
-				return null;
-			}
-
-			private void removeComment(User u, WorkflowComment wc,
-					MyTableModel model) throws Exception {
-//				if (!wc.username.equals(u.username)) {
-//					throw new Exception(
-//							"You can only delete your own comments.");
-//				}
-//				ArrayList<Object> params = new ArrayList<Object>();
-//				params.add(u.username);
-//				params.add(wc);
-//				params.add(workflow);
-//
-//				String result = (String) ServerRequest.get(
-//						RuntimeEnvironmentSettings.WORKFLOW_REPOSITORY_SERVER,
-//						"remove_comment", params);
-//				if (result == null || result.equals("")) {
-//					model.removeComment(wc);
-//				} else
-//					throw new Exception(result);
-				//TODO
-			}
-
-			private void newComment(User u, MyTableModel model)
-					throws Exception {
-				String comment = JOptionPane
-						.showInputDialog("Input comment text");
-				if (comment != null && !comment.trim().equals("")) {
-//					WorkflowComment wc = new WorkflowComment();
-//					wc.comment = comment;
-//					wc.postedOn = new Date();
-//					wc.username = u.username;
-//					ArrayList<Object> params = new ArrayList<Object>();
-//					params.add(u.username);
-//					params.add(wc);
-//					params.add(workflow);
-//					Object result = ServerRequest
-//							.get(RuntimeEnvironmentSettings.WORKFLOW_REPOSITORY_SERVER,
-//									"new_comment", params);
-//					if (result instanceof Integer) {
-//						wc.tableKey = (Integer) result;
-//						model.addComment(wc);
-//					} else
-//						throw new Exception(result.toString());
-				} //TODO
-			}
-
-		};
-		worker.execute();
-	}
-
-	private class RowListener implements ListSelectionListener {
-		@Override
-		public void valueChanged(ListSelectionEvent event) {
-			int i = table.getSelectedRow();
-			if (i != -1) {
-				// selected a row
-			}
-			if (event.getValueIsAdjusting()) {
-				return;
-			}
-		}
-	}
-
-	private class ColumnListener implements ListSelectionListener {
-		@Override
-		public void valueChanged(ListSelectionEvent event) {
-			if (event.getValueIsAdjusting()) {
-				return;
-			}
-		}
-	}
-
-	class MyTableModel extends AbstractTableModel {
-		private String[] columnNames = { "User", "Date", "Comment" };
-		public List<WorkflowComment> data;
-
-		public MyTableModel() {
-			super();
-			data = new ArrayList<WorkflowComment>();
-		}
-
-		public MyTableModel(ArrayList<WorkflowComment> wc) {
-			data = wc;
-		}
-
-		public void setData(List<WorkflowComment> list) {
-			data = list;
-			this.fireTableDataChanged();
-		}
-
-		public void addComment(WorkflowComment wc) {
-			int index = data.size();
-			data.add(wc);
-			this.fireTableRowsInserted(index, index);
-		}
-
-		public void removeComment(WorkflowComment wc) {
-			for (int i = 0; i < data.size(); i++) {
-				WorkflowComment w = data.get(i);
-				if (w.getCreator().equals(wc.getCreator())
-						&& w.getCreatedAt().equals(wc.getCreatedAt())
-						&& w.getComment().equals(wc.getComment())) {
-					data.remove(i);
-					this.fireTableRowsDeleted(i, i);
-					break;
-				}
-			}
-		}
-
-		@Override
-		public int getColumnCount() {
-			return columnNames.length;
-		}
-
-		@Override
-		public int getRowCount() {
-			return data.size();
-		}
-
-		@Override
-		public String getColumnName(int col) {
-			return columnNames[col];
-		}
-
-		@Override
-		public Object getValueAt(int row, int col) {
-			if (row >= 0 && row < data.size()) {
-				WorkflowComment wi = data.get(row);
-				if (col == 0)
-					return wi.getCreator().getUsername();
-				else if (col == 1)
-					return wi.getCreatedAt();
-				else
-					return wi.getComment();
-			}
-			return null;
-		}
-
-		public WorkflowComment getWorkflowCommentAtRow(int row) {
-			if (row < data.size())
-				return data.get(row);
-			else
-				return null;
-		}
-
-		/*
-		 * JTable uses this method to determine the default renderer/ editor for
-		 * each cell. If we didn't implement this method, then the last column
-		 * would contain text ("true"/"false"), rather than a check box.
-		 */
-		@Override
-		public Class getColumnClass(int c) {
-			if (data.size() > 0)
-				return getValueAt(0, c).getClass();
-			else
-				return WorkflowComment.class;
-		}
-
-		/*
-		 * Don't need to implement this method unless your table's editable.
-		 */
-		@Override
-		public boolean isCellEditable(int row, int col) {
-			// Note that the data/cell address is constant,
-			// no matter where the cell appears onscreen.
-			return false;
-		}
-
-		/*
-		 * Don't need to implement this method unless your table's data can
-		 * change.
-		 */
-		@Override
-		public void setValueAt(Object value, int row, int col) {
-			// not editable
-		}
-
-	}
-
-}
-=======
 		User u = LoginFactory.getUser();
 		if (u != null) {
 			MyTableModel model = (MyTableModel) table.getModel();
@@ -571,4 +330,3 @@ class MyTableModel extends AbstractTableModel {
 }
 
 }
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7

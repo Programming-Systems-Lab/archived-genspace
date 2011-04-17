@@ -34,14 +34,10 @@ import net.eleritec.docking.defaults.DefaultDockingPort;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.GenSpace;
-<<<<<<< HEAD
-import org.geworkbench.components.genspace.entity.User;
-=======
 import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.WorkflowVisualization;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.config.events.Event;
 import org.geworkbench.engine.skin.Skin;
@@ -56,11 +52,7 @@ import org.geworkbench.engine.skin.Skin;
  * 
  */
 public class WorkflowRepository extends JPanel implements VisualPlugin,
-<<<<<<< HEAD
-		ActionListener, Runnable {
-=======
 		 Runnable {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 	private static JFrame frame;
 
@@ -78,11 +70,7 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	private DefaultDockingPort repositoryDock = new DefaultDockingPort();
 
 	public RepositoryPanel repositoryPanel;
-<<<<<<< HEAD
-	public GraphPanel graphPanel;
-=======
 	public WorkflowVisualizationPanel graphPanel;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public WorkflowDetailsPanel workflowDetailsPanel;
 	public WorkflowCommentsPanel workflowCommentsPanel;
 	public InboxTablePanel inboxTable;
@@ -175,15 +163,9 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		repositoryPanel = new RepositoryPanel(this);
 		addToContainer(REPOSITORY_AREA, repositoryPanel.getComponent(),
 				"Repository", RepositoryPanel.class);
-<<<<<<< HEAD
-		graphPanel = new GraphPanel(this);
-		addToContainer(VISUAL_AREA, graphPanel.getComponent(), "Workflow",
-				GraphPanel.class);
-=======
 		graphPanel = new WorkflowVisualizationPanel();
 		addToContainer(VISUAL_AREA, graphPanel.getComponent(), "Workflow",
 				WorkflowVisualizationPanel.class);
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		inboxTable = new InboxTablePanel(this);
 		addToContainer(INBOX_AREA, inboxTable.getComponent(), "Inbox",
 				InboxTablePanel.class);
@@ -208,21 +190,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void actionPerformed(ActionEvent e) {
-
-		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
-			@Override
-			public Void doInBackground() {
-				return null;
-			}
-		};
-		worker.execute();
-	}
-
-	@Override
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public Component getComponent() {
 		// In this case, this object is also the GUI component.
 		return this;
@@ -252,19 +219,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		return visualRegistry.get(visualPlugin);
 	}
 
-<<<<<<< HEAD
-	// Is this used?
-	public void addToContainer(String areaName, Component visualPlugin) {
-		DockableImpl wrapper = new DockableImpl(visualPlugin,
-				visualPlugin.getName());
-		DockingManager.registerDockable(wrapper);
-		DefaultDockingPort port = areas.get(areaName);
-		port.dock(wrapper, DockingPort.CENTER_REGION);
-		visualRegistry.put(visualPlugin, areaName);
-	}
-
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	/**
 	 * Removes the designated <code>visualPlugin</code> from the GUI.
 	 * 
@@ -277,10 +231,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		visualRegistry.remove(visualPluginComponent);
 	}
 
-<<<<<<< HEAD
-	@SuppressWarnings("unchecked")
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public void addToContainer(String areaName, Component visualPlugin,
 			String pluginName, Class mainPluginClass) {
 		visualPlugin.setName(pluginName);
@@ -498,11 +448,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		}
 	}
 
-<<<<<<< HEAD
-	public void updateUser(User user) {
-		repositoryPanel.tree.recalculateAndReload();
-		inboxTable.setData(user);
-=======
 	public void updateUser() {
 		if(repositoryPanel != null && repositoryPanel.tree != null)
 			repositoryPanel.tree.recalculateAndReload();
@@ -510,24 +455,17 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		{
 			inboxTable.setData(LoginFactory.getUser());
 		}
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		// whatever was selected, shouldn't be anymore
 		clearWorkflowData();
 	}
 
 	public void clearWorkflowData() {
-<<<<<<< HEAD
-		workflowCommentsPanel.clearData();
-		workflowDetailsPanel.clearData();
-		graphPanel.clearData();
-=======
 		if(workflowCommentsPanel != null)
 			workflowCommentsPanel.clearData();
 		if(workflowDetailsPanel != null)
 			workflowDetailsPanel.clearData();
 		if(graphPanel != null)
 			graphPanel.clearData();
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 }

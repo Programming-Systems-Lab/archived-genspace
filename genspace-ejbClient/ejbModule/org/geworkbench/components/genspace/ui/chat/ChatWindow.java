@@ -29,19 +29,11 @@ import javax.swing.WindowConstants;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.RealTimeWorkFlowSuggestion;
-<<<<<<< HEAD
-import org.geworkbench.components.genspace.TransactionElement;
-import org.geworkbench.components.genspace.chat.ScreenShareListener;
-import org.geworkbench.components.genspace.chat.ScreenSharePublisher;
-import org.geworkbench.components.genspace.chat.WorkflowVisualizationPanel;
-import org.geworkbench.components.genspace.entity.WorkflowTool;
-=======
 import org.geworkbench.components.genspace.chat.ScreenShareListener;
 import org.geworkbench.components.genspace.chat.ScreenSharePublisher;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.engine.config.GUIFramework;
 import org.jivesoftware.smack.Chat;
 import org.jivesoftware.smack.XMPPException;
@@ -55,13 +47,10 @@ import com.sun.jimi.core.JimiException;
  * @author jsb2125
  */
 public class ChatWindow extends javax.swing.JFrame {
-<<<<<<< HEAD
-=======
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6960828216997367807L;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private Chat chat;
 	private String chatText = "";
 
@@ -74,11 +63,7 @@ public class ChatWindow extends javax.swing.JFrame {
 	private HashMap<Integer, Integer> tileHashes = new HashMap<Integer, Integer>();
 	private final static int TILE_SIZE = 32;
 
-<<<<<<< HEAD
-	private enum messageTypes {
-=======
 	public enum messageTypes {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		WORKFLOW, SCREEN_REQUEST, SCREEN_HANDSHAKE, CHAT, SCREEN_TX_END, SCREEN_RX_END
 	};
 
@@ -108,11 +93,7 @@ public class ChatWindow extends javax.swing.JFrame {
 	 */
 	public void setChat(Chat c) {
 		this.chat = c;
-<<<<<<< HEAD
-		this.setTitle("Chat with " + c.getParticipant());
-=======
 		this.setTitle("Chat with " + c.getParticipant().replace("@genspace", "").replace("/Smack",""));
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 
 	private ScreenShareListener screenListener;
@@ -125,23 +106,12 @@ public class ChatWindow extends javax.swing.JFrame {
 	private void processTextMessage(Message m) {
 		if (!last.equals(lastChatter.YOU)) {
 			chatText += "<br><font color=\"green\">"
-<<<<<<< HEAD
-					+ chat.getParticipant()
-					+ "      "
-					+ Calendar.getInstance().get(Calendar.HOUR)
-					+ ":"
-					+ Calendar.getInstance().get(Calendar.MINUTE)
-					+ " "
-					+ (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM ? "am"
-							: "pm") + "</font>";
-=======
 					+ chat.getParticipant().replace("@genspace", "").replace("/Smack", "")
 					+ "      "
 					+ Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
 					+ ":"
 					+ Calendar.getInstance().get(Calendar.MINUTE)
 					+ "</font>";
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		}
 		last = lastChatter.YOU;
 		chatText += "<br>" + m.getBody();
@@ -160,14 +130,9 @@ public class ChatWindow extends javax.swing.JFrame {
 			// If this window has been hidden, unhide it
 			if (!this.isVisible())
 				this.setVisible(true);
-<<<<<<< HEAD
-
-			if (m.getProperty("specialType").equals(messageTypes.CHAT)) {
-=======
 			if(m.getProperty("specialType") == null)
 				processTextMessage(m);
 			else if (m.getProperty("specialType").equals(messageTypes.CHAT)) {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 				processTextMessage(m);
 			} else if (m.getProperty("specialType").equals(
 					messageTypes.WORKFLOW)) {
@@ -297,12 +262,8 @@ public class ChatWindow extends javax.swing.JFrame {
 		fr.add(p);
 		fr.setSize(600, 500);
 		p.setSize(600, 500);
-<<<<<<< HEAD
-		p.render(m.getBody(), "Workflow from " + m.getFrom());
-=======
 		p.render((Workflow) m.getProperty("workflow"));
 //		p.render(m.getBody(), "Workflow from " + m.getFrom());
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		fr.setVisible(true);
 	}
 
@@ -324,19 +285,10 @@ public class ChatWindow extends javax.swing.JFrame {
 			}
 			if (!last.equals(lastChatter.ME)) {
 				chatText += "<br><font color=\"green\">You      "
-<<<<<<< HEAD
-						+ Calendar.getInstance().get(Calendar.HOUR)
-						+ ":"
-						+ Calendar.getInstance().get(Calendar.MINUTE)
-						+ " "
-						+ (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM ? "am"
-								: "pm") + "</font>";
-=======
 						+ Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
 						+ ":"
 						+ Calendar.getInstance().get(Calendar.MINUTE)
 						+ "</font>";
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 			}
 			last = lastChatter.ME;
 			chatText += "<br>" + ogm.getText();
@@ -509,10 +461,7 @@ public class ChatWindow extends javax.swing.JFrame {
 		}
 		wf = wf.substring(0, wf.length() - 1);
 		m.setBody(wf);
-<<<<<<< HEAD
-=======
 		m.setProperty("workflow", RealTimeWorkFlowSuggestion.cwf);
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		try {
 			chat.sendMessage(m);
 		} catch (XMPPException e) {
@@ -525,10 +474,6 @@ public class ChatWindow extends javax.swing.JFrame {
 	 * WARNING: Do NOT modify this code. The content of this method is always
 	 * regenerated by the Form Editor.
 	 */
-<<<<<<< HEAD
-	@SuppressWarnings("unchecked")
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private void initComponents() {
 
 		ogm = new javax.swing.JTextField();
@@ -571,11 +516,7 @@ public class ChatWindow extends javax.swing.JFrame {
 				mnuShareScreenActionPerformed(evt);
 			}
 		});
-<<<<<<< HEAD
-		jMenu1.add(mnuShareScreen);
-=======
 //		jMenu1.add(mnuShareScreen);
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 		mnuEndChat.setText("End Chat");
 		mnuEndChat.addActionListener(new java.awt.event.ActionListener() {
@@ -584,10 +525,7 @@ public class ChatWindow extends javax.swing.JFrame {
 				mnuEndChatActionPerformed(evt);
 			}
 		});
-<<<<<<< HEAD
-=======
 		mnuEndChat.setMnemonic('W');
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		jMenu1.add(mnuEndChat);
 
 		jMenuBar1.add(jMenu1);

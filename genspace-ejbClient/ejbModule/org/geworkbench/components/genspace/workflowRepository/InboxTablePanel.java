@@ -43,10 +43,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutionException;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -55,35 +52,22 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
-<<<<<<< HEAD
-=======
 import javax.swing.SwingWorker;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 
-<<<<<<< HEAD
-import org.geworkbench.components.genspace.LoginManager;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.ServerRequest;
-=======
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.engine.config.VisualPlugin;
 
 public class InboxTablePanel extends JPanel implements ActionListener,
-<<<<<<< HEAD
-		VisualPlugin {
-=======
 VisualPlugin {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public JTable table;
 	public WorkflowRepository workflowRepository;
 	final public JButton addButton = new JButton("Add");
@@ -117,11 +101,7 @@ VisualPlugin {
 		table.getSelectionModel().addListSelectionListener(new RowListener());
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.getColumnModel().getSelectionModel()
-<<<<<<< HEAD
-				.addListSelectionListener(new ColumnListener());
-=======
 		.addListSelectionListener(new ColumnListener());
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		add(new JScrollPane(table), BorderLayout.CENTER);
 
 		addButton.addActionListener(this);
@@ -154,70 +134,6 @@ VisualPlugin {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		final Object source = event.getSource();
-<<<<<<< HEAD
-		javax.swing.SwingWorker<Void, Void> worker = new javax.swing.SwingWorker<Void, Void>() {
-			@Override
-			public Void doInBackground() {
-				try {
-					User u = LoginManager.getUser();
-					if (u != null) {
-						int i = table.getSelectedRow();
-						if (i != -1) {
-							MyTableModel model = (MyTableModel) table
-									.getModel();
-							IncomingWorkflow wi = model.getWorkflowAtRow(i);
-							if (source.equals(addButton)) {
-								addToRepository(u, wi, model);
-							} else if (source.equals(deleteButton)) {
-								removeFromInbox(u, wi, model);
-							}
-						}
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				return null;
-			}
-
-			private String removeFromInbox(User u, IncomingWorkflow wi,
-					MyTableModel model) {
-				ArrayList<Object> params = new ArrayList<Object>();
-				params.add(u.getUsername());
-				params.add(wi);
-				String result = (String) ServerRequest.get(
-						RuntimeEnvironmentSettings.WORKFLOW_REPOSITORY_SERVER,
-						"delete_inbox", params);
-				if (result == null || result.equals("")) {
-					model.delIncomingWorkflow(wi);
-					return "";
-				} else
-					return result;
-			}
-
-			private String addToRepository(User u, IncomingWorkflow wi,
-					MyTableModel model) {
-				ArrayList<Object> params = new ArrayList<Object>();
-				params.add(u.getUsername());
-				params.add(wi);
-				Object result = ServerRequest.get(
-						RuntimeEnvironmentSettings.WORKFLOW_REPOSITORY_SERVER,
-						"add_to_repository_from_inbox", params);
-				if (result == null || result instanceof String) {
-					// error
-					return (String) result;
-				} else {
-					// Add
-					UserWorkflow uw = (UserWorkflow) result;
-					u.getMyWorkflows().add(uw);
-					workflowRepository.repositoryPanel.tree
-							.recalculateAndReload();
-					// delete
-					result = removeFromInbox(u, wi, model);
-					return (String) result;
-				}
-			}
-
-=======
 		if (LoginFactory.isLoggedIn()) {
 			int i = table.getSelectedRow();
 			if (i != -1) {
@@ -256,175 +172,10 @@ VisualPlugin {
 					GenSpace.logger.error("Unable to talk to server", e);
 				}
 			};
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		};
 		worker.execute();
 	}
 
-<<<<<<< HEAD
-	private class RowListener implements ListSelectionListener {
-		@Override
-		public void valueChanged(ListSelectionEvent event) {
-			int i = table.getSelectedRow();
-			if (i != -1) {
-				MyTableModel model = (MyTableModel) table.getModel();
-				IncomingWorkflow wi = model.getWorkflowAtRow(i);
-				workflowRepository.graphPanel.setAndPaintWorkflow(wi.getWorkflow());
-				workflowRepository.workflowDetailsPanel
-						.setAndPrintWorkflow(wi.getWorkflow());
-				workflowRepository.workflowCommentsPanel.setData(wi.getWorkflow());
-			}
-			if (event.getValueIsAdjusting()) {
-				return;
-			}
-		}
-	}
-
-	private class ColumnListener implements ListSelectionListener {
-		@Override
-		public void valueChanged(ListSelectionEvent event) {
-			if (event.getValueIsAdjusting()) {
-				return;
-			}
-		}
-	}
-
-	class MyTableModel extends AbstractTableModel {
-		private String[] columnNames = { "Name", "User", "Date" };
-		public List<IncomingWorkflow> data;
-
-		public MyTableModel() { 
-			super();
-			data = new ArrayList<IncomingWorkflow>();
-		}
-
-		public MyTableModel(List<IncomingWorkflow> ws) {
-			data = ws;
-		}
-
-		public void setData(List<IncomingWorkflow> list) {
-			data = list;
-			this.fireTableDataChanged();
-		}
-
-		public void addIncomingWorkflow(IncomingWorkflow wi) {
-			int index = data.size();
-			data.add(wi);
-			this.fireTableRowsInserted(index, index);
-		}
-
-		public void delIncomingWorkflow(IncomingWorkflow wi) {
-			for (int i = 0; i < data.size(); i++) {
-				IncomingWorkflow w = data.get(i);
-				if (w.getName().equals(wi.getName()) && w.getSender().equals(wi.getSender())
-						&& w.getCreatedAt().equals(wi.getCreatedAt())) {
-					data.remove(i);
-					this.fireTableRowsDeleted(i, i);
-					break;
-				}
-			}
-		}
-
-		@Override
-		public int getColumnCount() {
-			return columnNames.length;
-		}
-
-		@Override
-		public int getRowCount() {
-			return data.size();
-		}
-
-		@Override
-		public String getColumnName(int col) {
-			return columnNames[col];
-		}
-
-		@Override
-		public Object getValueAt(int row, int col) {
-			if (row >= 0 && row < data.size()) {
-				IncomingWorkflow wi = data.get(row);
-				if (col == 0)
-					return wi.getName();
-				else if (col == 1)
-					return wi.getSender().getUsername();
-				else
-					return wi.getCreatedAt().toString();
-			}
-			return null;
-		}
-
-		public IncomingWorkflow getWorkflowAtRow(int row) {
-			if (row < data.size())
-				return data.get(row);
-			else
-				return null;
-		}
-
-		/*
-		 * JTable uses this method to determine the default renderer/ editor for
-		 * each cell. If we didn't implement this method, then the last column
-		 * would contain text ("true"/"false"), rather than a check box.
-		 */
-		@Override
-		public Class getColumnClass(int c) {
-			return getValueAt(0, c).getClass();
-		}
-
-		/*
-		 * Don't need to implement this method unless your table's editable.
-		 */
-		@Override
-		public boolean isCellEditable(int row, int col) {
-			// Note that the data/cell address is constant,
-			// no matter where the cell appears onscreen.
-			return false;
-		}
-
-		/*
-		 * Don't need to implement this method unless your table's data can
-		 * change.
-		 */
-		@Override
-		public void setValueAt(Object value, int row, int col) {
-			// not editable
-		}
-
-	}
-
-	/**
-	 * Create the GUI and show it. For thread safety, this method should be
-	 * invoked from the event-dispatching thread.
-	 */
-	private static void createAndShowGUI() {
-		// Disable boldface controls.
-		UIManager.put("swing.boldMetal", Boolean.FALSE);
-
-		// Create and set up the window.
-		JFrame frame = new JFrame("TableSelectionDemo");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		// Create and set up the content pane.
-		InboxTablePanel newContentPane = new InboxTablePanel(null);
-		newContentPane.setOpaque(true); // content panes must be opaque
-		frame.setContentPane(newContentPane);
-
-		// Display the window.
-		frame.pack();
-		frame.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		// Schedule a job for the event-dispatching thread:
-		// creating and showing this application's GUI.
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				createAndShowGUI();
-			}
-		});
-	}
-=======
 	private void addToRepository(final IncomingWorkflow wi,
 			final MyTableModel model) {
 		
@@ -621,5 +372,4 @@ public static void main(String[] args) {
 		}
 	});
 }
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

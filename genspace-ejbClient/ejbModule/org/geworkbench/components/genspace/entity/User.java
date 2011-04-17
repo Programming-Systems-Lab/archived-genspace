@@ -1,16 +1,8 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
-<<<<<<< HEAD
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-=======
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -21,25 +13,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-<<<<<<< HEAD
-import javax.persistence.ManyToMany;
-=======
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-<<<<<<< HEAD
-import javax.persistence.Transient;
-import javax.swing.tree.DefaultMutableTreeNode;
-
-import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.workflowRepository.WorkflowNode;
-
-@Entity
-@Table(name="registration")
-public class User implements Serializable{
-=======
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.LoginFactory;
@@ -47,7 +24,6 @@ import org.geworkbench.components.genspace.LoginFactory;
 @Entity
 @Table(name="registration")
 public class User implements Serializable, Comparable<User>{
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	
 	private static final long serialVersionUID = 2972043173442132575L;
 	private int id;
@@ -69,19 +45,6 @@ public class User implements Serializable, Comparable<User>{
 	private int logData;
 	private int dataVisibility;
 	private java.util.Date createdAt;
-<<<<<<< HEAD
-	private Set<Friend> friends = new HashSet<Friend>(); 
-	private List<UserNetwork> networks = new ArrayList<UserNetwork>();
-	
-	private Set<Workflow> workflows = new HashSet<Workflow>();
-	private Set<WorkflowFolder> folders = new HashSet<WorkflowFolder>();
-	private Set<WorkflowComment> workflowComments = new HashSet<WorkflowComment>();
-	private Set<ToolComment> toolComments = new HashSet<ToolComment>();
-	private Set<Transaction> transactions = new HashSet<Transaction>();
-	private List<IncomingWorkflow> incomingWorkflows = new ArrayList<IncomingWorkflow>();
-	private Set<IncomingWorkflow> outgoingWorkflows = new HashSet<IncomingWorkflow>();
-	private Set<UserWorkflow> myWorkflows = new HashSet<UserWorkflow>();
-=======
 	private WorkflowFolder rootFolder;
 	
 	private List<Friend> friends = new ArrayList<Friend>(); 
@@ -94,7 +57,6 @@ public class User implements Serializable, Comparable<User>{
 	private List<Transaction> transactions = new ArrayList<Transaction>();
 	private List<IncomingWorkflow> incomingWorkflows = new ArrayList<IncomingWorkflow>();
 	private List<IncomingWorkflow> outgoingWorkflows = new ArrayList<IncomingWorkflow>();
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	private Set<Network> myOwnedNetworks = new HashSet<Network>();
 	
 	@Id
@@ -202,11 +164,7 @@ public class User implements Serializable, Comparable<User>{
 		this.state = state;
 	}
 	
-<<<<<<< HEAD
-	@Column(length=5)
-=======
 	@Column(length=7)
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public String getZipcode() {
 		return zipcode;
 	}
@@ -251,17 +209,10 @@ public class User implements Serializable, Comparable<User>{
 	}
 	
 	@OneToMany(mappedBy="leftUser")
-<<<<<<< HEAD
-	public Set<Friend> getFriends() { 
-		return friends;
-	}
-	public void setFriends(Set<Friend> friends) {
-=======
 	public List<Friend> getFriends() { 
 		return friends;
 	}
 	public void setFriends(List<Friend> friends) {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.friends = friends;
 	}
 	@OneToMany(mappedBy="user")
@@ -281,62 +232,34 @@ public class User implements Serializable, Comparable<User>{
 	}
 	
 	@OneToMany(mappedBy="owner")
-<<<<<<< HEAD
-	public Set<WorkflowFolder> getFolders() {
-		return folders;
-	}
-	public void setFolders(Set<WorkflowFolder> folders) {
-=======
 	public List<WorkflowFolder> getFolders() {
 		return folders;
 	}
 	public void setFolders(List<WorkflowFolder> folders) {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.folders = folders;
 	}
 	
 	@OneToMany(mappedBy="creator")
-<<<<<<< HEAD
-	public Set<WorkflowComment> getWorkflowComments() {
-		return workflowComments;
-	}
-	public void setWorkflowComments(Set<WorkflowComment> workflowComments) {
-=======
 	public List<WorkflowComment> getWorkflowComments() {
 		return workflowComments;
 	}
 	public void setWorkflowComments(List<WorkflowComment> workflowComments) {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.workflowComments = workflowComments;
 	}
 	
 	@OneToMany(mappedBy="creator")
-<<<<<<< HEAD
-	public Set<ToolComment> getToolComments() {
-		return toolComments;
-	}
-	public void setToolComments(Set<ToolComment> toolComments) {
-=======
 	public List<ToolComment> getToolComments() {
 		return toolComments;
 	}
 	public void setToolComments(List<ToolComment> toolComments) {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.toolComments = toolComments;
 	}
 	
 	@OneToMany(mappedBy="user")
-<<<<<<< HEAD
-	public Set<Transaction> getTransactions() {
-		return transactions;
-	}
-	public void setTransactions(Set<Transaction> transactions) {
-=======
 	public List<Transaction> getTransactions() {
 		return transactions;
 	}
 	public void setTransactions(List<Transaction> transactions) {
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		this.transactions = transactions;
 	}
 	
@@ -349,22 +272,6 @@ public class User implements Serializable, Comparable<User>{
 	}
 	
 	@OneToMany(mappedBy="sender")
-<<<<<<< HEAD
-	public Set<IncomingWorkflow> getOutgoingWorkflows() {
-		return outgoingWorkflows;
-	}
-	public void setOutgoingWorkflows(Set<IncomingWorkflow> outgoingWorkflows) {
-		this.outgoingWorkflows = outgoingWorkflows;
-	}
-	
-	@OneToMany(mappedBy="owner")
-	public Set<UserWorkflow> getMyWorkflows() {
-		return myWorkflows;
-	}
-	public void setMyWorkflows(Set<UserWorkflow> myWorkflows) {
-		this.myWorkflows = myWorkflows;
-	}
-=======
 	public List<IncomingWorkflow> getOutgoingWorkflows() {
 		return outgoingWorkflows;
 	}
@@ -372,7 +279,6 @@ public class User implements Serializable, Comparable<User>{
 		this.outgoingWorkflows = outgoingWorkflows;
 	}
 	
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	
 	@OneToMany(mappedBy="owner")
 	public Set<Network> getMyOwnedNetworks() {
@@ -382,20 +288,6 @@ public class User implements Serializable, Comparable<User>{
 		this.myOwnedNetworks = myOwnedNetworks;
 	}
 	
-<<<<<<< HEAD
-	@Override
-	public String toString() {
-		String result = "User - username: " + username + "\n";
-		result += "UserWorkflows: " + workflows.size() + "\n";
-		for (UserWorkflow uw : myWorkflows) {
-			result += uw.toString() + "\n";
-		}
-
-		result += "Inbox: " + incomingWorkflows.size() + "\n";
-		for (IncomingWorkflow wi : incomingWorkflows) {
-			result += wi.toString() + "\n";
-		}
-=======
 	public WorkflowFolder getRootFolder() {
 		return rootFolder;
 	}
@@ -406,7 +298,6 @@ public class User implements Serializable, Comparable<User>{
 	@Override
 	public String toString() {
 		String result = "User - username: " + username;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 		return result;
 	}
 
@@ -421,35 +312,6 @@ public class User implements Serializable, Comparable<User>{
 		return this.getEncryptedPassword(password.toCharArray()).equals(this.getPassword());
 	}
 
-<<<<<<< HEAD
-
-	public void addUserWorkflowTree(WorkflowNode rootNode) {
-
-		HashMap<String, DefaultMutableTreeNode> folders = new HashMap<String, DefaultMutableTreeNode>();
-		// first add all folders
-		// Whenever a folder was added in the ADD function the list of folders
-		// is ordered by name
-		// so we don't worry about it here.Å
-		for (WorkflowFolder f : this.folders) {
-			DefaultMutableTreeNode fnode = new DefaultMutableTreeNode(f);
-			folders.put(f.getName(), fnode);
-			rootNode.add(fnode);
-		}
-		// add workflows to folders
-		for (UserWorkflow w : myWorkflows) {
-			if (w.getFolder() == null) {
-				rootNode.add(new WorkflowNode(w));
-			} else {
-				DefaultMutableTreeNode folderNode = folders.get(w.getFolder());
-				if (folderNode == null) {
-					folderNode = new DefaultMutableTreeNode(w.getFolder());
-					folders.put(w.getFolder().getName(), folderNode);
-					rootNode.add(folderNode);
-				}
-				folderNode.add(new WorkflowNode(w));
-			}
-		}
-=======
 	@Override
 	public int hashCode() {
 		return this.getId();
@@ -461,7 +323,6 @@ public class User implements Serializable, Comparable<User>{
 			return ((User) obj).getId() == this.getId();
 		}
 		return false;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	}
 	
 	protected final static String HEX_DIGITS = "0123456789abcdef";
@@ -492,8 +353,6 @@ public class User implements Serializable, Comparable<User>{
 		        }
 		        return sb.toString();	
 	}
-<<<<<<< HEAD
-=======
 	public String getFullName() {
 		return this.getFirstName() + " " + this.getLastName();
 	}
@@ -583,5 +442,4 @@ public class User implements Serializable, Comparable<User>{
 			return this.getFirstName().compareTo(o.getFirstName());
 		return r;
 	}
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }

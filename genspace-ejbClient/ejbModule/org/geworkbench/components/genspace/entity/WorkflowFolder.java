@@ -1,27 +1,18 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
-<<<<<<< HEAD
-=======
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-<<<<<<< HEAD
-
-@Entity
-public class WorkflowFolder implements Serializable{
-=======
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	/**
 	 * 
 	 */
@@ -30,12 +21,9 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	private User owner;
 	private String name;
 	private WorkflowFolder parent;
-<<<<<<< HEAD
-=======
 	private List<UserWorkflow> workflows = new ArrayList<UserWorkflow>();
 	
 	private List<WorkflowFolder> children = new ArrayList<WorkflowFolder>();
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -57,8 +45,6 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	public void setName(String name) {
 		this.name = name;
 	}
-<<<<<<< HEAD
-=======
 	@OneToMany(mappedBy="parent")
 	public List<WorkflowFolder> getChildren(){
 		return children;
@@ -67,17 +53,12 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 		this.children = children;
 	}
 	@ManyToOne
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 	public WorkflowFolder getParent() {
 		return parent;
 	}
 	public void setParent(WorkflowFolder parent) {
 		this.parent = parent;
 	}
-<<<<<<< HEAD
-	
-	 
-=======
 	@Override
 	public int compareTo(WorkflowFolder o) {
 		return this.getName().compareTo(o.getName());
@@ -103,5 +84,4 @@ public class WorkflowFolder implements Serializable, Comparable<WorkflowFolder>{
 	public int hashCode() {
 		return new Integer(id).hashCode();
 	}
->>>>>>> 1503fb7409898175766dea9b5bf0f562768a49b7
 }
