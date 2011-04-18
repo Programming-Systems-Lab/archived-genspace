@@ -305,7 +305,22 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	 */
 	private Workflow getExtendedWorkflow(Transaction t, Tool tool) {
 		if(t.getWorkflow() == null)
-			return createNewWorkflowForTrans(t, tool);
+		{
+			Query q = getEntityManager().createNativeQuery("select w.* from WORKFLOW w " +
+					"inner join WORKFLOWTOOL wt on wt.workflow_id=w.id " + 
+					"where w.parent_id is null and wt.cardinality=1 and wt.tool_id=? limit 1", Tool.class);
+			q.setParameter(1, tool.getId());
+	        Workflow r = null;
+	        try
+			{
+	        	r = (Workflow) q.getSingleResult();
+	        	return r;
+			}
+			catch(NoResultException e)
+			{
+				return createNewWorkflowForTrans(t, tool);
+			}
+		}
 		Query q = getEntityManager().createNativeQuery("select w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on wt.workflow_id=w.id " + 
 				"where w.parent_id=? and wt.cardinality=? and wt.tool_id=? limit 1", Tool.class);

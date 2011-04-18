@@ -257,6 +257,11 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 		int i = 0;
 		for(WorkflowTool to : w.getTools())
 		{
+			if(to == null || to.getTool() == null)
+			{
+				System.out.println("Null tool");
+				continue;
+			}
 			if(i < toolOffset)
 			{
 				i++;
