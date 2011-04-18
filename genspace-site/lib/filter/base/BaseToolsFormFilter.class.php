@@ -12,7 +12,7 @@ abstract class BaseToolsFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'tool'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'tool'        => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
     ));
 

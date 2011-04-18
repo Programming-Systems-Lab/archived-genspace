@@ -3,7 +3,7 @@
 
 
 /**
- * Skeleton subclass for performing query and update operations on the 'tool_ratings' table.
+ * Skeleton subclass for performing query and update operations on the 'TOOLRATING' table.
  *
  * 
  *
@@ -13,6 +13,6 @@
  *
  * @package    propel.generator.lib.model
  */
-class ToolRatingsQuery extends BaseToolRatingsQuery {
+class ToolratingsQuery extends BaseToolratingsQuery {
 
-} // ToolRatingsQuery
+} // ToolratingsQuery

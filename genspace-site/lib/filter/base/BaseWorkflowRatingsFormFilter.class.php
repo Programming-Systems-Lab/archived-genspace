@@ -1,29 +1,31 @@
 <?php
 
 /**
- * WorkflowRatings filter form base class.
+ * Workflowratings filter form base class.
  *
  * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */
-abstract class BaseWorkflowRatingsFormFilter extends BaseFormFilterPropel
+abstract class BaseWorkflowratingsFormFilter extends BaseFormFilterPropel
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'id'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'username' => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'rating'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'CREATEDAT'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'RATING'      => new sfWidgetFormFilterInput(),
+      'WORKFLOW_ID' => new sfWidgetFormFilterInput(),
+      'CREATOR_ID'  => new sfWidgetFormPropelChoice(array('model' => 'Registration', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'username' => new sfValidatorPass(array('required' => false)),
-      'rating'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'CREATEDAT'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'RATING'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'WORKFLOW_ID' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'CREATOR_ID'  => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Registration', 'column' => 'ID')),
     ));
 
-    $this->widgetSchema->setNameFormat('workflow_ratings_filters[%s]');
+    $this->widgetSchema->setNameFormat('workflowratings_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -32,16 +34,17 @@ abstract class BaseWorkflowRatingsFormFilter extends BaseFormFilterPropel
 
   public function getModelName()
   {
-    return 'WorkflowRatings';
+    return 'Workflowratings';
   }
 
   public function getFields()
   {
     return array(
-      'pk'       => 'Number',
-      'id'       => 'Number',
-      'username' => 'Text',
-      'rating'   => 'Number',
+      'ID'          => 'Number',
+      'CREATEDAT'   => 'Date',
+      'RATING'      => 'Number',
+      'WORKFLOW_ID' => 'Number',
+      'CREATOR_ID'  => 'ForeignKey',
     );
   }
 }

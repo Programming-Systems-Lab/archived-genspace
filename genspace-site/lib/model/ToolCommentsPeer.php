@@ -1,10 +1,9 @@
 <?php
 
-require 'lib/model/om/BaseToolCommentsPeer.php';
 
 
 /**
- * Skeleton subclass for performing query and update operations on the 'tool_comments' table.
+ * Skeleton subclass for performing query and update operations on the 'TOOLCOMMENT' table.
  *
  * 
  *
@@ -12,15 +11,18 @@ require 'lib/model/om/BaseToolCommentsPeer.php';
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    lib.model
+ * @package    propel.generator.lib.model
  */
-class ToolCommentsPeer extends BaseToolCommentsPeer {
-		public static function getToolComments($user, $toolId){
-		$c = new Criteria();
-		$c->add(ToolCommentsPeer::ID, $toolId);
-		$c->addDescendingOrderByColumn('posted_on');
-		return ToolCommentsPeer::doSelect($c);
-	}
-	
+class ToolcommentsPeer extends BaseToolcommentsPeer {
+	public static function getToolComments($user, $toolId){
 
-} // ToolCommentsPeer
+                $c = new Criteria();
+
+                $c->add(ToolCommentsPeer::TOOL_ID, $toolId);
+
+                $c->addDescendingOrderByColumn('CREATEDAT');
+
+                return ToolCommentsPeer::doSelect($c);
+
+        }
+} // ToolcommentsPeer

@@ -1,6 +1,5 @@
 <?php
 
-require 'lib/model/om/BaseRegistration.php';
 
 
 /**
@@ -12,8 +11,12 @@ require 'lib/model/om/BaseRegistration.php';
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    lib.model
+ * @package    propel.generator.lib.model
  */
 class Registration extends BaseRegistration {
+	function getFullName()
+	{
+		return $this->getFirstName() . " " . $this->getLastName();
+	}
 
 } // Registration

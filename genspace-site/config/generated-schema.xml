@@ -1,256 +1,480 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="propel" package="lib.model" defaultIdMethod="native">
 
-  <table name="user_networks">
-    <column name="username" type="VARCHAR" size="50" required="true" primaryKey="true" />
-    <foreign-key foreignTable="networks" onDelete="" onUpdate="">
-      <reference local="username" foreign="id" />
-    </foreign-key>
-    <column name="network" type="VARCHAR" size="50" required="true" primaryKey="true" />
-    <foreign-key foreignTable="networks" onDelete="" onUpdate="">
-      <reference local="network" foreign="network" />
-    </foreign-key>
-    <index name="PK_user_networks">
-      <index-column name="username" />
-      <index-column name="network" />
-    </index>
-  </table>
-
-  <table name="networks">
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-    <column name="network" type="VARCHAR" size="50" required="true" />
-  </table>
-
-  <table name="user_IM_handles">
-    <column name="username" type="VARCHAR" size="50" />
-    <column name="IM_handle" type="VARCHAR" size="50" />
-    <column name="IM_service" type="VARCHAR" size="50" />
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-  </table>
-
-  <table name="login_events">
-    <column name="username" type="VARCHAR" size="50" />
-    <column name="date" type="TIMESTAMP" />
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-  </table>
-
-  <table name="analysis_events">
-    <column name="username" type="VARCHAR" size="50" />
-    <column name="host" type="VARCHAR" size="50" />
-    <column name="date" type="TIMESTAMP" />
-    <column name="analysis" type="VARCHAR" size="50" />
-    <column name="dataset" type="VARCHAR" size="255" />
-    <column name="transaction_id" type="VARCHAR" size="255" />
-    <column name="is_genspace_user" type="VARCHAR" size="1" />
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-  </table>
-
-  <table name="include_exclude_analysis">
-    <column name="username" type="VARCHAR" size="50" />
-    <column name="analysis" type="VARCHAR" size="50" />
-    <column name="action" type="VARCHAR" size="50" />
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-  </table>
-
-  <table name="friends">
-    <column name="user1" type="VARCHAR" size="50" />
-    <column name="user2" type="VARCHAR" size="50" />
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-  </table>
-
-  <table name="test_analysis_events">
-    <column name="username" type="VARCHAR" size="50" />
-    <column name="host" type="VARCHAR" size="50" />
-    <column name="date" type="TIMESTAMP" />
-    <column name="analysis" type="VARCHAR" size="50" />
-    <column name="dataset" type="VARCHAR" size="255" />
-    <column name="transaction_id" type="VARCHAR" size="255" />
-    <column name="is_genspace_user" type="VARCHAR" size="1" />
-    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-  </table>
-
   <table name="registration">
-    <column name="username" type="VARCHAR" size="50" required="true" primaryKey="true" />
-    <column name="password" type="VARCHAR" size="50" required="true" />
-    <column name="email" type="VARCHAR" size="50" />
-    <column name="im_email" type="VARCHAR" size="50" />
-    <column name="im_password" type="VARCHAR" size="50" />
-    <column name="first_name" type="VARCHAR" size="50" required="true" />
-    <column name="last_name" type="VARCHAR" size="50" required="true" />
-    <column name="work_title" type="VARCHAR" size="50" />
-    <column name="phone" type="VARCHAR" size="50" />
-    <column name="lab_affiliation" type="VARCHAR" size="100" required="true" />
-    <column name="addr1" type="VARCHAR" size="50" />
-    <column name="addr2" type="VARCHAR" size="50" />
-    <column name="city" type="VARCHAR" size="50" />
-    <column name="state" type="VARCHAR" size="50" />
-    <column name="zipcode" type="VARCHAR" size="5" />
-    <index name="PK_dbo.registration">
-      <index-column name="username" />
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="PHONE" phpName="Phone" type="VARCHAR" size="50" required="false" />
+    <column name="INTERESTS" phpName="Interests" type="LONGVARCHAR" required="false" />
+    <column name="STATE" phpName="State" type="VARCHAR" size="50" required="false" />
+    <column name="online_status" phpName="OnlineStatus" type="INTEGER" size="11" required="false" />
+    <column name="PASSWORD" phpName="Password" type="VARCHAR" size="50" required="true" />
+    <column name="CITY" phpName="City" type="VARCHAR" size="50" required="false" />
+    <column name="USERNAME" phpName="Username" type="VARCHAR" size="50" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="first_name" phpName="FirstName" type="VARCHAR" size="50" required="true" />
+    <column name="DATAVISIBILITY" phpName="Datavisibility" type="INTEGER" size="11" required="false" />
+    <column name="work_title" phpName="WorkTitle" type="VARCHAR" size="50" required="false" />
+    <column name="last_name" phpName="LastName" type="VARCHAR" size="50" required="true" />
+    <column name="ZIPCODE" phpName="Zipcode" type="VARCHAR" size="5" required="false" />
+    <column name="lab_affiliation" phpName="LabAffiliation" type="VARCHAR" size="100" required="false" />
+    <column name="ADDR1" phpName="Addr1" type="VARCHAR" size="50" required="false" />
+    <column name="ADDR2" phpName="Addr2" type="VARCHAR" size="50" required="false" />
+    <column name="EMAIL" phpName="Email" type="VARCHAR" size="50" required="false" />
+    <column name="LOGDATA" phpName="Logdata" type="INTEGER" size="11" required="false" />
+    <column name="ROOTFOLDER_ID" phpName="RootfolderId" type="INTEGER" size="11" required="false" />
+  </table>
+
+  <table name="ANALYSISEVENT" phpName="Analysisevent">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="TRANSACTION_ID" phpName="TransactionId" type="INTEGER" size="11" required="false" />
+    <column name="TOOL_ID" phpName="ToolId" type="INTEGER" size="11" required="false" />
+    <index name="FK_ANALYSISEVENT_TOOL_ID">
+      <index-column name="TOOL_ID" />
+    </index>
+    <index name="FK_ANALYSISEVENT_TRANSACTION_ID">
+      <index-column name="TRANSACTION_ID" />
     </index>
   </table>
 
-  <table name="data_visibility">
-    <column name="username" type="VARCHAR" size="50" required="true" primaryKey="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="username" foreign="username" />
-    </foreign-key>
-    <column name="logdata" type="INTEGER" required="true" />
-    <column name="datavisibility" type="INTEGER" required="true" />
-    <index name="PK_data_visibility">
-      <index-column name="username" />
+  <table name="ANALYSISEVENTPARAMETER" phpName="Analysiseventparameter">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="PARAMETERVALUE" phpName="Parametervalue" type="VARCHAR" size="255" required="false" />
+    <column name="PARAMETERKEY" phpName="Parameterkey" type="VARCHAR" size="255" required="false" />
+    <column name="EVENT_ID" phpName="EventId" type="INTEGER" size="11" required="false" />
+    <index name="FK_ANALYSISEVENTPARAMETER_EVENT_ID">
+      <index-column name="EVENT_ID" />
     </index>
   </table>
 
-  <table name="user_visibility">
-    <column name="username" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="username" foreign="username" />
+  <table name="Friend">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="MUTUAL" phpName="Mutual" type="TINYINT" size="1" required="false" defaultValue="0" />
+    <column name="VISIBLE" phpName="Visible" type="TINYINT" size="1" required="false" defaultValue="0" />
+    <column name="id_1" phpName="Id1" type="INTEGER" size="11" required="false" />
+    <column name="id_2" phpName="Id2" type="INTEGER" size="11" required="false" />
+    <index name="FK_Friend_id_2">
+      <index-column name="id_2" />
+    </index>
+    <index name="FK_Friend_id_1">
+      <index-column name="id_1" />
+    </index>
+  </table>
+
+  <table name="INCOMINGWORKFLOW" phpName="Incomingworkflow">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="NAME" phpName="Name" type="VARCHAR" size="255" required="false" />
+    <column name="SENDER_ID" phpName="SenderId" type="INTEGER" size="11" required="false" />
+    <column name="WORKFLOW_ID" phpName="WorkflowId" type="INTEGER" size="11" required="false" />
+    <column name="RECEIVER_ID" phpName="ReceiverId" type="INTEGER" size="11" required="false" />
+    <index name="FK_INCOMINGWORKFLOW_RECEIVER_ID">
+      <index-column name="RECEIVER_ID" />
+    </index>
+    <index name="FK_INCOMINGWORKFLOW_SENDER_ID">
+      <index-column name="SENDER_ID" />
+    </index>
+    <index name="FK_INCOMINGWORKFLOW_WORKFLOW_ID">
+      <index-column name="WORKFLOW_ID" />
+    </index>
+  </table>
+
+  <table name="NETWORK" phpName="Network">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="NAME" phpName="Name" type="VARCHAR" size="255" required="false" />
+    <column name="owner" phpName="Owner" type="INTEGER" size="11" required="false" />
+    <index name="FK_NETWORK_owner">
+      <index-column name="owner" />
+    </index>
+  </table>
+
+  <table name="TOOL" phpName="Tool">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="MOSTCOMMONPARAMETERS" phpName="Mostcommonparameters" type="VARCHAR" size="255" required="false" />
+    <column name="USAGECOUNT" phpName="Usagecount" type="INTEGER" size="11" required="false" />
+    <column name="DESCRIPTION" phpName="Description" type="VARCHAR" size="255" required="false" />
+    <column name="NAME" phpName="Name" type="VARCHAR" size="255" required="false" />
+    <column name="MOSTCOMMONPARAMETERSCOUNT" phpName="Mostcommonparameterscount" type="INTEGER" size="11" required="false" />
+    <column name="WFCOUNTHEAD" phpName="Wfcounthead" type="INTEGER" size="11" required="false" />
+    <column name="NUMRATING" phpName="Numrating" type="INTEGER" size="11" required="false" />
+    <column name="SUMRATING" phpName="Sumrating" type="INTEGER" size="11" required="false" />
+    <index name="NAME">
+      <index-column name="NAME" />
+    </index>
+  </table>
+
+  <table name="TOOLCOMMENT" phpName="Toolcomments">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="COMMENT" phpName="Comment" type="VARCHAR" size="255" required="false" />
+    <column name="CREATOR_ID" phpName="CreatorId" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration">
+      <reference local="CREATOR_ID" foreign="ID" />
     </foreign-key>
-    <column name="uservisibility" type="INTEGER" required="true" />
+    <column name="TOOL_ID" phpName="ToolId" type="INTEGER" size="11" required="false" />
+    <index name="FK_TOOLCOMMENT_TOOL_ID">
+      <index-column name="TOOL_ID" />
+    </index>
+    <index name="FK_TOOLCOMMENT_CREATOR_ID">
+      <index-column name="CREATOR_ID" />
+    </index>
+  </table>
+
+  <table name="TOOLRATING" phpName="Toolratings">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="RATING" phpName="Rating" type="INTEGER" size="11" required="false" />
+    <column name="TOOL_ID" phpName="ToolId" type="INTEGER" size="11" required="false" />
+    <column name="CREATOR_ID" phpName="CreatorId" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration">
+      <reference local="CREATOR_ID" foreign="ID" />
+    </foreign-key>
+    <index name="FK_TOOLRATING_CREATOR_ID">
+      <index-column name="CREATOR_ID" />
+    </index>
+    <index name="FK_TOOLRATING_TOOL_ID">
+      <index-column name="TOOL_ID" />
+    </index>
+  </table>
+
+  <table name="TRANSACTION" phpName="Transaction">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="DATASETNAME" phpName="Datasetname" type="VARCHAR" size="255" required="false" />
+    <column name="CLIENTID" phpName="Clientid" type="VARCHAR" size="255" required="false" />
+    <column name="HOSTNAME" phpName="Hostname" type="VARCHAR" size="255" required="false" />
+    <column name="DATE" phpName="Date" type="TIMESTAMP" required="false" />
+    <column name="USER_ID" phpName="UserId" type="INTEGER" size="11" required="false" />
+    <column name="WORKFLOW_ID" phpName="WorkflowId" type="INTEGER" size="11" required="false" />
+    <index name="FK_TRANSACTION_USER_ID">
+      <index-column name="USER_ID" />
+    </index>
+    <index name="FK_TRANSACTION_WORKFLOW_ID">
+      <index-column name="WORKFLOW_ID" />
+    </index>
+  </table>
+
+  <table name="USERWORKFLOW" phpName="Userworkflow">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="NAME" phpName="Name" type="VARCHAR" size="255" required="false" />
+    <column name="WORKFLOW_ID" phpName="WorkflowId" type="INTEGER" size="11" required="false" />
+    <column name="OWNER_ID" phpName="OwnerId" type="INTEGER" size="11" required="false" />
+    <column name="FOLDER_ID" phpName="FolderId" type="INTEGER" size="11" required="false" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <index name="FK_USERWORKFLOW_OWNER_ID">
+      <index-column name="OWNER_ID" />
+    </index>
+    <index name="FK_USERWORKFLOW_FOLDER_ID">
+      <index-column name="FOLDER_ID" />
+    </index>
+    <index name="FK_USERWORKFLOW_WORKFLOW_ID">
+      <index-column name="WORKFLOW_ID" />
+    </index>
+  </table>
+
+  <table name="User_Network">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="VISIBLE" phpName="Visible" type="TINYINT" size="1" required="false" defaultValue="0" />
+    <column name="VERIFIED" phpName="Verified" type="TINYINT" size="1" required="false" defaultValue="0" />
+    <column name="network_id" phpName="NetworkId" type="INTEGER" size="11" required="false" />
+    <column name="user_id" phpName="UserId" type="INTEGER" size="11" required="false" />
+    <index name="FK_User_Network_network_id">
+      <index-column name="network_id" />
+    </index>
+    <index name="FK_User_Network_user_id">
+      <index-column name="user_id" />
+    </index>
+  </table>
+
+  <table name="WORKFLOW" phpName="Workflow">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="USAGECOUNT" phpName="Usagecount" type="INTEGER" size="11" required="false" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="CREATOR_ID" phpName="CreatorId" type="INTEGER" size="11" required="false" />
+    <column name="PARENT_ID" phpName="ParentId" type="INTEGER" size="11" required="false" />
+    <column name="CREATIONTRANSACTION_ID" phpName="CreationtransactionId" type="INTEGER" size="11" required="false" />
+    <column name="NUMRATING" phpName="Numrating" type="INTEGER" size="11" required="false" />
+    <column name="SUMRATING" phpName="Sumrating" type="INTEGER" size="11" required="false" />
+    <column name="legacy_id" phpName="LegacyId" type="INTEGER" size="11" required="false" />
+    <index name="FK_WORKFLOW_CREATIONTRANSACTION_ID">
+      <index-column name="CREATIONTRANSACTION_ID" />
+    </index>
+    <index name="FK_WORKFLOW_PARENT_ID">
+      <index-column name="PARENT_ID" />
+    </index>
+    <index name="FK_WORKFLOW_CREATOR_ID">
+      <index-column name="CREATOR_ID" />
+    </index>
+  </table>
+
+  <table name="WORKFLOWCOMMENT" phpName="Workflowcomments">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="COMMENT" phpName="Comment" type="VARCHAR" size="255" required="false" />
+    <column name="WORKFLOW_ID" phpName="WorkflowId" type="INTEGER" size="11" required="false" />
+    <column name="CREATOR_ID" phpName="CreatorId" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration">
+      <reference local="CREATOR_ID" foreign="ID" />
+    </foreign-key>
+    <index name="FK_WORKFLOWCOMMENT_CREATOR_ID">
+      <index-column name="CREATOR_ID" />
+    </index>
+    <index name="FK_WORKFLOWCOMMENT_WORKFLOW_ID">
+      <index-column name="WORKFLOW_ID" />
+    </index>
+  </table>
+
+  <table name="WORKFLOWFOLDER" phpName="Workflowfolder">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="NAME" phpName="Name" type="VARCHAR" size="255" required="false" />
+    <column name="OWNER_ID" phpName="OwnerId" type="INTEGER" size="11" required="false" />
+    <column name="PARENT_ID" phpName="ParentId" type="INTEGER" size="11" required="false" />
+    <index name="FK_WORKFLOWFOLDER_PARENT_ID">
+      <index-column name="PARENT_ID" />
+    </index>
+    <index name="FK_WORKFLOWFOLDER_OWNER_ID">
+      <index-column name="OWNER_ID" />
+    </index>
+  </table>
+
+  <table name="WORKFLOWRATING" phpName="Workflowratings">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CREATEDAT" phpName="Createdat" type="TIMESTAMP" required="false" />
+    <column name="RATING" phpName="Rating" type="INTEGER" size="11" required="false" />
+    <column name="WORKFLOW_ID" phpName="WorkflowId" type="INTEGER" size="11" required="false" />
+    <column name="CREATOR_ID" phpName="CreatorId" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration">
+      <reference local="CREATOR_ID" foreign="ID" />
+    </foreign-key>
+    <index name="FK_WORKFLOWRATING_WORKFLOW_ID">
+      <index-column name="WORKFLOW_ID" />
+    </index>
+    <index name="FK_WORKFLOWRATING_CREATOR_ID">
+      <index-column name="CREATOR_ID" />
+    </index>
+  </table>
+
+  <table name="WORKFLOWTOOL" phpName="Workflowtool">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="CARDINALITY" phpName="Cardinality" type="INTEGER" size="11" required="false" />
+    <column name="WORKFLOW_ID" phpName="WorkflowId" type="INTEGER" size="11" required="false" />
+    <column name="TOOL_ID" phpName="ToolId" type="INTEGER" size="11" required="false" />
+    <index name="FK_WORKFLOWTOOL_TOOL_ID">
+      <index-column name="TOOL_ID" />
+    </index>
+    <index name="FK_WORKFLOWTOOL_WORKFLOW_ID">
+      <index-column name="WORKFLOW_ID" />
+    </index>
+  </table>
+
+  <table name="access">
+    <column name="id" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="name" phpName="Name" type="VARCHAR" size="50" required="false" />
+  </table>
+
+  <table name="annotation">
+    <column name="id" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="wspid" phpName="Wspid" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="workspace" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="wspid" foreign="id" />
+    </foreign-key>
+    <column name="annotation" phpName="Annotation" type="VARCHAR" size="1000" required="false" />
+    <column name="creator" phpName="Creator" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="creator" foreign="ID" />
+    </foreign-key>
+    <column name="createdAt" phpName="Createdat" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP" />
+    <index name="wspid">
+      <index-column name="wspid" />
+    </index>
+    <index name="creator">
+      <index-column name="creator" />
+    </index>
+  </table>
+
+  <table name="history">
+    <column name="id" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="wspid" phpName="Wspid" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="workspace" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="wspid" foreign="id" />
+    </foreign-key>
+    <column name="uid" phpName="Uid" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="uid" foreign="ID" />
+    </foreign-key>
+    <column name="type" phpName="Type" type="CHAR" size="1" required="false" />
+    <column name="accessedAt" phpName="Accessedat" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP" />
+    <index name="wspid">
+      <index-column name="wspid" />
+    </index>
+    <index name="uid">
+      <index-column name="uid" />
+    </index>
+  </table>
+
+  <table name="setting">
+    <column name="ID" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="data_value" phpName="DataValue" type="VARCHAR" size="255" required="false" />
+    <column name="data_key" phpName="DataKey" type="VARCHAR" size="255" required="false" />
+  </table>
+
+  <table name="short_news">
+    <column name="snid" phpName="Snid" type="BIGINT" size="20" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="publishing_time" phpName="PublishingTime" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP" />
+    <column name="news_type" phpName="NewsType" type="VARCHAR" size="10" required="false" />
+    <column name="author" phpName="Author" type="VARCHAR" size="128" required="true" />
+    <column name="subject" phpName="Subject" type="VARCHAR" size="128" required="true" />
+    <column name="body" phpName="Body" type="VARCHAR" size="1024" required="true" />
+    <index name="publishing_time">
+      <index-column name="publishing_time" />
+    </index>
+    <index name="author">
+      <index-column name="author" />
+    </index>
+    <index name="news_type">
+      <index-column name="news_type" />
+    </index>
+  </table>
+
+  <table name="tig_nodes">
+    <column name="nid" phpName="Nid" type="BIGINT" size="20" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="parent_nid" phpName="ParentNid" type="BIGINT" size="20" required="false" />
+    <column name="uid" phpName="Uid" type="BIGINT" size="20" required="true" />
+    <foreign-key foreignTable="tig_users" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="uid" foreign="uid" />
+    </foreign-key>
+    <column name="node" phpName="Node" type="VARCHAR" size="255" required="true" />
+    <index name="node">
+      <index-column name="node" />
+    </index>
+    <index name="uid">
+      <index-column name="uid" />
+    </index>
+    <index name="parent_nid">
+      <index-column name="parent_nid" />
+    </index>
+    <unique name="tnode">
+      <unique-column name="parent_nid" />
+      <unique-column name="uid" />
+      <unique-column name="node" />
+    </unique>
+  </table>
+
+  <table name="tig_pairs">
+    <column name="nid" phpName="Nid" type="BIGINT" size="20" required="false" />
+    <foreign-key foreignTable="tig_nodes" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="nid" foreign="nid" />
+    </foreign-key>
+    <column name="uid" phpName="Uid" type="BIGINT" size="20" required="true" />
+    <foreign-key foreignTable="tig_users" onDelete="RESTRICT" onUpdate="RESTRICT">
+      <reference local="uid" foreign="uid" />
+    </foreign-key>
+    <column name="pkey" phpName="Pkey" type="VARCHAR" size="255" required="true" />
+    <column name="pval" phpName="Pval" type="LONGVARCHAR" required="false" />
     <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <index name="pkey">
+      <index-column name="pkey" />
+    </index>
+    <index name="uid">
+      <index-column name="uid" />
+    </index>
+    <index name="nid">
+      <index-column name="nid" />
+    </index>
   </table>
 
-  <table name="audit">
-    <column name="username" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="username" foreign="username" />
-    </foreign-key>
-    <column name="action" type="VARCHAR" size="500" required="true" />
-    <column name="tablename" type="VARCHAR" size="50" required="true" />
-    <column name="beforevalue" type="VARCHAR" size="1000" required="true" />
-    <column name="aftervalue" type="VARCHAR" size="1000" required="true" />
-    <column name="time" type="TIMESTAMP" required="true" />
+  <table name="tig_users">
+    <column name="uid" phpName="Uid" type="BIGINT" size="20" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="user_id" phpName="UserId" type="VARCHAR" size="2049" required="true" />
+    <column name="sha1_user_id" phpName="Sha1UserId" type="CHAR" size="128" required="true" />
+    <column name="user_pw" phpName="UserPw" type="VARCHAR" size="255" required="false" />
+    <column name="acc_create_time" phpName="AccCreateTime" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP" />
+    <column name="last_login" phpName="LastLogin" type="TIMESTAMP" required="true" defaultValue="0000-00-00 00:00:00" />
+    <column name="last_logout" phpName="LastLogout" type="TIMESTAMP" required="true" defaultValue="0000-00-00 00:00:00" />
+    <column name="online_status" phpName="OnlineStatus" type="INTEGER" size="11" required="false" defaultValue="0" />
+    <column name="failed_logins" phpName="FailedLogins" type="INTEGER" size="11" required="false" defaultValue="0" />
+    <column name="account_status" phpName="AccountStatus" type="INTEGER" size="11" required="false" defaultValue="1" />
+    <index name="user_pw">
+      <index-column name="user_pw" />
+    </index>
+    <index name="user_id">
+      <index-column name="user_id" />
+    </index>
+    <index name="last_login">
+      <index-column name="last_login" />
+    </index>
+    <index name="last_logout">
+      <index-column name="last_logout" />
+    </index>
+    <index name="account_status">
+      <index-column name="account_status" />
+    </index>
+    <index name="online_status">
+      <index-column name="online_status" />
+    </index>
+    <unique name="sha1_user_id">
+      <unique-column name="sha1_user_id" />
+    </unique>
+  </table>
+
+  <table name="tools">
     <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="tool" phpName="Tool" type="VARCHAR" size="255" required="false" />
+    <column name="description" phpName="Description" type="VARCHAR" size="255" required="false" />
   </table>
 
-  <table name="network_visibility" idMethod="native">
-    <column name="id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="username" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="username" foreign="username" />
+  <table name="workspace">
+    <column name="id" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="title" phpName="Title" type="VARCHAR" size="200" required="false" />
+    <column name="creator" phpName="Creator" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="creator" foreign="ID" />
     </foreign-key>
-    <column name="user_data_option" type="INTEGER" required="true" />
-    <column name="networkname" type="VARCHAR" size="50" required="true" />
-    <index name="PK_network_visibility">
-      <index-column name="id" />
-    </index>
-    <index name="uq">
-      <index-column name="username" />
-      <index-column name="user_data_option" />
-      <index-column name="networkname" />
+    <column name="description" phpName="Description" type="VARCHAR" size="1000" required="false" />
+    <column name="location" phpName="Location" type="VARCHAR" size="1000" required="false" />
+    <column name="createdAt" phpName="Createdat" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP" />
+    <column name="version" phpName="Version" type="INTEGER" size="11" required="false" />
+    <column name="lastSync" phpName="Lastsync" type="TIMESTAMP" required="true" defaultValue="0000-00-00 00:00:00" />
+    <column name="locked" phpName="Locked" type="TINYINT" size="1" required="false" />
+    <column name="lastLockedUser" phpName="Lastlockeduser" type="INTEGER" size="11" required="false" />
+    <index name="creator">
+      <index-column name="creator" />
     </index>
   </table>
 
-  <table name="Outbox" idMethod="native">
-    <column name="MessageID" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="Date" type="TIMESTAMP" required="true" />
-    <column name="FromUser" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="FromUser" foreign="username" />
+  <table name="workspace_root">
+    <column name="id" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="location" phpName="Location" type="VARCHAR" size="1000" required="false" />
+  </table>
+
+  <table name="workspace_user">
+    <column name="id" phpName="Id" type="INTEGER" size="11" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="wspid" phpName="Wspid" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="workspace" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="wspid" foreign="id" />
     </foreign-key>
-    <column name="ToUser" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="ToUser" foreign="username" />
+    <column name="uid" phpName="Uid" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="registration" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="uid" foreign="ID" />
     </foreign-key>
-    <column name="Message" type="VARCHAR" size="200" required="true" />
-    <index name="PK_Outbox">
-      <index-column name="MessageID" />
-    </index>
-  </table>
-
-  <table name="Inbox" idMethod="native">
-    <column name="MessageID" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="Date" type="TIMESTAMP" required="true" />
-    <column name="FromUser" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="FromUser" foreign="username" />
+    <column name="gid" phpName="Gid" type="INTEGER" size="11" required="false" />
+    <foreign-key foreignTable="access" onDelete="CASCADE" onUpdate="RESTRICT">
+      <reference local="gid" foreign="id" />
     </foreign-key>
-    <column name="ToUser" type="VARCHAR" size="50" required="true" />
-    <foreign-key foreignTable="registration" onDelete="" onUpdate="">
-      <reference local="ToUser" foreign="username" />
-    </foreign-key>
-    <column name="Message" type="VARCHAR" size="200" required="true" />
-    <index name="PK_Inbox">
-      <index-column name="MessageID" />
+    <index name="uid">
+      <index-column name="uid" />
     </index>
+    <index name="gid">
+      <index-column name="gid" />
+    </index>
+    <unique name="wspuser_unique_access">
+      <unique-column name="wspid" />
+      <unique-column name="uid" />
+    </unique>
   </table>
 
-  <table name="workflows" idMethod="native">
-    <column name="id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="parent" type="INTEGER" required="true" />
-    <column name="tool" type="CHAR" size="200" required="true" />
-    <index name="IX_workflowParent">
-      <index-column name="parent" />
-    </index>
-    <index name="IX_workflowTool">
-      <index-column name="tool" />
-    </index>
-    <index name="PK_workflows">
-      <index-column name="id" />
-    </index>
-  </table>
-
-  <table name="tools" idMethod="native">
-    <column name="id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="tool" type="VARCHAR" size="100" required="true" />
-    <column name="description" type="LONGVARCHAR" size="2147483647" />
-    <index name="PK_tools">
-      <index-column name="id" />
-    </index>
-  </table>
-
-  <table name="tool_comments" idMethod="native">
-    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="id" type="INTEGER" required="true" />
-    <column name="comment" type="LONGVARCHAR" size="2147483647" required="true" />
-    <column name="username" type="CHAR" size="200" required="true" />
-    <column name="posted_on" type="TIMESTAMP" required="true" />
-    <index name="PK_tool_comments">
-      <index-column name="pk" />
-    </index>
-  </table>
-
-  <table name="workflow_ratings" idMethod="native">
-    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="id" type="INTEGER" required="true" />
-    <column name="username" type="VARCHAR" size="100" required="true" />
-    <column name="rating" type="INTEGER" required="true" />
-    <index name="PK_workflow_ratings">
-      <index-column name="pk" />
-    </index>
-  </table>
-
-  <table name="workflow_comments" idMethod="native">
-    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="id" type="INTEGER" required="true" />
-    <column name="comment" type="LONGVARCHAR" size="2147483647" required="true" />
-    <column name="username" type="CHAR" size="200" required="true" />
-    <column name="posted_on" type="TIMESTAMP" required="true" />
-    <index name="PK_workflow_comments">
-      <index-column name="pk" />
-    </index>
-  </table>
-
-  <table name="tool_ratings" idMethod="native">
-    <column name="pk" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
-    <column name="id" type="INTEGER" required="true" />
-    <column name="rating" type="INTEGER" required="true" />
-    <column name="username" type="CHAR" size="200" required="true" />
-    <index name="PK_tool_ratings">
-      <index-column name="pk" />
-    </index>
-  </table>
-
-  <table name="users">
-    <column name="id" type="INTEGER" required="true" primaryKey="true" />
-    <column name="username" type="VARCHAR" size="50" />
-    <column name="password" type="VARCHAR" size="50" />
-    <column name="email" type="VARCHAR" size="50" />
-    <column name="organization" type="VARCHAR" size="50" />
-    <index name="PK_users">
-      <index-column name="id" />
-    </index>
+  <table name="xmpp_stanza">
+    <column name="id" phpName="Id" type="BIGINT" size="20" primaryKey="true" autoIncrement="true" required="true" />
+    <column name="stanza" phpName="Stanza" type="LONGVARCHAR" required="true" />
   </table>
 
 </database>

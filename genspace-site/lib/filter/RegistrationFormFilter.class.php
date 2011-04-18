@@ -3,7 +3,7 @@
 /**
  * Registration filter form.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */

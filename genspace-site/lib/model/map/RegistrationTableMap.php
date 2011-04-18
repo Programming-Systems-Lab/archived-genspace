@@ -35,23 +35,28 @@ class RegistrationTableMap extends TableMap {
 		$this->setPhpName('Registration');
 		$this->setClassname('Registration');
 		$this->setPackage('lib.model');
-		$this->setUseIdGenerator(false);
+		$this->setUseIdGenerator(true);
 		// columns
-		$this->addPrimaryKey('USERNAME', 'Username', 'VARCHAR', true, 50, null);
-		$this->addColumn('PASSWORD', 'Password', 'VARCHAR', true, 50, null);
-		$this->addColumn('EMAIL', 'Email', 'VARCHAR', false, 50, null);
-		$this->addColumn('IM_EMAIL', 'ImEmail', 'VARCHAR', false, 50, null);
-		$this->addColumn('IM_PASSWORD', 'ImPassword', 'VARCHAR', false, 50, null);
-		$this->addColumn('FIRST_NAME', 'FirstName', 'VARCHAR', true, 50, null);
-		$this->addColumn('LAST_NAME', 'LastName', 'VARCHAR', true, 50, null);
-		$this->addColumn('WORK_TITLE', 'WorkTitle', 'VARCHAR', false, 50, null);
+		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, 11, null);
 		$this->addColumn('PHONE', 'Phone', 'VARCHAR', false, 50, null);
-		$this->addColumn('LAB_AFFILIATION', 'LabAffiliation', 'VARCHAR', true, 100, null);
+		$this->addColumn('INTERESTS', 'Interests', 'LONGVARCHAR', false, null, null);
+		$this->addColumn('STATE', 'State', 'VARCHAR', false, 50, null);
+		$this->addColumn('ONLINE_STATUS', 'OnlineStatus', 'INTEGER', false, 11, null);
+		$this->addColumn('PASSWORD', 'Password', 'VARCHAR', true, 50, null);
+		$this->addColumn('CITY', 'City', 'VARCHAR', false, 50, null);
+		$this->addColumn('USERNAME', 'Username', 'VARCHAR', true, 50, null);
+		$this->addColumn('CREATEDAT', 'Createdat', 'TIMESTAMP', false, null, null);
+		$this->addColumn('FIRST_NAME', 'FirstName', 'VARCHAR', true, 50, null);
+		$this->addColumn('DATAVISIBILITY', 'Datavisibility', 'INTEGER', false, 11, null);
+		$this->addColumn('WORK_TITLE', 'WorkTitle', 'VARCHAR', false, 50, null);
+		$this->addColumn('LAST_NAME', 'LastName', 'VARCHAR', true, 50, null);
+		$this->addColumn('ZIPCODE', 'Zipcode', 'VARCHAR', false, 5, null);
+		$this->addColumn('LAB_AFFILIATION', 'LabAffiliation', 'VARCHAR', false, 100, null);
 		$this->addColumn('ADDR1', 'Addr1', 'VARCHAR', false, 50, null);
 		$this->addColumn('ADDR2', 'Addr2', 'VARCHAR', false, 50, null);
-		$this->addColumn('CITY', 'City', 'VARCHAR', false, 50, null);
-		$this->addColumn('STATE', 'State', 'VARCHAR', false, 50, null);
-		$this->addColumn('ZIPCODE', 'Zipcode', 'VARCHAR', false, 5, null);
+		$this->addColumn('EMAIL', 'Email', 'VARCHAR', false, 50, null);
+		$this->addColumn('LOGDATA', 'Logdata', 'INTEGER', false, 11, null);
+		$this->addColumn('ROOTFOLDER_ID', 'RootfolderId', 'INTEGER', false, 11, null);
 		// validators
 	} // initialize()
 
@@ -60,14 +65,14 @@ class RegistrationTableMap extends TableMap {
 	 */
 	public function buildRelations()
 	{
-    $this->addRelation('DataVisibility', 'DataVisibility', RelationMap::ONE_TO_ONE, array('username' => 'username', ), null, null);
-    $this->addRelation('UserVisibility', 'UserVisibility', RelationMap::ONE_TO_MANY, array('username' => 'username', ), null, null);
-    $this->addRelation('Audit', 'Audit', RelationMap::ONE_TO_MANY, array('username' => 'username', ), null, null);
-    $this->addRelation('NetworkVisibility', 'NetworkVisibility', RelationMap::ONE_TO_MANY, array('username' => 'username', ), null, null);
-    $this->addRelation('OutboxRelatedByFromuser', 'Outbox', RelationMap::ONE_TO_MANY, array('username' => 'FromUser', ), null, null);
-    $this->addRelation('OutboxRelatedByTouser', 'Outbox', RelationMap::ONE_TO_MANY, array('username' => 'ToUser', ), null, null);
-    $this->addRelation('InboxRelatedByFromuser', 'Inbox', RelationMap::ONE_TO_MANY, array('username' => 'FromUser', ), null, null);
-    $this->addRelation('InboxRelatedByTouser', 'Inbox', RelationMap::ONE_TO_MANY, array('username' => 'ToUser', ), null, null);
+    $this->addRelation('Toolcomments', 'Toolcomments', RelationMap::ONE_TO_MANY, array('ID' => 'CREATOR_ID', ), null, null);
+    $this->addRelation('Toolratings', 'Toolratings', RelationMap::ONE_TO_MANY, array('ID' => 'CREATOR_ID', ), null, null);
+    $this->addRelation('Workflowcomments', 'Workflowcomments', RelationMap::ONE_TO_MANY, array('ID' => 'CREATOR_ID', ), null, null);
+    $this->addRelation('Workflowratings', 'Workflowratings', RelationMap::ONE_TO_MANY, array('ID' => 'CREATOR_ID', ), null, null);
+    $this->addRelation('Annotation', 'Annotation', RelationMap::ONE_TO_MANY, array('ID' => 'creator', ), 'CASCADE', 'RESTRICT');
+    $this->addRelation('History', 'History', RelationMap::ONE_TO_MANY, array('ID' => 'uid', ), 'CASCADE', 'RESTRICT');
+    $this->addRelation('Workspace', 'Workspace', RelationMap::ONE_TO_MANY, array('ID' => 'creator', ), 'CASCADE', 'RESTRICT');
+    $this->addRelation('WorkspaceUser', 'WorkspaceUser', RelationMap::ONE_TO_MANY, array('ID' => 'uid', ), 'CASCADE', 'RESTRICT');
 	} // buildRelations()
 
 } // RegistrationTableMap

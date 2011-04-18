@@ -3,7 +3,7 @@
 
 
 /**
- * Skeleton subclass for performing query and update operations on the 'tool_comments' table.
+ * Skeleton subclass for performing query and update operations on the 'TOOLCOMMENT' table.
  *
  * 
  *
@@ -13,6 +13,6 @@
  *
  * @package    propel.generator.lib.model
  */
-class ToolCommentsQuery extends BaseToolCommentsQuery {
+class ToolcommentsQuery extends BaseToolcommentsQuery {
 
-} // ToolCommentsQuery
+} // ToolcommentsQuery

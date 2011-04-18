@@ -1,31 +1,31 @@
 <?php
 
 /**
- * WorkflowComments filter form base class.
+ * Workflowcomments filter form base class.
  *
  * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */
-abstract class BaseWorkflowCommentsFormFilter extends BaseFormFilterPropel
+abstract class BaseWorkflowcommentsFormFilter extends BaseFormFilterPropel
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'id'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'comment'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'username'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'posted_on' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'CREATEDAT'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'COMMENT'     => new sfWidgetFormFilterInput(),
+      'WORKFLOW_ID' => new sfWidgetFormFilterInput(),
+      'CREATOR_ID'  => new sfWidgetFormPropelChoice(array('model' => 'Registration', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'id'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'comment'   => new sfValidatorPass(array('required' => false)),
-      'username'  => new sfValidatorPass(array('required' => false)),
-      'posted_on' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'CREATEDAT'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'COMMENT'     => new sfValidatorPass(array('required' => false)),
+      'WORKFLOW_ID' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'CREATOR_ID'  => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Registration', 'column' => 'ID')),
     ));
 
-    $this->widgetSchema->setNameFormat('workflow_comments_filters[%s]');
+    $this->widgetSchema->setNameFormat('workflowcomments_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -34,17 +34,17 @@ abstract class BaseWorkflowCommentsFormFilter extends BaseFormFilterPropel
 
   public function getModelName()
   {
-    return 'WorkflowComments';
+    return 'Workflowcomments';
   }
 
   public function getFields()
   {
     return array(
-      'pk'        => 'Number',
-      'id'        => 'Number',
-      'comment'   => 'Text',
-      'username'  => 'Text',
-      'posted_on' => 'Date',
+      'ID'          => 'Number',
+      'CREATEDAT'   => 'Date',
+      'COMMENT'     => 'Text',
+      'WORKFLOW_ID' => 'Number',
+      'CREATOR_ID'  => 'ForeignKey',
     );
   }
 }

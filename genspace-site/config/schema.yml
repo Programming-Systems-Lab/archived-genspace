@@ -1,144 +1,258 @@
 propel:
   _attributes:
     package: lib.model
-  user_networks:
-    username: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: networks, foreignReference: network, onDelete: '', onUpdate: '' }
-    network: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: networks, foreignReference: username, onDelete: '', onUpdate: '' }
-    _indexes: { PK_user_networks: [username, network] }
-  networks:
-    id: { type: INTEGER, required: true }
-    network: { type: VARCHAR, size: '50', required: true }
-  user_IM_handles:
-    username: { type: VARCHAR, size: '50' }
-    IM_handle: { type: VARCHAR, size: '50' }
-    IM_service: { type: VARCHAR, size: '50' }
-  login_events:
-    username: { type: VARCHAR, size: '50' }
-    date: { type: TIMESTAMP }
-  analysis_events:
-    username: { type: VARCHAR, size: '50' }
-    host: { type: VARCHAR, size: '50' }
-    date: { type: TIMESTAMP }
-    analysis: { type: VARCHAR, size: '50' }
-    dataset: { type: VARCHAR, size: '255' }
-    transaction_id: { type: VARCHAR, size: '255' }
-    is_genspace_user: { type: VARCHAR, size: '1' }
-  include_exclude_analysis:
-    username: { type: VARCHAR, size: '50' }
-    analysis: { type: VARCHAR, size: '50' }
-    action: { type: VARCHAR, size: '50' }
-  friends:
-    user1: { type: VARCHAR, size: '50' }
-    user2: { type: VARCHAR, size: '50' }
-  test_analysis_events:
-    username: { type: VARCHAR, size: '50' }
-    host: { type: VARCHAR, size: '50' }
-    date: { type: TIMESTAMP }
-    analysis: { type: VARCHAR, size: '50' }
-    dataset: { type: VARCHAR, size: '255' }
-    transaction_id: { type: VARCHAR, size: '255' }
-    is_genspace_user: { type: VARCHAR, size: '1' }
+    defaultIdMethod: native
   registration:
-    username: { type: VARCHAR, size: '50', required: true, primaryKey: true }
-    password: { type: VARCHAR, size: '50', required: true }
-    email: { type: VARCHAR, size: '50' }
-    im_email: { type: VARCHAR, size: '50' }
-    im_password: { type: VARCHAR, size: '50' }
-    first_name: { type: VARCHAR, size: '50', required: true }
-    last_name: { type: VARCHAR, size: '50', required: true }
-    work_title: { type: VARCHAR, size: '50' }
-    phone: { type: VARCHAR, size: '50' }
-    lab_affiliation: { type: VARCHAR, size: '100', required: true }
-    addr1: { type: VARCHAR, size: '50' }
-    addr2: { type: VARCHAR, size: '50' }
-    city: { type: VARCHAR, size: '50' }
-    state: { type: VARCHAR, size: '50' }
-    zipcode: { type: VARCHAR, size: '5' }
-    _indexes: { PK_dbo.registration: [username] }
-  data_visibility:
-    username: { type: VARCHAR, size: '50', required: true, primaryKey: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    logdata: { type: INTEGER, required: true }
-    datavisibility: { type: INTEGER, required: true }
-    _indexes: { PK_data_visibility: [username] }
-  user_visibility:
-    username: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    uservisibility: { type: INTEGER, required: true }
-  audit:
-    username: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    action: { type: VARCHAR, size: '500', required: true }
-    tablename: { type: VARCHAR, size: '50', required: true }
-    beforevalue: { type: VARCHAR, size: '1000', required: true }
-    aftervalue: { type: VARCHAR, size: '1000', required: true }
-    time: { type: TIMESTAMP, required: true }
-  network_visibility:
-    _attributes: { idMethod: native }
-    id: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    username: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    user_data_option: { type: INTEGER, required: true }
-    networkname: { type: VARCHAR, size: '50', required: true }
-    _indexes: { PK_network_visibility: [id], uq: [username, user_data_option, networkname] }
-  Outbox:
-    _attributes: { idMethod: native }
-    MessageID: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    Date: { type: TIMESTAMP, required: true }
-    FromUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    ToUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    Message: { type: VARCHAR, size: '200', required: true }
-    _indexes: { PK_Outbox: [MessageID] }
-  Inbox:
-    _attributes: { idMethod: native }
-    MessageID: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    Date: { type: TIMESTAMP, required: true }
-    FromUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    ToUser: { type: VARCHAR, size: '50', required: true, foreignTable: registration, foreignReference: username, onDelete: '', onUpdate: '' }
-    Message: { type: VARCHAR, size: '200', required: true }
-    _indexes: { PK_Inbox: [MessageID] }
-  workflows:
-    _attributes: { idMethod: native }
-    id: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    parent: { type: INTEGER, required: true }
-    tool: { type: CHAR, size: '200', required: true }
-    _indexes: { IX_workflowParent: [parent], IX_workflowTool: [tool], PK_workflows: [id] }
+    _attributes: { phpName: Registration }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    PHONE: { phpName: Phone, type: VARCHAR, size: '50', required: false }
+    INTERESTS: { phpName: Interests, type: LONGVARCHAR, required: false }
+    STATE: { phpName: State, type: VARCHAR, size: '50', required: false }
+    online_status: { phpName: OnlineStatus, type: INTEGER, size: '11', required: false }
+    PASSWORD: { phpName: Password, type: VARCHAR, size: '50', required: true }
+    CITY: { phpName: City, type: VARCHAR, size: '50', required: false }
+    USERNAME: { phpName: Username, type: VARCHAR, size: '50', required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    first_name: { phpName: FirstName, type: VARCHAR, size: '50', required: true }
+    DATAVISIBILITY: { phpName: Datavisibility, type: INTEGER, size: '11', required: false }
+    work_title: { phpName: WorkTitle, type: VARCHAR, size: '50', required: false }
+    last_name: { phpName: LastName, type: VARCHAR, size: '50', required: true }
+    ZIPCODE: { phpName: Zipcode, type: VARCHAR, size: '5', required: false }
+    lab_affiliation: { phpName: LabAffiliation, type: VARCHAR, size: '100', required: false }
+    ADDR1: { phpName: Addr1, type: VARCHAR, size: '50', required: false }
+    ADDR2: { phpName: Addr2, type: VARCHAR, size: '50', required: false }
+    EMAIL: { phpName: Email, type: VARCHAR, size: '50', required: false }
+    LOGDATA: { phpName: Logdata, type: INTEGER, size: '11', required: false }
+    ROOTFOLDER_ID: { phpName: RootfolderId, type: INTEGER, size: '11', required: false }
+  ANALYSISEVENT:
+    _attributes: { phpName: Analysisevent }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    TRANSACTION_ID: { phpName: TransactionId, type: INTEGER, size: '11', required: false }
+    TOOL_ID: { phpName: ToolId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_ANALYSISEVENT_TOOL_ID: [TOOL_ID], FK_ANALYSISEVENT_TRANSACTION_ID: [TRANSACTION_ID] }
+  ANALYSISEVENTPARAMETER:
+    _attributes: { phpName: Analysiseventparameter }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    PARAMETERVALUE: { phpName: Parametervalue, type: VARCHAR, size: '255', required: false }
+    PARAMETERKEY: { phpName: Parameterkey, type: VARCHAR, size: '255', required: false }
+    EVENT_ID: { phpName: EventId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_ANALYSISEVENTPARAMETER_EVENT_ID: [EVENT_ID] }
+  Friend:
+    _attributes: { phpName: Friend }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    MUTUAL: { phpName: Mutual, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    VISIBLE: { phpName: Visible, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    id_1: { phpName: Id1, type: INTEGER, size: '11', required: false }
+    id_2: { phpName: Id2, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_Friend_id_2: [id_2], FK_Friend_id_1: [id_1] }
+  INCOMINGWORKFLOW:
+    _attributes: { phpName: Incomingworkflow }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    NAME: { phpName: Name, type: VARCHAR, size: '255', required: false }
+    SENDER_ID: { phpName: SenderId, type: INTEGER, size: '11', required: false }
+    WORKFLOW_ID: { phpName: WorkflowId, type: INTEGER, size: '11', required: false }
+    RECEIVER_ID: { phpName: ReceiverId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_INCOMINGWORKFLOW_RECEIVER_ID: [RECEIVER_ID], FK_INCOMINGWORKFLOW_SENDER_ID: [SENDER_ID], FK_INCOMINGWORKFLOW_WORKFLOW_ID: [WORKFLOW_ID] }
+  NETWORK:
+    _attributes: { phpName: Network }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    NAME: { phpName: Name, type: VARCHAR, size: '255', required: false }
+    owner: { phpName: Owner, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_NETWORK_owner: [owner] }
+  TOOL:
+    _attributes: { phpName: Tool }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    MOSTCOMMONPARAMETERS: { phpName: Mostcommonparameters, type: VARCHAR, size: '255', required: false }
+    USAGECOUNT: { phpName: Usagecount, type: INTEGER, size: '11', required: false }
+    DESCRIPTION: { phpName: Description, type: VARCHAR, size: '255', required: false }
+    NAME: { phpName: Name, type: VARCHAR, size: '255', required: false }
+    MOSTCOMMONPARAMETERSCOUNT: { phpName: Mostcommonparameterscount, type: INTEGER, size: '11', required: false }
+    WFCOUNTHEAD: { phpName: Wfcounthead, type: INTEGER, size: '11', required: false }
+    NUMRATING: { phpName: Numrating, type: INTEGER, size: '11', required: false }
+    SUMRATING: { phpName: Sumrating, type: INTEGER, size: '11', required: false }
+    _indexes: { NAME: [NAME] }
+  TOOLCOMMENT:
+    _attributes: { phpName: Toolcomments }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    COMMENT: { phpName: Comment, type: VARCHAR, size: '255', required: false }
+    CREATOR_ID: { phpName: CreatorId, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID }
+    TOOL_ID: { phpName: ToolId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_TOOLCOMMENT_TOOL_ID: [TOOL_ID], FK_TOOLCOMMENT_CREATOR_ID: [CREATOR_ID] }
+  TOOLRATING:
+    _attributes: { phpName: Toolratings }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    RATING: { phpName: Rating, type: INTEGER, size: '11', required: false }
+    TOOL_ID: { phpName: ToolId, type: INTEGER, size: '11', required: false }
+    CREATOR_ID: { phpName: CreatorId, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID }
+    _indexes: { FK_TOOLRATING_CREATOR_ID: [CREATOR_ID], FK_TOOLRATING_TOOL_ID: [TOOL_ID] }
+  TRANSACTION:
+    _attributes: { phpName: Transaction }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    DATASETNAME: { phpName: Datasetname, type: VARCHAR, size: '255', required: false }
+    CLIENTID: { phpName: Clientid, type: VARCHAR, size: '255', required: false }
+    HOSTNAME: { phpName: Hostname, type: VARCHAR, size: '255', required: false }
+    DATE: { phpName: Date, type: TIMESTAMP, required: false }
+    USER_ID: { phpName: UserId, type: INTEGER, size: '11', required: false }
+    WORKFLOW_ID: { phpName: WorkflowId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_TRANSACTION_USER_ID: [USER_ID], FK_TRANSACTION_WORKFLOW_ID: [WORKFLOW_ID] }
+  USERWORKFLOW:
+    _attributes: { phpName: Userworkflow }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    NAME: { phpName: Name, type: VARCHAR, size: '255', required: false }
+    WORKFLOW_ID: { phpName: WorkflowId, type: INTEGER, size: '11', required: false }
+    OWNER_ID: { phpName: OwnerId, type: INTEGER, size: '11', required: false }
+    FOLDER_ID: { phpName: FolderId, type: INTEGER, size: '11', required: false }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    _indexes: { FK_USERWORKFLOW_OWNER_ID: [OWNER_ID], FK_USERWORKFLOW_FOLDER_ID: [FOLDER_ID], FK_USERWORKFLOW_WORKFLOW_ID: [WORKFLOW_ID] }
+  User_Network:
+    _attributes: { phpName: UserNetwork }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    VISIBLE: { phpName: Visible, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    VERIFIED: { phpName: Verified, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    network_id: { phpName: NetworkId, type: INTEGER, size: '11', required: false }
+    user_id: { phpName: UserId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_User_Network_network_id: [network_id], FK_User_Network_user_id: [user_id] }
+  WORKFLOW:
+    _attributes: { phpName: Workflow }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    USAGECOUNT: { phpName: Usagecount, type: INTEGER, size: '11', required: false }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    CREATOR_ID: { phpName: CreatorId, type: INTEGER, size: '11', required: false }
+    PARENT_ID: { phpName: ParentId, type: INTEGER, size: '11', required: false }
+    CREATIONTRANSACTION_ID: { phpName: CreationtransactionId, type: INTEGER, size: '11', required: false }
+    NUMRATING: { phpName: Numrating, type: INTEGER, size: '11', required: false }
+    SUMRATING: { phpName: Sumrating, type: INTEGER, size: '11', required: false }
+    legacy_id: { phpName: LegacyId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_WORKFLOW_CREATIONTRANSACTION_ID: [CREATIONTRANSACTION_ID], FK_WORKFLOW_PARENT_ID: [PARENT_ID], FK_WORKFLOW_CREATOR_ID: [CREATOR_ID] }
+  WORKFLOWCOMMENT:
+    _attributes: { phpName: Workflowcomments }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    COMMENT: { phpName: Comment, type: VARCHAR, size: '255', required: false }
+    WORKFLOW_ID: { phpName: WorkflowId, type: INTEGER, size: '11', required: false }
+    CREATOR_ID: { phpName: CreatorId, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID }
+    _indexes: { FK_WORKFLOWCOMMENT_CREATOR_ID: [CREATOR_ID], FK_WORKFLOWCOMMENT_WORKFLOW_ID: [WORKFLOW_ID] }
+  WORKFLOWFOLDER:
+    _attributes: { phpName: Workflowfolder }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    NAME: { phpName: Name, type: VARCHAR, size: '255', required: false }
+    OWNER_ID: { phpName: OwnerId, type: INTEGER, size: '11', required: false }
+    PARENT_ID: { phpName: ParentId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_WORKFLOWFOLDER_PARENT_ID: [PARENT_ID], FK_WORKFLOWFOLDER_OWNER_ID: [OWNER_ID] }
+  WORKFLOWRATING:
+    _attributes: { phpName: Workflowratings }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CREATEDAT: { phpName: Createdat, type: TIMESTAMP, required: false }
+    RATING: { phpName: Rating, type: INTEGER, size: '11', required: false }
+    WORKFLOW_ID: { phpName: WorkflowId, type: INTEGER, size: '11', required: false }
+    CREATOR_ID: { phpName: CreatorId, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID }
+    _indexes: { FK_WORKFLOWRATING_WORKFLOW_ID: [WORKFLOW_ID], FK_WORKFLOWRATING_CREATOR_ID: [CREATOR_ID] }
+  WORKFLOWTOOL:
+    _attributes: { phpName: Workflowtool }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    CARDINALITY: { phpName: Cardinality, type: INTEGER, size: '11', required: false }
+    WORKFLOW_ID: { phpName: WorkflowId, type: INTEGER, size: '11', required: false }
+    TOOL_ID: { phpName: ToolId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_WORKFLOWTOOL_TOOL_ID: [TOOL_ID], FK_WORKFLOWTOOL_WORKFLOW_ID: [WORKFLOW_ID] }
+  access:
+    _attributes: { phpName: Access }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '50', required: false }
+  annotation:
+    _attributes: { phpName: Annotation }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    wspid: { phpName: Wspid, type: INTEGER, size: '11', required: false, foreignTable: workspace, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    annotation: { phpName: Annotation, type: VARCHAR, size: '1000', required: false }
+    creator: { phpName: Creator, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID, onDelete: CASCADE, onUpdate: RESTRICT }
+    createdAt: { phpName: Createdat, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    _indexes: { wspid: [wspid], creator: [creator] }
+  history:
+    _attributes: { phpName: History }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    wspid: { phpName: Wspid, type: INTEGER, size: '11', required: false, foreignTable: workspace, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    uid: { phpName: Uid, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID, onDelete: CASCADE, onUpdate: RESTRICT }
+    type: { phpName: Type, type: CHAR, size: '1', required: false }
+    accessedAt: { phpName: Accessedat, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    _indexes: { wspid: [wspid], uid: [uid] }
+
+  setting:
+    _attributes: { phpName: Setting }
+    ID: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    data_value: { phpName: DataValue, type: VARCHAR, size: '255', required: false }
+    data_key: { phpName: DataKey, type: VARCHAR, size: '255', required: false }
+  short_news:
+    _attributes: { phpName: ShortNews }
+    snid: { phpName: Snid, type: BIGINT, size: '20', primaryKey: true, autoIncrement: true, required: true }
+    publishing_time: { phpName: PublishingTime, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    news_type: { phpName: NewsType, type: VARCHAR, size: '10', required: false }
+    author: { phpName: Author, type: VARCHAR, size: '128', required: true }
+    subject: { phpName: Subject, type: VARCHAR, size: '128', required: true }
+    body: { phpName: Body, type: VARCHAR, size: '1024', required: true }
+    _indexes: { publishing_time: [publishing_time], author: [author], news_type: [news_type] }
+  tig_nodes:
+    _attributes: { phpName: TigNodes }
+    nid: { phpName: Nid, type: BIGINT, size: '20', primaryKey: true, autoIncrement: true, required: true }
+    parent_nid: { phpName: ParentNid, type: BIGINT, size: '20', required: false }
+    uid: { phpName: Uid, type: BIGINT, size: '20', required: true, foreignTable: tig_users, foreignReference: uid, onDelete: RESTRICT, onUpdate: RESTRICT }
+    node: { phpName: Node, type: VARCHAR, size: '255', required: true }
+    _indexes: { node: [node], uid: [uid], parent_nid: [parent_nid] }
+    _uniques: { tnode: [parent_nid, uid, node] }
+  tig_pairs:
+    _attributes: { phpName: TigPairs }
+    nid: { phpName: Nid, type: BIGINT, size: '20', required: false, foreignTable: tig_nodes, foreignReference: nid, onDelete: RESTRICT, onUpdate: RESTRICT }
+    uid: { phpName: Uid, type: BIGINT, size: '20', required: true, foreignTable: tig_users, foreignReference: uid, onDelete: RESTRICT, onUpdate: RESTRICT }
+    pkey: { phpName: Pkey, type: VARCHAR, size: '255', required: true }
+    pval: { phpName: Pval, type: LONGVARCHAR, required: false }
+    _indexes: { pkey: [pkey], uid: [uid], nid: [nid] }
+  tig_users:
+    _attributes: { phpName: TigUsers }
+    uid: { phpName: Uid, type: BIGINT, size: '20', primaryKey: true, autoIncrement: true, required: true }
+    user_id: { phpName: UserId, type: VARCHAR, size: '2049', required: true }
+    sha1_user_id: { phpName: Sha1UserId, type: CHAR, size: '128', required: true }
+    user_pw: { phpName: UserPw, type: VARCHAR, size: '255', required: false }
+    acc_create_time: { phpName: AccCreateTime, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    last_login: { phpName: LastLogin, type: TIMESTAMP, required: true, defaultValue: '0000-00-00 00:00:00' }
+    last_logout: { phpName: LastLogout, type: TIMESTAMP, required: true, defaultValue: '0000-00-00 00:00:00' }
+    online_status: { phpName: OnlineStatus, type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    failed_logins: { phpName: FailedLogins, type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    account_status: { phpName: AccountStatus, type: INTEGER, size: '11', required: false, defaultValue: '1' }
+    _indexes: { user_pw: [user_pw], user_id: [user_id], last_login: [last_login], last_logout: [last_logout], account_status: [account_status], online_status: [online_status] }
+    _uniques: { sha1_user_id: [sha1_user_id] }
   tools:
-    _attributes: { idMethod: native }
-    id: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    tool: { type: VARCHAR, size: '100', required: true }
-    description: { type: LONGVARCHAR, size: '2147483647' }
-    _indexes: { PK_tools: [id] }
-  tool_comments:
-    _attributes: { idMethod: native }
-    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    id: { type: INTEGER, required: true }
-    comment: { type: LONGVARCHAR, size: '2147483647', required: true }
-    username: { type: CHAR, size: '200', required: true }
-    posted_on: { type: TIMESTAMP, required: true }
-    _indexes: { PK_tool_comments: [pk] }
-  workflow_ratings:
-    _attributes: { idMethod: native }
-    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    id: { type: INTEGER, required: true }
-    username: { type: VARCHAR, size: '100', required: true }
-    rating: { type: INTEGER, required: true }
-    _indexes: { PK_workflow_ratings: [pk] }
-  workflow_comments:
-    _attributes: { idMethod: native }
-    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    id: { type: INTEGER, required: true }
-    comment: { type: LONGVARCHAR, size: '2147483647', required: true }
-    username: { type: CHAR, size: '200', required: true }
-    posted_on: { type: TIMESTAMP, required: true }
-    _indexes: { PK_workflow_comments: [pk] }
-  tool_ratings:
-    _attributes: { idMethod: native }
-    pk: { type: INTEGER, required: true, autoIncrement: true, primaryKey: true }
-    id: { type: INTEGER, required: true }
-    rating: { type: INTEGER, required: true }
-    username: { type: CHAR, size: '200', required: true }
-    _indexes: { PK_tool_ratings: [pk] }
-  users:
-    id: { type: INTEGER, required: true, primaryKey: true }
-    username: { type: VARCHAR, size: '50' }
-    password: { type: VARCHAR, size: '50' }
-    email: { type: VARCHAR, size: '50' }
-    organization: { type: VARCHAR, size: '50' }
-    _indexes: { PK_users: [id] }
+    _attributes: { phpName: Tools }
+    id: { phpName: Id, type: INTEGER, size: '11', required: true, defaultValue: '0' }
+    tool: { phpName: Tool, type: VARCHAR, size: '255', required: false }
+    description: { phpName: Description, type: VARCHAR, size: '255', required: false }
+  workspace:
+    _attributes: { phpName: Workspace }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    title: { phpName: Title, type: VARCHAR, size: '200', required: false }
+    creator: { phpName: Creator, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID, onDelete: CASCADE, onUpdate: RESTRICT }
+    description: { phpName: Description, type: VARCHAR, size: '1000', required: false }
+    location: { phpName: Location, type: VARCHAR, size: '1000', required: false }
+    createdAt: { phpName: Createdat, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    version: { phpName: Version, type: INTEGER, size: '11', required: false }
+    lastSync: { phpName: Lastsync, type: TIMESTAMP, required: true, defaultValue: '0000-00-00 00:00:00' }
+    locked: { phpName: Locked, type: TINYINT, size: '1', required: false }
+    lastLockedUser: { phpName: Lastlockeduser, type: INTEGER, size: '11', required: false }
+    _indexes: { creator: [creator] }
+  workspace_root:
+    _attributes: { phpName: WorkspaceRoot }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    location: { phpName: Location, type: VARCHAR, size: '1000', required: false }
+  workspace_user:
+    _attributes: { phpName: WorkspaceUser }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    wspid: { phpName: Wspid, type: INTEGER, size: '11', required: false, foreignTable: workspace, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    uid: { phpName: Uid, type: INTEGER, size: '11', required: false, foreignTable: registration, foreignReference: ID, onDelete: CASCADE, onUpdate: RESTRICT }
+    gid: { phpName: Gid, type: INTEGER, size: '11', required: false, foreignTable: access, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    _indexes: { uid: [uid], gid: [gid] }
+    _uniques: { wspuser_unique_access: [wspid, uid] }
+  xmpp_stanza:
+    _attributes: { phpName: XmppStanza }
+    id: { phpName: Id, type: BIGINT, size: '20', primaryKey: true, autoIncrement: true, required: true }
+    stanza: { phpName: Stanza, type: LONGVARCHAR, required: true }

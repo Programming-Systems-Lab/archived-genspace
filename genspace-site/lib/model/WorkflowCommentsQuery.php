@@ -3,7 +3,7 @@
 
 
 /**
- * Skeleton subclass for performing query and update operations on the 'workflow_comments' table.
+ * Skeleton subclass for performing query and update operations on the 'WORKFLOWCOMMENT' table.
  *
  * 
  *
@@ -13,6 +13,6 @@
  *
  * @package    propel.generator.lib.model
  */
-class WorkflowCommentsQuery extends BaseWorkflowCommentsQuery {
+class WorkflowcommentsQuery extends BaseWorkflowcommentsQuery {
 
-} // WorkflowCommentsQuery
+} // WorkflowcommentsQuery

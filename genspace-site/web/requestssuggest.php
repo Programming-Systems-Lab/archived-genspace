@@ -1,17 +1,17 @@
 <?php
 try {
-    $hostname = "boris.cs.columbia.edu";            //host
+    $hostname = "127.0.0.1";            //host
     $dbname = "genspace";            //db name
-    $username = "student";            // username like 'sa'
-    $pw = "password";                // password for the user
+    $username = "genspace";            // username like 'sa'
+    $pw = "g3nsp4c3";                // password for the user
 
-    $dbh = new PDO ("mssql:host=$hostname;dbname=$dbname","$username","$pw");
+    $dbh = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
   } catch (PDOException $e) {
     echo "Failed to get DB handle: " . $e->getMessage() . "\n";
     exit;
   }
   $q=$_GET['q'];
-  $stmt = $dbh->prepare("SELECT tool FROM tools");
+  $stmt = $dbh->prepare("SELECT name as tool FROM tools");
   $stmt->execute();
   $i=0;
 					while($resultSet=$stmt->fetch(PDO::FETCH_OBJ)){

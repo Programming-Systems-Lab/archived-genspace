@@ -1,13 +1,13 @@
 <?php
 
 /**
- * WorkflowComments filter form.
+ * Workflowcomments filter form.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */
-class WorkflowCommentsFormFilter extends BaseWorkflowCommentsFormFilter
+class WorkflowcommentsFormFilter extends BaseWorkflowcommentsFormFilter
 {
   public function configure()
   {

@@ -75,7 +75,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 	{
 		return $this->tool;
 	}
-	
+
 	/**
 	 * Get the [description] column value.
 	 * 

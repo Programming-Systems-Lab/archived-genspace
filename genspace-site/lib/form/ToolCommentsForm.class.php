@@ -1,30 +1,15 @@
 <?php
 
 /**
- * ToolComments form.
+ * Toolcomments form.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage form
  * @author     Your name here
  */
-class ToolCommentsForm extends BaseToolCommentsForm
+class ToolcommentsForm extends BaseToolcommentsForm
 {
- 
-	  public function configure()
+  public function configure()
   {
-    $this->setWidgets(array(
-      'comment' => new sfWidgetFormTextarea()
-     
-   ));
-  
-   
-  
-    $this->widgetSchema->setNameFormat('comment[%s]');
-	 $this->setValidators(array(
-      'comment' => new sfValidatorString(array('required' => false))
-    ));
-
   }
-
- 
 }

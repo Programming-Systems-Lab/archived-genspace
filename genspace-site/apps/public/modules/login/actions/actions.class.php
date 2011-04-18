@@ -64,7 +64,8 @@ $params = array(
 	        $result = RegistrationPeer::doSelect($c);
   		
 if ($result){
-		$this->getUser()->setAttribute('username', $username);
+		$this->getUser()->setAttribute('username', $result->getId());
+		$this->getUser()->setAttribute('userid', $result->getId());
  	$this->getUser()->setAttribute('name', $result[0]->getFirstName() . " " . $result[0]->getLastName());
   	$this->getUser()->setAuthenticated(true);
 		$this->getUser()->setFlash('msg', 'Login successful!');

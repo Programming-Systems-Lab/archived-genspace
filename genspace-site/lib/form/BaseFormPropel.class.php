@@ -3,7 +3,7 @@
 /**
  * Project form base class.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage form
  * @author     Your name here
  */

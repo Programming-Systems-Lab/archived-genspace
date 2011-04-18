@@ -1,13 +1,13 @@
 <?php
 
 /**
- * ToolRatings filter form.
+ * Toolratings filter form.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */
-class ToolRatingsFormFilter extends BaseToolRatingsFormFilter
+class ToolratingsFormFilter extends BaseToolratingsFormFilter
 {
   public function configure()
   {

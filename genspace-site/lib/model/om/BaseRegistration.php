@@ -25,10 +25,34 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	protected static $peer;
 
 	/**
-	 * The value for the username field.
+	 * The value for the id field.
+	 * @var        int
+	 */
+	protected $id;
+
+	/**
+	 * The value for the phone field.
 	 * @var        string
 	 */
-	protected $username;
+	protected $phone;
+
+	/**
+	 * The value for the interests field.
+	 * @var        string
+	 */
+	protected $interests;
+
+	/**
+	 * The value for the state field.
+	 * @var        string
+	 */
+	protected $state;
+
+	/**
+	 * The value for the online_status field.
+	 * @var        int
+	 */
+	protected $online_status;
 
 	/**
 	 * The value for the password field.
@@ -37,22 +61,22 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	protected $password;
 
 	/**
-	 * The value for the email field.
+	 * The value for the city field.
 	 * @var        string
 	 */
-	protected $email;
+	protected $city;
 
 	/**
-	 * The value for the im_email field.
+	 * The value for the username field.
 	 * @var        string
 	 */
-	protected $im_email;
+	protected $username;
 
 	/**
-	 * The value for the im_password field.
+	 * The value for the createdat field.
 	 * @var        string
 	 */
-	protected $im_password;
+	protected $createdat;
 
 	/**
 	 * The value for the first_name field.
@@ -61,10 +85,10 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	protected $first_name;
 
 	/**
-	 * The value for the last_name field.
-	 * @var        string
+	 * The value for the datavisibility field.
+	 * @var        int
 	 */
-	protected $last_name;
+	protected $datavisibility;
 
 	/**
 	 * The value for the work_title field.
@@ -73,10 +97,16 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	protected $work_title;
 
 	/**
-	 * The value for the phone field.
+	 * The value for the last_name field.
 	 * @var        string
 	 */
-	protected $phone;
+	protected $last_name;
+
+	/**
+	 * The value for the zipcode field.
+	 * @var        string
+	 */
+	protected $zipcode;
 
 	/**
 	 * The value for the lab_affiliation field.
@@ -97,62 +127,62 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	protected $addr2;
 
 	/**
-	 * The value for the city field.
+	 * The value for the email field.
 	 * @var        string
 	 */
-	protected $city;
+	protected $email;
 
 	/**
-	 * The value for the state field.
-	 * @var        string
+	 * The value for the logdata field.
+	 * @var        int
 	 */
-	protected $state;
+	protected $logdata;
 
 	/**
-	 * The value for the zipcode field.
-	 * @var        string
+	 * The value for the rootfolder_id field.
+	 * @var        int
 	 */
-	protected $zipcode;
+	protected $rootfolder_id;
 
 	/**
-	 * @var        DataVisibility one-to-one related DataVisibility object
+	 * @var        array Toolcomments[] Collection to store aggregation of Toolcomments objects.
 	 */
-	protected $singleDataVisibility;
+	protected $collToolcommentss;
 
 	/**
-	 * @var        array UserVisibility[] Collection to store aggregation of UserVisibility objects.
+	 * @var        array Toolratings[] Collection to store aggregation of Toolratings objects.
 	 */
-	protected $collUserVisibilitys;
+	protected $collToolratingss;
 
 	/**
-	 * @var        array Audit[] Collection to store aggregation of Audit objects.
+	 * @var        array Workflowcomments[] Collection to store aggregation of Workflowcomments objects.
 	 */
-	protected $collAudits;
+	protected $collWorkflowcommentss;
 
 	/**
-	 * @var        array NetworkVisibility[] Collection to store aggregation of NetworkVisibility objects.
+	 * @var        array Workflowratings[] Collection to store aggregation of Workflowratings objects.
 	 */
-	protected $collNetworkVisibilitys;
+	protected $collWorkflowratingss;
 
 	/**
-	 * @var        array Outbox[] Collection to store aggregation of Outbox objects.
+	 * @var        array Annotation[] Collection to store aggregation of Annotation objects.
 	 */
-	protected $collOutboxsRelatedByFromuser;
+	protected $collAnnotations;
 
 	/**
-	 * @var        array Outbox[] Collection to store aggregation of Outbox objects.
+	 * @var        array History[] Collection to store aggregation of History objects.
 	 */
-	protected $collOutboxsRelatedByTouser;
+	protected $collHistorys;
 
 	/**
-	 * @var        array Inbox[] Collection to store aggregation of Inbox objects.
+	 * @var        array Workspace[] Collection to store aggregation of Workspace objects.
 	 */
-	protected $collInboxsRelatedByFromuser;
+	protected $collWorkspaces;
 
 	/**
-	 * @var        array Inbox[] Collection to store aggregation of Inbox objects.
+	 * @var        array WorkspaceUser[] Collection to store aggregation of WorkspaceUser objects.
 	 */
-	protected $collInboxsRelatedByTouser;
+	protected $collWorkspaceUsers;
 
 	/**
 	 * Flag to prevent endless save loop, if this object is referenced
@@ -169,13 +199,53 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	protected $alreadyInValidation = false;
 
 	/**
-	 * Get the [username] column value.
+	 * Get the [id] column value.
+	 * 
+	 * @return     int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	/**
+	 * Get the [phone] column value.
 	 * 
 	 * @return     string
 	 */
-	public function getUsername()
+	public function getPhone()
 	{
-		return $this->username;
+		return $this->phone;
+	}
+
+	/**
+	 * Get the [interests] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getInterests()
+	{
+		return $this->interests;
+	}
+
+	/**
+	 * Get the [state] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getState()
+	{
+		return $this->state;
+	}
+
+	/**
+	 * Get the [online_status] column value.
+	 * 
+	 * @return     int
+	 */
+	public function getOnlineStatus()
+	{
+		return $this->online_status;
 	}
 
 	/**
@@ -189,33 +259,56 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Get the [email] column value.
+	 * Get the [city] column value.
 	 * 
 	 * @return     string
 	 */
-	public function getEmail()
+	public function getCity()
 	{
-		return $this->email;
+		return $this->city;
 	}
 
 	/**
-	 * Get the [im_email] column value.
+	 * Get the [username] column value.
 	 * 
 	 * @return     string
 	 */
-	public function getImEmail()
+	public function getUsername()
 	{
-		return $this->im_email;
+		return $this->username;
 	}
 
 	/**
-	 * Get the [im_password] column value.
+	 * Get the [optionally formatted] temporal [createdat] column value.
 	 * 
-	 * @return     string
+	 *
+	 * @param      string $format The date/time format string (either date()-style or strftime()-style).
+	 *							If format is NULL, then the raw DateTime object will be returned.
+	 * @return     mixed Formatted date/time value as string or DateTime object (if format is NULL), NULL if column is NULL
+	 * @throws     PropelException - if unable to parse/validate the date/time value.
 	 */
-	public function getImPassword()
+	public function getCreatedat($format = 'Y-m-d H:i:s')
 	{
-		return $this->im_password;
+		if ($this->createdat === null) {
+			return null;
+		}
+
+
+
+		try {
+			$dt = new DateTime($this->createdat);
+		} catch (Exception $x) {
+			throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->createdat, true), $x);
+		}
+
+		if ($format === null) {
+			// Because propel.useDateTimeClass is TRUE, we return a DateTime object.
+			return $dt;
+		} elseif (strpos($format, '%') !== false) {
+			return strftime($format, $dt->format('U'));
+		} else {
+			return $dt->format($format);
+		}
 	}
 
 	/**
@@ -229,13 +322,13 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Get the [last_name] column value.
+	 * Get the [datavisibility] column value.
 	 * 
-	 * @return     string
+	 * @return     int
 	 */
-	public function getLastName()
+	public function getDatavisibility()
 	{
-		return $this->last_name;
+		return $this->datavisibility;
 	}
 
 	/**
@@ -249,13 +342,23 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Get the [phone] column value.
+	 * Get the [last_name] column value.
 	 * 
 	 * @return     string
 	 */
-	public function getPhone()
+	public function getLastName()
 	{
-		return $this->phone;
+		return $this->last_name;
+	}
+
+	/**
+	 * Get the [zipcode] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getZipcode()
+	{
+		return $this->zipcode;
 	}
 
 	/**
@@ -289,54 +392,134 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Get the [city] column value.
+	 * Get the [email] column value.
 	 * 
 	 * @return     string
 	 */
-	public function getCity()
+	public function getEmail()
 	{
-		return $this->city;
+		return $this->email;
 	}
 
 	/**
-	 * Get the [state] column value.
+	 * Get the [logdata] column value.
 	 * 
-	 * @return     string
+	 * @return     int
 	 */
-	public function getState()
+	public function getLogdata()
 	{
-		return $this->state;
+		return $this->logdata;
 	}
 
 	/**
-	 * Get the [zipcode] column value.
+	 * Get the [rootfolder_id] column value.
 	 * 
-	 * @return     string
+	 * @return     int
 	 */
-	public function getZipcode()
+	public function getRootfolderId()
 	{
-		return $this->zipcode;
+		return $this->rootfolder_id;
 	}
 
 	/**
-	 * Set the value of [username] column.
+	 * Set the value of [id] column.
+	 * 
+	 * @param      int $v new value
+	 * @return     Registration The current object (for fluent API support)
+	 */
+	public function setId($v)
+	{
+		if ($v !== null) {
+			$v = (int) $v;
+		}
+
+		if ($this->id !== $v) {
+			$this->id = $v;
+			$this->modifiedColumns[] = RegistrationPeer::ID;
+		}
+
+		return $this;
+	} // setId()
+
+	/**
+	 * Set the value of [phone] column.
 	 * 
 	 * @param      string $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setUsername($v)
+	public function setPhone($v)
 	{
 		if ($v !== null) {
 			$v = (string) $v;
 		}
 
-		if ($this->username !== $v) {
-			$this->username = $v;
-			$this->modifiedColumns[] = RegistrationPeer::USERNAME;
+		if ($this->phone !== $v) {
+			$this->phone = $v;
+			$this->modifiedColumns[] = RegistrationPeer::PHONE;
 		}
 
 		return $this;
-	} // setUsername()
+	} // setPhone()
+
+	/**
+	 * Set the value of [interests] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     Registration The current object (for fluent API support)
+	 */
+	public function setInterests($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->interests !== $v) {
+			$this->interests = $v;
+			$this->modifiedColumns[] = RegistrationPeer::INTERESTS;
+		}
+
+		return $this;
+	} // setInterests()
+
+	/**
+	 * Set the value of [state] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     Registration The current object (for fluent API support)
+	 */
+	public function setState($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->state !== $v) {
+			$this->state = $v;
+			$this->modifiedColumns[] = RegistrationPeer::STATE;
+		}
+
+		return $this;
+	} // setState()
+
+	/**
+	 * Set the value of [online_status] column.
+	 * 
+	 * @param      int $v new value
+	 * @return     Registration The current object (for fluent API support)
+	 */
+	public function setOnlineStatus($v)
+	{
+		if ($v !== null) {
+			$v = (int) $v;
+		}
+
+		if ($this->online_status !== $v) {
+			$this->online_status = $v;
+			$this->modifiedColumns[] = RegistrationPeer::ONLINE_STATUS;
+		}
+
+		return $this;
+	} // setOnlineStatus()
 
 	/**
 	 * Set the value of [password] column.
@@ -359,64 +542,93 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	} // setPassword()
 
 	/**
-	 * Set the value of [email] column.
+	 * Set the value of [city] column.
 	 * 
 	 * @param      string $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setEmail($v)
+	public function setCity($v)
 	{
 		if ($v !== null) {
 			$v = (string) $v;
 		}
 
-		if ($this->email !== $v) {
-			$this->email = $v;
-			$this->modifiedColumns[] = RegistrationPeer::EMAIL;
+		if ($this->city !== $v) {
+			$this->city = $v;
+			$this->modifiedColumns[] = RegistrationPeer::CITY;
 		}
 
 		return $this;
-	} // setEmail()
+	} // setCity()
 
 	/**
-	 * Set the value of [im_email] column.
+	 * Set the value of [username] column.
 	 * 
 	 * @param      string $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setImEmail($v)
+	public function setUsername($v)
 	{
 		if ($v !== null) {
 			$v = (string) $v;
 		}
 
-		if ($this->im_email !== $v) {
-			$this->im_email = $v;
-			$this->modifiedColumns[] = RegistrationPeer::IM_EMAIL;
+		if ($this->username !== $v) {
+			$this->username = $v;
+			$this->modifiedColumns[] = RegistrationPeer::USERNAME;
 		}
 
 		return $this;
-	} // setImEmail()
+	} // setUsername()
 
 	/**
-	 * Set the value of [im_password] column.
+	 * Sets the value of [createdat] column to a normalized version of the date/time value specified.
 	 * 
-	 * @param      string $v new value
+	 * @param      mixed $v string, integer (timestamp), or DateTime value.  Empty string will
+	 *						be treated as NULL for temporal objects.
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setImPassword($v)
+	public function setCreatedat($v)
 	{
-		if ($v !== null) {
-			$v = (string) $v;
+		// we treat '' as NULL for temporal objects because DateTime('') == DateTime('now')
+		// -- which is unexpected, to say the least.
+		if ($v === null || $v === '') {
+			$dt = null;
+		} elseif ($v instanceof DateTime) {
+			$dt = $v;
+		} else {
+			// some string/numeric value passed; we normalize that so that we can
+			// validate it.
+			try {
+				if (is_numeric($v)) { // if it's a unix timestamp
+					$dt = new DateTime('@'.$v, new DateTimeZone('UTC'));
+					// We have to explicitly specify and then change the time zone because of a
+					// DateTime bug: http://bugs.php.net/bug.php?id=43003
+					$dt->setTimeZone(new DateTimeZone(date_default_timezone_get()));
+				} else {
+					$dt = new DateTime($v);
+				}
+			} catch (Exception $x) {
+				throw new PropelException('Error parsing date/time value: ' . var_export($v, true), $x);
+			}
 		}
 
-		if ($this->im_password !== $v) {
-			$this->im_password = $v;
-			$this->modifiedColumns[] = RegistrationPeer::IM_PASSWORD;
-		}
+		if ( $this->createdat !== null || $dt !== null ) {
+			// (nested ifs are a little easier to read in this case)
+
+			$currNorm = ($this->createdat !== null && $tmpDt = new DateTime($this->createdat)) ? $tmpDt->format('Y-m-d H:i:s') : null;
+			$newNorm = ($dt !== null) ? $dt->format('Y-m-d H:i:s') : null;
+
+			if ( ($currNorm !== $newNorm) // normalized values don't match 
+					)
+			{
+				$this->createdat = ($dt ? $dt->format('Y-m-d H:i:s') : null);
+				$this->modifiedColumns[] = RegistrationPeer::CREATEDAT;
+			}
+		} // if either are not null
 
 		return $this;
-	} // setImPassword()
+	} // setCreatedat()
 
 	/**
 	 * Set the value of [first_name] column.
@@ -439,24 +651,24 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	} // setFirstName()
 
 	/**
-	 * Set the value of [last_name] column.
+	 * Set the value of [datavisibility] column.
 	 * 
-	 * @param      string $v new value
+	 * @param      int $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setLastName($v)
+	public function setDatavisibility($v)
 	{
 		if ($v !== null) {
-			$v = (string) $v;
+			$v = (int) $v;
 		}
 
-		if ($this->last_name !== $v) {
-			$this->last_name = $v;
-			$this->modifiedColumns[] = RegistrationPeer::LAST_NAME;
+		if ($this->datavisibility !== $v) {
+			$this->datavisibility = $v;
+			$this->modifiedColumns[] = RegistrationPeer::DATAVISIBILITY;
 		}
 
 		return $this;
-	} // setLastName()
+	} // setDatavisibility()
 
 	/**
 	 * Set the value of [work_title] column.
@@ -479,24 +691,44 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	} // setWorkTitle()
 
 	/**
-	 * Set the value of [phone] column.
+	 * Set the value of [last_name] column.
 	 * 
 	 * @param      string $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setPhone($v)
+	public function setLastName($v)
 	{
 		if ($v !== null) {
 			$v = (string) $v;
 		}
 
-		if ($this->phone !== $v) {
-			$this->phone = $v;
-			$this->modifiedColumns[] = RegistrationPeer::PHONE;
+		if ($this->last_name !== $v) {
+			$this->last_name = $v;
+			$this->modifiedColumns[] = RegistrationPeer::LAST_NAME;
 		}
 
 		return $this;
-	} // setPhone()
+	} // setLastName()
+
+	/**
+	 * Set the value of [zipcode] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     Registration The current object (for fluent API support)
+	 */
+	public function setZipcode($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->zipcode !== $v) {
+			$this->zipcode = $v;
+			$this->modifiedColumns[] = RegistrationPeer::ZIPCODE;
+		}
+
+		return $this;
+	} // setZipcode()
 
 	/**
 	 * Set the value of [lab_affiliation] column.
@@ -559,64 +791,64 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	} // setAddr2()
 
 	/**
-	 * Set the value of [city] column.
+	 * Set the value of [email] column.
 	 * 
 	 * @param      string $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setCity($v)
+	public function setEmail($v)
 	{
 		if ($v !== null) {
 			$v = (string) $v;
 		}
 
-		if ($this->city !== $v) {
-			$this->city = $v;
-			$this->modifiedColumns[] = RegistrationPeer::CITY;
+		if ($this->email !== $v) {
+			$this->email = $v;
+			$this->modifiedColumns[] = RegistrationPeer::EMAIL;
 		}
 
 		return $this;
-	} // setCity()
+	} // setEmail()
 
 	/**
-	 * Set the value of [state] column.
+	 * Set the value of [logdata] column.
 	 * 
-	 * @param      string $v new value
+	 * @param      int $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setState($v)
+	public function setLogdata($v)
 	{
 		if ($v !== null) {
-			$v = (string) $v;
+			$v = (int) $v;
 		}
 
-		if ($this->state !== $v) {
-			$this->state = $v;
-			$this->modifiedColumns[] = RegistrationPeer::STATE;
+		if ($this->logdata !== $v) {
+			$this->logdata = $v;
+			$this->modifiedColumns[] = RegistrationPeer::LOGDATA;
 		}
 
 		return $this;
-	} // setState()
+	} // setLogdata()
 
 	/**
-	 * Set the value of [zipcode] column.
+	 * Set the value of [rootfolder_id] column.
 	 * 
-	 * @param      string $v new value
+	 * @param      int $v new value
 	 * @return     Registration The current object (for fluent API support)
 	 */
-	public function setZipcode($v)
+	public function setRootfolderId($v)
 	{
 		if ($v !== null) {
-			$v = (string) $v;
+			$v = (int) $v;
 		}
 
-		if ($this->zipcode !== $v) {
-			$this->zipcode = $v;
-			$this->modifiedColumns[] = RegistrationPeer::ZIPCODE;
+		if ($this->rootfolder_id !== $v) {
+			$this->rootfolder_id = $v;
+			$this->modifiedColumns[] = RegistrationPeer::ROOTFOLDER_ID;
 		}
 
 		return $this;
-	} // setZipcode()
+	} // setRootfolderId()
 
 	/**
 	 * Indicates whether the columns in this object are only set to default values.
@@ -650,21 +882,26 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	{
 		try {
 
-			$this->username = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-			$this->password = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-			$this->email = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-			$this->im_email = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-			$this->im_password = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-			$this->first_name = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-			$this->last_name = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-			$this->work_title = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-			$this->phone = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-			$this->lab_affiliation = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-			$this->addr1 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-			$this->addr2 = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-			$this->city = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-			$this->state = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
-			$this->zipcode = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
+			$this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
+			$this->phone = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+			$this->interests = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+			$this->state = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+			$this->online_status = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
+			$this->password = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+			$this->city = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+			$this->username = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+			$this->createdat = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+			$this->first_name = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+			$this->datavisibility = ($row[$startcol + 10] !== null) ? (int) $row[$startcol + 10] : null;
+			$this->work_title = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+			$this->last_name = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+			$this->zipcode = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+			$this->lab_affiliation = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
+			$this->addr1 = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
+			$this->addr2 = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
+			$this->email = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
+			$this->logdata = ($row[$startcol + 18] !== null) ? (int) $row[$startcol + 18] : null;
+			$this->rootfolder_id = ($row[$startcol + 19] !== null) ? (int) $row[$startcol + 19] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -673,7 +910,7 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 				$this->ensureConsistency();
 			}
 
-			return $startcol + 15; // 15 = RegistrationPeer::NUM_COLUMNS - RegistrationPeer::NUM_LAZY_LOAD_COLUMNS).
+			return $startcol + 20; // 20 = RegistrationPeer::NUM_COLUMNS - RegistrationPeer::NUM_LAZY_LOAD_COLUMNS).
 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Registration object", $e);
@@ -735,21 +972,21 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 
 		if ($deep) {  // also de-associate any related objects?
 
-			$this->singleDataVisibility = null;
+			$this->collToolcommentss = null;
 
-			$this->collUserVisibilitys = null;
+			$this->collToolratingss = null;
 
-			$this->collAudits = null;
+			$this->collWorkflowcommentss = null;
 
-			$this->collNetworkVisibilitys = null;
+			$this->collWorkflowratingss = null;
 
-			$this->collOutboxsRelatedByFromuser = null;
+			$this->collAnnotations = null;
 
-			$this->collOutboxsRelatedByTouser = null;
+			$this->collHistorys = null;
 
-			$this->collInboxsRelatedByFromuser = null;
+			$this->collWorkspaces = null;
 
-			$this->collInboxsRelatedByTouser = null;
+			$this->collWorkspaceUsers = null;
 
 		} // if (deep)
 	}
@@ -861,13 +1098,24 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 		if (!$this->alreadyInSave) {
 			$this->alreadyInSave = true;
 
+			if ($this->isNew() ) {
+				$this->modifiedColumns[] = RegistrationPeer::ID;
+			}
 
 			// If this object has been modified, then save it to the database.
 			if ($this->isModified()) {
 				if ($this->isNew()) {
 					$criteria = $this->buildCriteria();
+					if ($criteria->keyContainsValue(RegistrationPeer::ID) ) {
+						throw new PropelException('Cannot insert a value for auto-increment primary key ('.RegistrationPeer::ID.')');
+					}
+
+					// remove pkey col since this table uses auto-increment and passing a null value for it is not valid 
+					$criteria->remove(RegistrationPeer::ID);
+
 					$pk = BasePeer::doInsert($criteria, $con);
 					$affectedRows = 1;
+					$this->setId($pk);  //[IMV] update autoincrement primary key
 					$this->setNew(false);
 				} else {
 					$affectedRows = RegistrationPeer::doUpdate($this, $con);
@@ -876,62 +1124,64 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 				$this->resetModified(); // [HL] After being saved an object is no longer 'modified'
 			}
 
-			if ($this->singleDataVisibility !== null) {
-				if (!$this->singleDataVisibility->isDeleted()) {
-						$affectedRows += $this->singleDataVisibility->save($con);
-				}
-			}
-
-			if ($this->collUserVisibilitys !== null) {
-				foreach ($this->collUserVisibilitys as $referrerFK) {
+			if ($this->collToolcommentss !== null) {
+				foreach ($this->collToolcommentss as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
 				}
 			}
 
-			if ($this->collAudits !== null) {
-				foreach ($this->collAudits as $referrerFK) {
+			if ($this->collToolratingss !== null) {
+				foreach ($this->collToolratingss as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
 				}
 			}
 
-			if ($this->collNetworkVisibilitys !== null) {
-				foreach ($this->collNetworkVisibilitys as $referrerFK) {
+			if ($this->collWorkflowcommentss !== null) {
+				foreach ($this->collWorkflowcommentss as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
 				}
 			}
 
-			if ($this->collOutboxsRelatedByFromuser !== null) {
-				foreach ($this->collOutboxsRelatedByFromuser as $referrerFK) {
+			if ($this->collWorkflowratingss !== null) {
+				foreach ($this->collWorkflowratingss as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
 				}
 			}
 
-			if ($this->collOutboxsRelatedByTouser !== null) {
-				foreach ($this->collOutboxsRelatedByTouser as $referrerFK) {
+			if ($this->collAnnotations !== null) {
+				foreach ($this->collAnnotations as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
 				}
 			}
 
-			if ($this->collInboxsRelatedByFromuser !== null) {
-				foreach ($this->collInboxsRelatedByFromuser as $referrerFK) {
+			if ($this->collHistorys !== null) {
+				foreach ($this->collHistorys as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
 				}
 			}
 
-			if ($this->collInboxsRelatedByTouser !== null) {
-				foreach ($this->collInboxsRelatedByTouser as $referrerFK) {
+			if ($this->collWorkspaces !== null) {
+				foreach ($this->collWorkspaces as $referrerFK) {
+					if (!$referrerFK->isDeleted()) {
+						$affectedRows += $referrerFK->save($con);
+					}
+				}
+			}
+
+			if ($this->collWorkspaceUsers !== null) {
+				foreach ($this->collWorkspaceUsers as $referrerFK) {
 					if (!$referrerFK->isDeleted()) {
 						$affectedRows += $referrerFK->save($con);
 					}
@@ -1009,62 +1259,64 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 			}
 
 
-				if ($this->singleDataVisibility !== null) {
-					if (!$this->singleDataVisibility->validate($columns)) {
-						$failureMap = array_merge($failureMap, $this->singleDataVisibility->getValidationFailures());
-					}
-				}
-
-				if ($this->collUserVisibilitys !== null) {
-					foreach ($this->collUserVisibilitys as $referrerFK) {
+				if ($this->collToolcommentss !== null) {
+					foreach ($this->collToolcommentss as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
 					}
 				}
 
-				if ($this->collAudits !== null) {
-					foreach ($this->collAudits as $referrerFK) {
+				if ($this->collToolratingss !== null) {
+					foreach ($this->collToolratingss as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
 					}
 				}
 
-				if ($this->collNetworkVisibilitys !== null) {
-					foreach ($this->collNetworkVisibilitys as $referrerFK) {
+				if ($this->collWorkflowcommentss !== null) {
+					foreach ($this->collWorkflowcommentss as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
 					}
 				}
 
-				if ($this->collOutboxsRelatedByFromuser !== null) {
-					foreach ($this->collOutboxsRelatedByFromuser as $referrerFK) {
+				if ($this->collWorkflowratingss !== null) {
+					foreach ($this->collWorkflowratingss as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
 					}
 				}
 
-				if ($this->collOutboxsRelatedByTouser !== null) {
-					foreach ($this->collOutboxsRelatedByTouser as $referrerFK) {
+				if ($this->collAnnotations !== null) {
+					foreach ($this->collAnnotations as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
 					}
 				}
 
-				if ($this->collInboxsRelatedByFromuser !== null) {
-					foreach ($this->collInboxsRelatedByFromuser as $referrerFK) {
+				if ($this->collHistorys !== null) {
+					foreach ($this->collHistorys as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
 					}
 				}
 
-				if ($this->collInboxsRelatedByTouser !== null) {
-					foreach ($this->collInboxsRelatedByTouser as $referrerFK) {
+				if ($this->collWorkspaces !== null) {
+					foreach ($this->collWorkspaces as $referrerFK) {
+						if (!$referrerFK->validate($columns)) {
+							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+						}
+					}
+				}
+
+				if ($this->collWorkspaceUsers !== null) {
+					foreach ($this->collWorkspaceUsers as $referrerFK) {
 						if (!$referrerFK->validate($columns)) {
 							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
 						}
@@ -1105,49 +1357,64 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	{
 		switch($pos) {
 			case 0:
-				return $this->getUsername();
+				return $this->getId();
 				break;
 			case 1:
-				return $this->getPassword();
-				break;
-			case 2:
-				return $this->getEmail();
-				break;
-			case 3:
-				return $this->getImEmail();
-				break;
-			case 4:
-				return $this->getImPassword();
-				break;
-			case 5:
-				return $this->getFirstName();
-				break;
-			case 6:
-				return $this->getLastName();
-				break;
-			case 7:
-				return $this->getWorkTitle();
-				break;
-			case 8:
 				return $this->getPhone();
 				break;
-			case 9:
-				return $this->getLabAffiliation();
+			case 2:
+				return $this->getInterests();
 				break;
-			case 10:
-				return $this->getAddr1();
-				break;
-			case 11:
-				return $this->getAddr2();
-				break;
-			case 12:
-				return $this->getCity();
-				break;
-			case 13:
+			case 3:
 				return $this->getState();
 				break;
-			case 14:
+			case 4:
+				return $this->getOnlineStatus();
+				break;
+			case 5:
+				return $this->getPassword();
+				break;
+			case 6:
+				return $this->getCity();
+				break;
+			case 7:
+				return $this->getUsername();
+				break;
+			case 8:
+				return $this->getCreatedat();
+				break;
+			case 9:
+				return $this->getFirstName();
+				break;
+			case 10:
+				return $this->getDatavisibility();
+				break;
+			case 11:
+				return $this->getWorkTitle();
+				break;
+			case 12:
+				return $this->getLastName();
+				break;
+			case 13:
 				return $this->getZipcode();
+				break;
+			case 14:
+				return $this->getLabAffiliation();
+				break;
+			case 15:
+				return $this->getAddr1();
+				break;
+			case 16:
+				return $this->getAddr2();
+				break;
+			case 17:
+				return $this->getEmail();
+				break;
+			case 18:
+				return $this->getLogdata();
+				break;
+			case 19:
+				return $this->getRootfolderId();
 				break;
 			default:
 				return null;
@@ -1172,21 +1439,26 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	{
 		$keys = RegistrationPeer::getFieldNames($keyType);
 		$result = array(
-			$keys[0] => $this->getUsername(),
-			$keys[1] => $this->getPassword(),
-			$keys[2] => $this->getEmail(),
-			$keys[3] => $this->getImEmail(),
-			$keys[4] => $this->getImPassword(),
-			$keys[5] => $this->getFirstName(),
-			$keys[6] => $this->getLastName(),
-			$keys[7] => $this->getWorkTitle(),
-			$keys[8] => $this->getPhone(),
-			$keys[9] => $this->getLabAffiliation(),
-			$keys[10] => $this->getAddr1(),
-			$keys[11] => $this->getAddr2(),
-			$keys[12] => $this->getCity(),
-			$keys[13] => $this->getState(),
-			$keys[14] => $this->getZipcode(),
+			$keys[0] => $this->getId(),
+			$keys[1] => $this->getPhone(),
+			$keys[2] => $this->getInterests(),
+			$keys[3] => $this->getState(),
+			$keys[4] => $this->getOnlineStatus(),
+			$keys[5] => $this->getPassword(),
+			$keys[6] => $this->getCity(),
+			$keys[7] => $this->getUsername(),
+			$keys[8] => $this->getCreatedat(),
+			$keys[9] => $this->getFirstName(),
+			$keys[10] => $this->getDatavisibility(),
+			$keys[11] => $this->getWorkTitle(),
+			$keys[12] => $this->getLastName(),
+			$keys[13] => $this->getZipcode(),
+			$keys[14] => $this->getLabAffiliation(),
+			$keys[15] => $this->getAddr1(),
+			$keys[16] => $this->getAddr2(),
+			$keys[17] => $this->getEmail(),
+			$keys[18] => $this->getLogdata(),
+			$keys[19] => $this->getRootfolderId(),
 		);
 		return $result;
 	}
@@ -1219,49 +1491,64 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	{
 		switch($pos) {
 			case 0:
-				$this->setUsername($value);
+				$this->setId($value);
 				break;
 			case 1:
-				$this->setPassword($value);
-				break;
-			case 2:
-				$this->setEmail($value);
-				break;
-			case 3:
-				$this->setImEmail($value);
-				break;
-			case 4:
-				$this->setImPassword($value);
-				break;
-			case 5:
-				$this->setFirstName($value);
-				break;
-			case 6:
-				$this->setLastName($value);
-				break;
-			case 7:
-				$this->setWorkTitle($value);
-				break;
-			case 8:
 				$this->setPhone($value);
 				break;
-			case 9:
-				$this->setLabAffiliation($value);
+			case 2:
+				$this->setInterests($value);
 				break;
-			case 10:
-				$this->setAddr1($value);
-				break;
-			case 11:
-				$this->setAddr2($value);
-				break;
-			case 12:
-				$this->setCity($value);
-				break;
-			case 13:
+			case 3:
 				$this->setState($value);
 				break;
-			case 14:
+			case 4:
+				$this->setOnlineStatus($value);
+				break;
+			case 5:
+				$this->setPassword($value);
+				break;
+			case 6:
+				$this->setCity($value);
+				break;
+			case 7:
+				$this->setUsername($value);
+				break;
+			case 8:
+				$this->setCreatedat($value);
+				break;
+			case 9:
+				$this->setFirstName($value);
+				break;
+			case 10:
+				$this->setDatavisibility($value);
+				break;
+			case 11:
+				$this->setWorkTitle($value);
+				break;
+			case 12:
+				$this->setLastName($value);
+				break;
+			case 13:
 				$this->setZipcode($value);
+				break;
+			case 14:
+				$this->setLabAffiliation($value);
+				break;
+			case 15:
+				$this->setAddr1($value);
+				break;
+			case 16:
+				$this->setAddr2($value);
+				break;
+			case 17:
+				$this->setEmail($value);
+				break;
+			case 18:
+				$this->setLogdata($value);
+				break;
+			case 19:
+				$this->setRootfolderId($value);
 				break;
 		} // switch()
 	}
@@ -1287,21 +1574,26 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	{
 		$keys = RegistrationPeer::getFieldNames($keyType);
 
-		if (array_key_exists($keys[0], $arr)) $this->setUsername($arr[$keys[0]]);
-		if (array_key_exists($keys[1], $arr)) $this->setPassword($arr[$keys[1]]);
-		if (array_key_exists($keys[2], $arr)) $this->setEmail($arr[$keys[2]]);
-		if (array_key_exists($keys[3], $arr)) $this->setImEmail($arr[$keys[3]]);
-		if (array_key_exists($keys[4], $arr)) $this->setImPassword($arr[$keys[4]]);
-		if (array_key_exists($keys[5], $arr)) $this->setFirstName($arr[$keys[5]]);
-		if (array_key_exists($keys[6], $arr)) $this->setLastName($arr[$keys[6]]);
-		if (array_key_exists($keys[7], $arr)) $this->setWorkTitle($arr[$keys[7]]);
-		if (array_key_exists($keys[8], $arr)) $this->setPhone($arr[$keys[8]]);
-		if (array_key_exists($keys[9], $arr)) $this->setLabAffiliation($arr[$keys[9]]);
-		if (array_key_exists($keys[10], $arr)) $this->setAddr1($arr[$keys[10]]);
-		if (array_key_exists($keys[11], $arr)) $this->setAddr2($arr[$keys[11]]);
-		if (array_key_exists($keys[12], $arr)) $this->setCity($arr[$keys[12]]);
-		if (array_key_exists($keys[13], $arr)) $this->setState($arr[$keys[13]]);
-		if (array_key_exists($keys[14], $arr)) $this->setZipcode($arr[$keys[14]]);
+		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
+		if (array_key_exists($keys[1], $arr)) $this->setPhone($arr[$keys[1]]);
+		if (array_key_exists($keys[2], $arr)) $this->setInterests($arr[$keys[2]]);
+		if (array_key_exists($keys[3], $arr)) $this->setState($arr[$keys[3]]);
+		if (array_key_exists($keys[4], $arr)) $this->setOnlineStatus($arr[$keys[4]]);
+		if (array_key_exists($keys[5], $arr)) $this->setPassword($arr[$keys[5]]);
+		if (array_key_exists($keys[6], $arr)) $this->setCity($arr[$keys[6]]);
+		if (array_key_exists($keys[7], $arr)) $this->setUsername($arr[$keys[7]]);
+		if (array_key_exists($keys[8], $arr)) $this->setCreatedat($arr[$keys[8]]);
+		if (array_key_exists($keys[9], $arr)) $this->setFirstName($arr[$keys[9]]);
+		if (array_key_exists($keys[10], $arr)) $this->setDatavisibility($arr[$keys[10]]);
+		if (array_key_exists($keys[11], $arr)) $this->setWorkTitle($arr[$keys[11]]);
+		if (array_key_exists($keys[12], $arr)) $this->setLastName($arr[$keys[12]]);
+		if (array_key_exists($keys[13], $arr)) $this->setZipcode($arr[$keys[13]]);
+		if (array_key_exists($keys[14], $arr)) $this->setLabAffiliation($arr[$keys[14]]);
+		if (array_key_exists($keys[15], $arr)) $this->setAddr1($arr[$keys[15]]);
+		if (array_key_exists($keys[16], $arr)) $this->setAddr2($arr[$keys[16]]);
+		if (array_key_exists($keys[17], $arr)) $this->setEmail($arr[$keys[17]]);
+		if (array_key_exists($keys[18], $arr)) $this->setLogdata($arr[$keys[18]]);
+		if (array_key_exists($keys[19], $arr)) $this->setRootfolderId($arr[$keys[19]]);
 	}
 
 	/**
@@ -1313,21 +1605,26 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	{
 		$criteria = new Criteria(RegistrationPeer::DATABASE_NAME);
 
-		if ($this->isColumnModified(RegistrationPeer::USERNAME)) $criteria->add(RegistrationPeer::USERNAME, $this->username);
-		if ($this->isColumnModified(RegistrationPeer::PASSWORD)) $criteria->add(RegistrationPeer::PASSWORD, $this->password);
-		if ($this->isColumnModified(RegistrationPeer::EMAIL)) $criteria->add(RegistrationPeer::EMAIL, $this->email);
-		if ($this->isColumnModified(RegistrationPeer::IM_EMAIL)) $criteria->add(RegistrationPeer::IM_EMAIL, $this->im_email);
-		if ($this->isColumnModified(RegistrationPeer::IM_PASSWORD)) $criteria->add(RegistrationPeer::IM_PASSWORD, $this->im_password);
-		if ($this->isColumnModified(RegistrationPeer::FIRST_NAME)) $criteria->add(RegistrationPeer::FIRST_NAME, $this->first_name);
-		if ($this->isColumnModified(RegistrationPeer::LAST_NAME)) $criteria->add(RegistrationPeer::LAST_NAME, $this->last_name);
-		if ($this->isColumnModified(RegistrationPeer::WORK_TITLE)) $criteria->add(RegistrationPeer::WORK_TITLE, $this->work_title);
+		if ($this->isColumnModified(RegistrationPeer::ID)) $criteria->add(RegistrationPeer::ID, $this->id);
 		if ($this->isColumnModified(RegistrationPeer::PHONE)) $criteria->add(RegistrationPeer::PHONE, $this->phone);
+		if ($this->isColumnModified(RegistrationPeer::INTERESTS)) $criteria->add(RegistrationPeer::INTERESTS, $this->interests);
+		if ($this->isColumnModified(RegistrationPeer::STATE)) $criteria->add(RegistrationPeer::STATE, $this->state);
+		if ($this->isColumnModified(RegistrationPeer::ONLINE_STATUS)) $criteria->add(RegistrationPeer::ONLINE_STATUS, $this->online_status);
+		if ($this->isColumnModified(RegistrationPeer::PASSWORD)) $criteria->add(RegistrationPeer::PASSWORD, $this->password);
+		if ($this->isColumnModified(RegistrationPeer::CITY)) $criteria->add(RegistrationPeer::CITY, $this->city);
+		if ($this->isColumnModified(RegistrationPeer::USERNAME)) $criteria->add(RegistrationPeer::USERNAME, $this->username);
+		if ($this->isColumnModified(RegistrationPeer::CREATEDAT)) $criteria->add(RegistrationPeer::CREATEDAT, $this->createdat);
+		if ($this->isColumnModified(RegistrationPeer::FIRST_NAME)) $criteria->add(RegistrationPeer::FIRST_NAME, $this->first_name);
+		if ($this->isColumnModified(RegistrationPeer::DATAVISIBILITY)) $criteria->add(RegistrationPeer::DATAVISIBILITY, $this->datavisibility);
+		if ($this->isColumnModified(RegistrationPeer::WORK_TITLE)) $criteria->add(RegistrationPeer::WORK_TITLE, $this->work_title);
+		if ($this->isColumnModified(RegistrationPeer::LAST_NAME)) $criteria->add(RegistrationPeer::LAST_NAME, $this->last_name);
+		if ($this->isColumnModified(RegistrationPeer::ZIPCODE)) $criteria->add(RegistrationPeer::ZIPCODE, $this->zipcode);
 		if ($this->isColumnModified(RegistrationPeer::LAB_AFFILIATION)) $criteria->add(RegistrationPeer::LAB_AFFILIATION, $this->lab_affiliation);
 		if ($this->isColumnModified(RegistrationPeer::ADDR1)) $criteria->add(RegistrationPeer::ADDR1, $this->addr1);
 		if ($this->isColumnModified(RegistrationPeer::ADDR2)) $criteria->add(RegistrationPeer::ADDR2, $this->addr2);
-		if ($this->isColumnModified(RegistrationPeer::CITY)) $criteria->add(RegistrationPeer::CITY, $this->city);
-		if ($this->isColumnModified(RegistrationPeer::STATE)) $criteria->add(RegistrationPeer::STATE, $this->state);
-		if ($this->isColumnModified(RegistrationPeer::ZIPCODE)) $criteria->add(RegistrationPeer::ZIPCODE, $this->zipcode);
+		if ($this->isColumnModified(RegistrationPeer::EMAIL)) $criteria->add(RegistrationPeer::EMAIL, $this->email);
+		if ($this->isColumnModified(RegistrationPeer::LOGDATA)) $criteria->add(RegistrationPeer::LOGDATA, $this->logdata);
+		if ($this->isColumnModified(RegistrationPeer::ROOTFOLDER_ID)) $criteria->add(RegistrationPeer::ROOTFOLDER_ID, $this->rootfolder_id);
 
 		return $criteria;
 	}
@@ -1343,29 +1640,29 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	public function buildPkeyCriteria()
 	{
 		$criteria = new Criteria(RegistrationPeer::DATABASE_NAME);
-		$criteria->add(RegistrationPeer::USERNAME, $this->username);
+		$criteria->add(RegistrationPeer::ID, $this->id);
 
 		return $criteria;
 	}
 
 	/**
 	 * Returns the primary key for this object (row).
-	 * @return     string
+	 * @return     int
 	 */
 	public function getPrimaryKey()
 	{
-		return $this->getUsername();
+		return $this->getId();
 	}
 
 	/**
-	 * Generic method to set the primary key (username column).
+	 * Generic method to set the primary key (id column).
 	 *
-	 * @param      string $key Primary key.
+	 * @param      int $key Primary key.
 	 * @return     void
 	 */
 	public function setPrimaryKey($key)
 	{
-		$this->setUsername($key);
+		$this->setId($key);
 	}
 
 	/**
@@ -1374,7 +1671,7 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 */
 	public function isPrimaryKeyNull()
 	{
-		return null === $this->getUsername();
+		return null === $this->getId();
 	}
 
 	/**
@@ -1389,71 +1686,76 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 */
 	public function copyInto($copyObj, $deepCopy = false)
 	{
-		$copyObj->setUsername($this->username);
-		$copyObj->setPassword($this->password);
-		$copyObj->setEmail($this->email);
-		$copyObj->setImEmail($this->im_email);
-		$copyObj->setImPassword($this->im_password);
-		$copyObj->setFirstName($this->first_name);
-		$copyObj->setLastName($this->last_name);
-		$copyObj->setWorkTitle($this->work_title);
 		$copyObj->setPhone($this->phone);
+		$copyObj->setInterests($this->interests);
+		$copyObj->setState($this->state);
+		$copyObj->setOnlineStatus($this->online_status);
+		$copyObj->setPassword($this->password);
+		$copyObj->setCity($this->city);
+		$copyObj->setUsername($this->username);
+		$copyObj->setCreatedat($this->createdat);
+		$copyObj->setFirstName($this->first_name);
+		$copyObj->setDatavisibility($this->datavisibility);
+		$copyObj->setWorkTitle($this->work_title);
+		$copyObj->setLastName($this->last_name);
+		$copyObj->setZipcode($this->zipcode);
 		$copyObj->setLabAffiliation($this->lab_affiliation);
 		$copyObj->setAddr1($this->addr1);
 		$copyObj->setAddr2($this->addr2);
-		$copyObj->setCity($this->city);
-		$copyObj->setState($this->state);
-		$copyObj->setZipcode($this->zipcode);
+		$copyObj->setEmail($this->email);
+		$copyObj->setLogdata($this->logdata);
+		$copyObj->setRootfolderId($this->rootfolder_id);
 
 		if ($deepCopy) {
 			// important: temporarily setNew(false) because this affects the behavior of
 			// the getter/setter methods for fkey referrer objects.
 			$copyObj->setNew(false);
 
-			$relObj = $this->getDataVisibility();
-			if ($relObj) {
-				$copyObj->setDataVisibility($relObj->copy($deepCopy));
-			}
-
-			foreach ($this->getUserVisibilitys() as $relObj) {
+			foreach ($this->getToolcommentss() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addUserVisibility($relObj->copy($deepCopy));
+					$copyObj->addToolcomments($relObj->copy($deepCopy));
 				}
 			}
 
-			foreach ($this->getAudits() as $relObj) {
+			foreach ($this->getToolratingss() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addAudit($relObj->copy($deepCopy));
+					$copyObj->addToolratings($relObj->copy($deepCopy));
 				}
 			}
 
-			foreach ($this->getNetworkVisibilitys() as $relObj) {
+			foreach ($this->getWorkflowcommentss() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addNetworkVisibility($relObj->copy($deepCopy));
+					$copyObj->addWorkflowcomments($relObj->copy($deepCopy));
 				}
 			}
 
-			foreach ($this->getOutboxsRelatedByFromuser() as $relObj) {
+			foreach ($this->getWorkflowratingss() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addOutboxRelatedByFromuser($relObj->copy($deepCopy));
+					$copyObj->addWorkflowratings($relObj->copy($deepCopy));
 				}
 			}
 
-			foreach ($this->getOutboxsRelatedByTouser() as $relObj) {
+			foreach ($this->getAnnotations() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addOutboxRelatedByTouser($relObj->copy($deepCopy));
+					$copyObj->addAnnotation($relObj->copy($deepCopy));
 				}
 			}
 
-			foreach ($this->getInboxsRelatedByFromuser() as $relObj) {
+			foreach ($this->getHistorys() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addInboxRelatedByFromuser($relObj->copy($deepCopy));
+					$copyObj->addHistory($relObj->copy($deepCopy));
 				}
 			}
 
-			foreach ($this->getInboxsRelatedByTouser() as $relObj) {
+			foreach ($this->getWorkspaces() as $relObj) {
 				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-					$copyObj->addInboxRelatedByTouser($relObj->copy($deepCopy));
+					$copyObj->addWorkspace($relObj->copy($deepCopy));
+				}
+			}
+
+			foreach ($this->getWorkspaceUsers() as $relObj) {
+				if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+					$copyObj->addWorkspaceUser($relObj->copy($deepCopy));
 				}
 			}
 
@@ -1461,6 +1763,7 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 
 
 		$copyObj->setNew(true);
+		$copyObj->setId(NULL); // this is a auto-increment column, so set to default value
 	}
 
 	/**
@@ -1502,72 +1805,36 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Gets a single DataVisibility object, which is related to this object by a one-to-one relationship.
-	 *
-	 * @param      PropelPDO $con optional connection object
-	 * @return     DataVisibility
-	 * @throws     PropelException
-	 */
-	public function getDataVisibility(PropelPDO $con = null)
-	{
-
-		if ($this->singleDataVisibility === null && !$this->isNew()) {
-			$this->singleDataVisibility = DataVisibilityQuery::create()->findPk($this->getPrimaryKey(), $con);
-		}
-
-		return $this->singleDataVisibility;
-	}
-
-	/**
-	 * Sets a single DataVisibility object as related to this object by a one-to-one relationship.
-	 *
-	 * @param      DataVisibility $v DataVisibility
-	 * @return     Registration The current object (for fluent API support)
-	 * @throws     PropelException
-	 */
-	public function setDataVisibility(DataVisibility $v = null)
-	{
-		$this->singleDataVisibility = $v;
-
-		// Make sure that that the passed-in DataVisibility isn't already associated with this object
-		if ($v !== null && $v->getRegistration() === null) {
-			$v->setRegistration($this);
-		}
-
-		return $this;
-	}
-
-	/**
-	 * Clears out the collUserVisibilitys collection
+	 * Clears out the collToolcommentss collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addUserVisibilitys()
+	 * @see        addToolcommentss()
 	 */
-	public function clearUserVisibilitys()
+	public function clearToolcommentss()
 	{
-		$this->collUserVisibilitys = null; // important to set this to NULL since that means it is uninitialized
+		$this->collToolcommentss = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collUserVisibilitys collection.
+	 * Initializes the collToolcommentss collection.
 	 *
-	 * By default this just sets the collUserVisibilitys collection to an empty array (like clearcollUserVisibilitys());
+	 * By default this just sets the collToolcommentss collection to an empty array (like clearcollToolcommentss());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initUserVisibilitys()
+	public function initToolcommentss()
 	{
-		$this->collUserVisibilitys = new PropelObjectCollection();
-		$this->collUserVisibilitys->setModel('UserVisibility');
+		$this->collToolcommentss = new PropelObjectCollection();
+		$this->collToolcommentss->setModel('Toolcomments');
 	}
 
 	/**
-	 * Gets an array of UserVisibility objects which contain a foreign key that references this object.
+	 * Gets an array of Toolcomments objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -1577,44 +1844,44 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array UserVisibility[] List of UserVisibility objects
+	 * @return     PropelCollection|array Toolcomments[] List of Toolcomments objects
 	 * @throws     PropelException
 	 */
-	public function getUserVisibilitys($criteria = null, PropelPDO $con = null)
+	public function getToolcommentss($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collUserVisibilitys || null !== $criteria) {
-			if ($this->isNew() && null === $this->collUserVisibilitys) {
+		if(null === $this->collToolcommentss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collToolcommentss) {
 				// return empty collection
-				$this->initUserVisibilitys();
+				$this->initToolcommentss();
 			} else {
-				$collUserVisibilitys = UserVisibilityQuery::create(null, $criteria)
+				$collToolcommentss = ToolcommentsQuery::create(null, $criteria)
 					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collUserVisibilitys;
+					return $collToolcommentss;
 				}
-				$this->collUserVisibilitys = $collUserVisibilitys;
+				$this->collToolcommentss = $collToolcommentss;
 			}
 		}
-		return $this->collUserVisibilitys;
+		return $this->collToolcommentss;
 	}
 
 	/**
-	 * Returns the number of related UserVisibility objects.
+	 * Returns the number of related Toolcomments objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related UserVisibility objects.
+	 * @return     int Count of related Toolcomments objects.
 	 * @throws     PropelException
 	 */
-	public function countUserVisibilitys(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countToolcommentss(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collUserVisibilitys || null !== $criteria) {
-			if ($this->isNew() && null === $this->collUserVisibilitys) {
+		if(null === $this->collToolcommentss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collToolcommentss) {
 				return 0;
 			} else {
-				$query = UserVisibilityQuery::create(null, $criteria);
+				$query = ToolcommentsQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
@@ -1623,60 +1890,60 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 					->count($con);
 			}
 		} else {
-			return count($this->collUserVisibilitys);
+			return count($this->collToolcommentss);
 		}
 	}
 
 	/**
-	 * Method called to associate a UserVisibility object to this object
-	 * through the UserVisibility foreign key attribute.
+	 * Method called to associate a Toolcomments object to this object
+	 * through the Toolcomments foreign key attribute.
 	 *
-	 * @param      UserVisibility $l UserVisibility
+	 * @param      Toolcomments $l Toolcomments
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addUserVisibility(UserVisibility $l)
+	public function addToolcomments(Toolcomments $l)
 	{
-		if ($this->collUserVisibilitys === null) {
-			$this->initUserVisibilitys();
+		if ($this->collToolcommentss === null) {
+			$this->initToolcommentss();
 		}
-		if (!$this->collUserVisibilitys->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collUserVisibilitys[]= $l;
+		if (!$this->collToolcommentss->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collToolcommentss[]= $l;
 			$l->setRegistration($this);
 		}
 	}
 
 	/**
-	 * Clears out the collAudits collection
+	 * Clears out the collToolratingss collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addAudits()
+	 * @see        addToolratingss()
 	 */
-	public function clearAudits()
+	public function clearToolratingss()
 	{
-		$this->collAudits = null; // important to set this to NULL since that means it is uninitialized
+		$this->collToolratingss = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collAudits collection.
+	 * Initializes the collToolratingss collection.
 	 *
-	 * By default this just sets the collAudits collection to an empty array (like clearcollAudits());
+	 * By default this just sets the collToolratingss collection to an empty array (like clearcollToolratingss());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initAudits()
+	public function initToolratingss()
 	{
-		$this->collAudits = new PropelObjectCollection();
-		$this->collAudits->setModel('Audit');
+		$this->collToolratingss = new PropelObjectCollection();
+		$this->collToolratingss->setModel('Toolratings');
 	}
 
 	/**
-	 * Gets an array of Audit objects which contain a foreign key that references this object.
+	 * Gets an array of Toolratings objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -1686,44 +1953,44 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array Audit[] List of Audit objects
+	 * @return     PropelCollection|array Toolratings[] List of Toolratings objects
 	 * @throws     PropelException
 	 */
-	public function getAudits($criteria = null, PropelPDO $con = null)
+	public function getToolratingss($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collAudits || null !== $criteria) {
-			if ($this->isNew() && null === $this->collAudits) {
+		if(null === $this->collToolratingss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collToolratingss) {
 				// return empty collection
-				$this->initAudits();
+				$this->initToolratingss();
 			} else {
-				$collAudits = AuditQuery::create(null, $criteria)
+				$collToolratingss = ToolratingsQuery::create(null, $criteria)
 					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collAudits;
+					return $collToolratingss;
 				}
-				$this->collAudits = $collAudits;
+				$this->collToolratingss = $collToolratingss;
 			}
 		}
-		return $this->collAudits;
+		return $this->collToolratingss;
 	}
 
 	/**
-	 * Returns the number of related Audit objects.
+	 * Returns the number of related Toolratings objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related Audit objects.
+	 * @return     int Count of related Toolratings objects.
 	 * @throws     PropelException
 	 */
-	public function countAudits(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countToolratingss(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collAudits || null !== $criteria) {
-			if ($this->isNew() && null === $this->collAudits) {
+		if(null === $this->collToolratingss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collToolratingss) {
 				return 0;
 			} else {
-				$query = AuditQuery::create(null, $criteria);
+				$query = ToolratingsQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
@@ -1732,60 +1999,60 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 					->count($con);
 			}
 		} else {
-			return count($this->collAudits);
+			return count($this->collToolratingss);
 		}
 	}
 
 	/**
-	 * Method called to associate a Audit object to this object
-	 * through the Audit foreign key attribute.
+	 * Method called to associate a Toolratings object to this object
+	 * through the Toolratings foreign key attribute.
 	 *
-	 * @param      Audit $l Audit
+	 * @param      Toolratings $l Toolratings
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addAudit(Audit $l)
+	public function addToolratings(Toolratings $l)
 	{
-		if ($this->collAudits === null) {
-			$this->initAudits();
+		if ($this->collToolratingss === null) {
+			$this->initToolratingss();
 		}
-		if (!$this->collAudits->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collAudits[]= $l;
+		if (!$this->collToolratingss->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collToolratingss[]= $l;
 			$l->setRegistration($this);
 		}
 	}
 
 	/**
-	 * Clears out the collNetworkVisibilitys collection
+	 * Clears out the collWorkflowcommentss collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addNetworkVisibilitys()
+	 * @see        addWorkflowcommentss()
 	 */
-	public function clearNetworkVisibilitys()
+	public function clearWorkflowcommentss()
 	{
-		$this->collNetworkVisibilitys = null; // important to set this to NULL since that means it is uninitialized
+		$this->collWorkflowcommentss = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collNetworkVisibilitys collection.
+	 * Initializes the collWorkflowcommentss collection.
 	 *
-	 * By default this just sets the collNetworkVisibilitys collection to an empty array (like clearcollNetworkVisibilitys());
+	 * By default this just sets the collWorkflowcommentss collection to an empty array (like clearcollWorkflowcommentss());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initNetworkVisibilitys()
+	public function initWorkflowcommentss()
 	{
-		$this->collNetworkVisibilitys = new PropelObjectCollection();
-		$this->collNetworkVisibilitys->setModel('NetworkVisibility');
+		$this->collWorkflowcommentss = new PropelObjectCollection();
+		$this->collWorkflowcommentss->setModel('Workflowcomments');
 	}
 
 	/**
-	 * Gets an array of NetworkVisibility objects which contain a foreign key that references this object.
+	 * Gets an array of Workflowcomments objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -1795,44 +2062,44 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array NetworkVisibility[] List of NetworkVisibility objects
+	 * @return     PropelCollection|array Workflowcomments[] List of Workflowcomments objects
 	 * @throws     PropelException
 	 */
-	public function getNetworkVisibilitys($criteria = null, PropelPDO $con = null)
+	public function getWorkflowcommentss($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collNetworkVisibilitys || null !== $criteria) {
-			if ($this->isNew() && null === $this->collNetworkVisibilitys) {
+		if(null === $this->collWorkflowcommentss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkflowcommentss) {
 				// return empty collection
-				$this->initNetworkVisibilitys();
+				$this->initWorkflowcommentss();
 			} else {
-				$collNetworkVisibilitys = NetworkVisibilityQuery::create(null, $criteria)
+				$collWorkflowcommentss = WorkflowcommentsQuery::create(null, $criteria)
 					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collNetworkVisibilitys;
+					return $collWorkflowcommentss;
 				}
-				$this->collNetworkVisibilitys = $collNetworkVisibilitys;
+				$this->collWorkflowcommentss = $collWorkflowcommentss;
 			}
 		}
-		return $this->collNetworkVisibilitys;
+		return $this->collWorkflowcommentss;
 	}
 
 	/**
-	 * Returns the number of related NetworkVisibility objects.
+	 * Returns the number of related Workflowcomments objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related NetworkVisibility objects.
+	 * @return     int Count of related Workflowcomments objects.
 	 * @throws     PropelException
 	 */
-	public function countNetworkVisibilitys(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countWorkflowcommentss(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collNetworkVisibilitys || null !== $criteria) {
-			if ($this->isNew() && null === $this->collNetworkVisibilitys) {
+		if(null === $this->collWorkflowcommentss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkflowcommentss) {
 				return 0;
 			} else {
-				$query = NetworkVisibilityQuery::create(null, $criteria);
+				$query = WorkflowcommentsQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
@@ -1841,60 +2108,60 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 					->count($con);
 			}
 		} else {
-			return count($this->collNetworkVisibilitys);
+			return count($this->collWorkflowcommentss);
 		}
 	}
 
 	/**
-	 * Method called to associate a NetworkVisibility object to this object
-	 * through the NetworkVisibility foreign key attribute.
+	 * Method called to associate a Workflowcomments object to this object
+	 * through the Workflowcomments foreign key attribute.
 	 *
-	 * @param      NetworkVisibility $l NetworkVisibility
+	 * @param      Workflowcomments $l Workflowcomments
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addNetworkVisibility(NetworkVisibility $l)
+	public function addWorkflowcomments(Workflowcomments $l)
 	{
-		if ($this->collNetworkVisibilitys === null) {
-			$this->initNetworkVisibilitys();
+		if ($this->collWorkflowcommentss === null) {
+			$this->initWorkflowcommentss();
 		}
-		if (!$this->collNetworkVisibilitys->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collNetworkVisibilitys[]= $l;
+		if (!$this->collWorkflowcommentss->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collWorkflowcommentss[]= $l;
 			$l->setRegistration($this);
 		}
 	}
 
 	/**
-	 * Clears out the collOutboxsRelatedByFromuser collection
+	 * Clears out the collWorkflowratingss collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addOutboxsRelatedByFromuser()
+	 * @see        addWorkflowratingss()
 	 */
-	public function clearOutboxsRelatedByFromuser()
+	public function clearWorkflowratingss()
 	{
-		$this->collOutboxsRelatedByFromuser = null; // important to set this to NULL since that means it is uninitialized
+		$this->collWorkflowratingss = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collOutboxsRelatedByFromuser collection.
+	 * Initializes the collWorkflowratingss collection.
 	 *
-	 * By default this just sets the collOutboxsRelatedByFromuser collection to an empty array (like clearcollOutboxsRelatedByFromuser());
+	 * By default this just sets the collWorkflowratingss collection to an empty array (like clearcollWorkflowratingss());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initOutboxsRelatedByFromuser()
+	public function initWorkflowratingss()
 	{
-		$this->collOutboxsRelatedByFromuser = new PropelObjectCollection();
-		$this->collOutboxsRelatedByFromuser->setModel('Outbox');
+		$this->collWorkflowratingss = new PropelObjectCollection();
+		$this->collWorkflowratingss->setModel('Workflowratings');
 	}
 
 	/**
-	 * Gets an array of Outbox objects which contain a foreign key that references this object.
+	 * Gets an array of Workflowratings objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -1904,106 +2171,106 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array Outbox[] List of Outbox objects
+	 * @return     PropelCollection|array Workflowratings[] List of Workflowratings objects
 	 * @throws     PropelException
 	 */
-	public function getOutboxsRelatedByFromuser($criteria = null, PropelPDO $con = null)
+	public function getWorkflowratingss($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collOutboxsRelatedByFromuser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collOutboxsRelatedByFromuser) {
+		if(null === $this->collWorkflowratingss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkflowratingss) {
 				// return empty collection
-				$this->initOutboxsRelatedByFromuser();
+				$this->initWorkflowratingss();
 			} else {
-				$collOutboxsRelatedByFromuser = OutboxQuery::create(null, $criteria)
-					->filterByRegistrationRelatedByFromuser($this)
+				$collWorkflowratingss = WorkflowratingsQuery::create(null, $criteria)
+					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collOutboxsRelatedByFromuser;
+					return $collWorkflowratingss;
 				}
-				$this->collOutboxsRelatedByFromuser = $collOutboxsRelatedByFromuser;
+				$this->collWorkflowratingss = $collWorkflowratingss;
 			}
 		}
-		return $this->collOutboxsRelatedByFromuser;
+		return $this->collWorkflowratingss;
 	}
 
 	/**
-	 * Returns the number of related Outbox objects.
+	 * Returns the number of related Workflowratings objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related Outbox objects.
+	 * @return     int Count of related Workflowratings objects.
 	 * @throws     PropelException
 	 */
-	public function countOutboxsRelatedByFromuser(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countWorkflowratingss(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collOutboxsRelatedByFromuser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collOutboxsRelatedByFromuser) {
+		if(null === $this->collWorkflowratingss || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkflowratingss) {
 				return 0;
 			} else {
-				$query = OutboxQuery::create(null, $criteria);
+				$query = WorkflowratingsQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
 				return $query
-					->filterByRegistrationRelatedByFromuser($this)
+					->filterByRegistration($this)
 					->count($con);
 			}
 		} else {
-			return count($this->collOutboxsRelatedByFromuser);
+			return count($this->collWorkflowratingss);
 		}
 	}
 
 	/**
-	 * Method called to associate a Outbox object to this object
-	 * through the Outbox foreign key attribute.
+	 * Method called to associate a Workflowratings object to this object
+	 * through the Workflowratings foreign key attribute.
 	 *
-	 * @param      Outbox $l Outbox
+	 * @param      Workflowratings $l Workflowratings
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addOutboxRelatedByFromuser(Outbox $l)
+	public function addWorkflowratings(Workflowratings $l)
 	{
-		if ($this->collOutboxsRelatedByFromuser === null) {
-			$this->initOutboxsRelatedByFromuser();
+		if ($this->collWorkflowratingss === null) {
+			$this->initWorkflowratingss();
 		}
-		if (!$this->collOutboxsRelatedByFromuser->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collOutboxsRelatedByFromuser[]= $l;
-			$l->setRegistrationRelatedByFromuser($this);
+		if (!$this->collWorkflowratingss->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collWorkflowratingss[]= $l;
+			$l->setRegistration($this);
 		}
 	}
 
 	/**
-	 * Clears out the collOutboxsRelatedByTouser collection
+	 * Clears out the collAnnotations collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addOutboxsRelatedByTouser()
+	 * @see        addAnnotations()
 	 */
-	public function clearOutboxsRelatedByTouser()
+	public function clearAnnotations()
 	{
-		$this->collOutboxsRelatedByTouser = null; // important to set this to NULL since that means it is uninitialized
+		$this->collAnnotations = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collOutboxsRelatedByTouser collection.
+	 * Initializes the collAnnotations collection.
 	 *
-	 * By default this just sets the collOutboxsRelatedByTouser collection to an empty array (like clearcollOutboxsRelatedByTouser());
+	 * By default this just sets the collAnnotations collection to an empty array (like clearcollAnnotations());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initOutboxsRelatedByTouser()
+	public function initAnnotations()
 	{
-		$this->collOutboxsRelatedByTouser = new PropelObjectCollection();
-		$this->collOutboxsRelatedByTouser->setModel('Outbox');
+		$this->collAnnotations = new PropelObjectCollection();
+		$this->collAnnotations->setModel('Annotation');
 	}
 
 	/**
-	 * Gets an array of Outbox objects which contain a foreign key that references this object.
+	 * Gets an array of Annotation objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -2013,106 +2280,131 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array Outbox[] List of Outbox objects
+	 * @return     PropelCollection|array Annotation[] List of Annotation objects
 	 * @throws     PropelException
 	 */
-	public function getOutboxsRelatedByTouser($criteria = null, PropelPDO $con = null)
+	public function getAnnotations($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collOutboxsRelatedByTouser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collOutboxsRelatedByTouser) {
+		if(null === $this->collAnnotations || null !== $criteria) {
+			if ($this->isNew() && null === $this->collAnnotations) {
 				// return empty collection
-				$this->initOutboxsRelatedByTouser();
+				$this->initAnnotations();
 			} else {
-				$collOutboxsRelatedByTouser = OutboxQuery::create(null, $criteria)
-					->filterByRegistrationRelatedByTouser($this)
+				$collAnnotations = AnnotationQuery::create(null, $criteria)
+					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collOutboxsRelatedByTouser;
+					return $collAnnotations;
 				}
-				$this->collOutboxsRelatedByTouser = $collOutboxsRelatedByTouser;
+				$this->collAnnotations = $collAnnotations;
 			}
 		}
-		return $this->collOutboxsRelatedByTouser;
+		return $this->collAnnotations;
 	}
 
 	/**
-	 * Returns the number of related Outbox objects.
+	 * Returns the number of related Annotation objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related Outbox objects.
+	 * @return     int Count of related Annotation objects.
 	 * @throws     PropelException
 	 */
-	public function countOutboxsRelatedByTouser(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countAnnotations(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collOutboxsRelatedByTouser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collOutboxsRelatedByTouser) {
+		if(null === $this->collAnnotations || null !== $criteria) {
+			if ($this->isNew() && null === $this->collAnnotations) {
 				return 0;
 			} else {
-				$query = OutboxQuery::create(null, $criteria);
+				$query = AnnotationQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
 				return $query
-					->filterByRegistrationRelatedByTouser($this)
+					->filterByRegistration($this)
 					->count($con);
 			}
 		} else {
-			return count($this->collOutboxsRelatedByTouser);
+			return count($this->collAnnotations);
 		}
 	}
 
 	/**
-	 * Method called to associate a Outbox object to this object
-	 * through the Outbox foreign key attribute.
+	 * Method called to associate a Annotation object to this object
+	 * through the Annotation foreign key attribute.
 	 *
-	 * @param      Outbox $l Outbox
+	 * @param      Annotation $l Annotation
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addOutboxRelatedByTouser(Outbox $l)
+	public function addAnnotation(Annotation $l)
 	{
-		if ($this->collOutboxsRelatedByTouser === null) {
-			$this->initOutboxsRelatedByTouser();
+		if ($this->collAnnotations === null) {
+			$this->initAnnotations();
 		}
-		if (!$this->collOutboxsRelatedByTouser->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collOutboxsRelatedByTouser[]= $l;
-			$l->setRegistrationRelatedByTouser($this);
+		if (!$this->collAnnotations->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collAnnotations[]= $l;
+			$l->setRegistration($this);
 		}
 	}
 
+
 	/**
-	 * Clears out the collInboxsRelatedByFromuser collection
+	 * If this collection has already been initialized with
+	 * an identical criteria, it returns the collection.
+	 * Otherwise if this Registration is new, it will return
+	 * an empty collection; or if this Registration has previously
+	 * been saved, it will retrieve related Annotations from storage.
+	 *
+	 * This method is protected by default in order to keep the public
+	 * api reasonable.  You can provide public methods for those you
+	 * actually need in Registration.
+	 *
+	 * @param      Criteria $criteria optional Criteria object to narrow the query
+	 * @param      PropelPDO $con optional connection object
+	 * @param      string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+	 * @return     PropelCollection|array Annotation[] List of Annotation objects
+	 */
+	public function getAnnotationsJoinWorkspace($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$query = AnnotationQuery::create(null, $criteria);
+		$query->joinWith('Workspace', $join_behavior);
+
+		return $this->getAnnotations($query, $con);
+	}
+
+	/**
+	 * Clears out the collHistorys collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addInboxsRelatedByFromuser()
+	 * @see        addHistorys()
 	 */
-	public function clearInboxsRelatedByFromuser()
+	public function clearHistorys()
 	{
-		$this->collInboxsRelatedByFromuser = null; // important to set this to NULL since that means it is uninitialized
+		$this->collHistorys = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collInboxsRelatedByFromuser collection.
+	 * Initializes the collHistorys collection.
 	 *
-	 * By default this just sets the collInboxsRelatedByFromuser collection to an empty array (like clearcollInboxsRelatedByFromuser());
+	 * By default this just sets the collHistorys collection to an empty array (like clearcollHistorys());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initInboxsRelatedByFromuser()
+	public function initHistorys()
 	{
-		$this->collInboxsRelatedByFromuser = new PropelObjectCollection();
-		$this->collInboxsRelatedByFromuser->setModel('Inbox');
+		$this->collHistorys = new PropelObjectCollection();
+		$this->collHistorys->setModel('History');
 	}
 
 	/**
-	 * Gets an array of Inbox objects which contain a foreign key that references this object.
+	 * Gets an array of History objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -2122,106 +2414,131 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array Inbox[] List of Inbox objects
+	 * @return     PropelCollection|array History[] List of History objects
 	 * @throws     PropelException
 	 */
-	public function getInboxsRelatedByFromuser($criteria = null, PropelPDO $con = null)
+	public function getHistorys($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collInboxsRelatedByFromuser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collInboxsRelatedByFromuser) {
+		if(null === $this->collHistorys || null !== $criteria) {
+			if ($this->isNew() && null === $this->collHistorys) {
 				// return empty collection
-				$this->initInboxsRelatedByFromuser();
+				$this->initHistorys();
 			} else {
-				$collInboxsRelatedByFromuser = InboxQuery::create(null, $criteria)
-					->filterByRegistrationRelatedByFromuser($this)
+				$collHistorys = HistoryQuery::create(null, $criteria)
+					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collInboxsRelatedByFromuser;
+					return $collHistorys;
 				}
-				$this->collInboxsRelatedByFromuser = $collInboxsRelatedByFromuser;
+				$this->collHistorys = $collHistorys;
 			}
 		}
-		return $this->collInboxsRelatedByFromuser;
+		return $this->collHistorys;
 	}
 
 	/**
-	 * Returns the number of related Inbox objects.
+	 * Returns the number of related History objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related Inbox objects.
+	 * @return     int Count of related History objects.
 	 * @throws     PropelException
 	 */
-	public function countInboxsRelatedByFromuser(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countHistorys(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collInboxsRelatedByFromuser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collInboxsRelatedByFromuser) {
+		if(null === $this->collHistorys || null !== $criteria) {
+			if ($this->isNew() && null === $this->collHistorys) {
 				return 0;
 			} else {
-				$query = InboxQuery::create(null, $criteria);
+				$query = HistoryQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
 				return $query
-					->filterByRegistrationRelatedByFromuser($this)
+					->filterByRegistration($this)
 					->count($con);
 			}
 		} else {
-			return count($this->collInboxsRelatedByFromuser);
+			return count($this->collHistorys);
 		}
 	}
 
 	/**
-	 * Method called to associate a Inbox object to this object
-	 * through the Inbox foreign key attribute.
+	 * Method called to associate a History object to this object
+	 * through the History foreign key attribute.
 	 *
-	 * @param      Inbox $l Inbox
+	 * @param      History $l History
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addInboxRelatedByFromuser(Inbox $l)
+	public function addHistory(History $l)
 	{
-		if ($this->collInboxsRelatedByFromuser === null) {
-			$this->initInboxsRelatedByFromuser();
+		if ($this->collHistorys === null) {
+			$this->initHistorys();
 		}
-		if (!$this->collInboxsRelatedByFromuser->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collInboxsRelatedByFromuser[]= $l;
-			$l->setRegistrationRelatedByFromuser($this);
+		if (!$this->collHistorys->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collHistorys[]= $l;
+			$l->setRegistration($this);
 		}
 	}
 
+
 	/**
-	 * Clears out the collInboxsRelatedByTouser collection
+	 * If this collection has already been initialized with
+	 * an identical criteria, it returns the collection.
+	 * Otherwise if this Registration is new, it will return
+	 * an empty collection; or if this Registration has previously
+	 * been saved, it will retrieve related Historys from storage.
+	 *
+	 * This method is protected by default in order to keep the public
+	 * api reasonable.  You can provide public methods for those you
+	 * actually need in Registration.
+	 *
+	 * @param      Criteria $criteria optional Criteria object to narrow the query
+	 * @param      PropelPDO $con optional connection object
+	 * @param      string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+	 * @return     PropelCollection|array History[] List of History objects
+	 */
+	public function getHistorysJoinWorkspace($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$query = HistoryQuery::create(null, $criteria);
+		$query->joinWith('Workspace', $join_behavior);
+
+		return $this->getHistorys($query, $con);
+	}
+
+	/**
+	 * Clears out the collWorkspaces collection
 	 *
 	 * This does not modify the database; however, it will remove any associated objects, causing
 	 * them to be refetched by subsequent calls to accessor method.
 	 *
 	 * @return     void
-	 * @see        addInboxsRelatedByTouser()
+	 * @see        addWorkspaces()
 	 */
-	public function clearInboxsRelatedByTouser()
+	public function clearWorkspaces()
 	{
-		$this->collInboxsRelatedByTouser = null; // important to set this to NULL since that means it is uninitialized
+		$this->collWorkspaces = null; // important to set this to NULL since that means it is uninitialized
 	}
 
 	/**
-	 * Initializes the collInboxsRelatedByTouser collection.
+	 * Initializes the collWorkspaces collection.
 	 *
-	 * By default this just sets the collInboxsRelatedByTouser collection to an empty array (like clearcollInboxsRelatedByTouser());
+	 * By default this just sets the collWorkspaces collection to an empty array (like clearcollWorkspaces());
 	 * however, you may wish to override this method in your stub class to provide setting appropriate
 	 * to your application -- for example, setting the initial array to the values stored in database.
 	 *
 	 * @return     void
 	 */
-	public function initInboxsRelatedByTouser()
+	public function initWorkspaces()
 	{
-		$this->collInboxsRelatedByTouser = new PropelObjectCollection();
-		$this->collInboxsRelatedByTouser->setModel('Inbox');
+		$this->collWorkspaces = new PropelObjectCollection();
+		$this->collWorkspaces->setModel('Workspace');
 	}
 
 	/**
-	 * Gets an array of Inbox objects which contain a foreign key that references this object.
+	 * Gets an array of Workspace objects which contain a foreign key that references this object.
 	 *
 	 * If the $criteria is not null, it is used to always fetch the results from the database.
 	 * Otherwise the results are fetched from the database the first time, then cached.
@@ -2231,73 +2548,232 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 *
 	 * @param      Criteria $criteria optional Criteria object to narrow the query
 	 * @param      PropelPDO $con optional connection object
-	 * @return     PropelCollection|array Inbox[] List of Inbox objects
+	 * @return     PropelCollection|array Workspace[] List of Workspace objects
 	 * @throws     PropelException
 	 */
-	public function getInboxsRelatedByTouser($criteria = null, PropelPDO $con = null)
+	public function getWorkspaces($criteria = null, PropelPDO $con = null)
 	{
-		if(null === $this->collInboxsRelatedByTouser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collInboxsRelatedByTouser) {
+		if(null === $this->collWorkspaces || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkspaces) {
 				// return empty collection
-				$this->initInboxsRelatedByTouser();
+				$this->initWorkspaces();
 			} else {
-				$collInboxsRelatedByTouser = InboxQuery::create(null, $criteria)
-					->filterByRegistrationRelatedByTouser($this)
+				$collWorkspaces = WorkspaceQuery::create(null, $criteria)
+					->filterByRegistration($this)
 					->find($con);
 				if (null !== $criteria) {
-					return $collInboxsRelatedByTouser;
+					return $collWorkspaces;
 				}
-				$this->collInboxsRelatedByTouser = $collInboxsRelatedByTouser;
+				$this->collWorkspaces = $collWorkspaces;
 			}
 		}
-		return $this->collInboxsRelatedByTouser;
+		return $this->collWorkspaces;
 	}
 
 	/**
-	 * Returns the number of related Inbox objects.
+	 * Returns the number of related Workspace objects.
 	 *
 	 * @param      Criteria $criteria
 	 * @param      boolean $distinct
 	 * @param      PropelPDO $con
-	 * @return     int Count of related Inbox objects.
+	 * @return     int Count of related Workspace objects.
 	 * @throws     PropelException
 	 */
-	public function countInboxsRelatedByTouser(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countWorkspaces(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
 	{
-		if(null === $this->collInboxsRelatedByTouser || null !== $criteria) {
-			if ($this->isNew() && null === $this->collInboxsRelatedByTouser) {
+		if(null === $this->collWorkspaces || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkspaces) {
 				return 0;
 			} else {
-				$query = InboxQuery::create(null, $criteria);
+				$query = WorkspaceQuery::create(null, $criteria);
 				if($distinct) {
 					$query->distinct();
 				}
 				return $query
-					->filterByRegistrationRelatedByTouser($this)
+					->filterByRegistration($this)
 					->count($con);
 			}
 		} else {
-			return count($this->collInboxsRelatedByTouser);
+			return count($this->collWorkspaces);
 		}
 	}
 
 	/**
-	 * Method called to associate a Inbox object to this object
-	 * through the Inbox foreign key attribute.
+	 * Method called to associate a Workspace object to this object
+	 * through the Workspace foreign key attribute.
 	 *
-	 * @param      Inbox $l Inbox
+	 * @param      Workspace $l Workspace
 	 * @return     void
 	 * @throws     PropelException
 	 */
-	public function addInboxRelatedByTouser(Inbox $l)
+	public function addWorkspace(Workspace $l)
 	{
-		if ($this->collInboxsRelatedByTouser === null) {
-			$this->initInboxsRelatedByTouser();
+		if ($this->collWorkspaces === null) {
+			$this->initWorkspaces();
 		}
-		if (!$this->collInboxsRelatedByTouser->contains($l)) { // only add it if the **same** object is not already associated
-			$this->collInboxsRelatedByTouser[]= $l;
-			$l->setRegistrationRelatedByTouser($this);
+		if (!$this->collWorkspaces->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collWorkspaces[]= $l;
+			$l->setRegistration($this);
 		}
+	}
+
+	/**
+	 * Clears out the collWorkspaceUsers collection
+	 *
+	 * This does not modify the database; however, it will remove any associated objects, causing
+	 * them to be refetched by subsequent calls to accessor method.
+	 *
+	 * @return     void
+	 * @see        addWorkspaceUsers()
+	 */
+	public function clearWorkspaceUsers()
+	{
+		$this->collWorkspaceUsers = null; // important to set this to NULL since that means it is uninitialized
+	}
+
+	/**
+	 * Initializes the collWorkspaceUsers collection.
+	 *
+	 * By default this just sets the collWorkspaceUsers collection to an empty array (like clearcollWorkspaceUsers());
+	 * however, you may wish to override this method in your stub class to provide setting appropriate
+	 * to your application -- for example, setting the initial array to the values stored in database.
+	 *
+	 * @return     void
+	 */
+	public function initWorkspaceUsers()
+	{
+		$this->collWorkspaceUsers = new PropelObjectCollection();
+		$this->collWorkspaceUsers->setModel('WorkspaceUser');
+	}
+
+	/**
+	 * Gets an array of WorkspaceUser objects which contain a foreign key that references this object.
+	 *
+	 * If the $criteria is not null, it is used to always fetch the results from the database.
+	 * Otherwise the results are fetched from the database the first time, then cached.
+	 * Next time the same method is called without $criteria, the cached collection is returned.
+	 * If this Registration is new, it will return
+	 * an empty collection or the current collection; the criteria is ignored on a new object.
+	 *
+	 * @param      Criteria $criteria optional Criteria object to narrow the query
+	 * @param      PropelPDO $con optional connection object
+	 * @return     PropelCollection|array WorkspaceUser[] List of WorkspaceUser objects
+	 * @throws     PropelException
+	 */
+	public function getWorkspaceUsers($criteria = null, PropelPDO $con = null)
+	{
+		if(null === $this->collWorkspaceUsers || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkspaceUsers) {
+				// return empty collection
+				$this->initWorkspaceUsers();
+			} else {
+				$collWorkspaceUsers = WorkspaceUserQuery::create(null, $criteria)
+					->filterByRegistration($this)
+					->find($con);
+				if (null !== $criteria) {
+					return $collWorkspaceUsers;
+				}
+				$this->collWorkspaceUsers = $collWorkspaceUsers;
+			}
+		}
+		return $this->collWorkspaceUsers;
+	}
+
+	/**
+	 * Returns the number of related WorkspaceUser objects.
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct
+	 * @param      PropelPDO $con
+	 * @return     int Count of related WorkspaceUser objects.
+	 * @throws     PropelException
+	 */
+	public function countWorkspaceUsers(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	{
+		if(null === $this->collWorkspaceUsers || null !== $criteria) {
+			if ($this->isNew() && null === $this->collWorkspaceUsers) {
+				return 0;
+			} else {
+				$query = WorkspaceUserQuery::create(null, $criteria);
+				if($distinct) {
+					$query->distinct();
+				}
+				return $query
+					->filterByRegistration($this)
+					->count($con);
+			}
+		} else {
+			return count($this->collWorkspaceUsers);
+		}
+	}
+
+	/**
+	 * Method called to associate a WorkspaceUser object to this object
+	 * through the WorkspaceUser foreign key attribute.
+	 *
+	 * @param      WorkspaceUser $l WorkspaceUser
+	 * @return     void
+	 * @throws     PropelException
+	 */
+	public function addWorkspaceUser(WorkspaceUser $l)
+	{
+		if ($this->collWorkspaceUsers === null) {
+			$this->initWorkspaceUsers();
+		}
+		if (!$this->collWorkspaceUsers->contains($l)) { // only add it if the **same** object is not already associated
+			$this->collWorkspaceUsers[]= $l;
+			$l->setRegistration($this);
+		}
+	}
+
+
+	/**
+	 * If this collection has already been initialized with
+	 * an identical criteria, it returns the collection.
+	 * Otherwise if this Registration is new, it will return
+	 * an empty collection; or if this Registration has previously
+	 * been saved, it will retrieve related WorkspaceUsers from storage.
+	 *
+	 * This method is protected by default in order to keep the public
+	 * api reasonable.  You can provide public methods for those you
+	 * actually need in Registration.
+	 *
+	 * @param      Criteria $criteria optional Criteria object to narrow the query
+	 * @param      PropelPDO $con optional connection object
+	 * @param      string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+	 * @return     PropelCollection|array WorkspaceUser[] List of WorkspaceUser objects
+	 */
+	public function getWorkspaceUsersJoinWorkspace($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$query = WorkspaceUserQuery::create(null, $criteria);
+		$query->joinWith('Workspace', $join_behavior);
+
+		return $this->getWorkspaceUsers($query, $con);
+	}
+
+
+	/**
+	 * If this collection has already been initialized with
+	 * an identical criteria, it returns the collection.
+	 * Otherwise if this Registration is new, it will return
+	 * an empty collection; or if this Registration has previously
+	 * been saved, it will retrieve related WorkspaceUsers from storage.
+	 *
+	 * This method is protected by default in order to keep the public
+	 * api reasonable.  You can provide public methods for those you
+	 * actually need in Registration.
+	 *
+	 * @param      Criteria $criteria optional Criteria object to narrow the query
+	 * @param      PropelPDO $con optional connection object
+	 * @param      string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+	 * @return     PropelCollection|array WorkspaceUser[] List of WorkspaceUser objects
+	 */
+	public function getWorkspaceUsersJoinAccess($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$query = WorkspaceUserQuery::create(null, $criteria);
+		$query->joinWith('Access', $join_behavior);
+
+		return $this->getWorkspaceUsers($query, $con);
 	}
 
 	/**
@@ -2305,21 +2781,26 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	 */
 	public function clear()
 	{
-		$this->username = null;
-		$this->password = null;
-		$this->email = null;
-		$this->im_email = null;
-		$this->im_password = null;
-		$this->first_name = null;
-		$this->last_name = null;
-		$this->work_title = null;
+		$this->id = null;
 		$this->phone = null;
+		$this->interests = null;
+		$this->state = null;
+		$this->online_status = null;
+		$this->password = null;
+		$this->city = null;
+		$this->username = null;
+		$this->createdat = null;
+		$this->first_name = null;
+		$this->datavisibility = null;
+		$this->work_title = null;
+		$this->last_name = null;
+		$this->zipcode = null;
 		$this->lab_affiliation = null;
 		$this->addr1 = null;
 		$this->addr2 = null;
-		$this->city = null;
-		$this->state = null;
-		$this->zipcode = null;
+		$this->email = null;
+		$this->logdata = null;
+		$this->rootfolder_id = null;
 		$this->alreadyInSave = false;
 		$this->alreadyInValidation = false;
 		$this->clearAllReferences();
@@ -2340,54 +2821,56 @@ abstract class BaseRegistration extends BaseObject  implements Persistent
 	public function clearAllReferences($deep = false)
 	{
 		if ($deep) {
-			if ($this->singleDataVisibility) {
-				$this->singleDataVisibility->clearAllReferences($deep);
-			}
-			if ($this->collUserVisibilitys) {
-				foreach ((array) $this->collUserVisibilitys as $o) {
+			if ($this->collToolcommentss) {
+				foreach ((array) $this->collToolcommentss as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
-			if ($this->collAudits) {
-				foreach ((array) $this->collAudits as $o) {
+			if ($this->collToolratingss) {
+				foreach ((array) $this->collToolratingss as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
-			if ($this->collNetworkVisibilitys) {
-				foreach ((array) $this->collNetworkVisibilitys as $o) {
+			if ($this->collWorkflowcommentss) {
+				foreach ((array) $this->collWorkflowcommentss as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
-			if ($this->collOutboxsRelatedByFromuser) {
-				foreach ((array) $this->collOutboxsRelatedByFromuser as $o) {
+			if ($this->collWorkflowratingss) {
+				foreach ((array) $this->collWorkflowratingss as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
-			if ($this->collOutboxsRelatedByTouser) {
-				foreach ((array) $this->collOutboxsRelatedByTouser as $o) {
+			if ($this->collAnnotations) {
+				foreach ((array) $this->collAnnotations as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
-			if ($this->collInboxsRelatedByFromuser) {
-				foreach ((array) $this->collInboxsRelatedByFromuser as $o) {
+			if ($this->collHistorys) {
+				foreach ((array) $this->collHistorys as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
-			if ($this->collInboxsRelatedByTouser) {
-				foreach ((array) $this->collInboxsRelatedByTouser as $o) {
+			if ($this->collWorkspaces) {
+				foreach ((array) $this->collWorkspaces as $o) {
+					$o->clearAllReferences($deep);
+				}
+			}
+			if ($this->collWorkspaceUsers) {
+				foreach ((array) $this->collWorkspaceUsers as $o) {
 					$o->clearAllReferences($deep);
 				}
 			}
 		} // if ($deep)
 
-		$this->singleDataVisibility = null;
-		$this->collUserVisibilitys = null;
-		$this->collAudits = null;
-		$this->collNetworkVisibilitys = null;
-		$this->collOutboxsRelatedByFromuser = null;
-		$this->collOutboxsRelatedByTouser = null;
-		$this->collInboxsRelatedByFromuser = null;
-		$this->collInboxsRelatedByTouser = null;
+		$this->collToolcommentss = null;
+		$this->collToolratingss = null;
+		$this->collWorkflowcommentss = null;
+		$this->collWorkflowratingss = null;
+		$this->collAnnotations = null;
+		$this->collHistorys = null;
+		$this->collWorkspaces = null;
+		$this->collWorkspaceUsers = null;
 	}
 
 	/**

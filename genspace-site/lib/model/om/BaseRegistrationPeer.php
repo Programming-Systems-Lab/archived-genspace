@@ -26,37 +26,52 @@ abstract class BaseRegistrationPeer {
 	const TM_CLASS = 'RegistrationTableMap';
 	
 	/** The total number of columns. */
-	const NUM_COLUMNS = 15;
+	const NUM_COLUMNS = 20;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
 
-	/** the column name for the USERNAME field */
-	const USERNAME = 'registration.USERNAME';
+	/** the column name for the ID field */
+	const ID = 'registration.ID';
+
+	/** the column name for the PHONE field */
+	const PHONE = 'registration.PHONE';
+
+	/** the column name for the INTERESTS field */
+	const INTERESTS = 'registration.INTERESTS';
+
+	/** the column name for the STATE field */
+	const STATE = 'registration.STATE';
+
+	/** the column name for the ONLINE_STATUS field */
+	const ONLINE_STATUS = 'registration.ONLINE_STATUS';
 
 	/** the column name for the PASSWORD field */
 	const PASSWORD = 'registration.PASSWORD';
 
-	/** the column name for the EMAIL field */
-	const EMAIL = 'registration.EMAIL';
+	/** the column name for the CITY field */
+	const CITY = 'registration.CITY';
 
-	/** the column name for the IM_EMAIL field */
-	const IM_EMAIL = 'registration.IM_EMAIL';
+	/** the column name for the USERNAME field */
+	const USERNAME = 'registration.USERNAME';
 
-	/** the column name for the IM_PASSWORD field */
-	const IM_PASSWORD = 'registration.IM_PASSWORD';
+	/** the column name for the CREATEDAT field */
+	const CREATEDAT = 'registration.CREATEDAT';
 
 	/** the column name for the FIRST_NAME field */
 	const FIRST_NAME = 'registration.FIRST_NAME';
 
-	/** the column name for the LAST_NAME field */
-	const LAST_NAME = 'registration.LAST_NAME';
+	/** the column name for the DATAVISIBILITY field */
+	const DATAVISIBILITY = 'registration.DATAVISIBILITY';
 
 	/** the column name for the WORK_TITLE field */
 	const WORK_TITLE = 'registration.WORK_TITLE';
 
-	/** the column name for the PHONE field */
-	const PHONE = 'registration.PHONE';
+	/** the column name for the LAST_NAME field */
+	const LAST_NAME = 'registration.LAST_NAME';
+
+	/** the column name for the ZIPCODE field */
+	const ZIPCODE = 'registration.ZIPCODE';
 
 	/** the column name for the LAB_AFFILIATION field */
 	const LAB_AFFILIATION = 'registration.LAB_AFFILIATION';
@@ -67,14 +82,14 @@ abstract class BaseRegistrationPeer {
 	/** the column name for the ADDR2 field */
 	const ADDR2 = 'registration.ADDR2';
 
-	/** the column name for the CITY field */
-	const CITY = 'registration.CITY';
+	/** the column name for the EMAIL field */
+	const EMAIL = 'registration.EMAIL';
 
-	/** the column name for the STATE field */
-	const STATE = 'registration.STATE';
+	/** the column name for the LOGDATA field */
+	const LOGDATA = 'registration.LOGDATA';
 
-	/** the column name for the ZIPCODE field */
-	const ZIPCODE = 'registration.ZIPCODE';
+	/** the column name for the ROOTFOLDER_ID field */
+	const ROOTFOLDER_ID = 'registration.ROOTFOLDER_ID';
 
 	/**
 	 * An identiy map to hold any loaded instances of Registration objects.
@@ -92,12 +107,12 @@ abstract class BaseRegistrationPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Username', 'Password', 'Email', 'ImEmail', 'ImPassword', 'FirstName', 'LastName', 'WorkTitle', 'Phone', 'LabAffiliation', 'Addr1', 'Addr2', 'City', 'State', 'Zipcode', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('username', 'password', 'email', 'imEmail', 'imPassword', 'firstName', 'lastName', 'workTitle', 'phone', 'labAffiliation', 'addr1', 'addr2', 'city', 'state', 'zipcode', ),
-		BasePeer::TYPE_COLNAME => array (self::USERNAME, self::PASSWORD, self::EMAIL, self::IM_EMAIL, self::IM_PASSWORD, self::FIRST_NAME, self::LAST_NAME, self::WORK_TITLE, self::PHONE, self::LAB_AFFILIATION, self::ADDR1, self::ADDR2, self::CITY, self::STATE, self::ZIPCODE, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('USERNAME', 'PASSWORD', 'EMAIL', 'IM_EMAIL', 'IM_PASSWORD', 'FIRST_NAME', 'LAST_NAME', 'WORK_TITLE', 'PHONE', 'LAB_AFFILIATION', 'ADDR1', 'ADDR2', 'CITY', 'STATE', 'ZIPCODE', ),
-		BasePeer::TYPE_FIELDNAME => array ('username', 'password', 'email', 'im_email', 'im_password', 'first_name', 'last_name', 'work_title', 'phone', 'lab_affiliation', 'addr1', 'addr2', 'city', 'state', 'zipcode', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Phone', 'Interests', 'State', 'OnlineStatus', 'Password', 'City', 'Username', 'Createdat', 'FirstName', 'Datavisibility', 'WorkTitle', 'LastName', 'Zipcode', 'LabAffiliation', 'Addr1', 'Addr2', 'Email', 'Logdata', 'RootfolderId', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'phone', 'interests', 'state', 'onlineStatus', 'password', 'city', 'username', 'createdat', 'firstName', 'datavisibility', 'workTitle', 'lastName', 'zipcode', 'labAffiliation', 'addr1', 'addr2', 'email', 'logdata', 'rootfolderId', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::PHONE, self::INTERESTS, self::STATE, self::ONLINE_STATUS, self::PASSWORD, self::CITY, self::USERNAME, self::CREATEDAT, self::FIRST_NAME, self::DATAVISIBILITY, self::WORK_TITLE, self::LAST_NAME, self::ZIPCODE, self::LAB_AFFILIATION, self::ADDR1, self::ADDR2, self::EMAIL, self::LOGDATA, self::ROOTFOLDER_ID, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'PHONE', 'INTERESTS', 'STATE', 'ONLINE_STATUS', 'PASSWORD', 'CITY', 'USERNAME', 'CREATEDAT', 'FIRST_NAME', 'DATAVISIBILITY', 'WORK_TITLE', 'LAST_NAME', 'ZIPCODE', 'LAB_AFFILIATION', 'ADDR1', 'ADDR2', 'EMAIL', 'LOGDATA', 'ROOTFOLDER_ID', ),
+		BasePeer::TYPE_FIELDNAME => array ('ID', 'PHONE', 'INTERESTS', 'STATE', 'online_status', 'PASSWORD', 'CITY', 'USERNAME', 'CREATEDAT', 'first_name', 'DATAVISIBILITY', 'work_title', 'last_name', 'ZIPCODE', 'lab_affiliation', 'ADDR1', 'ADDR2', 'EMAIL', 'LOGDATA', 'ROOTFOLDER_ID', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, )
 	);
 
 	/**
@@ -107,12 +122,12 @@ abstract class BaseRegistrationPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Username' => 0, 'Password' => 1, 'Email' => 2, 'ImEmail' => 3, 'ImPassword' => 4, 'FirstName' => 5, 'LastName' => 6, 'WorkTitle' => 7, 'Phone' => 8, 'LabAffiliation' => 9, 'Addr1' => 10, 'Addr2' => 11, 'City' => 12, 'State' => 13, 'Zipcode' => 14, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('username' => 0, 'password' => 1, 'email' => 2, 'imEmail' => 3, 'imPassword' => 4, 'firstName' => 5, 'lastName' => 6, 'workTitle' => 7, 'phone' => 8, 'labAffiliation' => 9, 'addr1' => 10, 'addr2' => 11, 'city' => 12, 'state' => 13, 'zipcode' => 14, ),
-		BasePeer::TYPE_COLNAME => array (self::USERNAME => 0, self::PASSWORD => 1, self::EMAIL => 2, self::IM_EMAIL => 3, self::IM_PASSWORD => 4, self::FIRST_NAME => 5, self::LAST_NAME => 6, self::WORK_TITLE => 7, self::PHONE => 8, self::LAB_AFFILIATION => 9, self::ADDR1 => 10, self::ADDR2 => 11, self::CITY => 12, self::STATE => 13, self::ZIPCODE => 14, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('USERNAME' => 0, 'PASSWORD' => 1, 'EMAIL' => 2, 'IM_EMAIL' => 3, 'IM_PASSWORD' => 4, 'FIRST_NAME' => 5, 'LAST_NAME' => 6, 'WORK_TITLE' => 7, 'PHONE' => 8, 'LAB_AFFILIATION' => 9, 'ADDR1' => 10, 'ADDR2' => 11, 'CITY' => 12, 'STATE' => 13, 'ZIPCODE' => 14, ),
-		BasePeer::TYPE_FIELDNAME => array ('username' => 0, 'password' => 1, 'email' => 2, 'im_email' => 3, 'im_password' => 4, 'first_name' => 5, 'last_name' => 6, 'work_title' => 7, 'phone' => 8, 'lab_affiliation' => 9, 'addr1' => 10, 'addr2' => 11, 'city' => 12, 'state' => 13, 'zipcode' => 14, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, )
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Phone' => 1, 'Interests' => 2, 'State' => 3, 'OnlineStatus' => 4, 'Password' => 5, 'City' => 6, 'Username' => 7, 'Createdat' => 8, 'FirstName' => 9, 'Datavisibility' => 10, 'WorkTitle' => 11, 'LastName' => 12, 'Zipcode' => 13, 'LabAffiliation' => 14, 'Addr1' => 15, 'Addr2' => 16, 'Email' => 17, 'Logdata' => 18, 'RootfolderId' => 19, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'phone' => 1, 'interests' => 2, 'state' => 3, 'onlineStatus' => 4, 'password' => 5, 'city' => 6, 'username' => 7, 'createdat' => 8, 'firstName' => 9, 'datavisibility' => 10, 'workTitle' => 11, 'lastName' => 12, 'zipcode' => 13, 'labAffiliation' => 14, 'addr1' => 15, 'addr2' => 16, 'email' => 17, 'logdata' => 18, 'rootfolderId' => 19, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::PHONE => 1, self::INTERESTS => 2, self::STATE => 3, self::ONLINE_STATUS => 4, self::PASSWORD => 5, self::CITY => 6, self::USERNAME => 7, self::CREATEDAT => 8, self::FIRST_NAME => 9, self::DATAVISIBILITY => 10, self::WORK_TITLE => 11, self::LAST_NAME => 12, self::ZIPCODE => 13, self::LAB_AFFILIATION => 14, self::ADDR1 => 15, self::ADDR2 => 16, self::EMAIL => 17, self::LOGDATA => 18, self::ROOTFOLDER_ID => 19, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'PHONE' => 1, 'INTERESTS' => 2, 'STATE' => 3, 'ONLINE_STATUS' => 4, 'PASSWORD' => 5, 'CITY' => 6, 'USERNAME' => 7, 'CREATEDAT' => 8, 'FIRST_NAME' => 9, 'DATAVISIBILITY' => 10, 'WORK_TITLE' => 11, 'LAST_NAME' => 12, 'ZIPCODE' => 13, 'LAB_AFFILIATION' => 14, 'ADDR1' => 15, 'ADDR2' => 16, 'EMAIL' => 17, 'LOGDATA' => 18, 'ROOTFOLDER_ID' => 19, ),
+		BasePeer::TYPE_FIELDNAME => array ('ID' => 0, 'PHONE' => 1, 'INTERESTS' => 2, 'STATE' => 3, 'online_status' => 4, 'PASSWORD' => 5, 'CITY' => 6, 'USERNAME' => 7, 'CREATEDAT' => 8, 'first_name' => 9, 'DATAVISIBILITY' => 10, 'work_title' => 11, 'last_name' => 12, 'ZIPCODE' => 13, 'lab_affiliation' => 14, 'ADDR1' => 15, 'ADDR2' => 16, 'EMAIL' => 17, 'LOGDATA' => 18, 'ROOTFOLDER_ID' => 19, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, )
 	);
 
 	/**
@@ -184,37 +199,47 @@ abstract class BaseRegistrationPeer {
 	public static function addSelectColumns(Criteria $criteria, $alias = null)
 	{
 		if (null === $alias) {
-			$criteria->addSelectColumn(RegistrationPeer::USERNAME);
-			$criteria->addSelectColumn(RegistrationPeer::PASSWORD);
-			$criteria->addSelectColumn(RegistrationPeer::EMAIL);
-			$criteria->addSelectColumn(RegistrationPeer::IM_EMAIL);
-			$criteria->addSelectColumn(RegistrationPeer::IM_PASSWORD);
-			$criteria->addSelectColumn(RegistrationPeer::FIRST_NAME);
-			$criteria->addSelectColumn(RegistrationPeer::LAST_NAME);
-			$criteria->addSelectColumn(RegistrationPeer::WORK_TITLE);
+			$criteria->addSelectColumn(RegistrationPeer::ID);
 			$criteria->addSelectColumn(RegistrationPeer::PHONE);
+			$criteria->addSelectColumn(RegistrationPeer::INTERESTS);
+			$criteria->addSelectColumn(RegistrationPeer::STATE);
+			$criteria->addSelectColumn(RegistrationPeer::ONLINE_STATUS);
+			$criteria->addSelectColumn(RegistrationPeer::PASSWORD);
+			$criteria->addSelectColumn(RegistrationPeer::CITY);
+			$criteria->addSelectColumn(RegistrationPeer::USERNAME);
+			$criteria->addSelectColumn(RegistrationPeer::CREATEDAT);
+			$criteria->addSelectColumn(RegistrationPeer::FIRST_NAME);
+			$criteria->addSelectColumn(RegistrationPeer::DATAVISIBILITY);
+			$criteria->addSelectColumn(RegistrationPeer::WORK_TITLE);
+			$criteria->addSelectColumn(RegistrationPeer::LAST_NAME);
+			$criteria->addSelectColumn(RegistrationPeer::ZIPCODE);
 			$criteria->addSelectColumn(RegistrationPeer::LAB_AFFILIATION);
 			$criteria->addSelectColumn(RegistrationPeer::ADDR1);
 			$criteria->addSelectColumn(RegistrationPeer::ADDR2);
-			$criteria->addSelectColumn(RegistrationPeer::CITY);
-			$criteria->addSelectColumn(RegistrationPeer::STATE);
-			$criteria->addSelectColumn(RegistrationPeer::ZIPCODE);
+			$criteria->addSelectColumn(RegistrationPeer::EMAIL);
+			$criteria->addSelectColumn(RegistrationPeer::LOGDATA);
+			$criteria->addSelectColumn(RegistrationPeer::ROOTFOLDER_ID);
 		} else {
-			$criteria->addSelectColumn($alias . '.USERNAME');
-			$criteria->addSelectColumn($alias . '.PASSWORD');
-			$criteria->addSelectColumn($alias . '.EMAIL');
-			$criteria->addSelectColumn($alias . '.IM_EMAIL');
-			$criteria->addSelectColumn($alias . '.IM_PASSWORD');
-			$criteria->addSelectColumn($alias . '.FIRST_NAME');
-			$criteria->addSelectColumn($alias . '.LAST_NAME');
-			$criteria->addSelectColumn($alias . '.WORK_TITLE');
+			$criteria->addSelectColumn($alias . '.ID');
 			$criteria->addSelectColumn($alias . '.PHONE');
+			$criteria->addSelectColumn($alias . '.INTERESTS');
+			$criteria->addSelectColumn($alias . '.STATE');
+			$criteria->addSelectColumn($alias . '.ONLINE_STATUS');
+			$criteria->addSelectColumn($alias . '.PASSWORD');
+			$criteria->addSelectColumn($alias . '.CITY');
+			$criteria->addSelectColumn($alias . '.USERNAME');
+			$criteria->addSelectColumn($alias . '.CREATEDAT');
+			$criteria->addSelectColumn($alias . '.FIRST_NAME');
+			$criteria->addSelectColumn($alias . '.DATAVISIBILITY');
+			$criteria->addSelectColumn($alias . '.WORK_TITLE');
+			$criteria->addSelectColumn($alias . '.LAST_NAME');
+			$criteria->addSelectColumn($alias . '.ZIPCODE');
 			$criteria->addSelectColumn($alias . '.LAB_AFFILIATION');
 			$criteria->addSelectColumn($alias . '.ADDR1');
 			$criteria->addSelectColumn($alias . '.ADDR2');
-			$criteria->addSelectColumn($alias . '.CITY');
-			$criteria->addSelectColumn($alias . '.STATE');
-			$criteria->addSelectColumn($alias . '.ZIPCODE');
+			$criteria->addSelectColumn($alias . '.EMAIL');
+			$criteria->addSelectColumn($alias . '.LOGDATA');
+			$criteria->addSelectColumn($alias . '.ROOTFOLDER_ID');
 		}
 	}
 
@@ -339,7 +364,7 @@ abstract class BaseRegistrationPeer {
 	{
 		if (Propel::isInstancePoolingEnabled()) {
 			if ($key === null) {
-				$key = (string) $obj->getUsername();
+				$key = (string) $obj->getId();
 			} // if key === null
 			self::$instances[$key] = $obj;
 		}
@@ -359,7 +384,7 @@ abstract class BaseRegistrationPeer {
 	{
 		if (Propel::isInstancePoolingEnabled() && $value !== null) {
 			if (is_object($value) && $value instanceof Registration) {
-				$key = (string) $value->getUsername();
+				$key = (string) $value->getId();
 			} elseif (is_scalar($value)) {
 				// assume we've been passed a primary key
 				$key = (string) $value;
@@ -408,6 +433,18 @@ abstract class BaseRegistrationPeer {
 	 */
 	public static function clearRelatedInstancePool()
 	{
+		// Invalidate objects in AnnotationPeer instance pool, 
+		// since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+		AnnotationPeer::clearInstancePool();
+		// Invalidate objects in HistoryPeer instance pool, 
+		// since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+		HistoryPeer::clearInstancePool();
+		// Invalidate objects in WorkspacePeer instance pool, 
+		// since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+		WorkspacePeer::clearInstancePool();
+		// Invalidate objects in WorkspaceUserPeer instance pool, 
+		// since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+		WorkspaceUserPeer::clearInstancePool();
 	}
 
 	/**
@@ -440,7 +477,7 @@ abstract class BaseRegistrationPeer {
 	 */
 	public static function getPrimaryKeyFromRow($row, $startcol = 0)
 	{
-		return (string) $row[$startcol];
+		return (int) $row[$startcol];
 	}
 	
 	/**
@@ -560,6 +597,13 @@ abstract class BaseRegistrationPeer {
 			$criteria = $values->buildCriteria(); // build Criteria from Registration object
 		}
 
+		if ($criteria->containsKey(RegistrationPeer::ID) && $criteria->keyContainsValue(RegistrationPeer::ID) ) {
+			throw new PropelException('Cannot insert a value for auto-increment primary key ('.RegistrationPeer::ID.')');
+		}
+
+		// remove pkey col since this table uses auto-increment and passing a null value for it is not valid 
+		$criteria->remove(RegistrationPeer::ID);
+
 
 		// Set the correct dbName
 		$criteria->setDbName(self::DATABASE_NAME);
@@ -598,10 +642,10 @@ abstract class BaseRegistrationPeer {
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 
-			$comparison = $criteria->getComparison(RegistrationPeer::USERNAME);
-			$value = $criteria->remove(RegistrationPeer::USERNAME);
+			$comparison = $criteria->getComparison(RegistrationPeer::ID);
+			$value = $criteria->remove(RegistrationPeer::ID);
 			if ($value) {
-				$selectCriteria->add(RegistrationPeer::USERNAME, $value, $comparison);
+				$selectCriteria->add(RegistrationPeer::ID, $value, $comparison);
 			} else {
 				$selectCriteria->setPrimaryTableName(RegistrationPeer::TABLE_NAME);
 			}
@@ -677,7 +721,7 @@ abstract class BaseRegistrationPeer {
 			$criteria = $values->buildPkeyCriteria();
 		} else { // it's a primary key, or an array of pks
 			$criteria = new Criteria(self::DATABASE_NAME);
-			$criteria->add(RegistrationPeer::USERNAME, (array) $values, Criteria::IN);
+			$criteria->add(RegistrationPeer::ID, (array) $values, Criteria::IN);
 			// invalidate the cache for this object(s)
 			foreach ((array) $values as $singleval) {
 				RegistrationPeer::removeInstanceFromPool($singleval);
@@ -744,7 +788,7 @@ abstract class BaseRegistrationPeer {
 	/**
 	 * Retrieve a single object by pkey.
 	 *
-	 * @param      string $pk the primary key.
+	 * @param      int $pk the primary key.
 	 * @param      PropelPDO $con the connection to use
 	 * @return     Registration
 	 */
@@ -760,7 +804,7 @@ abstract class BaseRegistrationPeer {
 		}
 
 		$criteria = new Criteria(RegistrationPeer::DATABASE_NAME);
-		$criteria->add(RegistrationPeer::USERNAME, $pk);
+		$criteria->add(RegistrationPeer::ID, $pk);
 
 		$v = RegistrationPeer::doSelect($criteria, $con);
 
@@ -786,7 +830,7 @@ abstract class BaseRegistrationPeer {
 			$objs = array();
 		} else {
 			$criteria = new Criteria(RegistrationPeer::DATABASE_NAME);
-			$criteria->add(RegistrationPeer::USERNAME, $pks, Criteria::IN);
+			$criteria->add(RegistrationPeer::ID, $pks, Criteria::IN);
 			$objs = RegistrationPeer::doSelect($criteria, $con);
 		}
 		return $objs;

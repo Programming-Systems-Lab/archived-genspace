@@ -2,68 +2,76 @@
 
 
 /**
- * Base class that represents a query for the 'workflow_ratings' table.
+ * Base class that represents a query for the 'WORKFLOWRATING' table.
  *
  * 
  *
- * @method     WorkflowRatingsQuery orderByPk($order = Criteria::ASC) Order by the pk column
- * @method     WorkflowRatingsQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     WorkflowRatingsQuery orderByUsername($order = Criteria::ASC) Order by the username column
- * @method     WorkflowRatingsQuery orderByRating($order = Criteria::ASC) Order by the rating column
+ * @method     WorkflowratingsQuery orderById($order = Criteria::ASC) Order by the ID column
+ * @method     WorkflowratingsQuery orderByCreatedat($order = Criteria::ASC) Order by the CREATEDAT column
+ * @method     WorkflowratingsQuery orderByRating($order = Criteria::ASC) Order by the RATING column
+ * @method     WorkflowratingsQuery orderByWorkflowId($order = Criteria::ASC) Order by the WORKFLOW_ID column
+ * @method     WorkflowratingsQuery orderByCreatorId($order = Criteria::ASC) Order by the CREATOR_ID column
  *
- * @method     WorkflowRatingsQuery groupByPk() Group by the pk column
- * @method     WorkflowRatingsQuery groupById() Group by the id column
- * @method     WorkflowRatingsQuery groupByUsername() Group by the username column
- * @method     WorkflowRatingsQuery groupByRating() Group by the rating column
+ * @method     WorkflowratingsQuery groupById() Group by the ID column
+ * @method     WorkflowratingsQuery groupByCreatedat() Group by the CREATEDAT column
+ * @method     WorkflowratingsQuery groupByRating() Group by the RATING column
+ * @method     WorkflowratingsQuery groupByWorkflowId() Group by the WORKFLOW_ID column
+ * @method     WorkflowratingsQuery groupByCreatorId() Group by the CREATOR_ID column
  *
- * @method     WorkflowRatingsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method     WorkflowRatingsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method     WorkflowRatingsQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method     WorkflowratingsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method     WorkflowratingsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method     WorkflowratingsQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     WorkflowRatings findOne(PropelPDO $con = null) Return the first WorkflowRatings matching the query
- * @method     WorkflowRatings findOneOrCreate(PropelPDO $con = null) Return the first WorkflowRatings matching the query, or a new WorkflowRatings object populated from the query conditions when no match is found
+ * @method     WorkflowratingsQuery leftJoinRegistration($relationAlias = null) Adds a LEFT JOIN clause to the query using the Registration relation
+ * @method     WorkflowratingsQuery rightJoinRegistration($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Registration relation
+ * @method     WorkflowratingsQuery innerJoinRegistration($relationAlias = null) Adds a INNER JOIN clause to the query using the Registration relation
  *
- * @method     WorkflowRatings findOneByPk(int $pk) Return the first WorkflowRatings filtered by the pk column
- * @method     WorkflowRatings findOneById(int $id) Return the first WorkflowRatings filtered by the id column
- * @method     WorkflowRatings findOneByUsername(string $username) Return the first WorkflowRatings filtered by the username column
- * @method     WorkflowRatings findOneByRating(int $rating) Return the first WorkflowRatings filtered by the rating column
+ * @method     Workflowratings findOne(PropelPDO $con = null) Return the first Workflowratings matching the query
+ * @method     Workflowratings findOneOrCreate(PropelPDO $con = null) Return the first Workflowratings matching the query, or a new Workflowratings object populated from the query conditions when no match is found
  *
- * @method     array findByPk(int $pk) Return WorkflowRatings objects filtered by the pk column
- * @method     array findById(int $id) Return WorkflowRatings objects filtered by the id column
- * @method     array findByUsername(string $username) Return WorkflowRatings objects filtered by the username column
- * @method     array findByRating(int $rating) Return WorkflowRatings objects filtered by the rating column
+ * @method     Workflowratings findOneById(int $ID) Return the first Workflowratings filtered by the ID column
+ * @method     Workflowratings findOneByCreatedat(string $CREATEDAT) Return the first Workflowratings filtered by the CREATEDAT column
+ * @method     Workflowratings findOneByRating(int $RATING) Return the first Workflowratings filtered by the RATING column
+ * @method     Workflowratings findOneByWorkflowId(int $WORKFLOW_ID) Return the first Workflowratings filtered by the WORKFLOW_ID column
+ * @method     Workflowratings findOneByCreatorId(int $CREATOR_ID) Return the first Workflowratings filtered by the CREATOR_ID column
+ *
+ * @method     array findById(int $ID) Return Workflowratings objects filtered by the ID column
+ * @method     array findByCreatedat(string $CREATEDAT) Return Workflowratings objects filtered by the CREATEDAT column
+ * @method     array findByRating(int $RATING) Return Workflowratings objects filtered by the RATING column
+ * @method     array findByWorkflowId(int $WORKFLOW_ID) Return Workflowratings objects filtered by the WORKFLOW_ID column
+ * @method     array findByCreatorId(int $CREATOR_ID) Return Workflowratings objects filtered by the CREATOR_ID column
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseWorkflowRatingsQuery extends ModelCriteria
+abstract class BaseWorkflowratingsQuery extends ModelCriteria
 {
 
 	/**
-	 * Initializes internal state of BaseWorkflowRatingsQuery object.
+	 * Initializes internal state of BaseWorkflowratingsQuery object.
 	 *
 	 * @param     string $dbName The dabase name
 	 * @param     string $modelName The phpName of a model, e.g. 'Book'
 	 * @param     string $modelAlias The alias for the model in this query, e.g. 'b'
 	 */
-	public function __construct($dbName = 'propel', $modelName = 'WorkflowRatings', $modelAlias = null)
+	public function __construct($dbName = 'propel', $modelName = 'Workflowratings', $modelAlias = null)
 	{
 		parent::__construct($dbName, $modelName, $modelAlias);
 	}
 
 	/**
-	 * Returns a new WorkflowRatingsQuery object.
+	 * Returns a new WorkflowratingsQuery object.
 	 *
 	 * @param     string $modelAlias The alias of a model in the query
 	 * @param     Criteria $criteria Optional Criteria to build the query from
 	 *
-	 * @return    WorkflowRatingsQuery
+	 * @return    WorkflowratingsQuery
 	 */
 	public static function create($modelAlias = null, $criteria = null)
 	{
-		if ($criteria instanceof WorkflowRatingsQuery) {
+		if ($criteria instanceof WorkflowratingsQuery) {
 			return $criteria;
 		}
-		$query = new WorkflowRatingsQuery();
+		$query = new WorkflowratingsQuery();
 		if (null !== $modelAlias) {
 			$query->setModelAlias($modelAlias);
 		}
@@ -82,11 +90,11 @@ abstract class BaseWorkflowRatingsQuery extends ModelCriteria
 	 * @param     mixed $key Primary key to use for the query
 	 * @param     PropelPDO $con an optional connection object
 	 *
-	 * @return    WorkflowRatings|array|mixed the result, formatted by the current formatter
+	 * @return    Workflowratings|array|mixed the result, formatted by the current formatter
 	 */
 	public function findPk($key, $con = null)
 	{
-		if ((null !== ($obj = WorkflowRatingsPeer::getInstanceFromPool((string) $key))) && $this->getFormatter()->isObjectFormatter()) {
+		if ((null !== ($obj = WorkflowratingsPeer::getInstanceFromPool((string) $key))) && $this->getFormatter()->isObjectFormatter()) {
 			// the object is alredy in the instance pool
 			return $obj;
 		} else {
@@ -122,11 +130,11 @@ abstract class BaseWorkflowRatingsQuery extends ModelCriteria
 	 *
 	 * @param     mixed $key Primary key to use for the query
 	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
 	 */
 	public function filterByPrimaryKey($key)
 	{
-		return $this->addUsingAlias(WorkflowRatingsPeer::PK, $key, Criteria::EQUAL);
+		return $this->addUsingAlias(WorkflowratingsPeer::ID, $key, Criteria::EQUAL);
 	}
 
 	/**
@@ -134,49 +142,49 @@ abstract class BaseWorkflowRatingsQuery extends ModelCriteria
 	 *
 	 * @param     array $keys The list of primary key to use for the query
 	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
 	 */
 	public function filterByPrimaryKeys($keys)
 	{
-		return $this->addUsingAlias(WorkflowRatingsPeer::PK, $keys, Criteria::IN);
+		return $this->addUsingAlias(WorkflowratingsPeer::ID, $keys, Criteria::IN);
 	}
 
 	/**
-	 * Filter the query on the pk column
-	 * 
-	 * @param     int|array $pk The value to use as filter.
-	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
-	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
-	 */
-	public function filterByPk($pk = null, $comparison = null)
-	{
-		if (is_array($pk) && null === $comparison) {
-			$comparison = Criteria::IN;
-		}
-		return $this->addUsingAlias(WorkflowRatingsPeer::PK, $pk, $comparison);
-	}
-
-	/**
-	 * Filter the query on the id column
+	 * Filter the query on the ID column
 	 * 
 	 * @param     int|array $id The value to use as filter.
 	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
 	 */
 	public function filterById($id = null, $comparison = null)
 	{
-		if (is_array($id)) {
+		if (is_array($id) && null === $comparison) {
+			$comparison = Criteria::IN;
+		}
+		return $this->addUsingAlias(WorkflowratingsPeer::ID, $id, $comparison);
+	}
+
+	/**
+	 * Filter the query on the CREATEDAT column
+	 * 
+	 * @param     string|array $createdat The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
+	 */
+	public function filterByCreatedat($createdat = null, $comparison = null)
+	{
+		if (is_array($createdat)) {
 			$useMinMax = false;
-			if (isset($id['min'])) {
-				$this->addUsingAlias(WorkflowRatingsPeer::ID, $id['min'], Criteria::GREATER_EQUAL);
+			if (isset($createdat['min'])) {
+				$this->addUsingAlias(WorkflowratingsPeer::CREATEDAT, $createdat['min'], Criteria::GREATER_EQUAL);
 				$useMinMax = true;
 			}
-			if (isset($id['max'])) {
-				$this->addUsingAlias(WorkflowRatingsPeer::ID, $id['max'], Criteria::LESS_EQUAL);
+			if (isset($createdat['max'])) {
+				$this->addUsingAlias(WorkflowratingsPeer::CREATEDAT, $createdat['max'], Criteria::LESS_EQUAL);
 				$useMinMax = true;
 			}
 			if ($useMinMax) {
@@ -186,50 +194,28 @@ abstract class BaseWorkflowRatingsQuery extends ModelCriteria
 				$comparison = Criteria::IN;
 			}
 		}
-		return $this->addUsingAlias(WorkflowRatingsPeer::ID, $id, $comparison);
+		return $this->addUsingAlias(WorkflowratingsPeer::CREATEDAT, $createdat, $comparison);
 	}
 
 	/**
-	 * Filter the query on the username column
-	 * 
-	 * @param     string $username The value to use as filter.
-	 *            Accepts wildcards (* and % trigger a LIKE)
-	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
-	 */
-	public function filterByUsername($username = null, $comparison = null)
-	{
-		if (null === $comparison) {
-			if (is_array($username)) {
-				$comparison = Criteria::IN;
-			} elseif (preg_match('/[\%\*]/', $username)) {
-				$username = str_replace('*', '%', $username);
-				$comparison = Criteria::LIKE;
-			}
-		}
-		return $this->addUsingAlias(WorkflowRatingsPeer::USERNAME, $username, $comparison);
-	}
-
-	/**
-	 * Filter the query on the rating column
+	 * Filter the query on the RATING column
 	 * 
 	 * @param     int|array $rating The value to use as filter.
 	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
 	 */
 	public function filterByRating($rating = null, $comparison = null)
 	{
 		if (is_array($rating)) {
 			$useMinMax = false;
 			if (isset($rating['min'])) {
-				$this->addUsingAlias(WorkflowRatingsPeer::RATING, $rating['min'], Criteria::GREATER_EQUAL);
+				$this->addUsingAlias(WorkflowratingsPeer::RATING, $rating['min'], Criteria::GREATER_EQUAL);
 				$useMinMax = true;
 			}
 			if (isset($rating['max'])) {
-				$this->addUsingAlias(WorkflowRatingsPeer::RATING, $rating['max'], Criteria::LESS_EQUAL);
+				$this->addUsingAlias(WorkflowratingsPeer::RATING, $rating['max'], Criteria::LESS_EQUAL);
 				$useMinMax = true;
 			}
 			if ($useMinMax) {
@@ -239,23 +225,149 @@ abstract class BaseWorkflowRatingsQuery extends ModelCriteria
 				$comparison = Criteria::IN;
 			}
 		}
-		return $this->addUsingAlias(WorkflowRatingsPeer::RATING, $rating, $comparison);
+		return $this->addUsingAlias(WorkflowratingsPeer::RATING, $rating, $comparison);
+	}
+
+	/**
+	 * Filter the query on the WORKFLOW_ID column
+	 * 
+	 * @param     int|array $workflowId The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
+	 */
+	public function filterByWorkflowId($workflowId = null, $comparison = null)
+	{
+		if (is_array($workflowId)) {
+			$useMinMax = false;
+			if (isset($workflowId['min'])) {
+				$this->addUsingAlias(WorkflowratingsPeer::WORKFLOW_ID, $workflowId['min'], Criteria::GREATER_EQUAL);
+				$useMinMax = true;
+			}
+			if (isset($workflowId['max'])) {
+				$this->addUsingAlias(WorkflowratingsPeer::WORKFLOW_ID, $workflowId['max'], Criteria::LESS_EQUAL);
+				$useMinMax = true;
+			}
+			if ($useMinMax) {
+				return $this;
+			}
+			if (null === $comparison) {
+				$comparison = Criteria::IN;
+			}
+		}
+		return $this->addUsingAlias(WorkflowratingsPeer::WORKFLOW_ID, $workflowId, $comparison);
+	}
+
+	/**
+	 * Filter the query on the CREATOR_ID column
+	 * 
+	 * @param     int|array $creatorId The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
+	 */
+	public function filterByCreatorId($creatorId = null, $comparison = null)
+	{
+		if (is_array($creatorId)) {
+			$useMinMax = false;
+			if (isset($creatorId['min'])) {
+				$this->addUsingAlias(WorkflowratingsPeer::CREATOR_ID, $creatorId['min'], Criteria::GREATER_EQUAL);
+				$useMinMax = true;
+			}
+			if (isset($creatorId['max'])) {
+				$this->addUsingAlias(WorkflowratingsPeer::CREATOR_ID, $creatorId['max'], Criteria::LESS_EQUAL);
+				$useMinMax = true;
+			}
+			if ($useMinMax) {
+				return $this;
+			}
+			if (null === $comparison) {
+				$comparison = Criteria::IN;
+			}
+		}
+		return $this->addUsingAlias(WorkflowratingsPeer::CREATOR_ID, $creatorId, $comparison);
+	}
+
+	/**
+	 * Filter the query by a related Registration object
+	 *
+	 * @param     Registration $registration  the related object to use as filter
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
+	 */
+	public function filterByRegistration($registration, $comparison = null)
+	{
+		return $this
+			->addUsingAlias(WorkflowratingsPeer::CREATOR_ID, $registration->getId(), $comparison);
+	}
+
+	/**
+	 * Adds a JOIN clause to the query using the Registration relation
+	 * 
+	 * @param     string $relationAlias optional alias for the relation
+	 * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+	 *
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
+	 */
+	public function joinRegistration($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+	{
+		$tableMap = $this->getTableMap();
+		$relationMap = $tableMap->getRelation('Registration');
+		
+		// create a ModelJoin object for this join
+		$join = new ModelJoin();
+		$join->setJoinType($joinType);
+		$join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+		if ($previousJoin = $this->getPreviousJoin()) {
+			$join->setPreviousJoin($previousJoin);
+		}
+		
+		// add the ModelJoin to the current object
+		if($relationAlias) {
+			$this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+			$this->addJoinObject($join, $relationAlias);
+		} else {
+			$this->addJoinObject($join, 'Registration');
+		}
+		
+		return $this;
+	}
+
+	/**
+	 * Use the Registration relation Registration object
+	 *
+	 * @see       useQuery()
+	 * 
+	 * @param     string $relationAlias optional alias for the relation,
+	 *                                   to be used as main alias in the secondary query
+	 * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+	 *
+	 * @return    RegistrationQuery A secondary query class using the current class as primary query
+	 */
+	public function useRegistrationQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+	{
+		return $this
+			->joinRegistration($relationAlias, $joinType)
+			->useQuery($relationAlias ? $relationAlias : 'Registration', 'RegistrationQuery');
 	}
 
 	/**
 	 * Exclude object from result
 	 *
-	 * @param     WorkflowRatings $workflowRatings Object to remove from the list of results
+	 * @param     Workflowratings $workflowratings Object to remove from the list of results
 	 *
-	 * @return    WorkflowRatingsQuery The current query, for fluid interface
+	 * @return    WorkflowratingsQuery The current query, for fluid interface
 	 */
-	public function prune($workflowRatings = null)
+	public function prune($workflowratings = null)
 	{
-		if ($workflowRatings) {
-			$this->addUsingAlias(WorkflowRatingsPeer::PK, $workflowRatings->getPk(), Criteria::NOT_EQUAL);
+		if ($workflowratings) {
+			$this->addUsingAlias(WorkflowratingsPeer::ID, $workflowratings->getId(), Criteria::NOT_EQUAL);
 	  }
 	  
 		return $this;
 	}
 
-} // BaseWorkflowRatingsQuery
+} // BaseWorkflowratingsQuery

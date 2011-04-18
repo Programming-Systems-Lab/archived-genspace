@@ -2,7 +2,7 @@
 <div class="post">
 					<h2 class="title">Support</h2>
 	
-Contact swapneel [at] cs.columbia.edu for questions and comments.				
+Contact jbell [at] cs.columbia.edu for questions and comments.				
 					
 </div>
 </div>

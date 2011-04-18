@@ -1,0 +1,10 @@
+001303190797001303104397a:2:{s:7:"content";s:693:"
+<li style="letter-spacing: none; padding: 5px; border: 1px solid #f1f1f1;background-color: #f5f5f5; background-image:url(/images/bottom_fade.png); background-repeat:repeat-x; background-position:bottom">
+	<h3>Login</h3>
+		  
+      
+  <form action="/tool/login" method="post" >	  Username: <input type="text" name="login[username]" id="login_username" value=""/><br/><br/>
+	Password: <input type="password" name="login[password]" id="login_password" value="" /><br/><a class="forgotpass" href="javascript:;" style="text-decoration:none">Forgot Password?</a><br/>
+ <input name="image" type="image" style="border:0px;" src="/images/login_butt.png" onclick="/tool/index">
+	</form>
+	</li>";s:8:"response";C:13:"sfWebResponse":383:{a:11:{i:0;s:0:"";i:1;i:200;i:2;s:2:"OK";i:3;a:5:{s:13:"http_protocol";s:8:"HTTP/1.1";s:7:"logging";s:3:"off";s:7:"charset";s:5:"utf-8";s:17:"send_http_headers";b:1;s:12:"content_type";s:24:"text/html; charset=utf-8";}i:4;b:0;i:5;a:0:{}i:6;a:0:{}i:7;a:0:{}i:8;a:3:{s:5:"first";a:0:{}s:0:"";a:0:{}s:4:"last";a:0:{}}i:9;a:3:{s:5:"first";a:0:{}s:0:"";a:0:{}s:4:"last";a:0:{}}i:10;a:0:{}}}}

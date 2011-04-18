@@ -2,28 +2,28 @@
 
 
 /**
- * Base static class for performing query and update operations on the 'workflow_comments' table.
+ * Base static class for performing query and update operations on the 'WORKFLOWCOMMENT' table.
  *
  * 
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseWorkflowCommentsPeer {
+abstract class BaseWorkflowcommentsPeer {
 
 	/** the default database name for this class */
 	const DATABASE_NAME = 'propel';
 
 	/** the table name for this class */
-	const TABLE_NAME = 'workflow_comments';
+	const TABLE_NAME = 'WORKFLOWCOMMENT';
 
 	/** the related Propel class for this table */
-	const OM_CLASS = 'WorkflowComments';
+	const OM_CLASS = 'Workflowcomments';
 
 	/** A class that can be returned by this peer. */
-	const CLASS_DEFAULT = 'lib.model.WorkflowComments';
+	const CLASS_DEFAULT = 'lib.model.Workflowcomments';
 
 	/** the related TableMap class for this table */
-	const TM_CLASS = 'WorkflowCommentsTableMap';
+	const TM_CLASS = 'WorkflowcommentsTableMap';
 	
 	/** The total number of columns. */
 	const NUM_COLUMNS = 5;
@@ -31,26 +31,26 @@ abstract class BaseWorkflowCommentsPeer {
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
 
-	/** the column name for the PK field */
-	const PK = 'workflow_comments.PK';
-
 	/** the column name for the ID field */
-	const ID = 'workflow_comments.ID';
+	const ID = 'WORKFLOWCOMMENT.ID';
+
+	/** the column name for the CREATEDAT field */
+	const CREATEDAT = 'WORKFLOWCOMMENT.CREATEDAT';
 
 	/** the column name for the COMMENT field */
-	const COMMENT = 'workflow_comments.COMMENT';
+	const COMMENT = 'WORKFLOWCOMMENT.COMMENT';
 
-	/** the column name for the USERNAME field */
-	const USERNAME = 'workflow_comments.USERNAME';
+	/** the column name for the WORKFLOW_ID field */
+	const WORKFLOW_ID = 'WORKFLOWCOMMENT.WORKFLOW_ID';
 
-	/** the column name for the POSTED_ON field */
-	const POSTED_ON = 'workflow_comments.POSTED_ON';
+	/** the column name for the CREATOR_ID field */
+	const CREATOR_ID = 'WORKFLOWCOMMENT.CREATOR_ID';
 
 	/**
-	 * An identiy map to hold any loaded instances of WorkflowComments objects.
+	 * An identiy map to hold any loaded instances of Workflowcomments objects.
 	 * This must be public so that other peer classes can access this when hydrating from JOIN
 	 * queries.
-	 * @var        array WorkflowComments[]
+	 * @var        array Workflowcomments[]
 	 */
 	public static $instances = array();
 
@@ -62,11 +62,11 @@ abstract class BaseWorkflowCommentsPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Pk', 'Id', 'Comment', 'Username', 'PostedOn', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('pk', 'id', 'comment', 'username', 'postedOn', ),
-		BasePeer::TYPE_COLNAME => array (self::PK, self::ID, self::COMMENT, self::USERNAME, self::POSTED_ON, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('PK', 'ID', 'COMMENT', 'USERNAME', 'POSTED_ON', ),
-		BasePeer::TYPE_FIELDNAME => array ('pk', 'id', 'comment', 'username', 'posted_on', ),
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Createdat', 'Comment', 'WorkflowId', 'CreatorId', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdat', 'comment', 'workflowId', 'creatorId', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::CREATEDAT, self::COMMENT, self::WORKFLOW_ID, self::CREATOR_ID, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATEDAT', 'COMMENT', 'WORKFLOW_ID', 'CREATOR_ID', ),
+		BasePeer::TYPE_FIELDNAME => array ('ID', 'CREATEDAT', 'COMMENT', 'WORKFLOW_ID', 'CREATOR_ID', ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
@@ -77,11 +77,11 @@ abstract class BaseWorkflowCommentsPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Pk' => 0, 'Id' => 1, 'Comment' => 2, 'Username' => 3, 'PostedOn' => 4, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('pk' => 0, 'id' => 1, 'comment' => 2, 'username' => 3, 'postedOn' => 4, ),
-		BasePeer::TYPE_COLNAME => array (self::PK => 0, self::ID => 1, self::COMMENT => 2, self::USERNAME => 3, self::POSTED_ON => 4, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('PK' => 0, 'ID' => 1, 'COMMENT' => 2, 'USERNAME' => 3, 'POSTED_ON' => 4, ),
-		BasePeer::TYPE_FIELDNAME => array ('pk' => 0, 'id' => 1, 'comment' => 2, 'username' => 3, 'posted_on' => 4, ),
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Createdat' => 1, 'Comment' => 2, 'WorkflowId' => 3, 'CreatorId' => 4, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdat' => 1, 'comment' => 2, 'workflowId' => 3, 'creatorId' => 4, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::CREATEDAT => 1, self::COMMENT => 2, self::WORKFLOW_ID => 3, self::CREATOR_ID => 4, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATEDAT' => 1, 'COMMENT' => 2, 'WORKFLOW_ID' => 3, 'CREATOR_ID' => 4, ),
+		BasePeer::TYPE_FIELDNAME => array ('ID' => 0, 'CREATEDAT' => 1, 'COMMENT' => 2, 'WORKFLOW_ID' => 3, 'CREATOR_ID' => 4, ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
@@ -131,12 +131,12 @@ abstract class BaseWorkflowCommentsPeer {
 	 *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
 	 * </code>
 	 * @param      string $alias The alias for the current table.
-	 * @param      string $column The column name for current table. (i.e. WorkflowCommentsPeer::COLUMN_NAME).
+	 * @param      string $column The column name for current table. (i.e. WorkflowcommentsPeer::COLUMN_NAME).
 	 * @return     string
 	 */
 	public static function alias($alias, $column)
 	{
-		return str_replace(WorkflowCommentsPeer::TABLE_NAME.'.', $alias.'.', $column);
+		return str_replace(WorkflowcommentsPeer::TABLE_NAME.'.', $alias.'.', $column);
 	}
 
 	/**
@@ -154,17 +154,17 @@ abstract class BaseWorkflowCommentsPeer {
 	public static function addSelectColumns(Criteria $criteria, $alias = null)
 	{
 		if (null === $alias) {
-			$criteria->addSelectColumn(WorkflowCommentsPeer::PK);
-			$criteria->addSelectColumn(WorkflowCommentsPeer::ID);
-			$criteria->addSelectColumn(WorkflowCommentsPeer::COMMENT);
-			$criteria->addSelectColumn(WorkflowCommentsPeer::USERNAME);
-			$criteria->addSelectColumn(WorkflowCommentsPeer::POSTED_ON);
+			$criteria->addSelectColumn(WorkflowcommentsPeer::ID);
+			$criteria->addSelectColumn(WorkflowcommentsPeer::CREATEDAT);
+			$criteria->addSelectColumn(WorkflowcommentsPeer::COMMENT);
+			$criteria->addSelectColumn(WorkflowcommentsPeer::WORKFLOW_ID);
+			$criteria->addSelectColumn(WorkflowcommentsPeer::CREATOR_ID);
 		} else {
-			$criteria->addSelectColumn($alias . '.PK');
 			$criteria->addSelectColumn($alias . '.ID');
+			$criteria->addSelectColumn($alias . '.CREATEDAT');
 			$criteria->addSelectColumn($alias . '.COMMENT');
-			$criteria->addSelectColumn($alias . '.USERNAME');
-			$criteria->addSelectColumn($alias . '.POSTED_ON');
+			$criteria->addSelectColumn($alias . '.WORKFLOW_ID');
+			$criteria->addSelectColumn($alias . '.CREATOR_ID');
 		}
 	}
 
@@ -184,21 +184,21 @@ abstract class BaseWorkflowCommentsPeer {
 		// We need to set the primary table name, since in the case that there are no WHERE columns
 		// it will be impossible for the BasePeer::createSelectSql() method to determine which
 		// tables go into the FROM clause.
-		$criteria->setPrimaryTableName(WorkflowCommentsPeer::TABLE_NAME);
+		$criteria->setPrimaryTableName(WorkflowcommentsPeer::TABLE_NAME);
 
 		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
 			$criteria->setDistinct();
 		}
 
 		if (!$criteria->hasSelectClause()) {
-			WorkflowCommentsPeer::addSelectColumns($criteria);
+			WorkflowcommentsPeer::addSelectColumns($criteria);
 		}
 
 		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 		$criteria->setDbName(self::DATABASE_NAME); // Set the correct dbName
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 		// BasePeer returns a PDOStatement
 		$stmt = BasePeer::doCount($criteria, $con);
@@ -216,7 +216,7 @@ abstract class BaseWorkflowCommentsPeer {
 	 *
 	 * @param      Criteria $criteria object used to create the SELECT statement.
 	 * @param      PropelPDO $con
-	 * @return     WorkflowComments
+	 * @return     Workflowcomments
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
 	 */
@@ -224,7 +224,7 @@ abstract class BaseWorkflowCommentsPeer {
 	{
 		$critcopy = clone $criteria;
 		$critcopy->setLimit(1);
-		$objects = WorkflowCommentsPeer::doSelect($critcopy, $con);
+		$objects = WorkflowcommentsPeer::doSelect($critcopy, $con);
 		if ($objects) {
 			return $objects[0];
 		}
@@ -241,7 +241,7 @@ abstract class BaseWorkflowCommentsPeer {
 	 */
 	public static function doSelect(Criteria $criteria, PropelPDO $con = null)
 	{
-		return WorkflowCommentsPeer::populateObjects(WorkflowCommentsPeer::doSelectStmt($criteria, $con));
+		return WorkflowcommentsPeer::populateObjects(WorkflowcommentsPeer::doSelectStmt($criteria, $con));
 	}
 	/**
 	 * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -259,12 +259,12 @@ abstract class BaseWorkflowCommentsPeer {
 	public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		if (!$criteria->hasSelectClause()) {
 			$criteria = clone $criteria;
-			WorkflowCommentsPeer::addSelectColumns($criteria);
+			WorkflowcommentsPeer::addSelectColumns($criteria);
 		}
 
 		// Set the correct dbName
@@ -282,14 +282,14 @@ abstract class BaseWorkflowCommentsPeer {
 	 * to the cache in order to ensure that the same objects are always returned by doSelect*()
 	 * and retrieveByPK*() calls.
 	 *
-	 * @param      WorkflowComments $value A WorkflowComments object.
+	 * @param      Workflowcomments $value A Workflowcomments object.
 	 * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
 	 */
-	public static function addInstanceToPool(WorkflowComments $obj, $key = null)
+	public static function addInstanceToPool(Workflowcomments $obj, $key = null)
 	{
 		if (Propel::isInstancePoolingEnabled()) {
 			if ($key === null) {
-				$key = (string) $obj->getPk();
+				$key = (string) $obj->getId();
 			} // if key === null
 			self::$instances[$key] = $obj;
 		}
@@ -303,18 +303,18 @@ abstract class BaseWorkflowCommentsPeer {
 	 * methods in your stub classes -- you may need to explicitly remove objects
 	 * from the cache in order to prevent returning objects that no longer exist.
 	 *
-	 * @param      mixed $value A WorkflowComments object or a primary key value.
+	 * @param      mixed $value A Workflowcomments object or a primary key value.
 	 */
 	public static function removeInstanceFromPool($value)
 	{
 		if (Propel::isInstancePoolingEnabled() && $value !== null) {
-			if (is_object($value) && $value instanceof WorkflowComments) {
-				$key = (string) $value->getPk();
+			if (is_object($value) && $value instanceof Workflowcomments) {
+				$key = (string) $value->getId();
 			} elseif (is_scalar($value)) {
 				// assume we've been passed a primary key
 				$key = (string) $value;
 			} else {
-				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or WorkflowComments object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Workflowcomments object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
 				throw $e;
 			}
 
@@ -329,7 +329,7 @@ abstract class BaseWorkflowCommentsPeer {
 	 * a multi-column primary key, a serialize()d version of the primary key will be returned.
 	 *
 	 * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-	 * @return     WorkflowComments Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+	 * @return     Workflowcomments Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
 	 * @see        getPrimaryKeyHash()
 	 */
 	public static function getInstanceFromPool($key)
@@ -353,7 +353,7 @@ abstract class BaseWorkflowCommentsPeer {
 	}
 	
 	/**
-	 * Method to invalidate the instance pool of all tables related to workflow_comments
+	 * Method to invalidate the instance pool of all tables related to WORKFLOWCOMMENT
 	 * by a foreign key with ON DELETE CASCADE
 	 */
 	public static function clearRelatedInstancePool()
@@ -405,11 +405,11 @@ abstract class BaseWorkflowCommentsPeer {
 		$results = array();
 	
 		// set the class once to avoid overhead in the loop
-		$cls = WorkflowCommentsPeer::getOMClass(false);
+		$cls = WorkflowcommentsPeer::getOMClass(false);
 		// populate the object(s)
 		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-			$key = WorkflowCommentsPeer::getPrimaryKeyHashFromRow($row, 0);
-			if (null !== ($obj = WorkflowCommentsPeer::getInstanceFromPool($key))) {
+			$key = WorkflowcommentsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj = WorkflowcommentsPeer::getInstanceFromPool($key))) {
 				// We no longer rehydrate the object, since this can cause data loss.
 				// See http://www.propelorm.org/ticket/509
 				// $obj->hydrate($row, 0, true); // rehydrate
@@ -418,7 +418,7 @@ abstract class BaseWorkflowCommentsPeer {
 				$obj = new $cls();
 				$obj->hydrate($row);
 				$results[] = $obj;
-				WorkflowCommentsPeer::addInstanceToPool($obj, $key);
+				WorkflowcommentsPeer::addInstanceToPool($obj, $key);
 			} // if key exists
 		}
 		$stmt->closeCursor();
@@ -431,24 +431,258 @@ abstract class BaseWorkflowCommentsPeer {
 	 * @param      int $startcol The 0-based offset for reading from the resultset row.
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
-	 * @return     array (WorkflowComments object, last column rank)
+	 * @return     array (Workflowcomments object, last column rank)
 	 */
 	public static function populateObject($row, $startcol = 0)
 	{
-		$key = WorkflowCommentsPeer::getPrimaryKeyHashFromRow($row, $startcol);
-		if (null !== ($obj = WorkflowCommentsPeer::getInstanceFromPool($key))) {
+		$key = WorkflowcommentsPeer::getPrimaryKeyHashFromRow($row, $startcol);
+		if (null !== ($obj = WorkflowcommentsPeer::getInstanceFromPool($key))) {
 			// We no longer rehydrate the object, since this can cause data loss.
 			// See http://www.propelorm.org/ticket/509
 			// $obj->hydrate($row, $startcol, true); // rehydrate
-			$col = $startcol + WorkflowCommentsPeer::NUM_COLUMNS;
+			$col = $startcol + WorkflowcommentsPeer::NUM_COLUMNS;
 		} else {
-			$cls = WorkflowCommentsPeer::OM_CLASS;
+			$cls = WorkflowcommentsPeer::OM_CLASS;
 			$obj = new $cls();
 			$col = $obj->hydrate($row, $startcol);
-			WorkflowCommentsPeer::addInstanceToPool($obj, $key);
+			WorkflowcommentsPeer::addInstanceToPool($obj, $key);
 		}
 		return array($obj, $col);
 	}
+
+	/**
+	 * Returns the number of rows matching criteria, joining the related Registration table
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     int Number of matching rows.
+	 */
+	public static function doCountJoinRegistration(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		// we're going to modify criteria, so copy it first
+		$criteria = clone $criteria;
+
+		// We need to set the primary table name, since in the case that there are no WHERE columns
+		// it will be impossible for the BasePeer::createSelectSql() method to determine which
+		// tables go into the FROM clause.
+		$criteria->setPrimaryTableName(WorkflowcommentsPeer::TABLE_NAME);
+
+		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+			$criteria->setDistinct();
+		}
+
+		if (!$criteria->hasSelectClause()) {
+			WorkflowcommentsPeer::addSelectColumns($criteria);
+		}
+		
+		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+		
+		// Set the correct dbName
+		$criteria->setDbName(self::DATABASE_NAME);
+
+		if ($con === null) {
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+		}
+
+		$criteria->addJoin(WorkflowcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doCount($criteria, $con);
+
+		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$count = (int) $row[0];
+		} else {
+			$count = 0; // no rows returned; we infer that means 0 matches.
+		}
+		$stmt->closeCursor();
+		return $count;
+	}
+
+
+	/**
+	 * Selects a collection of Workflowcomments objects pre-filled with their Registration objects.
+	 * @param      Criteria  $criteria
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     array Array of Workflowcomments objects.
+	 * @throws     PropelException Any exceptions caught during processing will be
+	 *		 rethrown wrapped into a PropelException.
+	 */
+	public static function doSelectJoinRegistration(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$criteria = clone $criteria;
+
+		// Set the correct dbName if it has not been overridden
+		if ($criteria->getDbName() == Propel::getDefaultDB()) {
+			$criteria->setDbName(self::DATABASE_NAME);
+		}
+
+		WorkflowcommentsPeer::addSelectColumns($criteria);
+		$startcol = (WorkflowcommentsPeer::NUM_COLUMNS - WorkflowcommentsPeer::NUM_LAZY_LOAD_COLUMNS);
+		RegistrationPeer::addSelectColumns($criteria);
+
+		$criteria->addJoin(WorkflowcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doSelect($criteria, $con);
+		$results = array();
+
+		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$key1 = WorkflowcommentsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = WorkflowcommentsPeer::getInstanceFromPool($key1))) {
+				// We no longer rehydrate the object, since this can cause data loss.
+				// See http://www.propelorm.org/ticket/509
+				// $obj1->hydrate($row, 0, true); // rehydrate
+			} else {
+
+				$cls = WorkflowcommentsPeer::getOMClass(false);
+
+				$obj1 = new $cls();
+				$obj1->hydrate($row);
+				WorkflowcommentsPeer::addInstanceToPool($obj1, $key1);
+			} // if $obj1 already loaded
+
+			$key2 = RegistrationPeer::getPrimaryKeyHashFromRow($row, $startcol);
+			if ($key2 !== null) {
+				$obj2 = RegistrationPeer::getInstanceFromPool($key2);
+				if (!$obj2) {
+
+					$cls = RegistrationPeer::getOMClass(false);
+
+					$obj2 = new $cls();
+					$obj2->hydrate($row, $startcol);
+					RegistrationPeer::addInstanceToPool($obj2, $key2);
+				} // if obj2 already loaded
+
+				// Add the $obj1 (Workflowcomments) to $obj2 (Registration)
+				$obj2->addWorkflowcomments($obj1);
+
+			} // if joined row was not null
+
+			$results[] = $obj1;
+		}
+		$stmt->closeCursor();
+		return $results;
+	}
+
+
+	/**
+	 * Returns the number of rows matching criteria, joining all related tables
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     int Number of matching rows.
+	 */
+	public static function doCountJoinAll(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		// we're going to modify criteria, so copy it first
+		$criteria = clone $criteria;
+
+		// We need to set the primary table name, since in the case that there are no WHERE columns
+		// it will be impossible for the BasePeer::createSelectSql() method to determine which
+		// tables go into the FROM clause.
+		$criteria->setPrimaryTableName(WorkflowcommentsPeer::TABLE_NAME);
+
+		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+			$criteria->setDistinct();
+		}
+
+		if (!$criteria->hasSelectClause()) {
+			WorkflowcommentsPeer::addSelectColumns($criteria);
+		}
+		
+		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+		
+		// Set the correct dbName
+		$criteria->setDbName(self::DATABASE_NAME);
+
+		if ($con === null) {
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+		}
+
+		$criteria->addJoin(WorkflowcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doCount($criteria, $con);
+
+		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$count = (int) $row[0];
+		} else {
+			$count = 0; // no rows returned; we infer that means 0 matches.
+		}
+		$stmt->closeCursor();
+		return $count;
+	}
+
+	/**
+	 * Selects a collection of Workflowcomments objects pre-filled with all related objects.
+	 *
+	 * @param      Criteria  $criteria
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     array Array of Workflowcomments objects.
+	 * @throws     PropelException Any exceptions caught during processing will be
+	 *		 rethrown wrapped into a PropelException.
+	 */
+	public static function doSelectJoinAll(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$criteria = clone $criteria;
+
+		// Set the correct dbName if it has not been overridden
+		if ($criteria->getDbName() == Propel::getDefaultDB()) {
+			$criteria->setDbName(self::DATABASE_NAME);
+		}
+
+		WorkflowcommentsPeer::addSelectColumns($criteria);
+		$startcol2 = (WorkflowcommentsPeer::NUM_COLUMNS - WorkflowcommentsPeer::NUM_LAZY_LOAD_COLUMNS);
+
+		RegistrationPeer::addSelectColumns($criteria);
+		$startcol3 = $startcol2 + (RegistrationPeer::NUM_COLUMNS - RegistrationPeer::NUM_LAZY_LOAD_COLUMNS);
+
+		$criteria->addJoin(WorkflowcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doSelect($criteria, $con);
+		$results = array();
+
+		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$key1 = WorkflowcommentsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = WorkflowcommentsPeer::getInstanceFromPool($key1))) {
+				// We no longer rehydrate the object, since this can cause data loss.
+				// See http://www.propelorm.org/ticket/509
+				// $obj1->hydrate($row, 0, true); // rehydrate
+			} else {
+				$cls = WorkflowcommentsPeer::getOMClass(false);
+
+				$obj1 = new $cls();
+				$obj1->hydrate($row);
+				WorkflowcommentsPeer::addInstanceToPool($obj1, $key1);
+			} // if obj1 already loaded
+
+			// Add objects for joined Registration rows
+
+			$key2 = RegistrationPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+			if ($key2 !== null) {
+				$obj2 = RegistrationPeer::getInstanceFromPool($key2);
+				if (!$obj2) {
+
+					$cls = RegistrationPeer::getOMClass(false);
+
+					$obj2 = new $cls();
+					$obj2->hydrate($row, $startcol2);
+					RegistrationPeer::addInstanceToPool($obj2, $key2);
+				} // if obj2 loaded
+
+				// Add the $obj1 (Workflowcomments) to the collection in $obj2 (Registration)
+				$obj2->addWorkflowcomments($obj1);
+			} // if joined row not null
+
+			$results[] = $obj1;
+		}
+		$stmt->closeCursor();
+		return $results;
+	}
+
 	/**
 	 * Returns the TableMap related to this peer.
 	 * This method is not needed for general use but a specific application could have a need.
@@ -466,10 +700,10 @@ abstract class BaseWorkflowCommentsPeer {
 	 */
 	public static function buildTableMap()
 	{
-	  $dbMap = Propel::getDatabaseMap(BaseWorkflowCommentsPeer::DATABASE_NAME);
-	  if (!$dbMap->hasTable(BaseWorkflowCommentsPeer::TABLE_NAME))
+	  $dbMap = Propel::getDatabaseMap(BaseWorkflowcommentsPeer::DATABASE_NAME);
+	  if (!$dbMap->hasTable(BaseWorkflowcommentsPeer::TABLE_NAME))
 	  {
-	    $dbMap->addTableObject(new WorkflowCommentsTableMap());
+	    $dbMap->addTableObject(new WorkflowcommentsTableMap());
 	  }
 	}
 
@@ -486,13 +720,13 @@ abstract class BaseWorkflowCommentsPeer {
 	 */
 	public static function getOMClass($withPrefix = true)
 	{
-		return $withPrefix ? WorkflowCommentsPeer::CLASS_DEFAULT : WorkflowCommentsPeer::OM_CLASS;
+		return $withPrefix ? WorkflowcommentsPeer::CLASS_DEFAULT : WorkflowcommentsPeer::OM_CLASS;
 	}
 
 	/**
-	 * Method perform an INSERT on the database, given a WorkflowComments or Criteria object.
+	 * Method perform an INSERT on the database, given a Workflowcomments or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or WorkflowComments object containing data that is used to create the INSERT statement.
+	 * @param      mixed $values Criteria or Workflowcomments object containing data that is used to create the INSERT statement.
 	 * @param      PropelPDO $con the PropelPDO connection to use
 	 * @return     mixed The new primary key.
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -501,21 +735,21 @@ abstract class BaseWorkflowCommentsPeer {
 	public static function doInsert($values, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 		} else {
-			$criteria = $values->buildCriteria(); // build Criteria from WorkflowComments object
+			$criteria = $values->buildCriteria(); // build Criteria from Workflowcomments object
 		}
 
-		if ($criteria->containsKey(WorkflowCommentsPeer::PK) && $criteria->keyContainsValue(WorkflowCommentsPeer::PK) ) {
-			throw new PropelException('Cannot insert a value for auto-increment primary key ('.WorkflowCommentsPeer::PK.')');
+		if ($criteria->containsKey(WorkflowcommentsPeer::ID) && $criteria->keyContainsValue(WorkflowcommentsPeer::ID) ) {
+			throw new PropelException('Cannot insert a value for auto-increment primary key ('.WorkflowcommentsPeer::ID.')');
 		}
 
 		// remove pkey col since this table uses auto-increment and passing a null value for it is not valid 
-		$criteria->remove(WorkflowCommentsPeer::PK);
+		$criteria->remove(WorkflowcommentsPeer::ID);
 
 
 		// Set the correct dbName
@@ -536,9 +770,9 @@ abstract class BaseWorkflowCommentsPeer {
 	}
 
 	/**
-	 * Method perform an UPDATE on the database, given a WorkflowComments or Criteria object.
+	 * Method perform an UPDATE on the database, given a Workflowcomments or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or WorkflowComments object containing data that is used to create the UPDATE statement.
+	 * @param      mixed $values Criteria or Workflowcomments object containing data that is used to create the UPDATE statement.
 	 * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -547,7 +781,7 @@ abstract class BaseWorkflowCommentsPeer {
 	public static function doUpdate($values, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		$selectCriteria = new Criteria(self::DATABASE_NAME);
@@ -555,15 +789,15 @@ abstract class BaseWorkflowCommentsPeer {
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 
-			$comparison = $criteria->getComparison(WorkflowCommentsPeer::PK);
-			$value = $criteria->remove(WorkflowCommentsPeer::PK);
+			$comparison = $criteria->getComparison(WorkflowcommentsPeer::ID);
+			$value = $criteria->remove(WorkflowcommentsPeer::ID);
 			if ($value) {
-				$selectCriteria->add(WorkflowCommentsPeer::PK, $value, $comparison);
+				$selectCriteria->add(WorkflowcommentsPeer::ID, $value, $comparison);
 			} else {
-				$selectCriteria->setPrimaryTableName(WorkflowCommentsPeer::TABLE_NAME);
+				$selectCriteria->setPrimaryTableName(WorkflowcommentsPeer::TABLE_NAME);
 			}
 
-		} else { // $values is WorkflowComments object
+		} else { // $values is Workflowcomments object
 			$criteria = $values->buildCriteria(); // gets full criteria
 			$selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
 		}
@@ -575,26 +809,26 @@ abstract class BaseWorkflowCommentsPeer {
 	}
 
 	/**
-	 * Method to DELETE all rows from the workflow_comments table.
+	 * Method to DELETE all rows from the WORKFLOWCOMMENT table.
 	 *
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 */
 	public static function doDeleteAll($con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		$affectedRows = 0; // initialize var to track total num of affected rows
 		try {
 			// use transaction because $criteria could contain info
 			// for more than one table or we could emulating ON DELETE CASCADE, etc.
 			$con->beginTransaction();
-			$affectedRows += BasePeer::doDeleteAll(WorkflowCommentsPeer::TABLE_NAME, $con, WorkflowCommentsPeer::DATABASE_NAME);
+			$affectedRows += BasePeer::doDeleteAll(WorkflowcommentsPeer::TABLE_NAME, $con, WorkflowcommentsPeer::DATABASE_NAME);
 			// Because this db requires some delete cascade/set null emulation, we have to
 			// clear the cached instance *after* the emulation has happened (since
 			// instances get re-added by the select statement contained therein).
-			WorkflowCommentsPeer::clearInstancePool();
-			WorkflowCommentsPeer::clearRelatedInstancePool();
+			WorkflowcommentsPeer::clearInstancePool();
+			WorkflowcommentsPeer::clearRelatedInstancePool();
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -604,9 +838,9 @@ abstract class BaseWorkflowCommentsPeer {
 	}
 
 	/**
-	 * Method perform a DELETE on the database, given a WorkflowComments or Criteria object OR a primary key value.
+	 * Method perform a DELETE on the database, given a Workflowcomments or Criteria object OR a primary key value.
 	 *
-	 * @param      mixed $values Criteria or WorkflowComments object or primary key or array of primary keys
+	 * @param      mixed $values Criteria or Workflowcomments object or primary key or array of primary keys
 	 *              which is used to create the DELETE statement
 	 * @param      PropelPDO $con the connection to use
 	 * @return     int 	The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -617,27 +851,27 @@ abstract class BaseWorkflowCommentsPeer {
 	 public static function doDelete($values, PropelPDO $con = null)
 	 {
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			// invalidate the cache for all objects of this type, since we have no
 			// way of knowing (without running a query) what objects should be invalidated
 			// from the cache based on this Criteria.
-			WorkflowCommentsPeer::clearInstancePool();
+			WorkflowcommentsPeer::clearInstancePool();
 			// rename for clarity
 			$criteria = clone $values;
-		} elseif ($values instanceof WorkflowComments) { // it's a model object
+		} elseif ($values instanceof Workflowcomments) { // it's a model object
 			// invalidate the cache for this single object
-			WorkflowCommentsPeer::removeInstanceFromPool($values);
+			WorkflowcommentsPeer::removeInstanceFromPool($values);
 			// create criteria based on pk values
 			$criteria = $values->buildPkeyCriteria();
 		} else { // it's a primary key, or an array of pks
 			$criteria = new Criteria(self::DATABASE_NAME);
-			$criteria->add(WorkflowCommentsPeer::PK, (array) $values, Criteria::IN);
+			$criteria->add(WorkflowcommentsPeer::ID, (array) $values, Criteria::IN);
 			// invalidate the cache for this object(s)
 			foreach ((array) $values as $singleval) {
-				WorkflowCommentsPeer::removeInstanceFromPool($singleval);
+				WorkflowcommentsPeer::removeInstanceFromPool($singleval);
 			}
 		}
 
@@ -652,7 +886,7 @@ abstract class BaseWorkflowCommentsPeer {
 			$con->beginTransaction();
 			
 			$affectedRows += BasePeer::doDelete($criteria, $con);
-			WorkflowCommentsPeer::clearRelatedInstancePool();
+			WorkflowcommentsPeer::clearRelatedInstancePool();
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -662,24 +896,24 @@ abstract class BaseWorkflowCommentsPeer {
 	}
 
 	/**
-	 * Validates all modified columns of given WorkflowComments object.
+	 * Validates all modified columns of given Workflowcomments object.
 	 * If parameter $columns is either a single column name or an array of column names
 	 * than only those columns are validated.
 	 *
 	 * NOTICE: This does not apply to primary or foreign keys for now.
 	 *
-	 * @param      WorkflowComments $obj The object to validate.
+	 * @param      Workflowcomments $obj The object to validate.
 	 * @param      mixed $cols Column name or array of column names.
 	 *
 	 * @return     mixed TRUE if all columns are valid or the error message of the first invalid column.
 	 */
-	public static function doValidate(WorkflowComments $obj, $cols = null)
+	public static function doValidate(Workflowcomments $obj, $cols = null)
 	{
 		$columns = array();
 
 		if ($cols) {
-			$dbMap = Propel::getDatabaseMap(WorkflowCommentsPeer::DATABASE_NAME);
-			$tableMap = $dbMap->getTable(WorkflowCommentsPeer::TABLE_NAME);
+			$dbMap = Propel::getDatabaseMap(WorkflowcommentsPeer::DATABASE_NAME);
+			$tableMap = $dbMap->getTable(WorkflowcommentsPeer::TABLE_NAME);
 
 			if (! is_array($cols)) {
 				$cols = array($cols);
@@ -695,7 +929,7 @@ abstract class BaseWorkflowCommentsPeer {
 
 		}
 
-		return BasePeer::doValidate(WorkflowCommentsPeer::DATABASE_NAME, WorkflowCommentsPeer::TABLE_NAME, $columns);
+		return BasePeer::doValidate(WorkflowcommentsPeer::DATABASE_NAME, WorkflowcommentsPeer::TABLE_NAME, $columns);
 	}
 
 	/**
@@ -703,23 +937,23 @@ abstract class BaseWorkflowCommentsPeer {
 	 *
 	 * @param      int $pk the primary key.
 	 * @param      PropelPDO $con the connection to use
-	 * @return     WorkflowComments
+	 * @return     Workflowcomments
 	 */
 	public static function retrieveByPK($pk, PropelPDO $con = null)
 	{
 
-		if (null !== ($obj = WorkflowCommentsPeer::getInstanceFromPool((string) $pk))) {
+		if (null !== ($obj = WorkflowcommentsPeer::getInstanceFromPool((string) $pk))) {
 			return $obj;
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
-		$criteria = new Criteria(WorkflowCommentsPeer::DATABASE_NAME);
-		$criteria->add(WorkflowCommentsPeer::PK, $pk);
+		$criteria = new Criteria(WorkflowcommentsPeer::DATABASE_NAME);
+		$criteria->add(WorkflowcommentsPeer::ID, $pk);
 
-		$v = WorkflowCommentsPeer::doSelect($criteria, $con);
+		$v = WorkflowcommentsPeer::doSelect($criteria, $con);
 
 		return !empty($v) > 0 ? $v[0] : null;
 	}
@@ -735,23 +969,23 @@ abstract class BaseWorkflowCommentsPeer {
 	public static function retrieveByPKs($pks, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		$objs = null;
 		if (empty($pks)) {
 			$objs = array();
 		} else {
-			$criteria = new Criteria(WorkflowCommentsPeer::DATABASE_NAME);
-			$criteria->add(WorkflowCommentsPeer::PK, $pks, Criteria::IN);
-			$objs = WorkflowCommentsPeer::doSelect($criteria, $con);
+			$criteria = new Criteria(WorkflowcommentsPeer::DATABASE_NAME);
+			$criteria->add(WorkflowcommentsPeer::ID, $pks, Criteria::IN);
+			$objs = WorkflowcommentsPeer::doSelect($criteria, $con);
 		}
 		return $objs;
 	}
 
-} // BaseWorkflowCommentsPeer
+} // BaseWorkflowcommentsPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseWorkflowCommentsPeer::buildTableMap();
+BaseWorkflowcommentsPeer::buildTableMap();
 

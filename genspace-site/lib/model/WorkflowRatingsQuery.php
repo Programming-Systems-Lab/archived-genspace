@@ -3,7 +3,7 @@
 
 
 /**
- * Skeleton subclass for performing query and update operations on the 'workflow_ratings' table.
+ * Skeleton subclass for performing query and update operations on the 'WORKFLOWRATING' table.
  *
  * 
  *
@@ -13,6 +13,6 @@
  *
  * @package    propel.generator.lib.model
  */
-class WorkflowRatingsQuery extends BaseWorkflowRatingsQuery {
+class WorkflowratingsQuery extends BaseWorkflowratingsQuery {
 
-} // WorkflowRatingsQuery
+} // WorkflowratingsQuery

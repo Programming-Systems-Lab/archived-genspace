@@ -2,33 +2,27 @@
 
 
 /**
- * Base class that represents a row from the 'workflow_comments' table.
+ * Base class that represents a row from the 'WORKFLOWCOMMENT' table.
  *
  * 
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseWorkflowComments extends BaseObject  implements Persistent
+abstract class BaseWorkflowcomments extends BaseObject  implements Persistent
 {
 
 	/**
 	 * Peer class name
 	 */
-  const PEER = 'WorkflowCommentsPeer';
+  const PEER = 'WorkflowcommentsPeer';
 
 	/**
 	 * The Peer class.
 	 * Instance provides a convenient way of calling static methods on a class
 	 * that calling code may not be able to identify.
-	 * @var        WorkflowCommentsPeer
+	 * @var        WorkflowcommentsPeer
 	 */
 	protected static $peer;
-
-	/**
-	 * The value for the pk field.
-	 * @var        int
-	 */
-	protected $pk;
 
 	/**
 	 * The value for the id field.
@@ -37,22 +31,33 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	protected $id;
 
 	/**
+	 * The value for the createdat field.
+	 * @var        string
+	 */
+	protected $createdat;
+
+	/**
 	 * The value for the comment field.
 	 * @var        string
 	 */
 	protected $comment;
 
 	/**
-	 * The value for the username field.
-	 * @var        string
+	 * The value for the workflow_id field.
+	 * @var        int
 	 */
-	protected $username;
+	protected $workflow_id;
 
 	/**
-	 * The value for the posted_on field.
-	 * @var        string
+	 * The value for the creator_id field.
+	 * @var        int
 	 */
-	protected $posted_on;
+	protected $creator_id;
+
+	/**
+	 * @var        Registration
+	 */
+	protected $aRegistration;
 
 	/**
 	 * Flag to prevent endless save loop, if this object is referenced
@@ -69,16 +74,6 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	protected $alreadyInValidation = false;
 
 	/**
-	 * Get the [pk] column value.
-	 * 
-	 * @return     int
-	 */
-	public function getPk()
-	{
-		return $this->pk;
-	}
-
-	/**
 	 * Get the [id] column value.
 	 * 
 	 * @return     int
@@ -89,27 +84,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Get the [comment] column value.
-	 * 
-	 * @return     string
-	 */
-	public function getComment()
-	{
-		return $this->comment;
-	}
-
-	/**
-	 * Get the [username] column value.
-	 * 
-	 * @return     string
-	 */
-	public function getUsername()
-	{
-		return $this->username;
-	}
-
-	/**
-	 * Get the [optionally formatted] temporal [posted_on] column value.
+	 * Get the [optionally formatted] temporal [createdat] column value.
 	 * 
 	 *
 	 * @param      string $format The date/time format string (either date()-style or strftime()-style).
@@ -117,18 +92,18 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 * @return     mixed Formatted date/time value as string or DateTime object (if format is NULL), NULL if column is NULL
 	 * @throws     PropelException - if unable to parse/validate the date/time value.
 	 */
-	public function getPostedOn($format = 'Y-m-d H:i:s')
+	public function getCreatedat($format = 'Y-m-d H:i:s')
 	{
-		if ($this->posted_on === null) {
+		if ($this->createdat === null) {
 			return null;
 		}
 
 
 
 		try {
-			$dt = new DateTime($this->posted_on);
+			$dt = new DateTime($this->createdat);
 		} catch (Exception $x) {
-			throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->posted_on, true), $x);
+			throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->createdat, true), $x);
 		}
 
 		if ($format === null) {
@@ -142,30 +117,40 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Set the value of [pk] column.
+	 * Get the [comment] column value.
 	 * 
-	 * @param      int $v new value
-	 * @return     WorkflowComments The current object (for fluent API support)
+	 * @return     string
 	 */
-	public function setPk($v)
+	public function getComment()
 	{
-		if ($v !== null) {
-			$v = (int) $v;
-		}
+		return $this->comment;
+	}
 
-		if ($this->pk !== $v) {
-			$this->pk = $v;
-			$this->modifiedColumns[] = WorkflowCommentsPeer::PK;
-		}
+	/**
+	 * Get the [workflow_id] column value.
+	 * 
+	 * @return     int
+	 */
+	public function getWorkflowId()
+	{
+		return $this->workflow_id;
+	}
 
-		return $this;
-	} // setPk()
+	/**
+	 * Get the [creator_id] column value.
+	 * 
+	 * @return     int
+	 */
+	public function getCreatorId()
+	{
+		return $this->creator_id;
+	}
 
 	/**
 	 * Set the value of [id] column.
 	 * 
 	 * @param      int $v new value
-	 * @return     WorkflowComments The current object (for fluent API support)
+	 * @return     Workflowcomments The current object (for fluent API support)
 	 */
 	public function setId($v)
 	{
@@ -175,60 +160,20 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 
 		if ($this->id !== $v) {
 			$this->id = $v;
-			$this->modifiedColumns[] = WorkflowCommentsPeer::ID;
+			$this->modifiedColumns[] = WorkflowcommentsPeer::ID;
 		}
 
 		return $this;
 	} // setId()
 
 	/**
-	 * Set the value of [comment] column.
-	 * 
-	 * @param      string $v new value
-	 * @return     WorkflowComments The current object (for fluent API support)
-	 */
-	public function setComment($v)
-	{
-		if ($v !== null) {
-			$v = (string) $v;
-		}
-
-		if ($this->comment !== $v) {
-			$this->comment = $v;
-			$this->modifiedColumns[] = WorkflowCommentsPeer::COMMENT;
-		}
-
-		return $this;
-	} // setComment()
-
-	/**
-	 * Set the value of [username] column.
-	 * 
-	 * @param      string $v new value
-	 * @return     WorkflowComments The current object (for fluent API support)
-	 */
-	public function setUsername($v)
-	{
-		if ($v !== null) {
-			$v = (string) $v;
-		}
-
-		if ($this->username !== $v) {
-			$this->username = $v;
-			$this->modifiedColumns[] = WorkflowCommentsPeer::USERNAME;
-		}
-
-		return $this;
-	} // setUsername()
-
-	/**
-	 * Sets the value of [posted_on] column to a normalized version of the date/time value specified.
+	 * Sets the value of [createdat] column to a normalized version of the date/time value specified.
 	 * 
 	 * @param      mixed $v string, integer (timestamp), or DateTime value.  Empty string will
 	 *						be treated as NULL for temporal objects.
-	 * @return     WorkflowComments The current object (for fluent API support)
+	 * @return     Workflowcomments The current object (for fluent API support)
 	 */
-	public function setPostedOn($v)
+	public function setCreatedat($v)
 	{
 		// we treat '' as NULL for temporal objects because DateTime('') == DateTime('now')
 		// -- which is unexpected, to say the least.
@@ -253,22 +198,86 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 			}
 		}
 
-		if ( $this->posted_on !== null || $dt !== null ) {
+		if ( $this->createdat !== null || $dt !== null ) {
 			// (nested ifs are a little easier to read in this case)
 
-			$currNorm = ($this->posted_on !== null && $tmpDt = new DateTime($this->posted_on)) ? $tmpDt->format('Y-m-d H:i:s') : null;
+			$currNorm = ($this->createdat !== null && $tmpDt = new DateTime($this->createdat)) ? $tmpDt->format('Y-m-d H:i:s') : null;
 			$newNorm = ($dt !== null) ? $dt->format('Y-m-d H:i:s') : null;
 
 			if ( ($currNorm !== $newNorm) // normalized values don't match 
 					)
 			{
-				$this->posted_on = ($dt ? $dt->format('Y-m-d H:i:s') : null);
-				$this->modifiedColumns[] = WorkflowCommentsPeer::POSTED_ON;
+				$this->createdat = ($dt ? $dt->format('Y-m-d H:i:s') : null);
+				$this->modifiedColumns[] = WorkflowcommentsPeer::CREATEDAT;
 			}
 		} // if either are not null
 
 		return $this;
-	} // setPostedOn()
+	} // setCreatedat()
+
+	/**
+	 * Set the value of [comment] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     Workflowcomments The current object (for fluent API support)
+	 */
+	public function setComment($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->comment !== $v) {
+			$this->comment = $v;
+			$this->modifiedColumns[] = WorkflowcommentsPeer::COMMENT;
+		}
+
+		return $this;
+	} // setComment()
+
+	/**
+	 * Set the value of [workflow_id] column.
+	 * 
+	 * @param      int $v new value
+	 * @return     Workflowcomments The current object (for fluent API support)
+	 */
+	public function setWorkflowId($v)
+	{
+		if ($v !== null) {
+			$v = (int) $v;
+		}
+
+		if ($this->workflow_id !== $v) {
+			$this->workflow_id = $v;
+			$this->modifiedColumns[] = WorkflowcommentsPeer::WORKFLOW_ID;
+		}
+
+		return $this;
+	} // setWorkflowId()
+
+	/**
+	 * Set the value of [creator_id] column.
+	 * 
+	 * @param      int $v new value
+	 * @return     Workflowcomments The current object (for fluent API support)
+	 */
+	public function setCreatorId($v)
+	{
+		if ($v !== null) {
+			$v = (int) $v;
+		}
+
+		if ($this->creator_id !== $v) {
+			$this->creator_id = $v;
+			$this->modifiedColumns[] = WorkflowcommentsPeer::CREATOR_ID;
+		}
+
+		if ($this->aRegistration !== null && $this->aRegistration->getId() !== $v) {
+			$this->aRegistration = null;
+		}
+
+		return $this;
+	} // setCreatorId()
 
 	/**
 	 * Indicates whether the columns in this object are only set to default values.
@@ -302,11 +311,11 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	{
 		try {
 
-			$this->pk = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-			$this->id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
+			$this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
+			$this->createdat = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
 			$this->comment = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-			$this->username = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-			$this->posted_on = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+			$this->workflow_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+			$this->creator_id = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -315,10 +324,10 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 				$this->ensureConsistency();
 			}
 
-			return $startcol + 5; // 5 = WorkflowCommentsPeer::NUM_COLUMNS - WorkflowCommentsPeer::NUM_LAZY_LOAD_COLUMNS).
+			return $startcol + 5; // 5 = WorkflowcommentsPeer::NUM_COLUMNS - WorkflowcommentsPeer::NUM_LAZY_LOAD_COLUMNS).
 
 		} catch (Exception $e) {
-			throw new PropelException("Error populating WorkflowComments object", $e);
+			throw new PropelException("Error populating Workflowcomments object", $e);
 		}
 	}
 
@@ -338,6 +347,9 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	public function ensureConsistency()
 	{
 
+		if ($this->aRegistration !== null && $this->creator_id !== $this->aRegistration->getId()) {
+			$this->aRegistration = null;
+		}
 	} // ensureConsistency
 
 	/**
@@ -361,13 +373,13 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		// We don't need to alter the object instance pool; we're just modifying this instance
 		// already in the pool.
 
-		$stmt = WorkflowCommentsPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+		$stmt = WorkflowcommentsPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
 		$row = $stmt->fetch(PDO::FETCH_NUM);
 		$stmt->closeCursor();
 		if (!$row) {
@@ -377,6 +389,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 
 		if ($deep) {  // also de-associate any related objects?
 
+			$this->aRegistration = null;
 		} // if (deep)
 	}
 
@@ -396,14 +409,14 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		
 		$con->beginTransaction();
 		try {
 			$ret = $this->preDelete($con);
 			if ($ret) {
-				WorkflowCommentsQuery::create()
+				WorkflowcommentsQuery::create()
 					->filterByPrimaryKey($this->getPrimaryKey())
 					->delete($con);
 				$this->postDelete($con);
@@ -438,7 +451,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		
 		$con->beginTransaction();
@@ -458,7 +471,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 					$this->postUpdate($con);
 				}
 				$this->postSave($con);
-				WorkflowCommentsPeer::addInstanceToPool($this);
+				WorkflowcommentsPeer::addInstanceToPool($this);
 			} else {
 				$affectedRows = 0;
 			}
@@ -487,27 +500,39 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 		if (!$this->alreadyInSave) {
 			$this->alreadyInSave = true;
 
+			// We call the save method on the following object(s) if they
+			// were passed to this object by their coresponding set
+			// method.  This object relates to these object(s) by a
+			// foreign key reference.
+
+			if ($this->aRegistration !== null) {
+				if ($this->aRegistration->isModified() || $this->aRegistration->isNew()) {
+					$affectedRows += $this->aRegistration->save($con);
+				}
+				$this->setRegistration($this->aRegistration);
+			}
+
 			if ($this->isNew() ) {
-				$this->modifiedColumns[] = WorkflowCommentsPeer::PK;
+				$this->modifiedColumns[] = WorkflowcommentsPeer::ID;
 			}
 
 			// If this object has been modified, then save it to the database.
 			if ($this->isModified()) {
 				if ($this->isNew()) {
 					$criteria = $this->buildCriteria();
-					if ($criteria->keyContainsValue(WorkflowCommentsPeer::PK) ) {
-						throw new PropelException('Cannot insert a value for auto-increment primary key ('.WorkflowCommentsPeer::PK.')');
+					if ($criteria->keyContainsValue(WorkflowcommentsPeer::ID) ) {
+						throw new PropelException('Cannot insert a value for auto-increment primary key ('.WorkflowcommentsPeer::ID.')');
 					}
 
 					// remove pkey col since this table uses auto-increment and passing a null value for it is not valid 
-					$criteria->remove(WorkflowCommentsPeer::PK);
+					$criteria->remove(WorkflowcommentsPeer::ID);
 
 					$pk = BasePeer::doInsert($criteria, $con);
-					$affectedRows = 1;
-					$this->setPk($pk);  //[IMV] update autoincrement primary key
+					$affectedRows += 1;
+					$this->setId($pk);  //[IMV] update autoincrement primary key
 					$this->setNew(false);
 				} else {
-					$affectedRows = WorkflowCommentsPeer::doUpdate($this, $con);
+					$affectedRows += WorkflowcommentsPeer::doUpdate($this, $con);
 				}
 
 				$this->resetModified(); // [HL] After being saved an object is no longer 'modified'
@@ -579,7 +604,19 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 			$failureMap = array();
 
 
-			if (($retval = WorkflowCommentsPeer::doValidate($this, $columns)) !== true) {
+			// We call the validate method on the following object(s) if they
+			// were passed to this object by their coresponding set
+			// method.  This object relates to these object(s) by a
+			// foreign key reference.
+
+			if ($this->aRegistration !== null) {
+				if (!$this->aRegistration->validate($columns)) {
+					$failureMap = array_merge($failureMap, $this->aRegistration->getValidationFailures());
+				}
+			}
+
+
+			if (($retval = WorkflowcommentsPeer::doValidate($this, $columns)) !== true) {
 				$failureMap = array_merge($failureMap, $retval);
 			}
 
@@ -602,7 +639,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = WorkflowCommentsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = WorkflowcommentsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		$field = $this->getByPosition($pos);
 		return $field;
 	}
@@ -618,19 +655,19 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	{
 		switch($pos) {
 			case 0:
-				return $this->getPk();
+				return $this->getId();
 				break;
 			case 1:
-				return $this->getId();
+				return $this->getCreatedat();
 				break;
 			case 2:
 				return $this->getComment();
 				break;
 			case 3:
-				return $this->getUsername();
+				return $this->getWorkflowId();
 				break;
 			case 4:
-				return $this->getPostedOn();
+				return $this->getCreatorId();
 				break;
 			default:
 				return null;
@@ -648,19 +685,25 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 *                    BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. 
 	 *                    Defaults to BasePeer::TYPE_PHPNAME.
 	 * @param     boolean $includeLazyLoadColumns (optional) Whether to include lazy loaded columns. Defaults to TRUE.
+	 * @param     boolean $includeForeignObjects (optional) Whether to include hydrated related objects. Default to FALSE.
 	 *
 	 * @return    array an associative array containing the field names (as keys) and field values
 	 */
-	public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true)
+	public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $includeForeignObjects = false)
 	{
-		$keys = WorkflowCommentsPeer::getFieldNames($keyType);
+		$keys = WorkflowcommentsPeer::getFieldNames($keyType);
 		$result = array(
-			$keys[0] => $this->getPk(),
-			$keys[1] => $this->getId(),
+			$keys[0] => $this->getId(),
+			$keys[1] => $this->getCreatedat(),
 			$keys[2] => $this->getComment(),
-			$keys[3] => $this->getUsername(),
-			$keys[4] => $this->getPostedOn(),
+			$keys[3] => $this->getWorkflowId(),
+			$keys[4] => $this->getCreatorId(),
 		);
+		if ($includeForeignObjects) {
+			if (null !== $this->aRegistration) {
+				$result['Registration'] = $this->aRegistration->toArray($keyType, $includeLazyLoadColumns, true);
+			}
+		}
 		return $result;
 	}
 
@@ -676,7 +719,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = WorkflowCommentsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = WorkflowcommentsPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		return $this->setByPosition($pos, $value);
 	}
 
@@ -692,19 +735,19 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	{
 		switch($pos) {
 			case 0:
-				$this->setPk($value);
+				$this->setId($value);
 				break;
 			case 1:
-				$this->setId($value);
+				$this->setCreatedat($value);
 				break;
 			case 2:
 				$this->setComment($value);
 				break;
 			case 3:
-				$this->setUsername($value);
+				$this->setWorkflowId($value);
 				break;
 			case 4:
-				$this->setPostedOn($value);
+				$this->setCreatorId($value);
 				break;
 		} // switch()
 	}
@@ -728,13 +771,13 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
 	{
-		$keys = WorkflowCommentsPeer::getFieldNames($keyType);
+		$keys = WorkflowcommentsPeer::getFieldNames($keyType);
 
-		if (array_key_exists($keys[0], $arr)) $this->setPk($arr[$keys[0]]);
-		if (array_key_exists($keys[1], $arr)) $this->setId($arr[$keys[1]]);
+		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
+		if (array_key_exists($keys[1], $arr)) $this->setCreatedat($arr[$keys[1]]);
 		if (array_key_exists($keys[2], $arr)) $this->setComment($arr[$keys[2]]);
-		if (array_key_exists($keys[3], $arr)) $this->setUsername($arr[$keys[3]]);
-		if (array_key_exists($keys[4], $arr)) $this->setPostedOn($arr[$keys[4]]);
+		if (array_key_exists($keys[3], $arr)) $this->setWorkflowId($arr[$keys[3]]);
+		if (array_key_exists($keys[4], $arr)) $this->setCreatorId($arr[$keys[4]]);
 	}
 
 	/**
@@ -744,13 +787,13 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function buildCriteria()
 	{
-		$criteria = new Criteria(WorkflowCommentsPeer::DATABASE_NAME);
+		$criteria = new Criteria(WorkflowcommentsPeer::DATABASE_NAME);
 
-		if ($this->isColumnModified(WorkflowCommentsPeer::PK)) $criteria->add(WorkflowCommentsPeer::PK, $this->pk);
-		if ($this->isColumnModified(WorkflowCommentsPeer::ID)) $criteria->add(WorkflowCommentsPeer::ID, $this->id);
-		if ($this->isColumnModified(WorkflowCommentsPeer::COMMENT)) $criteria->add(WorkflowCommentsPeer::COMMENT, $this->comment);
-		if ($this->isColumnModified(WorkflowCommentsPeer::USERNAME)) $criteria->add(WorkflowCommentsPeer::USERNAME, $this->username);
-		if ($this->isColumnModified(WorkflowCommentsPeer::POSTED_ON)) $criteria->add(WorkflowCommentsPeer::POSTED_ON, $this->posted_on);
+		if ($this->isColumnModified(WorkflowcommentsPeer::ID)) $criteria->add(WorkflowcommentsPeer::ID, $this->id);
+		if ($this->isColumnModified(WorkflowcommentsPeer::CREATEDAT)) $criteria->add(WorkflowcommentsPeer::CREATEDAT, $this->createdat);
+		if ($this->isColumnModified(WorkflowcommentsPeer::COMMENT)) $criteria->add(WorkflowcommentsPeer::COMMENT, $this->comment);
+		if ($this->isColumnModified(WorkflowcommentsPeer::WORKFLOW_ID)) $criteria->add(WorkflowcommentsPeer::WORKFLOW_ID, $this->workflow_id);
+		if ($this->isColumnModified(WorkflowcommentsPeer::CREATOR_ID)) $criteria->add(WorkflowcommentsPeer::CREATOR_ID, $this->creator_id);
 
 		return $criteria;
 	}
@@ -765,8 +808,8 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function buildPkeyCriteria()
 	{
-		$criteria = new Criteria(WorkflowCommentsPeer::DATABASE_NAME);
-		$criteria->add(WorkflowCommentsPeer::PK, $this->pk);
+		$criteria = new Criteria(WorkflowcommentsPeer::DATABASE_NAME);
+		$criteria->add(WorkflowcommentsPeer::ID, $this->id);
 
 		return $criteria;
 	}
@@ -777,18 +820,18 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function getPrimaryKey()
 	{
-		return $this->getPk();
+		return $this->getId();
 	}
 
 	/**
-	 * Generic method to set the primary key (pk column).
+	 * Generic method to set the primary key (id column).
 	 *
 	 * @param      int $key Primary key.
 	 * @return     void
 	 */
 	public function setPrimaryKey($key)
 	{
-		$this->setPk($key);
+		$this->setId($key);
 	}
 
 	/**
@@ -797,7 +840,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function isPrimaryKeyNull()
 	{
-		return null === $this->getPk();
+		return null === $this->getId();
 	}
 
 	/**
@@ -806,19 +849,19 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 * If desired, this method can also make copies of all associated (fkey referrers)
 	 * objects.
 	 *
-	 * @param      object $copyObj An object of WorkflowComments (or compatible) type.
+	 * @param      object $copyObj An object of Workflowcomments (or compatible) type.
 	 * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
 	 * @throws     PropelException
 	 */
 	public function copyInto($copyObj, $deepCopy = false)
 	{
-		$copyObj->setId($this->id);
+		$copyObj->setCreatedat($this->createdat);
 		$copyObj->setComment($this->comment);
-		$copyObj->setUsername($this->username);
-		$copyObj->setPostedOn($this->posted_on);
+		$copyObj->setWorkflowId($this->workflow_id);
+		$copyObj->setCreatorId($this->creator_id);
 
 		$copyObj->setNew(true);
-		$copyObj->setPk(NULL); // this is a auto-increment column, so set to default value
+		$copyObj->setId(NULL); // this is a auto-increment column, so set to default value
 	}
 
 	/**
@@ -830,7 +873,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 * objects.
 	 *
 	 * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-	 * @return     WorkflowComments Clone of current object.
+	 * @return     Workflowcomments Clone of current object.
 	 * @throws     PropelException
 	 */
 	public function copy($deepCopy = false)
@@ -849,14 +892,63 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 * same instance for all member of this class. The method could therefore
 	 * be static, but this would prevent one from overriding the behavior.
 	 *
-	 * @return     WorkflowCommentsPeer
+	 * @return     WorkflowcommentsPeer
 	 */
 	public function getPeer()
 	{
 		if (self::$peer === null) {
-			self::$peer = new WorkflowCommentsPeer();
+			self::$peer = new WorkflowcommentsPeer();
 		}
 		return self::$peer;
+	}
+
+	/**
+	 * Declares an association between this object and a Registration object.
+	 *
+	 * @param      Registration $v
+	 * @return     Workflowcomments The current object (for fluent API support)
+	 * @throws     PropelException
+	 */
+	public function setRegistration(Registration $v = null)
+	{
+		if ($v === null) {
+			$this->setCreatorId(NULL);
+		} else {
+			$this->setCreatorId($v->getId());
+		}
+
+		$this->aRegistration = $v;
+
+		// Add binding for other direction of this n:n relationship.
+		// If this object has already been added to the Registration object, it will not be re-added.
+		if ($v !== null) {
+			$v->addWorkflowcomments($this);
+		}
+
+		return $this;
+	}
+
+
+	/**
+	 * Get the associated Registration object
+	 *
+	 * @param      PropelPDO Optional Connection object.
+	 * @return     Registration The associated Registration object.
+	 * @throws     PropelException
+	 */
+	public function getRegistration(PropelPDO $con = null)
+	{
+		if ($this->aRegistration === null && ($this->creator_id !== null)) {
+			$this->aRegistration = RegistrationQuery::create()->findPk($this->creator_id, $con);
+			/* The following can be used additionally to
+			   guarantee the related object contains a reference
+			   to this object.  This level of coupling may, however, be
+			   undesirable since it could result in an only partially populated collection
+			   in the referenced object.
+			   $this->aRegistration->addWorkflowcommentss($this);
+			 */
+		}
+		return $this->aRegistration;
 	}
 
 	/**
@@ -864,11 +956,11 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 	 */
 	public function clear()
 	{
-		$this->pk = null;
 		$this->id = null;
+		$this->createdat = null;
 		$this->comment = null;
-		$this->username = null;
-		$this->posted_on = null;
+		$this->workflow_id = null;
+		$this->creator_id = null;
 		$this->alreadyInSave = false;
 		$this->alreadyInValidation = false;
 		$this->clearAllReferences();
@@ -891,6 +983,7 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 		if ($deep) {
 		} // if ($deep)
 
+		$this->aRegistration = null;
 	}
 
 	/**
@@ -912,4 +1005,4 @@ abstract class BaseWorkflowComments extends BaseObject  implements Persistent
 		return parent::__call($name, $params);
 	}
 
-} // BaseWorkflowComments
+} // BaseWorkflowcomments

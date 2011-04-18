@@ -3,7 +3,7 @@
 
 
 /**
- * This class defines the structure of the 'workflow_comments' table.
+ * This class defines the structure of the 'WORKFLOWCOMMENT' table.
  *
  *
  *
@@ -14,12 +14,12 @@
  *
  * @package    propel.generator.lib.model.map
  */
-class WorkflowCommentsTableMap extends TableMap {
+class WorkflowcommentsTableMap extends TableMap {
 
 	/**
 	 * The (dot-path) name of this class
 	 */
-	const CLASS_NAME = 'lib.model.map.WorkflowCommentsTableMap';
+	const CLASS_NAME = 'lib.model.map.WorkflowcommentsTableMap';
 
 	/**
 	 * Initialize the table attributes, columns and validators
@@ -31,17 +31,17 @@ class WorkflowCommentsTableMap extends TableMap {
 	public function initialize()
 	{
 	  // attributes
-		$this->setName('workflow_comments');
-		$this->setPhpName('WorkflowComments');
-		$this->setClassname('WorkflowComments');
+		$this->setName('WORKFLOWCOMMENT');
+		$this->setPhpName('Workflowcomments');
+		$this->setClassname('Workflowcomments');
 		$this->setPackage('lib.model');
 		$this->setUseIdGenerator(true);
 		// columns
-		$this->addPrimaryKey('PK', 'Pk', 'INTEGER', true, null, null);
-		$this->addColumn('ID', 'Id', 'INTEGER', true, null, null);
-		$this->addColumn('COMMENT', 'Comment', 'LONGVARCHAR', true, 2147483647, null);
-		$this->addColumn('USERNAME', 'Username', 'CHAR', true, 200, null);
-		$this->addColumn('POSTED_ON', 'PostedOn', 'TIMESTAMP', true, null, null);
+		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, 11, null);
+		$this->addColumn('CREATEDAT', 'Createdat', 'TIMESTAMP', false, null, null);
+		$this->addColumn('COMMENT', 'Comment', 'VARCHAR', false, 255, null);
+		$this->addColumn('WORKFLOW_ID', 'WorkflowId', 'INTEGER', false, 11, null);
+		$this->addForeignKey('CREATOR_ID', 'CreatorId', 'INTEGER', 'registration', 'ID', false, 11, null);
 		// validators
 	} // initialize()
 
@@ -50,6 +50,7 @@ class WorkflowCommentsTableMap extends TableMap {
 	 */
 	public function buildRelations()
 	{
+    $this->addRelation('Registration', 'Registration', RelationMap::MANY_TO_ONE, array('CREATOR_ID' => 'ID', ), null, null);
 	} // buildRelations()
 
-} // WorkflowCommentsTableMap
+} // WorkflowcommentsTableMap

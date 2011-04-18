@@ -2,52 +2,55 @@
 
 
 /**
- * Base static class for performing query and update operations on the 'workflow_ratings' table.
+ * Base static class for performing query and update operations on the 'WORKFLOWRATING' table.
  *
  * 
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseWorkflowRatingsPeer {
+abstract class BaseWorkflowratingsPeer {
 
 	/** the default database name for this class */
 	const DATABASE_NAME = 'propel';
 
 	/** the table name for this class */
-	const TABLE_NAME = 'workflow_ratings';
+	const TABLE_NAME = 'WORKFLOWRATING';
 
 	/** the related Propel class for this table */
-	const OM_CLASS = 'WorkflowRatings';
+	const OM_CLASS = 'Workflowratings';
 
 	/** A class that can be returned by this peer. */
-	const CLASS_DEFAULT = 'lib.model.WorkflowRatings';
+	const CLASS_DEFAULT = 'lib.model.Workflowratings';
 
 	/** the related TableMap class for this table */
-	const TM_CLASS = 'WorkflowRatingsTableMap';
+	const TM_CLASS = 'WorkflowratingsTableMap';
 	
 	/** The total number of columns. */
-	const NUM_COLUMNS = 4;
+	const NUM_COLUMNS = 5;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
 
-	/** the column name for the PK field */
-	const PK = 'workflow_ratings.PK';
-
 	/** the column name for the ID field */
-	const ID = 'workflow_ratings.ID';
+	const ID = 'WORKFLOWRATING.ID';
 
-	/** the column name for the USERNAME field */
-	const USERNAME = 'workflow_ratings.USERNAME';
+	/** the column name for the CREATEDAT field */
+	const CREATEDAT = 'WORKFLOWRATING.CREATEDAT';
 
 	/** the column name for the RATING field */
-	const RATING = 'workflow_ratings.RATING';
+	const RATING = 'WORKFLOWRATING.RATING';
+
+	/** the column name for the WORKFLOW_ID field */
+	const WORKFLOW_ID = 'WORKFLOWRATING.WORKFLOW_ID';
+
+	/** the column name for the CREATOR_ID field */
+	const CREATOR_ID = 'WORKFLOWRATING.CREATOR_ID';
 
 	/**
-	 * An identiy map to hold any loaded instances of WorkflowRatings objects.
+	 * An identiy map to hold any loaded instances of Workflowratings objects.
 	 * This must be public so that other peer classes can access this when hydrating from JOIN
 	 * queries.
-	 * @var        array WorkflowRatings[]
+	 * @var        array Workflowratings[]
 	 */
 	public static $instances = array();
 
@@ -59,12 +62,12 @@ abstract class BaseWorkflowRatingsPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Pk', 'Id', 'Username', 'Rating', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('pk', 'id', 'username', 'rating', ),
-		BasePeer::TYPE_COLNAME => array (self::PK, self::ID, self::USERNAME, self::RATING, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('PK', 'ID', 'USERNAME', 'RATING', ),
-		BasePeer::TYPE_FIELDNAME => array ('pk', 'id', 'username', 'rating', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Createdat', 'Rating', 'WorkflowId', 'CreatorId', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdat', 'rating', 'workflowId', 'creatorId', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::CREATEDAT, self::RATING, self::WORKFLOW_ID, self::CREATOR_ID, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATEDAT', 'RATING', 'WORKFLOW_ID', 'CREATOR_ID', ),
+		BasePeer::TYPE_FIELDNAME => array ('ID', 'CREATEDAT', 'RATING', 'WORKFLOW_ID', 'CREATOR_ID', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
 	/**
@@ -74,12 +77,12 @@ abstract class BaseWorkflowRatingsPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Pk' => 0, 'Id' => 1, 'Username' => 2, 'Rating' => 3, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('pk' => 0, 'id' => 1, 'username' => 2, 'rating' => 3, ),
-		BasePeer::TYPE_COLNAME => array (self::PK => 0, self::ID => 1, self::USERNAME => 2, self::RATING => 3, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('PK' => 0, 'ID' => 1, 'USERNAME' => 2, 'RATING' => 3, ),
-		BasePeer::TYPE_FIELDNAME => array ('pk' => 0, 'id' => 1, 'username' => 2, 'rating' => 3, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Createdat' => 1, 'Rating' => 2, 'WorkflowId' => 3, 'CreatorId' => 4, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdat' => 1, 'rating' => 2, 'workflowId' => 3, 'creatorId' => 4, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::CREATEDAT => 1, self::RATING => 2, self::WORKFLOW_ID => 3, self::CREATOR_ID => 4, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATEDAT' => 1, 'RATING' => 2, 'WORKFLOW_ID' => 3, 'CREATOR_ID' => 4, ),
+		BasePeer::TYPE_FIELDNAME => array ('ID' => 0, 'CREATEDAT' => 1, 'RATING' => 2, 'WORKFLOW_ID' => 3, 'CREATOR_ID' => 4, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
 	/**
@@ -128,12 +131,12 @@ abstract class BaseWorkflowRatingsPeer {
 	 *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
 	 * </code>
 	 * @param      string $alias The alias for the current table.
-	 * @param      string $column The column name for current table. (i.e. WorkflowRatingsPeer::COLUMN_NAME).
+	 * @param      string $column The column name for current table. (i.e. WorkflowratingsPeer::COLUMN_NAME).
 	 * @return     string
 	 */
 	public static function alias($alias, $column)
 	{
-		return str_replace(WorkflowRatingsPeer::TABLE_NAME.'.', $alias.'.', $column);
+		return str_replace(WorkflowratingsPeer::TABLE_NAME.'.', $alias.'.', $column);
 	}
 
 	/**
@@ -151,15 +154,17 @@ abstract class BaseWorkflowRatingsPeer {
 	public static function addSelectColumns(Criteria $criteria, $alias = null)
 	{
 		if (null === $alias) {
-			$criteria->addSelectColumn(WorkflowRatingsPeer::PK);
-			$criteria->addSelectColumn(WorkflowRatingsPeer::ID);
-			$criteria->addSelectColumn(WorkflowRatingsPeer::USERNAME);
-			$criteria->addSelectColumn(WorkflowRatingsPeer::RATING);
+			$criteria->addSelectColumn(WorkflowratingsPeer::ID);
+			$criteria->addSelectColumn(WorkflowratingsPeer::CREATEDAT);
+			$criteria->addSelectColumn(WorkflowratingsPeer::RATING);
+			$criteria->addSelectColumn(WorkflowratingsPeer::WORKFLOW_ID);
+			$criteria->addSelectColumn(WorkflowratingsPeer::CREATOR_ID);
 		} else {
-			$criteria->addSelectColumn($alias . '.PK');
 			$criteria->addSelectColumn($alias . '.ID');
-			$criteria->addSelectColumn($alias . '.USERNAME');
+			$criteria->addSelectColumn($alias . '.CREATEDAT');
 			$criteria->addSelectColumn($alias . '.RATING');
+			$criteria->addSelectColumn($alias . '.WORKFLOW_ID');
+			$criteria->addSelectColumn($alias . '.CREATOR_ID');
 		}
 	}
 
@@ -179,21 +184,21 @@ abstract class BaseWorkflowRatingsPeer {
 		// We need to set the primary table name, since in the case that there are no WHERE columns
 		// it will be impossible for the BasePeer::createSelectSql() method to determine which
 		// tables go into the FROM clause.
-		$criteria->setPrimaryTableName(WorkflowRatingsPeer::TABLE_NAME);
+		$criteria->setPrimaryTableName(WorkflowratingsPeer::TABLE_NAME);
 
 		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
 			$criteria->setDistinct();
 		}
 
 		if (!$criteria->hasSelectClause()) {
-			WorkflowRatingsPeer::addSelectColumns($criteria);
+			WorkflowratingsPeer::addSelectColumns($criteria);
 		}
 
 		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 		$criteria->setDbName(self::DATABASE_NAME); // Set the correct dbName
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 		// BasePeer returns a PDOStatement
 		$stmt = BasePeer::doCount($criteria, $con);
@@ -211,7 +216,7 @@ abstract class BaseWorkflowRatingsPeer {
 	 *
 	 * @param      Criteria $criteria object used to create the SELECT statement.
 	 * @param      PropelPDO $con
-	 * @return     WorkflowRatings
+	 * @return     Workflowratings
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
 	 */
@@ -219,7 +224,7 @@ abstract class BaseWorkflowRatingsPeer {
 	{
 		$critcopy = clone $criteria;
 		$critcopy->setLimit(1);
-		$objects = WorkflowRatingsPeer::doSelect($critcopy, $con);
+		$objects = WorkflowratingsPeer::doSelect($critcopy, $con);
 		if ($objects) {
 			return $objects[0];
 		}
@@ -236,7 +241,7 @@ abstract class BaseWorkflowRatingsPeer {
 	 */
 	public static function doSelect(Criteria $criteria, PropelPDO $con = null)
 	{
-		return WorkflowRatingsPeer::populateObjects(WorkflowRatingsPeer::doSelectStmt($criteria, $con));
+		return WorkflowratingsPeer::populateObjects(WorkflowratingsPeer::doSelectStmt($criteria, $con));
 	}
 	/**
 	 * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -254,12 +259,12 @@ abstract class BaseWorkflowRatingsPeer {
 	public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		if (!$criteria->hasSelectClause()) {
 			$criteria = clone $criteria;
-			WorkflowRatingsPeer::addSelectColumns($criteria);
+			WorkflowratingsPeer::addSelectColumns($criteria);
 		}
 
 		// Set the correct dbName
@@ -277,14 +282,14 @@ abstract class BaseWorkflowRatingsPeer {
 	 * to the cache in order to ensure that the same objects are always returned by doSelect*()
 	 * and retrieveByPK*() calls.
 	 *
-	 * @param      WorkflowRatings $value A WorkflowRatings object.
+	 * @param      Workflowratings $value A Workflowratings object.
 	 * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
 	 */
-	public static function addInstanceToPool(WorkflowRatings $obj, $key = null)
+	public static function addInstanceToPool(Workflowratings $obj, $key = null)
 	{
 		if (Propel::isInstancePoolingEnabled()) {
 			if ($key === null) {
-				$key = (string) $obj->getPk();
+				$key = (string) $obj->getId();
 			} // if key === null
 			self::$instances[$key] = $obj;
 		}
@@ -298,18 +303,18 @@ abstract class BaseWorkflowRatingsPeer {
 	 * methods in your stub classes -- you may need to explicitly remove objects
 	 * from the cache in order to prevent returning objects that no longer exist.
 	 *
-	 * @param      mixed $value A WorkflowRatings object or a primary key value.
+	 * @param      mixed $value A Workflowratings object or a primary key value.
 	 */
 	public static function removeInstanceFromPool($value)
 	{
 		if (Propel::isInstancePoolingEnabled() && $value !== null) {
-			if (is_object($value) && $value instanceof WorkflowRatings) {
-				$key = (string) $value->getPk();
+			if (is_object($value) && $value instanceof Workflowratings) {
+				$key = (string) $value->getId();
 			} elseif (is_scalar($value)) {
 				// assume we've been passed a primary key
 				$key = (string) $value;
 			} else {
-				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or WorkflowRatings object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Workflowratings object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
 				throw $e;
 			}
 
@@ -324,7 +329,7 @@ abstract class BaseWorkflowRatingsPeer {
 	 * a multi-column primary key, a serialize()d version of the primary key will be returned.
 	 *
 	 * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-	 * @return     WorkflowRatings Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+	 * @return     Workflowratings Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
 	 * @see        getPrimaryKeyHash()
 	 */
 	public static function getInstanceFromPool($key)
@@ -348,7 +353,7 @@ abstract class BaseWorkflowRatingsPeer {
 	}
 	
 	/**
-	 * Method to invalidate the instance pool of all tables related to workflow_ratings
+	 * Method to invalidate the instance pool of all tables related to WORKFLOWRATING
 	 * by a foreign key with ON DELETE CASCADE
 	 */
 	public static function clearRelatedInstancePool()
@@ -400,11 +405,11 @@ abstract class BaseWorkflowRatingsPeer {
 		$results = array();
 	
 		// set the class once to avoid overhead in the loop
-		$cls = WorkflowRatingsPeer::getOMClass(false);
+		$cls = WorkflowratingsPeer::getOMClass(false);
 		// populate the object(s)
 		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-			$key = WorkflowRatingsPeer::getPrimaryKeyHashFromRow($row, 0);
-			if (null !== ($obj = WorkflowRatingsPeer::getInstanceFromPool($key))) {
+			$key = WorkflowratingsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj = WorkflowratingsPeer::getInstanceFromPool($key))) {
 				// We no longer rehydrate the object, since this can cause data loss.
 				// See http://www.propelorm.org/ticket/509
 				// $obj->hydrate($row, 0, true); // rehydrate
@@ -413,7 +418,7 @@ abstract class BaseWorkflowRatingsPeer {
 				$obj = new $cls();
 				$obj->hydrate($row);
 				$results[] = $obj;
-				WorkflowRatingsPeer::addInstanceToPool($obj, $key);
+				WorkflowratingsPeer::addInstanceToPool($obj, $key);
 			} // if key exists
 		}
 		$stmt->closeCursor();
@@ -426,24 +431,258 @@ abstract class BaseWorkflowRatingsPeer {
 	 * @param      int $startcol The 0-based offset for reading from the resultset row.
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
-	 * @return     array (WorkflowRatings object, last column rank)
+	 * @return     array (Workflowratings object, last column rank)
 	 */
 	public static function populateObject($row, $startcol = 0)
 	{
-		$key = WorkflowRatingsPeer::getPrimaryKeyHashFromRow($row, $startcol);
-		if (null !== ($obj = WorkflowRatingsPeer::getInstanceFromPool($key))) {
+		$key = WorkflowratingsPeer::getPrimaryKeyHashFromRow($row, $startcol);
+		if (null !== ($obj = WorkflowratingsPeer::getInstanceFromPool($key))) {
 			// We no longer rehydrate the object, since this can cause data loss.
 			// See http://www.propelorm.org/ticket/509
 			// $obj->hydrate($row, $startcol, true); // rehydrate
-			$col = $startcol + WorkflowRatingsPeer::NUM_COLUMNS;
+			$col = $startcol + WorkflowratingsPeer::NUM_COLUMNS;
 		} else {
-			$cls = WorkflowRatingsPeer::OM_CLASS;
+			$cls = WorkflowratingsPeer::OM_CLASS;
 			$obj = new $cls();
 			$col = $obj->hydrate($row, $startcol);
-			WorkflowRatingsPeer::addInstanceToPool($obj, $key);
+			WorkflowratingsPeer::addInstanceToPool($obj, $key);
 		}
 		return array($obj, $col);
 	}
+
+	/**
+	 * Returns the number of rows matching criteria, joining the related Registration table
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     int Number of matching rows.
+	 */
+	public static function doCountJoinRegistration(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		// we're going to modify criteria, so copy it first
+		$criteria = clone $criteria;
+
+		// We need to set the primary table name, since in the case that there are no WHERE columns
+		// it will be impossible for the BasePeer::createSelectSql() method to determine which
+		// tables go into the FROM clause.
+		$criteria->setPrimaryTableName(WorkflowratingsPeer::TABLE_NAME);
+
+		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+			$criteria->setDistinct();
+		}
+
+		if (!$criteria->hasSelectClause()) {
+			WorkflowratingsPeer::addSelectColumns($criteria);
+		}
+		
+		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+		
+		// Set the correct dbName
+		$criteria->setDbName(self::DATABASE_NAME);
+
+		if ($con === null) {
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+		}
+
+		$criteria->addJoin(WorkflowratingsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doCount($criteria, $con);
+
+		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$count = (int) $row[0];
+		} else {
+			$count = 0; // no rows returned; we infer that means 0 matches.
+		}
+		$stmt->closeCursor();
+		return $count;
+	}
+
+
+	/**
+	 * Selects a collection of Workflowratings objects pre-filled with their Registration objects.
+	 * @param      Criteria  $criteria
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     array Array of Workflowratings objects.
+	 * @throws     PropelException Any exceptions caught during processing will be
+	 *		 rethrown wrapped into a PropelException.
+	 */
+	public static function doSelectJoinRegistration(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$criteria = clone $criteria;
+
+		// Set the correct dbName if it has not been overridden
+		if ($criteria->getDbName() == Propel::getDefaultDB()) {
+			$criteria->setDbName(self::DATABASE_NAME);
+		}
+
+		WorkflowratingsPeer::addSelectColumns($criteria);
+		$startcol = (WorkflowratingsPeer::NUM_COLUMNS - WorkflowratingsPeer::NUM_LAZY_LOAD_COLUMNS);
+		RegistrationPeer::addSelectColumns($criteria);
+
+		$criteria->addJoin(WorkflowratingsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doSelect($criteria, $con);
+		$results = array();
+
+		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$key1 = WorkflowratingsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = WorkflowratingsPeer::getInstanceFromPool($key1))) {
+				// We no longer rehydrate the object, since this can cause data loss.
+				// See http://www.propelorm.org/ticket/509
+				// $obj1->hydrate($row, 0, true); // rehydrate
+			} else {
+
+				$cls = WorkflowratingsPeer::getOMClass(false);
+
+				$obj1 = new $cls();
+				$obj1->hydrate($row);
+				WorkflowratingsPeer::addInstanceToPool($obj1, $key1);
+			} // if $obj1 already loaded
+
+			$key2 = RegistrationPeer::getPrimaryKeyHashFromRow($row, $startcol);
+			if ($key2 !== null) {
+				$obj2 = RegistrationPeer::getInstanceFromPool($key2);
+				if (!$obj2) {
+
+					$cls = RegistrationPeer::getOMClass(false);
+
+					$obj2 = new $cls();
+					$obj2->hydrate($row, $startcol);
+					RegistrationPeer::addInstanceToPool($obj2, $key2);
+				} // if obj2 already loaded
+
+				// Add the $obj1 (Workflowratings) to $obj2 (Registration)
+				$obj2->addWorkflowratings($obj1);
+
+			} // if joined row was not null
+
+			$results[] = $obj1;
+		}
+		$stmt->closeCursor();
+		return $results;
+	}
+
+
+	/**
+	 * Returns the number of rows matching criteria, joining all related tables
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     int Number of matching rows.
+	 */
+	public static function doCountJoinAll(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		// we're going to modify criteria, so copy it first
+		$criteria = clone $criteria;
+
+		// We need to set the primary table name, since in the case that there are no WHERE columns
+		// it will be impossible for the BasePeer::createSelectSql() method to determine which
+		// tables go into the FROM clause.
+		$criteria->setPrimaryTableName(WorkflowratingsPeer::TABLE_NAME);
+
+		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+			$criteria->setDistinct();
+		}
+
+		if (!$criteria->hasSelectClause()) {
+			WorkflowratingsPeer::addSelectColumns($criteria);
+		}
+		
+		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+		
+		// Set the correct dbName
+		$criteria->setDbName(self::DATABASE_NAME);
+
+		if ($con === null) {
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+		}
+
+		$criteria->addJoin(WorkflowratingsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doCount($criteria, $con);
+
+		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$count = (int) $row[0];
+		} else {
+			$count = 0; // no rows returned; we infer that means 0 matches.
+		}
+		$stmt->closeCursor();
+		return $count;
+	}
+
+	/**
+	 * Selects a collection of Workflowratings objects pre-filled with all related objects.
+	 *
+	 * @param      Criteria  $criteria
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     array Array of Workflowratings objects.
+	 * @throws     PropelException Any exceptions caught during processing will be
+	 *		 rethrown wrapped into a PropelException.
+	 */
+	public static function doSelectJoinAll(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$criteria = clone $criteria;
+
+		// Set the correct dbName if it has not been overridden
+		if ($criteria->getDbName() == Propel::getDefaultDB()) {
+			$criteria->setDbName(self::DATABASE_NAME);
+		}
+
+		WorkflowratingsPeer::addSelectColumns($criteria);
+		$startcol2 = (WorkflowratingsPeer::NUM_COLUMNS - WorkflowratingsPeer::NUM_LAZY_LOAD_COLUMNS);
+
+		RegistrationPeer::addSelectColumns($criteria);
+		$startcol3 = $startcol2 + (RegistrationPeer::NUM_COLUMNS - RegistrationPeer::NUM_LAZY_LOAD_COLUMNS);
+
+		$criteria->addJoin(WorkflowratingsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doSelect($criteria, $con);
+		$results = array();
+
+		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$key1 = WorkflowratingsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = WorkflowratingsPeer::getInstanceFromPool($key1))) {
+				// We no longer rehydrate the object, since this can cause data loss.
+				// See http://www.propelorm.org/ticket/509
+				// $obj1->hydrate($row, 0, true); // rehydrate
+			} else {
+				$cls = WorkflowratingsPeer::getOMClass(false);
+
+				$obj1 = new $cls();
+				$obj1->hydrate($row);
+				WorkflowratingsPeer::addInstanceToPool($obj1, $key1);
+			} // if obj1 already loaded
+
+			// Add objects for joined Registration rows
+
+			$key2 = RegistrationPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+			if ($key2 !== null) {
+				$obj2 = RegistrationPeer::getInstanceFromPool($key2);
+				if (!$obj2) {
+
+					$cls = RegistrationPeer::getOMClass(false);
+
+					$obj2 = new $cls();
+					$obj2->hydrate($row, $startcol2);
+					RegistrationPeer::addInstanceToPool($obj2, $key2);
+				} // if obj2 loaded
+
+				// Add the $obj1 (Workflowratings) to the collection in $obj2 (Registration)
+				$obj2->addWorkflowratings($obj1);
+			} // if joined row not null
+
+			$results[] = $obj1;
+		}
+		$stmt->closeCursor();
+		return $results;
+	}
+
 	/**
 	 * Returns the TableMap related to this peer.
 	 * This method is not needed for general use but a specific application could have a need.
@@ -461,10 +700,10 @@ abstract class BaseWorkflowRatingsPeer {
 	 */
 	public static function buildTableMap()
 	{
-	  $dbMap = Propel::getDatabaseMap(BaseWorkflowRatingsPeer::DATABASE_NAME);
-	  if (!$dbMap->hasTable(BaseWorkflowRatingsPeer::TABLE_NAME))
+	  $dbMap = Propel::getDatabaseMap(BaseWorkflowratingsPeer::DATABASE_NAME);
+	  if (!$dbMap->hasTable(BaseWorkflowratingsPeer::TABLE_NAME))
 	  {
-	    $dbMap->addTableObject(new WorkflowRatingsTableMap());
+	    $dbMap->addTableObject(new WorkflowratingsTableMap());
 	  }
 	}
 
@@ -481,13 +720,13 @@ abstract class BaseWorkflowRatingsPeer {
 	 */
 	public static function getOMClass($withPrefix = true)
 	{
-		return $withPrefix ? WorkflowRatingsPeer::CLASS_DEFAULT : WorkflowRatingsPeer::OM_CLASS;
+		return $withPrefix ? WorkflowratingsPeer::CLASS_DEFAULT : WorkflowratingsPeer::OM_CLASS;
 	}
 
 	/**
-	 * Method perform an INSERT on the database, given a WorkflowRatings or Criteria object.
+	 * Method perform an INSERT on the database, given a Workflowratings or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or WorkflowRatings object containing data that is used to create the INSERT statement.
+	 * @param      mixed $values Criteria or Workflowratings object containing data that is used to create the INSERT statement.
 	 * @param      PropelPDO $con the PropelPDO connection to use
 	 * @return     mixed The new primary key.
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -496,21 +735,21 @@ abstract class BaseWorkflowRatingsPeer {
 	public static function doInsert($values, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 		} else {
-			$criteria = $values->buildCriteria(); // build Criteria from WorkflowRatings object
+			$criteria = $values->buildCriteria(); // build Criteria from Workflowratings object
 		}
 
-		if ($criteria->containsKey(WorkflowRatingsPeer::PK) && $criteria->keyContainsValue(WorkflowRatingsPeer::PK) ) {
-			throw new PropelException('Cannot insert a value for auto-increment primary key ('.WorkflowRatingsPeer::PK.')');
+		if ($criteria->containsKey(WorkflowratingsPeer::ID) && $criteria->keyContainsValue(WorkflowratingsPeer::ID) ) {
+			throw new PropelException('Cannot insert a value for auto-increment primary key ('.WorkflowratingsPeer::ID.')');
 		}
 
 		// remove pkey col since this table uses auto-increment and passing a null value for it is not valid 
-		$criteria->remove(WorkflowRatingsPeer::PK);
+		$criteria->remove(WorkflowratingsPeer::ID);
 
 
 		// Set the correct dbName
@@ -531,9 +770,9 @@ abstract class BaseWorkflowRatingsPeer {
 	}
 
 	/**
-	 * Method perform an UPDATE on the database, given a WorkflowRatings or Criteria object.
+	 * Method perform an UPDATE on the database, given a Workflowratings or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or WorkflowRatings object containing data that is used to create the UPDATE statement.
+	 * @param      mixed $values Criteria or Workflowratings object containing data that is used to create the UPDATE statement.
 	 * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -542,7 +781,7 @@ abstract class BaseWorkflowRatingsPeer {
 	public static function doUpdate($values, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		$selectCriteria = new Criteria(self::DATABASE_NAME);
@@ -550,15 +789,15 @@ abstract class BaseWorkflowRatingsPeer {
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 
-			$comparison = $criteria->getComparison(WorkflowRatingsPeer::PK);
-			$value = $criteria->remove(WorkflowRatingsPeer::PK);
+			$comparison = $criteria->getComparison(WorkflowratingsPeer::ID);
+			$value = $criteria->remove(WorkflowratingsPeer::ID);
 			if ($value) {
-				$selectCriteria->add(WorkflowRatingsPeer::PK, $value, $comparison);
+				$selectCriteria->add(WorkflowratingsPeer::ID, $value, $comparison);
 			} else {
-				$selectCriteria->setPrimaryTableName(WorkflowRatingsPeer::TABLE_NAME);
+				$selectCriteria->setPrimaryTableName(WorkflowratingsPeer::TABLE_NAME);
 			}
 
-		} else { // $values is WorkflowRatings object
+		} else { // $values is Workflowratings object
 			$criteria = $values->buildCriteria(); // gets full criteria
 			$selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
 		}
@@ -570,26 +809,26 @@ abstract class BaseWorkflowRatingsPeer {
 	}
 
 	/**
-	 * Method to DELETE all rows from the workflow_ratings table.
+	 * Method to DELETE all rows from the WORKFLOWRATING table.
 	 *
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 */
 	public static function doDeleteAll($con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		$affectedRows = 0; // initialize var to track total num of affected rows
 		try {
 			// use transaction because $criteria could contain info
 			// for more than one table or we could emulating ON DELETE CASCADE, etc.
 			$con->beginTransaction();
-			$affectedRows += BasePeer::doDeleteAll(WorkflowRatingsPeer::TABLE_NAME, $con, WorkflowRatingsPeer::DATABASE_NAME);
+			$affectedRows += BasePeer::doDeleteAll(WorkflowratingsPeer::TABLE_NAME, $con, WorkflowratingsPeer::DATABASE_NAME);
 			// Because this db requires some delete cascade/set null emulation, we have to
 			// clear the cached instance *after* the emulation has happened (since
 			// instances get re-added by the select statement contained therein).
-			WorkflowRatingsPeer::clearInstancePool();
-			WorkflowRatingsPeer::clearRelatedInstancePool();
+			WorkflowratingsPeer::clearInstancePool();
+			WorkflowratingsPeer::clearRelatedInstancePool();
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -599,9 +838,9 @@ abstract class BaseWorkflowRatingsPeer {
 	}
 
 	/**
-	 * Method perform a DELETE on the database, given a WorkflowRatings or Criteria object OR a primary key value.
+	 * Method perform a DELETE on the database, given a Workflowratings or Criteria object OR a primary key value.
 	 *
-	 * @param      mixed $values Criteria or WorkflowRatings object or primary key or array of primary keys
+	 * @param      mixed $values Criteria or Workflowratings object or primary key or array of primary keys
 	 *              which is used to create the DELETE statement
 	 * @param      PropelPDO $con the connection to use
 	 * @return     int 	The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -612,27 +851,27 @@ abstract class BaseWorkflowRatingsPeer {
 	 public static function doDelete($values, PropelPDO $con = null)
 	 {
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			// invalidate the cache for all objects of this type, since we have no
 			// way of knowing (without running a query) what objects should be invalidated
 			// from the cache based on this Criteria.
-			WorkflowRatingsPeer::clearInstancePool();
+			WorkflowratingsPeer::clearInstancePool();
 			// rename for clarity
 			$criteria = clone $values;
-		} elseif ($values instanceof WorkflowRatings) { // it's a model object
+		} elseif ($values instanceof Workflowratings) { // it's a model object
 			// invalidate the cache for this single object
-			WorkflowRatingsPeer::removeInstanceFromPool($values);
+			WorkflowratingsPeer::removeInstanceFromPool($values);
 			// create criteria based on pk values
 			$criteria = $values->buildPkeyCriteria();
 		} else { // it's a primary key, or an array of pks
 			$criteria = new Criteria(self::DATABASE_NAME);
-			$criteria->add(WorkflowRatingsPeer::PK, (array) $values, Criteria::IN);
+			$criteria->add(WorkflowratingsPeer::ID, (array) $values, Criteria::IN);
 			// invalidate the cache for this object(s)
 			foreach ((array) $values as $singleval) {
-				WorkflowRatingsPeer::removeInstanceFromPool($singleval);
+				WorkflowratingsPeer::removeInstanceFromPool($singleval);
 			}
 		}
 
@@ -647,7 +886,7 @@ abstract class BaseWorkflowRatingsPeer {
 			$con->beginTransaction();
 			
 			$affectedRows += BasePeer::doDelete($criteria, $con);
-			WorkflowRatingsPeer::clearRelatedInstancePool();
+			WorkflowratingsPeer::clearRelatedInstancePool();
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -657,24 +896,24 @@ abstract class BaseWorkflowRatingsPeer {
 	}
 
 	/**
-	 * Validates all modified columns of given WorkflowRatings object.
+	 * Validates all modified columns of given Workflowratings object.
 	 * If parameter $columns is either a single column name or an array of column names
 	 * than only those columns are validated.
 	 *
 	 * NOTICE: This does not apply to primary or foreign keys for now.
 	 *
-	 * @param      WorkflowRatings $obj The object to validate.
+	 * @param      Workflowratings $obj The object to validate.
 	 * @param      mixed $cols Column name or array of column names.
 	 *
 	 * @return     mixed TRUE if all columns are valid or the error message of the first invalid column.
 	 */
-	public static function doValidate(WorkflowRatings $obj, $cols = null)
+	public static function doValidate(Workflowratings $obj, $cols = null)
 	{
 		$columns = array();
 
 		if ($cols) {
-			$dbMap = Propel::getDatabaseMap(WorkflowRatingsPeer::DATABASE_NAME);
-			$tableMap = $dbMap->getTable(WorkflowRatingsPeer::TABLE_NAME);
+			$dbMap = Propel::getDatabaseMap(WorkflowratingsPeer::DATABASE_NAME);
+			$tableMap = $dbMap->getTable(WorkflowratingsPeer::TABLE_NAME);
 
 			if (! is_array($cols)) {
 				$cols = array($cols);
@@ -690,7 +929,7 @@ abstract class BaseWorkflowRatingsPeer {
 
 		}
 
-		return BasePeer::doValidate(WorkflowRatingsPeer::DATABASE_NAME, WorkflowRatingsPeer::TABLE_NAME, $columns);
+		return BasePeer::doValidate(WorkflowratingsPeer::DATABASE_NAME, WorkflowratingsPeer::TABLE_NAME, $columns);
 	}
 
 	/**
@@ -698,23 +937,23 @@ abstract class BaseWorkflowRatingsPeer {
 	 *
 	 * @param      int $pk the primary key.
 	 * @param      PropelPDO $con the connection to use
-	 * @return     WorkflowRatings
+	 * @return     Workflowratings
 	 */
 	public static function retrieveByPK($pk, PropelPDO $con = null)
 	{
 
-		if (null !== ($obj = WorkflowRatingsPeer::getInstanceFromPool((string) $pk))) {
+		if (null !== ($obj = WorkflowratingsPeer::getInstanceFromPool((string) $pk))) {
 			return $obj;
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
-		$criteria = new Criteria(WorkflowRatingsPeer::DATABASE_NAME);
-		$criteria->add(WorkflowRatingsPeer::PK, $pk);
+		$criteria = new Criteria(WorkflowratingsPeer::DATABASE_NAME);
+		$criteria->add(WorkflowratingsPeer::ID, $pk);
 
-		$v = WorkflowRatingsPeer::doSelect($criteria, $con);
+		$v = WorkflowratingsPeer::doSelect($criteria, $con);
 
 		return !empty($v) > 0 ? $v[0] : null;
 	}
@@ -730,23 +969,23 @@ abstract class BaseWorkflowRatingsPeer {
 	public static function retrieveByPKs($pks, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(WorkflowRatingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(WorkflowratingsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		$objs = null;
 		if (empty($pks)) {
 			$objs = array();
 		} else {
-			$criteria = new Criteria(WorkflowRatingsPeer::DATABASE_NAME);
-			$criteria->add(WorkflowRatingsPeer::PK, $pks, Criteria::IN);
-			$objs = WorkflowRatingsPeer::doSelect($criteria, $con);
+			$criteria = new Criteria(WorkflowratingsPeer::DATABASE_NAME);
+			$criteria->add(WorkflowratingsPeer::ID, $pks, Criteria::IN);
+			$objs = WorkflowratingsPeer::doSelect($criteria, $con);
 		}
 		return $objs;
 	}
 
-} // BaseWorkflowRatingsPeer
+} // BaseWorkflowratingsPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseWorkflowRatingsPeer::buildTableMap();
+BaseWorkflowratingsPeer::buildTableMap();
 

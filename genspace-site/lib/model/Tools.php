@@ -1,6 +1,5 @@
 <?php
 
-require 'lib/model/om/BaseTools.php';
 
 
 /**
@@ -12,7 +11,7 @@ require 'lib/model/om/BaseTools.php';
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    lib.model
+ * @package    propel.generator.lib.model
  */
 class Tools extends BaseTools {
 

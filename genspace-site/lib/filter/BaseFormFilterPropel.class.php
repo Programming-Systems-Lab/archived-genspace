@@ -3,7 +3,7 @@
 /**
  * Project filter form base class.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */

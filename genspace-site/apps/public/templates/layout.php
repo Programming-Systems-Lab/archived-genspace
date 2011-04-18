@@ -105,7 +105,7 @@ $('a.forgotpass').click(function() {
   
   return false;
 });
-	$("#searchfield").autocomplete('http://localhost:8080/requestssuggest.php');	
+	$("#searchfield").autocomplete('/requestssuggest.php');	
 	
 			$("#starify").children().not(":input").hide();
 			for (i=1;i<=30;i++)
@@ -174,7 +174,7 @@ $('a.forgotpass').click(function() {
 					<li><?php echo link_to("Support", "/static/support"); ?></li>
 				</ul>
                 	<form action="/tool/index" method="post" id="toolsearch"><span style="color:white"><strong>Quick Tool Search:</strong></span>  <input name="searchfield" type="text" id="searchfield" style="height:25" size="25" onfocus="clearText(this)" />
-                    <input name="image" type="image" style="border:0px;position:relative; top:5px; left:-35px; " src="http://localhost:8080/images/btn_search.gif" onclick="/tool/index"></form>
+                    <input name="image" type="image" style="border:0px;position:relative; top:5px; left:-35px; " src="/images/btn_search.gif" onclick="/tool/index"></form>
 			
 			</div>
             
@@ -189,7 +189,7 @@ $('a.forgotpass').click(function() {
 	<!-- end #wrapper2 -->
 	<div style="clear: both;">&nbsp;</div>
 	<div id="footer">
-		<p>(c) 2010 Columbia University Programming Systems Lab. Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> + <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+		<p>&copy; 2010 - Present Columbia University <a href="http://www.psl.cs.columbia.edu/">Programming Systems Lab</a>. Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> + <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
 	</div>
 </div>
 <!-- end #wrapper -->

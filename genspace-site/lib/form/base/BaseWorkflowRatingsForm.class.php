@@ -1,37 +1,39 @@
 <?php
 
 /**
- * WorkflowRatings form base class.
+ * Workflowratings form base class.
  *
- * @method WorkflowRatings getObject() Returns the current form's model object
+ * @method Workflowratings getObject() Returns the current form's model object
  *
  * @package    sfproject
  * @subpackage form
  * @author     Your name here
  */
-abstract class BaseWorkflowRatingsForm extends BaseFormPropel
+abstract class BaseWorkflowratingsForm extends BaseFormPropel
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'pk'       => new sfWidgetFormInputHidden(),
-      'id'       => new sfWidgetFormInputText(),
-      'username' => new sfWidgetFormInputText(),
-      'rating'   => new sfWidgetFormInputText(),
+      'ID'          => new sfWidgetFormInputHidden(),
+      'CREATEDAT'   => new sfWidgetFormDateTime(),
+      'RATING'      => new sfWidgetFormInputText(),
+      'WORKFLOW_ID' => new sfWidgetFormInputText(),
+      'CREATOR_ID'  => new sfWidgetFormPropelChoice(array('model' => 'Registration', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'pk'       => new sfValidatorPropelChoice(array('model' => 'WorkflowRatings', 'column' => 'pk', 'required' => false)),
-      'id'       => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647)),
-      'username' => new sfValidatorString(array('max_length' => 100)),
-      'rating'   => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647)),
+      'ID'          => new sfValidatorPropelChoice(array('model' => 'Workflowratings', 'column' => 'ID', 'required' => false)),
+      'CREATEDAT'   => new sfValidatorDateTime(array('required' => false)),
+      'RATING'      => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647, 'required' => false)),
+      'WORKFLOW_ID' => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647, 'required' => false)),
+      'CREATOR_ID'  => new sfValidatorPropelChoice(array('model' => 'Registration', 'column' => 'ID', 'required' => false)),
     ));
 
 
-Warning: call_user_func(WorkflowRatingsPeer::getUniqueColumnNames): First argument is expected to be a valid callback in C:\dev\sfproject\plugins\sfPropel15Plugin\lib\generator\sfPropelFormGenerator.class.php on line 485
+Warning: call_user_func() expects parameter 1 to be a valid callback, class 'WorkflowratingsPeer' does not have a method 'getUniqueColumnNames' in /Users/jon/Documents/PSL/genspace/genspace-site/plugins/sfPropel15Plugin/lib/generator/sfPropelFormGenerator.class.php on line 485
 
-Warning: Invalid argument supplied for foreach() in C:\dev\sfproject\plugins\sfPropel15Plugin\lib\generator\sfPropelFormGenerator.class.php on line 485
-    $this->widgetSchema->setNameFormat('workflow_ratings[%s]');
+Warning: Invalid argument supplied for foreach() in /Users/jon/Documents/PSL/genspace/genspace-site/plugins/sfPropel15Plugin/lib/generator/sfPropelFormGenerator.class.php on line 485
+    $this->widgetSchema->setNameFormat('workflowratings[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -40,7 +42,7 @@ Warning: Invalid argument supplied for foreach() in C:\dev\sfproject\plugins\sfP
 
   public function getModelName()
   {
-    return 'WorkflowRatings';
+    return 'Workflowratings';
   }
 
 

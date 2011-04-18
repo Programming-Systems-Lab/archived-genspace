@@ -3,8 +3,8 @@ all:
      propel:
        class:          sfPropelDatabase
        param:
-         classname: MssqlPropelPDO
-         dsn:          mssql:dbname=Genspace;host=boris.cs.columbia.edu
-         username: student
-         password: password
+         classname: PropelPDO
+         dsn:     mysql:dbname=genspace;host=127.0.0.1
+         username: genspace
+         password: g3nsp4c3
          encoding: 

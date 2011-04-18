@@ -24,9 +24,9 @@ abstract class BasesfGuardUserGroupForm extends BaseFormPropel
     ));
 
 
-Warning: call_user_func(sfGuardUserGroupPeer::getUniqueColumnNames): First argument is expected to be a valid callback in C:\dev\sfproject\plugins\sfPropel15Plugin\lib\generator\sfPropelFormGenerator.class.php on line 485
+Warning: call_user_func() expects parameter 1 to be a valid callback, class 'sfGuardUserGroupPeer' does not have a method 'getUniqueColumnNames' in /Users/jon/Documents/PSL/genspace/genspace-site/plugins/sfPropel15Plugin/lib/generator/sfPropelFormGenerator.class.php on line 485
 
-Warning: Invalid argument supplied for foreach() in C:\dev\sfproject\plugins\sfPropel15Plugin\lib\generator\sfPropelFormGenerator.class.php on line 485
+Warning: Invalid argument supplied for foreach() in /Users/jon/Documents/PSL/genspace/genspace-site/plugins/sfPropel15Plugin/lib/generator/sfPropelFormGenerator.class.php on line 485
     $this->widgetSchema->setNameFormat('sf_guard_user_group[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

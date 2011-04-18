@@ -2,28 +2,28 @@
 
 
 /**
- * Base static class for performing query and update operations on the 'tool_comments' table.
+ * Base static class for performing query and update operations on the 'TOOLCOMMENT' table.
  *
  * 
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseToolCommentsPeer {
+abstract class BaseToolcommentsPeer {
 
 	/** the default database name for this class */
 	const DATABASE_NAME = 'propel';
 
 	/** the table name for this class */
-	const TABLE_NAME = 'tool_comments';
+	const TABLE_NAME = 'TOOLCOMMENT';
 
 	/** the related Propel class for this table */
-	const OM_CLASS = 'ToolComments';
+	const OM_CLASS = 'Toolcomments';
 
 	/** A class that can be returned by this peer. */
-	const CLASS_DEFAULT = 'lib.model.ToolComments';
+	const CLASS_DEFAULT = 'lib.model.Toolcomments';
 
 	/** the related TableMap class for this table */
-	const TM_CLASS = 'ToolCommentsTableMap';
+	const TM_CLASS = 'ToolcommentsTableMap';
 	
 	/** The total number of columns. */
 	const NUM_COLUMNS = 5;
@@ -31,26 +31,26 @@ abstract class BaseToolCommentsPeer {
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
 
-	/** the column name for the PK field */
-	const PK = 'tool_comments.PK';
-
 	/** the column name for the ID field */
-	const ID = 'tool_comments.ID';
+	const ID = 'TOOLCOMMENT.ID';
+
+	/** the column name for the CREATEDAT field */
+	const CREATEDAT = 'TOOLCOMMENT.CREATEDAT';
 
 	/** the column name for the COMMENT field */
-	const COMMENT = 'tool_comments.COMMENT';
+	const COMMENT = 'TOOLCOMMENT.COMMENT';
 
-	/** the column name for the USERNAME field */
-	const USERNAME = 'tool_comments.USERNAME';
+	/** the column name for the CREATOR_ID field */
+	const CREATOR_ID = 'TOOLCOMMENT.CREATOR_ID';
 
-	/** the column name for the POSTED_ON field */
-	const POSTED_ON = 'tool_comments.POSTED_ON';
+	/** the column name for the TOOL_ID field */
+	const TOOL_ID = 'TOOLCOMMENT.TOOL_ID';
 
 	/**
-	 * An identiy map to hold any loaded instances of ToolComments objects.
+	 * An identiy map to hold any loaded instances of Toolcomments objects.
 	 * This must be public so that other peer classes can access this when hydrating from JOIN
 	 * queries.
-	 * @var        array ToolComments[]
+	 * @var        array Toolcomments[]
 	 */
 	public static $instances = array();
 
@@ -62,11 +62,11 @@ abstract class BaseToolCommentsPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Pk', 'Id', 'Comment', 'Username', 'PostedOn', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('pk', 'id', 'comment', 'username', 'postedOn', ),
-		BasePeer::TYPE_COLNAME => array (self::PK, self::ID, self::COMMENT, self::USERNAME, self::POSTED_ON, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('PK', 'ID', 'COMMENT', 'USERNAME', 'POSTED_ON', ),
-		BasePeer::TYPE_FIELDNAME => array ('pk', 'id', 'comment', 'username', 'posted_on', ),
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Createdat', 'Comment', 'CreatorId', 'ToolId', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdat', 'comment', 'creatorId', 'toolId', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::CREATEDAT, self::COMMENT, self::CREATOR_ID, self::TOOL_ID, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATEDAT', 'COMMENT', 'CREATOR_ID', 'TOOL_ID', ),
+		BasePeer::TYPE_FIELDNAME => array ('ID', 'CREATEDAT', 'COMMENT', 'CREATOR_ID', 'TOOL_ID', ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
@@ -77,11 +77,11 @@ abstract class BaseToolCommentsPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Pk' => 0, 'Id' => 1, 'Comment' => 2, 'Username' => 3, 'PostedOn' => 4, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('pk' => 0, 'id' => 1, 'comment' => 2, 'username' => 3, 'postedOn' => 4, ),
-		BasePeer::TYPE_COLNAME => array (self::PK => 0, self::ID => 1, self::COMMENT => 2, self::USERNAME => 3, self::POSTED_ON => 4, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('PK' => 0, 'ID' => 1, 'COMMENT' => 2, 'USERNAME' => 3, 'POSTED_ON' => 4, ),
-		BasePeer::TYPE_FIELDNAME => array ('pk' => 0, 'id' => 1, 'comment' => 2, 'username' => 3, 'posted_on' => 4, ),
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Createdat' => 1, 'Comment' => 2, 'CreatorId' => 3, 'ToolId' => 4, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdat' => 1, 'comment' => 2, 'creatorId' => 3, 'toolId' => 4, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::CREATEDAT => 1, self::COMMENT => 2, self::CREATOR_ID => 3, self::TOOL_ID => 4, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATEDAT' => 1, 'COMMENT' => 2, 'CREATOR_ID' => 3, 'TOOL_ID' => 4, ),
+		BasePeer::TYPE_FIELDNAME => array ('ID' => 0, 'CREATEDAT' => 1, 'COMMENT' => 2, 'CREATOR_ID' => 3, 'TOOL_ID' => 4, ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
@@ -131,12 +131,12 @@ abstract class BaseToolCommentsPeer {
 	 *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
 	 * </code>
 	 * @param      string $alias The alias for the current table.
-	 * @param      string $column The column name for current table. (i.e. ToolCommentsPeer::COLUMN_NAME).
+	 * @param      string $column The column name for current table. (i.e. ToolcommentsPeer::COLUMN_NAME).
 	 * @return     string
 	 */
 	public static function alias($alias, $column)
 	{
-		return str_replace(ToolCommentsPeer::TABLE_NAME.'.', $alias.'.', $column);
+		return str_replace(ToolcommentsPeer::TABLE_NAME.'.', $alias.'.', $column);
 	}
 
 	/**
@@ -154,17 +154,17 @@ abstract class BaseToolCommentsPeer {
 	public static function addSelectColumns(Criteria $criteria, $alias = null)
 	{
 		if (null === $alias) {
-			$criteria->addSelectColumn(ToolCommentsPeer::PK);
-			$criteria->addSelectColumn(ToolCommentsPeer::ID);
-			$criteria->addSelectColumn(ToolCommentsPeer::COMMENT);
-			$criteria->addSelectColumn(ToolCommentsPeer::USERNAME);
-			$criteria->addSelectColumn(ToolCommentsPeer::POSTED_ON);
+			$criteria->addSelectColumn(ToolcommentsPeer::ID);
+			$criteria->addSelectColumn(ToolcommentsPeer::CREATEDAT);
+			$criteria->addSelectColumn(ToolcommentsPeer::COMMENT);
+			$criteria->addSelectColumn(ToolcommentsPeer::CREATOR_ID);
+			$criteria->addSelectColumn(ToolcommentsPeer::TOOL_ID);
 		} else {
-			$criteria->addSelectColumn($alias . '.PK');
 			$criteria->addSelectColumn($alias . '.ID');
+			$criteria->addSelectColumn($alias . '.CREATEDAT');
 			$criteria->addSelectColumn($alias . '.COMMENT');
-			$criteria->addSelectColumn($alias . '.USERNAME');
-			$criteria->addSelectColumn($alias . '.POSTED_ON');
+			$criteria->addSelectColumn($alias . '.CREATOR_ID');
+			$criteria->addSelectColumn($alias . '.TOOL_ID');
 		}
 	}
 
@@ -184,21 +184,21 @@ abstract class BaseToolCommentsPeer {
 		// We need to set the primary table name, since in the case that there are no WHERE columns
 		// it will be impossible for the BasePeer::createSelectSql() method to determine which
 		// tables go into the FROM clause.
-		$criteria->setPrimaryTableName(ToolCommentsPeer::TABLE_NAME);
+		$criteria->setPrimaryTableName(ToolcommentsPeer::TABLE_NAME);
 
 		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
 			$criteria->setDistinct();
 		}
 
 		if (!$criteria->hasSelectClause()) {
-			ToolCommentsPeer::addSelectColumns($criteria);
+			ToolcommentsPeer::addSelectColumns($criteria);
 		}
 
 		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 		$criteria->setDbName(self::DATABASE_NAME); // Set the correct dbName
 
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 		// BasePeer returns a PDOStatement
 		$stmt = BasePeer::doCount($criteria, $con);
@@ -216,7 +216,7 @@ abstract class BaseToolCommentsPeer {
 	 *
 	 * @param      Criteria $criteria object used to create the SELECT statement.
 	 * @param      PropelPDO $con
-	 * @return     ToolComments
+	 * @return     Toolcomments
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
 	 */
@@ -224,7 +224,7 @@ abstract class BaseToolCommentsPeer {
 	{
 		$critcopy = clone $criteria;
 		$critcopy->setLimit(1);
-		$objects = ToolCommentsPeer::doSelect($critcopy, $con);
+		$objects = ToolcommentsPeer::doSelect($critcopy, $con);
 		if ($objects) {
 			return $objects[0];
 		}
@@ -241,7 +241,7 @@ abstract class BaseToolCommentsPeer {
 	 */
 	public static function doSelect(Criteria $criteria, PropelPDO $con = null)
 	{
-		return ToolCommentsPeer::populateObjects(ToolCommentsPeer::doSelectStmt($criteria, $con));
+		return ToolcommentsPeer::populateObjects(ToolcommentsPeer::doSelectStmt($criteria, $con));
 	}
 	/**
 	 * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -259,12 +259,12 @@ abstract class BaseToolCommentsPeer {
 	public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		if (!$criteria->hasSelectClause()) {
 			$criteria = clone $criteria;
-			ToolCommentsPeer::addSelectColumns($criteria);
+			ToolcommentsPeer::addSelectColumns($criteria);
 		}
 
 		// Set the correct dbName
@@ -282,14 +282,14 @@ abstract class BaseToolCommentsPeer {
 	 * to the cache in order to ensure that the same objects are always returned by doSelect*()
 	 * and retrieveByPK*() calls.
 	 *
-	 * @param      ToolComments $value A ToolComments object.
+	 * @param      Toolcomments $value A Toolcomments object.
 	 * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
 	 */
-	public static function addInstanceToPool(ToolComments $obj, $key = null)
+	public static function addInstanceToPool(Toolcomments $obj, $key = null)
 	{
 		if (Propel::isInstancePoolingEnabled()) {
 			if ($key === null) {
-				$key = (string) $obj->getPk();
+				$key = (string) $obj->getId();
 			} // if key === null
 			self::$instances[$key] = $obj;
 		}
@@ -303,18 +303,18 @@ abstract class BaseToolCommentsPeer {
 	 * methods in your stub classes -- you may need to explicitly remove objects
 	 * from the cache in order to prevent returning objects that no longer exist.
 	 *
-	 * @param      mixed $value A ToolComments object or a primary key value.
+	 * @param      mixed $value A Toolcomments object or a primary key value.
 	 */
 	public static function removeInstanceFromPool($value)
 	{
 		if (Propel::isInstancePoolingEnabled() && $value !== null) {
-			if (is_object($value) && $value instanceof ToolComments) {
-				$key = (string) $value->getPk();
+			if (is_object($value) && $value instanceof Toolcomments) {
+				$key = (string) $value->getId();
 			} elseif (is_scalar($value)) {
 				// assume we've been passed a primary key
 				$key = (string) $value;
 			} else {
-				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or ToolComments object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Toolcomments object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
 				throw $e;
 			}
 
@@ -329,7 +329,7 @@ abstract class BaseToolCommentsPeer {
 	 * a multi-column primary key, a serialize()d version of the primary key will be returned.
 	 *
 	 * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-	 * @return     ToolComments Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+	 * @return     Toolcomments Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
 	 * @see        getPrimaryKeyHash()
 	 */
 	public static function getInstanceFromPool($key)
@@ -353,7 +353,7 @@ abstract class BaseToolCommentsPeer {
 	}
 	
 	/**
-	 * Method to invalidate the instance pool of all tables related to tool_comments
+	 * Method to invalidate the instance pool of all tables related to TOOLCOMMENT
 	 * by a foreign key with ON DELETE CASCADE
 	 */
 	public static function clearRelatedInstancePool()
@@ -405,11 +405,11 @@ abstract class BaseToolCommentsPeer {
 		$results = array();
 	
 		// set the class once to avoid overhead in the loop
-		$cls = ToolCommentsPeer::getOMClass(false);
+		$cls = ToolcommentsPeer::getOMClass(false);
 		// populate the object(s)
 		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-			$key = ToolCommentsPeer::getPrimaryKeyHashFromRow($row, 0);
-			if (null !== ($obj = ToolCommentsPeer::getInstanceFromPool($key))) {
+			$key = ToolcommentsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj = ToolcommentsPeer::getInstanceFromPool($key))) {
 				// We no longer rehydrate the object, since this can cause data loss.
 				// See http://www.propelorm.org/ticket/509
 				// $obj->hydrate($row, 0, true); // rehydrate
@@ -418,7 +418,7 @@ abstract class BaseToolCommentsPeer {
 				$obj = new $cls();
 				$obj->hydrate($row);
 				$results[] = $obj;
-				ToolCommentsPeer::addInstanceToPool($obj, $key);
+				ToolcommentsPeer::addInstanceToPool($obj, $key);
 			} // if key exists
 		}
 		$stmt->closeCursor();
@@ -431,24 +431,258 @@ abstract class BaseToolCommentsPeer {
 	 * @param      int $startcol The 0-based offset for reading from the resultset row.
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
-	 * @return     array (ToolComments object, last column rank)
+	 * @return     array (Toolcomments object, last column rank)
 	 */
 	public static function populateObject($row, $startcol = 0)
 	{
-		$key = ToolCommentsPeer::getPrimaryKeyHashFromRow($row, $startcol);
-		if (null !== ($obj = ToolCommentsPeer::getInstanceFromPool($key))) {
+		$key = ToolcommentsPeer::getPrimaryKeyHashFromRow($row, $startcol);
+		if (null !== ($obj = ToolcommentsPeer::getInstanceFromPool($key))) {
 			// We no longer rehydrate the object, since this can cause data loss.
 			// See http://www.propelorm.org/ticket/509
 			// $obj->hydrate($row, $startcol, true); // rehydrate
-			$col = $startcol + ToolCommentsPeer::NUM_COLUMNS;
+			$col = $startcol + ToolcommentsPeer::NUM_COLUMNS;
 		} else {
-			$cls = ToolCommentsPeer::OM_CLASS;
+			$cls = ToolcommentsPeer::OM_CLASS;
 			$obj = new $cls();
 			$col = $obj->hydrate($row, $startcol);
-			ToolCommentsPeer::addInstanceToPool($obj, $key);
+			ToolcommentsPeer::addInstanceToPool($obj, $key);
 		}
 		return array($obj, $col);
 	}
+
+	/**
+	 * Returns the number of rows matching criteria, joining the related Registration table
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     int Number of matching rows.
+	 */
+	public static function doCountJoinRegistration(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		// we're going to modify criteria, so copy it first
+		$criteria = clone $criteria;
+
+		// We need to set the primary table name, since in the case that there are no WHERE columns
+		// it will be impossible for the BasePeer::createSelectSql() method to determine which
+		// tables go into the FROM clause.
+		$criteria->setPrimaryTableName(ToolcommentsPeer::TABLE_NAME);
+
+		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+			$criteria->setDistinct();
+		}
+
+		if (!$criteria->hasSelectClause()) {
+			ToolcommentsPeer::addSelectColumns($criteria);
+		}
+		
+		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+		
+		// Set the correct dbName
+		$criteria->setDbName(self::DATABASE_NAME);
+
+		if ($con === null) {
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+		}
+
+		$criteria->addJoin(ToolcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doCount($criteria, $con);
+
+		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$count = (int) $row[0];
+		} else {
+			$count = 0; // no rows returned; we infer that means 0 matches.
+		}
+		$stmt->closeCursor();
+		return $count;
+	}
+
+
+	/**
+	 * Selects a collection of Toolcomments objects pre-filled with their Registration objects.
+	 * @param      Criteria  $criteria
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     array Array of Toolcomments objects.
+	 * @throws     PropelException Any exceptions caught during processing will be
+	 *		 rethrown wrapped into a PropelException.
+	 */
+	public static function doSelectJoinRegistration(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$criteria = clone $criteria;
+
+		// Set the correct dbName if it has not been overridden
+		if ($criteria->getDbName() == Propel::getDefaultDB()) {
+			$criteria->setDbName(self::DATABASE_NAME);
+		}
+
+		ToolcommentsPeer::addSelectColumns($criteria);
+		$startcol = (ToolcommentsPeer::NUM_COLUMNS - ToolcommentsPeer::NUM_LAZY_LOAD_COLUMNS);
+		RegistrationPeer::addSelectColumns($criteria);
+
+		$criteria->addJoin(ToolcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doSelect($criteria, $con);
+		$results = array();
+
+		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$key1 = ToolcommentsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = ToolcommentsPeer::getInstanceFromPool($key1))) {
+				// We no longer rehydrate the object, since this can cause data loss.
+				// See http://www.propelorm.org/ticket/509
+				// $obj1->hydrate($row, 0, true); // rehydrate
+			} else {
+
+				$cls = ToolcommentsPeer::getOMClass(false);
+
+				$obj1 = new $cls();
+				$obj1->hydrate($row);
+				ToolcommentsPeer::addInstanceToPool($obj1, $key1);
+			} // if $obj1 already loaded
+
+			$key2 = RegistrationPeer::getPrimaryKeyHashFromRow($row, $startcol);
+			if ($key2 !== null) {
+				$obj2 = RegistrationPeer::getInstanceFromPool($key2);
+				if (!$obj2) {
+
+					$cls = RegistrationPeer::getOMClass(false);
+
+					$obj2 = new $cls();
+					$obj2->hydrate($row, $startcol);
+					RegistrationPeer::addInstanceToPool($obj2, $key2);
+				} // if obj2 already loaded
+
+				// Add the $obj1 (Toolcomments) to $obj2 (Registration)
+				$obj2->addToolcomments($obj1);
+
+			} // if joined row was not null
+
+			$results[] = $obj1;
+		}
+		$stmt->closeCursor();
+		return $results;
+	}
+
+
+	/**
+	 * Returns the number of rows matching criteria, joining all related tables
+	 *
+	 * @param      Criteria $criteria
+	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     int Number of matching rows.
+	 */
+	public static function doCountJoinAll(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		// we're going to modify criteria, so copy it first
+		$criteria = clone $criteria;
+
+		// We need to set the primary table name, since in the case that there are no WHERE columns
+		// it will be impossible for the BasePeer::createSelectSql() method to determine which
+		// tables go into the FROM clause.
+		$criteria->setPrimaryTableName(ToolcommentsPeer::TABLE_NAME);
+
+		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+			$criteria->setDistinct();
+		}
+
+		if (!$criteria->hasSelectClause()) {
+			ToolcommentsPeer::addSelectColumns($criteria);
+		}
+		
+		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+		
+		// Set the correct dbName
+		$criteria->setDbName(self::DATABASE_NAME);
+
+		if ($con === null) {
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+		}
+
+		$criteria->addJoin(ToolcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doCount($criteria, $con);
+
+		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$count = (int) $row[0];
+		} else {
+			$count = 0; // no rows returned; we infer that means 0 matches.
+		}
+		$stmt->closeCursor();
+		return $count;
+	}
+
+	/**
+	 * Selects a collection of Toolcomments objects pre-filled with all related objects.
+	 *
+	 * @param      Criteria  $criteria
+	 * @param      PropelPDO $con
+	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+	 * @return     array Array of Toolcomments objects.
+	 * @throws     PropelException Any exceptions caught during processing will be
+	 *		 rethrown wrapped into a PropelException.
+	 */
+	public static function doSelectJoinAll(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	{
+		$criteria = clone $criteria;
+
+		// Set the correct dbName if it has not been overridden
+		if ($criteria->getDbName() == Propel::getDefaultDB()) {
+			$criteria->setDbName(self::DATABASE_NAME);
+		}
+
+		ToolcommentsPeer::addSelectColumns($criteria);
+		$startcol2 = (ToolcommentsPeer::NUM_COLUMNS - ToolcommentsPeer::NUM_LAZY_LOAD_COLUMNS);
+
+		RegistrationPeer::addSelectColumns($criteria);
+		$startcol3 = $startcol2 + (RegistrationPeer::NUM_COLUMNS - RegistrationPeer::NUM_LAZY_LOAD_COLUMNS);
+
+		$criteria->addJoin(ToolcommentsPeer::CREATOR_ID, RegistrationPeer::ID, $join_behavior);
+
+		$stmt = BasePeer::doSelect($criteria, $con);
+		$results = array();
+
+		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+			$key1 = ToolcommentsPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = ToolcommentsPeer::getInstanceFromPool($key1))) {
+				// We no longer rehydrate the object, since this can cause data loss.
+				// See http://www.propelorm.org/ticket/509
+				// $obj1->hydrate($row, 0, true); // rehydrate
+			} else {
+				$cls = ToolcommentsPeer::getOMClass(false);
+
+				$obj1 = new $cls();
+				$obj1->hydrate($row);
+				ToolcommentsPeer::addInstanceToPool($obj1, $key1);
+			} // if obj1 already loaded
+
+			// Add objects for joined Registration rows
+
+			$key2 = RegistrationPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+			if ($key2 !== null) {
+				$obj2 = RegistrationPeer::getInstanceFromPool($key2);
+				if (!$obj2) {
+
+					$cls = RegistrationPeer::getOMClass(false);
+
+					$obj2 = new $cls();
+					$obj2->hydrate($row, $startcol2);
+					RegistrationPeer::addInstanceToPool($obj2, $key2);
+				} // if obj2 loaded
+
+				// Add the $obj1 (Toolcomments) to the collection in $obj2 (Registration)
+				$obj2->addToolcomments($obj1);
+			} // if joined row not null
+
+			$results[] = $obj1;
+		}
+		$stmt->closeCursor();
+		return $results;
+	}
+
 	/**
 	 * Returns the TableMap related to this peer.
 	 * This method is not needed for general use but a specific application could have a need.
@@ -466,10 +700,10 @@ abstract class BaseToolCommentsPeer {
 	 */
 	public static function buildTableMap()
 	{
-	  $dbMap = Propel::getDatabaseMap(BaseToolCommentsPeer::DATABASE_NAME);
-	  if (!$dbMap->hasTable(BaseToolCommentsPeer::TABLE_NAME))
+	  $dbMap = Propel::getDatabaseMap(BaseToolcommentsPeer::DATABASE_NAME);
+	  if (!$dbMap->hasTable(BaseToolcommentsPeer::TABLE_NAME))
 	  {
-	    $dbMap->addTableObject(new ToolCommentsTableMap());
+	    $dbMap->addTableObject(new ToolcommentsTableMap());
 	  }
 	}
 
@@ -486,13 +720,13 @@ abstract class BaseToolCommentsPeer {
 	 */
 	public static function getOMClass($withPrefix = true)
 	{
-		return $withPrefix ? ToolCommentsPeer::CLASS_DEFAULT : ToolCommentsPeer::OM_CLASS;
+		return $withPrefix ? ToolcommentsPeer::CLASS_DEFAULT : ToolcommentsPeer::OM_CLASS;
 	}
 
 	/**
-	 * Method perform an INSERT on the database, given a ToolComments or Criteria object.
+	 * Method perform an INSERT on the database, given a Toolcomments or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or ToolComments object containing data that is used to create the INSERT statement.
+	 * @param      mixed $values Criteria or Toolcomments object containing data that is used to create the INSERT statement.
 	 * @param      PropelPDO $con the PropelPDO connection to use
 	 * @return     mixed The new primary key.
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -501,21 +735,21 @@ abstract class BaseToolCommentsPeer {
 	public static function doInsert($values, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 		} else {
-			$criteria = $values->buildCriteria(); // build Criteria from ToolComments object
+			$criteria = $values->buildCriteria(); // build Criteria from Toolcomments object
 		}
 
-		if ($criteria->containsKey(ToolCommentsPeer::PK) && $criteria->keyContainsValue(ToolCommentsPeer::PK) ) {
-			throw new PropelException('Cannot insert a value for auto-increment primary key ('.ToolCommentsPeer::PK.')');
+		if ($criteria->containsKey(ToolcommentsPeer::ID) && $criteria->keyContainsValue(ToolcommentsPeer::ID) ) {
+			throw new PropelException('Cannot insert a value for auto-increment primary key ('.ToolcommentsPeer::ID.')');
 		}
 
 		// remove pkey col since this table uses auto-increment and passing a null value for it is not valid 
-		$criteria->remove(ToolCommentsPeer::PK);
+		$criteria->remove(ToolcommentsPeer::ID);
 
 
 		// Set the correct dbName
@@ -536,9 +770,9 @@ abstract class BaseToolCommentsPeer {
 	}
 
 	/**
-	 * Method perform an UPDATE on the database, given a ToolComments or Criteria object.
+	 * Method perform an UPDATE on the database, given a Toolcomments or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or ToolComments object containing data that is used to create the UPDATE statement.
+	 * @param      mixed $values Criteria or Toolcomments object containing data that is used to create the UPDATE statement.
 	 * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -547,7 +781,7 @@ abstract class BaseToolCommentsPeer {
 	public static function doUpdate($values, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		$selectCriteria = new Criteria(self::DATABASE_NAME);
@@ -555,15 +789,15 @@ abstract class BaseToolCommentsPeer {
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 
-			$comparison = $criteria->getComparison(ToolCommentsPeer::PK);
-			$value = $criteria->remove(ToolCommentsPeer::PK);
+			$comparison = $criteria->getComparison(ToolcommentsPeer::ID);
+			$value = $criteria->remove(ToolcommentsPeer::ID);
 			if ($value) {
-				$selectCriteria->add(ToolCommentsPeer::PK, $value, $comparison);
+				$selectCriteria->add(ToolcommentsPeer::ID, $value, $comparison);
 			} else {
-				$selectCriteria->setPrimaryTableName(ToolCommentsPeer::TABLE_NAME);
+				$selectCriteria->setPrimaryTableName(ToolcommentsPeer::TABLE_NAME);
 			}
 
-		} else { // $values is ToolComments object
+		} else { // $values is Toolcomments object
 			$criteria = $values->buildCriteria(); // gets full criteria
 			$selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
 		}
@@ -575,26 +809,26 @@ abstract class BaseToolCommentsPeer {
 	}
 
 	/**
-	 * Method to DELETE all rows from the tool_comments table.
+	 * Method to DELETE all rows from the TOOLCOMMENT table.
 	 *
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 */
 	public static function doDeleteAll($con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		$affectedRows = 0; // initialize var to track total num of affected rows
 		try {
 			// use transaction because $criteria could contain info
 			// for more than one table or we could emulating ON DELETE CASCADE, etc.
 			$con->beginTransaction();
-			$affectedRows += BasePeer::doDeleteAll(ToolCommentsPeer::TABLE_NAME, $con, ToolCommentsPeer::DATABASE_NAME);
+			$affectedRows += BasePeer::doDeleteAll(ToolcommentsPeer::TABLE_NAME, $con, ToolcommentsPeer::DATABASE_NAME);
 			// Because this db requires some delete cascade/set null emulation, we have to
 			// clear the cached instance *after* the emulation has happened (since
 			// instances get re-added by the select statement contained therein).
-			ToolCommentsPeer::clearInstancePool();
-			ToolCommentsPeer::clearRelatedInstancePool();
+			ToolcommentsPeer::clearInstancePool();
+			ToolcommentsPeer::clearRelatedInstancePool();
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -604,9 +838,9 @@ abstract class BaseToolCommentsPeer {
 	}
 
 	/**
-	 * Method perform a DELETE on the database, given a ToolComments or Criteria object OR a primary key value.
+	 * Method perform a DELETE on the database, given a Toolcomments or Criteria object OR a primary key value.
 	 *
-	 * @param      mixed $values Criteria or ToolComments object or primary key or array of primary keys
+	 * @param      mixed $values Criteria or Toolcomments object or primary key or array of primary keys
 	 *              which is used to create the DELETE statement
 	 * @param      PropelPDO $con the connection to use
 	 * @return     int 	The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -617,27 +851,27 @@ abstract class BaseToolCommentsPeer {
 	 public static function doDelete($values, PropelPDO $con = null)
 	 {
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			// invalidate the cache for all objects of this type, since we have no
 			// way of knowing (without running a query) what objects should be invalidated
 			// from the cache based on this Criteria.
-			ToolCommentsPeer::clearInstancePool();
+			ToolcommentsPeer::clearInstancePool();
 			// rename for clarity
 			$criteria = clone $values;
-		} elseif ($values instanceof ToolComments) { // it's a model object
+		} elseif ($values instanceof Toolcomments) { // it's a model object
 			// invalidate the cache for this single object
-			ToolCommentsPeer::removeInstanceFromPool($values);
+			ToolcommentsPeer::removeInstanceFromPool($values);
 			// create criteria based on pk values
 			$criteria = $values->buildPkeyCriteria();
 		} else { // it's a primary key, or an array of pks
 			$criteria = new Criteria(self::DATABASE_NAME);
-			$criteria->add(ToolCommentsPeer::PK, (array) $values, Criteria::IN);
+			$criteria->add(ToolcommentsPeer::ID, (array) $values, Criteria::IN);
 			// invalidate the cache for this object(s)
 			foreach ((array) $values as $singleval) {
-				ToolCommentsPeer::removeInstanceFromPool($singleval);
+				ToolcommentsPeer::removeInstanceFromPool($singleval);
 			}
 		}
 
@@ -652,7 +886,7 @@ abstract class BaseToolCommentsPeer {
 			$con->beginTransaction();
 			
 			$affectedRows += BasePeer::doDelete($criteria, $con);
-			ToolCommentsPeer::clearRelatedInstancePool();
+			ToolcommentsPeer::clearRelatedInstancePool();
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -662,24 +896,24 @@ abstract class BaseToolCommentsPeer {
 	}
 
 	/**
-	 * Validates all modified columns of given ToolComments object.
+	 * Validates all modified columns of given Toolcomments object.
 	 * If parameter $columns is either a single column name or an array of column names
 	 * than only those columns are validated.
 	 *
 	 * NOTICE: This does not apply to primary or foreign keys for now.
 	 *
-	 * @param      ToolComments $obj The object to validate.
+	 * @param      Toolcomments $obj The object to validate.
 	 * @param      mixed $cols Column name or array of column names.
 	 *
 	 * @return     mixed TRUE if all columns are valid or the error message of the first invalid column.
 	 */
-	public static function doValidate(ToolComments $obj, $cols = null)
+	public static function doValidate(Toolcomments $obj, $cols = null)
 	{
 		$columns = array();
 
 		if ($cols) {
-			$dbMap = Propel::getDatabaseMap(ToolCommentsPeer::DATABASE_NAME);
-			$tableMap = $dbMap->getTable(ToolCommentsPeer::TABLE_NAME);
+			$dbMap = Propel::getDatabaseMap(ToolcommentsPeer::DATABASE_NAME);
+			$tableMap = $dbMap->getTable(ToolcommentsPeer::TABLE_NAME);
 
 			if (! is_array($cols)) {
 				$cols = array($cols);
@@ -695,7 +929,7 @@ abstract class BaseToolCommentsPeer {
 
 		}
 
-		return BasePeer::doValidate(ToolCommentsPeer::DATABASE_NAME, ToolCommentsPeer::TABLE_NAME, $columns);
+		return BasePeer::doValidate(ToolcommentsPeer::DATABASE_NAME, ToolcommentsPeer::TABLE_NAME, $columns);
 	}
 
 	/**
@@ -703,23 +937,23 @@ abstract class BaseToolCommentsPeer {
 	 *
 	 * @param      int $pk the primary key.
 	 * @param      PropelPDO $con the connection to use
-	 * @return     ToolComments
+	 * @return     Toolcomments
 	 */
 	public static function retrieveByPK($pk, PropelPDO $con = null)
 	{
 
-		if (null !== ($obj = ToolCommentsPeer::getInstanceFromPool((string) $pk))) {
+		if (null !== ($obj = ToolcommentsPeer::getInstanceFromPool((string) $pk))) {
 			return $obj;
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
-		$criteria = new Criteria(ToolCommentsPeer::DATABASE_NAME);
-		$criteria->add(ToolCommentsPeer::PK, $pk);
+		$criteria = new Criteria(ToolcommentsPeer::DATABASE_NAME);
+		$criteria->add(ToolcommentsPeer::ID, $pk);
 
-		$v = ToolCommentsPeer::doSelect($criteria, $con);
+		$v = ToolcommentsPeer::doSelect($criteria, $con);
 
 		return !empty($v) > 0 ? $v[0] : null;
 	}
@@ -735,23 +969,23 @@ abstract class BaseToolCommentsPeer {
 	public static function retrieveByPKs($pks, PropelPDO $con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(ToolCommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ToolcommentsPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		$objs = null;
 		if (empty($pks)) {
 			$objs = array();
 		} else {
-			$criteria = new Criteria(ToolCommentsPeer::DATABASE_NAME);
-			$criteria->add(ToolCommentsPeer::PK, $pks, Criteria::IN);
-			$objs = ToolCommentsPeer::doSelect($criteria, $con);
+			$criteria = new Criteria(ToolcommentsPeer::DATABASE_NAME);
+			$criteria->add(ToolcommentsPeer::ID, $pks, Criteria::IN);
+			$objs = ToolcommentsPeer::doSelect($criteria, $con);
 		}
 		return $objs;
 	}
 
-} // BaseToolCommentsPeer
+} // BaseToolcommentsPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseToolCommentsPeer::buildTableMap();
+BaseToolcommentsPeer::buildTableMap();
 

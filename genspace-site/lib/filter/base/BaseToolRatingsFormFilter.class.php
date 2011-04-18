@@ -1,29 +1,31 @@
 <?php
 
 /**
- * ToolRatings filter form base class.
+ * Toolratings filter form base class.
  *
  * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */
-abstract class BaseToolRatingsFormFilter extends BaseFormFilterPropel
+abstract class BaseToolratingsFormFilter extends BaseFormFilterPropel
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'id'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'rating'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'username' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'CREATEDAT'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'RATING'     => new sfWidgetFormFilterInput(),
+      'TOOL_ID'    => new sfWidgetFormFilterInput(),
+      'CREATOR_ID' => new sfWidgetFormPropelChoice(array('model' => 'Registration', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'rating'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'username' => new sfValidatorPass(array('required' => false)),
+      'CREATEDAT'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
+      'RATING'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'TOOL_ID'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'CREATOR_ID' => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Registration', 'column' => 'ID')),
     ));
 
-    $this->widgetSchema->setNameFormat('tool_ratings_filters[%s]');
+    $this->widgetSchema->setNameFormat('toolratings_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -32,16 +34,17 @@ abstract class BaseToolRatingsFormFilter extends BaseFormFilterPropel
 
   public function getModelName()
   {
-    return 'ToolRatings';
+    return 'Toolratings';
   }
 
   public function getFields()
   {
     return array(
-      'pk'       => 'Number',
-      'id'       => 'Number',
-      'rating'   => 'Number',
-      'username' => 'Text',
+      'ID'         => 'Number',
+      'CREATEDAT'  => 'Date',
+      'RATING'     => 'Number',
+      'TOOL_ID'    => 'Number',
+      'CREATOR_ID' => 'ForeignKey',
     );
   }
 }

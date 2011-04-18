@@ -1,13 +1,13 @@
 <?php
 
 /**
- * ToolComments filter form.
+ * Toolcomments filter form.
  *
- * @package    genspace_site
+ * @package    sfproject
  * @subpackage filter
  * @author     Your name here
  */
-class ToolCommentsFormFilter extends BaseToolCommentsFormFilter
+class ToolcommentsFormFilter extends BaseToolcommentsFormFilter
 {
   public function configure()
   {

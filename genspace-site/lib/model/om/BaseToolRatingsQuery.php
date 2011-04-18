@@ -2,68 +2,76 @@
 
 
 /**
- * Base class that represents a query for the 'tool_ratings' table.
+ * Base class that represents a query for the 'TOOLRATING' table.
  *
  * 
  *
- * @method     ToolRatingsQuery orderByPk($order = Criteria::ASC) Order by the pk column
- * @method     ToolRatingsQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     ToolRatingsQuery orderByRating($order = Criteria::ASC) Order by the rating column
- * @method     ToolRatingsQuery orderByUsername($order = Criteria::ASC) Order by the username column
+ * @method     ToolratingsQuery orderById($order = Criteria::ASC) Order by the ID column
+ * @method     ToolratingsQuery orderByCreatedat($order = Criteria::ASC) Order by the CREATEDAT column
+ * @method     ToolratingsQuery orderByRating($order = Criteria::ASC) Order by the RATING column
+ * @method     ToolratingsQuery orderByToolId($order = Criteria::ASC) Order by the TOOL_ID column
+ * @method     ToolratingsQuery orderByCreatorId($order = Criteria::ASC) Order by the CREATOR_ID column
  *
- * @method     ToolRatingsQuery groupByPk() Group by the pk column
- * @method     ToolRatingsQuery groupById() Group by the id column
- * @method     ToolRatingsQuery groupByRating() Group by the rating column
- * @method     ToolRatingsQuery groupByUsername() Group by the username column
+ * @method     ToolratingsQuery groupById() Group by the ID column
+ * @method     ToolratingsQuery groupByCreatedat() Group by the CREATEDAT column
+ * @method     ToolratingsQuery groupByRating() Group by the RATING column
+ * @method     ToolratingsQuery groupByToolId() Group by the TOOL_ID column
+ * @method     ToolratingsQuery groupByCreatorId() Group by the CREATOR_ID column
  *
- * @method     ToolRatingsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method     ToolRatingsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method     ToolRatingsQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method     ToolratingsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method     ToolratingsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method     ToolratingsQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     ToolRatings findOne(PropelPDO $con = null) Return the first ToolRatings matching the query
- * @method     ToolRatings findOneOrCreate(PropelPDO $con = null) Return the first ToolRatings matching the query, or a new ToolRatings object populated from the query conditions when no match is found
+ * @method     ToolratingsQuery leftJoinRegistration($relationAlias = null) Adds a LEFT JOIN clause to the query using the Registration relation
+ * @method     ToolratingsQuery rightJoinRegistration($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Registration relation
+ * @method     ToolratingsQuery innerJoinRegistration($relationAlias = null) Adds a INNER JOIN clause to the query using the Registration relation
  *
- * @method     ToolRatings findOneByPk(int $pk) Return the first ToolRatings filtered by the pk column
- * @method     ToolRatings findOneById(int $id) Return the first ToolRatings filtered by the id column
- * @method     ToolRatings findOneByRating(int $rating) Return the first ToolRatings filtered by the rating column
- * @method     ToolRatings findOneByUsername(string $username) Return the first ToolRatings filtered by the username column
+ * @method     Toolratings findOne(PropelPDO $con = null) Return the first Toolratings matching the query
+ * @method     Toolratings findOneOrCreate(PropelPDO $con = null) Return the first Toolratings matching the query, or a new Toolratings object populated from the query conditions when no match is found
  *
- * @method     array findByPk(int $pk) Return ToolRatings objects filtered by the pk column
- * @method     array findById(int $id) Return ToolRatings objects filtered by the id column
- * @method     array findByRating(int $rating) Return ToolRatings objects filtered by the rating column
- * @method     array findByUsername(string $username) Return ToolRatings objects filtered by the username column
+ * @method     Toolratings findOneById(int $ID) Return the first Toolratings filtered by the ID column
+ * @method     Toolratings findOneByCreatedat(string $CREATEDAT) Return the first Toolratings filtered by the CREATEDAT column
+ * @method     Toolratings findOneByRating(int $RATING) Return the first Toolratings filtered by the RATING column
+ * @method     Toolratings findOneByToolId(int $TOOL_ID) Return the first Toolratings filtered by the TOOL_ID column
+ * @method     Toolratings findOneByCreatorId(int $CREATOR_ID) Return the first Toolratings filtered by the CREATOR_ID column
+ *
+ * @method     array findById(int $ID) Return Toolratings objects filtered by the ID column
+ * @method     array findByCreatedat(string $CREATEDAT) Return Toolratings objects filtered by the CREATEDAT column
+ * @method     array findByRating(int $RATING) Return Toolratings objects filtered by the RATING column
+ * @method     array findByToolId(int $TOOL_ID) Return Toolratings objects filtered by the TOOL_ID column
+ * @method     array findByCreatorId(int $CREATOR_ID) Return Toolratings objects filtered by the CREATOR_ID column
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseToolRatingsQuery extends ModelCriteria
+abstract class BaseToolratingsQuery extends ModelCriteria
 {
 
 	/**
-	 * Initializes internal state of BaseToolRatingsQuery object.
+	 * Initializes internal state of BaseToolratingsQuery object.
 	 *
 	 * @param     string $dbName The dabase name
 	 * @param     string $modelName The phpName of a model, e.g. 'Book'
 	 * @param     string $modelAlias The alias for the model in this query, e.g. 'b'
 	 */
-	public function __construct($dbName = 'propel', $modelName = 'ToolRatings', $modelAlias = null)
+	public function __construct($dbName = 'propel', $modelName = 'Toolratings', $modelAlias = null)
 	{
 		parent::__construct($dbName, $modelName, $modelAlias);
 	}
 
 	/**
-	 * Returns a new ToolRatingsQuery object.
+	 * Returns a new ToolratingsQuery object.
 	 *
 	 * @param     string $modelAlias The alias of a model in the query
 	 * @param     Criteria $criteria Optional Criteria to build the query from
 	 *
-	 * @return    ToolRatingsQuery
+	 * @return    ToolratingsQuery
 	 */
 	public static function create($modelAlias = null, $criteria = null)
 	{
-		if ($criteria instanceof ToolRatingsQuery) {
+		if ($criteria instanceof ToolratingsQuery) {
 			return $criteria;
 		}
-		$query = new ToolRatingsQuery();
+		$query = new ToolratingsQuery();
 		if (null !== $modelAlias) {
 			$query->setModelAlias($modelAlias);
 		}
@@ -82,11 +90,11 @@ abstract class BaseToolRatingsQuery extends ModelCriteria
 	 * @param     mixed $key Primary key to use for the query
 	 * @param     PropelPDO $con an optional connection object
 	 *
-	 * @return    ToolRatings|array|mixed the result, formatted by the current formatter
+	 * @return    Toolratings|array|mixed the result, formatted by the current formatter
 	 */
 	public function findPk($key, $con = null)
 	{
-		if ((null !== ($obj = ToolRatingsPeer::getInstanceFromPool((string) $key))) && $this->getFormatter()->isObjectFormatter()) {
+		if ((null !== ($obj = ToolratingsPeer::getInstanceFromPool((string) $key))) && $this->getFormatter()->isObjectFormatter()) {
 			// the object is alredy in the instance pool
 			return $obj;
 		} else {
@@ -122,11 +130,11 @@ abstract class BaseToolRatingsQuery extends ModelCriteria
 	 *
 	 * @param     mixed $key Primary key to use for the query
 	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
+	 * @return    ToolratingsQuery The current query, for fluid interface
 	 */
 	public function filterByPrimaryKey($key)
 	{
-		return $this->addUsingAlias(ToolRatingsPeer::PK, $key, Criteria::EQUAL);
+		return $this->addUsingAlias(ToolratingsPeer::ID, $key, Criteria::EQUAL);
 	}
 
 	/**
@@ -134,49 +142,49 @@ abstract class BaseToolRatingsQuery extends ModelCriteria
 	 *
 	 * @param     array $keys The list of primary key to use for the query
 	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
+	 * @return    ToolratingsQuery The current query, for fluid interface
 	 */
 	public function filterByPrimaryKeys($keys)
 	{
-		return $this->addUsingAlias(ToolRatingsPeer::PK, $keys, Criteria::IN);
+		return $this->addUsingAlias(ToolratingsPeer::ID, $keys, Criteria::IN);
 	}
 
 	/**
-	 * Filter the query on the pk column
-	 * 
-	 * @param     int|array $pk The value to use as filter.
-	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
-	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
-	 */
-	public function filterByPk($pk = null, $comparison = null)
-	{
-		if (is_array($pk) && null === $comparison) {
-			$comparison = Criteria::IN;
-		}
-		return $this->addUsingAlias(ToolRatingsPeer::PK, $pk, $comparison);
-	}
-
-	/**
-	 * Filter the query on the id column
+	 * Filter the query on the ID column
 	 * 
 	 * @param     int|array $id The value to use as filter.
 	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
+	 * @return    ToolratingsQuery The current query, for fluid interface
 	 */
 	public function filterById($id = null, $comparison = null)
 	{
-		if (is_array($id)) {
+		if (is_array($id) && null === $comparison) {
+			$comparison = Criteria::IN;
+		}
+		return $this->addUsingAlias(ToolratingsPeer::ID, $id, $comparison);
+	}
+
+	/**
+	 * Filter the query on the CREATEDAT column
+	 * 
+	 * @param     string|array $createdat The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    ToolratingsQuery The current query, for fluid interface
+	 */
+	public function filterByCreatedat($createdat = null, $comparison = null)
+	{
+		if (is_array($createdat)) {
 			$useMinMax = false;
-			if (isset($id['min'])) {
-				$this->addUsingAlias(ToolRatingsPeer::ID, $id['min'], Criteria::GREATER_EQUAL);
+			if (isset($createdat['min'])) {
+				$this->addUsingAlias(ToolratingsPeer::CREATEDAT, $createdat['min'], Criteria::GREATER_EQUAL);
 				$useMinMax = true;
 			}
-			if (isset($id['max'])) {
-				$this->addUsingAlias(ToolRatingsPeer::ID, $id['max'], Criteria::LESS_EQUAL);
+			if (isset($createdat['max'])) {
+				$this->addUsingAlias(ToolratingsPeer::CREATEDAT, $createdat['max'], Criteria::LESS_EQUAL);
 				$useMinMax = true;
 			}
 			if ($useMinMax) {
@@ -186,28 +194,28 @@ abstract class BaseToolRatingsQuery extends ModelCriteria
 				$comparison = Criteria::IN;
 			}
 		}
-		return $this->addUsingAlias(ToolRatingsPeer::ID, $id, $comparison);
+		return $this->addUsingAlias(ToolratingsPeer::CREATEDAT, $createdat, $comparison);
 	}
 
 	/**
-	 * Filter the query on the rating column
+	 * Filter the query on the RATING column
 	 * 
 	 * @param     int|array $rating The value to use as filter.
 	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
+	 * @return    ToolratingsQuery The current query, for fluid interface
 	 */
 	public function filterByRating($rating = null, $comparison = null)
 	{
 		if (is_array($rating)) {
 			$useMinMax = false;
 			if (isset($rating['min'])) {
-				$this->addUsingAlias(ToolRatingsPeer::RATING, $rating['min'], Criteria::GREATER_EQUAL);
+				$this->addUsingAlias(ToolratingsPeer::RATING, $rating['min'], Criteria::GREATER_EQUAL);
 				$useMinMax = true;
 			}
 			if (isset($rating['max'])) {
-				$this->addUsingAlias(ToolRatingsPeer::RATING, $rating['max'], Criteria::LESS_EQUAL);
+				$this->addUsingAlias(ToolratingsPeer::RATING, $rating['max'], Criteria::LESS_EQUAL);
 				$useMinMax = true;
 			}
 			if ($useMinMax) {
@@ -217,45 +225,149 @@ abstract class BaseToolRatingsQuery extends ModelCriteria
 				$comparison = Criteria::IN;
 			}
 		}
-		return $this->addUsingAlias(ToolRatingsPeer::RATING, $rating, $comparison);
+		return $this->addUsingAlias(ToolratingsPeer::RATING, $rating, $comparison);
 	}
 
 	/**
-	 * Filter the query on the username column
+	 * Filter the query on the TOOL_ID column
 	 * 
-	 * @param     string $username The value to use as filter.
-	 *            Accepts wildcards (* and % trigger a LIKE)
+	 * @param     int|array $toolId The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
+	 * @return    ToolratingsQuery The current query, for fluid interface
 	 */
-	public function filterByUsername($username = null, $comparison = null)
+	public function filterByToolId($toolId = null, $comparison = null)
 	{
-		if (null === $comparison) {
-			if (is_array($username)) {
+		if (is_array($toolId)) {
+			$useMinMax = false;
+			if (isset($toolId['min'])) {
+				$this->addUsingAlias(ToolratingsPeer::TOOL_ID, $toolId['min'], Criteria::GREATER_EQUAL);
+				$useMinMax = true;
+			}
+			if (isset($toolId['max'])) {
+				$this->addUsingAlias(ToolratingsPeer::TOOL_ID, $toolId['max'], Criteria::LESS_EQUAL);
+				$useMinMax = true;
+			}
+			if ($useMinMax) {
+				return $this;
+			}
+			if (null === $comparison) {
 				$comparison = Criteria::IN;
-			} elseif (preg_match('/[\%\*]/', $username)) {
-				$username = str_replace('*', '%', $username);
-				$comparison = Criteria::LIKE;
 			}
 		}
-		return $this->addUsingAlias(ToolRatingsPeer::USERNAME, $username, $comparison);
+		return $this->addUsingAlias(ToolratingsPeer::TOOL_ID, $toolId, $comparison);
+	}
+
+	/**
+	 * Filter the query on the CREATOR_ID column
+	 * 
+	 * @param     int|array $creatorId The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    ToolratingsQuery The current query, for fluid interface
+	 */
+	public function filterByCreatorId($creatorId = null, $comparison = null)
+	{
+		if (is_array($creatorId)) {
+			$useMinMax = false;
+			if (isset($creatorId['min'])) {
+				$this->addUsingAlias(ToolratingsPeer::CREATOR_ID, $creatorId['min'], Criteria::GREATER_EQUAL);
+				$useMinMax = true;
+			}
+			if (isset($creatorId['max'])) {
+				$this->addUsingAlias(ToolratingsPeer::CREATOR_ID, $creatorId['max'], Criteria::LESS_EQUAL);
+				$useMinMax = true;
+			}
+			if ($useMinMax) {
+				return $this;
+			}
+			if (null === $comparison) {
+				$comparison = Criteria::IN;
+			}
+		}
+		return $this->addUsingAlias(ToolratingsPeer::CREATOR_ID, $creatorId, $comparison);
+	}
+
+	/**
+	 * Filter the query by a related Registration object
+	 *
+	 * @param     Registration $registration  the related object to use as filter
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    ToolratingsQuery The current query, for fluid interface
+	 */
+	public function filterByRegistration($registration, $comparison = null)
+	{
+		return $this
+			->addUsingAlias(ToolratingsPeer::CREATOR_ID, $registration->getId(), $comparison);
+	}
+
+	/**
+	 * Adds a JOIN clause to the query using the Registration relation
+	 * 
+	 * @param     string $relationAlias optional alias for the relation
+	 * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+	 *
+	 * @return    ToolratingsQuery The current query, for fluid interface
+	 */
+	public function joinRegistration($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+	{
+		$tableMap = $this->getTableMap();
+		$relationMap = $tableMap->getRelation('Registration');
+		
+		// create a ModelJoin object for this join
+		$join = new ModelJoin();
+		$join->setJoinType($joinType);
+		$join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+		if ($previousJoin = $this->getPreviousJoin()) {
+			$join->setPreviousJoin($previousJoin);
+		}
+		
+		// add the ModelJoin to the current object
+		if($relationAlias) {
+			$this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+			$this->addJoinObject($join, $relationAlias);
+		} else {
+			$this->addJoinObject($join, 'Registration');
+		}
+		
+		return $this;
+	}
+
+	/**
+	 * Use the Registration relation Registration object
+	 *
+	 * @see       useQuery()
+	 * 
+	 * @param     string $relationAlias optional alias for the relation,
+	 *                                   to be used as main alias in the secondary query
+	 * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+	 *
+	 * @return    RegistrationQuery A secondary query class using the current class as primary query
+	 */
+	public function useRegistrationQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+	{
+		return $this
+			->joinRegistration($relationAlias, $joinType)
+			->useQuery($relationAlias ? $relationAlias : 'Registration', 'RegistrationQuery');
 	}
 
 	/**
 	 * Exclude object from result
 	 *
-	 * @param     ToolRatings $toolRatings Object to remove from the list of results
+	 * @param     Toolratings $toolratings Object to remove from the list of results
 	 *
-	 * @return    ToolRatingsQuery The current query, for fluid interface
+	 * @return    ToolratingsQuery The current query, for fluid interface
 	 */
-	public function prune($toolRatings = null)
+	public function prune($toolratings = null)
 	{
-		if ($toolRatings) {
-			$this->addUsingAlias(ToolRatingsPeer::PK, $toolRatings->getPk(), Criteria::NOT_EQUAL);
+		if ($toolratings) {
+			$this->addUsingAlias(ToolratingsPeer::ID, $toolratings->getId(), Criteria::NOT_EQUAL);
 	  }
 	  
 		return $this;
 	}
 
-} // BaseToolRatingsQuery
+} // BaseToolratingsQuery

@@ -49,10 +49,10 @@ if($_POST['searchfield']):
 		</ul>
 <?php else:
 if (isset($displayAll)): 
-ToolRatingsPeer::deleteTool(3);
-ToolRatingsPeer::deleteTool(6);
-
-ToolRatingsPeer::deleteTool(8);
+//ToolRatingsPeer::deleteTool(3);
+//ToolRatingsPeer::deleteTool(6);
+//
+//ToolRatingsPeer::deleteTool(8);
 
 	 ?>
 		<h2>geWorkbench Tools <a href="/feed"><img src="/images/rss_logo.jpg" width="34" height="36" border="0" /></a></h2>
@@ -311,7 +311,8 @@ plot1 = $.jqplot('chartdiv', [line1], {
 		<?php $i = 0; 
 	 
 	foreach($comments as $comment):
-	?>	       	<?php  $total=ToolRatingsPeer::getUserToolRating($comment->getUsername(), $tool->getId()); ?>
+
+	?>	       	<?php  $total=ToolRatingsPeer::getUserToolRating($comment->getCreatorId(), $tool->getId()); ?>
        
 		     <li class="rated" style="padding:10px" id=<?php echo $total ?> >
   <div class="userrating">
@@ -324,7 +325,7 @@ plot1 = $.jqplot('chartdiv', [line1], {
 						
 		
 		</form></div><p class="entry" style="border-bottom: 1px solid black; padding: 5px; <?php if (++$i % 2==0) echo "background-color: #CCCCCC;"; ?>"> 
-        <br/><br/><?php echo $comment->getComment(); ?></br><br/><span class="meta" style="padding: 3px; font-style: italic; margin:0px;"> <span class="posted" id="<?php echo date("Y/M/D", strtotime($comment->getPostedOn())); ?>">Posted by <strong><?php echo trim($comment->getUsername());?></strong> on <?php echo date("F j, Y, g:i a", strtotime($comment->getPostedOn())); ?></span><?php if (trim($comment->getUsername())==$sf_user->getAttribute('username'))  echo "<a class='delete' href='/tool/delete?id=".$tool->getId()."&user=".$sf_user->getAttribute('username')."'>"."<img style='float:right' src='/images/delete_butt.png' /></a><a class='edit' href='/tool/edit'><img style='float:right' src='/images/edit_butt.png' /></a>"; ?><?php echo "<div id='editdialog' style='display:none; overflow:hidden'><form action='/tool/edit' method='post'>";echo "<h3>".$tool->getTool(); echo "</h3>	<label for='name' style='position:relative; top:15px'><strong>Rate this</strong>: </label><div id='rat' style='position: relative; left:59px ' >
+        <br/><br/><?php echo $comment->getComment(); ?></br><br/><span class="meta" style="padding: 3px; font-style: italic; margin:0px;"> <span class="posted" id="<?php echo date("Y/M/D", strtotime($comment->getCreatedAt())); ?>">Posted by <strong><?php echo trim(($comment->getRegistration() == null ? "Anonymous" : $comment->getRegistration()->getFullName()));?></strong> on <?php echo date("F j, Y, g:i a", strtotime($comment->getCreatedAt())); ?></span><?php if (trim($comment->getCreatorId())==$sf_user->getAttribute('username'))  echo "<a class='delete' href='/tool/delete?id=".$tool->getId()."&user=".$sf_user->getAttribute('username')."'>"."<img style='float:right' src='/images/delete_butt.png' /></a><a class='edit' href='/tool/edit'><img style='float:right' src='/images/edit_butt.png' /></a>"; ?><?php echo "<div id='editdialog' style='display:none; overflow:hidden'><form action='/tool/edit' method='post'>";echo "<h3>".$tool->getTool(); echo "</h3>	<label for='name' style='position:relative; top:15px'><strong>Rate this</strong>: </label><div id='rat' style='position: relative; left:59px ' >
 <select name='comment[rating]'>"; for($i=1; $i<6; $i++){ if  ($total==$i){
 											echo "<option value=".$i."  selected />";} else { echo"<option value=".$i."  />";
      } } echo "</select></div><br/><br/><br/><strong>Comment</strong>:<textarea  cols='40'  name='comment[comment]'>";echo $comment->getComment(); echo "</textarea><input type='hidden' name='comment[id]' value=".$tool->getId()."><input type='hidden'  name='comment[user]' value=".$sf_user->getAttribute('username')."><br/><input type='submit' value='Cancel' style='float:right' onClick='this.close()' /><input type='submit' value='Submit' style='float:right' />";?></form></span></p></li>
@@ -339,7 +340,7 @@ plot1 = $.jqplot('chartdiv', [line1], {
   
   	<div class="entry" style="padding: 10px; background-color: #f5f5f5; background-image:url(/images/bottom_fade.png); background-repeat:repeat-x; background-position:bottom; border:1px solid #cccccc">
 		<strong><span style="font-size:14px">Submit a Comment:</span></strong><br/><br/>
-        <form action="http://localhost:8080/tool/comment" method="post">
+        <form action="/tool/comment" method="post">
        	<div class="ctrlHolder"><label for="name" style="position:relative; top:15px"><strong>Rate this</strong>:</label> <span id="caption"></span>
 
 			<div id="rat" style="position: relative; left:57px " >

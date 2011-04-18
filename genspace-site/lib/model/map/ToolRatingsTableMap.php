@@ -3,7 +3,7 @@
 
 
 /**
- * This class defines the structure of the 'tool_ratings' table.
+ * This class defines the structure of the 'TOOLRATING' table.
  *
  *
  *
@@ -14,12 +14,12 @@
  *
  * @package    propel.generator.lib.model.map
  */
-class ToolRatingsTableMap extends TableMap {
+class ToolratingsTableMap extends TableMap {
 
 	/**
 	 * The (dot-path) name of this class
 	 */
-	const CLASS_NAME = 'lib.model.map.ToolRatingsTableMap';
+	const CLASS_NAME = 'lib.model.map.ToolratingsTableMap';
 
 	/**
 	 * Initialize the table attributes, columns and validators
@@ -31,16 +31,17 @@ class ToolRatingsTableMap extends TableMap {
 	public function initialize()
 	{
 	  // attributes
-		$this->setName('tool_ratings');
-		$this->setPhpName('ToolRatings');
-		$this->setClassname('ToolRatings');
+		$this->setName('TOOLRATING');
+		$this->setPhpName('Toolratings');
+		$this->setClassname('Toolratings');
 		$this->setPackage('lib.model');
 		$this->setUseIdGenerator(true);
 		// columns
-		$this->addPrimaryKey('PK', 'Pk', 'INTEGER', true, null, null);
-		$this->addColumn('ID', 'Id', 'INTEGER', true, null, null);
-		$this->addColumn('RATING', 'Rating', 'INTEGER', true, null, null);
-		$this->addColumn('USERNAME', 'Username', 'CHAR', true, 200, null);
+		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, 11, null);
+		$this->addColumn('CREATEDAT', 'Createdat', 'TIMESTAMP', false, null, null);
+		$this->addColumn('RATING', 'Rating', 'INTEGER', false, 11, null);
+		$this->addColumn('TOOL_ID', 'ToolId', 'INTEGER', false, 11, null);
+		$this->addForeignKey('CREATOR_ID', 'CreatorId', 'INTEGER', 'registration', 'ID', false, 11, null);
 		// validators
 	} // initialize()
 
@@ -49,6 +50,7 @@ class ToolRatingsTableMap extends TableMap {
 	 */
 	public function buildRelations()
 	{
+    $this->addRelation('Registration', 'Registration', RelationMap::MANY_TO_ONE, array('CREATOR_ID' => 'ID', ), null, null);
 	} // buildRelations()
 
-} // ToolRatingsTableMap
+} // ToolratingsTableMap

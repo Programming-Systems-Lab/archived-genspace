@@ -3,7 +3,7 @@
 
 
 /**
- * This class defines the structure of the 'workflow_ratings' table.
+ * This class defines the structure of the 'WORKFLOWRATING' table.
  *
  *
  *
@@ -14,12 +14,12 @@
  *
  * @package    propel.generator.lib.model.map
  */
-class WorkflowRatingsTableMap extends TableMap {
+class WorkflowratingsTableMap extends TableMap {
 
 	/**
 	 * The (dot-path) name of this class
 	 */
-	const CLASS_NAME = 'lib.model.map.WorkflowRatingsTableMap';
+	const CLASS_NAME = 'lib.model.map.WorkflowratingsTableMap';
 
 	/**
 	 * Initialize the table attributes, columns and validators
@@ -31,16 +31,17 @@ class WorkflowRatingsTableMap extends TableMap {
 	public function initialize()
 	{
 	  // attributes
-		$this->setName('workflow_ratings');
-		$this->setPhpName('WorkflowRatings');
-		$this->setClassname('WorkflowRatings');
+		$this->setName('WORKFLOWRATING');
+		$this->setPhpName('Workflowratings');
+		$this->setClassname('Workflowratings');
 		$this->setPackage('lib.model');
 		$this->setUseIdGenerator(true);
 		// columns
-		$this->addPrimaryKey('PK', 'Pk', 'INTEGER', true, null, null);
-		$this->addColumn('ID', 'Id', 'INTEGER', true, null, null);
-		$this->addColumn('USERNAME', 'Username', 'VARCHAR', true, 100, null);
-		$this->addColumn('RATING', 'Rating', 'INTEGER', true, null, null);
+		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, 11, null);
+		$this->addColumn('CREATEDAT', 'Createdat', 'TIMESTAMP', false, null, null);
+		$this->addColumn('RATING', 'Rating', 'INTEGER', false, 11, null);
+		$this->addColumn('WORKFLOW_ID', 'WorkflowId', 'INTEGER', false, 11, null);
+		$this->addForeignKey('CREATOR_ID', 'CreatorId', 'INTEGER', 'registration', 'ID', false, 11, null);
 		// validators
 	} // initialize()
 
@@ -49,6 +50,7 @@ class WorkflowRatingsTableMap extends TableMap {
 	 */
 	public function buildRelations()
 	{
+    $this->addRelation('Registration', 'Registration', RelationMap::MANY_TO_ONE, array('CREATOR_ID' => 'ID', ), null, null);
 	} // buildRelations()
 
-} // WorkflowRatingsTableMap
+} // WorkflowratingsTableMap

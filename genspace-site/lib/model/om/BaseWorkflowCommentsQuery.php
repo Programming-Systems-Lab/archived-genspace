@@ -2,72 +2,76 @@
 
 
 /**
- * Base class that represents a query for the 'workflow_comments' table.
+ * Base class that represents a query for the 'WORKFLOWCOMMENT' table.
  *
  * 
  *
- * @method     WorkflowCommentsQuery orderByPk($order = Criteria::ASC) Order by the pk column
- * @method     WorkflowCommentsQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     WorkflowCommentsQuery orderByComment($order = Criteria::ASC) Order by the comment column
- * @method     WorkflowCommentsQuery orderByUsername($order = Criteria::ASC) Order by the username column
- * @method     WorkflowCommentsQuery orderByPostedOn($order = Criteria::ASC) Order by the posted_on column
+ * @method     WorkflowcommentsQuery orderById($order = Criteria::ASC) Order by the ID column
+ * @method     WorkflowcommentsQuery orderByCreatedat($order = Criteria::ASC) Order by the CREATEDAT column
+ * @method     WorkflowcommentsQuery orderByComment($order = Criteria::ASC) Order by the COMMENT column
+ * @method     WorkflowcommentsQuery orderByWorkflowId($order = Criteria::ASC) Order by the WORKFLOW_ID column
+ * @method     WorkflowcommentsQuery orderByCreatorId($order = Criteria::ASC) Order by the CREATOR_ID column
  *
- * @method     WorkflowCommentsQuery groupByPk() Group by the pk column
- * @method     WorkflowCommentsQuery groupById() Group by the id column
- * @method     WorkflowCommentsQuery groupByComment() Group by the comment column
- * @method     WorkflowCommentsQuery groupByUsername() Group by the username column
- * @method     WorkflowCommentsQuery groupByPostedOn() Group by the posted_on column
+ * @method     WorkflowcommentsQuery groupById() Group by the ID column
+ * @method     WorkflowcommentsQuery groupByCreatedat() Group by the CREATEDAT column
+ * @method     WorkflowcommentsQuery groupByComment() Group by the COMMENT column
+ * @method     WorkflowcommentsQuery groupByWorkflowId() Group by the WORKFLOW_ID column
+ * @method     WorkflowcommentsQuery groupByCreatorId() Group by the CREATOR_ID column
  *
- * @method     WorkflowCommentsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method     WorkflowCommentsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method     WorkflowCommentsQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method     WorkflowcommentsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method     WorkflowcommentsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method     WorkflowcommentsQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     WorkflowComments findOne(PropelPDO $con = null) Return the first WorkflowComments matching the query
- * @method     WorkflowComments findOneOrCreate(PropelPDO $con = null) Return the first WorkflowComments matching the query, or a new WorkflowComments object populated from the query conditions when no match is found
+ * @method     WorkflowcommentsQuery leftJoinRegistration($relationAlias = null) Adds a LEFT JOIN clause to the query using the Registration relation
+ * @method     WorkflowcommentsQuery rightJoinRegistration($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Registration relation
+ * @method     WorkflowcommentsQuery innerJoinRegistration($relationAlias = null) Adds a INNER JOIN clause to the query using the Registration relation
  *
- * @method     WorkflowComments findOneByPk(int $pk) Return the first WorkflowComments filtered by the pk column
- * @method     WorkflowComments findOneById(int $id) Return the first WorkflowComments filtered by the id column
- * @method     WorkflowComments findOneByComment(string $comment) Return the first WorkflowComments filtered by the comment column
- * @method     WorkflowComments findOneByUsername(string $username) Return the first WorkflowComments filtered by the username column
- * @method     WorkflowComments findOneByPostedOn(string $posted_on) Return the first WorkflowComments filtered by the posted_on column
+ * @method     Workflowcomments findOne(PropelPDO $con = null) Return the first Workflowcomments matching the query
+ * @method     Workflowcomments findOneOrCreate(PropelPDO $con = null) Return the first Workflowcomments matching the query, or a new Workflowcomments object populated from the query conditions when no match is found
  *
- * @method     array findByPk(int $pk) Return WorkflowComments objects filtered by the pk column
- * @method     array findById(int $id) Return WorkflowComments objects filtered by the id column
- * @method     array findByComment(string $comment) Return WorkflowComments objects filtered by the comment column
- * @method     array findByUsername(string $username) Return WorkflowComments objects filtered by the username column
- * @method     array findByPostedOn(string $posted_on) Return WorkflowComments objects filtered by the posted_on column
+ * @method     Workflowcomments findOneById(int $ID) Return the first Workflowcomments filtered by the ID column
+ * @method     Workflowcomments findOneByCreatedat(string $CREATEDAT) Return the first Workflowcomments filtered by the CREATEDAT column
+ * @method     Workflowcomments findOneByComment(string $COMMENT) Return the first Workflowcomments filtered by the COMMENT column
+ * @method     Workflowcomments findOneByWorkflowId(int $WORKFLOW_ID) Return the first Workflowcomments filtered by the WORKFLOW_ID column
+ * @method     Workflowcomments findOneByCreatorId(int $CREATOR_ID) Return the first Workflowcomments filtered by the CREATOR_ID column
+ *
+ * @method     array findById(int $ID) Return Workflowcomments objects filtered by the ID column
+ * @method     array findByCreatedat(string $CREATEDAT) Return Workflowcomments objects filtered by the CREATEDAT column
+ * @method     array findByComment(string $COMMENT) Return Workflowcomments objects filtered by the COMMENT column
+ * @method     array findByWorkflowId(int $WORKFLOW_ID) Return Workflowcomments objects filtered by the WORKFLOW_ID column
+ * @method     array findByCreatorId(int $CREATOR_ID) Return Workflowcomments objects filtered by the CREATOR_ID column
  *
  * @package    propel.generator.lib.model.om
  */
-abstract class BaseWorkflowCommentsQuery extends ModelCriteria
+abstract class BaseWorkflowcommentsQuery extends ModelCriteria
 {
 
 	/**
-	 * Initializes internal state of BaseWorkflowCommentsQuery object.
+	 * Initializes internal state of BaseWorkflowcommentsQuery object.
 	 *
 	 * @param     string $dbName The dabase name
 	 * @param     string $modelName The phpName of a model, e.g. 'Book'
 	 * @param     string $modelAlias The alias for the model in this query, e.g. 'b'
 	 */
-	public function __construct($dbName = 'propel', $modelName = 'WorkflowComments', $modelAlias = null)
+	public function __construct($dbName = 'propel', $modelName = 'Workflowcomments', $modelAlias = null)
 	{
 		parent::__construct($dbName, $modelName, $modelAlias);
 	}
 
 	/**
-	 * Returns a new WorkflowCommentsQuery object.
+	 * Returns a new WorkflowcommentsQuery object.
 	 *
 	 * @param     string $modelAlias The alias of a model in the query
 	 * @param     Criteria $criteria Optional Criteria to build the query from
 	 *
-	 * @return    WorkflowCommentsQuery
+	 * @return    WorkflowcommentsQuery
 	 */
 	public static function create($modelAlias = null, $criteria = null)
 	{
-		if ($criteria instanceof WorkflowCommentsQuery) {
+		if ($criteria instanceof WorkflowcommentsQuery) {
 			return $criteria;
 		}
-		$query = new WorkflowCommentsQuery();
+		$query = new WorkflowcommentsQuery();
 		if (null !== $modelAlias) {
 			$query->setModelAlias($modelAlias);
 		}
@@ -86,11 +90,11 @@ abstract class BaseWorkflowCommentsQuery extends ModelCriteria
 	 * @param     mixed $key Primary key to use for the query
 	 * @param     PropelPDO $con an optional connection object
 	 *
-	 * @return    WorkflowComments|array|mixed the result, formatted by the current formatter
+	 * @return    Workflowcomments|array|mixed the result, formatted by the current formatter
 	 */
 	public function findPk($key, $con = null)
 	{
-		if ((null !== ($obj = WorkflowCommentsPeer::getInstanceFromPool((string) $key))) && $this->getFormatter()->isObjectFormatter()) {
+		if ((null !== ($obj = WorkflowcommentsPeer::getInstanceFromPool((string) $key))) && $this->getFormatter()->isObjectFormatter()) {
 			// the object is alredy in the instance pool
 			return $obj;
 		} else {
@@ -126,11 +130,11 @@ abstract class BaseWorkflowCommentsQuery extends ModelCriteria
 	 *
 	 * @param     mixed $key Primary key to use for the query
 	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
 	 */
 	public function filterByPrimaryKey($key)
 	{
-		return $this->addUsingAlias(WorkflowCommentsPeer::PK, $key, Criteria::EQUAL);
+		return $this->addUsingAlias(WorkflowcommentsPeer::ID, $key, Criteria::EQUAL);
 	}
 
 	/**
@@ -138,49 +142,49 @@ abstract class BaseWorkflowCommentsQuery extends ModelCriteria
 	 *
 	 * @param     array $keys The list of primary key to use for the query
 	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
 	 */
 	public function filterByPrimaryKeys($keys)
 	{
-		return $this->addUsingAlias(WorkflowCommentsPeer::PK, $keys, Criteria::IN);
+		return $this->addUsingAlias(WorkflowcommentsPeer::ID, $keys, Criteria::IN);
 	}
 
 	/**
-	 * Filter the query on the pk column
-	 * 
-	 * @param     int|array $pk The value to use as filter.
-	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
-	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
-	 */
-	public function filterByPk($pk = null, $comparison = null)
-	{
-		if (is_array($pk) && null === $comparison) {
-			$comparison = Criteria::IN;
-		}
-		return $this->addUsingAlias(WorkflowCommentsPeer::PK, $pk, $comparison);
-	}
-
-	/**
-	 * Filter the query on the id column
+	 * Filter the query on the ID column
 	 * 
 	 * @param     int|array $id The value to use as filter.
 	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
 	 */
 	public function filterById($id = null, $comparison = null)
 	{
-		if (is_array($id)) {
+		if (is_array($id) && null === $comparison) {
+			$comparison = Criteria::IN;
+		}
+		return $this->addUsingAlias(WorkflowcommentsPeer::ID, $id, $comparison);
+	}
+
+	/**
+	 * Filter the query on the CREATEDAT column
+	 * 
+	 * @param     string|array $createdat The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
+	 */
+	public function filterByCreatedat($createdat = null, $comparison = null)
+	{
+		if (is_array($createdat)) {
 			$useMinMax = false;
-			if (isset($id['min'])) {
-				$this->addUsingAlias(WorkflowCommentsPeer::ID, $id['min'], Criteria::GREATER_EQUAL);
+			if (isset($createdat['min'])) {
+				$this->addUsingAlias(WorkflowcommentsPeer::CREATEDAT, $createdat['min'], Criteria::GREATER_EQUAL);
 				$useMinMax = true;
 			}
-			if (isset($id['max'])) {
-				$this->addUsingAlias(WorkflowCommentsPeer::ID, $id['max'], Criteria::LESS_EQUAL);
+			if (isset($createdat['max'])) {
+				$this->addUsingAlias(WorkflowcommentsPeer::CREATEDAT, $createdat['max'], Criteria::LESS_EQUAL);
 				$useMinMax = true;
 			}
 			if ($useMinMax) {
@@ -190,17 +194,17 @@ abstract class BaseWorkflowCommentsQuery extends ModelCriteria
 				$comparison = Criteria::IN;
 			}
 		}
-		return $this->addUsingAlias(WorkflowCommentsPeer::ID, $id, $comparison);
+		return $this->addUsingAlias(WorkflowcommentsPeer::CREATEDAT, $createdat, $comparison);
 	}
 
 	/**
-	 * Filter the query on the comment column
+	 * Filter the query on the COMMENT column
 	 * 
 	 * @param     string $comment The value to use as filter.
 	 *            Accepts wildcards (* and % trigger a LIKE)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
 	 */
 	public function filterByComment($comment = null, $comparison = null)
 	{
@@ -212,50 +216,28 @@ abstract class BaseWorkflowCommentsQuery extends ModelCriteria
 				$comparison = Criteria::LIKE;
 			}
 		}
-		return $this->addUsingAlias(WorkflowCommentsPeer::COMMENT, $comment, $comparison);
+		return $this->addUsingAlias(WorkflowcommentsPeer::COMMENT, $comment, $comparison);
 	}
 
 	/**
-	 * Filter the query on the username column
+	 * Filter the query on the WORKFLOW_ID column
 	 * 
-	 * @param     string $username The value to use as filter.
-	 *            Accepts wildcards (* and % trigger a LIKE)
-	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
-	 */
-	public function filterByUsername($username = null, $comparison = null)
-	{
-		if (null === $comparison) {
-			if (is_array($username)) {
-				$comparison = Criteria::IN;
-			} elseif (preg_match('/[\%\*]/', $username)) {
-				$username = str_replace('*', '%', $username);
-				$comparison = Criteria::LIKE;
-			}
-		}
-		return $this->addUsingAlias(WorkflowCommentsPeer::USERNAME, $username, $comparison);
-	}
-
-	/**
-	 * Filter the query on the posted_on column
-	 * 
-	 * @param     string|array $postedOn The value to use as filter.
+	 * @param     int|array $workflowId The value to use as filter.
 	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
 	 */
-	public function filterByPostedOn($postedOn = null, $comparison = null)
+	public function filterByWorkflowId($workflowId = null, $comparison = null)
 	{
-		if (is_array($postedOn)) {
+		if (is_array($workflowId)) {
 			$useMinMax = false;
-			if (isset($postedOn['min'])) {
-				$this->addUsingAlias(WorkflowCommentsPeer::POSTED_ON, $postedOn['min'], Criteria::GREATER_EQUAL);
+			if (isset($workflowId['min'])) {
+				$this->addUsingAlias(WorkflowcommentsPeer::WORKFLOW_ID, $workflowId['min'], Criteria::GREATER_EQUAL);
 				$useMinMax = true;
 			}
-			if (isset($postedOn['max'])) {
-				$this->addUsingAlias(WorkflowCommentsPeer::POSTED_ON, $postedOn['max'], Criteria::LESS_EQUAL);
+			if (isset($workflowId['max'])) {
+				$this->addUsingAlias(WorkflowcommentsPeer::WORKFLOW_ID, $workflowId['max'], Criteria::LESS_EQUAL);
 				$useMinMax = true;
 			}
 			if ($useMinMax) {
@@ -265,23 +247,118 @@ abstract class BaseWorkflowCommentsQuery extends ModelCriteria
 				$comparison = Criteria::IN;
 			}
 		}
-		return $this->addUsingAlias(WorkflowCommentsPeer::POSTED_ON, $postedOn, $comparison);
+		return $this->addUsingAlias(WorkflowcommentsPeer::WORKFLOW_ID, $workflowId, $comparison);
+	}
+
+	/**
+	 * Filter the query on the CREATOR_ID column
+	 * 
+	 * @param     int|array $creatorId The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
+	 */
+	public function filterByCreatorId($creatorId = null, $comparison = null)
+	{
+		if (is_array($creatorId)) {
+			$useMinMax = false;
+			if (isset($creatorId['min'])) {
+				$this->addUsingAlias(WorkflowcommentsPeer::CREATOR_ID, $creatorId['min'], Criteria::GREATER_EQUAL);
+				$useMinMax = true;
+			}
+			if (isset($creatorId['max'])) {
+				$this->addUsingAlias(WorkflowcommentsPeer::CREATOR_ID, $creatorId['max'], Criteria::LESS_EQUAL);
+				$useMinMax = true;
+			}
+			if ($useMinMax) {
+				return $this;
+			}
+			if (null === $comparison) {
+				$comparison = Criteria::IN;
+			}
+		}
+		return $this->addUsingAlias(WorkflowcommentsPeer::CREATOR_ID, $creatorId, $comparison);
+	}
+
+	/**
+	 * Filter the query by a related Registration object
+	 *
+	 * @param     Registration $registration  the related object to use as filter
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
+	 */
+	public function filterByRegistration($registration, $comparison = null)
+	{
+		return $this
+			->addUsingAlias(WorkflowcommentsPeer::CREATOR_ID, $registration->getId(), $comparison);
+	}
+
+	/**
+	 * Adds a JOIN clause to the query using the Registration relation
+	 * 
+	 * @param     string $relationAlias optional alias for the relation
+	 * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+	 *
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
+	 */
+	public function joinRegistration($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+	{
+		$tableMap = $this->getTableMap();
+		$relationMap = $tableMap->getRelation('Registration');
+		
+		// create a ModelJoin object for this join
+		$join = new ModelJoin();
+		$join->setJoinType($joinType);
+		$join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+		if ($previousJoin = $this->getPreviousJoin()) {
+			$join->setPreviousJoin($previousJoin);
+		}
+		
+		// add the ModelJoin to the current object
+		if($relationAlias) {
+			$this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+			$this->addJoinObject($join, $relationAlias);
+		} else {
+			$this->addJoinObject($join, 'Registration');
+		}
+		
+		return $this;
+	}
+
+	/**
+	 * Use the Registration relation Registration object
+	 *
+	 * @see       useQuery()
+	 * 
+	 * @param     string $relationAlias optional alias for the relation,
+	 *                                   to be used as main alias in the secondary query
+	 * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+	 *
+	 * @return    RegistrationQuery A secondary query class using the current class as primary query
+	 */
+	public function useRegistrationQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+	{
+		return $this
+			->joinRegistration($relationAlias, $joinType)
+			->useQuery($relationAlias ? $relationAlias : 'Registration', 'RegistrationQuery');
 	}
 
 	/**
 	 * Exclude object from result
 	 *
-	 * @param     WorkflowComments $workflowComments Object to remove from the list of results
+	 * @param     Workflowcomments $workflowcomments Object to remove from the list of results
 	 *
-	 * @return    WorkflowCommentsQuery The current query, for fluid interface
+	 * @return    WorkflowcommentsQuery The current query, for fluid interface
 	 */
-	public function prune($workflowComments = null)
+	public function prune($workflowcomments = null)
 	{
-		if ($workflowComments) {
-			$this->addUsingAlias(WorkflowCommentsPeer::PK, $workflowComments->getPk(), Criteria::NOT_EQUAL);
+		if ($workflowcomments) {
+			$this->addUsingAlias(WorkflowcommentsPeer::ID, $workflowcomments->getId(), Criteria::NOT_EQUAL);
 	  }
 	  
 		return $this;
 	}
 
-} // BaseWorkflowCommentsQuery
+} // BaseWorkflowcommentsQuery

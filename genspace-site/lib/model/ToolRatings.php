@@ -1,10 +1,9 @@
 <?php
 
-require 'lib/model/om/BaseToolRatings.php';
 
 
 /**
- * Skeleton subclass for representing a row from the 'tool_ratings' table.
+ * Skeleton subclass for representing a row from the 'TOOLRATING' table.
  *
  * 
  *
@@ -12,8 +11,8 @@ require 'lib/model/om/BaseToolRatings.php';
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    lib.model
+ * @package    propel.generator.lib.model
  */
-class ToolRatings extends BaseToolRatings {
+class Toolratings extends BaseToolratings {
 
-} // ToolRatings
+} // Toolratings

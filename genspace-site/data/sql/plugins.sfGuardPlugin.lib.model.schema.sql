@@ -6,7 +6,7 @@
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_group')
 BEGIN
-	 DECLARE @reftable_23 nvarchar(60), @constraintname_23 nvarchar(60)
+	 DECLARE @reftable_31 nvarchar(60), @constraintname_31 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -18,11 +18,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_group'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_23, @constraintname_23
+	 FETCH NEXT from refcursor into @reftable_31, @constraintname_31
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_23+' drop constraint '+@constraintname_23)
-	   FETCH NEXT from refcursor into @reftable_23, @constraintname_23
+	   exec ('alter table '+@reftable_31+' drop constraint '+@constraintname_31)
+	   FETCH NEXT from refcursor into @reftable_31, @constraintname_31
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor
@@ -46,7 +46,7 @@ CREATE TABLE [sf_guard_group]
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_permission')
 BEGIN
-	 DECLARE @reftable_24 nvarchar(60), @constraintname_24 nvarchar(60)
+	 DECLARE @reftable_32 nvarchar(60), @constraintname_32 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -58,11 +58,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_permission'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_24, @constraintname_24
+	 FETCH NEXT from refcursor into @reftable_32, @constraintname_32
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_24+' drop constraint '+@constraintname_24)
-	   FETCH NEXT from refcursor into @reftable_24, @constraintname_24
+	   exec ('alter table '+@reftable_32+' drop constraint '+@constraintname_32)
+	   FETCH NEXT from refcursor into @reftable_32, @constraintname_32
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor
@@ -92,7 +92,7 @@ IF EXISTS (SELECT 1 FROM sysobjects WHERE type ='RI' AND name='sf_guard_group_pe
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_group_permission')
 BEGIN
-	 DECLARE @reftable_25 nvarchar(60), @constraintname_25 nvarchar(60)
+	 DECLARE @reftable_33 nvarchar(60), @constraintname_33 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -104,11 +104,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_group_permission'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_25, @constraintname_25
+	 FETCH NEXT from refcursor into @reftable_33, @constraintname_33
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_25+' drop constraint '+@constraintname_25)
-	   FETCH NEXT from refcursor into @reftable_25, @constraintname_25
+	   exec ('alter table '+@reftable_33+' drop constraint '+@constraintname_33)
+	   FETCH NEXT from refcursor into @reftable_33, @constraintname_33
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor
@@ -140,7 +140,7 @@ END
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_user')
 BEGIN
-	 DECLARE @reftable_26 nvarchar(60), @constraintname_26 nvarchar(60)
+	 DECLARE @reftable_34 nvarchar(60), @constraintname_34 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -152,11 +152,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_user'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_26, @constraintname_26
+	 FETCH NEXT from refcursor into @reftable_34, @constraintname_34
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_26+' drop constraint '+@constraintname_26)
-	   FETCH NEXT from refcursor into @reftable_26, @constraintname_26
+	   exec ('alter table '+@reftable_34+' drop constraint '+@constraintname_34)
+	   FETCH NEXT from refcursor into @reftable_34, @constraintname_34
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor
@@ -192,7 +192,7 @@ IF EXISTS (SELECT 1 FROM sysobjects WHERE type ='RI' AND name='sf_guard_user_per
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_user_permission')
 BEGIN
-	 DECLARE @reftable_27 nvarchar(60), @constraintname_27 nvarchar(60)
+	 DECLARE @reftable_35 nvarchar(60), @constraintname_35 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -204,11 +204,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_user_permission'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_27, @constraintname_27
+	 FETCH NEXT from refcursor into @reftable_35, @constraintname_35
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_27+' drop constraint '+@constraintname_27)
-	   FETCH NEXT from refcursor into @reftable_27, @constraintname_27
+	   exec ('alter table '+@reftable_35+' drop constraint '+@constraintname_35)
+	   FETCH NEXT from refcursor into @reftable_35, @constraintname_35
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor
@@ -246,7 +246,7 @@ IF EXISTS (SELECT 1 FROM sysobjects WHERE type ='RI' AND name='sf_guard_user_gro
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_user_group')
 BEGIN
-	 DECLARE @reftable_28 nvarchar(60), @constraintname_28 nvarchar(60)
+	 DECLARE @reftable_36 nvarchar(60), @constraintname_36 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -258,11 +258,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_user_group'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_28, @constraintname_28
+	 FETCH NEXT from refcursor into @reftable_36, @constraintname_36
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_28+' drop constraint '+@constraintname_28)
-	   FETCH NEXT from refcursor into @reftable_28, @constraintname_28
+	   exec ('alter table '+@reftable_36+' drop constraint '+@constraintname_36)
+	   FETCH NEXT from refcursor into @reftable_36, @constraintname_36
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor
@@ -297,7 +297,7 @@ IF EXISTS (SELECT 1 FROM sysobjects WHERE type ='RI' AND name='sf_guard_remember
 
 IF EXISTS (SELECT 1 FROM sysobjects WHERE type = 'U' AND name = 'sf_guard_remember_key')
 BEGIN
-	 DECLARE @reftable_29 nvarchar(60), @constraintname_29 nvarchar(60)
+	 DECLARE @reftable_37 nvarchar(60), @constraintname_37 nvarchar(60)
 	 DECLARE refcursor CURSOR FOR
 	 select reftables.name tablename, cons.name constraintname
 	  from sysobjects tables,
@@ -309,11 +309,11 @@ BEGIN
 		 and reftables.id = ref.fkeyid
 		 and tables.name = 'sf_guard_remember_key'
 	 OPEN refcursor
-	 FETCH NEXT from refcursor into @reftable_29, @constraintname_29
+	 FETCH NEXT from refcursor into @reftable_37, @constraintname_37
 	 while @@FETCH_STATUS = 0
 	 BEGIN
-	   exec ('alter table '+@reftable_29+' drop constraint '+@constraintname_29)
-	   FETCH NEXT from refcursor into @reftable_29, @constraintname_29
+	   exec ('alter table '+@reftable_37+' drop constraint '+@constraintname_37)
+	   FETCH NEXT from refcursor into @reftable_37, @constraintname_37
 	 END
 	 CLOSE refcursor
 	 DEALLOCATE refcursor

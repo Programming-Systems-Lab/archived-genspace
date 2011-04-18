@@ -1,10 +1,9 @@
 <?php
 
-require 'lib/model/om/BaseToolComments.php';
 
 
 /**
- * Skeleton subclass for representing a row from the 'tool_comments' table.
+ * Skeleton subclass for representing a row from the 'TOOLCOMMENT' table.
  *
  * 
  *
@@ -12,8 +11,8 @@ require 'lib/model/om/BaseToolComments.php';
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    lib.model
+ * @package    propel.generator.lib.model
  */
-class ToolComments extends BaseToolComments {
+class Toolcomments extends BaseToolcomments {
 
-} // ToolComments
+} // Toolcomments

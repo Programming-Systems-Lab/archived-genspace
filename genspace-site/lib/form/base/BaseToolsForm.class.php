@@ -16,19 +16,19 @@ abstract class BaseToolsForm extends BaseFormPropel
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'tool'        => new sfWidgetFormInputText(),
-      'description' => new sfWidgetFormTextarea(),
+      'description' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'          => new sfValidatorPropelChoice(array('model' => 'Tools', 'column' => 'id', 'required' => false)),
-      'tool'        => new sfValidatorString(array('max_length' => 100)),
-      'description' => new sfValidatorString(array('max_length' => 2147483647, 'required' => false)),
+      'tool'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'description' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
 
-Warning: call_user_func(ToolsPeer::getUniqueColumnNames): First argument is expected to be a valid callback in C:\dev\sfproject\plugins\sfPropel15Plugin\lib\generator\sfPropelFormGenerator.class.php on line 485
+Warning: call_user_func() expects parameter 1 to be a valid callback, class 'ToolsPeer' does not have a method 'getUniqueColumnNames' in /Users/jon/Documents/PSL/genspace/genspace-site/plugins/sfPropel15Plugin/lib/generator/sfPropelFormGenerator.class.php on line 485
 
-Warning: Invalid argument supplied for foreach() in C:\dev\sfproject\plugins\sfPropel15Plugin\lib\generator\sfPropelFormGenerator.class.php on line 485
+Warning: Invalid argument supplied for foreach() in /Users/jon/Documents/PSL/genspace/genspace-site/plugins/sfPropel15Plugin/lib/generator/sfPropelFormGenerator.class.php on line 485
     $this->widgetSchema->setNameFormat('tools[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

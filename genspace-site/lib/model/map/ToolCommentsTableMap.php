@@ -3,7 +3,7 @@
 
 
 /**
- * This class defines the structure of the 'tool_comments' table.
+ * This class defines the structure of the 'TOOLCOMMENT' table.
  *
  *
  *
@@ -14,12 +14,12 @@
  *
  * @package    propel.generator.lib.model.map
  */
-class ToolCommentsTableMap extends TableMap {
+class ToolcommentsTableMap extends TableMap {
 
 	/**
 	 * The (dot-path) name of this class
 	 */
-	const CLASS_NAME = 'lib.model.map.ToolCommentsTableMap';
+	const CLASS_NAME = 'lib.model.map.ToolcommentsTableMap';
 
 	/**
 	 * Initialize the table attributes, columns and validators
@@ -31,17 +31,17 @@ class ToolCommentsTableMap extends TableMap {
 	public function initialize()
 	{
 	  // attributes
-		$this->setName('tool_comments');
-		$this->setPhpName('ToolComments');
-		$this->setClassname('ToolComments');
+		$this->setName('TOOLCOMMENT');
+		$this->setPhpName('Toolcomments');
+		$this->setClassname('Toolcomments');
 		$this->setPackage('lib.model');
 		$this->setUseIdGenerator(true);
 		// columns
-		$this->addPrimaryKey('PK', 'Pk', 'INTEGER', true, null, null);
-		$this->addColumn('ID', 'Id', 'INTEGER', true, null, null);
-		$this->addColumn('COMMENT', 'Comment', 'LONGVARCHAR', true, 2147483647, null);
-		$this->addColumn('USERNAME', 'Username', 'CHAR', true, 200, null);
-		$this->addColumn('POSTED_ON', 'PostedOn', 'TIMESTAMP', true, null, null);
+		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, 11, null);
+		$this->addColumn('CREATEDAT', 'Createdat', 'TIMESTAMP', false, null, null);
+		$this->addColumn('COMMENT', 'Comment', 'VARCHAR', false, 255, null);
+		$this->addForeignKey('CREATOR_ID', 'CreatorId', 'INTEGER', 'registration', 'ID', false, 11, null);
+		$this->addColumn('TOOL_ID', 'ToolId', 'INTEGER', false, 11, null);
 		// validators
 	} // initialize()
 
@@ -50,6 +50,7 @@ class ToolCommentsTableMap extends TableMap {
 	 */
 	public function buildRelations()
 	{
+    $this->addRelation('Registration', 'Registration', RelationMap::MANY_TO_ONE, array('CREATOR_ID' => 'ID', ), null, null);
 	} // buildRelations()
 
-} // ToolCommentsTableMap
+} // ToolcommentsTableMap

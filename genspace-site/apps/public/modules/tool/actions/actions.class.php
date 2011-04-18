@@ -19,7 +19,7 @@ class toolActions extends sfActions
   
   public function executeIndex(sfwebrequest  $request)
     {
-	   $this->form= new ToolCommentsForm();
+	   $this->form= new ToolcommentForm();
 	    	$this->toolId = $this->getRequestParameter('id');  	
 			$this->user = $this->getRequestParameter('user');  
    if($this->toolId==NULL){
@@ -88,16 +88,19 @@ if($this->toolId!=NULL){
 		  	$this->numcomments = ToolRatingsPeer::getUserComment($this->getUser()->getAttribute('username'), $this->toolId);
 			 	$this->numratings = ToolRatingsPeer::getUserRating($this->getUser()->getAttribute('username'), $this->toolId);
 		if($numcomments==0&&$numratings==0){
+
+
   		$comment = new ToolComments();
-	  		$comment->setUsername($this->getUser()->getAttribute('username'));
+	  		$comment->setCreatorId($this->getUser()->getAttribute('username'));
 	  		$comment->setComment($comm);
-	  		$comment->setId($this->toolId);
-			$comment->setPostedOn(time());
+	  		$comment->setToolId($this->toolId);
+			$comment->setCreatedAt(time());
 	  		$comment->save();
+
 			$rating = new ToolRatings();
-	  		$rating->setUsername($this->getUser()->getAttribute('username'));
+	  		$rating->setCreatorId($this->getUser()->getAttribute('username'));
 	  		$rating->setRating($rat);
-	  		$rating->setId($this->toolId);
+	  		$rating->setToolId($this->toolId);
 	  		$rating->save();
 			$feed = new sfAtom1Feed();
 	
@@ -153,7 +156,7 @@ $params = array(
 	        $result = RegistrationPeer::doSelect($c);
   		
 if ($result){
-		$this->getUser()->setAttribute('username', $username);
+		$this->getUser()->setAttribute('username', $result[0]->getId());
  	$this->getUser()->setAttribute('name', $result[0]->getFirstName() . " " . $result[0]->getLastName());
   	$this->getUser()->setAuthenticated(true);
 		$this->getUser()->setFlash('msg', 'Login successful!');

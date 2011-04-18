@@ -38,8 +38,8 @@ class ToolsTableMap extends TableMap {
 		$this->setUseIdGenerator(true);
 		// columns
 		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-		$this->addColumn('TOOL', 'Tool', 'VARCHAR', true, 100, null);
-		$this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, 2147483647, null);
+		$this->addColumn('TOOL', 'Tool', 'VARCHAR', false, 255, null);
+		$this->addColumn('DESCRIPTION', 'Description', 'VARCHAR', false, 255, null);
 		// validators
 	} // initialize()
 

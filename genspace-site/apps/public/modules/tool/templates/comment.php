@@ -3,7 +3,7 @@
 	<?php if ($sf_user->isAuthenticated()): ?>
 	<div class="entry" style="padding: 10px; background-color: #ffffff">
 		<strong><span style="font-size:14px">Submit a Comment:</span></strong><br/><br/>
-        <form action="http://localhost:8080/tool/comment" method="post">
+        <form action="/tool/comment" method="post">
        	<div class="ctrlHolder"><label for="name" style="position:relative; top:15px"><strong>Rate this</strong>:</label> <span id="caption"></span>
 
 			<div id="rat" style="position: relative; left:57px " >
