@@ -11,15 +11,17 @@ import org.geworkbench.engine.config.MenuListener;
  * @author sheths
  */
 public class GenSpaceMenu implements MenuListener {
-	public static ClassLoader loader;
+	public static GenSpace genspace;
 	@Override
 	public ActionListener getActionListener(String var) {
 		if (var.equalsIgnoreCase("Tools.genSpace")) {
 			return new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					@SuppressWarnings("unused")
-					GenSpace genspace = new GenSpace();
+					if(genspace == null)
+						genspace = new GenSpace();
+					else
+						genspace.jframe.toFront();
 				}
 			};
 		}
