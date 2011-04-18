@@ -72,10 +72,13 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	@Override
 	public void addFriend(int o) {
 		User me = getUser();
+		getEntityManager().refresh(me);
+		
 		if(me.getId() == o)
 			return;
 		User other = getUser(o);
-
+		getEntityManager().refresh(other);
+		
 		Friend f = other.isFriendsWith(me);
 		boolean mutual = false;
 		if(f != null)
@@ -150,7 +153,11 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		User me = getUser();
 		List<User> ret = new ArrayList<User>();
 		for(Friend f : me.getFriends())
-			ret.add(f.getRightUser().loadVisibility(getUser()));
+		{
+			User r = f.getRightUser();
+			getEntityManager().refresh(r);
+			ret.add(r.loadVisibility(getUser()));
+		}
 		getEntityManager().clear();
 		System.out.println(ret);
 		return ret;

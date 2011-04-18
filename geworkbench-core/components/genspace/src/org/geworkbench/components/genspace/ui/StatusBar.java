@@ -34,7 +34,7 @@ public class StatusBar extends JPanel{
 			progressBar.setIndeterminate(false);
 			evtCt = 0;
 		}
-		else if(messages.size() == 1)
+		else if(messages.size() == 1 && messages.values().iterator().hasNext())
 		{
 			String ev = messages.values().iterator().next();
 			statusDisplay.setText("  Status: Loading" + (ev != null ? " ("+ev +")" : ""));

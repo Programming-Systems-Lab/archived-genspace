@@ -122,10 +122,11 @@ public class friendsTab extends SocialTab {
 	public void updateFormFields() {
 		if (GenSpaceServerFactory.isLoggedIn()) {
 			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
-
+				int evt;
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
+					evt = GenSpace.getStatusBar().start("Loading profiles");
 					if (networkFilter == null)
 						return GenSpaceServerFactory.getFriendOps().getFriendsProfiles();
 					else
@@ -134,6 +135,7 @@ public class friendsTab extends SocialTab {
 
 				@Override
 				protected void done() {
+					GenSpace.getStatusBar().stop(evt);
 					List<User> lst = null;
 					try {
 						lst = get();

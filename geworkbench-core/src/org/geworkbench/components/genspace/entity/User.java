@@ -298,7 +298,7 @@ public class User implements Serializable, Comparable<User>{
 	
 	@Override
 	public String toString() {
-		String result = "User - username: " + username;
+		String result = "User [" + username+"]";
 		return result;
 	}
 
@@ -360,6 +360,7 @@ public class User implements Serializable, Comparable<User>{
 	public Friend isFriendsWith(User u) {
 		for(Friend f: getFriends())
 		{
+			System.out.println("Looking to see if " + f.getRightUser()+ " = " + u.toString());
 			if(f.getRightUser().equals(u))
 			{
 				setFriends(true);
