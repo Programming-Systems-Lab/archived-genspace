@@ -83,6 +83,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 			n.setName(name);
 			n.setOwner(getUser());
 			getEntityManager().persist(n);
+			n = findByName(n.getName());
 			joinNetwork(n.getId());
 		}
 	}
@@ -132,7 +133,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 			r = q.getResultList();
 			for(UserNetwork un : r)
 			{
-				un.getUser();
+				un.getUser().loadVisibility(getUser());
 			}
 		}
 		catch(NoResultException e)

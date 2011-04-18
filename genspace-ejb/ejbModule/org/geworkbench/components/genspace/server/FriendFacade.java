@@ -24,7 +24,25 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
     public FriendFacade() {
         super(Friend.class);
     }
-
+    
+    private Friend getFriendRecord(int u1, int u2)
+    {
+    	Query q = getEntityManager().createNativeQuery("select c.* from Friend c" +
+				"where f.id_1=? and f.id_2=?",Friend.class);
+		q.setParameter(1, u1);
+		q.setParameter(2, u2);
+//		q.setParameter("user", me.getId());
+		Friend r = null;
+		try
+		{
+			r = (Friend) q.getSingleResult();
+		}
+		catch(NoResultException e)
+		{
+			
+		}
+		return r;
+    }
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -91,13 +109,10 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 
 	}
 	@Override
-	public void updateFriendVisibility(int friend_id, Boolean boolean1) {
-		Friend friend = getEntityManager().find(Friend.class, friend_id);
-		if(friend.getLeftUser().equals(getUser()))
-		{
-			friend.setVisible(boolean1);
-			getEntityManager().merge(friend);
-		}
+	public void updateFriendVisibility(int user_id, Boolean boolean1) {
+		Friend friend = getFriendRecord(getUser().getId(),user_id);
+		friend.setVisible(boolean1);
+		getEntityManager().merge(friend);
 	}
 	@Override
 	public List<User> getFriendsProfiles() {
@@ -131,18 +146,21 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 
 
 	@Override
-	public List<Friend> getFriends() {
-		User ret = getUser();
-		for(Friend f : ret.getFriends())
-		{
-			f.getRightUser().loadVisibility(getUser());
-		}
-		getEntityManager().detach(ret);
+	public List<User> getFriends() {
+		User me = getUser();
+		List<User> ret = new ArrayList<User>();
+		for(Friend f : me.getFriends())
+			ret.add(f.getRightUser().loadVisibility(getUser()));
 		getEntityManager().clear();
-		return ret.getFriends();
+		System.out.println(ret);
+		return ret;
 	}
 
-
+	@Override
+	public byte[] getFriendsBytes() {
+		List<User> friends = getFriends();
+		return RuntimeEnvironmentSettings.writeObject(friends);
+	}
 	@Override
 	public byte[] getFriendRequestsList() {
 		List<User> friends = getFriendRequests();

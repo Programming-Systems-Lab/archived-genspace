@@ -240,11 +240,12 @@ public class SocialNetworksHome implements UpdateablePanel {
 						throws Exception {
 					evt = GenSpace.getStatusBar().start("Refreshing social tab");
 					System.out.println("Getting friends list");
-					return (List<User>) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendRequestsList());
+					return (List<User>) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendsBytes());
 				}
 
 				@Override
 				protected void done() {
+					System.out.println("Got the friends list");
 					List<User> lst = null;
 					GenSpace.getStatusBar().stop(evt);
 					try {
@@ -254,6 +255,7 @@ public class SocialNetworksHome implements UpdateablePanel {
 					} catch (ExecutionException e) {
 						GenSpace.logger.error("Error",e);
 					}
+					System.out.println(lst);
 //					friendsSearch.setText("");
 					Model m = (Model) friendsSearch.getModel();
 					m.data.clear();
@@ -262,11 +264,7 @@ public class SocialNetworksHome implements UpdateablePanel {
 						m.data.add(t.getFullName());
 						System.out.println("Into the list: " + t.getFullName());
 					}
-					int size = 0;
-					if(lst != null)
-					size = lst.size();
-					a1FriendRequestLabel.setText("" + size + " Request"
-							+ (size == 1 ? "" : "s"));
+
 				}
 			};
 			worker.execute();
@@ -555,7 +553,7 @@ public class SocialNetworksHome implements UpdateablePanel {
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
         content.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         a1FriendRequestLabel = new JLabel();
-        a1FriendRequestLabel.setText("1 Friend Request");
+        a1FriendRequestLabel.setText("Loading Requests");
         panel1.add(a1FriendRequestLabel, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         requestsLink = new JLabel();
         requestsLink.setForeground(new Color(-16777012));
@@ -580,7 +578,7 @@ public class SocialNetworksHome implements UpdateablePanel {
         label2.setText("<html><u>Back</u></html>");
         panel1.add(label2, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label3 = new JLabel();
-        label3.setText("Search");
+        label3.setText("Search by username");
         panel1.add(label3, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         panel1.add(friendsSearch, new com.intellij.uiDesigner.core.GridConstraints(0, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, new Dimension(180, -1), new Dimension(180, -1), null, 0, false));
         button1 = new JButton();

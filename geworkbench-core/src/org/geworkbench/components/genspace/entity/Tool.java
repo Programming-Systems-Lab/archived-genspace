@@ -143,7 +143,7 @@ public class Tool implements Serializable {
 		if(getNumRating() == 0)
 			return 0;
 		else
-			return getSumRating() / getNumRating();
+			return (double) getSumRating() / (double) getNumRating();
 	}
 	public void incrementUsageCount() {
 		setUsageCount(getUsageCount() + 1);

@@ -64,8 +64,10 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		t.setCreator(getUser());
 		t.setCreatedAt(new Date());
 		t.setTool(getEntityManager().find(Tool.class, tool));
-		t.setRating(rating);
 		getEntityManager().persist(t);
+		t.getTool().updateRatingCache();
+		getEntityManager().merge(t.getTool());
+		
 		getEntityManager().refresh(t.getTool());
 		return t.getTool();
 	}
@@ -104,6 +106,10 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		t.setWorkflow(getEntityManager().find(Workflow.class, workflow));
 		t.setRating(rating);
 		getEntityManager().persist(t);
+		
+		t.getWorkflow().updateRatingsCache();
+		getEntityManager().merge(t.getWorkflow());
+		
 		getEntityManager().refresh(t.getWorkflow());
 		return t.getWorkflow();
 	}

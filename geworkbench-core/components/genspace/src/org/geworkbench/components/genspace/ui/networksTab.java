@@ -118,6 +118,8 @@ public class networksTab extends SocialTab {
 							.showMessageDialog(
 									panel1,
 									"A request has been sent to the network's owner for approval. It will not show up in your list until you have been approved.");
+							chooseNetwork.setText("");
+
 							super.done();
 						}
 					};
@@ -133,8 +135,8 @@ public class networksTab extends SocialTab {
 						}
 						@Override
 						protected void done() {
-							JOptionPane.showMessageDialog(panel1, "The network "
-									+ chooseNetwork.getText() + " has been created");
+							JOptionPane.showMessageDialog(panel1, "This network has been created");
+							chooseNetwork.setText("");
 							super.done();
 						}
 					};
@@ -142,7 +144,6 @@ public class networksTab extends SocialTab {
 					
 				}
 				updateFormFields();
-				chooseNetwork.setText("");
 
 			}
 		});
@@ -328,6 +329,5 @@ public class networksTab extends SocialTab {
 			};
 			worker.execute();
 		}
-		//TODO
 	}
 }

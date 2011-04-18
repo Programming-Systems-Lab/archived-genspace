@@ -49,5 +49,7 @@ public interface FriendFacadeRemote {
 	 */
 	public void removeFriend(int u);
 
-	public List<Friend> getFriends();
+	public List<User> getFriends();
+
+	public byte[] getFriendsBytes();
 }

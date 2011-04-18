@@ -379,7 +379,7 @@ public class User implements Serializable, Comparable<User>{
 	}
 	private boolean isVisibleTo(User other)
 	{
-		Friend f = this.isFriendsWith(other);
+		Friend f = other.isFriendsWith(this);
 		if(f != null && f.isVisible())
 		{
 			return true;

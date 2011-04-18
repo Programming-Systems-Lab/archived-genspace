@@ -47,7 +47,7 @@ public class requestsTab extends SocialTab {
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
 					LinkedList<UserNetwork> ret = new LinkedList<UserNetwork>();
-					for (UserNetwork t : GenSpaceServerFactory.getUser().getNetworks()) {
+					for (UserNetwork t : GenSpaceServerFactory.getNetworkOps().getMyNetworks()) {
 						Network nt = t.getNetwork();
 						if (nt.getOwner().equals(GenSpaceServerFactory.getUser()))
 							ret.addAll(GenSpaceServerFactory.getNetworkOps().getNetworkRequests(nt.getId()));

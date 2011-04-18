@@ -23,6 +23,7 @@ import javax.swing.SwingWorker;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
 import org.geworkbench.components.genspace.entity.Friend;
+import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
 
 /**
@@ -32,7 +33,7 @@ import org.geworkbench.components.genspace.entity.UserNetwork;
 public class privacyTab extends SocialTab {
 	private JList listNetworks;
 	private JList listFriends;
-	private List<Friend> cachedFriends;
+	private List<User> cachedFriends;
 	private List<UserNetwork> cachedNetworks;
 	
 	private JButton saveButton;
@@ -177,7 +178,7 @@ public class privacyTab extends SocialTab {
 					protected Void doInBackground() throws Exception {
 						for (Integer i : s2.keySet()) {
 							GenSpaceServerFactory.getFriendOps().updateFriendVisibility(
-									((Friend) model2.get(i)).getId(),
+									((User) model2.get(i)).getId(),
 									s2.get(i));
 						}
 						return null;
@@ -196,7 +197,7 @@ public class privacyTab extends SocialTab {
 				JLabel renderer = (JLabel) new DefaultListCellRenderer()
 						.getListCellRendererComponent(list, value, index,
 								isSelected, cellHasFocus);
-				renderer.setText(((Friend) value).getRightUser().getFullName());
+				renderer.setText(((User) value).getFullName());
 				return renderer;
 			}
 		});
@@ -227,10 +228,10 @@ public class privacyTab extends SocialTab {
 	public void updateFormFields() {
 		if (GenSpaceServerFactory.isLoggedIn()) {
 
-			SwingWorker<List<Friend>, Void> worker = new SwingWorker<List<Friend>, Void>() {
+			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
 
 				@Override
-				protected List<Friend> doInBackground()
+				protected List<User> doInBackground()
 						throws Exception {
 					return GenSpaceServerFactory.getFriendOps().getFriends();
 				}
@@ -247,7 +248,7 @@ public class privacyTab extends SocialTab {
 					DefaultListModel m = new DefaultListModel();
 					ArrayList<Integer> selected = new ArrayList<Integer>();
 					int i = 0;
-					for (Friend t : cachedFriends) {
+					for (User t : cachedFriends) {
 						m.addElement(t);
 						if (t.isVisible()) {
 							selected.add(i);
@@ -271,7 +272,7 @@ public class privacyTab extends SocialTab {
 				@Override
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
-					return GenSpaceServerFactory.getUser().getNetworks();
+					return GenSpaceServerFactory.getNetworkOps().getMyNetworks();
 				}
 
 				@Override
