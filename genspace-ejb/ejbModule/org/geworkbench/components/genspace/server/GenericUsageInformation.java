@@ -346,7 +346,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 				newTools.add(nt);
 			}
 		WorkflowTool nt = new WorkflowTool();
-		nt.setOrder(newTools.size());
+		nt.setOrder(newTools.size()+1);
 		nt.setTool(tool);
 		nt.setWorkflow(r);
 		newTools.add(nt);

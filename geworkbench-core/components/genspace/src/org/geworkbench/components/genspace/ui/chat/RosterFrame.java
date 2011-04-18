@@ -11,6 +11,7 @@
 
 package org.geworkbench.components.genspace.ui.chat;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -469,12 +470,11 @@ public class RosterFrame extends javax.swing.JFrame implements RosterListener {
 		});
 
 		jScrollPane1.setViewportView(rosterTree);
-		this.add(jScrollPane1);
-		this.add(cmbStatus);
+		getContentPane().setLayout(new BorderLayout());
+		this.add(jScrollPane1,BorderLayout.CENTER);
+		this.add(cmbStatus,BorderLayout.SOUTH);
 
-		getContentPane().setLayout(
-			    new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS)
-			);
+
 
 
 
