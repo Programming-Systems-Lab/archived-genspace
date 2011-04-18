@@ -94,13 +94,13 @@ public class Tool implements Serializable {
 	public void setWfCountHead(int wfCountHead) {
 		this.wfCountHead = wfCountHead;
 	}
-	private void setSumRating(int sumRating) {
+	public void setSumRating(int sumRating) {
 		this.sumRating = sumRating;
 	}
 	public int getSumRating() {
 		return sumRating;
 	}
-	private void setNumRating(int numRating) {
+	public void setNumRating(int numRating) {
 		this.numRating = numRating;
 	}
 	public int getNumRating() {

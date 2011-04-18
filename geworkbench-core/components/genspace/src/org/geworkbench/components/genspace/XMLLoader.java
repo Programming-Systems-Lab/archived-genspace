@@ -6,12 +6,16 @@ package org.geworkbench.components.genspace;
  */
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.StringReader;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,6 +27,7 @@ import org.geworkbench.components.genspace.entity.Transaction;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 
@@ -70,9 +75,19 @@ public class XMLLoader {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 
 			//parse using builder to get DOM representation of the XML file
-			dom = db.parse(file);
-
+//			dom = db.parse(file);
+			FileReader fr = new FileReader(file);
+			String doc = "<measurement>\n";
+			Scanner s = new Scanner(new File(file));
+			while(s.hasNextLine())
+			{
+				doc += s.nextLine() + "\n";
+			}
+			doc += "</measurement>";
+			System.out.println("Loading file:...\n" + doc);
+			dom = db.parse(new InputSource(new StringReader(doc)));
 			// System.out.println("Finished with " + file);
+
 
 		}
 		catch(ParserConfigurationException pce) 
@@ -110,7 +125,14 @@ public class XMLLoader {
 
 	}
 
-
+	private String padToTwo(String s)
+	{
+		int n = Integer.parseInt(s);
+		if(n >= 10)
+			return ""+n;
+		else
+			return "0"+n;
+	}
 	/**
 	 * This method creates objects from the Element and then stores them in the
 	 * ArrayList. It's usually not good to have a "side effect" of altering the state of
@@ -145,7 +167,7 @@ public class XMLLoader {
 			 */
 		}
 
-		String timeFormat = year + "-" + month + "-" + day + " " + hour +":" + minutes +":"+ seconds;
+		String timeFormat = year + "." + padToTwo(month) + "." + padToTwo(day) + " at " + padToTwo(hour) +":" + padToTwo(minutes) +":"+ padToTwo(seconds);
 		//System.out.println(timeFormat);
 
 		HashMap<String, String> parameters = new HashMap<String, String>();
@@ -211,11 +233,11 @@ public class XMLLoader {
 			Transaction t = new Transaction();
 			t.setClientID(transaction_id);
 			t.setDataSetName(dataset);
-			try {
-				t.setDate(DateFormat.getInstance().parse(timeFormat));
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+
+			Calendar ct = Calendar.getInstance();
+			ct.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds));
+			t.setDate(ct.getTime());
+			
 			t.setHostname(host);
 			if(user == null)
 				t.setUser(null);
@@ -225,11 +247,11 @@ public class XMLLoader {
 		}
 		
 		event.setTransaction(transactions.get(transaction_id));
-		try {
-			event.setCreatedAt(DateFormat.getInstance().parse(timeFormat));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+
+			Calendar t = Calendar.getInstance();
+			t.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds));
+			event.setCreatedAt(t.getTime());
+
 		event.setToolname(analysis);
 		event.setParameters(new HashSet<AnalysisEventParameter>());
 		for(String key : parameters.keySet())

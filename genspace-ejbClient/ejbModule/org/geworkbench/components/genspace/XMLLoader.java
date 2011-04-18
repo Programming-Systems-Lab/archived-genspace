@@ -6,12 +6,15 @@ package org.geworkbench.components.genspace;
  */
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.StringReader;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,6 +26,7 @@ import org.geworkbench.components.genspace.entity.Transaction;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 
@@ -70,8 +74,17 @@ public class XMLLoader {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 
 			//parse using builder to get DOM representation of the XML file
-			dom = db.parse(file);
-
+//			dom = db.parse(file);
+			FileReader fr = new FileReader(file);
+			String doc = "<measurement>\n";
+			Scanner s = new Scanner(new File(file));
+			while(s.hasNextLine())
+			{
+				doc += s.nextLine() + "\n";
+			}
+			doc += "</measurement>";
+			System.out.println("Loading file:...\n" + doc);
+			dom = db.parse(new InputSource(new StringReader(doc)));
 			// System.out.println("Finished with " + file);
 
 		}

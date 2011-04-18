@@ -372,10 +372,12 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		if(user == null)
 			q = getEntityManager().createQuery("select object(c) from Transaction as c where c.clientID=:clientid and c.user is null");
 		else
+		{
 			q = getEntityManager().createQuery("select object(c) from Transaction as c where c.clientID=:clientid and c.user=:user"); //
-
+			q.setParameter("user", user);
+		}
 		q.setParameter("clientid", name);
-//		q.setParameter("user", user);
+
 		Transaction r = null;
 		try
 		{
@@ -404,7 +406,6 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		}
 		catch(NoResultException e)
 		{
-			e.printStackTrace();
 		}
 		return r;
 	}

@@ -239,13 +239,11 @@ public class SocialNetworksHome implements UpdateablePanel {
 				protected List<User> doInBackground()
 						throws Exception {
 					evt = GenSpace.getStatusBar().start("Refreshing social tab");
-					System.out.println("Getting friends list");
 					return (List<User>) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendsBytes());
 				}
 
 				@Override
 				protected void done() {
-					System.out.println("Got the friends list");
 					List<User> lst = null;
 					GenSpace.getStatusBar().stop(evt);
 					try {
@@ -255,14 +253,12 @@ public class SocialNetworksHome implements UpdateablePanel {
 					} catch (ExecutionException e) {
 						GenSpace.logger.error("Error",e);
 					}
-					System.out.println(lst);
 //					friendsSearch.setText("");
 					Model m = (Model) friendsSearch.getModel();
 					m.data.clear();
 					if(lst != null)
 					for (User t : lst) {
 						m.data.add(t.getFullName());
-						System.out.println("Into the list: " + t.getFullName());
 					}
 
 				}

@@ -198,6 +198,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 			@Override
 			public Workflow doInBackground() {
 				evt = GenSpace.getStatusBar().start("Saving rating");
+				System.out.println("Saving workflow rating");
 				return GenSpaceServerFactory.getPrivUsageFacade().saveWorkflowRating(workflow.getId(),rating);
 			}
 			@Override

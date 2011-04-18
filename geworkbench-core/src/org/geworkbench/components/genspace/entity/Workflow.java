@@ -138,13 +138,13 @@ public class Workflow implements Serializable {
 	public int getNumRating() {
 		return numRating;
 	}
-	private void setNumRating(int numRating) {
+	public void setNumRating(int numRating) {
 		this.numRating = numRating;
 	}
 	public int getSumRating() {
 		return sumRating;
 	}
-	private void setSumRating(int sumRating) {
+	public void setSumRating(int sumRating) {
 		this.sumRating = sumRating;
 	}
 	
@@ -173,7 +173,7 @@ public class Workflow implements Serializable {
 		if(getNumRating() == 0)
 			return 0;
 		else
-			return getSumRating() / getNumRating();
+			return (double) getSumRating() / (double) getNumRating();
 	}
 	
 	public void loadToolsFromCache()

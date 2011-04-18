@@ -65,11 +65,14 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		t.setCreatedAt(new Date());
 		t.setTool(getEntityManager().find(Tool.class, tool));
 		getEntityManager().persist(t);
-		t.getTool().updateRatingCache();
-		getEntityManager().merge(t.getTool());
+//		t.getTool().updateRatingCache();
+		Tool z= t.getTool();
+		z.setNumRating(z.getNumRating() + 1);
+		z.setSumRating(z.getSumRating() + rating);
+		getEntityManager().merge(z);
 		
-		getEntityManager().refresh(t.getTool());
-		return t.getTool();
+		getEntityManager().refresh(z);
+		return z;
 	}
 
 
@@ -107,10 +110,13 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		t.setRating(rating);
 		getEntityManager().persist(t);
 		
-		t.getWorkflow().updateRatingsCache();
-		getEntityManager().merge(t.getWorkflow());
-		
-		getEntityManager().refresh(t.getWorkflow());
-		return t.getWorkflow();
+		Workflow z = t.getWorkflow();
+		z.setNumRating(z.getNumRating() + 1);
+		z.setSumRating(z.getSumRating() + rating);
+		System.out.println(z.getNumRating() + " num rating, " + z.getSumRating() + " sum rating");
+//		t.getWorkflow().updateRatingsCache();
+		z = getEntityManager().merge(z);
+
+		return z;
 	}
 }
