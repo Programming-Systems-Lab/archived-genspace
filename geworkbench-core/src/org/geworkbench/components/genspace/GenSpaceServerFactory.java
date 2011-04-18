@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -49,19 +50,20 @@ public class GenSpaceServerFactory {
 			throw new IllegalThreadStateException("You may not attempt to access the remote server from an AWT/Swing worker thread");
 		}	
 		try {
-			System.setProperty("org.omg.CORBA.ORBInitialHost", RuntimeEnvironmentSettings.SERVER);
-//			System.setProperty("com.sun.corba.ee.encoding.ORBEnableJavaSerialization","true");
-//			System.setProperty("com.sun.CORBA.encoding.ORBEnableJavaSerialization", "true");
-			System.setProperty("org.omg.CORBA.ORBInitialPort", "3700");
-//			System.setProperty("com.sun.CORBA.giop.ORBFragmentSize","1024000");
-//			System.setProperty("com.sun.CORBA.giop.ORBBufferSize","1024000");
-//			System.setProperty("com.sun.corba.ee.transport.ORBMaximumReadByteBufferSize", "3000000");
-			System.setProperty("java.naming.factory.initial", "com.sun.enterprise.naming.SerialInitContextFactory");
-			System.setProperty("java.naming.factory.url.pkgs", "com.sun.enterprise.naming");
-			System.setProperty("java.naming.factory.state", "com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl");
+			Properties props = new Properties();
+			props.setProperty("org.omg.CORBA.ORBInitialHost", RuntimeEnvironmentSettings.SERVER);
+//			props.setProperty("com.sun.corba.ee.encoding.ORBEnableJavaSerialization","true");
+//			props.setProperty("com.sun.CORBA.encoding.ORBEnableJavaSerialization", "true");
+			props.setProperty("org.omg.CORBA.ORBInitialPort", "3700");
+//			props.setProperty("com.sun.CORBA.giop.ORBFragmentSize","1024000");
+//			props.setProperty("com.sun.CORBA.giop.ORBBufferSize","1024000");
+//			props("com.sun.corba.ee.transport.ORBMaximumReadByteBufferSize", "3000000");
+			props.setProperty("java.naming.factory.initial", "com.sun.enterprise.naming.SerialInitContextFactory");
+			props.setProperty("java.naming.factory.url.pkgs", "com.sun.enterprise.naming");
+			props.setProperty("java.naming.factory.state", "com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl");
 			if(ctx == null)
 			{
-				ctx = new InitialContext();
+				ctx = new InitialContext(props);
 			}
 			if(RuntimeEnvironmentSettings.tools == null)
 			{

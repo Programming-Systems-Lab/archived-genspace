@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/ttest
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/ttest
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-02-23T22:53:41.000000Z
+2011-04-18T18:21:55.000000Z
 ba74485dc159991169913aa8554971a8
 2010-05-12T16:00:50.931447Z
 6522
@@ -66,7 +66,7 @@ file
 
 
 
-2011-02-23T22:53:41.000000Z
+2011-04-18T18:21:55.000000Z
 381b58119ed7352b8b1f00c18b1899fd
 2010-05-12T16:00:50.931447Z
 6522

@@ -8,6 +8,7 @@ import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
@@ -48,6 +49,13 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		{
 			
 		}
+		catch(NonUniqueResultException e)
+		{
+			q = getEntityManager().createQuery("delete from ToolRating as c where c.creator=:user and c.tool.id=:tool");
+			q.setParameter("user", getUser());
+			q.setParameter("tool", tool);
+			q.executeUpdate();
+		}
 		return r;
 	}
 
@@ -64,14 +72,15 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		t.setCreator(getUser());
 		t.setCreatedAt(new Date());
 		t.setTool(getEntityManager().find(Tool.class, tool));
+		t.setRating(rating);
 		getEntityManager().persist(t);
 //		t.getTool().updateRatingCache();
 		Tool z= t.getTool();
 		z.setNumRating(z.getNumRating() + 1);
 		z.setSumRating(z.getSumRating() + rating);
 		getEntityManager().merge(z);
+		getEntityManager().flush();
 		
-		getEntityManager().refresh(z);
 		return z;
 	}
 
@@ -113,10 +122,21 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		Workflow z = t.getWorkflow();
 		z.setNumRating(z.getNumRating() + 1);
 		z.setSumRating(z.getSumRating() + rating);
-		System.out.println(z.getNumRating() + " num rating, " + z.getSumRating() + " sum rating");
 //		t.getWorkflow().updateRatingsCache();
 		z = getEntityManager().merge(z);
 
 		return z;
+	}
+
+	@Override
+	public Tool getTool(int id) {
+		Tool r= getEntityManager().find(Tool.class, id);
+		getEntityManager().refresh(r);
+		return r;
+	}
+
+	@Override
+	public Workflow getWorkflow(int id) {
+		return getEntityManager().find(Workflow.class, id);
 	}
 }

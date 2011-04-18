@@ -426,9 +426,6 @@ public class AutoCompleteCombo extends JComboBox {
 				// Logger root = Logger.getRootLogger();
 				// root.addAppender(new ConsoleAppender(new
 				// PatternLayout("%d{ISO8601} [%5p] %m at %l%n")));
-				Logger root = Logger.getRootLogger();
-				root.addAppender(new ConsoleAppender(new PatternLayout(
-						"%d{ISO8601} %m at %L%n")));
 
 				// BasicConfigurator.configure();
 

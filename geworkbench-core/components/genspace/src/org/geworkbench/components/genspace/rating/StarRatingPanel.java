@@ -94,13 +94,15 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 			setVisible(true);
 
 		SwingWorker<WorkflowRating, Void> worker = new SwingWorker<WorkflowRating, Void>() {
+			int evt;
 			@Override
 			public WorkflowRating doInBackground() {
-
+				evt = GenSpace.getStatusBar().start("Loading rating");
 				return GenSpaceServerFactory.getPrivUsageFacade().getMyWorkflowRating(workflow.getId());
 			}
 			@Override
 			protected void done() {
+				GenSpace.getStatusBar().stop(evt);
 				WorkflowRating rating = null;
 				try {
 					rating = get();
@@ -114,13 +116,33 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				else
 					setClickable(false);
 
-				setRatingValue(workflow.getOverallRating(),
-						workflow.getNumRating());
-
 				super.done();
 			}
 		};
 		worker.execute();
+		
+		SwingWorker<Workflow, Void> worker2 = new SwingWorker<Workflow, Void>() {
+			@Override
+			public Workflow doInBackground() {
+				return GenSpaceServerFactory.getPrivUsageFacade().getWorkflow(workflow.getId());
+			}
+			@Override
+			protected void done() {
+
+				Workflow rating = null;
+				try {
+					rating = get();
+				} catch (InterruptedException e) {
+					GenSpace.logger.error("Unable to talk to server",e);
+				} catch (ExecutionException e) {
+					GenSpace.logger.error("Unable to talk to server",e);
+				}
+				setRatingValue(rating.getOverallRating(),
+						rating.getNumRating());
+				super.done();
+			}
+		};
+		worker2.execute();
 	}
 	public void loadRating(final Tool tn) {
 
@@ -134,13 +156,17 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 //			setVisible(true);
 
 		SwingWorker<ToolRating, Void> worker = new SwingWorker<ToolRating, Void>() {
+			int evt;
 			@Override
 			public ToolRating doInBackground() {
+				evt = GenSpace.getStatusBar().start("Loading rating");
 
 				return GenSpaceServerFactory.getPrivUsageFacade().getMyToolRating(tool.getId());
 			}
 			@Override
 			protected void done() {
+				GenSpace.getStatusBar().stop(evt);
+
 				ToolRating rating = null;
 				try {
 					rating = get();
@@ -154,12 +180,38 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				else
 					setClickable(false);
 
-				setRatingValue(tool.getOverallRating(),
-						tool.getNumRating());
 				super.done();
 			}
 		};
 		worker.execute();
+		
+
+		SwingWorker<Tool, Void> worker2 = new SwingWorker<Tool, Void>() {
+			int evt;
+			@Override
+			public Tool doInBackground() {
+				evt = GenSpace.getStatusBar().start("Loading rating");
+
+				return GenSpaceServerFactory.getPrivUsageFacade().getTool(tool.getId());
+			}
+			@Override
+			protected void done() {
+				GenSpace.getStatusBar().stop(evt);
+
+				Tool rating = null;
+				try {
+					rating = get();
+				} catch (InterruptedException e) {
+					GenSpace.logger.error("Unable to talk to server",e);
+				} catch (ExecutionException e) {
+					GenSpace.logger.error("Unable to talk to server",e);
+				}
+				setRatingValue(rating.getOverallRating(),
+						rating.getNumRating());
+				super.done();
+			}
+		};
+		worker2.execute();
 	}
 
 	public void setRatingValue(double rating, long totalRatings) {
@@ -198,7 +250,6 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 			@Override
 			public Workflow doInBackground() {
 				evt = GenSpace.getStatusBar().start("Saving rating");
-				System.out.println("Saving workflow rating");
 				return GenSpaceServerFactory.getPrivUsageFacade().saveWorkflowRating(workflow.getId(),rating);
 			}
 			@Override
@@ -217,6 +268,8 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 							.showMessageDialog(null,
 									"There was a problem in sending your rating.  Check your internet connection.");
 				} else {
+					workflow.setSumRating(result.getSumRating());
+					workflow.setNumRating(result.getNumRating());
 					setStarValue(rating);
 					setRatingValue(result.getOverallRating(),
 							result.getNumRating());

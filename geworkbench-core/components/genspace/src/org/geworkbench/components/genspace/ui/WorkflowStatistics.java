@@ -77,9 +77,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					if(instrument)
 						System.out.println("Entire tool list size: " + GenSpace.getObjectSize((Serializable) results));
 				} catch (InterruptedException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				} catch (ExecutionException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				}
 				super.done();
 			}
@@ -113,9 +113,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					if(instrument)
 						System.out.println("Popular tools size: " + GenSpace.getObjectSize((Serializable) results));
 				} catch (InterruptedException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				} catch (ExecutionException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				}
 				super.done();
 			}
@@ -154,9 +154,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					revalidate();
 					repaint();
 				} catch (InterruptedException e) {
-					GenSpace.logger.fatal("Error talking to server",e);
+					GenSpace.logger.debug("Error talking to server",e);
 				} catch (ExecutionException e) {
-					GenSpace.logger.fatal("Error talking to server",e);
+					GenSpace.logger.debug("Error talking to server",e);
 				}
 				super.done();
 			}
@@ -190,9 +190,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 						System.out.println("Popular first tools size: " + GenSpace.getObjectSize((Serializable) results));
 					popularFirstTools.setModel(m);
 				} catch (InterruptedException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				} catch (ExecutionException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				}
 				super.done();
 			}
@@ -227,9 +227,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					String r = get();
 					toolStats.setText("<html>" + r + "</html>");
 				} catch (InterruptedException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				} catch (ExecutionException e) {
-					GenSpace.logger.fatal("Error talking to server: ",e);
+					GenSpace.logger.debug("Error talking to server: ",e);
 				}
 
 				super.done();

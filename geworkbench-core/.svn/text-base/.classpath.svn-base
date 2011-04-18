@@ -4,59 +4,185 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="annotation"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="geworkbench-core/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="lib/AffxFusion.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ant.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ant-launcher.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/bcel-5.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/cglib-nodep-2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/collections-generic-4.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-beanutils.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-collections.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-digester.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-discovery.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-logging.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/docking.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/forms-1.0.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jai_codec.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jai_core.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jaxb-rt-1.0-ea.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jaxrpc.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jcommon-1.0.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jdom.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jfreechart-1.0.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jhall.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jsr173_api.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.8.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/mail.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ostermillerutils_1_04_03_for_kaffe.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/stax-1.2.0_rc1-dev.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/xml-apis.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/j3dcore.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/j3dutils.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/vecmath.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-lang-2.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ginkgo-0.1-SNAPSHOT.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-math-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
-	<classpathentry kind="lib" path="lib/xalan.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/junit.jar"/>
-	<classpathentry kind="lib" path="lib/jaxen.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-kernel-1.5.3.jar"/>
+	<classpathentry kind="src" path="components/caarray/src"/>
+	<classpathentry kind="src" path="components/genspace/src"/>
+	<classpathentry kind="lib" path="lib/AffxFusion.jar"/>
+	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
 	<classpathentry kind="lib" path="lib/axiom-api-1.2.10.jar"/>
 	<classpathentry kind="lib" path="lib/axiom-impl-1.2.10.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-adb-1.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
-	<classpathentry kind="lib" path="lib/XmlSchema-1.4.3.jar"/>
-	<classpathentry kind="lib" path="lib/neethi-2.0.4.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-transport-local-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-kernel-1.5.3.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-transport-http-1.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-transport-local-1.5.3.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-upload-client.jar"/>
+	<classpathentry kind="lib" path="lib/bcel-5.1.jar"/>
+	<classpathentry kind="lib" path="lib/cc3260mt.dll"/>
+	<classpathentry kind="lib" path="lib/cglib-nodep-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/ClusterDLL.dll"/>
+	<classpathentry kind="lib" path="lib/collections-generic-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="lib/commons-discovery.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/commons-math-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/docking.jar"/>
+	<classpathentry kind="lib" path="lib/forms-1.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/GenesAtWork.dll"/>
+	<classpathentry kind="lib" path="lib/ginkgo-0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/j3dcore-d3d.dll"/>
+	<classpathentry kind="lib" path="lib/j3dcore-ogl.dll"/>
+	<classpathentry kind="lib" path="lib/j3dcore.jar"/>
+	<classpathentry kind="lib" path="lib/j3dutils.dll"/>
+	<classpathentry kind="lib" path="lib/j3dutils.jar"/>
+	<classpathentry kind="lib" path="lib/jai_codec.jar"/>
+	<classpathentry kind="lib" path="lib/jai_core.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-rt-1.0-ea.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/jhall.jar"/>
+	<classpathentry kind="lib" path="lib/jsr173_api.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib/mail.jar"/>
+	<classpathentry kind="lib" path="lib/mlib_image_jai.dll"/>
+	<classpathentry kind="lib" path="lib/mlib_java_jai.dll"/>
+	<classpathentry kind="lib" path="lib/mutualinfo.dll"/>
+	<classpathentry kind="lib" path="lib/MutualInfoDLL.dll"/>
+	<classpathentry kind="lib" path="lib/neethi-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/ostermillerutils_1_04_03_for_kaffe.jar"/>
+	<classpathentry kind="lib" path="lib/stax-1.2.0_rc1-dev.jar"/>
+	<classpathentry kind="lib" path="lib/stlpmt45.dll"/>
+	<classpathentry kind="lib" path="lib/vecmath.jar"/>
+	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/xalan.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/XmlSchema-1.4.3.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/caarray-client-external-v1_0.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/dozer-4.4.1.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/google-collections-1.0-rc1.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/javacsv-1.0.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-annotations-ejb3-1.0.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-aop-client-1.5.2.GA.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-aspect-client-1.5.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-cache-1.4.0.SP1.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-common-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-ejb3-client-noversion.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-ejb3x-4.0.5.GA.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-jmx-4.0.5.GA.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-remoting-1.4.6.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jboss-system-4.0.5.GA.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/jbossall-client-4.0.5.GA.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/mysql-connector-java-5.0.5.jar"/>
+	<classpathentry kind="lib" path="components/caarray/lib/rmiio-2.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/appclient.security.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/asm-all-repackaged.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/auto-depends.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/bean-validator.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/class-model.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/cmp-internal-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/common-util.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/config-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/config-types.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/config.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/deployment-common.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/deployment-javaee-core.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/dol.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/ejb-container.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/ejb-internal-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/ejb.security.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/el-impl.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-asm.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-codegen.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-csiv2-idl.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-internal-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-newtimer.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-omgapi.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-orb.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-corba-orbgeneric.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-ee-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-naming.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish-registration.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/glassfish.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/gmbal.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/gms-bootstrap.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/ha-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/hk2-core.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/hk2.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/internal-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/jaspic.provider.framework.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.annotation.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.ejb.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.enterprise.deploy.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.jms.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.management.j2ee.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.resource.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.security.auth.message.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.security.jacc.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.servlet.jsp.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/javax.transaction.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/jpa-connector.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/jsp-impl.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/jta.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/jts.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/kernel.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/management-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/mimepull.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/monitoring-core.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/orb-connector.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/orb-enabler.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/orb-iiop.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/org.apache.felix.scr.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/org.eclipse.persistence.core.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/org.eclipse.persistence.jpa.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/persistence-common.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/pkg-client.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/scattered-archive-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/security.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/simple-glassfish-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/ssl-impl.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/stats77.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/transaction-internal-api.jar"/>
+	<classpathentry kind="lib" path="lib/genspace/work-management.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/docking.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/intellij.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/jgraphx.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/jimi.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/logging.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/mina-core-1.1.7.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/smack.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/smackx.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/swing-layout-1.0.3.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/swing-worker-1.2.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/tray.dll"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.sun.enterprise.jst.server.runtimeTarget/GlassFish 3.1">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.utility"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM Contents (MacOS X Default)">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

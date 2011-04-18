@@ -172,6 +172,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 		HashMap<Tool, Integer> toolRatings = new HashMap<Tool, Integer>();
 		for(Workflow w : suggestions)
 		{
+			w.loadToolsFromCache();
 			if(curIndexIntoTools < w.getTools().size())
 			{
 				Tool t = w.getTools().get(curIndexIntoTools).getTool();
@@ -184,7 +185,8 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 			{
 				nextSteps += w.getTools().get(i) + ", ";
 			}
-			nextSteps = nextSteps.substring(0,nextSteps.length()-2) + "\n";
+			if(nextSteps.length() > 2)
+				nextSteps = nextSteps.substring(0,nextSteps.length()-2) + "\n";
 		}
 		int bestRating = 0;
 		for(Tool t : toolRatings.keySet())

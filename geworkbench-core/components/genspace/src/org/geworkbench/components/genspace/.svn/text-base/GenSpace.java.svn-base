@@ -11,11 +11,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
+import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
 
@@ -116,6 +119,16 @@ public class GenSpace {
 		jtp.addTab("Social Center", networksPanels.$$$getRootComponent$$$());
 		jtp.addTab("Workflow Repository", needLoginPanel);
 
+		jtp.addChangeListener(new ChangeListener() {
+			
+			@Override
+			public void stateChanged(ChangeEvent ev) {
+				if(((JTabbedPane) (ev.getSource())).getSelectedComponent() instanceof UpdateablePanel)
+				{
+					((UpdateablePanel) ((JTabbedPane) (ev.getSource())).getSelectedComponent()).updateFormFields();
+				}
+			}
+		});
 		jframe.setSize(1024,768);
 		jframe.setLocation(200, 0);
 		jframe.getContentPane().setLayout(new BorderLayout());

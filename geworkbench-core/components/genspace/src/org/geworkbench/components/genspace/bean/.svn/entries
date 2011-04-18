@@ -1,14 +1,14 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/bean
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/bean
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-14T00:48:20.180500Z
-7730
+2011-04-18T18:50:44.373138Z
+7737
 bellj
 
 
@@ -26,16 +26,40 @@ bellj
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+SecurityMessageBean.java
+file
+7740
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
 DomainUtil.java
 file
+7739
 
 
 
-
-2011-04-15T00:53:38.000000Z
+2011-04-17T01:03:58.000000Z
 0729eae06451b16bf3061973df6149b9
-2011-04-14T00:48:20.180500Z
-7730
+2011-04-18T19:07:03.620373Z
+7739
 bellj
 
 
@@ -60,16 +84,64 @@ bellj
 
 1265
 
+DataVisibilityBean.java
+file
+7740
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+NetworkVisibilityBean.java
+file
+7740
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
 RatingBean.java
 file
 
 
 
 
-2011-04-15T00:53:38.000000Z
+2011-04-17T01:27:05.000000Z
 08e993de15e2b49f0966e96d143c94a1
-2011-04-14T00:48:20.180500Z
-7730
+2011-04-18T18:50:44.373138Z
+7737
 bellj
 
 
@@ -93,4 +165,28 @@ bellj
 
 
 1665
+
+RegisterBean.java
+file
+7740
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
 

@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/jmol/lib
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/jmol/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-04-06T19:55:59.000000Z
+2011-04-18T18:21:37.000000Z
 dea11ce63822785a7a56226525710569
 2011-03-23T18:11:39.113016Z
 7623

@@ -63,7 +63,7 @@ public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin,
 
 			GenSpaceServerFactory.logout();
 			GenSpaceLogin p = new GenSpaceLogin();
-			GenSpace.getInstance().getWorkflowRepository().updateUser();
+			GenSpace.getInstance().getWorkflowRepository().updateFormFields();
 
 			GenSpace.networksPanels.updateFormFields();
 			this.removeAll();

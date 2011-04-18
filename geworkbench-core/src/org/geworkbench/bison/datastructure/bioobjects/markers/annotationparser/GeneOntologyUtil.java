@@ -6,7 +6,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntolo
 
 /**
  * 
- * @version $Id: GeneOntologyUtil.java 6382 2010-04-20 18:54:13Z zji $
+ * @version $Id: GeneOntologyUtil.java 7735 2011-04-18 15:53:19Z zji $
  */
 public class GeneOntologyUtil {
 	private static final String KINASE = "K";
@@ -17,7 +17,7 @@ public class GeneOntologyUtil {
 	private final static int PHOSPATASE_GOTERM_ID = 4721;
 	
 	public static String checkMarkerFunctions(DSGeneMarker dsGeneMarker) {
-		GeneOntologyTree tree = GeneOntologyTree.getInstance();
+		GeneOntologyTree tree = GeneOntologyTree.getInstanceUntilAvailable();
 		String geneId = dsGeneMarker.getLabel();
 		String[] goTerms = AnnotationParser.getInfo(geneId,
 				AnnotationParser.GENE_ONTOLOGY_MOLECULAR_FUNCTION);

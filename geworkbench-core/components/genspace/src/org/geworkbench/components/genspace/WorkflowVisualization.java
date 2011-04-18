@@ -64,8 +64,7 @@ public class WorkflowVisualization extends JPanel implements VisualPlugin,
 						tools.addItem(tool);
 						RuntimeEnvironmentSettings.tools.put(tool.getId(), tool);
 					}
-				} catch (InterruptedException e) {
-				} catch (ExecutionException e) {
+				} catch (Exception e) {
 				}
 			}
 			@Override

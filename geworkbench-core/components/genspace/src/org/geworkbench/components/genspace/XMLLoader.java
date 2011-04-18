@@ -84,7 +84,6 @@ public class XMLLoader {
 				doc += s.nextLine() + "\n";
 			}
 			doc += "</measurement>";
-			System.out.println("Loading file:...\n" + doc);
 			dom = db.parse(new InputSource(new StringReader(doc)));
 			// System.out.println("Finished with " + file);
 

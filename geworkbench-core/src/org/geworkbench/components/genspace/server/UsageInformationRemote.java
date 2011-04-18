@@ -14,4 +14,6 @@ public interface UsageInformationRemote  extends ToolInformationProvider {
 	public Tool saveToolRating(int tool, int rating);
 	public WorkflowRating getMyWorkflowRating(int workflow);
 	public Workflow saveWorkflowRating(int workflow, int rating);
+	public Tool getTool(int id);
+	public Workflow getWorkflow(int id);
 }

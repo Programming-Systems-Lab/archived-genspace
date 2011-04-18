@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/Pattern%20Discovery/Pattern%20Discovery%20Parameter%20Settings_files
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/analysis/src/org/geworkbench/components/analysis/help/Pattern%20Discovery/Pattern%20Discovery%20Parameter%20Settings_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 beda2b86f55e31bfcc5490254542b0e0
 2005-11-17T19:08:18.000000Z
 881
@@ -66,7 +66,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 9ecd847c2ec062ecfc0a32b2bf3bb862
 2005-11-01T18:25:11.000000Z
 617
@@ -100,7 +100,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 07f928095d0e0981e807d8862a1478bd
 2005-11-01T18:25:11.000000Z
 617
@@ -134,7 +134,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 0ad3aad69927873890c481ba056c539e
 2005-11-01T18:25:11.000000Z
 617
@@ -168,7 +168,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 631d74700bd7938b09e0dd5216c1d476
 2005-11-01T18:25:11.000000Z
 617
@@ -202,7 +202,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 cd9a43c6bb838f489e887aca3d1956fc
 2005-11-01T18:25:11.000000Z
 617
@@ -236,7 +236,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 b0c136ec4e0ccef8e31738079c049414
 2005-11-01T18:25:11.000000Z
 617
@@ -270,7 +270,7 @@ file
 
 
 
-2011-02-23T22:52:17.000000Z
+2011-04-18T18:23:09.000000Z
 4b2c0d0495333e4c17dc940f66d4015a
 2005-11-01T18:25:11.000000Z
 617

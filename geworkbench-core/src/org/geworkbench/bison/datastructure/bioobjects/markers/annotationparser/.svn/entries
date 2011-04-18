@@ -1,14 +1,14 @@
 10
 
 dir
-7734
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/annotationparser
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/src/org/geworkbench/bison/datastructure/bioobjects/markers/annotationparser
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-10T20:44:04.131107Z
-7560
+2011-04-18T15:53:19.003425Z
+7735
 zji
 
 
@@ -134,10 +134,10 @@ file
 
 
 
-2011-04-17T01:28:29.000000Z
-33c9d67eed8232a3510caf4863a1d10d
-2010-04-20T18:54:13.609725Z
-6382
+2011-04-18T18:32:54.000000Z
+720f3eacf550ffc33d5a8ba61075ee95
+2011-04-18T15:53:19.003425Z
+7735
 zji
 has-props
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-1707
+1721
 

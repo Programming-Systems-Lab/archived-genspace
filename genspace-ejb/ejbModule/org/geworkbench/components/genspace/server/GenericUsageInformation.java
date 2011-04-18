@@ -117,7 +117,6 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
 				"where wt.tool_id=? order by w.usageCount desc", Workflow.class);
 		q.setParameter(1, tool);
-		System.out.println("Fetching all wf with " + tool);
 		List<Workflow> wf = null;
 		ArrayList<Workflow> ret = new ArrayList<Workflow>();
         try
@@ -125,7 +124,6 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
         	wf = q.getResultList();
         	for(Workflow w : wf)
         	{
-        		System.out.println("Found wf " + w.toString());
         		ret.add(w.slimDown());
         	}
 		}
@@ -237,11 +235,9 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	@Override
 	public Transaction sendUsageEvent(AnalysisEvent e) {
 		if(
-			(e.getTransaction().getUser() == null && getUser() != null )
-			||
 			(e.getTransaction().getUser() != null && !e.getTransaction().getUser().equals(getUser())))
 			{
-				System.err.println("Received missmatched username for analysis event " + e);
+				e.getTransaction().setUser(getUser());
 			}
 		if(!getEntityManager().contains(e.getTransaction()))
 		{
@@ -308,7 +304,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		{
 			Query q = getEntityManager().createNativeQuery("select w.* from WORKFLOW w " +
 					"inner join WORKFLOWTOOL wt on wt.workflow_id=w.id " + 
-					"where w.parent_id is null and wt.cardinality=1 and wt.tool_id=? limit 1", Tool.class);
+					"where w.parent_id is null and wt.cardinality=1 and wt.tool_id=? limit 1", Workflow.class);
 			q.setParameter(1, tool.getId());
 	        Workflow r = null;
 	        try
@@ -323,7 +319,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		}
 		Query q = getEntityManager().createNativeQuery("select w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on wt.workflow_id=w.id " + 
-				"where w.parent_id=? and wt.cardinality=? and wt.tool_id=? limit 1", Tool.class);
+				"where w.parent_id=? and wt.cardinality=? and wt.tool_id=? limit 1", Workflow.class);
 		q.setParameter(1, t.getWorkflow().getId());
 		q.setParameter(2, t.getWorkflow().getTools().size());
 		q.setParameter(3, tool.getId());

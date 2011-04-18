@@ -18,12 +18,11 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntolo
 
 /**
  * @author zji
- * @version $Id: GoTermTreeModel.java 7091 2010-09-29 19:11:21Z zji $
+ * @version $Id: GoTermTreeModel.java 7735 2011-04-18 15:53:19Z zji $
  * 
  */
 public class GoTermTreeModel implements TreeModel {
 	GoAnalysisResult result = null;
-	private GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
 
 	/*
 	 * (non-Javadoc)
@@ -46,7 +45,11 @@ public class GoTermTreeModel implements TreeModel {
 	public Object getChild(Object parent, int index) {
 		GoTreeNode node = (GoTreeNode) parent;
 		if (node.goTerm.getId() == 0) {
-			return new GoTreeNode(this, geneOntologyTree.getRoot(index));
+			GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
+			if(geneOntologyTree!=null)
+				return new GoTreeNode(this, geneOntologyTree.getRoot(index));
+			else
+				return new GoTreeNode(this, new GOTerm(-index)); // place holder node
 		}
 
 		List<GOTerm> list = Arrays.asList(node.goTerm.getChildren());
@@ -74,7 +77,11 @@ public class GoTermTreeModel implements TreeModel {
 	public int getChildCount(Object parent) {
 		GoTreeNode node = (GoTreeNode) parent;
 		if (node.goTerm.getId() == 0) {
-			return geneOntologyTree.getNumberOfRoots();
+			GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
+			if(geneOntologyTree!=null)
+				return geneOntologyTree.getNumberOfRoots();
+			else
+				return 0 ;
 		}
 
 		return node.goTerm.getChildren().length;
@@ -113,6 +120,7 @@ public class GoTermTreeModel implements TreeModel {
 		GoTreeNode node = (GoTreeNode) parent;
 		GoTreeNode childNode = (GoTreeNode) child;
 		if (node.goTerm.getId() == 0) {
+			GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstanceUntilAvailable();
 			for (int i = 0; i < geneOntologyTree.getNumberOfRoots(); i++) {
 				if (geneOntologyTree.getRoot(i).equals(childNode.goTerm))
 					return i;

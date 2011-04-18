@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/event
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/event
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-02-23T22:53:00.000000Z
+2011-04-18T18:24:59.000000Z
 634166a4074a2252edb485adcadfa000
 2009-08-24T20:19:18.000000Z
 5493

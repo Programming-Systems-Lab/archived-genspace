@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/discovery/src/org/geworkbench/util/session
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -26,13 +26,16 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+dialog
+dir
+
 Logger.java
 file
 
 
 
 
-2011-02-23T22:52:46.000000Z
+2011-04-18T18:22:14.000000Z
 3a42e01bf531d5a8b61f37c8f38a1c60
 2010-04-28T15:27:31.870980Z
 6428
@@ -60,16 +63,13 @@ has-props
 
 2852
 
-dialog
-dir
-
 SessionOperationException.java
 file
 
 
 
 
-2011-04-06T19:56:02.000000Z
+2011-04-18T18:22:14.000000Z
 e5e2e58c066a7c368c09d6d1b0e7e3ae
 2011-03-11T21:46:06.152592Z
 7567
@@ -103,7 +103,7 @@ file
 
 
 
-2011-04-06T19:56:02.000000Z
+2011-04-18T18:22:14.000000Z
 f9d45a6966fb91e9e24b9f615ee20c8a
 2011-03-11T21:46:06.152592Z
 7567
@@ -137,7 +137,7 @@ file
 
 
 
-2011-04-06T19:56:02.000000Z
+2011-04-18T18:22:14.000000Z
 bf2deadda712527b8c6c79dc38b0be8b
 2011-03-28T20:14:58.109976Z
 7670
@@ -171,7 +171,7 @@ file
 
 
 
-2011-04-06T19:56:02.000000Z
+2011-04-18T18:22:14.000000Z
 1a28932b0d2c3a679b919d9709562e44
 2011-03-11T21:25:08.771998Z
 7566
@@ -205,7 +205,7 @@ file
 
 
 
-2011-04-06T19:56:02.000000Z
+2011-04-18T18:22:14.000000Z
 c7dbaba5ea42d30934a7d69adffc069f
 2011-03-11T21:46:06.152592Z
 7567

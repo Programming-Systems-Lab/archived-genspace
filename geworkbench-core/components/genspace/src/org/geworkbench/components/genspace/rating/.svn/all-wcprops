@@ -1,53 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
-V 115
-/svn/geworkbench/!svn/ver/7731/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating
-END
-TitleItem.java
-K 25
-svn:wc:ra_dav:version-url
-V 130
-/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/TitleItem.java
+V 118
+/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/rating
 END
 WorkflowVisualizationPopup.java
 K 25
 svn:wc:ra_dav:version-url
-V 147
-/svn/geworkbench/!svn/ver/7733/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/WorkflowVisualizationPopup.java
-END
-empty.png
-K 25
-svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/empty.png
-END
-full.png
-K 25
-svn:wc:ra_dav:version-url
-V 124
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/full.png
+V 150
+/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/rating/WorkflowVisualizationPopup.java
 END
 Star.java
 K 25
 svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/7730/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/Star.java
-END
-arrow_right.png
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/arrow_right.png
-END
-half.png
-K 25
-svn:wc:ra_dav:version-url
-V 124
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/half.png
+V 128
+/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/rating/Star.java
 END
 StarRatingPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 136
-/svn/geworkbench/!svn/ver/7733/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/rating/StarRatingPanel.java
+V 139
+/svn/geworkbench/!svn/ver/7745/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/rating/StarRatingPanel.java
 END

@@ -34,7 +34,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
  * wrapping for the result from ontologizer 2.0.
  * 
  * @author zji
- * @version $Id: GoAnalysisResult.java 7166 2010-11-09 18:27:34Z zji $
+ * @version $Id: GoAnalysisResult.java 7735 2011-04-18 15:53:19Z zji $
  */
 public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 	private static final long serialVersionUID = -337000604982427702L;
@@ -136,13 +136,13 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 		List<Integer> list = new ArrayList<Integer>();
 		
 		if(goTermId==0) {
-			for(Integer id: namespaceIds) {
+			for(Integer id: getNamespaceIds()) {
 				list.add(id);
 			}
 			return list;
 		}
 
-		GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
+		GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstanceUntilAvailable();
 		for(GOTerm g: geneOntologyTree.getTerm(goTermId).getChildren()) {
 			list.add(g.getId());
 		}
@@ -154,7 +154,7 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 	 * 
 	 */
 	static public String getGoTermName(int goTermId) {
-		GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
+		GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstanceUntilAvailable();
 		GOTerm goTerm = geneOntologyTree.getTerm(goTermId);
 		if(goTerm!=null)
 			return goTerm.getName();
@@ -177,16 +177,18 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 	}
 	
 	static public  Set<Integer>  getNamespaceIds() {
-		return namespaceIds;
+		if(namespaceIds.size()>0) {
+			return namespaceIds;
+		} else {
+			GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstanceUntilAvailable();
+			for(int i=0; i<geneOntologyTree.getNumberOfRoots(); i++)
+				namespaceIds.add(geneOntologyTree.getRoot(i).getId());
+			return namespaceIds;
+		}
 	}
 
 	private static HashMap<Integer, Set<String>> term2Gene = new HashMap<Integer, Set<String> >();
 	private static Set<Integer> namespaceIds = new TreeSet<Integer>();
-	static {
-		GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
-		for(int i=0; i<geneOntologyTree.getNumberOfRoots(); i++)
-			namespaceIds.add(geneOntologyTree.getRoot(i).getId());
-	}
 	
 	private static final Set<String> namespace;
 	static {

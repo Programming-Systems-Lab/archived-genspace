@@ -2,6 +2,7 @@ package org.geworkbench.components.genspace;
 
 import java.lang.reflect.Method;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
@@ -59,7 +60,11 @@ public class ObjectHandler {
 				String analysisName = "";
 				analysisName = ((AbstractAnalysis) analysis).getLabel();
 				@SuppressWarnings("rawtypes")
-				Map parameters = analysis.getParameters();
+				Map parameters;
+				if(analysis.getParameterPanel() != null)
+					parameters = analysis.getParameters();
+				else
+					parameters = new HashMap();
 
 				if (logStatus == 0) {
 					log.debug("genspace - Logging");

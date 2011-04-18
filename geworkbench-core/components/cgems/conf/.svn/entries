@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/cgems/conf
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/cgems/conf
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-02-23T22:52:31.000000Z
+2011-04-18T18:21:25.000000Z
 3ffeef6743d180ef873677ddd9115b8d
 2007-01-17T18:05:24.000000Z
 2244
@@ -66,7 +66,7 @@ file
 
 
 
-2011-02-23T22:52:31.000000Z
+2011-04-18T18:21:25.000000Z
 9b001d35dbfc47a95feb793e54fe78af
 2007-01-17T18:05:24.000000Z
 2244

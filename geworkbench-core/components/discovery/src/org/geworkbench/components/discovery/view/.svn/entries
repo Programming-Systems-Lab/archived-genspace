@@ -1,8 +1,8 @@
 10
 
 dir
-7732
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/view
+7737
+https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/discovery/src/org/geworkbench/components/discovery/view
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-04-06T19:56:02.000000Z
+2011-04-18T18:22:14.000000Z
 e3d1a7bac1e03d6b5ded6b225494ba2d
 2011-03-24T13:43:50.511431Z
 7626

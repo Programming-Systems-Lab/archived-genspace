@@ -112,7 +112,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 7708 2011-04-07 19:04:17Z wangmen $
+ * @version $Id: ProjectPanel.java 7735 2011-04-18 15:53:19Z zji $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -2299,6 +2299,17 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 			}
 		};
 		listeners.put("File.Open.Remote Workspace", listener);
+		listeners.put("Tools.Choose OBO Source", new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				OboSourceDialog dlg = OboSourceDialog.getInstance();
+				dlg.refresh();
+				dlg.setVisible(true);
+			}
+			
+		});
+		
 		listener = new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RWspHandler ws = new RWspHandler();

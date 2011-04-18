@@ -18,7 +18,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 /**
  * 
  * @author zji
- * @version $Id: GoTableModel.java 7636 2011-03-24 21:21:00Z zji $
+ * @version $Id: GoTableModel.java 7735 2011-04-18 15:53:19Z zji $
  *
  */
 class GoTableModel extends AbstractTableModel {
@@ -43,7 +43,6 @@ class GoTableModel extends AbstractTableModel {
 		return COLUMN_COUNT;
 	}
 	
-	private static GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstance();
 	private static void parseAndAdd(String goTermAnnotation, Map<Integer, TermPair> map, String namespace) {
 		if(goTermAnnotation.startsWith("---"))
 				return;
@@ -53,6 +52,7 @@ class GoTableModel extends AbstractTableModel {
 		
 		if(id==0) return;
 		
+		GeneOntologyTree geneOntologyTree = GeneOntologyTree.getInstanceUntilAvailable();
 		GOTerm term = geneOntologyTree.getTerm(id);
 		if(term==null) {
 			log.info("No GO term for ID "+id);

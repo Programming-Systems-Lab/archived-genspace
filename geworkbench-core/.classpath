@@ -160,19 +160,15 @@
 	<classpathentry kind="lib" path="lib/genspace/stats77.jar"/>
 	<classpathentry kind="lib" path="lib/genspace/transaction-internal-api.jar"/>
 	<classpathentry kind="lib" path="lib/genspace/work-management.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/commons-logging.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/docking.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/intellij.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/jgraphx.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/jimi.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/log4j.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/logging.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/mina-core-1.1.7.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/smack.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/smackx.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/swing-layout-1.0.3.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/swing-worker-1.2.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/tray.dll"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.sun.enterprise.jst.server.runtimeTarget/GlassFish 3.1">
 		<attributes>

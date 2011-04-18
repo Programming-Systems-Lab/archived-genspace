@@ -118,12 +118,17 @@ public class ObjectLogger {
 						Transaction retTrans = (Transaction) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getUsageOps().sendUsageSingleEvent(RuntimeEnvironmentSettings.writeObject(e))); //try to send the log event
 						if(retTrans != null)
 						{
+							System.out.println("Sent up a log, got back " + retTrans.getWorkflow());
 							RealTimeWorkFlowSuggestion.cwfUpdated(retTrans.getWorkflow());
 							return retTrans;
 						}
+						else
+							System.out.println("Got back null workflow after sending log");
 					}
 					catch(Exception ex)
 					{
+						System.out.println("Error sending up the log irt");
+						ex.printStackTrace();
 						//be silent on errors... if we get them, we'll just log to the file instead
 					}
 					
