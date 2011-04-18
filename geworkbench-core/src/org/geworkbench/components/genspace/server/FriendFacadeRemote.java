@@ -16,6 +16,8 @@ public interface FriendFacadeRemote {
      */
 	public List<User> getFriendRequests();
 	
+	public byte[] getFriendRequestsList();
+	
 	/**
 	 * Request a user to become friends with the current user
 	 * @param selectedValue User to ask to be friends with

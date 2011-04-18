@@ -20,6 +20,7 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
@@ -125,5 +126,15 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		}
 		getEntityManager().clear();
 		return retz;
+	}
+
+	@Override
+	public void updateUser(byte[] userObj) {
+		updateUser((User) RuntimeEnvironmentSettings.readObject(userObj));
+	}
+
+	@Override
+	public byte[] getRootFolderBytes() {
+		return RuntimeEnvironmentSettings.writeObject(getRootFolder());
 	} 
 }

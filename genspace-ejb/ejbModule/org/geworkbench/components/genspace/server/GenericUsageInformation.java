@@ -11,6 +11,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
@@ -408,6 +409,17 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 		return r;
 	}
 
+
+	@Override
+	public byte[] sendUsageSingleEvent(byte[] analysisEvent) {
+		return RuntimeEnvironmentSettings.writeObject(sendUsageEvent((AnalysisEvent) RuntimeEnvironmentSettings.readObject(analysisEvent)));
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public byte[] sendMultipeEvents(byte[] analysisEvent) {
+		return RuntimeEnvironmentSettings.writeObject(sendUsageLog((List<AnalysisEvent>) RuntimeEnvironmentSettings.readObject(analysisEvent)));
+	}
 
 
 }

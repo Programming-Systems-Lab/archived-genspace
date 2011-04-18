@@ -14,6 +14,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.BorderFactory;
@@ -36,6 +37,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
+import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
@@ -487,12 +490,13 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	/**
 	 * Must be called from a worker thread
 	 */
+	@SuppressWarnings("unchecked")
 	public void updateFormFieldsBG() {
 		if(repositoryPanel != null && repositoryPanel.tree != null)
 			repositoryPanel.tree.recalculateAndReload();
 		if(inboxTable != null)
 		{
-			inboxTable.setData(GenSpaceServerFactory.getWorkflowOps().getIncomingWorkflows());
+			inboxTable.setData((List<IncomingWorkflow>) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getWorkflowOps().getIncomingWorkflowsBytes()));
 		}
 		// whatever was selected, shouldn't be anymore
 		clearWorkflowData();

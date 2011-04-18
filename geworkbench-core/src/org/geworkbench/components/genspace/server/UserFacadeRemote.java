@@ -11,10 +11,11 @@ public interface UserFacadeRemote {
 	public boolean userExists(String username);
 
 	public User getMe();
+	public void updateUser(byte[] userObj);
 	public void updateUser(User user);
 	public User getProfile(String who);	
 	public WorkflowFolder getRootFolder();
-	
+	public byte[] getRootFolderBytes();
 
 	
 

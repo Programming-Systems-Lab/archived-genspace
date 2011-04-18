@@ -179,7 +179,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 						uw.setFolder(GenSpaceServerFactory.getUser().getRootFolder());
 						uw.setOwner(GenSpaceServerFactory.getUser());
 						uw.setCreatedAt(new Date());
-						GenSpaceServerFactory.getWorkflowOps().addWorkflow(uw, GenSpaceServerFactory.getUser().getRootFolder().getId());
+						GenSpaceServerFactory.getWorkflowOps().addWorkflow(RuntimeEnvironmentSettings.writeObject(uw), GenSpaceServerFactory.getUser().getRootFolder().getId());
 						GenSpace.getInstance().getWorkflowRepository().updateFormFieldsBG();
 							JOptionPane
 							.showMessageDialog(null,

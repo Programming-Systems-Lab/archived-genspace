@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.Workflow;
@@ -164,6 +165,26 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		}
 		getEntityManager().clear();
 		return ret;
+	}
+
+	@Override
+	public WorkflowFolder addWorkflow(byte[] uw, int folder) {
+		return addWorkflow((UserWorkflow) RuntimeEnvironmentSettings.readObject(uw), folder);
+	}
+
+	@Override
+	public byte[] addComment(byte[] comment) {
+		return RuntimeEnvironmentSettings.writeObject(addComment((WorkflowComment) RuntimeEnvironmentSettings.readObject(comment)));
+	}
+
+	@Override
+	public boolean sendWorkflowBytes(byte[] newWorkflow, String receiver) {
+		return sendWorkflow((IncomingWorkflow) RuntimeEnvironmentSettings.readObject(newWorkflow), receiver);
+	}
+
+	@Override
+	public byte[] getIncomingWorkflowsBytes() {
+		return RuntimeEnvironmentSettings.writeObject(getIncomingWorkflows());
 	}
 
 }

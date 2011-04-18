@@ -137,7 +137,8 @@ public class GenSpaceServerFactory {
 	}
 	public static boolean userRegister(User u) {
 		System.out.println("Sending up user of size " + getObjectSize(u));
-		user = getPublicFacade().register(u);
+		user = getPublicFacade().register(RuntimeEnvironmentSettings.writeObject(u));
+		System.out.println("Sent info");
 		if(user != null)
 			return true;
 		return false;
@@ -175,7 +176,7 @@ public class GenSpaceServerFactory {
 	}
 	public static boolean userUpdate() {
 
-		getUserOps().updateUser(user);
+		getUserOps().updateUser(RuntimeEnvironmentSettings.writeObject(user));
 		return true;
 	}
 

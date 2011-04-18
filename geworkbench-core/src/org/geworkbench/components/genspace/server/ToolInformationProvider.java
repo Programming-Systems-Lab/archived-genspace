@@ -36,6 +36,10 @@ public interface ToolInformationProvider {
 	public List<Workflow> getMostPopularWorkflowIncluding(int toolId);
 	public List<Workflow> getAllWorkflowsIncluding(int toolId);
 	public List<Workflow> getToolSuggestion(int workflowID);
+	
+	public byte[] sendUsageSingleEvent(byte[] analysisEvent);
+	public byte[] sendMultipeEvents(byte[] analysisEvent);
+	
 	public Transaction sendUsageEvent(AnalysisEvent e);
 	public Transaction sendUsageLog(List<AnalysisEvent> e);
 	public User getExpertUserFor(int toolId);

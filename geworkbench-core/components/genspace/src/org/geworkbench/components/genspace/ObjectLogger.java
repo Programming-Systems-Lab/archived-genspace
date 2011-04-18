@@ -86,7 +86,7 @@ public class ObjectLogger {
 						Transaction done = null;
 						try
 						{
-							done= GenSpaceServerFactory.getUsageOps().sendUsageLog(pending);
+							done= (Transaction) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getUsageOps().sendMultipeEvents(RuntimeEnvironmentSettings.writeObject(pending)));
 						}
 						catch(Exception ex)
 						{
@@ -115,7 +115,7 @@ public class ObjectLogger {
 					e.setParameters(params);
 					try
 					{
-						Transaction retTrans = GenSpaceServerFactory.getUsageOps().sendUsageEvent(e); //try to send the log event
+						Transaction retTrans = (Transaction) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getUsageOps().sendUsageSingleEvent(RuntimeEnvironmentSettings.writeObject(e))); //try to send the log event
 						if(retTrans != null)
 						{
 							RealTimeWorkFlowSuggestion.cwfUpdated(retTrans.getWorkflow());

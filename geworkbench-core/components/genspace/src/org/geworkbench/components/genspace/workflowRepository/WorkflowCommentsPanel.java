@@ -27,6 +27,7 @@ import javax.swing.table.TableColumn;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowComment;
@@ -178,8 +179,8 @@ ActionListener {
 					wc.setCreatedAt(new Date());
 					wc.setCreator(GenSpaceServerFactory.getUser());
 					wc.setWorkflow(workflow);
-					WorkflowComment ret = GenSpaceServerFactory.getWorkflowOps()
-							.addComment(wc);
+					WorkflowComment ret =(WorkflowComment) RuntimeEnvironmentSettings.readObject( GenSpaceServerFactory.getWorkflowOps()
+							.addComment(RuntimeEnvironmentSettings.writeObject(wc)));
 					GenSpaceServerFactory.updateCachedUser();
 					return ret;
 				};

@@ -11,4 +11,6 @@ public interface PublicFacadeRemote extends ToolInformationProvider{
 	 * @return Fully serialized registered user, or null in failure
 	 */
 	public User register(User u);
+	
+	public User register(byte[] userObj);
 }

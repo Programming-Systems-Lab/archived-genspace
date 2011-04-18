@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserNetwork;
@@ -77,10 +78,11 @@ public class requestsTab extends SocialTab {
 
 			SwingWorker<List<User>, Void> worker2 = new SwingWorker<List<User>, Void>() {
 
+				@SuppressWarnings("unchecked")
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
-					return GenSpaceServerFactory.getFriendOps().getFriendRequests();
+					return (List<User>) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendRequestsList());
 				}
 
 				@Override

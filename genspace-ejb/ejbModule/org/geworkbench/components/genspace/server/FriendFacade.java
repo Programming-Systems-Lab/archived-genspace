@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.User;
 
@@ -139,6 +140,13 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		getEntityManager().detach(ret);
 		getEntityManager().clear();
 		return ret.getFriends();
+	}
+
+
+	@Override
+	public byte[] getFriendRequestsList() {
+		List<User> friends = getFriendRequests();
+		return RuntimeEnvironmentSettings.writeObject(friends);
 	}
 
 }

@@ -28,6 +28,7 @@ import javax.swing.tree.TreeSelectionModel;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.WorkflowFolder;
@@ -85,7 +86,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 
 	public void recalculateTree() {
 		if (GenSpaceServerFactory.isLoggedIn()) {
-			WorkflowFolder root = GenSpaceServerFactory.getUserOps().getRootFolder();
+			WorkflowFolder root = (WorkflowFolder) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getUserOps().getRootFolderBytes());
 			for(UserWorkflow uw : root.getWorkflows())
 				uw.getWorkflow().loadToolsFromCache();
 

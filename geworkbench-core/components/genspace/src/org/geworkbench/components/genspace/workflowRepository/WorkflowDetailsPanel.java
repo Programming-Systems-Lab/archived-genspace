@@ -29,6 +29,7 @@ import javax.swing.tree.TreePath;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.Workflow;
@@ -218,7 +219,7 @@ ActionListener {
 							newW.setName(wn.userWorkflow.getName());
 							newW.setWorkflow(wn.userWorkflow.getWorkflow());
 							newW.setSender(GenSpaceServerFactory.getUser());
-							return GenSpaceServerFactory.getWorkflowOps().sendWorkflow(newW,receiver);
+							return GenSpaceServerFactory.getWorkflowOps().sendWorkflowBytes(RuntimeEnvironmentSettings.writeObject(newW),receiver);
 						};
 
 						protected void done() {

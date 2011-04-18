@@ -24,6 +24,7 @@ import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
 
@@ -233,12 +234,13 @@ public class SocialNetworksHome implements UpdateablePanel {
 			current.updateFormFields();
 			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
 				int evt;
+				@SuppressWarnings("unchecked")
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
 					evt = GenSpace.getStatusBar().start("Refreshing social tab");
 					System.out.println("Getting friends list");
-					return GenSpaceServerFactory.getFriendOps().getFriendRequests();
+					return (List<User>) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendRequestsList());
 				}
 
 				@Override
@@ -273,7 +275,9 @@ public class SocialNetworksHome implements UpdateablePanel {
 				@Override
 				protected Integer doInBackground()
 						throws Exception {
-					return GenSpaceServerFactory.getFriendOps().getFriendRequests().size() + GenSpaceServerFactory.getNetworkOps().getNumberOfNetworkRequests();
+					
+					return ((List<User>) (RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendRequestsList()))).size() +
+					GenSpaceServerFactory.getNetworkOps().getNumberOfNetworkRequests();
 				}
 
 				@Override

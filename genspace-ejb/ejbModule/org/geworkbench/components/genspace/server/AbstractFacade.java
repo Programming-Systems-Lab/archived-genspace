@@ -53,7 +53,7 @@ public abstract class AbstractFacade<T> {
 		cachedUser = r;
 		return cachedUser;
     }
-    
+
     protected User findByUserName(String username)
 	{
 		Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");

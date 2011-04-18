@@ -15,6 +15,8 @@ public interface WorkflowRepositoryRemote {
 
 	WorkflowFolder addWorkflow(UserWorkflow uw, int folder);
 
+	WorkflowFolder addWorkflow(byte[] uw, int folder);
+	
 	WorkflowFolder addFolder(WorkflowFolder folder);
 
 	boolean deleteFromInbox(int wi);
@@ -25,12 +27,18 @@ public interface WorkflowRepositoryRemote {
 
 	WorkflowComment addComment(WorkflowComment wc);
 
+	byte[] addComment(byte[] comment);
+	
 	UserWorkflow importWorkflow(UserWorkflow w);
 
 	boolean sendWorkflow(IncomingWorkflow newW, String receiver);
 
+	boolean sendWorkflowBytes(byte[] newWorkflow, String receiver);
+	
 	boolean deleteMyFolder(int folder);
 	
 	List<IncomingWorkflow> getIncomingWorkflows();
+	
+	byte[] getIncomingWorkflowsBytes();
 	
 }
