@@ -58,7 +58,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 	private JPanel popWFPanel;
 	private JPanel popFirstToolsPan;
 	private JPanel statsPan;
-	private boolean instrument = true;
+	private boolean instrument = false;
 	
 	private void updateAllToolList() {
 		SwingWorker<List<Tool>, Void> worker = new SwingWorker<List<Tool>, Void>() {

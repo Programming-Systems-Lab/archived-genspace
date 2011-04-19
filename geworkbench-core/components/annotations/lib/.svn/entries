@@ -1,7 +1,7 @@
 10
 
 dir
-7737
+7746
 https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/annotations/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -502,40 +502,6 @@ has-props
 
 135636
 
-batik-xml.jar
-file
-
-
-
-
-2011-04-18T18:21:24.000000Z
-90023095a58978482976b987f366d493
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19876
-
 sdk-client-framework.jar
 file
 
@@ -569,6 +535,40 @@ has-props
 
 
 79841
+
+batik-xml.jar
+file
+
+
+
+
+2011-04-18T18:21:24.000000Z
+90023095a58978482976b987f366d493
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19876
 
 batik.jar
 file
@@ -638,17 +638,17 @@ has-props
 
 139652
 
-hibernate-annotations.jar
+batik-transcoder.jar
 file
 
 
 
 
 2011-04-18T18:21:24.000000Z
-de740335083745b06fefdd10093f6a21
-2009-06-11T21:07:21.000000Z
-5216
-chiangy
+ab2f8d83b35adb2637b362656bdc8766
+2005-07-28T22:36:56.000000Z
+50
+watkin
 has-props
 
 
@@ -670,41 +670,7 @@ has-props
 
 
 
-265130
-
-commons-logging-1.1.jar
-file
-
-
-
-
-2011-04-18T18:21:24.000000Z
-6b62417e77b000a87de66ee3935edbf5
-2009-06-11T21:07:21.000000Z
-5216
-chiangy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-52915
+61780
 
 batik-script.jar
 file
@@ -740,17 +706,17 @@ has-props
 
 30885
 
-batik-transcoder.jar
+commons-logging-1.1.jar
 file
 
 
 
 
 2011-04-18T18:21:24.000000Z
-ab2f8d83b35adb2637b362656bdc8766
-2005-07-28T22:36:56.000000Z
-50
-watkin
+6b62417e77b000a87de66ee3935edbf5
+2009-06-11T21:07:21.000000Z
+5216
+chiangy
 has-props
 
 
@@ -772,7 +738,41 @@ has-props
 
 
 
-61780
+52915
+
+hibernate-annotations.jar
+file
+
+
+
+
+2011-04-18T18:21:24.000000Z
+de740335083745b06fefdd10093f6a21
+2009-06-11T21:07:21.000000Z
+5216
+chiangy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+265130
 
 log4j-1.2.14.jar
 file
@@ -808,40 +808,6 @@ has-props
 
 367444
 
-batik-extension.jar
-file
-
-
-
-
-2011-04-18T18:21:24.000000Z
-42cab37430eee526f13bd553a8f65ba9
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-44832
-
 batik-svg-dom.jar
 file
 
@@ -876,17 +842,17 @@ has-props
 
 376951
 
-hibernate-commons-annotations.jar
+batik-extension.jar
 file
 
 
 
 
 2011-04-18T18:21:24.000000Z
-1ccefbe43fedffc16835ceb1a777d199
-2009-06-11T21:07:21.000000Z
-5216
-chiangy
+42cab37430eee526f13bd553a8f65ba9
+2005-07-28T22:36:56.000000Z
+50
+watkin
 has-props
 
 
@@ -908,7 +874,7 @@ has-props
 
 
 
-66426
+44832
 
 batik-util.jar
 file
@@ -943,6 +909,40 @@ has-props
 
 
 76261
+
+hibernate-commons-annotations.jar
+file
+
+
+
+
+2011-04-18T18:21:24.000000Z
+1ccefbe43fedffc16835ceb1a777d199
+2009-06-11T21:07:21.000000Z
+5216
+chiangy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+66426
 
 batik-squiggle.jar
 file

@@ -26,17 +26,17 @@ class workflowActions extends sfActions
   		
   		if ($request->getParameter('comment')){
 	  		$comment = new WorkflowComments();
-	  		$comment->setUsername($this->getUser()->getAttribute('username'));
+	  		$comment->setCreatorId($this->getUser()->getAttribute('username'));
 	  		$comment->setComment($request->getParameter('comment'));
-	  		$comment->setId($this->workflowId);
+	  		$comment->setWorkflowId($this->workflowId);
 	  		$comment->save();
 	  		$this->getUser()->setFlash('comment_msg', 'Comment posted!');
   		}
   		else if ($request->getParameter('rating')){
   			$rating = new WorkflowRatings();
-	  		$rating->setUsername($this->getUser()->getAttribute('username'));
+	  		$rating->setCreatorId($this->getUser()->getAttribute('username'));
 	  		$rating->setRating($request->getParameter('rating'));
-	  		$rating->setId($this->workflowId);
+	  		$rating->setWorkflowId($this->workflowId);
 	  		$rating->save();
 	  		$this->getUser()->setFlash('rating_msg', 'Rating submitted!');
   		}

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui
+/svn/geworkbench/!svn/ver/7740/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui
 END
 SocialTab.java
 K 25
@@ -19,7 +19,7 @@ networksTab.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/7739/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui/networksTab.java
+/svn/geworkbench/!svn/ver/7748/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui/networksTab.java
 END
 GenSpaceGeneralProfile.java
 K 25
@@ -73,7 +73,7 @@ friendsTab.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/7739/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui/friendsTab.java
+/svn/geworkbench/!svn/ver/7748/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui/friendsTab.java
 END
 AutoCompleteCombo.java
 K 25
@@ -97,7 +97,7 @@ WorkflowStatistics.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/7739/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowStatistics.java
+/svn/geworkbench/!svn/ver/7748/genspace_integration/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowStatistics.java
 END
 UpdateablePanel.java
 K 25

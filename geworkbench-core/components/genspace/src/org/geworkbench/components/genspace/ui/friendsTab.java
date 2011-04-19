@@ -36,6 +36,7 @@ public class friendsTab extends SocialTab {
 	}
 
 	public void initComponents() {
+		myFriendsList.setOpaque(false);
 		myFriendsList.setCellRenderer(new ListCellRenderer() {
 
 			@Override

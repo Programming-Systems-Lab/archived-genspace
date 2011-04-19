@@ -1,7 +1,7 @@
 10
 
 dir
-7737
+7746
 https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/ttest/src/org/geworkbench/components/analysis/help/clustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,9 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SOMCluster_files
-dir
 
 Avail_Clustering.htm
 file
@@ -62,6 +59,9 @@ has-props
 
 
 1262
+
+SOMCluster_files
+dir
 
 Store_Parameter.htm
 file
@@ -131,9 +131,6 @@ has-props
 
 578
 
-Ttest_files
-dir
-
 SOMClustering.htm
 file
 
@@ -167,6 +164,9 @@ has-props
 
 
 5101
+
+Ttest_files
+dir
 
 Ttest.htm
 file
@@ -202,40 +202,6 @@ has-props
 
 5930
 
-Clustering_Overview.htm
-file
-
-
-
-
-2011-04-18T18:21:54.000000Z
-3d4cfc194f359ec6783571b785a8d2a5
-2010-05-12T19:50:51.283670Z
-6530
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1751
-
 MRA.jhm
 file
 
@@ -269,6 +235,40 @@ has-props
 
 
 793
+
+Clustering_Overview.htm
+file
+
+
+
+
+2011-04-18T18:21:54.000000Z
+3d4cfc194f359ec6783571b785a8d2a5
+2010-05-12T19:50:51.283670Z
+6530
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1751
 
 analysisPanelHelpSet.hs
 file
@@ -304,17 +304,14 @@ has-props
 
 624
 
-images
-dir
-
-ncicb.css
+HierarchicalClustering.htm
 file
 
 
 
 
 2011-04-18T18:21:54.000000Z
-1f848289e789b9a0980ce8b7ba0b0efb
+ece3d21aba539fa94828d046813d076d
 2010-05-12T19:50:51.283670Z
 6530
 zji
@@ -339,7 +336,7 @@ has-props
 
 
 
-925
+4317
 
 Hierarchical Clustering.htm
 file
@@ -375,14 +372,14 @@ has-props
 
 3960
 
-HierarchicalClustering.htm
+ncicb.css
 file
 
 
 
 
 2011-04-18T18:21:54.000000Z
-ece3d21aba539fa94828d046813d076d
+1f848289e789b9a0980ce8b7ba0b0efb
 2010-05-12T19:50:51.283670Z
 6530
 zji
@@ -407,7 +404,10 @@ has-props
 
 
 
-4317
+925
+
+images
+dir
 
 MasterRegulatorAnalysis_files
 dir

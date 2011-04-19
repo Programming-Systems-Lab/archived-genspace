@@ -1,7 +1,7 @@
 10
 
 dir
-7737
+7746
 https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/genomebrowser/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,14 +60,14 @@ has-props
 
 247182
 
-APACHE_LICENSE_2.txt
+freehep-graphicsio-gif.jar
 file
 
 
 
 
 2011-04-18T18:22:47.000000Z
-86d3f3a95c324c9479bd8986968f4327
+2450e0a428d75e7f200a3ee0882f4a8f
 2007-10-25T19:39:22.000000Z
 3279
 mkustagi
@@ -92,7 +92,7 @@ has-props
 
 
 
-11357
+20939
 
 affx_fusion.jar
 file
@@ -128,14 +128,14 @@ has-props
 
 280717
 
-freehep-graphicsio-gif.jar
+APACHE_LICENSE_2.txt
 file
 
 
 
 
 2011-04-18T18:22:47.000000Z
-2450e0a428d75e7f200a3ee0882f4a8f
+86d3f3a95c324c9479bd8986968f4327
 2007-10-25T19:39:22.000000Z
 3279
 mkustagi
@@ -160,41 +160,7 @@ has-props
 
 
 
-20939
-
-FUSION_SDK_LICENSE.txt
-file
-
-
-
-
-2011-04-18T18:22:47.000000Z
-91b214823b53715ad964c9cdb706e721
-2007-10-25T19:39:22.000000Z
-3279
-mkustagi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26743
+11357
 
 genometry.jar
 file
@@ -230,6 +196,40 @@ has-props
 
 51382
 
+FUSION_SDK_LICENSE.txt
+file
+
+
+
+
+2011-04-18T18:22:47.000000Z
+91b214823b53715ad964c9cdb706e721
+2007-10-25T19:39:22.000000Z
+3279
+mkustagi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26743
+
 xercesImpl.jar
 file
 
@@ -264,40 +264,6 @@ has-props
 
 895813
 
-jlfgr-1_0.jar
-file
-
-
-
-
-2011-04-18T18:22:47.000000Z
-88b00348a6f398a034c4c3999c097f47
-2007-10-25T19:39:22.000000Z
-3279
-mkustagi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-114580
-
 genoviz.jar
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 575021
+
+jlfgr-1_0.jar
+file
+
+
+
+
+2011-04-18T18:22:47.000000Z
+88b00348a6f398a034c4c3999c097f47
+2007-10-25T19:39:22.000000Z
+3279
+mkustagi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114580
 
 freehep-graphicsio-ps.jar
 file

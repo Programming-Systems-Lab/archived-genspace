@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/lib
+/svn/geworkbench/!svn/ver/7741/genspace_integration/components/genspace/lib
+END
+logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/lib/logging.jar
 END
 jimi.jar
 K 25
@@ -32,6 +38,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 95
 /svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/swing-layout-1.0.3.jar
+END
+log4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/lib/log4j.jar
 END
 jgraphx.jar
 K 25

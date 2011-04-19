@@ -33,6 +33,7 @@ public class networksTab extends SocialTab {
 	}
 
 	public void initComponents() {
+		lstMyNetworks.setOpaque(false);
 		lstMyNetworks.setCellRenderer(new ListCellRenderer() {
 
 			@Override
