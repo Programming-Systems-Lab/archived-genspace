@@ -84,19 +84,20 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	public WorkflowFolder getRootFolder() {
 		invalidateCache();
 		WorkflowFolder ret = getUser().getRootFolder();
-		getEntityManager().refresh(ret);
+
 		if(ret == null)
 		{
 			ret = new WorkflowFolder();
 			ret.setOwner(getUser());
-			ret.setName("Root");
+			ret.setName("Repository");
 			getEntityManager().persist(ret);
 			User u = getUser();
 			u.setRootFolder(ret);
 			getEntityManager().merge(u);
 			ret = getMe().getRootFolder();
 		}
-		
+		else
+			getEntityManager().refresh(ret);
 		WorkflowFolder retz = new WorkflowFolder();
 		retz.setId(ret.getId());
 		retz.setName(ret.getName());

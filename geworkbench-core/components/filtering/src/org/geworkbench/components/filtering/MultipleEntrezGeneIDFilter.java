@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
@@ -21,7 +23,7 @@ import org.geworkbench.engine.management.Publish;
  * The user preferences are collected in this filter's associate parameters GUI
  * (<code>MultipleEntrezGeneIDFilter</code>).
  * 
- * @version $Id: MultipleEntrezGeneIDFilter.java 7478 2011-02-23 16:39:10Z zji $
+ * @version $Id: MultipleEntrezGeneIDFilter.java 7783 2011-04-21 15:55:47Z maz $
  */
 public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 	private static final long serialVersionUID = -3603151182199536102L;
@@ -33,14 +35,22 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 	List<Integer> multipleEntrezIDsList = new ArrayList<Integer>();
 
 	private Action filterAction;
+	private MultipleEntrezGeneIDFilterPanel multipleEntrezGeneIDFilterPanel=new MultipleEntrezGeneIDFilterPanel();
 
 	public MultipleEntrezGeneIDFilter() {
-		setDefaultPanel(new MultipleEntrezGeneIDFilterPanel());
+		setDefaultPanel(multipleEntrezGeneIDFilterPanel);
+		filterAction = multipleEntrezGeneIDFilterPanel.getFilterAction();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet<?> input) {
-		
+		maSet = (DSMicroarraySet<DSMicroarray>) input;
+		if(maSet.getAnnotationFileName()==null){
+			JOptionPane.showMessageDialog(null, "The filter needs annotation file. Please load it first.",
+					"Multiple Gene ID Filter Error", JOptionPane.ERROR_MESSAGE);
+			return null;
+		}
 		if (filterAction == Action.REMOVE) {
 			return remove(input);
 		}else if (filterAction == Action.CREATE_FROM_MATCHING) {
@@ -168,7 +178,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 																						org.geworkbench.events.SubpanelChangedEvent.NEW));
 	}
 	
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "unchecked" })
 	@Publish
 	public org.geworkbench.events.SubpanelChangedEvent publishSubpanelChangedEvent(
 		   org.geworkbench.events.SubpanelChangedEvent event) {
@@ -177,7 +187,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 
 	@Override
 	protected void getParametersFromPanel() {
-		MultipleEntrezGeneIDFilterPanel multipleEntrezGeneIDFilterPanel = (MultipleEntrezGeneIDFilterPanel) aspp;
+		multipleEntrezGeneIDFilterPanel = (MultipleEntrezGeneIDFilterPanel) aspp;
 		filterNoEntrezID = multipleEntrezGeneIDFilterPanel.isNoEntrezIDsStatusSelected();
 		filterMultipleEntrezIDs = multipleEntrezGeneIDFilterPanel.isMultipleEntrezIDsStatusSelected();
 

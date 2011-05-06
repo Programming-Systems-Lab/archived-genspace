@@ -9,16 +9,16 @@ import java.io.Serializable;
 
 /**
  * Register Bean
- * $Id: RegisterBean.java 7406 2011-02-03 23:12:54Z wangmen $
+ * $Id: RegisterBean.java 7754 2011-04-19 21:05:38Z wangmen $
  */
 public class RegisterBean implements Serializable {
 	private static final long serialVersionUID = -197070883150097095L;
 	private String fname;
 	private String lname;
 	private String username;
-	private char[] password;
-	private char[] confirmPasswd;
-	private char[] oldPasswd;
+	private String password;
+	private String confirmPasswd;
+	private String oldPasswd;
 	private String email;
 	private String workTitle;
 	private String phoneNumber;
@@ -46,15 +46,15 @@ public class RegisterBean implements Serializable {
 		return username;
 	}
 	
-	public char[] getPassword(){
+	public String getPassword(){
 		return password;
 	}
 	
-	public char[] getConfirmPasswd() {
+	public String getConfirmPasswd() {
 		return confirmPasswd;
 	}
 
-	public char[] getOldPasswd() {
+	public String getOldPasswd() {
 		return oldPasswd;
 	}
 
@@ -122,15 +122,15 @@ public class RegisterBean implements Serializable {
 		username = uname;
 	}
 	
-	public void setPassword(char[] passwd){
+	public void setPassword(String passwd){
 		password = passwd;
 	}
 	
-	public void setConfirmPasswd(char[] confPasswd){
+	public void setConfirmPasswd(String confPasswd){
 		confirmPasswd = confPasswd;
 	}
 
-	public void setOldPasswd(char[] passwd){
+	public void setOldPasswd(String passwd){
 		oldPasswd = passwd;
 	}
 

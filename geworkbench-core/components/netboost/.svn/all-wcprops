@@ -1,5 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/geworkbench/!svn/ver/7737/genspace_integration/components/netboost
+V 68
+/svn/geworkbench/!svn/ver/7763/trunk/geworkbench/components/netboost
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/geworkbench/!svn/ver/3179/trunk/geworkbench/components/netboost/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/geworkbench/!svn/ver/3262/trunk/geworkbench/components/netboost/.project
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/netboost/.cvsignore
 END

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/geworkbench/!svn/ver/7741/genspace_integration/components/genspace/lib
+V 72
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/lib
 END
-logging.jar
+smackx.jar
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/lib/logging.jar
+V 83
+/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/smackx.jar
 END
 jimi.jar
 K 25
@@ -27,23 +27,29 @@ svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/mina-core-1.1.7.jar
 END
+swing-worker-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/4868/trunk/geworkbench/components/genspace/lib/swing-worker-1.2.jar
+END
 docking.jar
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/docking.jar
 END
+smack.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/7734/trunk/geworkbench/components/genspace/lib/smack.jar
+END
 swing-layout-1.0.3.jar
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/swing-layout-1.0.3.jar
-END
-log4j.jar
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/7737/genspace_integration/components/genspace/lib/log4j.jar
 END
 jgraphx.jar
 K 25

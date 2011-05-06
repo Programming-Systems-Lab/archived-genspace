@@ -27,7 +27,7 @@ import org.geworkbench.util.ProgressTask;
 
 /**
  * User Registration GUI
- * $Id: RegPanel.java 7708 2011-04-07 19:04:17Z wangmen $
+ * $Id: RegPanel.java 7754 2011-04-19 21:05:38Z wangmen $
  */
 public class RegPanel extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 7446637434069686093L;
@@ -464,13 +464,13 @@ public class RegPanel extends JPanel implements ActionListener {
 		jframe.setVisible(false); 	
 	}     
 
-    private static final String hash = "MD5";    
+    private static final String hash = "SHA-1";    
     /**
-     * Encode clear text char[] to digested char[]
+     * Encode clear text char[] to digested String
      * @param b
      * @return
      */
-    public static char[] getEncodedChars(char[] clearText) {
+    public static String getEncodedChars(char[] clearText) {
 		char hexDigit[] = {'0', '1', '2', '3', '4', '5', '6', '7',
 				'8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 		byte[] b = null;
@@ -488,7 +488,7 @@ public class RegPanel extends JPanel implements ActionListener {
 			buf[i++] = hexDigit[(b[j] >> 4) & 0x0f];
 			buf[i++] = hexDigit[b[j] & 0x0f];
 		}
-    	return buf;
+    	return new String(buf);
 	}
 
 }

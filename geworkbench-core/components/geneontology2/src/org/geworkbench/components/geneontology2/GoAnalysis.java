@@ -42,7 +42,7 @@ import org.geworkbench.util.ProgressBar;
  * Go Term Analysis component of geWorkbench.
  *
  * @author zji
- * @version $Id: GoAnalysis.java 7724 2011-04-12 15:04:31Z maz $
+ * @version $Id: GoAnalysis.java 7776 2011-04-20 22:11:54Z smithken $
  */
 public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 	/* necessary to implement ClusteringAnalysis for the AnalysisPanel to pick it up. No other effect. */
@@ -292,7 +292,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 		StringBuffer histStr = new StringBuffer();
 		histStr.append(aspp.getDataSetHistory() );
 
-		histStr.append( "\nGO Terms Analysis returned a results of "+resultSize+" rows." );
+		histStr.append( "\nGO Terms Analysis result returned with "+resultSize+" rows." );
 
 		return histStr.toString();
 	}

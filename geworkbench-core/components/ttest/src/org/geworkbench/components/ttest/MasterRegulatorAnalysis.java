@@ -3,6 +3,7 @@ package org.geworkbench.components.ttest;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.apache.commons.logging.Log;
@@ -12,6 +13,8 @@ import org.geworkbench.bison.annotation.CSAnnotationContext;
 import org.geworkbench.bison.annotation.CSAnnotationContextManager;
 import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.annotation.DSAnnotationContextManager;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
@@ -33,12 +36,10 @@ import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.builtin.projects.ProjectSelection;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.GeneSelectorEvent;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrix;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrixDataSet;
 
 /**
  * @author yc2480
- * @version $Id: MasterRegulatorAnalysis.java 7701 2011-04-05 17:53:43Z zji $
+ * @version $Id: MasterRegulatorAnalysis.java 7782 2011-04-21 15:40:06Z youmi $
  */
 public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -74,14 +75,18 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		};		
 
 		String transcriptionFactorsStr = mraAnalysisPanel.getTranscriptionFactor();
+		String signatureMarkersSTr = mraAnalysisPanel.getSigMarkers();
 		if (transcriptionFactorsStr.equals("")){
 			return new AlgorithmExecutionResults(false,
 					"Transcription Factor has not been entered yet.", 
 					null);
 		};
+		 
 		TtestAnalysisPanel tTestAnalysisPanel = mraAnalysisPanel.getTTestPanel();
-		TtestAnalysis tTestAnalysis= new TtestAnalysis(tTestAnalysisPanel);
+		TtestAnalysis tTestAnalysis= new TtestAnalysis(tTestAnalysisPanel);		 
+		
 		tTestAnalysisPanel.setVisible(false);
+		 
 		// validate data and parameters.
 		ParamValidationResults validation = validateParameters();
 		if (!validation.isValid()) {
@@ -98,15 +103,12 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		DSSignificanceResultSet<DSGeneMarker> tTestResultSet = (DSSignificanceResultSet<DSGeneMarker>)tTestResult.getResults();
 		mraResultSet.setSignificanceResultSet(tTestResultSet);
 		log.info("We got TGs");
-		for (DSGeneMarker marker : tTestResultSet.getSignificantMarkers()) {
-			log.info("Significant markers: "+marker.getLabel());
-		}
-		
+	 
 		//get TFs
 		ArrayList<DSGeneMarker> transcriptionFactors=new ArrayList<DSGeneMarker>();
-		StringTokenizer st = new StringTokenizer(transcriptionFactorsStr, ", ");
-		while (st.hasMoreTokens()){
-			String markerName = st.nextToken();
+		StringTokenizer tfSt = new StringTokenizer(transcriptionFactorsStr, ", ");
+		while (tfSt.hasMoreTokens()){
+			String markerName = tfSt.nextToken();
 			try{
 				DSGeneMarker marker = maSet.getMarkers().get(markerName);
 				if (marker!=null)
@@ -122,9 +124,28 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 					"Sorry, but in the Microarray Set, I can not find the Transcription Factors you entered.", 
 					null);
 		}
+		
+		
+		//get Signature Markers
+		ArrayList<DSGeneMarker> signatureMarkers=new ArrayList<DSGeneMarker>();
+		StringTokenizer sigSt = new StringTokenizer(signatureMarkersSTr, ", ");
+		while (sigSt.hasMoreTokens()){
+			String markerName = sigSt.nextToken();
+			try{
+				DSGeneMarker marker = maSet.getMarkers().get(markerName);
+				if (marker!=null)
+					signatureMarkers.add(marker);
+			}catch(Exception e){
+				log.info("We can not find marker " + markerName + " in our MicroarraySet.");
+			}
+		}
+		log.info("We got "+signatureMarkers.size()+" signature markers");
+		
+		
+		
 			
-		//y = size of significantMarkers
-		int y = tTestResultSet.getSignificantMarkers().size();
+		//y = size of significantMarkers		 
+		int y = signatureMarkers.size();
 		//x = size of markers
 		int x = maSet.getMarkers().size();
 		
@@ -134,11 +155,9 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			ArrayList<DSGeneMarker> nA = new ArrayList<DSGeneMarker>();
 			//int geneid = tfA.getSerial();
 			AdjacencyMatrix adjMatrix = amSet.getMatrix();
-			int geneid = adjMatrix.getMappedId(tfA.getSerial());
-			if (adjMatrix.get(geneid)!=null){
-				for (Object key : adjMatrix.get(tfA.getSerial()).keySet()){//for each neighbor
-					Integer neighborId = (Integer)key;
-					DSGeneMarker neighbor = maSet.getMarkers().get(neighborId);
+			Set<DSGeneMarker> neighbors = adjMatrix.get(tfA);
+			if (neighbors!=null){
+				for (DSGeneMarker neighbor : neighbors){//for each neighbor
 					nA.add(neighbor);
 				}
 			}
@@ -148,15 +167,19 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			//genes in regulon = nA
 
 			//calculate genes in target list, which is intersection of nA and significant genes from t-test  
-			ArrayList<DSGeneMarker> genesInTargetList = new ArrayList<DSGeneMarker>();
-			for (DSGeneMarker marker: tTestResultSet.getSignificantMarkers()){
+			ArrayList<DSGeneMarker> genesInTargetList = new ArrayList<DSGeneMarker>();		 
+			for (DSGeneMarker marker: signatureMarkers){
 				if (nA.contains(marker)){
-					genesInTargetList.add(marker);
-					mraResultSet.setPValueOf(tfA,marker,tTestResultSet.getSignificance(marker));
-					mraResultSet.setTTestValueOf(tfA,marker,tTestResultSet.getTValue(marker));
+					genesInTargetList.add(marker);				 
 					log.debug(tfA.getShortName()+"\t"+ marker.getShortName()+"\tP:"+tTestResultSet.getSignificance(marker)+"\tT:"+tTestResultSet.getTValue(marker));
 				}
 			}
+			
+			for (DSGeneMarker marker: nA){				 
+			     mraResultSet.setPValueOf(tfA,marker,tTestResultSet.getSignificance(marker));
+			     mraResultSet.setTTestValueOf(tfA,marker,tTestResultSet.getTValue(marker));
+				 log.debug(tfA.getShortName()+"\t"+ marker.getShortName()+"\tP:"+tTestResultSet.getSignificance(marker)+"\tT:"+tTestResultSet.getTValue(marker));				 
+			}			
 			//now we got w in genesInTargetList
 			int w = genesInTargetList.size();
 			
@@ -228,7 +251,7 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		return results;
 	}
 
-	public ParamValidationResults validateParameters() {
+	/*public ParamValidationResults validateParameters() {
 		try {
 			if ((mraAnalysisPanel.getPValue() < 0)
 					|| (mraAnalysisPanel.getPValue() > 1)) {
@@ -238,11 +261,11 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		} catch (NumberFormatException nfe) {
 			return new ParamValidationResults(false,
 					"P-value should be a number");
-		}
+		} 
 		ParamValidationResults answer = new ParamValidationResults(true,
 				"validate");
 		return answer;
-	}
+	}*/
 
 	private String generateHistoryString(
 			DSMicroarraySetView<DSGeneMarker, DSMicroarray> view) {
@@ -253,6 +276,7 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 //		histStr += "Correction: " + mraAnalysisPanel.getCorrection() + "\n";
 //		histStr += "P-Value: " + mraAnalysisPanel.getPValue() + "\n";
 		histStr += "Transcription Factor: " + mraAnalysisPanel.getTranscriptionFactor() + "\n";
+		histStr += "Signature Markers: " + mraAnalysisPanel.getSigMarkers() + "\n";
 		histStr += "adjMatrix: "
 				+ mraAnalysisPanel.getAdjMatrixDataSet().getDataSetName()
 				+ "\n\n\n";
@@ -263,7 +287,7 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 	public void receive(GeneSelectorEvent e, Object source) {
 		if (e.getPanel() != null) {
 			DSPanel<DSGeneMarker> selectorPanel = e.getPanel();
-			((MasterRegulatorPanel) aspp).setSelectorPanel(((MasterRegulatorPanel) aspp), selectorPanel);
+			((MasterRegulatorPanel) aspp).setSelectorPanel(((MasterRegulatorPanel) aspp), selectorPanel);		
 		} else
 			log.debug("MRA Received Gene Selector Event: Selection panel sent was null");
 	}

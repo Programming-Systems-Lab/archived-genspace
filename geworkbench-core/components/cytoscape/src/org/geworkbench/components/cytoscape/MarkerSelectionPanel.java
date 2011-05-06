@@ -2,7 +2,7 @@ package org.geworkbench.components.cytoscape;
 
 /**
  * @author my2248
- * @version $Id: MarkerSelectionPanel.java 7700 2011-04-01 19:50:59Z zji $ 
+ * @version $Id: MarkerSelectionPanel.java 7757 2011-04-20 14:24:06Z zji $ 
  */
 
 import giny.model.Node;
@@ -28,12 +28,13 @@ import javax.swing.JScrollPane;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
+import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.events.ProjectNodeAddedEvent;
 import org.geworkbench.util.ProgressBar;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrix;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrixDataSet;
 
 import cytoscape.Cytoscape;
 import cytoscape.data.CyAttributes;
@@ -42,7 +43,7 @@ import cytoscape.view.CyNetworkView;
 /**
  * @author yc2480
  * 
- * @version $Id: MarkerSelectionPanel.java 7700 2011-04-01 19:50:59Z zji $
+ * @version $Id: MarkerSelectionPanel.java 7757 2011-04-20 14:24:06Z zji $
  */
 
 @SuppressWarnings("unchecked")
@@ -136,17 +137,20 @@ public class MarkerSelectionPanel extends JPanel implements Observer {
 	    	    	interactionType = CytoscapeWidget.getInstance().interactionTypeSifMap.get(interactionType);
 	    	    }
 	    	    
+	    	    DSItemList<DSGeneMarker> markers = origMatrix.getMicroarraySet().getMarkers();
+				DSGeneMarker marker1 = markers.get(serial1);
+				DSGeneMarker marker2 = markers.get(serial2);
 	    		if ( selectedGeneList.contains(gene1) && selectedGeneList.contains(gene2) )
 	    		{
-	    			matrix.add(serial1, serial2, 0.8f, interactionType);
+	    			matrix.add(new AdjacencyMatrix.Node(marker1), new AdjacencyMatrix.Node(marker2), 0.8f, interactionType);
 	    		}
 	    		else if ( selectedGeneList.contains(gene1))
 	    		{
-	    			matrix.addGeneRow(serial1);
+	    			matrix.addGeneRow(new AdjacencyMatrix.Node(marker1));
 	    		}
 	    		else if ( selectedGeneList.contains(gene2))
 	    		{
-	    			matrix.addGeneRow(serial2);
+	    			matrix.addGeneRow(new AdjacencyMatrix.Node(marker2));
 	    		}
                 
 			}

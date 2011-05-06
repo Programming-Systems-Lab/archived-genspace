@@ -22,7 +22,7 @@ import org.geworkbench.events.listeners.ParameterActionListener;
 /**
  * 
  * @author zji
- * @version $Id: MultipleEntrezGeneIDFilterPanel.java 7477 2011-02-23 16:01:54Z zji $
+ * @version $Id: MultipleEntrezGeneIDFilterPanel.java 7783 2011-04-21 15:55:47Z maz $
  *
  */
 public class MultipleEntrezGeneIDFilterPanel extends
@@ -36,14 +36,15 @@ public class MultipleEntrezGeneIDFilterPanel extends
 	public enum Action {REMOVE, CREATE_FROM_MATCHING, CREATE_FROM_EXCLUDING};
 
 	private static final String REMOVE_MARKERS_OPTION = "Remove markers";
-	private static final String NEW_MARKERS_FROM_MATCHING_FILTER_OPTION = "Create new marker set(s) from markers matching filter (_GID_none, _GID_multiple)";
-	private static final String NEW_MARKERS_EXCLUDING_MATCHING_FILTER_OPTION = "Create new marker set excluding markers matching filter ( GID filtered)";
+	//private static final String NEW_MARKERS_FROM_MATCHING_FILTER_OPTION = "Create new marker set(s) from markers matching filter (_GID_none, _GID_multiple)";
+	//private static final String NEW_MARKERS_EXCLUDING_MATCHING_FILTER_OPTION = "Create new marker set excluding markers matching filter ( GID filtered)";
 
 	private static final Map<String, Action> actionMap = new HashMap<String, Action>();
 	static {
 		actionMap.put(REMOVE_MARKERS_OPTION, Action.REMOVE);
-		actionMap.put(NEW_MARKERS_FROM_MATCHING_FILTER_OPTION, Action.CREATE_FROM_MATCHING);
-		actionMap.put(NEW_MARKERS_EXCLUDING_MATCHING_FILTER_OPTION, Action.CREATE_FROM_EXCLUDING);
+		//the following settings are left for the future use, there is only option of REMOVE for now
+		//actionMap.put(NEW_MARKERS_FROM_MATCHING_FILTER_OPTION, Action.CREATE_FROM_MATCHING);
+		//actionMap.put(NEW_MARKERS_EXCLUDING_MATCHING_FILTER_OPTION, Action.CREATE_FROM_EXCLUDING);
 	}
 
 	private static final String NO_ENTREZ_IDS = "No Entrez ID";
@@ -81,6 +82,7 @@ public class MultipleEntrezGeneIDFilterPanel extends
 
 		JLabel filterOutMarkersLabel = new JLabel("<html><p> </p><p>Filter action: </p></html>");
 		container.add(filterOutMarkersLabel);
+		filterActionSelectionComboBox.setSelectedIndex(0);	//default is remove
 		container.add(filterActionSelectionComboBox);
 
 		ParameterActionListener parameterActionListener = new ParameterActionListener(this);

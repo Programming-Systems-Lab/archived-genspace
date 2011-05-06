@@ -21,7 +21,7 @@ import org.geworkbench.events.listeners.ParameterActionListener;
  * user to handle genes with multiple probesets
  * 
  * @author tg2321
- * @version $Id: MultipleProbesetFilterPanel.java 7476 2011-02-22 20:50:12Z zji $
+ * @version $Id: MultipleProbesetFilterPanel.java 7778 2011-04-20 23:39:06Z smithken $
  */
 
 public class MultipleProbesetFilterPanel extends AbstractSaveableParameterPanel {
@@ -106,7 +106,7 @@ public class MultipleProbesetFilterPanel extends AbstractSaveableParameterPanel 
 		parameters = getParameters();
 		histStr += "Multiple Probeset Filter: \n";
 
-		histStr += "Filter Actiob: ";
+		histStr += "Filter Action: ";
 		histStr += parameters.get("filterActionSelection");
 		histStr += "\n";
 

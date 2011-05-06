@@ -1,8 +1,8 @@
 10
 
 dir
-7737
-https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/bin
+7785
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/bin
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -10,8 +10,8 @@ https://ncisvn.nci.nih.gov/svn/geworkbench
 2009-12-11T15:12:23.602469Z
 5822
 poddutun
-has-props
-has-prop-mods
+
+
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-04-17T01:03:46.000000Z
+2011-04-21T17:46:40.000000Z
 eaf3f6e6969c579cf5a210c0501f993f
 2006-07-06T14:55:11.000000Z
 1613
@@ -59,4 +59,7 @@ has-props
 
 
 29696
+
+matrixreduce
+dir
 

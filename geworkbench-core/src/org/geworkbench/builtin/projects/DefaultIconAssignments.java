@@ -11,12 +11,12 @@ import org.geworkbench.bison.datastructure.complex.pattern.PatternResult;
 import org.geworkbench.bison.datastructure.complex.pattern.matrix.DSMatrixReduceSet;
 import org.geworkbench.bison.model.clusters.DSHierClusterDataSet;
 import org.geworkbench.bison.model.clusters.DSSOMClusterDataSet;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrixDataSet;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.util.pathwaydecoder.mutualinformation.EdgeListDataSet;
 
 /**
  * @author John Watkinson
- * @version $Id: DefaultIconAssignments.java 7626 2011-03-24 13:43:50Z zji $
+ * @version $Id: DefaultIconAssignments.java 7759 2011-04-20 14:53:04Z zji $
  */
 public class DefaultIconAssignments {
 

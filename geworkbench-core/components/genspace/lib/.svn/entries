@@ -1,14 +1,14 @@
 10
 
 dir
-7746
-https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/genspace/lib
+7785
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-18T19:08:50.734869Z
-7741
+2011-04-19T16:07:16.228867Z
+7751
 bellj
 
 
@@ -25,15 +25,6 @@ bellj
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-
-
-
-
-
-
-
-()
 
 smackx.jar
 file
@@ -41,7 +32,7 @@ file
 
 
 
-2011-04-17T01:03:58.000000Z
+2011-04-21T17:45:05.000000Z
 fe04c6acdf1b4f415268e684e0c49b5d
 2009-01-21T01:15:04.000000Z
 4670
@@ -69,47 +60,13 @@ has-props
 
 475428
 
-logging.jar
-file
-
-
-
-delete
-2011-04-19T03:57:22.000000Z
-b44607fb0663d509979b795ba93b0b30
-2011-04-18T18:50:44.373138Z
-7737
-bellj
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-92805
-
 jimi.jar
 file
 
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib/jimi.jar
 
 
-2011-04-17T01:03:58.000000Z
+
+2011-04-21T17:45:05.000000Z
 ffbee2a551e2c2abab8be6fda4defb3f
 2011-04-18T19:07:03.620373Z
 7739
@@ -140,10 +97,10 @@ has-props
 intellij.jar
 file
 
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib/intellij.jar
 
 
-2011-04-17T01:03:58.000000Z
+
+2011-04-21T17:45:05.000000Z
 3d51b7876736909e30049ad2d9e337ad
 2011-04-18T19:07:03.620373Z
 7739
@@ -174,10 +131,10 @@ has-props
 mina-core-1.1.7.jar
 file
 
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib/mina-core-1.1.7.jar
 
 
-2011-04-17T01:03:58.000000Z
+
+2011-04-21T17:45:05.000000Z
 eeee12d76057ab31dbef0c1741a7e982
 2011-04-18T19:07:03.620373Z
 7739
@@ -211,7 +168,7 @@ file
 
 
 
-2011-04-17T01:03:58.000000Z
+2011-04-21T17:45:05.000000Z
 478995d18508e501a53b37ce8c8651a7
 2009-03-01T02:03:27.000000Z
 4868
@@ -239,47 +196,13 @@ has-props
 
 12852
 
-smack.jar
-file
-
-
-
-
-2011-04-18T18:32:54.000000Z
-e8df1da0211543e00c4fa32b2401fc74
-2011-04-15T21:34:32.645034Z
-7734
-bellj
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-268021
-
 docking.jar
 file
 
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib/docking.jar
 
 
-2011-04-17T01:03:58.000000Z
+
+2011-04-21T17:45:05.000000Z
 19f700f8132740d3b17d5e67816bc891
 2011-04-18T19:07:03.620373Z
 7739
@@ -307,16 +230,16 @@ has-props
 
 46664
 
-log4j.jar
+smack.jar
 file
 
 
 
-delete
-2011-04-19T03:57:22.000000Z
-4d4609998fbc124ce6f0d1d48fca2614
-2011-04-18T18:50:44.373138Z
-7737
+
+2011-04-21T17:45:05.000000Z
+e8df1da0211543e00c4fa32b2401fc74
+2011-04-15T21:34:32.645034Z
+7734
 bellj
 has-props
 
@@ -339,15 +262,15 @@ has-props
 
 
 
-391834
+268021
 
 swing-layout-1.0.3.jar
 file
 
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib/swing-layout-1.0.3.jar
 
 
-2011-04-17T01:03:58.000000Z
+
+2011-04-21T17:45:05.000000Z
 118cab355d46b1d19228a1642ef55cad
 2011-04-18T19:07:03.620373Z
 7739
@@ -378,10 +301,10 @@ has-props
 jgraphx.jar
 file
 
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/lib/jgraphx.jar
 
 
-2011-04-17T01:03:58.000000Z
+
+2011-04-21T17:45:05.000000Z
 89e5f0b9eda178f951e850d49b242893
 2011-04-18T19:07:03.620373Z
 7739

@@ -105,7 +105,10 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	@Override
 	@PermitAll
 	public List<Tool> getAllTools() {
-		return findAll();
+		Query q = getEntityManager().createQuery("select object(c) from Tool as c order by c.name asc");
+        @SuppressWarnings("unchecked")
+		List<Tool> r = q.getResultList();
+        return r;
 	}
 
 
@@ -141,7 +144,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 			int tool) {
 		Query q = getEntityManager().createNativeQuery("select distinct w.* from WORKFLOW w " +
 				"inner join WORKFLOWTOOL wt on w.id=wt.workflow_id " +
-				"where wt.tool_id=? and wt.cardinality=0 order by w.usageCount desc limit 1", Workflow.class);
+				"where wt.tool_id=? and wt.cardinality=1 order by w.usageCount desc limit 1", Workflow.class);
 		q.setParameter(1, tool);
 		List<Workflow> wf = null;
 		ArrayList<Workflow> ret = new ArrayList<Workflow>();
@@ -276,8 +279,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>  impl
 	}
 	
 	private Tool getToolByName(String toolname) {
-		Query q = getEntityManager().createQuery("select object(c) from Tool as c where c.name=:toolname"); //and c.user=:user
-		q.setParameter("toolname", toolname);
+		Query q = getEntityManager().createNativeQuery("select c.* from Tool as c where c.name=? COLLATE latin1_bin",Tool.class); //and c.user=:user
+		q.setParameter(1, toolname);
 //		q.setParameter("user", user);
 		Tool r = null;
 		try

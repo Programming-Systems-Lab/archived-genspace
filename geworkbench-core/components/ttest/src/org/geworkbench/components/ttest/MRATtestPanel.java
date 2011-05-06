@@ -23,7 +23,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * <p>Company: Columbia University</p>
  *
  * @author yc2480
- * @version $Id: MRATtestPanel.java 7375 2011-01-04 17:07:27Z maz $
+ * @version $Id: MRATtestPanel.java 7782 2011-04-21 15:40:06Z youmi $
  */
 
 public class MRATtestPanel extends TtestAnalysisPanel {
@@ -145,8 +145,8 @@ public class MRATtestPanel extends TtestAnalysisPanel {
     }
 
     @Override
-    public double getAlpha() {
-    	return ((MasterRegulatorPanel)this.getParent().getParent()).getPValue();
+    public double getAlpha() {    	 
+        return 1;
     }
 
     @Override

@@ -1,8 +1,8 @@
 10
 
 dir
-7737
-https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/test
+7785
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/test
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -35,7 +35,7 @@ file
 
 
 
-2011-04-17T01:04:18.000000Z
+2011-04-21T17:46:54.000000Z
 f6cd97098e6096ac54aa709c4ffc4ac8
 2006-05-09T15:26:28.000000Z
 1514

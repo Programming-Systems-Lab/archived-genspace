@@ -1,8 +1,8 @@
 10
 
 dir
-7746
-https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
+7785
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:14.000000Z
 dd6d911fc6ce0e9f8cf8437d1cea27d8
 2010-08-10T20:03:28.312306Z
 6974
@@ -66,7 +66,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:15.000000Z
 c7eeda2b9c90ff4a9f771fb36b4026d2
 2006-08-24T15:08:59.000000Z
 1763
@@ -100,7 +100,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:15.000000Z
 d5a6280958370e057d06ffb53b271ace
 2010-08-10T21:18:41.945502Z
 6977
@@ -137,7 +137,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:15.000000Z
 b8358d8dce8d82c99ac272fe0999fa26
 2010-08-06T20:00:53.689663Z
 6961
@@ -171,7 +171,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:15.000000Z
 c7f23461c27a008dd3165a5f27e620b9
 2011-04-08T21:01:49.341272Z
 7718
@@ -205,7 +205,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:15.000000Z
 83687e047f07a2f65b9c6ceafa5582c2
 2011-03-21T22:24:24.377666Z
 7617
@@ -239,7 +239,7 @@ file
 
 
 
-2011-04-18T18:24:44.000000Z
+2011-04-21T17:46:15.000000Z
 8db6221a0312362d9f2934c558d58f8a
 2010-08-06T20:00:53.689663Z
 6961

@@ -1,13 +1,13 @@
 package org.geworkbench.events;
 
 import org.geworkbench.engine.config.events.Event;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrix;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
 
 /**
  * 
  * The event for communication from CNKB to cytoscape when you want to cancel the drawing of network.
  *  
- * @version $Id: AdjacencyMatrixCancelEvent.java 7682 2011-03-29 17:41:54Z zji $
+ * @version $Id: AdjacencyMatrixCancelEvent.java 7757 2011-04-20 14:24:06Z zji $
  */
 public class AdjacencyMatrixCancelEvent extends Event {
 

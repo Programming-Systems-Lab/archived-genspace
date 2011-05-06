@@ -161,7 +161,9 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 			w2.setName(w.getName());
 			w2.setReceiver(w.getReceiver());
 			w2.setSender(w.getSender());
-			w.setWorkflow(w.getWorkflow().slimDown());
+			w2.setWorkflow(w.getWorkflow().slimDown());
+			w2.setCreatedAt(w.getCreatedAt());
+			ret.add(w2);
 		}
 		getEntityManager().clear();
 		return ret;

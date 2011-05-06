@@ -1,8 +1,8 @@
 10
 
 dir
-7737
-https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/src/org/geworkbench/bison/datastructure/biocollections/microarrays
+7785
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-04-17T01:28:38.000000Z
+2011-04-21T17:46:30.000000Z
 cf3d8ac2ffc3c9d789279e74e72d3ca4
 2009-12-09T20:50:09.637097Z
 5812
@@ -66,7 +66,7 @@ file
 
 
 
-2011-04-17T01:28:38.000000Z
+2011-04-21T17:46:30.000000Z
 18f753777c63079dc02a44faaa028d6b
 2010-12-21T21:00:37.014982Z
 7358
@@ -100,7 +100,7 @@ file
 
 
 
-2011-04-17T01:28:38.000000Z
+2011-04-21T17:46:30.000000Z
 288f8c8480ee605009eb5ae698a9c7f2
 2010-12-15T21:55:56.576892Z
 7332
@@ -134,7 +134,7 @@ file
 
 
 
-2011-04-17T01:28:38.000000Z
+2011-04-21T17:46:30.000000Z
 e5bd499d5093a40a67579ffb17ab41cf
 2010-12-15T21:55:56.576892Z
 7332
@@ -168,7 +168,7 @@ file
 
 
 
-2011-04-17T01:28:38.000000Z
+2011-04-21T17:46:30.000000Z
 a109c673265f3c492487b30a429840cf
 2005-07-28T22:36:56.000000Z
 50

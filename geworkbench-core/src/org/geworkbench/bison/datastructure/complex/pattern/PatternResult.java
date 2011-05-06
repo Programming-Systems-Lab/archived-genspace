@@ -25,7 +25,7 @@ import org.geworkbench.util.patterns.CSMatchedSeqPattern;
 
 /**
  * @author zji
- * @version $Id: PatternResult.java 7626 2011-03-24 13:43:50Z zji $
+ * @version $Id: PatternResult.java 7780 2011-04-21 14:42:26Z zji $
  * 
  */
 public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
@@ -177,12 +177,10 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 		return 0;
 	}
 
-	@Override
 	public File getDataSetFile() {
 		return dataSetFile;
 	}
 
-	@Override
 	public void setDataSetFile(File _file) {
 		dataSetFile = _file;
 	}

@@ -33,8 +33,9 @@ import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.ProjectNodeAddedEvent;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrix;
-import org.geworkbench.util.pathwaydecoder.mutualinformation.AdjacencyMatrixDataSet;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix.NodeType;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.ginkgo.labs.util.FileTools;
 
 import wb.data.Marker;
@@ -47,7 +48,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 
 /**
  * @author Matt Hall
- * @version $Id: AracneAnalysis.java 7683 2011-03-29 18:03:37Z zji $
+ * @version $Id: AracneAnalysis.java 7765 2011-04-20 16:23:22Z zji $
  */
 public class AracneAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -182,7 +183,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 				return null;
 		}
 
-		AracneThread aracneThread = new AracneThread(mSetView, p, bs, pt);
+		AracneThread aracneThread = new AracneThread(mSetView, p, bs, pt, params.isPrune());
 
 		AracneProgress progress = new AracneProgress(aracneThread);
 		aracneThread.setProgressWindow(progress);
@@ -209,10 +210,10 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			graph.addEdge(marker.getLabel(), marker.getLabel(), 0);
 		}
 		for (AdjacencyMatrix.Edge edge : matrix.getEdges()) {
-			DSGeneMarker gene1 = mSet.allMarkers().get(edge.node1);
-			if (gene1 != null) {
-				DSGeneMarker destGene = mSet.allMarkers().get(edge.node2);
-				if (destGene != null) {
+			if (edge.node1.type==NodeType.MARKER) {
+				DSGeneMarker gene1 = edge.node1.marker;
+				if (edge.node2.type==NodeType.MARKER) {
+					DSGeneMarker destGene = edge.node2.marker;
 					graph.addEdge(gene1.getLabel(), destGene.getLabel(),
 							edge.info.value);
 				} else {
@@ -227,16 +228,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 		return graph;
 	}
 
-	/**
-	 *
-	 * FIXME: This convert() has bug in it !!!, Since Microarray.getValues() in
-	 * workbook.jar will return all the marker values, we should filter out
-	 * those inactive markers in DSMicroarraySetView before put into
-	 * MicroarraySet
-	 *
-	 * @param inSet
-	 * @return
-	 */
+	// a very old comment (revision 4310) saying this method has a bug is removed
 	private MicroarraySet convert(
 			DSMicroarraySetView<DSGeneMarker, DSMicroarray> inSet) {
 		MarkerSet markers = new MarkerSet();
@@ -266,19 +258,42 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 	 * @return
 	 */
 	private AdjacencyMatrix convert(WeightedGraph graph,
-			DSMicroarraySet<DSMicroarray> mSet) {
+			DSMicroarraySet<DSMicroarray> mSet, boolean prune) {
 		AdjacencyMatrix matrix = new AdjacencyMatrix(null, mSet);
 
-		for (String node : graph.getNodes()) {
-			DSGeneMarker marker = mSet.getMarkers().get(node);
-			matrix.addGeneRow(marker.getSerial());
+		int nNode = 0, nEdge = 0;
+		if (prune) {
+			for (String node : graph.getNodes()) {
+				DSGeneMarker marker = mSet.getMarkers().get(node);
+				matrix.addGeneRow(new AdjacencyMatrix.Node(marker));
+				nNode++;
+			}
+			for (GraphEdge graphEdge : graph.getEdges()) {
+				DSGeneMarker marker1 = mSet.getMarkers().get(
+						graphEdge.getNode1());
+				DSGeneMarker marker2 = mSet.getMarkers().get(
+						graphEdge.getNode2());
+				matrix.add(new AdjacencyMatrix.Node(marker1),
+						new AdjacencyMatrix.Node(marker2),
+						graphEdge.getWeight());
+				nEdge++;
+			}
+		} else {
+			for (String node : graph.getNodes()) {
+				matrix.addGeneRow(new AdjacencyMatrix.Node(NodeType.STRING, node));
+				nNode++;
+			}
+			for (GraphEdge graphEdge : graph.getEdges()) {
+				matrix.add(new AdjacencyMatrix.Node(NodeType.STRING, graphEdge.getNode1()),
+						new AdjacencyMatrix.Node(NodeType.STRING, graphEdge.getNode2()),
+						graphEdge.getWeight(), null);
+				nEdge++;
+			}
+			log.debug(nNode + " " + nEdge + " " + matrix.getNodeNumber() + " "
+					+ matrix.getEdges().size());
 		}
-		for (GraphEdge graphEdge : graph.getEdges()) {
-			DSGeneMarker marker1 = mSet.getMarkers().get(graphEdge.getNode1());
-			DSGeneMarker marker2 = mSet.getMarkers().get(graphEdge.getNode2());
-			matrix.add(marker1.getSerial(), marker2.getSerial(), graphEdge
-					.getWeight(), null);
-		}
+		log.debug(nNode + " " + nEdge + " " + matrix.getNodeNumber() + " "
+				+ matrix.getEdges().size());
 		return matrix;
 	}
 
@@ -304,15 +319,19 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 
 		private int bootstrapNumber;
 		private double pThreshold;
+		
+		private boolean prune;
 
 		public AracneThread(
 				DSMicroarraySetView<DSGeneMarker, DSMicroarray> mSet,
-				Parameter p, int bootstrapNumber, double pThreshold) {
+				Parameter p, int bootstrapNumber, double pThreshold, boolean prune) {
 			this.mSetView = mSet;
 			this.p = p;
 
 			this.bootstrapNumber = bootstrapNumber;
 			this.pThreshold = pThreshold;
+			
+			this.prune = prune;
 		}
 
 		public void run() {
@@ -336,7 +355,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 
 			if (weightedGraph.getEdges().size() > 0) {
 				AdjacencyMatrixDataSet dataSet = new AdjacencyMatrixDataSet(
-						convert(weightedGraph, mSetView.getMicroarraySet()),
+						convert(weightedGraph, mSetView.getMicroarraySet(), prune),
 						0, "Adjacency Matrix", "ARACNE Set", mSetView
 								.getMicroarraySet());
 				StringBuilder paramDescB = new StringBuilder(

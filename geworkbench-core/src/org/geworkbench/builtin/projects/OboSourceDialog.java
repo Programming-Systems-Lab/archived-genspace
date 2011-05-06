@@ -6,21 +6,25 @@ package org.geworkbench.builtin.projects;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileFilter;
 
 import org.geworkbench.builtin.projects.OboSourcePreference.Source;
 import org.geworkbench.engine.config.rules.GeawConfigObject;
 
 /**
  * @author zji
- * @version $Id: OboSourceDialog.java 7735 2011-04-18 15:53:19Z zji $
+ * @version $Id: OboSourceDialog.java 7773 2011-04-20 21:26:58Z zji $
  */
 public class OboSourceDialog extends JDialog {
 
@@ -63,10 +67,16 @@ public class OboSourceDialog extends JDialog {
 		super(GeawConfigObject.getGuiWindow(), "Choose OBO Source", true);
 		setLayout(new BorderLayout());
 		JPanel topPanel = new JPanel();
-		topPanel.add(remote);
-		topPanel.add(local);
-		topPanel.add(sourceLocation);
-		topPanel.add(chooseFileButton);
+		topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+		JPanel radioButtonPanel = new JPanel();
+		JPanel locationFieldPanel = new JPanel();
+		topPanel.add(radioButtonPanel);
+		topPanel.add(locationFieldPanel);
+		topPanel.add(new JLabel("(The change will not take effect until geWorkbench is restarted.)"));
+		radioButtonPanel.add(remote);
+		radioButtonPanel.add(local);
+		locationFieldPanel.add(sourceLocation);
+		locationFieldPanel.add(chooseFileButton);
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.add(ok);
 		bottomPanel.add(cancel);
@@ -91,6 +101,21 @@ public class OboSourceDialog extends JDialog {
 				if(location==null || location.trim().length()==0)
 					location = OboSourcePreference.DEFAULT_LOCAL_LOCATION;
                 JFileChooser chooser = new JFileChooser(location);
+                chooser.setFileFilter(new FileFilter() {
+
+					@Override
+					public boolean accept(File f) {
+						if(f.isDirectory())return true;
+						if(f.getName().toLowerCase().endsWith(".obo")) return true;
+						else return false;
+					}
+
+					@Override
+					public String getDescription() {
+						return "obo file (*.obo)";
+					}
+                	
+                });
                 int returnVal = chooser.showOpenDialog(OboSourceDialog.this);
                 if (returnVal == JFileChooser.APPROVE_OPTION) {
                     sourceLocation.setText(chooser.getSelectedFile().getPath());

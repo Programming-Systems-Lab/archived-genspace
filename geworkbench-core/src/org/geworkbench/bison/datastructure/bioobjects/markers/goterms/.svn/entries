@@ -1,14 +1,14 @@
 10
 
 dir
-7737
-https://ncisvn.nci.nih.gov/svn/geworkbench/genspace_integration/src/org/geworkbench/bison/datastructure/bioobjects/markers/goterms
+7785
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/goterms
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-18T15:53:19.003425Z
-7735
+2011-04-21T14:47:57.815583Z
+7781
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-04-18T18:32:54.000000Z
-87779310312fe320583306f5d0aadbfd
-2011-04-18T15:53:19.003425Z
-7735
+2011-04-21T17:46:30.000000Z
+34087440dea6478e08fe4def349bb725
+2011-04-21T14:47:57.815583Z
+7781
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-12289
+13301
 
 GOTerm.java
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-04-17T01:28:28.000000Z
+2011-04-21T17:46:30.000000Z
 323ec641d6f4ec3d79f7557ed5cd8a92
 2006-04-21T22:37:46.000000Z
 1443

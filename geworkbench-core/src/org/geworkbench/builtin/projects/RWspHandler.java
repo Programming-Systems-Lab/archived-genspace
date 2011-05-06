@@ -48,7 +48,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * Remote Workspace Handler
  * @author mw2518
- * $Id: RWspHandler.java 7708 2011-04-07 19:04:17Z wangmen $
+ * $Id: RWspHandler.java 7760 2011-04-20 15:05:37Z wangmen $
  */
 public class RWspHandler {
 	protected static final String USER_INFO_DELIMIETER = "==";
@@ -113,7 +113,7 @@ public class RWspHandler {
 				if (username.trim().equals("")) {
 					userInfo = "";
 				} else {
-					userInfo = username + USER_INFO_DELIMIETER + new String(RegPanel.getEncodedChars(passwordField.getPassword()));
+					userInfo = username + USER_INFO_DELIMIETER + RegPanel.getEncodedChars(passwordField.getPassword());
 					savedUserInfo = username + USER_INFO_DELIMIETER + passwd;
 				}
 				loginDialog.dispose();
