@@ -39,6 +39,8 @@ public abstract class AbstractFacade<T> {
     {
 //    	if(cachedUser != null)
 //    		return cachedUser;
+    	if(ctx.getCallerPrincipal().getName().equals("anonymous"))
+    		return null;
     	Query q = getEntityManager().createQuery("select object(c) from User as c where c.username=:user");
 		q.setParameter("user", ctx.getCallerPrincipal().getName());
 		User r = null;
@@ -50,8 +52,7 @@ public abstract class AbstractFacade<T> {
 		{
 			System.err.println("Unable to find user record for logged in user " +  ctx.getCallerPrincipal().getName());
 		}
-		cachedUser = r;
-		return cachedUser;
+		return r;
     }
 
     protected User findByUserName(String username)

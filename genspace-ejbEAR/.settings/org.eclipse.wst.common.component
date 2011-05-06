@@ -6,7 +6,7 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="geworkbench-core.jar" deploy-path="/lib" handle="module:/resource/geworkbench-core/geworkbench-core">
+        <dependent-module archiveName="geworkbench-core may 2011.jar" deploy-path="/lib" handle="module:/resource/geworkbench-core may 2011/geworkbench-core may 2011">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>
