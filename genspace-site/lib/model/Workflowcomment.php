@@ -14,5 +14,9 @@
  * @package    propel.generator.lib.model
  */
 class Workflowcomment extends BaseWorkflowcomment {
+	public function getCreator()
+	{
+		return RegistrationPeer::retrieveByPK($this->getCreatorId());
+	}
 
 } // Workflowcomment

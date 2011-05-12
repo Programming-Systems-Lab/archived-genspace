@@ -23,7 +23,7 @@ import org.geworkbench.engine.management.Publish;
  * The user preferences are collected in this filter's associate parameters GUI
  * (<code>MultipleEntrezGeneIDFilter</code>).
  * 
- * @version $Id: MultipleEntrezGeneIDFilter.java 7783 2011-04-21 15:55:47Z maz $
+ * @version $Id: MultipleEntrezGeneIDFilter.java 7795 2011-04-21 21:35:50Z maz $
  */
 public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 	private static final long serialVersionUID = -3603151182199536102L;
@@ -35,9 +35,9 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 	List<Integer> multipleEntrezIDsList = new ArrayList<Integer>();
 
 	private Action filterAction;
-	private MultipleEntrezGeneIDFilterPanel multipleEntrezGeneIDFilterPanel=new MultipleEntrezGeneIDFilterPanel();
 
 	public MultipleEntrezGeneIDFilter() {
+		MultipleEntrezGeneIDFilterPanel multipleEntrezGeneIDFilterPanel=new MultipleEntrezGeneIDFilterPanel();
 		setDefaultPanel(multipleEntrezGeneIDFilterPanel);
 		filterAction = multipleEntrezGeneIDFilterPanel.getFilterAction();
 	}
@@ -65,19 +65,10 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 	@SuppressWarnings("unchecked")
 	private List<Integer> remove(DSMicroarraySet<?> input) {
 		maSet = (DSMicroarraySet<DSMicroarray>) input;
-		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();
-
-		createFilterLists(dsItemList);
+		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();		
 		
 		List<Integer> removeList = new ArrayList<Integer>();
-
-		if (filterNoEntrezID) {
-			removeList.addAll(noEntrezIDList);
-		}
-
-		if (filterMultipleEntrezIDs) {
-			removeList.addAll(multipleEntrezIDsList);
-		}
+		removeList.addAll(createFilterLists(dsItemList));
 
 		return removeList;
 	}
@@ -178,7 +169,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 																						org.geworkbench.events.SubpanelChangedEvent.NEW));
 	}
 	
-	@SuppressWarnings({ "unchecked" })
+	@SuppressWarnings("rawtypes")
 	@Publish
 	public org.geworkbench.events.SubpanelChangedEvent publishSubpanelChangedEvent(
 		   org.geworkbench.events.SubpanelChangedEvent event) {
@@ -187,7 +178,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 
 	@Override
 	protected void getParametersFromPanel() {
-		multipleEntrezGeneIDFilterPanel = (MultipleEntrezGeneIDFilterPanel) aspp;
+		MultipleEntrezGeneIDFilterPanel multipleEntrezGeneIDFilterPanel = (MultipleEntrezGeneIDFilterPanel) aspp;
 		filterNoEntrezID = multipleEntrezGeneIDFilterPanel.isNoEntrezIDsStatusSelected();
 		filterMultipleEntrezIDs = multipleEntrezGeneIDFilterPanel.isMultipleEntrezIDsStatusSelected();
 

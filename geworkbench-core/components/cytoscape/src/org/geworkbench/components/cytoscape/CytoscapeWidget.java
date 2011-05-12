@@ -97,7 +97,7 @@ import ding.view.DNodeView;
  * 
  * @author manjunath
  * @author yc2480
- * @version $Id: CytoscapeWidget.java 7757 2011-04-20 14:24:06Z zji $
+ * @version $Id: CytoscapeWidget.java 7813 2011-04-22 20:28:53Z zji $
  */
 @SuppressWarnings("deprecation")
 @AcceptTypes( { AdjacencyMatrixDataSet.class })
@@ -556,10 +556,12 @@ public class CytoscapeWidget implements VisualPlugin {
 
 		if (cp1 != null) {
 			cyNode = Cytoscape.getCyNode(cp1);
+		} else {
+			log.error("Unique ID is null. This should never happen.");
 		}
 
 		if (cyNode == null) { // new node
-			cyNode = Cytoscape.getCyNode(geneIdStr, true);
+			cyNode = Cytoscape.getCyNode(cp1, true);
 			log.debug("I create " + cyNode.getIdentifier());
 			if (cp1 == null) { // not in microarray dataset
 				String n1GeneName = geneIdToNameMap.get(geneIdStr);
@@ -590,7 +592,7 @@ public class CytoscapeWidget implements VisualPlugin {
 
 				Cytoscape.getNodeAttributes().setAttribute(
 						cyNode.getIdentifier(), "geneName",
-						cyNode.getIdentifier());
+						marker1.getGeneName());
 
 				Cytoscape.getNodeAttributes().setAttribute(
 						cyNode.getIdentifier(), "markerName",

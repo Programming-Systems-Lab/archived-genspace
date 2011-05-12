@@ -57,7 +57,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * 
  * @author y.c. mark, zji
- * @version $Id: MasterRegulatorViewer.java 7782 2011-04-21 15:40:06Z youmi $
+ * @version $Id: MasterRegulatorViewer.java 7831 2011-04-27 02:35:58Z smithken $
  *
  */
 @AcceptTypes( { DSMasterRagulatorResultSet.class })
@@ -68,10 +68,10 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 
 	TableViewer tv;
 	TableViewer tv2;
-	String[] columnNames = { "Master Regulator", "P-Value", "Genes in regulon",
+	String[] columnNames = { "Master Regulator", "FET P-Value", "Genes in regulon",
 			"Genes in intersection set" };
-	String[] detailColumnNames = { "Genes in target list", /*"P-Value",*/
-			"T-Test Value" };
+	String[] detailColumnNames = { "Genes in intersection set", /*"P-Value",*/
+			"T-test t value" };
 	DSMasterRagulatorResultSet<DSGeneMarker> MRAResultSet;
 	DetailedTFGraphViewer detailedTFGraphViewer;
 	boolean useSymbol = true;
@@ -102,7 +102,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		viewPanel.add(topPanel);
 		detailedTFGraphViewer.setPreferredSize(new Dimension(0,90));
 		viewPanel.add(detailedTFGraphViewer);
-		jSplitPane2.setDividerLocation(600);
+		jSplitPane2.setDividerLocation(500);
 		jSplitPane2.setDividerSize(3);
 
 		FormLayout layout = new FormLayout("500dlu:grow, pref",
@@ -110,7 +110,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		DefaultFormBuilder builder = new DefaultFormBuilder(layout);
 
 		FormLayout headerLayout = new FormLayout(
-				"60dlu, 6dlu, 60dlu, 30dlu, 90dlu, 6dlu, 90dlu, 200dlu, 90dlu",
+				"60dlu, 6dlu, 60dlu, 30dlu, 90dlu, 6dlu, 80dlu, 20dlu, 80dlu",
 				"20dlu");
 		DefaultFormBuilder headerBuilder = new DefaultFormBuilder(headerLayout);
 		ActionListener actionListener = new ActionListener() {
@@ -145,11 +145,11 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 			public void actionPerformed(ActionEvent e) {
 				double threshold = Double.valueOf(pValueHolder.getValue()
 						.toString());
-				int n = JOptionPane
+				/*int n = JOptionPane
 						.showConfirmDialog(
 								null,
 								"Would you like to use threshold when exporting genes?",
-								"Threshold?", JOptionPane.YES_NO_OPTION);
+								"Threshold?", JOptionPane.YES_NO_OPTION);*/
 				// PS: we don't need to check n, because "threshold+n" will work
 				// as checking.
 				try {
@@ -170,22 +170,22 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 							str += tfA.getLabel() + ", " + tfA.getShortName()
 									+ "\n";
 							writer.write(str);
-							writer.newLine();
 							for (DSGeneMarker marker : MRAResultSet
 									.getGenesInTargetList(tfA)) {
-								str = "";
-								str += marker.getLabel() + ", "
+								if (MRAResultSet.getPValueOf(tfA, marker) < threshold) {
+									str = "";
+									str += marker.getLabel() + ", "
 										+ marker.getShortName() + ", ";
-								str += new Float(MRAResultSet.getPValueOf(tfA,
+									str += new Float(MRAResultSet.getPValueOf(tfA,
 										marker)).toString()
 										+ ", ";
-								str += new Float(MRAResultSet.getTTestValueOf(
+									str += new Float(MRAResultSet.getTTestValueOf(
 										tfA, marker)).toString();
-								if (MRAResultSet.getPValueOf(tfA, marker) < (threshold + n)) {
 									writer.write(str);
 									writer.newLine();
 								}
 							}
+							writer.newLine();
 						}
 						writer.close();
 						JOptionPane.showMessageDialog(null, "File "
@@ -226,7 +226,6 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 											+ detailedTFGraphViewer.tfA
 													.getShortName() + "\n";
 									writer.write(str);
-									writer.newLine();
 									for (DSGeneMarker marker : MRAResultSet
 											.getGenesInTargetList(detailedTFGraphViewer.tfA)) {
 										str = "";
@@ -310,19 +309,20 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		summaryTFFormBuilder.add(tv, new CellConstraints("1,1,1,2,f,f"));
 
 		jSplitPane2.setLeftComponent(new JScrollPane(summaryTFFormBuilder
-				.getPanel(), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
+				.getPanel(), JScrollPane.VERTICAL_SCROLLBAR_NEVER,
+				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
 
 		// build the top-right panel
 		FormLayout detailTFFormLayout = new FormLayout(
-				"80dlu, 6dlu, 120dlu, pref:grow, 60dlu, 6dlu, 60dlu",
+				//"80dlu, 6dlu, 120dlu, pref:grow, 60dlu, 6dlu, 60dlu",
+				"60dlu, 6dlu, 80dlu, pref:grow",
 				"20dlu, pref:grow");
 		DefaultFormBuilder detailTFFormBuilder = new DefaultFormBuilder(
 				detailTFFormLayout);
 		detailTFFormBuilder.append("Master Regulator:");
 		JLabel tfALabelField = BasicComponentFactory.createLabel(tfAHolder);
 		detailTFFormBuilder.append(tfALabelField);
-		// detailTFFormBuilder.nextColumn();
+		//detailTFFormBuilder.nextColumn();
 		//detailTFFormBuilder.append("P-val threshold:");
 		// detailTFFormBuilder.nextColumn();
 
@@ -403,11 +403,11 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		//detailTFFormBuilder.add(pValueTextField);
 		// detailTFFormBuilder.nextRow();
 		detailTFFormBuilder.nextLine();
-		detailTFFormBuilder.add(tv2, new CellConstraints("1,2,7,1,f,f"));
+		detailTFFormBuilder.add(tv2, new CellConstraints("1,2,4,1,f,f"));
 
 		jSplitPane2.setRightComponent(new JScrollPane(detailTFFormBuilder
-				.getPanel(), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
+				.getPanel(), JScrollPane.VERTICAL_SCROLLBAR_NEVER,
+				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
 
 		detailedTFGraphViewer.setPreferredSize(new Dimension(600, 100));
 		detailedTFGraphViewer.setMinimumSize(new Dimension(50, 50));

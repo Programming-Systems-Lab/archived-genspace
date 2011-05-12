@@ -14,5 +14,19 @@
  * @package    propel.generator.lib.model
  */
 class Workflow extends BaseWorkflow {
+	public function getName()
+	{
+		$c = new Criteria();
+		$c->addJoin(ToolPeer::ID,WorkflowToolPeer::TOOL_ID);
+		$c->add(WorkflowToolPeer::WORKFLOW_ID,$this->getId());
+
+		$r = array();
+		foreach(ToolPeer::doSelect($c) as $tool)
+		{
+			$r[] = $tool->getName();
+		}
+
+		return implode(", ",$r);
+	}
 
 } // Workflow

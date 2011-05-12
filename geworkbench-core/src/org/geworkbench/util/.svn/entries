@@ -1,7 +1,7 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/util
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -477,6 +477,9 @@ maz
 
 10763
 
+patterns
+dir
+
 RandomSequenceGenerator.java
 file
 
@@ -511,7 +514,7 @@ has-props
 
 4074
 
-patterns
+associationdiscovery
 dir
 
 ProgressDialog.java
@@ -548,9 +551,6 @@ has-props
 
 4136
 
-associationdiscovery
-dir
-
 Combinations.java
 file
 
@@ -585,17 +585,17 @@ has-props
 
 2303
 
-ProgressGraph.java
+Debug.java
 file
 
 
 
 
 2011-04-21T17:46:31.000000Z
-9f081bc3883005d028377d023e3b5259
-2011-03-28T19:04:31.299317Z
-7667
-zji
+9c2289786f490f37c8408abe39c79e92
+2005-07-28T22:36:56.000000Z
+50
+watkin
 has-props
 
 
@@ -617,7 +617,7 @@ has-props
 
 
 
-6034
+715
 
 ColorScale.java
 file
@@ -653,17 +653,17 @@ jiz
 
 2229
 
-Debug.java
+ProgressGraph.java
 file
 
 
 
 
 2011-04-21T17:46:31.000000Z
-9c2289786f490f37c8408abe39c79e92
-2005-07-28T22:36:56.000000Z
-50
-watkin
+9f081bc3883005d028377d023e3b5259
+2011-03-28T19:04:31.299317Z
+7667
+zji
 has-props
 
 
@@ -685,7 +685,7 @@ has-props
 
 
 
-715
+6034
 
 ProgressTask.java
 file
@@ -857,9 +857,6 @@ has-props
 
 1281
 
-sequences
-dir
-
 ValidationUtils.java
 file
 
@@ -893,6 +890,9 @@ zji
 
 
 2687
+
+sequences
+dir
 
 Util.java
 file

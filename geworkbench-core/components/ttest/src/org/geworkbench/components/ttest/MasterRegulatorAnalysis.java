@@ -39,7 +39,7 @@ import org.geworkbench.events.GeneSelectorEvent;
 
 /**
  * @author yc2480
- * @version $Id: MasterRegulatorAnalysis.java 7782 2011-04-21 15:40:06Z youmi $
+ * @version $Id: MasterRegulatorAnalysis.java 7812 2011-04-22 19:54:09Z youmi $
  */
 public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -189,6 +189,9 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			int c=z-w;
 			int d=x-z-y+w;
 			double pValue = FishersExactTest.getPValue(a,b,c,d);
+			
+			if ( pValue > mraAnalysisPanel.getPValue())
+				continue;
 
 			DSItemList<DSGeneMarker> nAItemList = new CSItemList<DSGeneMarker>();
 			nAItemList.addAll(nA);

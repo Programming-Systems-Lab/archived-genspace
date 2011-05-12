@@ -12,6 +12,7 @@ import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.ToolRating;
@@ -139,4 +140,6 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 	public Workflow getWorkflow(int id) {
 		return getEntityManager().find(Workflow.class, id);
 	}
+
+
 }

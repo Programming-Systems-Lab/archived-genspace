@@ -57,6 +57,7 @@ import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.APSerializable;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
+import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSTTestResultSet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.structure.DSProteinStructure;
@@ -112,7 +113,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 7735 2011-04-18 15:53:19Z zji $
+ * @version $Id: ProjectPanel.java 7802 2011-04-22 14:50:48Z zji $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -721,11 +722,21 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 				} else{
 					annotationFileNameString = "Loaded annotation file:  None" + "\n";
 				}
+				
+				String oboInfo = "obo file location: "
+						+ OboSourcePreference.getInstance().getSourceLocation()
+						+ "\n";
+				GeneOntologyTree g = GeneOntologyTree.getInstance();
+				if (g != null) {
+					oboInfo += "obo version " + g.getVersion() + "; obo date "
+							+ g.getDate() + "\n";
+				}
 
 				String setName = _dataSet.getDataSetName();
 				String dataSetString = "Data file:  " + setName + "\n" ;
 
-				String datasetHistory = dataSetString + annotationFileNameString + "_____________________" + "\n";
+				String datasetHistory = dataSetString + annotationFileNameString + oboInfo 
+					+ "_____________________" + "\n";
 				ProjectPanel.addToHistory(_dataSet, datasetHistory);
 			}
 			publishHistoryEvent(event);

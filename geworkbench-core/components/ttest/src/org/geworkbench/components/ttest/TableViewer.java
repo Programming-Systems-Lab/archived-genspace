@@ -5,7 +5,7 @@ package org.geworkbench.components.ttest;
 
 /**
  * @author yc2480
- * @version $Id: TableViewer.java 6943 2010-08-03 20:21:29Z zji $
+ * @version $Id: TableViewer.java 7793 2011-04-21 21:00:03Z youmi $
  * 
  */
 import java.awt.Color;
@@ -278,7 +278,13 @@ public class TableViewer extends JPanel {
 					myString = ((JLabel) (myObject)).getText();
 					otherString = ((JLabel) (otherObject)).getText();
 					return myString.compareTo(otherString);
-				} else
+				}else if (myObject instanceof JRadioButton)
+				{
+					myString = ((JRadioButton) (myObject)).getText();
+					otherString = ((JRadioButton) (otherObject)).getText();
+					return myString.compareTo(otherString);
+				}
+				else
 					return index - otherRow.index;
 			}
 		}

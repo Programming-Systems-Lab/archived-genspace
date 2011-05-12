@@ -17,7 +17,7 @@ import org.geworkbench.util.pathwaydecoder.mutualinformation.MindyResultRow;
 	 *
 	 * @author mhall
 	 * @author ch2514
-	 * @version $Id: ModulatorTargetModel.java 6315 2010-04-07 21:10:40Z zji $
+	 * @version $Id: ModulatorTargetModel.java 7792 2011-04-21 20:41:40Z zji $
 	 */
 class ModulatorTargetModel extends DefaultTableModel {
 	private static final long serialVersionUID = 1148774320885042265L;
@@ -372,9 +372,8 @@ class ModulatorTargetModel extends DefaultTableModel {
 		 *            column index
 		 * @return the class object representing the table column
 		 */
-		@SuppressWarnings("unchecked")
 		@Override
-		public Class getColumnClass(int columnIndex) {
+		public Class<?> getColumnClass(int columnIndex) {
 			if (columnIndex == 0 || columnIndex == 2) {
 				return Boolean.class;
 			} else if (columnIndex == columnNames.length - 1) {

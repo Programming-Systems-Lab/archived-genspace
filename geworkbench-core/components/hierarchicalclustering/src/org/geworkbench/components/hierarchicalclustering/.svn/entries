@@ -1,7 +1,7 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -94,6 +94,9 @@ has-props
 
 576
 
+help
+dir
+
 HierClusterViewAppComponent.java
 file
 
@@ -127,9 +130,6 @@ has-props
 
 
 6420
-
-help
-dir
 
 HierClusterTree.java
 file

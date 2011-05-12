@@ -36,7 +36,7 @@ import org.geworkbench.builtin.projects.OboSourcePreference;
  * 
  * @author John Watkinson
  * @author Xiaoqing Zhang
- * @version $Id: GeneOntologyTree.java 7781 2011-04-21 14:47:57Z zji $
+ * @version $Id: GeneOntologyTree.java 7802 2011-04-22 14:50:48Z zji $
  */
 public class GeneOntologyTree {
 	
@@ -483,5 +483,13 @@ public class GeneOntologyTree {
 		} catch (IOException e1) {
 			e.printStackTrace();
 		}
+	}
+
+	public String getVersion() {
+		return dataVersion;
+	}
+
+	public String getDate() {
+		return date;
 	}
 }

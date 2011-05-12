@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
 
-	<component  name="Marker Mean Variance Normalizer"
+	<component  name="Mean Variance Normalizer"
 				class="org.geworkbench.components.normalization.MarkerMeanVarianceNormalizer"
 				version="1.0"
 				author="geWorkbench Development Team"
@@ -11,6 +11,7 @@
 				category="normalizer"
 				description="For each marker profile in a microarray dataset, subtracts the mean
  or median value and then divides by the standard deviation."
+  				loadByDefault="true"
 	 	 >
 		<required-component class="org.geworkbench.components.normalization.NormalizationPanel" />
 		<license><![CDATA[

@@ -18,33 +18,45 @@ class workflowActions extends sfActions
   public function executeIndex($request)
   {
   	$this->workflowId = $this->getRequestParameter('id');  	
-  	
+
   	if ($this->workflowId){
+
   		$this->getResponse()->addJavascript('prototype.lite.js');
   		$this->getResponse()->addStylesheet('stars');
   		$this->getResponse()->addJavascript('stars');
   		
   		if ($request->getParameter('comment')){
-	  		$comment = new WorkflowComments();
+	  		$comment = new WorkflowComment();
 	  		$comment->setCreatorId($this->getUser()->getAttribute('username'));
 	  		$comment->setComment($request->getParameter('comment'));
 	  		$comment->setWorkflowId($this->workflowId);
+			  $comment->setCreatedat(date("Y-m-d H:i:s"));
 	  		$comment->save();
 	  		$this->getUser()->setFlash('comment_msg', 'Comment posted!');
   		}
   		else if ($request->getParameter('rating')){
-  			$rating = new WorkflowRatings();
+  			$rating = new WorkflowRating();
 	  		$rating->setCreatorId($this->getUser()->getAttribute('username'));
 	  		$rating->setRating($request->getParameter('rating'));
 	  		$rating->setWorkflowId($this->workflowId);
+			$rating->setCreatedat(date("Y-m-d H:i:s"));
+
 	  		$rating->save();
 	  		$this->getUser()->setFlash('rating_msg', 'Rating submitted!');
   		}
-  		  		
-  		$this->rating = WorkflowRatingsPeer::getWorkflowRating($this->getUser()->getAttribute('username'), $this->workflowId);
-  		$this->wfName = WorkflowsPeer::getWorkflowName($this->workflowId);
+
+	  $wkflw = WorkflowPeer::retrieveByPK($this->workflowId);
+  		$this->rating = WorkflowRatingPeer::getWorkflowRating($this->getUser()->getAttribute('username'), $this->workflowId);
+  		$this->wfName = $wkflw->getName();
+		$this->wf = $wkflw;
+		  
   		$this->getResponse()->setTitle("Workflow Detail");
-  		$this->comments = WorkflowCommentsPeer::getWorkflowComments($this->getUser()->getAttribute('username'), $this->workflowId);
+
+		  $c = new Criteria();
+		  $c->add(WorkflowCommentPeer::WORKFLOW_ID,$this->workflowId);
+
+  		$this->comments = WorkflowCommentPeer::doSelect($c);
+				//  getWorkflowComments($this->getUser()->getAttribute('username'), $this->workflowId);
   	}
   }
     

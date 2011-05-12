@@ -1,15 +1,15 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-21T15:55:47.904534Z
-7783
-maz
+2011-05-05T22:38:24.550661Z
+7853
+smithken
 
 
 
@@ -68,31 +68,31 @@ dir
 idea
 dir
 
-ttest
-dir
-
 selectors
 dir
 
-anova
+ttest
 dir
 
 pudge
 dir
 
-cutenet
-dir
-
-discovery
+anova
 dir
 
 promoter
 dir
 
-genomebrowser
+discovery
+dir
+
+cutenet
 dir
 
 skyline
+dir
+
+genomebrowser
 dir
 
 poshistogram
@@ -101,10 +101,10 @@ dir
 caarray
 dir
 
-filtering
+analysis
 dir
 
-analysis
+filtering
 dir
 
 simulation
@@ -113,10 +113,10 @@ dir
 normalization
 dir
 
-foldchange
+cytoscape
 dir
 
-cytoscape
+foldchange
 dir
 
 genetegrate

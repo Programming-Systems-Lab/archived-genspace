@@ -40,18 +40,12 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	public List<Workflow> getWorkflowsByPopularity() {
-//		System.out.println("Gettign workflows by popularity");
-		long start = System.currentTimeMillis();
-		CriteriaQuery<Object> cq = getEntityManager().getCriteriaBuilder()
-				.createQuery();
-		cq.select(cq.from(Workflow.class));// .joinList("tools"));
-		List<Object> r = getEntityManager().createQuery(cq).getResultList();
+		Query cq = getEntityManager().createNativeQuery("SELECT w.* from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",Workflow.class);
+		List r = cq.getResultList();
 		List<Workflow> wr = new ArrayList<Workflow>();
 		for (Object o : r) {
 			wr.add(((Workflow) o).slimDown());
 		}
-//		System.out.println("Finished getting workflows in time "
-//				+ ((System.currentTimeMillis() - start) / 1000));
 		return wr;
 	}
 
@@ -123,7 +117,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		Query q = getEntityManager().createNativeQuery(
 				"select distinct w.* from WORKFLOW w "
 						+ "inner join WORKFLOWTOOL wt on w.id=wt.workflow_id "
-						+ "where wt.tool_id=? order by w.usageCount desc",
+						+ "where wt.tool_id=? order by w.usageCount desc LIMIT 150",
 				Workflow.class);
 		q.setParameter(1, tool);
 		List<Workflow> wf = null;
@@ -431,5 +425,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 				.writeObject(sendUsageLog((List<AnalysisEvent>) RuntimeEnvironmentSettings
 						.readObject(analysisEvent)));
 	}
-
+	@Override
+	public byte[] getWorkflowsByPopularityBytes() {
+		return RuntimeEnvironmentSettings.writeObject(getWorkflowsByPopularity());
+	}
 }

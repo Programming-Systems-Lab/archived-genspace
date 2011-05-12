@@ -18,7 +18,7 @@ import org.geworkbench.util.pathwaydecoder.mutualinformation.MindyGeneMarker;
  * @author mhall
  * @author ch2514
  * @author oshteynb
- * @version $Id: ModulatorModel.java 6452 2010-05-03 22:26:46Z zji $
+ * @version $Id: ModulatorModel.java 7792 2011-04-21 20:41:40Z zji $
  */
 class ModulatorModel extends AbstractTableModel {
 	/**
@@ -132,9 +132,8 @@ class ModulatorModel extends AbstractTableModel {
 	 *            column index
 	 * @return the class object representing the table column
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
-	public Class getColumnClass(int columnIndex) {
+	public Class<?> getColumnClass(int columnIndex) {
 		if (columnIndex == 0) {
 			return Boolean.class;
 		} else if (columnIndex == 1) {

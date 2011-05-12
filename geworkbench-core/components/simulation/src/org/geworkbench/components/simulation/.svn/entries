@@ -1,7 +1,7 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,9 @@ kk2457
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+simulator
+dir
 
 SimulatorPanel.java
 file
@@ -59,9 +62,6 @@ has-props
 
 
 61664
-
-simulator
-dir
 
 tp
 dir
@@ -112,6 +112,9 @@ has-props
 networkGenerator
 dir
 
+Reaction
+dir
+
 Simulation.java
 file
 
@@ -145,9 +148,6 @@ has-props
 
 
 2478
-
-Reaction
-dir
 
 SimulationCluster.java
 file

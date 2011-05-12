@@ -6,14 +6,14 @@
 	
 	if ($sf_user->isAuthenticated()): ?>
 		<strong>Logged in as <?php echo $sf_user->getAttribute('name');?>. </strong> 
-		<?php echo link_to('Logout', 'tool/logout'); echo " | "; echo "<a href='/tool/index?user=".$sf_user->getAttribute('username')."'>My Profile</a>"; ?>
+		<?php echo link_to('Logout', '/index.php/tool/logout'); echo " | "; echo "<a href='/index.php/tool/index?user=".$sf_user->getAttribute('username')."'>My Profile</a>"; ?>
 	
 	<?php else:
 	if ($sf_user->hasFlash('error')):  echo "<span style='color:red'>".$sf_user->getFlash('error')."</span><br/>"; endif;
 	if ($sf_user->hasFlash('loggedout')):  echo "<span style='color:red'>".$sf_user->getFlash('loggedout')."</span>";   endif;
 	  ?>	  
       
-  <form action="/tool/login" method="post" ><?php if ($sf_user->hasFlash('nouserorpass')):  echo "<span style='color:red'>". $sf_user->getFlash('nouserorpass')."</span><br/>"; endif; 	?><?php if ($sf_user->hasFlash('nouser')):  echo "<span style='color:red'>". $sf_user->getFlash('nouser')."</span><br/>"; endif; 	?>
+  <form action="/index.php/tool/login" method="post" ><?php if ($sf_user->hasFlash('nouserorpass')):  echo "<span style='color:red'>". $sf_user->getFlash('nouserorpass')."</span><br/>"; endif; 	?><?php if ($sf_user->hasFlash('nouser')):  echo "<span style='color:red'>". $sf_user->getFlash('nouser')."</span><br/>"; endif; 	?>
 	  Username: <input type="text" name="login[username]" id="login_username" value=""/><br/><br/>
 <?php if ($sf_user->hasFlash('nopass')):  echo "<span style='color:red'>". $sf_user->getFlash('nopass')."</span><br/>"; endif; 	?>
 	Password: <input type="password" name="login[password]" id="login_password" value="" /><br/><a class="forgotpass" href="javascript:;" style="text-decoration:none">Forgot Password?</a><br/>

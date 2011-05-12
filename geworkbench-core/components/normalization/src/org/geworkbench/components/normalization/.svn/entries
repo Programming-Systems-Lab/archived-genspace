@@ -1,15 +1,15 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-06T21:31:07.618229Z
-7703
-maz
+2011-05-05T22:38:24.550661Z
+7853
+smithken
 
 
 
@@ -25,40 +25,6 @@ maz
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-NormalizationPanel.cwb.xml
-file
-
-
-
-
-2011-04-21T17:45:47.000000Z
-2e49982e13420bf3b9b7c3bebbc7bbe9
-2010-06-10T02:39:43.512944Z
-6786
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1074
 
 ThresholdNormalizer.java
 file
@@ -93,6 +59,40 @@ has-props
 
 
 3548
+
+NormalizationPanel.cwb.xml
+file
+
+
+
+
+2011-04-21T17:45:47.000000Z
+2e49982e13420bf3b9b7c3bebbc7bbe9
+2010-06-10T02:39:43.512944Z
+6786
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1074
 
 CenteringNormalizerPanel.java
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2011-04-21T17:45:47.000000Z
-35adc184164f4ae2cb0b0d7459dd79ae
-2011-03-21T22:24:24.377666Z
-7617
+2011-05-09T16:20:03.000000Z
+a1c42c40be902100d6351a178f3b0a7f
+2011-04-22T19:09:01.504147Z
+7808
 smithken
 
 
@@ -160,7 +160,7 @@ smithken
 
 
 
-1313
+1341
 
 MicroarrayCenteringNormalizer.cwb.xml
 file
@@ -298,6 +298,9 @@ has-props
 
 21748
 
+help
+dir
+
 HouseKeepingGeneNormalizerPanel.java
 file
 
@@ -332,8 +335,39 @@ has-props
 
 31159
 
-help
-dir
+DEFAULT_HOUSEKEEPING_GENES.txt
+file
+
+
+
+
+2011-04-21T17:45:47.000000Z
+cb1c8b903d4293823c713174870f225f
+2005-08-30T18:07:18.000000Z
+213
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28
 
 MissingValueNormalizer.java
 file
@@ -368,40 +402,6 @@ has-props
 
 
 5177
-
-DEFAULT_HOUSEKEEPING_GENES.txt
-file
-
-
-
-
-2011-04-21T17:45:47.000000Z
-cb1c8b903d4293823c713174870f225f
-2005-08-30T18:07:18.000000Z
-213
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28
 
 MicroarrayCenteringNormalizer.java
 file
@@ -715,10 +715,10 @@ file
 
 
 
-2011-04-21T17:45:47.000000Z
-85bb2c49c699eaa2268eef16d98c1a2d
-2011-03-21T22:24:24.377666Z
-7617
+2011-05-09T16:20:03.000000Z
+180653ada9319d2d97117edcd8e80e97
+2011-05-05T22:38:24.550661Z
+7853
 smithken
 
 
@@ -741,7 +741,7 @@ smithken
 
 
 
-1270
+1291
 
 HouseKeepingGeneNormalizer.java
 file

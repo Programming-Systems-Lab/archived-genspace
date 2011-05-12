@@ -1,7 +1,7 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,17 +26,18 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-VisualGPClassifier.java
+AbstractTraining.java
 file
 
 
 
 
 2011-04-21T17:46:20.000000Z
-d8fc09aef84632a7e04bac0876b26674
-2010-05-03T19:03:46.947459Z
-6448
-mnazaire
+d1ae9f3b13e073c8c15690495a058a41
+2011-04-07T17:21:11.309605Z
+7706
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ mnazaire
 
 
 
-
-2907
+9189
 
 PredictionResult.java
 file
@@ -94,18 +94,17 @@ marcdanie
 
 1194
 
-AbstractTraining.java
+VisualGPClassifier.java
 file
 
 
 
 
 2011-04-21T17:46:20.000000Z
-d1ae9f3b13e073c8c15690495a058a41
-2011-04-07T17:21:11.309605Z
-7706
-zji
-has-props
+d8fc09aef84632a7e04bac0876b26674
+2010-05-03T19:03:46.947459Z
+6448
+mnazaire
 
 
 
@@ -126,7 +125,8 @@ has-props
 
 
 
-9189
+
+2907
 
 GPTraining.java
 file

@@ -1,15 +1,15 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-21T15:40:06.740613Z
-7782
-youmi
+2011-04-27T02:35:58.003746Z
+7831
+smithken
 
 
 
@@ -25,6 +25,40 @@ youmi
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+MasterRegulatorPanel.java
+file
+
+
+
+
+2011-05-09T16:20:02.000000Z
+797b461b734048d3f2b3e0a9c2295e57
+2011-04-25T22:14:15.333991Z
+7827
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21575
 
 TtestAnalysis.cwb.xml
 file
@@ -60,40 +94,6 @@ has-props
 
 1349
 
-MasterRegulatorPanel.java
-file
-
-
-
-
-2011-04-21T17:45:24.000000Z
-6af2ecd2263552a5776d47418647dfe7
-2011-04-21T15:40:06.740613Z
-7782
-youmi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20581
-
 TTestUtil.java
 file
 
@@ -127,6 +127,40 @@ has-props
 
 
 23549
+
+MasterRegulatorViewer.java
+file
+
+
+
+
+2011-05-09T16:20:02.000000Z
+32781392a229f5abf07d4ea69591ff82
+2011-04-27T02:35:58.003746Z
+7831
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20318
 
 MultiTTestAnalysisPanel.java
 file
@@ -162,40 +196,6 @@ has-props
 
 5763
 
-MasterRegulatorViewer.java
-file
-
-
-
-
-2011-04-21T17:45:24.000000Z
-5b321598c85137e2159ec19471556ecb
-2011-04-21T15:40:06.740613Z
-7782
-youmi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20288
-
 TtestAnalysis.java
 file
 
@@ -230,50 +230,16 @@ has-props
 
 28339
 
-TableViewer.java
-file
-
-
-
-
-2011-04-21T17:45:24.000000Z
-fa87a57c1c57d7f3c92781ea6eaed4e1
-2010-08-03T20:21:29.479829Z
-6943
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11120
-
 DetailedTFGraphViewer.java
 file
 
 
 
 
-2011-04-21T17:45:24.000000Z
-508c31f9710cccd60dc9a63eccf873c9
-2011-04-21T15:40:06.740613Z
-7782
+2011-05-09T16:20:02.000000Z
+8562581e10b5cfad2f0e84921f810b36
+2011-04-21T21:01:04.855232Z
+7794
 youmi
 has-props
 
@@ -296,7 +262,41 @@ has-props
 
 
 
-6557
+6708
+
+TableViewer.java
+file
+
+
+
+
+2011-05-09T16:20:02.000000Z
+45a1b1c8f0944193b59c3df15e000440
+2011-04-21T21:00:03.191920Z
+7793
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11341
 
 MasterRegulatorAnalysis.cwb.xml
 file
@@ -406,10 +406,10 @@ file
 
 
 
-2011-04-21T17:45:24.000000Z
-15c8580ba52b0d7ef4ced8ef43f8fc5c
-2011-04-21T15:40:06.740613Z
-7782
+2011-05-09T16:20:02.000000Z
+e8a4441b9f7f9324fd857b98516fe670
+2011-04-22T19:54:09.437871Z
+7812
 youmi
 has-props
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-14224
+14289
 
 TtestAnalysisPanel.java
 file

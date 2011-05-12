@@ -1,7 +1,7 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -128,40 +128,6 @@ has-props
 
 8040
 
-T_PatternDiscovery_Params_Advanced_BLOSUM.png
-file
-
-
-
-
-2011-04-21T17:45:27.000000Z
-90ccd8894e42bd93d2c5104422fdb0e1
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6510
-
 T_PatternDiscovery_RunProgress.png
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 7584
+
+T_PatternDiscovery_Params_Advanced_BLOSUM.png
+file
+
+
+
+
+2011-04-21T17:45:27.000000Z
+90ccd8894e42bd93d2c5104422fdb0e1
+2010-09-13T14:40:56.329012Z
+7051
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6510
 
 T_PatternDiscovery_Params_Basic_histone_result_exact_seqs.png
 file
@@ -298,40 +298,6 @@ has-props
 
 68363
 
-T_PatternDiscovery_Params_Basic_initial.png
-file
-
-
-
-
-2011-04-21T17:45:27.000000Z
-fc63d95d3e0b60a2f2924674c6cc1233
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13900
-
 T_PatternDiscovery_SessionConnect.png
 file
 
@@ -366,14 +332,14 @@ has-props
 
 23838
 
-T_PatternDiscovery_Params_Basic_histone_result_exact.png
+T_PatternDiscovery_Params_Basic_initial.png
 file
 
 
 
 
 2011-04-21T17:45:27.000000Z
-9df1ab4667a0192aa689c243720371a0
+fc63d95d3e0b60a2f2924674c6cc1233
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -398,7 +364,7 @@ has-props
 
 
 
-32433
+13900
 
 T_PatternDiscovery_Histones_Result_exact_2.png
 file
@@ -434,14 +400,14 @@ has-props
 
 23131
 
-T_PatternDiscovery_Params_Basic_histone_run.png
+T_PatternDiscovery_Params_Basic_histone_result_exact.png
 file
 
 
 
 
 2011-04-21T17:45:27.000000Z
-a79c3037a75c3a895f94a20168dbb146
+9df1ab4667a0192aa689c243720371a0
 2010-09-13T14:40:56.329012Z
 7051
 zji
@@ -466,7 +432,7 @@ has-props
 
 
 
-13939
+32433
 
 T_PatternDiscovery_Params_Basic_histone_result_blosum50.png
 file
@@ -501,6 +467,40 @@ has-props
 
 
 38179
+
+T_PatternDiscovery_Params_Basic_histone_run.png
+file
+
+
+
+
+2011-04-21T17:45:27.000000Z
+a79c3037a75c3a895f94a20168dbb146
+2010-09-13T14:40:56.329012Z
+7051
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13939
 
 T_PatternDiscovery_Params_Limits.png
 file

@@ -1,15 +1,15 @@
 10
 
 dir
-7785
+7859
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-21T15:55:47.904534Z
-7783
-maz
+2011-04-22T19:36:36.205443Z
+7811
+smithken
 
 
 
@@ -168,10 +168,10 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-cfba92f6204fd3f15c54f0e0c8b9c105
-2011-02-22T20:50:12.881009Z
-7476
+2011-05-09T16:20:03.000000Z
+1201a4a6c7e8f0a5d862486bbd855514
+2011-04-21T19:43:33.515132Z
+7789
 zji
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-6997
+7346
 
 AffyDetectionCallFilterPanel.java
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-bd72c28ea1ff5143ac2be2d9b5d60ce3
-2011-04-21T15:55:47.904534Z
-7783
+2011-05-09T16:20:03.000000Z
+2e6ef36652ced3be0586e2eca8b79683
+2011-04-22T19:25:46.471884Z
+7810
 maz
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-6686
+6932
 
 CoefficientOfVariationFilter.java
 file
@@ -508,10 +508,10 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-9e242b11b4fd0039b09b6ceb4de3c0a8
-2011-03-21T22:24:24.377666Z
-7617
+2011-05-09T16:20:03.000000Z
+49f5f2e29c4027277cf4e6cf689e0c53
+2011-04-22T19:09:01.504147Z
+7808
 smithken
 
 
@@ -534,7 +534,7 @@ smithken
 
 
 
-1541
+1568
 
 PreviewDialog.java
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-13b51b67aeb2219017dd3711e5d91cb0
-2011-04-13T14:55:00.455938Z
-7725
-youmi
+2011-05-09T16:20:03.000000Z
+674e7a0244db8af7040686f34286e836
+2011-04-22T13:53:39.209924Z
+7799
+maz
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-6271
+6472
 
 GenepixExpressionThresholdFilter.java
 file
@@ -610,10 +610,10 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-0cd0b7f0cb13809baf22dee79cace80e
-2011-04-21T15:55:47.904534Z
-7783
+2011-05-09T16:20:03.000000Z
+22fb4a326c2fc41920d7ce7097ed46fd
+2011-04-21T21:35:50.179204Z
+7795
 maz
 has-props
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-7497
+7376
 
 CoefficientOfVariationFilterPanel.java
 file
@@ -675,6 +675,40 @@ maz
 help
 dir
 
+ExpressionThresholdFilter.cwb.xml
+file
+
+
+
+
+2011-05-09T16:20:03.000000Z
+992a90b1e1840effe2d5c7cac6b386d3
+2011-04-22T19:09:01.504147Z
+7808
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1261
+
 GenepixFlagsFilter.cwb.xml
 file
 
@@ -709,16 +743,16 @@ smithken
 
 1111
 
-ExpressionThresholdFilter.cwb.xml
+AffyDetectionCallFilter.cwb.xml
 file
 
 
 
 
-2011-04-21T17:45:45.000000Z
-f9bdd020f41511dd0477f46588e9c880
-2011-03-21T22:24:24.377666Z
-7617
+2011-05-09T16:20:03.000000Z
+64538f0a09237a307a417f3a6affca95
+2011-04-22T19:36:36.205443Z
+7811
 smithken
 
 
@@ -741,7 +775,7 @@ smithken
 
 
 
-1234
+1345
 
 MissingValuesFilterPanel.java
 file
@@ -777,40 +811,6 @@ has-props
 
 4889
 
-AffyDetectionCallFilter.cwb.xml
-file
-
-
-
-
-2011-04-21T17:45:45.000000Z
-ea32e14cc50b8bea26ed42cb4b723e26
-2011-03-21T22:24:24.377666Z
-7617
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1318
-
 DeviationBasedFilter.cwb.xml
 file
 
@@ -845,14 +845,14 @@ smithken
 
 1200
 
-GenepixFlagsFilter.java
+ExpressionThresholdFilter.java
 file
 
 
 
 
 2011-04-21T17:45:45.000000Z
-624fc1d083adac86b18aa4364ba34d97
+1a2d029e6d87710e5c7eb04691daee12
 2010-06-24T15:03:09.921560Z
 6822
 youmi
@@ -877,7 +877,7 @@ has-props
 
 
 
-7477
+3265
 
 GenepixExpressionThresholdFilterPanel.java
 file
@@ -913,14 +913,14 @@ has-props
 
 11604
 
-ExpressionThresholdFilter.java
+GenepixFlagsFilter.java
 file
 
 
 
 
 2011-04-21T17:45:45.000000Z
-1a2d029e6d87710e5c7eb04691daee12
+624fc1d083adac86b18aa4364ba34d97
 2010-06-24T15:03:09.921560Z
 6822
 youmi
@@ -945,7 +945,7 @@ has-props
 
 
 
-3265
+7477
 
 MultipleProbesetFilterPanel.java
 file
@@ -1055,10 +1055,10 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-2c5a5dd7634294e0e6dc2412bc7a7169
-2011-03-21T22:24:24.377666Z
-7617
+2011-05-09T16:20:03.000000Z
+294630b0956b761f0602b5dcedf305d8
+2011-04-22T19:09:01.504147Z
+7808
 smithken
 
 
@@ -1081,5 +1081,5 @@ smithken
 
 
 
-1284
+1310
 

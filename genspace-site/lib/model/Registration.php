@@ -18,5 +18,10 @@ class Registration extends BaseRegistration {
 	{
 		return $this->getFirstName() . " " . $this->getLastName();
 	}
+	function __toString()
+	{
+		return $this->getFullName();
+	}
+
 
 } // Registration
