@@ -41,7 +41,7 @@ if (isset($displayAll)): ?>
 	<?php if ($sf_user->isAuthenticated()): ?>
 	<div class="entry" style="padding: 10px; background-color: #D2D2D2">
 		<strong>Submit a comment:</strong><br/>
-        <form action="tool/comment" method="post">
+        <form action="/index.php/tool/comment" method="post">
 		<?php  echo $form; 		
 		?>
         <br/>

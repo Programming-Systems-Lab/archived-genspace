@@ -26,6 +26,7 @@
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>--> 
 		<property name="eclipselink.ddl-generation" value="create-tables"/>
+		<property name="eclipselink.jdbc.fetch-size" value="256"/>
 		<property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
 		<property name="eclipselink.ddl-generation.output-mode" value="sql-script" />
 		<property name="eclipselink.ddl-generation.table-creation-suffix" value=" engine=InnoDB" />

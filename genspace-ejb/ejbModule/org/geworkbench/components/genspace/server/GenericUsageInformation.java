@@ -1,5 +1,6 @@
 package org.geworkbench.components.genspace.server;
 
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,8 +10,10 @@ import java.util.List;
 import javax.annotation.security.PermitAll;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import javax.persistence.QueryHint;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.eclipse.persistence.config.QueryHints;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
@@ -40,7 +43,9 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	public List<Workflow> getWorkflowsByPopularity() {
-		Query cq = getEntityManager().createNativeQuery("SELECT w.* from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",Workflow.class);
+		Query cq = getEntityManager().createQuery("SELECT OBJECT(w) from Workflow w ORDER BY w.usageCount desc").setMaxResults(20).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
+//		Query cq = getEntityManager().createNativeQuery("SELECT ID, CREATEDAT, NUMRATING, SUMRATING, USAGECOUNT, CREATIONTRANSACTION_ID, CREATOR_ID, PARENT_ID from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",
+//				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.creationTransaction");
 		List r = cq.getResultList();
 		List<Workflow> wr = new ArrayList<Workflow>();
 		for (Object o : r) {
@@ -82,6 +87,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	public Tool getMostPopularPreviousTool(int tool) {
+		
 		Query q = getEntityManager()
 				.createNativeQuery(
 						"select t.* from TOOL t "
@@ -114,12 +120,16 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getAllWorkflowsIncluding(int tool) {
-		Query q = getEntityManager().createNativeQuery(
-				"select distinct w.* from WORKFLOW w "
-						+ "inner join WORKFLOWTOOL wt on w.id=wt.workflow_id "
-						+ "where wt.tool_id=? order by w.usageCount desc LIMIT 150",
-				Workflow.class);
-		q.setParameter(1, tool);
+		
+		Query q = getEntityManager().createQuery("SELECT DISTINCT OBJECT(w) FROM Workflow w, WorkflowTool wt WHERE wt MEMBER OF w.tools AND wt.tool=?1 ORDER BY w.usageCount DESC").
+		setMaxResults(150);//.setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
+		
+//		Query q = getEntityManager().createNativeQuery(
+//				"select distinct w.* from WORKFLOW w "
+//						+ "inner join WORKFLOWTOOL wt on w.id=wt.workflow_id "
+//						+ "where wt.tool_id=? order by w.usageCount desc LIMIT 150",
+//				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");;
+		q.setParameter(1, getEntityManager().find(Tool.class, tool));
 		List<Workflow> wf = null;
 		ArrayList<Workflow> ret = new ArrayList<Workflow>();
 		try {
@@ -159,6 +169,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMostPopularWorkflowIncluding(int tool) {
+
 //		System.out.println("Starting to get most popular workflow including "
 //				+ tool);
 		Query q = getEntityManager()
@@ -166,7 +177,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 						"select distinct w.* from WORKFLOW w "
 								+ "inner join WORKFLOWTOOL wt on w.id=wt.workflow_id "
 								+ "where wt.tool_id=? order by w.usageCount desc limit 1",
-						Workflow.class);
+						Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256);
 		q.setParameter(1, tool);
 		List<Workflow> wf = null;
 		ArrayList<Workflow> ret = new ArrayList<Workflow>();

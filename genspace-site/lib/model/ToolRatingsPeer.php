@@ -285,13 +285,13 @@ $statement =
 	public static function getUserTools($user){
 			$connection = Propel::getConnection();
 
-			$statement = $connection->prepare("SELECT id FROM TOOLRATING WHERE creator_id=:user");
+			$statement = $connection->prepare("SELECT tool_id FROM TOOLRATING WHERE creator_id=:user");
 				$statement->bindValue(':user', $user, PDO::PARAM_STR);
 
 			$statement->execute();
 		$i=0;
 						while ($resultSet=$statement->fetch(PDO::FETCH_OBJ)){
-						$tool[$i] = $resultSet->id;
+						$tool[$i] = $resultSet->tool_id;
 						$i++;
 						}
 			return $tool;

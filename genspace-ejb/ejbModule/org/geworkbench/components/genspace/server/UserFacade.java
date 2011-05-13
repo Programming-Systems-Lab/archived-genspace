@@ -118,9 +118,10 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 //		}
 		for(UserWorkflow uw : ret.getWorkflows())
 		{
+			getEntityManager().refresh(uw);
+			getEntityManager().refresh(uw.getWorkflow());
 			UserWorkflow uww = new UserWorkflow();
 			uww.setWorkflow(uw.getWorkflow().slimDown());
-			uww.getWorkflow().getComments().size();
 			uww.getWorkflow().getCreator();
 			uww.setName(uw.getName());
 			uww.setId(uw.getId());

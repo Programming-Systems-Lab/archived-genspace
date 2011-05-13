@@ -98,7 +98,7 @@ if (isset($displayAll)):
         <?php  elseif (isset($displayUser)):?>
         	<h2><?php 
 			echo "<div id='deletedialog' style='display:none'>The comment/rating will be permanently deleted.  Are you sure?</div>";
-echo $sf_user->getAttribute('username')."'s Profile"; ?></h2>
+echo $uOb."'s Profile"; ?></h2>
         <?php  
 	$total=ToolRatingsPeer::getUserCountRatings($sf_user->getAttribute('username'));
 	$numratings=ToolRatingsPeer::getUserAllRatings($sf_user->getAttribute('username'));
@@ -181,11 +181,16 @@ plot1 = $.jqplot('chartdiv', [line1], {
 									<input type="radio" name="rate_avg" value="<?php echo $i;?>"   disabled="disabled" checked="checked" />
                                             <?php } else {?>
 	<input type="radio" name="rate_avg" value="<?php echo $i;?>"  disabled="disabled"   />
-    <?php } }?>
+    <?php } }
+
+
+	   /*
+	    * <a class="edit" href="/tool/edit"><img style="float:right" src="/images/edit_butt.png" /></a>
+	    */?>
 						
 		
 		</form><p class="entry" style="border-bottom: 1px solid black; padding: 5px; <?php if (++$i % 2==0) echo "background-color: #CCCCCC;"; ?>"> 
-       <br/><br/><?php echo  $usercomments['comment']; ?></br><br/><span class="meta" style="padding: 3px; font-style: italic; margin:0px;"> <span class="posted">Posted on <?php echo date("F j, Y, g:i a", strtotime($usercomments['posted_on'])); ?> </span><a class="delete" href="/tool/delete?id=<?php echo $toolid[$a];?>&user=<?php echo $sf_user->getAttribute('username');?> "><img style="float:right" src="/images/delete_butt.png" /></a><a class="edit" href="/tool/edit"><img style="float:right" src="/images/edit_butt.png" /></a></span><?php echo "<div id='editdialog' style='display:none; overflow:hidden'><form action='/tool/edit' method='post'>";echo "<h3>".$usercomments['tool']; echo "</h3>	<label for='name' style='position:relative; top:15px'><strong>Rate this</strong>: </label><div id='rat' style='position: relative; left:59px ' >
+       <br/><br/><?php echo  $usercomments['comment']; ?></br><br/><span class="meta" style="padding: 3px; font-style: italic; margin:0px;"> <span class="posted">Posted on <?php echo date("F j, Y, g:i a", strtotime($usercomments['posted_on'])); ?> </span><a class="delete" href="/tool/delete?id=<?php echo $toolid[$a];?>&user=<?php echo $sf_user->getAttribute('username');?> "><img style="float:right" src="/images/delete_butt.png" /></a></span><?php echo "<div id='editdialog' style='display:none; overflow:hidden'><form action='/tool/edit' method='post'>";echo "<h3>".$usercomments['tool']; echo "</h3>	<label for='name' style='position:relative; top:15px'><strong>Rate this</strong>: </label><div id='rat' style='position: relative; left:59px ' >
 <select name='comment[rating]'>"; for($i=1; $i<6; $i++){ if  ($userrating==$i){
 											echo "<option value=".$i."  selected />";} else { echo"<option value=".$i."  />";
      } } echo "</select></div><br/><br/><br/><strong>Comment</strong>:<textarea  cols='40'  name='comment[comment]'>";echo $usercomments['comment']; echo "</textarea><input type='hidden' name='comment[id]' value=".$toolid[$a]."><input type='hidden'  name='comment[user]' value=".$sf_user->getAttribute('username')."><br/><input type='submit' value='Cancel' style='float:right' onClick='this.close()' /><input type='submit' value='Submit' style='float:right' />";?> </form></div></p>
@@ -340,7 +345,7 @@ plot1 = $.jqplot('chartdiv', [line1], {
   
   	<div class="entry" style="padding: 10px; background-color: #f5f5f5; background-image:url(/images/bottom_fade.png); background-repeat:repeat-x; background-position:bottom; border:1px solid #cccccc">
 		<strong><span style="font-size:14px">Submit a Comment:</span></strong><br/><br/>
-        <form action="/tool/comment" method="post">
+        <form action="/index.php/tool/comment" method="post">
        	<div class="ctrlHolder"><label for="name" style="position:relative; top:15px"><strong>Rate this</strong>:</label> <span id="caption"></span>
 
 			<div id="rat" style="position: relative; left:57px " >

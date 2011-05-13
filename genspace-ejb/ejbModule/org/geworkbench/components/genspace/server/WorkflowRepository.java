@@ -113,6 +113,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		wc.setCreator(getUser());
 		getEntityManager().persist(wc);
 		wc = getEntityManager().merge(wc);
+		getEntityManager().refresh(wc.getWorkflow());
 		invalidateCache();
 		return wc;
 	}
