@@ -34,7 +34,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
  * wrapping for the result from ontologizer 2.0.
  * 
  * @author zji
- * @version $Id: GoAnalysisResult.java 7735 2011-04-18 15:53:19Z zji $
+ * @version $Id: GoAnalysisResult.java 7946 2011-05-27 20:49:26Z zji $
  */
 public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 	private static final long serialVersionUID = -337000604982427702L;
@@ -200,7 +200,7 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 	
 	private static int countUnexpectedEntrezId = 0;
 
-	public static void parseAnnotation(String annotationFileName) {
+	public static void parseAnnotation(String annotationFileName) throws IOException {
 		term2Gene.clear();
 		geneDetails.clear();
 		
@@ -214,6 +214,10 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 					line = br.readLine();
 				line = line.substring(1, line.length()-2); // trimming the leading and trailing quotation mark
 				String[] fields = line.split("\",\"");
+				final int AFFY_COLUMN_COUNT = 41;
+				if(fields.length!=AFFY_COLUMN_COUNT) {
+					throw new IOException("Annotation file "+annotationFileName+" not recognized.");
+				}
 				String geneSymbolField = fields[ANNOTATION_INDEX_GENE_SYMBOL];
 				String biologicalProcess = fields[ANNOTATION_INDEX_BIOLOGICAL_PROCESS];
 				String cellularComponent = fields[ANNOTATION_INDEX_CELLULAR_COMPONENT];
@@ -240,9 +244,6 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			log.error("Annotation map is not successfullly created due to FileNotException: "+e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
-			log.error("Annotation map is not successfullly created due to IOException: "+e.getMessage());
 		}
 		staticAnnotationFileName = annotationFileName;
 	}

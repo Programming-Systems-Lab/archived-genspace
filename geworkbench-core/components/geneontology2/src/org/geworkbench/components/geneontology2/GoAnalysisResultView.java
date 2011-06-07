@@ -83,7 +83,7 @@ import org.geworkbench.util.BrowserLauncher;
  * Visual component to show the result from GO Term Analysis.
  * 
  * @author zji
- * @version $Id: GoAnalysisResultView.java 7821 2011-04-25 20:27:37Z zji $
+ * @version $Id: GoAnalysisResultView.java 7946 2011-05-27 20:49:26Z zji $
  *
  */
 @AcceptTypes({GoAnalysisResult.class, DSMicroarraySet.class})
@@ -795,7 +795,12 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 		if (result == null && !GoAnalysisResult.isAnnotationParsed()) {
 			String annotationFileName = dataSet.getAnnotationFileName();
 			if(annotationFileName!=null)
-				GoAnalysisResult.parseAnnotation(annotationFileName);
+				try {
+					GoAnalysisResult.parseAnnotation(annotationFileName);
+				} catch (IOException e) {
+					e.printStackTrace();
+					return;
+				}
 		}
 		Set<Integer> processedTerms = new TreeSet<Integer>();
 		Set<String> genes = genesFomrTermAndDescendants(processedTerms, goId, includeDescendants);

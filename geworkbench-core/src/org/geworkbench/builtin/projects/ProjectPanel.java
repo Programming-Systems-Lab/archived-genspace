@@ -113,7 +113,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 7802 2011-04-22 14:50:48Z zji $
+ * @version $Id: ProjectPanel.java 7929 2011-05-25 15:24:38Z zji $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {

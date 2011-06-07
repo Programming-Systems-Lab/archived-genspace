@@ -42,7 +42,7 @@ import org.geworkbench.bison.util.Range;
  *
  * @author not attributable
  * @author zji
- * @version $Id: CSExprMicroarraySet.java 7358 2010-12-21 21:00:37Z zji $
+ * @version $Id: CSExprMicroarraySet.java 7925 2011-05-25 14:25:11Z zji $
  */
 public class CSExprMicroarraySet extends CSMicroarraySet<DSMicroarray> implements Serializable {
 	private static final long serialVersionUID = 6763897988197502601L;
@@ -282,7 +282,7 @@ public class CSExprMicroarraySet extends CSMicroarraySet<DSMicroarray> implement
 
                         String[] geneNames = AnnotationParser.getInfo(token, AnnotationParser.ABREV);
                         if (geneNames != null) {
-                            markerVector.get(currGeneId).setGeneName(geneNames[0]);
+                            markerVector.get(currGeneId).setGeneName(geneNames[0].trim());
                         }
                     } catch (Exception e) {
                         System.out.println("error parsing " + token);

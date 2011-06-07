@@ -59,6 +59,7 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
@@ -78,6 +79,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.GeneOntologyUtil;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GOTerm;
+import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
@@ -95,8 +97,11 @@ import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.ImageSnapshotEvent;
 import org.geworkbench.events.ProjectEvent;
 import org.geworkbench.events.ProjectNodeAddedEvent;
+import org.geworkbench.util.BasicAuthenticator;
 import org.geworkbench.util.BrowserLauncher;
 import org.geworkbench.util.ProgressBar;
+import org.geworkbench.util.ResultSetlUtil;
+import org.geworkbench.util.UnAuthenticatedException;
 import org.geworkbench.util.network.CellularNetWorkElementInformation;
 import org.geworkbench.util.network.CellularNetworkPreference;
 import org.geworkbench.util.network.InteractionDetail;
@@ -131,7 +136,7 @@ import org.jfree.ui.RectangleInsets;
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
-		implements VisualPlugin, Closable {
+		implements VisualPlugin, Closable, ActionListener {
 
 	private static final long serialVersionUID = 7095407341852521909L;
 
@@ -144,6 +149,8 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 	private static final String[] firstFourColumnLabels = new String[] {
 			Constants.MARKERLABEL, Constants.GENELABEL,
 			Constants.GENETYPELABEL, Constants.GOTERMCOLUMN };
+
+	private static final int ONE_SECOND = 1000;
 
 	private static String[] columnLabels = new String[] {
 			Constants.MARKERLABEL, Constants.GENELABEL,
@@ -174,6 +181,8 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 	private JFreeChart chart;
 
 	private ChartPanel graph;
+	
+	private JPanel chartPanel;
 
 	private LengendCheckBox[] lengendCheckBoxList;
 	private JButton[] jButtonList;
@@ -229,7 +238,15 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 		detailTable.getTableHeader().setEnabled(true);
 		detailTable.setDefaultRenderer(String.class, new ColorRenderer());
 		detailTable.setDefaultRenderer(Integer.class, new IntegerRenderer());
+
+		GeneOntologyTree instance = GeneOntologyTree.getInstance();
+		if(instance==null) {
+			timer = new Timer(ONE_SECOND, this);
+			timer.start();
+		}
 	}
+	
+	private Timer timer;
 
 	public Component getComponent() {
 		return this;
@@ -1004,7 +1021,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 		upPanel.add(topPane, JSplitPane.TOP);
 		upPanel.add(jPanel1, JSplitPane.BOTTOM);
 		upPanel.setOneTouchExpandable(true);
-		JPanel chartPanel = new JPanel();
+		chartPanel = new JPanel();
 
 		chartPanel.setLayout(new BorderLayout());
 
@@ -2070,6 +2087,8 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 						}
 					}
 					case 2: {
+						GeneOntologyTree instance = GeneOntologyTree.getInstance();
+						if(instance==null) return "pending";
 
 						return GeneOntologyUtil.checkMarkerFunctions(value);
 					}
@@ -2123,7 +2142,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 		@Override
 		public Object getValueAt(int row, int col) {
 
-			if (hits.size() == 0)
+			if (hits==null || hits.size() == 0)
 				return null;
 			CellularNetWorkElementInformation hit = hits.get(row);
 			/* display data depending on which column is chosen */
@@ -2663,11 +2682,11 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 
 	@Publish
 	public ImageSnapshotEvent createImageSnapshot() {
-		Dimension panelSize = graph.getSize();
+		Dimension panelSize = chartPanel.getSize();
 		BufferedImage image = new BufferedImage(panelSize.width,
 				panelSize.height, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
-		graph.paint(g);
+		chartPanel.paint(g);
 		ImageIcon icon = new ImageIcon(image, "CNKB Throttle Graph");
 		org.geworkbench.events.ImageSnapshotEvent event = new org.geworkbench.events.ImageSnapshotEvent(
 				"CNKB Throttle Graph Snapshot", icon,
@@ -2763,4 +2782,17 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 
 	}
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()!=timer) return;
+		
+		GeneOntologyTree instance = GeneOntologyTree.getInstance();
+		if (instance != null) {
+			activeMarkersTableModel.fireTableDataChanged();
+			previewTableModel.fireTableDataChanged();
+
+			timer.stop();
+			timer = null;
+		}
+	}
 }

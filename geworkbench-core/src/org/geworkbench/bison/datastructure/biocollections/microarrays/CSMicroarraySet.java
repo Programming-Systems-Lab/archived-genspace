@@ -7,6 +7,7 @@ import org.geworkbench.bison.annotation.DSAnnotationContextManager;
 import org.geworkbench.bison.datastructure.biocollections.CSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.CSMarkerVector;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
+import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.*;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.util.RandomNumberGenerator;
@@ -26,7 +27,7 @@ import java.util.*;
  * <p>Company: Columbia University</p>
  *
  * @author Adam Margolin
- * @version $Id: CSMicroarraySet.java 7332 2010-12-15 21:55:56Z wangmen $
+ * @version $Id: CSMicroarraySet.java 7951 2011-06-02 16:05:24Z wangmen $
  */
 public class CSMicroarraySet<T extends DSMicroarray> extends CSDataSet<T> implements DSMicroarraySet<T> {
 	private static final long serialVersionUID = -8604116507886706853L;
@@ -323,7 +324,8 @@ public class CSMicroarraySet<T extends DSMicroarray> extends CSDataSet<T> implem
     public void sortMarkers(int mrkNo) {
 		newid = new int[mrkNo];
 		int i = 0;
-		if (GlobalPreferences.getInstance().getMarkerLoadOptions() == GlobalPreferences.ORIGINAL) {
+		if (GlobalPreferences.getInstance().getMarkerLoadOptions() == GlobalPreferences.ORIGINAL
+				|| AnnotationParser.getCurrentChipType() == null) {
 			for (i = 0; i < markerVector.size(); newid[i] = i++);
 		} else {
 			if (GlobalPreferences.getInstance().getMarkerLoadOptions() == GlobalPreferences.SORTED_GENE) 

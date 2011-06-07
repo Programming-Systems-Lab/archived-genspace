@@ -7,8 +7,9 @@ savedParams
 
 K 13
 svn:mergeinfo
-V 177
+V 236
 /branches/filter_enhancement/components/filtering:6210-6292
 /branches/geworkbench_2_0_0/components/filtering:6674-6785
 /branches/geworkbench_2_1_0/components/filtering:6992-7050
+/branches/geworkbench_2_2_0/components/filtering:7814-7924
 END

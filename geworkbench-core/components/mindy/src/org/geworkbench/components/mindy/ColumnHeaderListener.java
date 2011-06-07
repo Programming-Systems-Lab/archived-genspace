@@ -22,7 +22,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
  *
  * @author ch2514
  * @author os2201
- * @version $Id: ColumnHeaderListener.java 6651 2010-05-21 20:29:05Z youmi $
+ * @version $Id: ColumnHeaderListener.java 7948 2011-05-31 20:12:31Z wangmen $
  */
 class ColumnHeaderListener extends MouseAdapter {
 	private static Log log = LogFactory.getLog(ColumnHeaderListener.class);
@@ -116,11 +116,6 @@ class ColumnHeaderListener extends MouseAdapter {
 					mindyTableTab.getSelectionEnabledCheckBoxTarget().setText(MindyPlugin.ENABLE_SELECTION
 							+ " " + atm.getNumberOfMarkersSelected());
 
-					if (atm.getCheckedModulators().size() == atm
-							.getEnabledModulatorsSize())
-						mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(true);
-					else
-						mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(false);
 					atm.fireTableStructureChanged();
 					mindyTableTab
 							.setTargetCheckboxesVisibility(mindyTableTab.getSelectionEnabledCheckBoxTarget()

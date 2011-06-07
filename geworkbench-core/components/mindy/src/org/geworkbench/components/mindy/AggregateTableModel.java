@@ -21,7 +21,7 @@ import org.geworkbench.util.pathwaydecoder.mutualinformation.MindyGeneMarker;
 	 * @author mhall
 	 * @author ch2514
 	 * @author os2201
-	 * @version $Id: AggregateTableModel.java 6315 2010-04-07 21:10:40Z zji $
+	 * @version $Id: AggregateTableModel.java 7958 2011-06-03 20:04:26Z zji $
 */
 class AggregateTableModel extends DefaultTableModel {
 	private static final long serialVersionUID = -5144760407967305076L;
@@ -170,15 +170,6 @@ class AggregateTableModel extends DefaultTableModel {
 			}
 
 			fireTableStructureChanged();
-		}
-
-		/**
-		 * Get the list of selected targets.
-		 *
-		 * @return list of selected targets
-		 */
-		private List<DSGeneMarker> getCheckedTargets() {
-			return this.selectedTargets;
 		}
 
 		/**
@@ -335,12 +326,6 @@ class AggregateTableModel extends DefaultTableModel {
 						+ " targets.");
 			}
 
-			if (limitList == null) {
-				this.checkSelectedMarkers(true);
-			} else {
-				this.checkSelectedMarkers(false);
-			}
-
 			redrawTable();
 		}
 
@@ -351,7 +336,6 @@ class AggregateTableModel extends DefaultTableModel {
 		 */
 		void showLimitedMarkers() {
 			redrawTable();
-			this.checkSelectedMarkers(false);
 		}
 
 		// called from "All Markers" checkbox
@@ -360,65 +344,6 @@ class AggregateTableModel extends DefaultTableModel {
 		 */
 		void showAllMarkers() {
 			redrawTable();
-			this.checkSelectedMarkers(true);
-		}
-
-		private void checkSelectedMarkers(boolean showAll) {
-			if (showAll) {
-				if ((this.selectedModulators != null)
-						&& (this.selectedModulators.size() > 0)
-						&& (this.enabledModulators.size() == this.selectedModulators
-								.size())) {
-					this.mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(true);
-				} else {
-					this.mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(false);
-				}
-				if ((this.selectedTargets != null)
-						&& (this.selectedTargets.size() > 0)
-						&& (this.activeTargets.size() == this.selectedTargets
-								.size())) {
-					this.mindyTableTab.getSelectAllTargetsCheckBoxTarget().setSelected(true);
-				} else {
-					this.mindyTableTab.getSelectAllTargetsCheckBoxTarget().setSelected(false);
-				}
-			} else {
-				if ((this.selectedModulators != null)
-						&& (this.enabledModulators != null)
-						&& (this.selectedModulators.size() > 0)
-						&& (this.enabledModulators.size() > 0)
-						&& (this.enabledModulators.size() <= this.selectedModulators
-								.size())) {
-					// need to match items in lim and selected
-					boolean allMods = true;
-					for (DSGeneMarker m : this.enabledModulators) {
-						if (!this.selectedModulators.contains(m)) {
-							allMods = false;
-							break;
-						}
-					}
-					this.mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(allMods);
-				} else {
-					this.mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(false);
-				}
-				if ((this.selectedTargets != null)
-						&& (this.limitedTargets != null)
-						&& (this.selectedTargets.size() > 0)
-						&& (this.limitedTargets.size() > 0)
-						&& (this.limitedTargets.size() <= this.selectedTargets
-								.size())) {
-					// need to match items in lim and selected
-					boolean allTargets = true;
-					for (DSGeneMarker t : this.limitedTargets) {
-						if (!this.selectedTargets.contains(t)) {
-							allTargets = false;
-							break;
-						}
-					}
-					this.mindyTableTab.getSelectAllTargetsCheckBoxTarget().setSelected(allTargets);
-				} else {
-					this.mindyTableTab.getSelectAllTargetsCheckBoxTarget().setSelected(false);
-				}
-			}
 		}
 
 		private void redrawTable() {
@@ -541,11 +466,6 @@ class AggregateTableModel extends DefaultTableModel {
 			this.mindyTableTab.getSelectionEnabledCheckBoxTarget().setText(MindyPlugin.ENABLE_SELECTION
 					+ " " + this.getNumberOfMarkersSelected());
 
-			if (this.getCheckedTargets().size() == this.getActiveTargets()
-					.size())
-				this.mindyTableTab.getSelectAllTargetsCheckBoxTarget().setSelected(true);
-			else
-				this.mindyTableTab.getSelectAllTargetsCheckBoxTarget().setSelected(false);
 
 		}
 
@@ -599,14 +519,6 @@ class AggregateTableModel extends DefaultTableModel {
 			JCheckBox c = mindyTableTab.getSelectionEnabledCheckBoxTarget();
 			if (c != null) {
 				mindyTableTab.setTargetCheckboxesVisibility(c.isSelected());
-			}
-			if ((this.selectedModulators != null)
-					&& (this.selectedModulators.size() > 0)
-					&& (this.enabledModulators.size() == this.selectedModulators
-							.size())) {
-				this.mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(true);
-			} else {
-				this.mindyTableTab.getSelectAllModsCheckBoxTarget().setSelected(false);
 			}
 		}
 

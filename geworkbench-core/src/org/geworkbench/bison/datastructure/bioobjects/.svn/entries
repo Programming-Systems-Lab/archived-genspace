@@ -1,14 +1,14 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-22T14:50:48.962423Z
-7802
+2011-06-01T19:16:33.879907Z
+7950
 zji
 
 
@@ -103,11 +103,12 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-dd85db2a8fb6577eb3e4e3048e934ef4
-2011-04-13T19:27:09.903471Z
-7728
-maz
+2011-06-02T16:50:22.000000Z
+7cbb24aa819389386e7e7a7e0b0b95c9
+2011-05-27T15:53:22.537336Z
+7941
+zji
+has-props
 
 
 
@@ -128,8 +129,7 @@ maz
 
 
 
-
-2379
+2412
 
 markers
 dir

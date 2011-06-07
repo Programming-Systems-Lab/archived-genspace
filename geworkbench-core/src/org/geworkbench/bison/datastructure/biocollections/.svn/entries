@@ -1,15 +1,15 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-22T14:15:58.310923Z
-7801
-zji
+2011-06-06T17:04:08.009517Z
+7959
+youmi
 
 
 
@@ -103,10 +103,10 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-072cb0abf9c12da22783beb94d045b03
-2011-04-18T15:53:19.003425Z
-7735
+2011-06-02T16:50:22.000000Z
+eb8a8b47c880bb9f63c24608fc419bd0
+2011-05-27T20:49:26.039918Z
+7946
 zji
 has-props
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-12926
+12969
 
 CSAncillaryDataSet.java
 file
@@ -245,11 +245,11 @@ file
 
 
 
-2011-05-09T16:20:03.000000Z
-b18925cdebf282d0ca79eb549cb51ff0
-2011-04-22T14:15:58.310923Z
-7801
-zji
+2011-06-07T17:21:04.000000Z
+fc5fddac8054be3ac7b480bcf8e01ad2
+2011-06-06T17:04:08.009517Z
+7959
+youmi
 has-props
 
 
@@ -271,7 +271,7 @@ has-props
 
 
 
-6661
+7884
 
 DSDataSet.java
 file

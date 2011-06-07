@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svn/geworkbench/!svn/ver/7853/trunk/geworkbench
+/svn/geworkbench/!svn/ver/7961/trunk/geworkbench
 END
 java.policy
 K 25
@@ -57,6 +57,12 @@ svn:wc:ra_dav:version-url
 V 71
 /svn/geworkbench/!svn/ver/6970/trunk/geworkbench/ReleaseNotes_2.0.2.txt
 END
+ReleaseNotes_2.2.0.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/geworkbench/!svn/ver/7925/trunk/geworkbench/ReleaseNotes_2.2.0.txt
+END
 caWorkbench_Readme_v3.0.txt
 K 25
 svn:wc:ra_dav:version-url
@@ -81,17 +87,17 @@ svn:wc:ra_dav:version-url
 V 70
 /svn/geworkbench/!svn/ver/4247/trunk/geworkbench/ReleaseNotes1.5.1.txt
 END
-ReleaseNotes1.7.0.txt
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svn/geworkbench/!svn/ver/5445/trunk/geworkbench/ReleaseNotes1.7.0.txt
-END
 ReleaseNotes1.6.1.txt
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/geworkbench/!svn/ver/4453/trunk/geworkbench/ReleaseNotes1.6.1.txt
+END
+ReleaseNotes1.7.0.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/geworkbench/!svn/ver/5445/trunk/geworkbench/ReleaseNotes1.7.0.txt
 END
 ReleaseNotes1.8.0.txt
 K 25
@@ -121,7 +127,7 @@ build.xml
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/build.xml
+/svn/geworkbench/!svn/ver/7925/trunk/geworkbench/build.xml
 END
 build-component.xml
 K 25
@@ -133,7 +139,7 @@ END
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/svn/geworkbench/!svn/ver/7755/trunk/geworkbench/.classpath
+/svn/geworkbench/!svn/ver/7931/trunk/geworkbench/.classpath
 END
 caWorkbenchLicense.txt
 K 25
@@ -295,7 +301,7 @@ build_runDirect.xml
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svn/geworkbench/!svn/ver/7729/trunk/geworkbench/build_runDirect.xml
+/svn/geworkbench/!svn/ver/7925/trunk/geworkbench/build_runDirect.xml
 END
 devSource.txt
 K 25

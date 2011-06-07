@@ -28,7 +28,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**  
  * @author Nikhil
- * @version $Id: GeoSeriesMatrixParser.java 7591 2011-03-16 19:47:16Z zji $
+ * @version $Id: GeoSeriesMatrixParser.java 7953 2011-06-02 20:04:45Z wangmen $
  */
 public class GeoSeriesMatrixParser {
 
@@ -249,9 +249,8 @@ public class GeoSeriesMatrixParser {
 					String markAnn = markArrays.get(i);
 					String markAnn1 = markAnn.replace("\"", "");
 					String arrayName1 = arrayName 
-										+ " ("
-										+markAnn1
-										+")";
+										+ ": "
+										+markAnn1;
 					CSMicroarray array = new CSMicroarray(i, possibleMarkers,
 							arrayName1, null, null, false,
 							DSMicroarraySet.affyTxtType);

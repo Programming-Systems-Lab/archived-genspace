@@ -1,14 +1,14 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/analysis/src/edu/columbia/geworkbench/cagrid/discovery/client
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-05-20T20:53:32.041725Z
-6635
+2011-05-25T14:27:40.523570Z
+7927
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
-853424deac1621644c4915a239b5b779
-2010-05-20T20:53:32.041725Z
-6635
+2011-06-02T16:50:12.000000Z
+0a7a72ee346fc8bc876bf1ae13487369
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-9029
+9125
 
 AnalyticalServiceDiscoveryClient.java
 file

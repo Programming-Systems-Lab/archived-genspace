@@ -9,13 +9,17 @@ import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author First Genetic Trust
- * @version 1.0
+ * @version $Id: DataSetSubNode.java 7947 2011-05-27 22:34:43Z zji $
  */
 
 public class DataSetSubNode extends ProjectTreeNode {
-    public DSAncillaryDataSet _aDataSet = null;
+	private static final long serialVersionUID = 790047443850868022L;
+	
+	@SuppressWarnings("rawtypes")
+	public DSAncillaryDataSet _aDataSet = null;
 
-    public DataSetSubNode(DSAncillaryDataSet ads) {
+    @SuppressWarnings("rawtypes")
+	public DataSetSubNode(DSAncillaryDataSet ads) {
         _aDataSet = ads;
         super.setUserObject(ads);
     }

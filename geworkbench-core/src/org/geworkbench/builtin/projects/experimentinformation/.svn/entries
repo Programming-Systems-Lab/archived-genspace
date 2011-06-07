@@ -1,15 +1,15 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2006-01-13T22:48:38.000000Z
-1120
-watkin
+2011-05-27T17:42:45.742481Z
+7945
+zji
 
 
 
@@ -134,11 +134,11 @@ file
 
 
 
-2011-04-21T17:46:29.000000Z
-bad16a50f38744e7caa836ad66ce4027
-2006-01-13T22:48:38.000000Z
-1120
-watkin
+2011-06-02T16:50:22.000000Z
+6469bf189913487eb89bd33506edc43c
+2011-05-27T17:42:45.742481Z
+7945
+zji
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3267
+3431
 
 help
 dir

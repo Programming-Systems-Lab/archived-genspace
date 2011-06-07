@@ -57,7 +57,7 @@ import com.jgoodies.forms.builder.ButtonBarBuilder;
  *
  * @author Xuegong Wang
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: AnnotationParser.java 7560 2011-03-10 20:44:04Z zji $
+ * @version $Id: AnnotationParser.java 7950 2011-06-01 19:16:33Z zji $
  */
 
 public class AnnotationParser implements Serializable {
@@ -198,6 +198,8 @@ public class AnnotationParser implements Serializable {
 			while ((parser.getLine() != null)
 					&& !cancelAnnotationFileProcessing) {
 				String affyId = parser.getValueByLabel(labels[0]);
+				if(affyId==null)
+					continue;
 				affyId = affyId.trim();
 				AnnotationFields fields = new AnnotationFields();
 				for (int i = 1; i < labels.length; i++) {
@@ -381,13 +383,27 @@ public class AnnotationParser implements Serializable {
 	}
 
 	public static Set<String> getGeneIDs(String markerID) {
-		String chipType = datasetToChipTypes.get(currentDataSet);
-
 		HashSet<String> set = new HashSet<String>();
-			String[] ids = chipTypeToAnnotation.get(chipType).getFields(markerID).getLocusLink().split("///");
-			for (String s : ids) {
-				set.add(s.trim());
-			}
+		String chipType = datasetToChipTypes.get(currentDataSet);
+		
+		// this happens when no annotation or bad annotation is loaded.
+		if(chipType==null) {
+			return set;
+		}
+
+		MarkerAnnotation annotation = chipTypeToAnnotation.get(chipType);
+		AnnotationFields fields = annotation.getFields(markerID);
+		if(fields==null) {
+			return set;
+		}
+		String locus = fields.getLocusLink();
+		if(locus==null) {
+			return set;
+		}
+		String[] ids = locus.split("///");
+		for (String s : ids) {
+			set.add(s.trim());
+		}
 		return set;
 	}
 
@@ -398,27 +414,22 @@ public class AnnotationParser implements Serializable {
 		int index = 0;
 		for (DSGeneMarker marker : markers) {
 			if (marker != null && marker.getLabel() != null) {
-				try {
-
-					Set<String> geneIDs = getGeneIDs(marker.getLabel());
-					for (String s : geneIDs) {
-						List<Integer> list = map.get(s);
-						if(list==null) {
-							list = new ArrayList<Integer>();
-							list.add(index);
-							map.put(s, list);
-						} else {
-							list.add(index);
-						}
+				Set<String> geneIDs = getGeneIDs(marker.getLabel());
+				for (String s : geneIDs) {
+					List<Integer> list = map.get(s);
+					if (list == null) {
+						list = new ArrayList<Integer>();
+						list.add(index);
+						map.put(s, list);
+					} else {
+						list.add(index);
 					}
-					index++;
-				} catch (Exception e) {
-					continue;
 				}
+				index++;
 			}
 		}
 		return map;
- 
+
 	}
 	
 	public static Map<String, List<Integer>> getGeneNameToMarkerIDMapping(

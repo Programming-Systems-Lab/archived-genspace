@@ -42,7 +42,7 @@ import org.geworkbench.util.ProgressBar;
  * Go Term Analysis component of geWorkbench.
  *
  * @author zji
- * @version $Id: GoAnalysis.java 7776 2011-04-20 22:11:54Z smithken $
+ * @version $Id: GoAnalysis.java 7957 2011-06-03 19:59:47Z smithken $
  */
 public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 	/* necessary to implement ClusteringAnalysis for the AnalysisPanel to pick it up. No other effect. */
@@ -75,7 +75,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 				.create(ProgressBar.INDETERMINATE_TYPE);
 		progressBar.addObserver(this);
 		progressBar.setTitle("GO Terms Analysis");
-		progressBar.setMessage("GO Terms Analysis is ongoing. Please wait.");
+		progressBar.setMessage("GO Terms Analysis is under way. Please wait.");
 
 		String associationFileName = parameterPanel.getAssociationFile();
 
@@ -167,14 +167,20 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 		if (this.stopAlgorithm) {
 			progressBar.dispose();
 			return new AlgorithmExecutionResults(false,
-					"GO Terms Analysis is cancelled", null);
+					"GO Terms Analysis cancelled", null);
 		}
 
-		GoAnalysisResult.parseAnnotation(associationFileName);
+		try {
+			GoAnalysisResult.parseAnnotation(associationFileName);
+		} catch (IOException e1) {
+			progressBar.dispose();
+			return new AlgorithmExecutionResults(false,
+					"IOException: "+e1.getMessage(), null);
+		}
 		if (this.stopAlgorithm) {
 			progressBar.dispose();
 			return new AlgorithmExecutionResults(false,
-					"GO Terms Analysis is cancelled", null);
+					"GO Terms Analysis cancelled", null);
 		}
 
 		/*
@@ -210,7 +216,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 		if (this.stopAlgorithm) {
 			progressBar.dispose();
 			return new AlgorithmExecutionResults(false,
-					"GO Terms Analysis is cancelled", null);
+					"GO Terms Analysis cancelled", null);
 		}
 
 		EnrichedGOTermsResult studySetResult = null;
@@ -220,7 +226,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 			if (this.stopAlgorithm) {
 				progressBar.dispose();
 				return new AlgorithmExecutionResults(false,
-						"GO Terms Analysis is cancelled", null);
+						"GO Terms Analysis cancelled", null);
 			}
 
 			// this is not needed except for understanding the result structure
@@ -239,7 +245,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 		progressBar.dispose();
 		if (this.stopAlgorithm) {
 			return new AlgorithmExecutionResults(false,
-					"GO Term Analysis is cancelled.", analysisResult);
+					"GO Term Analysis cancelled.", analysisResult);
 		} else {
 			/* after the analysis, delete the temporary file */
 			if (!studySet.delete()) {

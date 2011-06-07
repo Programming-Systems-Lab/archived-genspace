@@ -10,7 +10,7 @@ import org.geworkbench.engine.preferences.TextField;
 
 /**
  * @author zji
- * @version $Id: OboSourcePreference.java 7735 2011-04-18 15:53:19Z zji $
+ * @version $Id: OboSourcePreference.java 7925 2011-05-25 14:25:11Z zji $
  */
 // this is similar to Global Preference, but the current global preference is
 // tied to the dialog that is flexible.
@@ -74,7 +74,7 @@ public class OboSourcePreference {
 
 		// Load stored values
 		PreferencesManager manager = PreferencesManager.getPreferencesManager();
-		manager.fillPreferences(null, prefs);
+		manager.fillPreferences(this.getClass(), prefs);
 	}
 
 	static public OboSourcePreference getInstance() {
@@ -83,6 +83,6 @@ public class OboSourcePreference {
 
 	public void save() {
 		PreferencesManager manager = PreferencesManager.getPreferencesManager();
-		manager.savePreferences(null, prefs);
+		manager.savePreferences(this.getClass(), prefs);
 	}
 }

@@ -1,14 +1,14 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-08T21:01:49.341272Z
-7718
+2011-05-25T14:27:11.799181Z
+7926
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-04-21T17:46:14.000000Z
-dd6d911fc6ce0e9f8cf8437d1cea27d8
-2010-08-10T20:03:28.312306Z
-6974
+2011-06-02T16:50:18.000000Z
+0d337b0d593e80ef188928a2a1448727
+2011-05-25T14:27:11.799181Z
+7926
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-40047
+40050
 
 All.NC.-2k+2k.txt
 file

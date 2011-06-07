@@ -24,7 +24,7 @@ import org.geworkbench.components.filtering.MultipleProbesetFilterPanel.Action;
 /**
  * 
  * @author zji
- * @version $Id: MultipleProbesetFilter.java 7789 2011-04-21 19:43:33Z zji $
+ * @version $Id: MultipleProbesetFilter.java 7940 2011-05-27 15:49:32Z zji $
  */
 
 /**
@@ -67,7 +67,11 @@ public class MultipleProbesetFilter extends FilteringAnalysis {
 			String probeSetID = dsGeneMarker.getLabel();
 			probesetIndexMap.put(probeSetID, i);
 
-			String firstGeneID = AnnotationParser.getGeneIDs(probeSetID).toArray(new String[0])[0];
+			Set<String> set = AnnotationParser.getGeneIDs(probeSetID);
+			if(set.size()==0)
+				continue;
+			
+			String firstGeneID = set.toArray(new String[0])[0];
 
 			if (firstGeneID == null || firstGeneID.trim().equals("") || firstGeneID.trim().equals("---")) {
 				continue;

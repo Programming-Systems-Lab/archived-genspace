@@ -123,6 +123,9 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 			UserWorkflow uww = new UserWorkflow();
 			uww.setWorkflow(uw.getWorkflow().slimDown());
 			uww.getWorkflow().getCreator();
+			uww.getWorkflow().getRatings().size();
+			uww.getWorkflow().getComments().size();
+			uww.getWorkflow().getId();
 			uww.setName(uw.getName());
 			uww.setId(uw.getId());
 			retz.getWorkflows().add(uww);

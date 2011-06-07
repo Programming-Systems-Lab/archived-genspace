@@ -1,15 +1,15 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-10T21:09:06.876441Z
-7438
-zji
+2011-06-02T16:05:24.228475Z
+7951
+wangmen
 
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-18f753777c63079dc02a44faaa028d6b
-2010-12-21T21:00:37.014982Z
-7358
+2011-06-02T16:50:22.000000Z
+025f30422bba506b625824d5a94eb5ae
+2011-05-25T14:25:11.688972Z
+7925
 zji
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-22627
+22634
 
 CSMicroarraySet.java
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-288f8c8480ee605009eb5ae698a9c7f2
-2010-12-15T21:55:56.576892Z
-7332
+2011-06-02T16:50:22.000000Z
+dd733b4811a24fba1fb89d1a7670b173
+2011-06-02T16:05:24.228475Z
+7951
 wangmen
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-13967
+14117
 
 DSMicroarraySet.java
 file

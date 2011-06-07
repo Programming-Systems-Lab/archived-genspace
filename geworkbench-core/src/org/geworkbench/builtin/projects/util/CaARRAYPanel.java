@@ -54,7 +54,7 @@ import org.geworkbench.util.ProgressBar;
 
 /**
  * @author xiaoqing
- * @version $Id: CaARRAYPanel.java 7545 2011-03-04 21:39:22Z zji $
+ * @version $Id: CaARRAYPanel.java 7925 2011-05-25 14:25:11Z zji $
  */
 public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 	private static final String LOADING_SELECTED_BIOASSAYS_ELAPSED_TIME = "Loading selected bioassays - elapsed time: ";
@@ -521,7 +521,7 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 		merge = parent.isMerge();
 		TreePath[] paths = remoteFileTree.getSelectionPaths();
 		CaArray2Experiment exp = null;
-		if (paths.length > 0) {
+		if (paths.length > 0 && paths[0].getPath().length > 1) {
 			currentSelectedExperimentName = (String) ((DefaultMutableTreeNode) paths[0]
 					.getPath()[1]).getUserObject();
 			exp = treeMap.get(currentSelectedExperimentName);

@@ -1,14 +1,14 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/model/clusters
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-08T22:28:38.286773Z
-7427
+2011-05-27T15:53:22.537336Z
+7941
 zji
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-f2119f1b85d297d31ec11b6dc0359914
-2005-08-23T16:42:04.000000Z
-151
-watkin
+2011-06-02T16:50:22.000000Z
+19c5f4d23d6ca552d990a4b1b95c05ad
+2011-05-27T15:53:22.537336Z
+7941
+zji
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1954
+1632
 
 AbstractCluster.java
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-ddd8b60a6ff3f344a6d25d57dfc8f66e
-2006-03-03T18:05:24.000000Z
-1317
-mhall
+2011-06-02T16:50:22.000000Z
+e610d483270f5456b39771998b551e04
+2011-05-27T15:53:22.537336Z
+7941
+zji
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2124
+1628
 
 DSClusterDataSet.java
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-778a4f7bff94c3f5f105b2715b85bc53
-2005-11-14T18:25:59.000000Z
-816
-watkin
+2011-06-02T16:50:22.000000Z
+15a5f227eeae692987a2ceb06e42dde1
+2011-05-27T15:53:22.537336Z
+7941
+zji
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-448
+478
 
 Cluster.java
 file
@@ -236,44 +236,10 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-e5e790a530055de1bb15a69522814fb4
-2005-08-23T16:42:04.000000Z
-151
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1278
-
-CSHierClusterDataSet.java
-file
-
-
-
-
-2011-04-21T17:46:30.000000Z
-6cc2e605f255fbabae23b27cbecc40f1
-2010-07-29T16:38:39.661465Z
-6928
+2011-06-02T16:50:22.000000Z
+7d893e3c3e0388ab2e634b91a4e642dc
+2011-05-27T15:53:22.537336Z
+7941
 zji
 has-props
 
@@ -296,7 +262,41 @@ has-props
 
 
 
-3388
+1403
+
+CSHierClusterDataSet.java
+file
+
+
+
+
+2011-06-02T16:50:22.000000Z
+510a3afc7da9b65cd208dee53061394e
+2011-05-27T15:53:22.537336Z
+7941
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3507
 
 DSHierClusterDataSet.java
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-d0cde874d8f49b7817eeb9ea2f7d6bae
-2005-08-23T16:42:04.000000Z
-151
-watkin
+2011-06-02T16:50:22.000000Z
+eed296498fcb2753d1a5b1940642b385
+2011-05-27T15:53:22.537336Z
+7941
+zji
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-1631
+1750
 
 HierCluster.java
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-36aca177e0819a483c8fa4dbabe544fa
-2006-01-13T22:48:38.000000Z
-1120
-watkin
+2011-06-02T16:50:22.000000Z
+91cc1a537997f05053484fba0c4bda47
+2011-05-27T15:53:22.537336Z
+7941
+zji
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-1711
+1841
 
 DSSOMClusterDataSet.java
 file

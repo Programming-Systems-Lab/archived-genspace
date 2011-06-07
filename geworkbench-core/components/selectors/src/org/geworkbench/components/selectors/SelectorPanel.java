@@ -74,7 +74,7 @@ import org.geworkbench.util.visualproperties.VisualPropertiesDialog;
 
 /**
  * @author John Watkinson
- * @version $Id: SelectorPanel.java 7621 2011-03-22 20:23:43Z wangmen $
+ * @version $Id: SelectorPanel.java 7926 2011-05-25 14:27:11Z zji $
  */
 public abstract class SelectorPanel<T extends DSSequential> implements
 		VisualPlugin, MenuListener {
@@ -1327,7 +1327,7 @@ public abstract class SelectorPanel<T extends DSSequential> implements
 		panelTree.setCellRenderer(treeRenderer);
 	}
 
-	private boolean resetContextMode = false;
+	protected boolean resetContextMode = false;
 
 	public void setItemList(DSItemList<T> itemList) {
 		resetContextMode = true;

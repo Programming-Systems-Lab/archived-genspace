@@ -1,14 +1,14 @@
 10
 
 dir
-7859
+7961
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-09-13T14:40:56.329012Z
-7051
+2011-05-25T14:27:40.523570Z
+7927
 zji
 
 
@@ -26,16 +26,16 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-T_PatternDiscovery_Params_Basic_only.png
+PatternDiscovery_Basic_Histones_Result_exact_3_histogram.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-4a98552b4c12c38e52ed175e87965c34
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+7027275290a0b3257e7bcd091915f1e5
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -58,18 +58,18 @@ has-props
 
 
 
-5707
+62831
 
-T_PatternDiscovery_Run_Controls.png
+PatternDiscovery_Params_Basic_Norm.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-5783402effa30d8d8d18b66468e12e00
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+23fdecb1f5d03972d88f1a6a0cc3c523
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -92,18 +92,18 @@ has-props
 
 
 
-2945
+20490
 
-T_PatternDiscovery_Params_Exhaustive.png
+PatternDiscovery_Result_Node.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-55c1285e5b56e1b51c6f5d068a58fd26
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+8aca9285319d7d5b239e6a808b065f72
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -126,18 +126,18 @@ has-props
 
 
 
-8040
+6504
 
-T_PatternDiscovery_RunProgress.png
+commonPrint.css
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-2cab1d12a867f7334de65c51a987200f
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+0257a641ab2ed3788aef2f01e69a3e34
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -160,18 +160,18 @@ has-props
 
 
 
-7584
+4482
 
-T_PatternDiscovery_Params_Advanced_BLOSUM.png
+PatternDiscovery_Params_Basic_only.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-90ccd8894e42bd93d2c5104422fdb0e1
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+7734a9219f9fd346a89cc1eb7d9f6d77
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -194,18 +194,18 @@ has-props
 
 
 
-6510
+9472
 
-T_PatternDiscovery_Params_Basic_histone_result_exact_seqs.png
+PatternDiscovery_Run_Controls.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-122feaf69063375249889561dd2ab38b
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+173aafa04ae7ac09be2c9366087ec9e7
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -228,18 +228,18 @@ has-props
 
 
 
-62498
+4970
 
-T_PatternDiscovery_Params_Basic_support_options.png
+PatternDiscovery_Basic_histone_result_exact_seqs.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-0dc4644978915a7a98f671d45dc12615
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+8e27415a4883b4daf3b173333692c8da
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -262,18 +262,18 @@ has-props
 
 
 
-7703
+57272
 
-T_PatternDiscovery_Params_Basic_histone_result_blosum50_seqs.png
+PatternDiscovery_Params_Exhaustive.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-17a05b8e1d28fc602304f681f21b1559
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+10a842416a9e43c2fa3d0618af28342a
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -296,18 +296,18 @@ has-props
 
 
 
-68363
+12636
 
-T_PatternDiscovery_SessionConnect.png
+PatternDiscovery_RunProgress.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-57665acd404c84e851f6b9915e5445c1
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+e5943716eb7547b4a0039d786b982a68
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -330,18 +330,18 @@ has-props
 
 
 
-23838
+8380
 
-T_PatternDiscovery_Params_Basic_initial.png
+PatternDiscovery_Basic_histone_result_blosum50_seqs.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-fc63d95d3e0b60a2f2924674c6cc1233
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+3aa2ca750a532699fdfa9307b58ba90d
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -364,18 +364,18 @@ has-props
 
 
 
-13900
+72945
 
-T_PatternDiscovery_Histones_Result_exact_2.png
+PatternDiscovery_Params_Basic_support_options.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-5849a0d6f011d3ccb7d994c978029464
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+7b869b06320836bd74cb1851652f4b98
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -398,18 +398,18 @@ has-props
 
 
 
-23131
+10955
 
-T_PatternDiscovery_Params_Basic_histone_result_exact.png
+PatternDiscovery_Basic_histone_result_exact.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-9df1ab4667a0192aa689c243720371a0
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+f384e2462872a5a16d70102aa5f09bb6
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -432,18 +432,18 @@ has-props
 
 
 
-32433
+53278
 
-T_PatternDiscovery_Params_Basic_histone_result_blosum50.png
+PatternDiscovery_Params_Advanced_Exact.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-8a652a8809f298caad2f44994dc22756
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+c771e53c07d9082777c3573cae11e341
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -466,18 +466,18 @@ has-props
 
 
 
-38179
+8172
 
-T_PatternDiscovery_Params_Basic_histone_run.png
+PatternDiscovery_Params_Advanced_Matrix.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-a79c3037a75c3a895f94a20168dbb146
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+5af1adfe7e8a40efeb65d2e507fd54ca
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -500,18 +500,18 @@ has-props
 
 
 
-13939
+8352
 
-T_PatternDiscovery_Params_Limits.png
+PatternDiscovery_SessionConnect.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-65f6663b79a6f271cb9f9f1005c77ff6
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+3c253cfcb2295d258e21e773455b13cd
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -534,18 +534,18 @@ has-props
 
 
 
-4700
+22419
 
-T_PatternDiscovery_Right_click_menu.png
+PatternDiscovery_Params_Basic_histone_setup.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-800438d46099016931254536b076bc25
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+97d0cd4f9e8903361446da6ee384a4cf
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -568,18 +568,18 @@ has-props
 
 
 
-16156
+19851
 
-T_PatternDiscovery_Params_Advanced.png
+PatternDiscovery_Basic_Histones_Result_exact_3.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-a0741c76af8317ff81f0286136937082
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+dbb8eba25c3d9d8e589826e730ffa744
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -602,18 +602,18 @@ has-props
 
 
 
-6056
+55487
 
-T_PatternDiscovery_Histones_Result_exact_Position_Histogram.png
+PatternDiscovery_Params_Limits.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-420ea35ca1adb2740bed6ba1c306777b
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+5fd7479be6ee397886d67076ff00d5d1
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -636,18 +636,18 @@ has-props
 
 
 
-52151
+6324
 
-T_PatternDiscovery_Result_Node.png
+PatternDiscovery_Basic_Histones_Result_exact_3_hover.png
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-bf03eaf88ac67d651d7ef9afa497f579
-2010-09-13T14:40:56.329012Z
-7051
+2011-06-02T16:50:11.000000Z
+d1f6fc364e30b1ca18b48445d4994dc3
+2011-05-25T14:27:40.523570Z
+7927
 zji
 has-props
 
@@ -670,5 +670,73 @@ has-props
 
 
 
-5434
+10283
+
+PatternDiscovery_Basic_histone_result_exact_Matching.png
+file
+
+
+
+
+2011-06-02T16:50:11.000000Z
+21f9b938271d2c213a30e57b06d8b079
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12045
+
+PatternDiscovery_Right_click_menu.png
+file
+
+
+
+
+2011-06-02T16:50:11.000000Z
+6983c54d9004ff17b694c75a51ad4ef8
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22135
 

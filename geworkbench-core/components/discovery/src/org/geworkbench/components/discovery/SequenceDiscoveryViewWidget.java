@@ -83,7 +83,7 @@ import polgara.soapPD_wsdl.ProfileHMM;
  * </p>
  *
  * @author
- * @version $Id: SequenceDiscoveryViewWidget.java 7638 2011-03-25 14:31:49Z zji $
+ * @version $Id: SequenceDiscoveryViewWidget.java 7956 2011-06-03 19:13:45Z wangmen $
  */
 public class SequenceDiscoveryViewWidget extends JPanel implements
 		StatusChangeListener, PropertyChangeListener, ProgressChangeListener {
@@ -273,8 +273,9 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		DiscoverySession discoverySession = appComponent.getSession();
 		// we cannot run this algorithm with no discoverySession
 		if ( discoverySession == null ) {
-			log.error("Warning: registerSession failed" + "[subId=" + currentStubId
+			log.debug("Warning: registerSession failed" + "[subId=" + currentStubId
 					+ " session=" + discoverySession + "]");
+			return;
 		}
 		
 		firePropertyChange(TABLE_EVENT, null, null);

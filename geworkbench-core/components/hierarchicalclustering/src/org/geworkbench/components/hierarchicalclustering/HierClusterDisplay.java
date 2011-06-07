@@ -32,7 +32,7 @@ import org.geworkbench.bison.util.colorcontext.ColorContext;
  * Microarrays used for Hierarchical clustering are painted on
  *
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: HierClusterDisplay.java 7449 2011-02-11 19:41:01Z zji $
+ * @version $Id: HierClusterDisplay.java 7942 2011-05-27 16:24:46Z zji $
  */
 public class HierClusterDisplay extends JPanel {
 	private static final long serialVersionUID = -1551868794872426240L;
@@ -149,7 +149,7 @@ public class HierClusterDisplay extends JPanel {
 		super.paintComponent(g);
 
 		if (microarraySet == null) {
-			log.warn("unexpected null microarraySet");
+			log.info("null microarraySet");
 			return;
 		}
 		markerPositions.clear();

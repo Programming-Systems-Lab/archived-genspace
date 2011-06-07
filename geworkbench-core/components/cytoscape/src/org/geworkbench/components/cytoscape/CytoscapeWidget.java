@@ -14,6 +14,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -38,11 +40,14 @@ import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
+import org.geworkbench.bison.datastructure.bioobjects.markers.CSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.GeneOntologyUtil;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.bison.datastructure.complex.panels.CSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
+import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.engine.config.VisualPlugin;
@@ -97,7 +102,7 @@ import ding.view.DNodeView;
  * 
  * @author manjunath
  * @author yc2480
- * @version $Id: CytoscapeWidget.java 7813 2011-04-22 20:28:53Z zji $
+ * @version $Id: CytoscapeWidget.java 7961 2011-06-06 17:06:58Z youmi $
  */
 @SuppressWarnings("deprecation")
 @AcceptTypes( { AdjacencyMatrixDataSet.class })
@@ -480,7 +485,9 @@ public class CytoscapeWidget implements VisualPlugin {
 			String geneId2, String type) {
 		if (type != null) {
 
-			String typeName = interactionTypeSifMap.get(type);
+			String  typeName = interactionTypeSifMap.get(type);
+			if (typeName == null || typeName.trim().equals(""))
+				typeName = type;
 			CyEdge e = Cytoscape.getCyEdge(n1.getIdentifier(), n1.getIdentifier() + " (" + type
 					+ ") " + n1.getIdentifier(), n2.getIdentifier(), type);
 			// Aracne result will not have an type, so we should
@@ -516,6 +523,13 @@ public class CytoscapeWidget implements VisualPlugin {
 
 	}
 
+	private Comparator<DSGeneMarker> geneSymbolComparator = new Comparator<DSGeneMarker>() {
+		@Override
+		public int compare(DSGeneMarker m1, DSGeneMarker m2) {
+			return m1.getGeneName().compareTo( m2.getGeneName() );
+		}
+	};
+	
 	private CyNode createNode(AdjacencyMatrix.Node node,
 			HashMap<String, String> geneIdToNameMap) {
 
@@ -734,6 +748,10 @@ public class CytoscapeWidget implements VisualPlugin {
 			if (publishEnabled)
 				this.setNodeSelectColorToDefault();
 
+			DSItemList<DSGeneMarker> sortedList = new CSItemList<DSGeneMarker>();
+			sortedList.addAll(maSet.getMarkers());
+			Collections.sort(sortedList, geneSymbolComparator);
+
 			DSPanel<DSGeneMarker> selectedMarkers = new CSPanel<DSGeneMarker>(
 					"Selected Genes", "Cytoscape");
 			for (int i = 0; i < nodes.size(); i++) {
@@ -755,6 +773,25 @@ public class CytoscapeWidget implements VisualPlugin {
 							}
 						}
 
+					} else { // node of the type of gene symbol
+						if(id.trim().equals("---"))continue;
+						
+						int index = Collections.binarySearch(sortedList,
+								new CSGeneMarker(id), geneSymbolComparator);
+						if (index >= 0) {
+							for (int j = index; j < sortedList.size(); j++) {
+								DSGeneMarker marker = sortedList.get(j);
+								if (!marker.getGeneName().equals(id))
+									break;
+								selectedMarkers.add(marker);
+							}
+							for (int j = index - 1; j >= 0; j--) {
+								DSGeneMarker marker = sortedList.get(j);
+								if (!marker.getGeneName().equals(id))
+									break;
+								selectedMarkers.add(marker);
+							}
+						}
 					}
 					if (geneIdToMarkerIdMap.size() == 0)
 						// probably user doesn't load annotation file, so

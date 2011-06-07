@@ -41,6 +41,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.geworkbench.engine.properties.PropertiesManager;
+import org.geworkbench.util.ResultSetlUtil;
 import org.geworkbench.util.Util;
 import org.geworkbench.util.network.CellularNetWorkElementInformation;
  
@@ -50,7 +51,7 @@ import com.jgoodies.forms.layout.FormLayout;
 
 /**
  * @author Min You
- * @version $Id: CellularNetworkPreferencePanel.java 7687 2011-03-29 20:07:22Z zji $
+ * @version $Id: CellularNetworkPreferencePanel.java 7960 2011-06-06 17:06:06Z youmi $
  */
 
 public class CellularNetworkPreferencePanel extends javax.swing.JPanel {

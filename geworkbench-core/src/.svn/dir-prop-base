@@ -1,8 +1,9 @@
 K 13
 svn:mergeinfo
-V 162
+V 204
 /branches/filter_enhancement/src:6210-6293
 /branches/geworkbench_2_0_0/src:6674-6785
 /branches/geworkbench_2_1_0/src:6992-7050
+/branches/geworkbench_2_2_0/src:7814-7924
 /genspace_integration/src:7736-7750
 END

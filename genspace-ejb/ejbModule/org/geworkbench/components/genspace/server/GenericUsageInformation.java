@@ -13,9 +13,12 @@ import javax.persistence.Query;
 import javax.persistence.QueryHint;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.eclipse.persistence.config.CacheUsage;
 import org.eclipse.persistence.config.QueryHints;
+import org.eclipse.persistence.config.QueryType;
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
+import org.geworkbench.components.genspace.entity.AnalysisEventParameter;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
@@ -43,7 +46,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	public List<Workflow> getWorkflowsByPopularity() {
-		Query cq = getEntityManager().createQuery("SELECT OBJECT(w) from Workflow w ORDER BY w.usageCount desc").setMaxResults(20).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
+		Query cq = getEntityManager().createQuery("SELECT OBJECT(w) from Workflow w ORDER BY w.usageCount desc").setMaxResults(20); //.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 //		Query cq = getEntityManager().createNativeQuery("SELECT ID, CREATEDAT, NUMRATING, SUMRATING, USAGECOUNT, CREATIONTRANSACTION_ID, CREATOR_ID, PARENT_ID from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",
 //				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.creationTransaction");
 		List r = cq.getResultList();
@@ -110,19 +113,41 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@Override
 	@PermitAll
 	public List<Tool> getAllTools() {
+//		System.out.println("Caleld get all tools");
 		Query q = getEntityManager().createQuery(
 				"select object(c) from Tool as c order by c.name asc");
 		@SuppressWarnings("unchecked")
 		List<Tool> r = q.getResultList();
 		return r;
 	}
-
+	
+	private List<Workflow> fixParentChildrenCaches(List<Workflow> in)
+	{
+		HashMap<Integer, Workflow> wkflws = new HashMap<Integer, Workflow>();
+		
+		for(Workflow w : in)
+		{
+			wkflws.put(w.getId(), w);
+			w.setCachedChildrenCount(0);
+		}
+		
+		for(Workflow w : in)
+		{
+			if(wkflws.containsKey(w.getCachedParentId()))
+			{
+				wkflws.get(w.getCachedParentId()).setCachedChildrenCount(wkflws.get(w.getCachedParentId()).getCachedChildrenCount() + 1);
+			}
+			else
+				w.setCachedParentId(-1);
+		}
+		return in;
+	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getAllWorkflowsIncluding(int tool) {
 		
-		Query q = getEntityManager().createQuery("SELECT DISTINCT OBJECT(w) FROM Workflow w, WorkflowTool wt WHERE wt MEMBER OF w.tools AND wt.tool=?1 ORDER BY w.usageCount DESC").
-		setMaxResults(150);//.setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
+		Query q = getEntityManager().createQuery("SELECT DISTINCT w,w.parent.id FROM Workflow w, WorkflowTool wt WHERE wt MEMBER OF w.tools AND wt.tool=?1 ORDER BY w.usageCount DESC",Object[].class).
+		setMaxResults(150);//.setHint(QueryHints.CACHE_USAGE, CacheUsage.DoNotCheckCache).setHint(QueryHints.QUERY_TYPE, QueryType.ReadAll);//.setHint("eclipselink.join-fetch", "w.children");//.setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 		
 //		Query q = getEntityManager().createNativeQuery(
 //				"select distinct w.* from WORKFLOW w "
@@ -130,17 +155,20 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 //						+ "where wt.tool_id=? order by w.usageCount desc LIMIT 150",
 //				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");;
 		q.setParameter(1, getEntityManager().find(Tool.class, tool));
-		List<Workflow> wf = null;
+		List<Object[]> wf = null;
 		ArrayList<Workflow> ret = new ArrayList<Workflow>();
 		try {
 			wf = q.getResultList();
-			for (Workflow w : wf) {
-				ret.add(w.slimDown());
+			for (Object[] o : wf) {
+				Workflow w = (Workflow) o[0];
+				w.setCachedParentId((Integer) o[1]);
+				ret.add(w.slimDownTiny());
 			}
 		} catch (NoResultException e) {
 
 		}
-		return ret;
+//		System.out.println("Returning " + ret.size());
+		return fixParentChildrenCaches(ret);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -254,6 +282,11 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 			}
 		}
 		getEntityManager().persist(e);
+		for(AnalysisEventParameter p : e.getParameters())
+		{
+			p.setEvent(e);
+			getEntityManager().merge(p);
+		}
 
 		// Update the workflow for the transaction
 		e.getTransaction().setWorkflow(

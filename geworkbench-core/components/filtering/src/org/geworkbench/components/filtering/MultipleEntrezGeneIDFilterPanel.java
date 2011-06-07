@@ -1,9 +1,7 @@
 package org.geworkbench.components.filtering;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.Serializable;
@@ -27,7 +25,7 @@ import org.geworkbench.events.listeners.ParameterActionListener;
 /**
  * 
  * @author zji
- * @version $Id: MultipleEntrezGeneIDFilterPanel.java 7810 2011-04-22 19:25:46Z maz $
+ * @version $Id: MultipleEntrezGeneIDFilterPanel.java 7936 2011-05-26 13:52:27Z zji $
  *
  */
 public class MultipleEntrezGeneIDFilterPanel extends
