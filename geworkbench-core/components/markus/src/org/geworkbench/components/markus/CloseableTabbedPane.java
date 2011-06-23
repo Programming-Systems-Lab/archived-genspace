@@ -34,7 +34,7 @@ import org.jdesktop.jdic.browser.WebBrowser;
  * type) use the method addTab(String, Component, Icon). Only clicking the 'X'
  * closes the tab.
  * 
- * @version $Id: CloseableTabbedPane.java 7627 2011-03-24 15:10:27Z wangmen $
+ * @version $Id: CloseableTabbedPane.java 8005 2011-06-16 20:18:21Z wangmen $
  */
 public class CloseableTabbedPane extends JTabbedPane implements MouseListener,
   MouseMotionListener {
@@ -140,10 +140,9 @@ public class CloseableTabbedPane extends JTabbedPane implements MouseListener,
       }
     } catch (Exception ignored) {/*Could probably be a ClassCastException*/}
  
-    System.out.println("addtab: "+getTabCount());
     //make the first main tab noncloseable
     if (getTabCount()==0) doPaintCloseIcon = false;
-    CloseTabIcon refreshIcon = new CloseTabIcon(new ImageIcon("classes/images/Reload.png"));
+    CloseTabIcon refreshIcon = new CloseTabIcon(new ImageIcon(CloseableTabbedPane.class.getResource("/images/Reload.png")));
     super.addTab(title,
                  doPaintCloseIcon ? new CloseTabIcon(extraIcon) : refreshIcon,
                  component);
@@ -288,7 +287,6 @@ public class CloseableTabbedPane extends JTabbedPane implements MouseListener,
   private WebBrowser tb;
   public void setTabBrowser(WebBrowser tb){
     removeAll();
-    System.out.println("settab: "+getTabCount());
     this.tb = tb;
   }
   public WebBrowser getWebBrowser(){

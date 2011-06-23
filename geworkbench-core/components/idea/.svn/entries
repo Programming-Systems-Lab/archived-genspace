@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/idea
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-21T22:24:24.377666Z
-7617
-smithken
+2011-06-16T21:23:08.194040Z
+8006
+zji
 has-props
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-04-21T17:45:23.000000Z
-f7b25f47ba24785fba134b3b1a2ab83c
-2010-11-24T19:56:46.345667Z
-7225
-maz
+2011-06-22T15:46:55.000000Z
+609daf8c3e09ff2279e7abecb75ff500
+2011-06-16T21:23:08.194040Z
+8006
+zji
 
 
 
@@ -58,7 +58,7 @@ maz
 
 
 
-643
+580
 
 .project
 file

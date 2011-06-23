@@ -2,28 +2,31 @@ package org.geworkbench.components.cytoscape;
 
 /**
  * @author my2248
- * @version $Id: ArraysSelectionPanel.java 7528 2011-03-03 14:34:25Z zji $ 
+ * @version $Id: ArraysSelectionPanel.java 8002 2011-06-16 16:18:35Z zji $ 
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Iterator;
-import java.util.Observable;
-import java.util.Observer;
+import giny.model.Node;
+import giny.view.EdgeView;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Vector;
 
 import javax.swing.AbstractListModel;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListModel;
-import javax.swing.JDialog;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingWorker;
 
@@ -33,23 +36,18 @@ import org.apache.commons.math.stat.StatUtils;
 import org.geworkbench.bison.annotation.CSAnnotationContextManager;
 import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.annotation.DSAnnotationContextManager;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-
+import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
-
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
-
 import org.geworkbench.util.ProgressBar;
 
 import cytoscape.Cytoscape;
 import cytoscape.data.CyAttributes;
 import cytoscape.view.CyNetworkView;
-
-import giny.view.EdgeView;
-
-import giny.model.Node;
  
 
 @SuppressWarnings("unchecked")
@@ -129,27 +127,26 @@ public class ArraysSelectionPanel extends JPanel   {
 
 	public double[] getValues(Node node, CyAttributes attrs, int[] serials) {
 		double[] values = null;
+		
 		String nodeId = node.getIdentifier();
-		String markerLabel = attrs.getStringAttribute(nodeId, "markerName");
-		List<Integer> markerIds = null;
-		if (markerLabel != null && markerLabel.equals(nodeId)) {
-			markerIds = new ArrayList<Integer>(1);
-			markerIds.add(maSet.getMarkers().get(markerLabel).getSerial());
-		} else {
-			markerIds = CytoscapeWidget.getInstance().geneNameToMarkerIdMap
-					.get(nodeId);
-		}
-
-		if (markerIds == null || markerIds.size() == 0)
+		 
+		String nodeDisplayedName = attrs.getStringAttribute(nodeId, "displayedName");
+	    
+		Vector<DSGeneMarker> markerSet = null;
+		 
+	 
+		markerSet = ((CSMicroarraySet<DSMicroarray>)maSet).getMarkers().getMatchingMarkers(nodeDisplayedName);
+		 
+	    if (markerSet == null || markerSet.size() == 0)
 			return null;
 
 		if (serials != null && serials.length > 0) {
 			values = new double[serials.length];
-			double[] valuesForOneArray = new double[markerIds.size()];
+			double[] valuesForOneArray = new double[markerSet.size()];
 			for (int i = 0; i < serials.length; i++) {
 
-				for (int j = 0; j < markerIds.size(); j++)
-					valuesForOneArray[j] = maSet.getValue(markerIds.get(j),
+				for (int j=0; j< markerSet.size(); j++)
+					valuesForOneArray[j] = maSet.getValue(markerSet.get(j).getSerial(),
 							serials[i]);
 				values[i] = StatUtils.mean(valuesForOneArray);
 			}
@@ -158,12 +155,12 @@ public class ArraysSelectionPanel extends JPanel   {
 			int num = maSet.getRow(0).length;
 
 			values = new double[num];
-			double[] valuesForOneArray = new double[markerIds.size()];
+			double[] valuesForOneArray = new double[markerSet.size()];
 
 			for (int i = 0; i < num; i++) {
 
-				for (int j = 0; j < markerIds.size(); j++) {
-					valuesForOneArray[j] = maSet.getValue(markerIds.get(j), i);
+				for (int j = 0; j < markerSet.size(); j++) {
+					valuesForOneArray[j] = maSet.getValue(markerSet.get(j).getSerial(), i);
 				}
 
 				values[i] = StatUtils.mean(valuesForOneArray);

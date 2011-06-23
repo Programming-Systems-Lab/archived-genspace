@@ -14,7 +14,7 @@ import org.geworkbench.events.ProjectEvent;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: ProjectSelection.java 7437 2011-02-10 20:56:44Z zji $
+ * @version $Id: ProjectSelection.java 7966 2011-06-07 20:29:16Z zji $
  */
 
 public class ProjectSelection {
@@ -202,7 +202,8 @@ public class ProjectSelection {
      *
      * @param message
      */
-    private void throwEvent(String message) {
+    @SuppressWarnings("unchecked")
+	private void throwEvent(String message) {
         if (selectedDataSetNode != null) {
         	panel.publishProjectEvent(new ProjectEvent(message, selectedDataSetNode.dataFile, selectedDataSetNode));
         }
@@ -210,7 +211,8 @@ public class ProjectSelection {
         panel.sendCommentsEvent(selectedNode);
     }
 
-    private void throwSubNodeEvent(String message) {
+    @SuppressWarnings("unchecked")
+	private void throwSubNodeEvent(String message) {
         if ((selectedDataSetSubNode != null) && (selectedDataSetSubNode._aDataSet != null)) {
             panel.publishProjectEvent(new ProjectEvent(message, selectedDataSetSubNode._aDataSet, selectedDataSetSubNode));           
         }

@@ -5,10 +5,10 @@ import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.Friend;
 import org.geworkbench.components.genspace.entity.User;
 
@@ -17,6 +17,7 @@ import org.geworkbench.components.genspace.entity.User;
  */
 @Stateless
 @RolesAllowed("user")
+@WebService
 public class FriendFacade extends AbstractFacade<Friend> implements FriendFacadeRemote  {
     /**
      * Default constructor. 
@@ -118,6 +119,10 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		getEntityManager().merge(friend);
 	}
 
+	public void updateFriendVisibilityByFriend(Friend f)
+	{
+		updateFriendVisibility(f.getRightUser().getId(), f.isVisible());
+	}
 	@Override
 	public void removeFriend(int uid) {
 		User me = getUser();
@@ -154,12 +159,12 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	@Override
 	public byte[] getFriendsBytes() {
 		List<User> friends = getFriends();
-		return RuntimeEnvironmentSettings.writeObject(friends);
+		return AbstractFacade.writeObject(friends);
 	}
 	@Override
 	public byte[] getFriendRequestsList() {
 		List<User> friends = getFriendRequests();
-		return RuntimeEnvironmentSettings.writeObject(friends);
+		return AbstractFacade.writeObject(friends);
 	}
 
 }

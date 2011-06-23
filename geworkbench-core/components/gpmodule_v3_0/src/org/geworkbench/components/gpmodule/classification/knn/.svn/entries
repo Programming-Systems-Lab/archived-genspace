@@ -1,14 +1,14 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-04T21:39:22.049984Z
-7545
+2011-06-15T18:04:08.876954Z
+7993
 zji
 
 
@@ -32,44 +32,10 @@ file
 
 
 
-2011-04-21T17:46:19.000000Z
-1134d000ce034b4f169c886909b9fd26
-2010-05-05T21:18:28.031280Z
-6477
-mnazaire
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7842
-
-KNNTrainingPanel.java
-file
-
-
-
-
-2011-04-21T17:46:19.000000Z
-31ba07169f70a9e6e1c18954fa69ad50
-2011-03-04T21:39:22.049984Z
-7545
+2011-06-22T15:46:56.000000Z
+20e47dd577545c40d15b52b73bf07175
+2011-06-15T18:04:08.876954Z
+7993
 zji
 has-props
 
@@ -92,7 +58,41 @@ has-props
 
 
 
-16835
+8060
+
+KNNTrainingPanel.java
+file
+
+
+
+
+2011-06-22T15:46:56.000000Z
+0a00d5465e46e21ec99e03aa5c2bcda9
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17136
 
 paramDesc.html
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-04-21T17:46:19.000000Z
-adc3ee71fbaa48a7c83fd898ef152b90
-2010-05-03T19:03:46.947459Z
-6448
-mnazaire
+2011-06-22T15:46:56.000000Z
+230dabac3163f438e5843f943ce5d84d
+2011-06-15T18:04:08.876954Z
+7993
+zji
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2556
+2758
 
 KNNTraining.cwb.xml
 file

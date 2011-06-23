@@ -1,28 +1,30 @@
 package org.geworkbench.components.genspace.server;
 
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 
 import javax.annotation.security.PermitAll;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-import javax.persistence.QueryHint;
-import javax.persistence.criteria.CriteriaQuery;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
-import org.eclipse.persistence.config.CacheUsage;
 import org.eclipse.persistence.config.QueryHints;
-import org.eclipse.persistence.config.QueryType;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.AnalysisEventParameter;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowFolder;
+import org.geworkbench.components.genspace.entity.WorkflowRating;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
 
 public abstract class GenericUsageInformation extends AbstractFacade<Tool>
@@ -35,7 +37,6 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	public GenericUsageInformation(Class<Tool> T) {
 		super(T);
 	}
-
 	@SuppressWarnings("unchecked")
 	public List<Tool> getToolsByPopularity() {
 		Query q = getEntityManager().createQuery(
@@ -49,6 +50,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		Query cq = getEntityManager().createQuery("SELECT OBJECT(w) from Workflow w ORDER BY w.usageCount desc").setMaxResults(20); //.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 //		Query cq = getEntityManager().createNativeQuery("SELECT ID, CREATEDAT, NUMRATING, SUMRATING, USAGECOUNT, CREATIONTRANSACTION_ID, CREATOR_ID, PARENT_ID from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",
 //				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.creationTransaction");
+		@SuppressWarnings("rawtypes")
 		List r = cq.getResultList();
 		List<Workflow> wr = new ArrayList<Workflow>();
 		for (Object o : r) {
@@ -67,7 +69,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	public Tool getMostPopularNextTool(int id) {
 //		System.out.println("Selecting next popular tool for " + id);
-		long start = System.currentTimeMillis();
+//		long start = System.currentTimeMillis();
 		Query q = getEntityManager()
 				.createNativeQuery(
 						"select t.* from TOOL t "
@@ -246,6 +248,15 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		Transaction ret = null;
 		for (AnalysisEvent ev : e) {
 			Transaction t;
+			try
+			{
+				Integer.valueOf(ev.getTransaction().getClientID());
+				ev.getTransaction().setClientID(ev.getTransaction().getUserName()+ev.getTransaction().getHostname()+ev.getTransaction().getClientID());
+			}
+			catch(NumberFormatException ex)
+			{
+				//do nothing, it's OK as is
+			}
 			if (!trans.containsKey(ev.getTransaction().getClientID())) {
 				ev.getTransaction().setUser(null);
 				t = createOrFindTransaction(ev.getTransaction());
@@ -260,12 +271,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	@Override
 	public Transaction sendUsageEvent(AnalysisEvent e) {
-
-		if (!getEntityManager().contains(e.getTransaction())
-				|| ((e.getTransaction().getUser() == null && getUser() != null) || !e
-						.getTransaction().getUser().equals(getUser()))) {
-			e.setTransaction(createOrFindTransaction(e.getTransaction()));
-		}
+		e.setTransaction(createOrFindTransaction(e.getTransaction()));
 		return handleSingleUsageEvent(e);
 	}
 
@@ -278,7 +284,9 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 				tool.setName(e.getToolname());
 				tool.setUsageCount(0);
 				getEntityManager().persist(tool);
+				getEntityManager().merge(tool);
 				e.setTool(tool);
+				getEntityManager().flush();
 			}
 		}
 		getEntityManager().persist(e);
@@ -287,7 +295,6 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 			p.setEvent(e);
 			getEntityManager().merge(p);
 		}
-
 		// Update the workflow for the transaction
 		e.getTransaction().setWorkflow(
 				getExtendedWorkflow(e.getTransaction(), e.getTool()));
@@ -298,8 +305,13 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 						e.getTransaction().getWorkflow().getUsageCount() + 1);
 
 		e.getTool().setUsageCount(e.getTool().getUsageCount() + 1);
-		getEntityManager().merge(e.getTool());
 		
+
+//		e.getTransaction().setIpAddr(ctx.getUs);
+		getEntityManager().merge(e.getTool());
+		getEntityManager().merge(e.getTransaction());
+		getEntityManager().persist(e);
+		getEntityManager().flush();
 		if(getUser() != null && getUser().getLogData() == 1)
 			e.getTransaction().setUser(null);
 		getEntityManager().merge(e.getTransaction());
@@ -358,7 +370,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 								+ "where w.parent_id=? and wt.cardinality=? and wt.tool_id=? limit 1",
 						Workflow.class);
 		q.setParameter(1, t.getWorkflow().getId());
-		q.setParameter(2, t.getWorkflow().getTools().size());
+		q.setParameter(2, t.getWorkflow().getTools().size() + 1);
 		q.setParameter(3, tool.getId());
 		Workflow r = null;
 		try {
@@ -386,12 +398,14 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 				nt.setOrder(to.getOrder());
 				nt.setTool(to.getTool());
 				nt.setWorkflow(r);
+				getEntityManager().persist(nt);
 				newTools.add(nt);
 			}
 		WorkflowTool nt = new WorkflowTool();
 		nt.setOrder(newTools.size() + 1);
 		nt.setTool(tool);
 		nt.setWorkflow(r);
+		getEntityManager().persist(nt);	
 		newTools.add(nt);
 		r.setTools(newTools);
 		getEntityManager().persist(r);
@@ -399,7 +413,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	private Transaction createOrFindTransaction(Transaction t) {
-		Transaction r = findTransactionByName(t.getClientID(), getUser());
+		Transaction r = findTransactionByName(t.getClientID(), t.getUser());
 		if (r == null) {
 			r = t;
 			getEntityManager().persist(r);
@@ -409,17 +423,18 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	private Transaction findTransactionByName(String name, User user) {
 		Query q;
+		System.out.println("Checking user " + user + " clientid <" +name+">");
 		if (user == null)
 		{
 			q = getEntityManager()
 					.createQuery(
-							"select object(c) from Transaction as c where c.clientID=:clientid and c.user is null");
+							"select object(c) from Transaction as c where c.clientID=:clientid and c.user is null").setMaxResults(1);
 //			System.out.println("Looking for anon transaction " + name);
 		}
 		else {
 			q = getEntityManager()
 					.createQuery(
-							"select object(c) from Transaction as c where c.clientID=:clientid and c.user=:user"); //
+							"select object(c) from Transaction as c where c.clientID=:clientid and c.user=:user").setMaxResults(1); //
 //			System.out.println("Looking for non-anon trans " + name + " for " + user );
 			q.setParameter("user", user);
 		}
@@ -431,11 +446,13 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		} catch (NoResultException e) {
 
 		}
+		System.out.println("using Trans " + r);
 		return r;
 	}
 
 	@Override
 	public User getExpertUserFor(int tn) {
+System.out.println("Getting expert");
 		Query q;
 		q = getEntityManager()
 				.createNativeQuery(
@@ -450,27 +467,27 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		try {
 			r = (User) q.getSingleResult();
 			r.loadVisibility(getUser());
-		} catch (NoResultException e) {
+		} catch (Exception e) {
 		}
 		return r;
 	}
 
 	@Override
 	public byte[] sendUsageSingleEvent(byte[] analysisEvent) {
-		return RuntimeEnvironmentSettings
-				.writeObject(sendUsageEvent((AnalysisEvent) RuntimeEnvironmentSettings
+		return AbstractFacade
+				.writeObject(sendUsageEvent((AnalysisEvent) AbstractFacade
 						.readObject(analysisEvent)));
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public byte[] sendMultipeEvents(byte[] analysisEvent) {
-		return RuntimeEnvironmentSettings
-				.writeObject(sendUsageLog((List<AnalysisEvent>) RuntimeEnvironmentSettings
+		return AbstractFacade
+				.writeObject(sendUsageLog((List<AnalysisEvent>) AbstractFacade
 						.readObject(analysisEvent)));
 	}
 	@Override
 	public byte[] getWorkflowsByPopularityBytes() {
-		return RuntimeEnvironmentSettings.writeObject(getWorkflowsByPopularity());
+		return AbstractFacade.writeObject(getWorkflowsByPopularity());
 	}
 }

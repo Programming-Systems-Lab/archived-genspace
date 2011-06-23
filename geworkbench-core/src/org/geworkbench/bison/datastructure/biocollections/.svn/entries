@@ -1,14 +1,14 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-06-06T17:04:08.009517Z
-7959
+2011-06-15T20:53:24.953665Z
+7997
 youmi
 
 
@@ -69,11 +69,11 @@ file
 
 
 
-2011-04-21T17:46:30.000000Z
-26f5de63e1195744504ad59f35dea40c
-2011-04-21T16:26:14.754331Z
-7784
-zji
+2011-06-22T15:46:57.000000Z
+77708cc4d15f69ef5cf0799c78014d11
+2011-06-15T20:53:24.953665Z
+7997
+youmi
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-8385
+8648
 
 GoAnalysisResult.java
 file
@@ -103,10 +103,10 @@ file
 
 
 
-2011-06-02T16:50:22.000000Z
-eb8a8b47c880bb9f63c24608fc419bd0
-2011-05-27T20:49:26.039918Z
-7946
+2011-06-22T15:46:57.000000Z
+6417bea9eeee994404be2e6f545e441e
+2011-06-07T19:28:34.894769Z
+7963
 zji
 has-props
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-12969
+7264
 
 CSAncillaryDataSet.java
 file
@@ -165,11 +165,39 @@ has-props
 
 1101
 
-microarrays
-dir
-
-sequences
-dir
+DSAncillaryDataSet.java
+file
+
+
+
+
+2011-04-21T17:46:30.000000Z
+e497865e97b50ea9de9426f86e89f5fa
+2008-02-05T16:05:19.000000Z
+3465
+chiangy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+994
 
 CSDataSet.java
 file
@@ -205,73 +233,11 @@ has-props
 
 10028
 
-DSAncillaryDataSet.java
-file
-
-
-
-
-2011-04-21T17:46:30.000000Z
-e497865e97b50ea9de9426f86e89f5fa
-2008-02-05T16:05:19.000000Z
-3465
-chiangy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-994
+sequences
+dir
 
-AdjacencyMatrixDataSet.java
-file
-
-
-
-
-2011-06-07T17:21:04.000000Z
-fc5fddac8054be3ac7b480bcf8e01ad2
-2011-06-06T17:04:08.009517Z
-7959
-youmi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7884
+microarrays
+dir
 
 DSDataSet.java
 file
@@ -307,8 +273,39 @@ has-props
 
 4800
 
-views
-dir
+AdjacencyMatrixDataSet.java
+file
+
+
+
+
+2011-06-22T15:46:57.000000Z
+79b8634b6b3db34d0f4c547aa26ac42d
+2011-06-15T20:53:24.953665Z
+7997
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8333
 
 CSDataSet.jbx
 file
@@ -343,6 +340,9 @@ has-props
 
 
 1154
+
+views
+dir
 
 pca
 dir

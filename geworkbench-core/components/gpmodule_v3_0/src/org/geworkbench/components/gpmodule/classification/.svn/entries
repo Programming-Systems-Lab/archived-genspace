@@ -1,14 +1,14 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-05-25T14:27:11.799181Z
-7926
+2011-06-15T18:04:08.876954Z
+7993
 zji
 
 
@@ -26,16 +26,16 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-AbstractTraining.java
+VisualGPClassifier.java
 file
 
 
 
 
-2011-04-21T17:46:20.000000Z
-d1ae9f3b13e073c8c15690495a058a41
-2011-04-07T17:21:11.309605Z
-7706
+2011-06-22T15:46:56.000000Z
+1e34c5d52dcee80255a33516d270a443
+2011-06-13T18:28:20.230454Z
+7979
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-9189
+3119
 
 PredictionResult.java
 file
@@ -94,48 +94,14 @@ marcdanie
 
 1194
 
-VisualGPClassifier.java
+AbstractTraining.java
 file
 
 
 
 
 2011-04-21T17:46:20.000000Z
-d8fc09aef84632a7e04bac0876b26674
-2010-05-03T19:03:46.947459Z
-6448
-mnazaire
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2907
-
-GPTraining.java
-file
-
-
-
-
-2011-04-21T17:46:20.000000Z
-f7ca3158e36aac241662f852b5eefc97
+d1ae9f3b13e073c8c15690495a058a41
 2011-04-07T17:21:11.309605Z
 7706
 zji
@@ -160,7 +126,41 @@ has-props
 
 
 
-8897
+9189
+
+GPTraining.java
+file
+
+
+
+
+2011-06-22T15:46:56.000000Z
+8c460ae3d02fae59ff5a5bf7d0cf1e93
+2011-06-13T18:28:20.230454Z
+7979
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9253
 
 GPClassificationUtils.java
 file
@@ -211,11 +211,11 @@ file
 
 
 
-2011-04-21T17:46:20.000000Z
-33d4eb7328153c0cc1df8b7741b3577b
-2010-05-05T23:52:31.422766Z
-6479
-mnazaire
+2011-06-22T15:46:56.000000Z
+ba9091eb73dca42e400d814943082190
+2011-06-13T18:28:20.230454Z
+7979
+zji
 has-props
 
 
@@ -237,7 +237,7 @@ has-props
 
 
 
-8169
+8399
 
 wv
 dir
@@ -316,10 +316,10 @@ file
 
 
 
-2011-04-21T17:46:20.000000Z
-a75ac14b11d74fbfcb83362c8784ebef
-2011-04-07T17:21:11.309605Z
-7706
+2011-06-22T15:46:56.000000Z
+ff13f95bf698eb74c30facc25f23336a
+2011-06-13T18:28:20.230454Z
+7979
 zji
 has-props
 
@@ -342,7 +342,7 @@ has-props
 
 
 
-2656
+2901
 
 KFoldCrossValidation.java
 file

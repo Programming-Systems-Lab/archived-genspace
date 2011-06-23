@@ -1,7 +1,7 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/help/CNKB_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -196,40 +196,6 @@ has-props
 
 25374
 
-CNKB_Preferences_v2.png
-file
-
-
-
-
-2011-06-02T16:50:20.000000Z
-12361b8d042c8a9d1ef295e100f9334c
-2011-05-25T14:27:11.799181Z
-7926
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-53752
-
 CNKB_Result_Display_3types_threshold2.png
 file
 
@@ -264,14 +230,14 @@ has-props
 
 65685
 
-CNKB_throttle_graph_RC.png
+CNKB_Preferences_v2.png
 file
 
 
 
 
 2011-06-02T16:50:20.000000Z
-e3baaa813eb72367a78c101b279b0954
+12361b8d042c8a9d1ef295e100f9334c
 2011-05-25T14:27:11.799181Z
 7926
 zji
@@ -296,7 +262,7 @@ has-props
 
 
 
-36822
+53752
 
 CNKB_Preferences_Column_Display_v2.png
 file
@@ -331,6 +297,40 @@ has-props
 
 
 12961
+
+CNKB_throttle_graph_RC.png
+file
+
+
+
+
+2011-06-02T16:50:20.000000Z
+e3baaa813eb72367a78c101b279b0954
+2011-05-25T14:27:11.799181Z
+7926
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36822
 
 CNKB_Gene_List_Right_click.png
 file
@@ -400,40 +400,6 @@ has-props
 
 4482
 
-CNKB_markers_transfered.png
-file
-
-
-
-
-2011-06-02T16:50:20.000000Z
-ef16e71f5ae2714b57427afed0c32dde
-2011-05-25T14:27:11.799181Z
-7926
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-47922
-
 CNKB_Result_Display_3types_v2.png
 file
 
@@ -467,6 +433,40 @@ has-props
 
 
 63797
+
+CNKB_markers_transfered.png
+file
+
+
+
+
+2011-06-02T16:50:20.000000Z
+ef16e71f5ae2714b57427afed0c32dde
+2011-05-25T14:27:11.799181Z
+7926
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+47922
 
 CNKB_Selected_Markers_after_query.png
 file

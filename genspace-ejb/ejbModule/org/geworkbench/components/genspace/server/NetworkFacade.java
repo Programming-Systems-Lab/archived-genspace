@@ -1,19 +1,15 @@
 package org.geworkbench.components.genspace.server;
 
-import java.security.AccessController;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
-import javax.ejb.SessionContext;
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-import javax.security.auth.Subject;
-import javax.security.jacc.PolicyContext;
-import javax.security.jacc.PolicyContextException;
 
 import org.geworkbench.components.genspace.entity.Network;
 import org.geworkbench.components.genspace.entity.User;
@@ -23,8 +19,9 @@ import org.geworkbench.components.genspace.entity.UserNetwork;
 /**
  * Session Bean implementation class NetworkFacade
  */
-@Stateful
+@Stateless
 @RolesAllowed("user")
+@WebService
 public class NetworkFacade extends AbstractFacade<Network> implements NetworkFacadeRemote {
  	public NetworkFacade() {
 		super(Network.class);
@@ -48,8 +45,9 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		return ret;
 	}
 
+	@WebMethod(exclude=true)
 	@Override
-	public void joinNetwork(int n_id) {
+	public void joinNetwork(int n_id) { 
 		User me = getUser();
 		Network n = getEntityManager().find(Network.class, n_id);
 		if(me.isInNetwork(n) == null)

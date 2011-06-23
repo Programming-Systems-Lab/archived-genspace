@@ -113,7 +113,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 7929 2011-05-25 15:24:38Z zji $
+ * @version $Id: ProjectPanel.java 7966 2011-06-07 20:29:16Z zji $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -1881,9 +1881,9 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 					projectTreeModel.insertNodeInto(imageNode, node, node
 							.getChildCount());
 				} else if (node instanceof ImageNode) {
-					node = projectRenderer.microarraySetNodeSelection;
-					projectTreeModel.insertNodeInto(imageNode, node, node
-							.getChildCount());
+					// FIXME this does not work
+					log.error("node instanceof ImageNode: not implemented");
+					projectTreeModel.insertNodeInto(imageNode, null, -1);
 				} else if (node instanceof DataSetSubNode) {
 					DataSetSubNode subNode = (DataSetSubNode) node;
 					node = (ProjectTreeNode) subNode.getParent();

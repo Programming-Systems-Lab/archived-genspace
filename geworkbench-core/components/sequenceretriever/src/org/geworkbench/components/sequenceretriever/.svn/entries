@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-05-25T14:27:11.799181Z
-7926
-zji
+2011-06-14T15:49:21.883266Z
+7985
+wangmen
 
 
 
@@ -171,11 +171,11 @@ file
 
 
 
-2011-04-21T17:46:15.000000Z
-c7f23461c27a008dd3165a5f27e620b9
-2011-04-08T21:01:49.341272Z
-7718
-zji
+2011-06-22T15:46:56.000000Z
+e9586954f129901f7daa6d599361c46d
+2011-06-14T15:49:21.883266Z
+7985
+wangmen
 has-props
 
 
@@ -197,7 +197,7 @@ has-props
 
 
 
-14060
+14071
 
 SequenceRetriever.cwb.xml
 file

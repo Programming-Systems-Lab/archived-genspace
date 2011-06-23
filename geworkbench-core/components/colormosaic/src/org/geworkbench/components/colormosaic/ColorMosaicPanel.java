@@ -56,7 +56,6 @@ import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.CSTTestResultSet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSSignificanceResultSet;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
@@ -82,7 +81,7 @@ import org.geworkbench.util.associationdiscovery.cluster.CSMatrixPattern;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: ColorMosaicPanel.java 7927 2011-05-25 14:27:40Z zji $
+ * @version $Id: ColorMosaicPanel.java 7995 2011-06-15 18:45:03Z wangmen $
  */
 
 @AcceptTypes({DSMicroarraySet.class, DSSignificanceResultSet.class})
@@ -355,9 +354,11 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 		exportButton.setMargin(new Insets(2, 3, 2, 3));
         exportButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (significance != null && significance instanceof CSTTestResultSet) {
-                ((CSTTestResultSet<DSGeneMarker>)significance).saveDataToCSVFile();                     
-                }
+                if (significance != null) {
+                	significance.saveDataToCSVFile();
+				}else
+        			JOptionPane.showMessageDialog(null, "No significance data to export. Please do this after you got significance data.",
+        					"Operation failed", JOptionPane.ERROR_MESSAGE);
             }
         });
         exportButton.setEnabled(false);
@@ -477,9 +478,9 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
     	jExportItem.setText("Export significance value");
     	ActionListener listenerExportItem = new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                if (significance != null && significance instanceof CSTTestResultSet) {
-                    ((CSTTestResultSet<DSGeneMarker>)significance).saveDataToCSVFile();                     
-                }else
+                if (significance != null) {
+                	significance.saveDataToCSVFile();
+				}else
         			JOptionPane.showMessageDialog(null, "No significance data to export. Please do this after you got significance data.",
         					"Operation failed", JOptionPane.ERROR_MESSAGE);
 			}
@@ -1119,24 +1120,20 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
             // sort first by fold changes
             Collections.sort(sortedMarkers, new FoldChangesComparator(sigSet));        
             
-            // break down the list of markers into positive, zero, and negative fold changes
+            // break down the list of markers into positive and negative fold changes
             ArrayList<DSGeneMarker> positiveFolds = new ArrayList<DSGeneMarker>();   
-            ArrayList<DSGeneMarker> zeroFolds = new ArrayList<DSGeneMarker>();
             ArrayList<DSGeneMarker> negativeFolds = new ArrayList<DSGeneMarker>();
             for(DSGeneMarker m: sortedMarkers){
-            	if(sigSet.getFoldChange(m) > 0) positiveFolds.add(m);
-            	if(sigSet.getFoldChange(m) == 0) zeroFolds.add(m);
+            	if(sigSet.getFoldChange(m) >= 0) positiveFolds.add(m);
 				if(sigSet.getFoldChange(m) < 0) negativeFolds.add(m);
             }
             
-            // sort by t-value all 3 folds lists
+            // sort each list by t-value
             Collections.sort(positiveFolds, new TValueComparator(sigSet));
-            Collections.sort(zeroFolds, new TValueComparator(sigSet));
             Collections.sort(negativeFolds, new TValueComparator(sigSet));
             
-            // recombine 3 lists
+            // recombine lists
             sortedMarkers = positiveFolds;
-            for(DSGeneMarker m: zeroFolds) positiveFolds.add(m);
             for(DSGeneMarker m: negativeFolds) positiveFolds.add(m);   
     	}
     }

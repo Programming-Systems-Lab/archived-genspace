@@ -28,6 +28,7 @@ import javax.swing.event.ChangeEvent;
 
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix.NodeType;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.events.ProjectNodeAddedEvent;
@@ -39,7 +40,7 @@ import cytoscape.view.CyNetworkView;
 /**
  * 
  * @author my2248
- * @version $Id: NetworkRedrawWindow.java 7757 2011-04-20 14:24:06Z zji $
+ * @version $Id: NetworkRedrawWindow.java 7998 2011-06-15 20:55:16Z youmi $
  */
 public class NetworkRedrawWindow {
 
@@ -338,9 +339,7 @@ public class NetworkRedrawWindow {
 					0.5f, "Adjacency Matrix",
 					CytoscapeWidget.getInstance().maSet.getLabel(),
 					CytoscapeWidget.getInstance().maSet);
-
-			adjacencyMatrixdataSet.addNameValuePair("GENEMAP", CytoscapeWidget
-					.getInstance().getGeneIdToNameMap());
+ 
 		} else {
 			CyNetworkView view = Cytoscape.getCurrentNetworkView();
 			if (view != null && Cytoscape.getCurrentNetwork() != null) {
@@ -358,25 +357,54 @@ public class NetworkRedrawWindow {
 						String gene1 = source.getIdentifier();
 						String gene2 = target.getIdentifier();
 
-						Integer serial1 = null, serial2 = null;
 						String interactionType = null;
 
-						serial1 = nodeAttrs
-								.getIntegerAttribute(gene1, "serial");
-						serial2 = nodeAttrs
-								.getIntegerAttribute(gene2, "serial");
 						interactionType = edgeAttrs.getStringAttribute(edgeView
 								.getEdge().getIdentifier(), "type");
 
-						 if (interactionType != null && !interactionType.trim().equals(""))
-				    	    {
-				    	    	interactionType = CytoscapeWidget.getInstance().interactionTypeSifMap.get(interactionType);
-				    	    }
-				    	    
-			    	    DSItemList<DSGeneMarker> markers = origMatrix.getMicroarraySet().getMarkers();
-						DSGeneMarker marker1 = markers.get(serial1);
-						DSGeneMarker marker2 = markers.get(serial2);
-						matrix.add(new AdjacencyMatrix.Node(marker1), new AdjacencyMatrix.Node(marker2), 0.8f, interactionType);
+						if (interactionType != null
+								&& !interactionType.trim().equals("")) {
+							String type = CytoscapeWidget.getInstance().interactionTypeSifMap
+									.get(interactionType);
+							if (type != null && !type.trim().equals(""))
+								interactionType = CytoscapeWidget.getInstance().interactionTypeSifMap
+										.get(interactionType);
+
+						}
+
+						DSItemList<DSGeneMarker> markers = origMatrix
+								.getMicroarraySet().getMarkers();
+
+						String nodeType1 = nodeAttrs.getStringAttribute(gene1,
+								"nodeType");
+						String nodeType2 = nodeAttrs.getStringAttribute(gene1,
+								"nodeType");
+						AdjacencyMatrix.Node node1 = null, node2 = null;
+						if (nodeType1.equals(NodeType.GENE_SYMBOL.name()))
+							node1 = new AdjacencyMatrix.Node(
+									NodeType.GENE_SYMBOL, gene1);
+						else if (nodeType1.equals(NodeType.MARKER.name()))
+							node1 = new AdjacencyMatrix.Node(markers.get(gene1));
+						else if (nodeType1.equals(NodeType.STRING.name()))
+							node1 = new AdjacencyMatrix.Node(NodeType.STRING,
+									gene1);
+						else
+							node1 = new AdjacencyMatrix.Node(NodeType.OTHER,
+									gene1);
+
+						if (nodeType2.equals(NodeType.GENE_SYMBOL.name()))
+							node2 = new AdjacencyMatrix.Node(
+									NodeType.GENE_SYMBOL, gene2);
+						else if (nodeType2.equals(NodeType.MARKER.name()))
+							node2 = new AdjacencyMatrix.Node(markers.get(gene2));
+						else if (nodeType2.equals(NodeType.STRING.name()))
+							node2 = new AdjacencyMatrix.Node(NodeType.STRING,
+									gene2);
+						else
+							node2 = new AdjacencyMatrix.Node(NodeType.OTHER,
+									gene2);
+
+						matrix.add(node1, node2, 0.8f, interactionType);
 					}
 
 				}
@@ -390,10 +418,9 @@ public class NetworkRedrawWindow {
 				return;
 			}
 
-			adjacencyMatrixdataSet = new AdjacencyMatrixDataSet(matrix,
-					0.5f, "Adjacency Matrix",
-					CytoscapeWidget.getInstance().maSet.getLabel(),
-					CytoscapeWidget.getInstance().maSet);
+			adjacencyMatrixdataSet = new AdjacencyMatrixDataSet(matrix, 0.5f,
+					"Adjacency Matrix", CytoscapeWidget.getInstance().maSet
+							.getLabel(), CytoscapeWidget.getInstance().maSet);
 
 		}
 

@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/mindy/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-05-03T21:38:59.456644Z
-7841
-smithken
+2011-06-16T21:23:08.194040Z
+8006
+zji
 
 
 
@@ -93,40 +93,6 @@ has-props
 
 
 1140444
-
-commons-math-1.0.jar
-file
-
-
-
-
-2011-04-21T17:45:04.000000Z
-8540dff584b940bfc03f45068e9dc10b
-2007-03-02T23:00:21.000000Z
-2474
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-152709
 
 MINDY-0.3.jar
 file

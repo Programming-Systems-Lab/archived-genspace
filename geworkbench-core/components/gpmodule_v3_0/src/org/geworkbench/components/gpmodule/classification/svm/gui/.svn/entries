@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/gui
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-05-04T19:16:59.611426Z
-6460
-mnazaire
+2011-06-15T18:04:08.876954Z
+7993
+zji
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-04-21T17:46:20.000000Z
-046fe5a325e9941fe4928a31d61e7969
-2010-05-04T19:16:59.611426Z
-6460
-mnazaire
+2011-06-22T15:46:56.000000Z
+c1a40ae6ae5de70a33c7a0d45a44684a
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
 
 
 
@@ -57,6 +58,5 @@ mnazaire
 
 
 
-
-4633
+4761
 

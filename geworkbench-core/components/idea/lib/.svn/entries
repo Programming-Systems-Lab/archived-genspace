@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/idea/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-11-24T19:56:46.345667Z
-7225
-maz
+2011-06-16T21:23:08.194040Z
+8006
+zji
 
 
 
@@ -93,40 +93,6 @@ has-props
 
 
 408185
-
-commons-math-1.2.jar
-file
-
-
-
-
-2011-04-21T17:45:21.000000Z
-5d3ce091a67e863549de4493e19df069
-2010-11-24T19:56:46.345667Z
-7225
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-338488
 
 distributions.jar
 file

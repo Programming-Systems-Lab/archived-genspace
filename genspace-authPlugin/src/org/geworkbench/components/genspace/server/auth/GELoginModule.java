@@ -58,6 +58,7 @@ public class GELoginModule extends AppservPasswordLoginModule {
 	}
     protected void authenticateUser() throws LoginException {
 
+
 		try {
             Connection conn = getConnection();
 			PreparedStatement s = conn.prepareStatement("SELECT id FROM registration where username=? and password=?");

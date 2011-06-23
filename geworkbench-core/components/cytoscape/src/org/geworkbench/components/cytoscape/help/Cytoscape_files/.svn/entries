@@ -1,7 +1,7 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/help/Cytoscape_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -570,40 +570,6 @@ has-props
 
 172867
 
-Cytoscape_visual_mapping_bypass_v2.png
-file
-
-
-
-
-2011-06-02T16:50:18.000000Z
-e0d82b910308918e9bb875c3a5a9e1a9
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-82334
-
 Cytoscape_correlation_redrawn_network_detail_log_v2.png
 file
 
@@ -637,6 +603,40 @@ has-props
 
 
 97639
+
+Cytoscape_visual_mapping_bypass_v2.png
+file
+
+
+
+
+2011-06-02T16:50:18.000000Z
+e0d82b910308918e9bb875c3a5a9e1a9
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+82334
 
 Cytoscape_select_nodes_and_edges_v2.png
 file
@@ -910,40 +910,6 @@ has-props
 
 39289
 
-Cytoscape_control_minus.png
-file
-
-
-
-
-2011-06-02T16:50:18.000000Z
-ee20862ee45b2fec59dc98bd734fbe5c
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1969
-
 Cytoscape_correlation_array_selection_v2.png
 file
 
@@ -977,6 +943,40 @@ has-props
 
 
 13961
+
+Cytoscape_control_minus.png
+file
+
+
+
+
+2011-06-02T16:50:18.000000Z
+ee20862ee45b2fec59dc98bd734fbe5c
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1969
 
 Cytoscape_LinkOut_v2.png
 file

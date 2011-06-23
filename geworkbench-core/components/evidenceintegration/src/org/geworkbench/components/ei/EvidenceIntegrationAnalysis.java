@@ -34,7 +34,7 @@ import edu.columbia.c2b2.evidenceinegration.EvidenceIntegration;
 
 /**
  * @author mhall
- * @version $Id: EvidenceIntegrationAnalysis.java 7759 2011-04-20 14:53:04Z zji $
+ * @version $Id: EvidenceIntegrationAnalysis.java 7969 2011-06-07 21:47:40Z zji $
  */
 public class EvidenceIntegrationAnalysis extends AbstractGridAnalysis implements ClusteringAnalysis {
 
@@ -185,7 +185,6 @@ public class EvidenceIntegrationAnalysis extends AbstractGridAnalysis implements
             this.selectedGoldStandards = selectedGoldStandards;
         }
 
-        @SuppressWarnings("unchecked")
 		public void run() {
             log.debug("Running Evidence Integration in worker thread.");
             eiEngine.doIntegration(selectedEvidence, selectedGoldStandards);

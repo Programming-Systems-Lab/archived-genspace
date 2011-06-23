@@ -3,8 +3,8 @@
 	<name>genspace-ejbEAR</name>
 	<comment></comment>
 	<projects>
+		<project>genspace-common</project>
 		<project>genspace-ejb</project>
-		<project>geworkbench-core may 2011</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

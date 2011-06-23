@@ -45,7 +45,7 @@ import org.geworkbench.engine.preferences.GlobalPreferences;
 /**
  * Client for retrieving remote workspace 
  * @author mw2518
- * $Id: DownloadClient.java 7708 2011-04-07 19:04:17Z wangmen $
+ * $Id: DownloadClient.java 7966 2011-06-07 20:29:16Z zji $
  */
 public class DownloadClient {
 
@@ -559,7 +559,6 @@ public class DownloadClient {
         }
 	}
 
-	@SuppressWarnings("unchecked")
 	private static HashMap<String, String> processResponseStatus(OMElement element) throws Exception {
 		HashMap<String, String> hm = new HashMap<String, String>();
 		OMElement elm = element.getFirstChildWithName(new QName("http://service.sample/xsd","access"));

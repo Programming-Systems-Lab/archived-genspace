@@ -6,8 +6,9 @@ import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.Workflow;
@@ -19,6 +20,7 @@ import org.geworkbench.components.genspace.entity.WorkflowFolder;
  */
 @Stateless
 @RolesAllowed("user")
+@WebService
 public class WorkflowRepository extends AbstractFacade<Workflow> implements WorkflowRepositoryRemote {
 
     /**
@@ -68,7 +70,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	public boolean deleteFromInbox(int wiid) {
 		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
 		if(wi.getReceiver().equals(getUser()))
-		{
+		{ 
 			wi = getEntityManager().merge(wi);
 			getEntityManager().remove(wi);
 			return true;
@@ -170,24 +172,26 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		return ret;
 	}
 
+	@WebMethod(exclude=true)
 	@Override
 	public WorkflowFolder addWorkflow(byte[] uw, int folder) {
-		return addWorkflow((UserWorkflow) RuntimeEnvironmentSettings.readObject(uw), folder);
+		return addWorkflow((UserWorkflow) AbstractFacade.readObject(uw), folder);
 	}
 
+	@WebMethod(exclude=true)
 	@Override
 	public byte[] addComment(byte[] comment) {
-		return RuntimeEnvironmentSettings.writeObject(addComment((WorkflowComment) RuntimeEnvironmentSettings.readObject(comment)));
+		return AbstractFacade.writeObject(addComment((WorkflowComment) AbstractFacade.readObject(comment)));
 	}
 
 	@Override
 	public boolean sendWorkflowBytes(byte[] newWorkflow, String receiver) {
-		return sendWorkflow((IncomingWorkflow) RuntimeEnvironmentSettings.readObject(newWorkflow), receiver);
+		return sendWorkflow((IncomingWorkflow) AbstractFacade.readObject(newWorkflow), receiver);
 	}
 
 	@Override
 	public byte[] getIncomingWorkflowsBytes() {
-		return RuntimeEnvironmentSettings.writeObject(getIncomingWorkflows());
+		return AbstractFacade.writeObject(getIncomingWorkflows());
 	}
 
 }

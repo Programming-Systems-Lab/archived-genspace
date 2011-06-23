@@ -10,66 +10,72 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="geworkbench-core/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="lib/AffxFusion.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ant.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ant-launcher.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/bcel-5.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/cglib-nodep-2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/collections-generic-4.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-beanutils.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-collections.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-digester.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-discovery.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-logging.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/docking.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/forms-1.0.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jai_codec.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jai_core.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jaxb-rt-1.0-ea.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jaxrpc.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jcommon-1.0.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jdom.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jfreechart-1.0.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jhall.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jsr173_api.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.8.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/mail.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ostermillerutils_1_04_03_for_kaffe.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/stax-1.2.0_rc1-dev.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/xml-apis.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/j3dcore.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/j3dutils.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/vecmath.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-lang-2.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ginkgo-0.1-SNAPSHOT.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-math-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
-	<classpathentry kind="lib" path="lib/xalan.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/junit.jar"/>
-	<classpathentry kind="lib" path="lib/jaxen.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-kernel-1.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/axiom-api-1.2.10.jar"/>
-	<classpathentry kind="lib" path="lib/axiom-impl-1.2.10.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-adb-1.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
-	<classpathentry kind="lib" path="lib/XmlSchema-1.4.3.jar"/>
-	<classpathentry kind="lib" path="lib/neethi-2.0.4.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-transport-local-1.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-transport-http-1.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/httpcore-4.0.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-upload-client.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/genspace/persistence-common.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/genspace/kernel.jar"/>
-	<classpathentry kind="lib" path="lib/genspace/appclient.security.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/addressing-1.1.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/axis-ant.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/axis.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/commons-discovery-0.2.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/docking.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/intellij.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/jaxrpc.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/jgraphx.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/jimi.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/mina-core-1.1.7.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/saaj.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/smack.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/smackx.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/swing-layout-1.0.3.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/swing-worker-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/AffxFusion.jar"/>
+	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="lib" path="lib/axiom-api-1.2.10.jar"/>
+	<classpathentry kind="lib" path="lib/axiom-impl-1.2.10.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-adb-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-kernel-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-transport-http-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-transport-local-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/axis2-upload-client.jar"/>
+	<classpathentry kind="lib" path="lib/bcel-5.1.jar"/>
+	<classpathentry kind="lib" path="lib/cglib-nodep-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/collections-generic-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="lib/commons-discovery.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/commons-math-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/docking.jar"/>
+	<classpathentry kind="lib" path="lib/forms-1.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/ginkgo-0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/j3dcore.jar"/>
+	<classpathentry kind="lib" path="lib/j3dutils.jar"/>
+	<classpathentry kind="lib" path="lib/jai_codec.jar"/>
+	<classpathentry kind="lib" path="lib/jai_core.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-rt-1.0-ea.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/jhall.jar"/>
+	<classpathentry kind="lib" path="lib/jsr173_api.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib/mail.jar"/>
+	<classpathentry kind="lib" path="lib/neethi-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/ostermillerutils_1_04_03_for_kaffe.jar"/>
+	<classpathentry kind="lib" path="lib/stax-1.2.0_rc1-dev.jar"/>
+	<classpathentry kind="lib" path="lib/vecmath.jar"/>
+	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/xalan.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/XmlSchema-1.4.3.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

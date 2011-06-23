@@ -5,5 +5,56 @@
      <role-name>user</role-name>
      <group-name>users</group-name>
    </security-role-mapping>
-  <enterprise-beans/>
+    <enterprise-beans>
+     <ejb>
+     <ejb-name>FriendFacade</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>FriendFacade</port-component-name>
+       <login-config>
+         <auth-method>BASIC</auth-method>
+         <realm>GElogin</realm>
+       </login-config>
+     </webservice-endpoint>
+   </ejb>
+   <ejb>
+     <ejb-name>NetworkFacade</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>NetworkFacade</port-component-name>
+       <login-config>
+         <auth-method>BASIC</auth-method>
+         <realm>GElogin</realm>
+       </login-config>
+     </webservice-endpoint>
+   </ejb>
+   <ejb>
+     <ejb-name>UsageInformation</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>UsageInformation</port-component-name>
+       <login-config>
+         <auth-method>BASIC</auth-method>
+         <realm>GElogin</realm>
+       </login-config>
+     </webservice-endpoint>
+   </ejb>
+   <ejb>
+     <ejb-name>UserFacade</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>UserFacade</port-component-name>
+       <login-config>
+         <auth-method>BASIC</auth-method>
+         <realm>GElogin</realm>
+       </login-config>
+     </webservice-endpoint>
+   </ejb>
+   <ejb>
+     <ejb-name>WorkflowRepository</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>WorkflowRepository</port-component-name>
+       <login-config>
+         <auth-method>BASIC</auth-method>
+         <realm>GElogin</realm>
+       </login-config>
+     </webservice-endpoint>
+   </ejb>
+   </enterprise-beans>
 </sun-ejb-jar>

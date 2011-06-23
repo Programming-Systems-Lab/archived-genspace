@@ -45,7 +45,7 @@ import org.geworkbench.bison.parsers.resources.Resource;
  * 
  * @author manjunath at genomecenter dot columbia dot edu
  * @author yc2480
- * @version $Id: AffyFileFormat.java 7370 2010-12-22 21:24:10Z zji $
+ * @version $Id: AffyFileFormat.java 7964 2011-06-07 19:34:19Z zji $
  * 
  */
 public class AffyFileFormat extends DataSetFileFormat {
@@ -191,7 +191,6 @@ public class AffyFileFormat extends DataSetFileFormat {
 	 *             When the input file deviates from the Affy format.
 	 */
 
-	@SuppressWarnings("unchecked")
 	private void getMArraySet(File file, CSExprMicroarraySet maSet)
 			throws InputFileFormatException, InterruptedIOException {
 		// Check that the file is OK before starting allocating space for it.

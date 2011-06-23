@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/ttest/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-19T19:06:18.317421Z
-7752
-wangmen
+2011-06-16T21:40:14.727295Z
+8007
+zji
 
 
 
@@ -25,72 +25,4 @@ wangmen
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-binding-2.0.4.jar
-file
-
-
-
-
-2011-04-21T17:45:24.000000Z
-7e8f070273bca7986acdb6b2619084a3
-2010-05-12T16:00:50.931447Z
-6522
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-156785
-
-commons-math-2.2.jar
-file
-
-
-
-
-2011-04-21T17:45:24.000000Z
-4b65633769a2d3c532c86188648bb380
-2011-04-19T19:06:18.317421Z
-7752
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-988514
 

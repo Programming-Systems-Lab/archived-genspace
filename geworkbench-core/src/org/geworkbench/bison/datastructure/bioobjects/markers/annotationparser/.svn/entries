@@ -1,14 +1,14 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/annotationparser
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-06-01T19:16:33.879907Z
-7950
+2011-06-07T19:28:34.894769Z
+7963
 zji
 
 
@@ -60,6 +60,40 @@ has-props
 
 154
 
+AnnotationManager.java
+file
+
+
+
+
+2011-06-22T15:46:57.000000Z
+3c46def07e64eb1edf003d1dc062a8b3
+2011-06-07T19:28:34.894769Z
+7963
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5580
+
 APSerializable.java
 file
 
@@ -100,10 +134,10 @@ file
 
 
 
-2011-06-02T16:50:22.000000Z
-044fc5900a6e94301a56fadab9f3a74d
-2011-06-01T19:16:33.879907Z
-7950
+2011-06-22T15:46:57.000000Z
+9074c8977ca8027e68838d653a4f1e03
+2011-06-07T19:28:34.894769Z
+7963
 zji
 has-props
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-25003
+26108
 
 GeneOntologyUtil.java
 file

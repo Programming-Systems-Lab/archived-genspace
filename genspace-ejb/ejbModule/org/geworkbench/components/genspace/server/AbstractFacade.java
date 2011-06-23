@@ -14,9 +14,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.geworkbench.components.genspace.entity.IncomingWorkflow;
 import org.geworkbench.components.genspace.entity.User;
-import org.geworkbench.components.genspace.entity.WorkflowFolder;
 
 /**
  * Borrowed from Netbeans wizard :)
@@ -27,12 +25,38 @@ import org.geworkbench.components.genspace.entity.WorkflowFolder;
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass; 
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
-   
+
+	 public static Object readObject(byte[] data)
+	    {
+	    	ObjectInputStream is;
+			try {
+				is = new ObjectInputStream(new ByteArrayInputStream(data));
+					return is.readObject(); 
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return null;
+	    }
+	 public static byte[] writeObject(Object o)
+	    {
+	    	ByteArrayOutputStream bos = new ByteArrayOutputStream();
+	    	ObjectOutputStream oos;
+			try {
+				oos = new ObjectOutputStream(bos);
+		    	oos.writeObject(o);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	return bos.toByteArray();
+	    }
     protected void invalidateCache()
     {
-    	cachedUser = null;
+//    	cachedUser = null;
     }
-    private User cachedUser = null;
+//    private User cachedUser = null;
     @Resource
     SessionContext ctx;
     protected User getUser()

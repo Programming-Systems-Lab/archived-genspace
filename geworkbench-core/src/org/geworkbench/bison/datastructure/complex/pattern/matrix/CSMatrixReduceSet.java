@@ -10,10 +10,13 @@ import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 /**
  * @author John Watkinson
  * @author ch2514
+ * @version $Id: CSMatrixReduceSet.java 7967 2011-06-07 20:41:43Z zji $
  */
 public class CSMatrixReduceSet extends
 		CSAncillaryDataSet<DSPositionSpecificAffintyMatrix> implements
 		DSMatrixReduceSet {
+
+	private static final long serialVersionUID = -2001831766990425659L;
 
 	private ListOrderedMap<String, String> sequences;
 
@@ -22,6 +25,7 @@ public class CSMatrixReduceSet extends
 	
 	private String runlog = "";
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public CSMatrixReduceSet(DSDataSet parent, String label) {
 		super(parent, label);
 	}

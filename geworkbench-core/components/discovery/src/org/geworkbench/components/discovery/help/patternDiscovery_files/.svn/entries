@@ -1,7 +1,7 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -196,40 +196,6 @@ has-props
 
 9472
 
-PatternDiscovery_Run_Controls.png
-file
-
-
-
-
-2011-06-02T16:50:11.000000Z
-173aafa04ae7ac09be2c9366087ec9e7
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4970
-
 PatternDiscovery_Basic_histone_result_exact_seqs.png
 file
 
@@ -263,6 +229,40 @@ has-props
 
 
 57272
+
+PatternDiscovery_Run_Controls.png
+file
+
+
+
+
+2011-06-02T16:50:11.000000Z
+173aafa04ae7ac09be2c9366087ec9e7
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4970
 
 PatternDiscovery_Params_Exhaustive.png
 file
@@ -298,40 +298,6 @@ has-props
 
 12636
 
-PatternDiscovery_RunProgress.png
-file
-
-
-
-
-2011-06-02T16:50:11.000000Z
-e5943716eb7547b4a0039d786b982a68
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8380
-
 PatternDiscovery_Basic_histone_result_blosum50_seqs.png
 file
 
@@ -365,6 +331,40 @@ has-props
 
 
 72945
+
+PatternDiscovery_RunProgress.png
+file
+
+
+
+
+2011-06-02T16:50:11.000000Z
+e5943716eb7547b4a0039d786b982a68
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8380
 
 PatternDiscovery_Params_Basic_support_options.png
 file
@@ -400,14 +400,14 @@ has-props
 
 10955
 
-PatternDiscovery_Basic_histone_result_exact.png
+PatternDiscovery_Params_Advanced_Matrix.png
 file
 
 
 
 
 2011-06-02T16:50:11.000000Z
-f384e2462872a5a16d70102aa5f09bb6
+5af1adfe7e8a40efeb65d2e507fd54ca
 2011-05-25T14:27:40.523570Z
 7927
 zji
@@ -432,7 +432,7 @@ has-props
 
 
 
-53278
+8352
 
 PatternDiscovery_Params_Advanced_Exact.png
 file
@@ -468,14 +468,14 @@ has-props
 
 8172
 
-PatternDiscovery_Params_Advanced_Matrix.png
+PatternDiscovery_Basic_histone_result_exact.png
 file
 
 
 
 
 2011-06-02T16:50:11.000000Z
-5af1adfe7e8a40efeb65d2e507fd54ca
+f384e2462872a5a16d70102aa5f09bb6
 2011-05-25T14:27:40.523570Z
 7927
 zji
@@ -500,7 +500,7 @@ has-props
 
 
 
-8352
+53278
 
 PatternDiscovery_SessionConnect.png
 file

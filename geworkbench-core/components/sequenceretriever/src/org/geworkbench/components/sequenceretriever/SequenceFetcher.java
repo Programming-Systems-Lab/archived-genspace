@@ -51,7 +51,7 @@ import org.geworkbench.util.sequences.GeneChromosomeMatcher;
  * All the fields are static.
  * 
  * @author XZ
- * @version $Id: SequenceFetcher.java 7718 2011-04-08 21:01:49Z zji $
+ * @version $Id: SequenceFetcher.java 7985 2011-06-14 15:49:21Z wangmen $
  */
 public class SequenceFetcher {
 	private static Log log = LogFactory.getLog(SequenceFetcher.class);
@@ -238,7 +238,7 @@ public class SequenceFetcher {
 				for (int count = 1; count < result.length; count++) {
 					seqStr.append( result[count] );
 				}
-				CSSequence sequence = new CSSequence(affyid + "_" + swissprot, seqStr.toString());
+				CSSequence sequence = new CSSequence(affyid + "_" + swissprot.trim(), seqStr.toString());
 				sequenceSet.addASequence(sequence);
 			}
 		} catch (ServiceException e) {

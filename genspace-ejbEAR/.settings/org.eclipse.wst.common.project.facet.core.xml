@@ -3,5 +3,4 @@
   <runtime name="GlassFish 3.1"/>
   <fixed facet="jst.ear"/>
   <installed facet="jst.ear" version="6.0"/>
-  <installed facet="sun.facet" version="9"/>
 </faceted-project>

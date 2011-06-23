@@ -1,45 +1,24 @@
 package org.geworkbench.components.genspace.server;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
-import javax.ejb.EJB;
 import javax.ejb.SessionContext;
-import javax.ejb.Stateful;
-import javax.persistence.NoResultException;
-import javax.persistence.Query;
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
-import javax.security.auth.callback.PasswordCallback;
-import javax.security.auth.callback.TextOutputCallback;
-import javax.security.auth.callback.UnsupportedCallbackException;
-import javax.security.auth.login.LoginContext;
-import javax.security.auth.login.LoginException;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.entity.AnalysisEvent;
-import org.geworkbench.components.genspace.entity.Friend;
-import org.geworkbench.components.genspace.entity.IncomingWorkflow;
-import org.geworkbench.components.genspace.entity.Network;
-import org.geworkbench.components.genspace.entity.Tool;
-import org.geworkbench.components.genspace.entity.ToolRating;
-import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
-import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
-import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowFolder;
-import org.geworkbench.components.genspace.entity.WorkflowRating;
 
 /**
  * Session Bean implementation class UserFacade
  */
-@Stateful
+@Stateless
 @RolesAllowed("user")
+@WebService
 public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote {
 	
 	
@@ -134,13 +113,14 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 		return retz;
 	}
 
+	@WebMethod(exclude=true)
 	@Override
 	public void updateUser(byte[] userObj) {
-		updateUser((User) RuntimeEnvironmentSettings.readObject(userObj));
+		updateUser((User) AbstractFacade.readObject(userObj));
 	}
 
 	@Override
 	public byte[] getRootFolderBytes() {
-		return RuntimeEnvironmentSettings.writeObject(getRootFolder());
+		return AbstractFacade.writeObject(getRootFolder());
 	} 
 }

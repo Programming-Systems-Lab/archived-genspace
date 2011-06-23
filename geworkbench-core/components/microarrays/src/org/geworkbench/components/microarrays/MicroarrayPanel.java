@@ -55,7 +55,7 @@ import org.geworkbench.util.microarrayutils.MicroarrayVisualizer;
  * </p>
  * 
  * @author Andrea Califano
- * @version $Id: MicroarrayPanel.java 7102 2010-10-08 15:03:01Z zji $
+ * @version $Id: MicroarrayPanel.java 7972 2011-06-10 18:26:29Z zji $
  */
 
 @AcceptTypes( { DSMicroarraySet.class })
@@ -289,8 +289,6 @@ public class MicroarrayPanel extends MicroarrayVisualizer implements
 		if ((mArrayId >= 0) && !forcedSliderChange) {
 			if (selectMicroarray(mArrayId)) {
 				DSMicroarray array = dataSetView.items().get(mArrayId);
-				publishPhenotypeSelectedEvent(new org.geworkbench.events.PhenotypeSelectedEvent(
-						array));
 				jMALabel.setText(array.getLabel());
 			}
 		}

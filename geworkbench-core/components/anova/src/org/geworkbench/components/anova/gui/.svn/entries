@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/gui
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-11-24T19:22:51.592367Z
-7223
-wangmen
+2011-06-10T21:47:40.252681Z
+7977
+zji
 
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2011-04-21T17:45:25.000000Z
-e4005fe39a97f73c35dc6d2207c32fc0
-2010-11-18T16:50:22.049011Z
-7195
+2011-06-22T15:46:55.000000Z
+6473ef5058576cb222af6652823b1ab9
+2011-06-10T21:47:40.252681Z
+7977
 zji
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-10199
+10146
 
 AnovaAnalysisPanel.java
 file

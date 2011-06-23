@@ -1,18 +1,15 @@
 package org.geworkbench.components.genspace.server;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaQuery;
 
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.ToolRating;
@@ -20,12 +17,12 @@ import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowRating;
-import org.geworkbench.components.genspace.entity.WorkflowTool;
 
 /**
  * Session Bean implementation class ToolInformation
  */
 @Stateless
+@WebService
 public class UsageInformation extends GenericUsageInformation implements UsageInformationRemote {
 
     /**
@@ -139,6 +136,102 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 	@Override
 	public Workflow getWorkflow(int id) {
 		return getEntityManager().find(Workflow.class, id);
+	}
+
+	@Override
+	public List<Tool> getToolsByPopularity() {
+		// TODO Auto-generated method stub
+		return super.getToolsByPopularity();
+	}
+
+	@Override
+	public List<Workflow> getWorkflowsByPopularity() {
+		// TODO Auto-generated method stub
+		return super.getWorkflowsByPopularity();
+	}
+
+	@Override
+	public List<Tool> getMostPopularWFHeads() {
+		// TODO Auto-generated method stub
+		return super.getMostPopularWFHeads();
+	}
+
+	@Override
+	public Tool getMostPopularNextTool(int id) {
+		// TODO Auto-generated method stub
+		return super.getMostPopularNextTool(id);
+	}
+
+	@Override
+	public Tool getMostPopularPreviousTool(int tool) {
+		// TODO Auto-generated method stub
+		return super.getMostPopularPreviousTool(tool);
+	}
+
+	@Override
+	public List<Tool> getAllTools() {
+		// TODO Auto-generated method stub
+		return super.getAllTools();
+	}
+
+	@Override
+	public List<Workflow> getAllWorkflowsIncluding(int tool) {
+		// TODO Auto-generated method stub
+		return super.getAllWorkflowsIncluding(tool);
+	}
+
+	@Override
+	public List<Workflow> getMostPopularWorkflowStartingWith(int tool) {
+		// TODO Auto-generated method stub
+		return super.getMostPopularWorkflowStartingWith(tool);
+	}
+
+	@Override
+	public List<Workflow> getMostPopularWorkflowIncluding(int tool) {
+		// TODO Auto-generated method stub
+		return super.getMostPopularWorkflowIncluding(tool);
+	}
+
+	@Override
+	public List<Workflow> getToolSuggestion(int cwf) {
+		// TODO Auto-generated method stub
+		return super.getToolSuggestion(cwf);
+	}
+
+	@Override
+	public Transaction sendUsageLog(List<AnalysisEvent> e) {
+		// TODO Auto-generated method stub
+		return super.sendUsageLog(e);
+	}
+
+	@Override
+	public Transaction sendUsageEvent(AnalysisEvent e) {
+		// TODO Auto-generated method stub
+		return super.sendUsageEvent(e);
+	}
+
+	@Override
+	public User getExpertUserFor(int tn) {
+		// TODO Auto-generated method stub
+		return super.getExpertUserFor(tn);
+	}
+
+	@Override
+	public byte[] sendUsageSingleEvent(byte[] analysisEvent) {
+		// TODO Auto-generated method stub
+		return super.sendUsageSingleEvent(analysisEvent);
+	}
+
+	@Override
+	public byte[] sendMultipeEvents(byte[] analysisEvent) {
+		// TODO Auto-generated method stub
+		return super.sendMultipeEvents(analysisEvent);
+	}
+
+	@Override
+	public byte[] getWorkflowsByPopularityBytes() {
+		// TODO Auto-generated method stub
+		return super.getWorkflowsByPopularityBytes();
 	}
 
 

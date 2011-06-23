@@ -1,0 +1,476 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package org.geworkbench.builtin.projects.server;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.sql.SQLException;
+import java.rmi.RemoteException;
+import java.util.Date;
+
+import javax.activation.DataHandler;
+
+import org.apache.ws.axis2.upload.AttachmentResponse;
+import org.apache.ws.axis2.upload.AttachmentType;
+import org.w3.www._2005._05.xmlmime.Base64Binary;
+import org.geworkbench.builtin.projects.RegisterBean;
+
+/**
+ * UploadServiceSkeleton java skeleton for the axisService
+ */
+public class UploadServiceSkeleton {
+	private static String wspRoot = "";
+	private static final String META_DELIMIETER = "::";
+	private static final String USER_INFO_DELIMIETER = "==";
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
+	private InputStream inputStream = null;
+	private FileOutputStream fileOutputStream = null;
+
+	/**
+	 * Auto generated method signature
+	 * 
+	 * @param param0
+	 * @throws Exception
+	 * 
+	 */
+	public org.apache.ws.axis2.upload.AttachmentResponse attachment(
+			org.apache.ws.axis2.upload.AttachmentRequest param0)
+			throws Exception
+	{
+		try {
+			db_connect();
+
+			AttachmentType attachmentRequest = param0.getAttachmentRequest();
+			Base64Binary binaryData = attachmentRequest.getBinaryData();
+			DataHandler dataHandler = binaryData==null?null:binaryData.getBase64Binary();
+			String meta = attachmentRequest.getFileName();
+			System.out.println(meta.length());
+			if (meta.length()==0){
+				byte[] bytes = new byte[1024];
+				inputStream = dataHandler.getInputStream();
+				inputStream.read(bytes);
+				RegisterBean rb = (RegisterBean) RegisterBean.read(bytes);
+	
+				String msg = registerUser(rb);
+				AttachmentResponse response = new AttachmentResponse();
+				response.setAttachmentResponse(msg);
+				return response;
+			}
+	
+			if (meta.contains("'"))
+				meta = meta.replaceAll("'", "\\\\'");
+			String[] tokens = meta.split(META_DELIMIETER);
+			String userinfo = tokens[tokens.length-1];
+			if (!authorized(userinfo)) {
+				AttachmentResponse response = new AttachmentResponse();
+				response.setAttachmentResponse("User authentication failed.");
+				return response;
+			}
+	
+			wspRoot = getWspRoot();
+
+			String msg = "";
+			int id = 0;
+			if (dataHandler==null) {
+			    if (tokens.length == 4 && tokens[0].equals("0")) {
+				//title, description; create new wsp
+				id = createNewWsp(tokens[1], tokens[2]);
+				msg = String.valueOf(id);
+			    } else if (tokens.length == 2) {
+				//id; new wsp update time
+				id = Integer.valueOf(tokens[0]);
+				msg = getSvrTime(id, null);
+			    } else if (tokens.length == 3) {
+				//id, checkoutstr; update time
+				id = Integer.valueOf(tokens[0]);
+				msg = getSvrTime(id, tokens[1]);
+			    }
+			} else {
+			    //id; transfer file
+			    id = Integer.valueOf(tokens[0]);
+			    msg = updateWsp(dataHandler, id);
+			}
+	
+			AttachmentResponse response = new AttachmentResponse();
+			response.setAttachmentResponse(msg);
+			return response;
+		} finally {
+			close();
+		}
+	}
+
+	private void db_connect() throws RemoteException {
+		try {    
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			conn = DriverManager.getConnection
+		    ("jdbc:mysql://localhost:3306/genspace", "genspace", "g3nsp4c3");
+		} catch (Exception e) {
+			String msg = e.getMessage() + "Database connection failure: workspace_db";
+			System.out.println(msg);
+			throw new RemoteException(msg);
+		}
+	}
+
+	private void close() {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (pstmt != null) {
+			try {
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (inputStream != null){
+			try{
+				inputStream.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (fileOutputStream != null){
+			try{
+				fileOutputStream.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private String getWspRoot() throws RemoteException {
+		String root = null;
+
+		try {
+			pstmt = conn.prepareStatement
+			    ("select location from workspace_root where id=1");
+			rs = pstmt.executeQuery();
+			if (rs.next())  root = rs.getString(1);
+		} catch (SQLException e) {
+			String msg = e.getMessage()
+					+ "\nFailed to retrieve workspace storage root location from database";
+			System.out.println(msg);
+			throw new RemoteException(msg);
+		}
+		if (root == null) {
+			String msg = "No workspace storage root location found in database";
+			System.out.println(msg);
+			throw new RemoteException(msg);
+		}
+		File f = new File(root);
+		if (!f.exists() || !f.isDirectory()) {
+			String msg = "Workspace storage root location is not a valid directory";
+			System.out.println(msg);
+			throw new RemoteException(msg);
+		}
+		return root;
+	}
+
+	private int uid = 0;
+	private boolean authorized(String userinfo) throws RemoteException {
+		if (userinfo != null && !userinfo.trim().equals("")) {
+			String[] s = userinfo.split(USER_INFO_DELIMIETER, 2);
+			if (s.length >= 2 && !s[0].trim().equals("")) {
+				String dbpwd = null;
+				try {
+					pstmt = conn.prepareStatement
+					    ("select id, password from registration where username = ?");
+					pstmt.setString(1, s[0]);
+					rs = pstmt.executeQuery();
+					if (rs.next()) {
+						uid = rs.getInt(1);
+						dbpwd = rs.getString(2);
+					}
+				} catch (SQLException e) {
+					String msg = e.getMessage()
+					    + "\nFailed to retrieve authentication info from database for user " + s[0];
+					System.out.println(msg);
+					throw new RemoteException(msg);
+				}
+				if (dbpwd == null) {
+					String msg = "No record found in database for user " + s[0];
+					System.out.println(msg);
+					throw new RemoteException(msg);
+				}
+				if (!dbpwd.equals(s[1])) {
+					String msg = "User authentication failed for user " + s[0];
+					System.out.println(msg);
+					throw new RemoteException(msg);
+				}
+			} else {
+				String msg = "Malformed user authentication info for user " + s[0];
+				System.out.println(msg);
+				throw new RemoteException(msg);
+			}
+		} else {
+			String msg = "Missing user authentication info.";
+			System.out.println(msg);
+			throw new RemoteException(msg);
+		}
+		return true;
+	}
+	
+	private String registerUser(RegisterBean rb) throws RemoteException, SQLException{
+		String responseMsg="";
+		String username = rb.getUsername();
+		String password = new String(rb.getPassword());
+		char[] opwd = rb.getOldPasswd();
+		String oldPasswd = opwd == null ? null : new String(opwd);
+		String firstname = rb.getFName();
+		String lastname = rb.getLName();
+		String labaff = rb.getLabAffliation();
+		String email = rb.getEmail();
+		String phone = rb.getPhoneNumber();
+		String addr1 = rb.getAddr1();
+		String addr2 = rb.getAddr2();
+		String city = rb.getCity();
+		String state = rb.getState();
+		String zip = rb.getZipCode();
+
+		if (opwd == null) {
+			pstmt = conn.prepareStatement
+				("insert into registration(username, password, first_name, last_name, " +
+				"lab_affiliation, email, phone, addr1, addr2, city, state, zipcode, online_status) " +
+			    "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)", Statement.RETURN_GENERATED_KEYS);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			pstmt.setString(3, firstname);
+			pstmt.setString(4, lastname);
+			pstmt.setString(5, labaff);
+			pstmt.setString(6, email);
+			pstmt.setString(7, phone);
+			pstmt.setString(8, addr1);
+			pstmt.setString(9, addr2);
+			pstmt.setString(10, city);
+			pstmt.setString(11, state);
+			pstmt.setString(12, zip);
+			pstmt.executeUpdate();
+			rs = pstmt.getGeneratedKeys();
+			int rid = 0;
+			if (rs.next())
+				rid = rs.getInt(1);
+			System.out.println("inserted user id: " + rid);
+
+			// by default a new user can read the first 5 wsp;
+			//stmt.executeUpdate("insert into workspace_user(wspid, uid, gid) select w.id, "+rid+", a.id from workspace w, access a where a.name='read' limit 5");
+			responseMsg = username + " was successfully registered.";
+		} else {
+			pstmt = conn.prepareStatement
+			    ("select password from registration where username=?");
+			pstmt.setString(1, username);
+			rs = pstmt.executeQuery();
+			String pwd = "";
+			if (rs.next()) {
+				pwd = rs.getString(1);
+				if (!pwd.equals(oldPasswd)) {
+					String msg = "Incorrect old password for user " + username;
+					System.out.println(msg);
+					throw new RemoteException(msg);
+				} else {
+					pstmt = conn.prepareStatement
+					    ("update registration set password=?, first_name=?, last_name=?, lab_affiliation=?, email=?, " +
+					    "phone=?, addr1=?, addr2=?, city=?, state=?, zipcode=?, online_status=1 where username=?");
+					pstmt.setString(1, password);
+					pstmt.setString(2, firstname);
+					pstmt.setString(3, lastname);
+					pstmt.setString(4, labaff);
+					pstmt.setString(5, email);
+					pstmt.setString(6, phone);
+					pstmt.setString(7, addr1);
+					pstmt.setString(8, addr2);
+					pstmt.setString(9, city);
+					pstmt.setString(10, state);
+					pstmt.setString(11, zip);
+					pstmt.setString(12, username);
+					pstmt.executeUpdate();
+					responseMsg = username + " user profile was successfully updated.";
+				}
+			} else {
+				String msg = "Cannot retrieve old password for user " + username;
+				System.out.println(msg);
+				throw new RemoteException(msg);
+			}
+		}
+	    return responseMsg;
+	}
+
+	private String getSvrTime(int id, String checkoutstr) throws Exception{
+		Boolean locked = true;
+		int lockuid = 0;
+		String lockuname = "";
+		pstmt = conn.prepareStatement
+		    ("select w.locked, w.lastLockedUser, r.username from workspace w, registration r where w.lastLockedUser=r.id and w.id=?");
+		pstmt.setInt(1, id);
+		rs = pstmt.executeQuery();
+		if (rs.next()){
+		    locked = rs.getBoolean(1);
+		    lockuid = rs.getInt(2);
+		    lockuname = rs.getString(3);
+		}
+		if (locked == true && lockuid != uid){
+		    String msg = "This workspace is lockeded by " + lockuname;
+		    throw new RemoteException(msg);
+		}
+	
+		String access = null;
+		pstmt = conn.prepareStatement
+		    ("select ga.name from access ga, workspace_user wu where wu.wspid=? and wu.uid=? and wu.gid=ga.id");
+		try {
+		    pstmt.setInt(1, id);
+		    pstmt.setInt(2, uid);
+		    rs = pstmt.executeQuery();
+		    if (rs.next())
+			access = rs.getString(1);
+		} catch (SQLException e) {
+		    String msg = e.getMessage() + "\nFailed to retrieve access info from database for user " + uid;
+		    throw new RemoteException(msg);
+		}
+		if (access==null || access.equals("read")){
+		    String msg = "User "+uid+" doesn't have privilege to update wsp " + id;
+		    throw new RemoteException(msg);
+		}
+	
+		System.out.println("checkout: "+checkoutstr);
+		if (checkoutstr!=null && !checkoutstr.equals("") && !checkoutstr.equals("null")){
+			Timestamp lastSync = null;
+			pstmt = conn.prepareStatement
+			    ("select lastSync from workspace where id=?");
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) lastSync = rs.getTimestamp(1);
+			System.out.println("lastSync: "+lastSync.toString());
+			Timestamp checkOut = Timestamp.valueOf(checkoutstr);
+			if (lastSync == null)
+			    throw new RemoteException("Workspace lastSync is null in database");
+			if (checkOut.before(lastSync))
+			    throw new RemoteException("Checked out version is older than the latest in database");
+
+			Timestamp now = new Timestamp(new Date().getTime());
+			pstmt = conn.prepareStatement
+			    ("update workspace set createdAt=createdAt, lastSync=?, locked=TRUE, lastLockedUser=? where id=?");
+			pstmt.setTimestamp(1, now);
+			pstmt.setInt(2, uid);
+			pstmt.setInt(3, id);
+			pstmt.executeUpdate();
+			pstmt = conn.prepareStatement
+			    ("insert into history(wspid, uid, type, accessedAt) values (?, ?, 'U', ?)");
+			pstmt.setInt(1, id);
+			pstmt.setInt(2, uid);
+			pstmt.setTimestamp(3, now);
+			pstmt.executeUpdate();
+		} else{
+			Timestamp now = new Timestamp(new Date().getTime());
+			String fpath = wspRoot + id + ".wsp";
+			pstmt = conn.prepareStatement
+			    ("update workspace set createdAt=?, lastSync=?, location=? where id=?");
+			pstmt.setTimestamp(1, now);
+			pstmt.setTimestamp(2, now);
+			pstmt.setString(3, fpath);
+			pstmt.setInt(4, id);
+			pstmt.executeUpdate();
+			pstmt = conn.prepareStatement
+			    ("insert into history(wspid, uid, type, accessedAt) values (?, ?, 'C', ?)");
+			pstmt.setInt(1, id);
+			pstmt.setInt(2, uid);
+			pstmt.setTimestamp(3, now);
+			pstmt.executeUpdate();
+		}
+
+		String lastSync = "";
+		pstmt = conn.prepareStatement
+		    ("select lastSync from workspace where id=?");
+		pstmt.setInt(1, id);
+		rs = pstmt.executeQuery();
+		if (rs.next()) lastSync = rs.getTimestamp(1).toString();
+		return lastSync;
+	}
+
+	private int createNewWsp(String fname, String desc) throws Exception{
+		int version = 1;
+		pstmt = conn.prepareStatement
+		    ("insert into workspace(title, description, creator, version, locked, lastLockedUser) values(?, ?, ?, ?, TRUE, ?)",
+		    Statement.RETURN_GENERATED_KEYS);
+		pstmt.setString(1, fname);
+		pstmt.setString(2, desc);
+		pstmt.setInt(3, uid);
+		pstmt.setInt(4, version);
+		pstmt.setInt(5, uid);
+		pstmt.executeUpdate();
+		rs = pstmt.getGeneratedKeys();
+		int id = 0;
+		if (rs.next())
+			id = rs.getInt(1);
+		System.out.println("inserted wspid: " + id);
+
+		pstmt = conn.prepareStatement
+		    ("insert into workspace_user(wspid, uid, gid) select " +
+		     "?, ?, id from access where name='owner'");
+		pstmt.setInt(1, id);
+		pstmt.setInt(2, uid);
+		pstmt.executeUpdate();
+		//by default user 'dba' can admin a new workspace 
+		pstmt = conn.prepareStatement
+		    ("insert into workspace_user(wspid, uid, gid) select " +
+		     "?, r.id, a.id from access a, registration r where a.name='admin' and r.username='dba'");
+		pstmt.setInt(1, id);
+		pstmt.executeUpdate();
+
+		return id;
+	}
+
+ 	private String updateWsp(DataHandler dataHandler, int id) throws Exception{
+		String lastSync = null;
+		pstmt = conn.prepareStatement
+		    ("select lastSync from workspace where id=?");
+		pstmt.setInt(1, id);
+		rs = pstmt.executeQuery();
+		if (rs.next()) lastSync = rs.getTimestamp(1).toString();
+		System.out.println("lastSync: "+lastSync);
+
+		String fpath = wspRoot + id + ".wsp";
+		File file = new File(fpath);
+		fileOutputStream = new FileOutputStream(file);
+		dataHandler.writeTo(fileOutputStream);
+		fileOutputStream.flush();
+		fileOutputStream.close();
+		System.out.println("saved successfully " + file);
+
+		return "Workspace was successfully uploaded.";
+	}
+}

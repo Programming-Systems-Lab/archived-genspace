@@ -30,11 +30,13 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * @author: Marc-Danie Nazaire
  * @author yc2480
- * @version $Id: PCAAnalysisPanel.java,v 1.11 2009-06-19 19:21:24 jiz Exp $
+ * @version $Id: PCAAnalysisPanel.java 7992 2011-06-15 17:37:40Z zji $
  */
 public class PCAAnalysisPanel extends GPAnalysisPanel  
 {
-    private JComboBox variables;
+	private static final long serialVersionUID = -2258456667092378338L;
+	
+	private JComboBox variables;
     
     public PCAAnalysisPanel()
      {

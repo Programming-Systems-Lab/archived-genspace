@@ -1,7 +1,7 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -675,40 +675,6 @@ maz
 help
 dir
 
-ExpressionThresholdFilter.cwb.xml
-file
-
-
-
-
-2011-05-09T16:20:03.000000Z
-992a90b1e1840effe2d5c7cac6b386d3
-2011-04-22T19:09:01.504147Z
-7808
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1261
-
 GenepixFlagsFilter.cwb.xml
 file
 
@@ -743,16 +709,16 @@ smithken
 
 1111
 
-AffyDetectionCallFilter.cwb.xml
+ExpressionThresholdFilter.cwb.xml
 file
 
 
 
 
 2011-05-09T16:20:03.000000Z
-64538f0a09237a307a417f3a6affca95
-2011-04-22T19:36:36.205443Z
-7811
+992a90b1e1840effe2d5c7cac6b386d3
+2011-04-22T19:09:01.504147Z
+7808
 smithken
 
 
@@ -775,7 +741,7 @@ smithken
 
 
 
-1345
+1261
 
 MissingValuesFilterPanel.java
 file
@@ -811,6 +777,40 @@ has-props
 
 4889
 
+AffyDetectionCallFilter.cwb.xml
+file
+
+
+
+
+2011-05-09T16:20:03.000000Z
+64538f0a09237a307a417f3a6affca95
+2011-04-22T19:36:36.205443Z
+7811
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1345
+
 DeviationBasedFilter.cwb.xml
 file
 
@@ -845,14 +845,14 @@ smithken
 
 1200
 
-ExpressionThresholdFilter.java
+GenepixFlagsFilter.java
 file
 
 
 
 
 2011-04-21T17:45:45.000000Z
-1a2d029e6d87710e5c7eb04691daee12
+624fc1d083adac86b18aa4364ba34d97
 2010-06-24T15:03:09.921560Z
 6822
 youmi
@@ -877,7 +877,7 @@ has-props
 
 
 
-3265
+7477
 
 GenepixExpressionThresholdFilterPanel.java
 file
@@ -913,14 +913,14 @@ has-props
 
 11604
 
-GenepixFlagsFilter.java
+ExpressionThresholdFilter.java
 file
 
 
 
 
 2011-04-21T17:45:45.000000Z
-624fc1d083adac86b18aa4364ba34d97
+1a2d029e6d87710e5c7eb04691daee12
 2010-06-24T15:03:09.921560Z
 6822
 youmi
@@ -945,7 +945,7 @@ has-props
 
 
 
-7477
+3265
 
 MultipleProbesetFilterPanel.java
 file

@@ -19,14 +19,11 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * <code>JTree</code> renderer to be used to render the Project Tree
  *
  * @author First Genetic Trust
- * @version $Id: TreeNodeRenderer.java 6516 2010-05-12 13:30:21Z zji $
+ * @version $Id: TreeNodeRenderer.java 7966 2011-06-07 20:29:16Z zji $
  */
 public class TreeNodeRenderer extends DefaultTreeCellRenderer {
 	private static final long serialVersionUID = -1879887785935786137L;
-	/**
-     * Current <code>MicroarraySetNode</code> selection
-     */
-    public MicroarraySetNode microarraySetNodeSelection = null;
+
     /**
      * Current <code>ProjectNodeOld</code> selection
      */
@@ -49,7 +46,6 @@ public class TreeNodeRenderer extends DefaultTreeCellRenderer {
      * Clears all Node selections
      */
     public void clearNodeSelections() {
-        microarraySetNodeSelection = null;
         projectNodeSelection = null;
         imageNodeSelection = null;
     }

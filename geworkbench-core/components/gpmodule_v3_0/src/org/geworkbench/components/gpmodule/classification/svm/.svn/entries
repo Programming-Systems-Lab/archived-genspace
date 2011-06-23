@@ -1,15 +1,15 @@
 10
 
 dir
-7961
+8016
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-05-05T21:18:28.031280Z
-6477
-mnazaire
+2011-06-15T18:04:08.876954Z
+7993
+zji
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-04-21T17:46:20.000000Z
-853646d99b17b0219069cb8df74ee680
-2010-05-05T21:18:28.031280Z
-6477
-mnazaire
+2011-06-22T15:46:56.000000Z
+7373216bee5e55cfa08286fcd404a359
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ mnazaire
 
 
 
-
-7813
+7971
 
 SVMTrainingPanel.java
 file
@@ -66,11 +66,12 @@ file
 
 
 
-2011-04-21T17:46:20.000000Z
-cb43d5858d4bfd356aa0584785fcd86d
-2009-06-19T19:21:49.000000Z
-5282
-jiz
+2011-06-22T15:46:56.000000Z
+29b9e30e4cf455ac1d4df4b77bd150f8
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
 
 
 
@@ -91,8 +92,7 @@ jiz
 
 
 
-
-3457
+3479
 
 gui
 dir
@@ -103,11 +103,12 @@ file
 
 
 
-2011-04-21T17:46:20.000000Z
-0254221aeb5fc660414f8f96ac6b9da9
-2010-05-03T19:03:46.947459Z
-6448
-mnazaire
+2011-06-22T15:46:56.000000Z
+ea363e31ecc5dfa569c41d9c104f3ef2
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
 
 
 
@@ -128,8 +129,7 @@ mnazaire
 
 
 
-
-2220
+2396
 
 SVMTraining.cwb.xml
 file
