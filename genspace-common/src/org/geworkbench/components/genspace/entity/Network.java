@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 public class Network extends LazyCycleBreaker implements Serializable{
@@ -54,6 +55,7 @@ public class Network extends LazyCycleBreaker implements Serializable{
 	}
 	
 	@OneToMany(mappedBy="network")
+	@XmlTransient
 	public List<UserNetwork> getMembers() {
 		return members;
 	}

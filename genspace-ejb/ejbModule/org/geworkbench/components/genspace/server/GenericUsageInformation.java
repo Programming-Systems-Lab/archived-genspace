@@ -23,6 +23,7 @@ import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowComment;
 import org.geworkbench.components.genspace.entity.WorkflowFolder;
 import org.geworkbench.components.genspace.entity.WorkflowRating;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
@@ -46,16 +47,24 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	}
 
+	public List<WorkflowComment> getWFComments(Workflow w)
+	{
+		Workflow z = getEntityManager().find(Workflow.class, w.getId());
+		return z.getComments();
+	}
 	public List<Workflow> getWorkflowsByPopularity() {
+		System.out.println("Getting wf by pop");
 		Query cq = getEntityManager().createQuery("SELECT OBJECT(w) from Workflow w ORDER BY w.usageCount desc").setMaxResults(20); //.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 //		Query cq = getEntityManager().createNativeQuery("SELECT ID, CREATEDAT, NUMRATING, SUMRATING, USAGECOUNT, CREATIONTRANSACTION_ID, CREATOR_ID, PARENT_ID from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",
-//				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.creationTransaction");
+//				Workflow.class);//.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.creationTransaction");
 		@SuppressWarnings("rawtypes")
 		List r = cq.getResultList();
 		List<Workflow> wr = new ArrayList<Workflow>();
+		System.out.println("queried");
 		for (Object o : r) {
 			wr.add(((Workflow) o).slimDown());
 		}
+		System.out.println("returning");
 		return wr;
 	}
 
@@ -68,16 +77,15 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	public Tool getMostPopularNextTool(int id) {
-//		System.out.println("Selecting next popular tool for " + id);
-//		long start = System.currentTimeMillis();
+		System.out.println("Selecting next popular tool for " + id);
+		long start = System.currentTimeMillis();
 		Query q = getEntityManager()
 				.createNativeQuery(
-						"select t.* from TOOL t "
-								+ "inner join WORKFLOWTOOL wt on wt.tool_id=t.id "
-								+ "inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality-1 "
-								+ "inner join TOOL t2 on t2.id=wt2.tool_id "
-								+ "inner join WORKFLOW w on w.id=wt.workflow_id "
-								+ "where t2.id=? order by w.usageCount desc limit 1",
+						"select t.* from TOOL t " +
+						"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
+						"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality-1 " +
+						"inner join WORKFLOW w on w.id=wt.workflow_id " +
+						"where wt2.tool_id=? group by t.id order by SUM(w.usagecount) limit 1",
 						Tool.class);
 		q.setParameter(1, id);
 		Tool r = null;
@@ -86,8 +94,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		} catch (NoResultException e) {
 
 		}
-//		System.out.println("Finished after "
-//				+ (System.currentTimeMillis() - start) + " secs");
+		System.out.println("Finished after "
+				+ (System.currentTimeMillis() - start) + " secs");
 		return r;
 	}
 
@@ -95,12 +103,11 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		
 		Query q = getEntityManager()
 				.createNativeQuery(
-						"select t.* from TOOL t "
-								+ "inner join WORKFLOWTOOL wt on wt.tool_id=t.id "
-								+ "inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality+1 "
-								+ "inner join TOOL t2 on t2.id=wt2.tool_id "
-								+ "inner join WORKFLOW w on w.id=wt.workflow_id "
-								+ "where t2.id=? order by w.usageCount desc limit 1",
+						"select t.* from TOOL t " +
+						"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
+						"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality+1 " +
+						"inner join WORKFLOW w on w.id=wt.workflow_id " +
+						"where wt2.tool_id=? group by t.id order by SUM(w.usagecount) limit 1",
 						Tool.class);
 		q.setParameter(1, tool);
 		Tool r = null;

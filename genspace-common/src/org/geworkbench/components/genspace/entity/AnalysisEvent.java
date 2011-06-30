@@ -1,7 +1,9 @@
 package org.geworkbench.components.genspace.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -19,8 +21,10 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 
 	private static final long serialVersionUID = -8668839464594843903L;
@@ -28,10 +32,10 @@ public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 	private java.util.Date createdAt;
 	private Tool tool;
 	private Transaction transaction;
-	private Set<AnalysisEventParameter> parameters = new HashSet<AnalysisEventParameter>();
+	private Set<AnalysisEventParameter> parameters;
 	private String toolname;
 	
-//	@Override
+//	@Override 
 //	protected Object clone() throws CloneNotSupportedException {
 //		AnalysisEvent ret = new AnalysisEvent();
 //		
@@ -77,6 +81,7 @@ public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 	}
 
 	@OneToMany(mappedBy="event", cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+	@XmlElement
 	public Set<AnalysisEventParameter> getParameters() {
 		return parameters;
 	}

@@ -27,8 +27,9 @@ public class NameRenderer extends JLabel implements ListCellRenderer{
 	     {
 		if(value instanceof String)
 			setText((String) value);
-		if(value instanceof Tool)
+		else if(value instanceof Tool)
 			setText(((Tool) value).getName());
+
 		setBackground(isSelected ? list.getSelectionBackground() : list.getBackground());
         setForeground(isSelected ? list.getSelectionForeground() : list.getForeground());
 		return this;

@@ -103,7 +103,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				evt = GenSpace.getStatusBar().start("Loading rating");
 				try {
 					return GenSpaceServerFactory.getPrivUsageFacade().getMyWorkflowRating(workflow.getId());
-				} catch (RemoteException e) {
+				} catch (Exception e) {
 					GenSpace.getStatusBar().stop(evt);
 					return null;
 				}
@@ -135,7 +135,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 			public Workflow doInBackground() {
 				try {
 					return GenSpaceServerFactory.getPrivUsageFacade().getWorkflow(workflow.getId());
-				} catch (RemoteException e) {
+				} catch (Exception e) {
 					GenSpaceServerFactory.handleExecutionException(e);
 					return null;
 				}
@@ -181,7 +181,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 				try {
 					return GenSpaceServerFactory.getPrivUsageFacade().getMyToolRating(tool.getId());
-				} catch (RemoteException e) {
+				} catch (Exception e) {
 					GenSpace.getStatusBar().stop(evt);
 					return null;
 				}
@@ -218,7 +218,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 				try {
 					return GenSpaceServerFactory.getPrivUsageFacade().getTool(tool.getId());
-				} catch (RemoteException e) {
+				} catch (Exception e) {
 					GenSpace.getStatusBar().stop(evt);
 					return null;
 				}
@@ -286,7 +286,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 				evt = GenSpace.getStatusBar().start("Saving rating");
 				try {
 					return GenSpaceServerFactory.getPrivUsageFacade().saveWorkflowRating(workflow.getId(),rating);
-				} catch (RemoteException e) {
+				} catch (Exception e) {
 					GenSpace.getStatusBar().stop(evt);
 					return null;
 				}
@@ -335,7 +335,7 @@ public class StarRatingPanel extends JPanel implements MouseListener {
 
 				try {
 					return GenSpaceServerFactory.getPrivUsageFacade().saveToolRating(tool.getId(), rating);
-				} catch (RemoteException e) {
+				} catch (Exception e) {
 					GenSpace.getStatusBar().stop(evt);
 					return null;
 				}

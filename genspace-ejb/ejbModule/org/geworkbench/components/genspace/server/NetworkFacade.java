@@ -27,7 +27,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		super(Network.class);
 	}
 
-
+ 	@WebMethod
 	@Override
 	public List<User> getProfilesByNetwork(int networkFilter_id) {
 		Network networkFilter = getEntityManager().find(Network.class, networkFilter_id);
@@ -78,6 +78,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		return r;
 	}
 	@Override
+	@WebMethod
 	public void createNetwork(String name) {
 		if(findByName(name) == null)
 		{
@@ -91,6 +92,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	}
 
 	@Override
+	@WebMethod
 	public void leaveNetwork(int usernetwork_id) {
 		User me = getUser();
 		UserNetwork selected = getEntityManager().find(UserNetwork.class, usernetwork_id);
@@ -100,7 +102,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 			getEntityManager().remove(selected);
 		}
 	}
-
+	@WebMethod
 	@Override
 	public List<UserNetwork> getMyNetworks() {
 		getEntityManager().refresh(getUser());
@@ -108,19 +110,19 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		
 		return getUser().getNetworks();
 	}
-
+	@WebMethod
 	@Override
 	public List<Network> getAllNetworks() {
 		return findAll();
 	}
-
+	@WebMethod
 	@Override
 	public void joinNetwork(String text) {
 		Network n = findByName(text);
 		if(n != null)
 			joinNetwork(n.getId());
 	}
-
+	@WebMethod
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<UserNetwork> getNetworkRequests(int network_id) {
@@ -145,7 +147,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		}
 		return r;
 	}
-
+	@WebMethod
 	@Override
 	public void acceptNetworkRequest(int un_id) {
 		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
@@ -155,7 +157,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 			getEntityManager().merge(un);
 		}
 	}
-
+	@WebMethod
 	@Override
 	public void rejectNetworkRequest(int un_id) {
 		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
@@ -165,7 +167,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 			getEntityManager().remove(un);
 		}
 	}
-
+	@WebMethod
 	@Override
 	public void updateNetworkVisibility(int un_id,
 			Boolean v) {
@@ -177,7 +179,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		}
 	}
 
-
+	@WebMethod
 	@Override
 	public int getNumberOfNetworkRequests() {
 		User me = getUser();

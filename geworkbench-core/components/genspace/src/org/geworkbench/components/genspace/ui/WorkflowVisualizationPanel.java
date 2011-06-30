@@ -26,6 +26,7 @@ import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.server.stubs.Tool;
+import org.geworkbench.components.genspace.server.stubs.Workflow;
 import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
 import org.geworkbench.components.genspace.server.stubs.WorkflowTool;
 import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
@@ -192,7 +193,7 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 						if(cell.getClass().equals(WorkflowTool.class))
 						{
 							WorkflowTool selected = (WorkflowTool) cell;
-							popup.initialize(selected.getTool(), selected.getWorkflow());
+							popup.initialize(selected.getTool(), (Workflow) selected.getWorkflow());
 							popup.show(WorkflowVisualizationPanel.this, (int) e.getX(),
 									(int) e.getY());
 						}
@@ -300,8 +301,10 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 				styl = "WORKFLOW;fillColor=#e8f2dd";
 			else
 				styl = "WORKFLOW";
+			
 			Rectangle2D r = f.getStringBounds(to.getTool().getName(), ((Graphics2D) this.getGraphics()).getFontRenderContext());
-			Object v1 = graph.insertVertex(parent, null, to, 10, 10, r.getWidth()+10, r.getHeight()+10,styl);
+			Object v1 = graph.insertVertex(parent, null, new WorkflowToolHolder(to), 10, 10, r.getWidth()+10, r.getHeight()+10,styl);
+			
 			if(lastCell != null)
 				graph.insertEdge(parent, null, "", lastCell, v1,"editable=0");
 			else if(drawFrom != null)
@@ -390,4 +393,46 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 	}
 	
 
+}
+
+class WorkflowToolHolder extends WorkflowTool
+{
+	WorkflowTool delegate;
+	public boolean equals(Object obj) {
+		return delegate.equals(obj);
+	}
+	public int getId() {
+		return delegate.getId();
+	}
+	public int getOrder() {
+		return delegate.getOrder();
+	}
+	public Tool getTool() {
+		return delegate.getTool();
+	}
+	public Object getWorkflow() {
+		return delegate.getWorkflow();
+	}
+	public int hashCode() {
+		return delegate.hashCode();
+	}
+	public void setId(int value) {
+		delegate.setId(value);
+	}
+	public void setOrder(int value) {
+		delegate.setOrder(value);
+	}
+	public void setTool(Tool value) {
+		delegate.setTool(value);
+	}
+	public void setWorkflow(Object value) {
+		delegate.setWorkflow(value);
+	}
+	public String toString() {
+		return delegate.getTool().getName();
+	}
+	public WorkflowToolHolder(WorkflowTool tool)
+	{
+		delegate = tool;
+	}
 }

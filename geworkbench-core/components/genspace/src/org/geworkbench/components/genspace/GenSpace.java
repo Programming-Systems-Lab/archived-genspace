@@ -17,6 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.SwingWorker;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -29,6 +30,7 @@ import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
 import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
+import org.geworkbench.components.genspace.ui.WorkflowVisualization;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
 
 
@@ -77,13 +79,7 @@ public class GenSpace {
 	static java.util.logging.Logger glassfishLogger3;
 	public static void main(String[] args) {
 		
-		PublicFacadeService svcsvc = new PublicFacadeService();
 		
-		PublicFacade svc = svcsvc.getPublicFacadePort();
-		for(Tool t : svc.getAllTools())
-		{
-			System.out.println(t);	
-		}
 
 //		System.out.println(u);
 //		@SuppressWarnings("unused")
@@ -94,14 +90,25 @@ public class GenSpace {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-//		GenSpace g = new GenSpace();
+		GenSpace g = new GenSpace();
 	}
 
 	public static SocialNetworksHome networksPanels = new SocialNetworksHome();
 
 	public GenSpace() {
 		instance = this;
-		initComponents();
+		SwingWorker<Void, Void> wk = new SwingWorker<Void, Void>()
+				{
+				protected Void doInBackground() throws Exception {
+					GenSpaceServerFactory.init();
+					return null;
+				};
+				protected void done() {
+					initComponents();
+
+				};
+				};
+wk.execute();
 		
 		
 		}

@@ -1,6 +1,7 @@
 package org.geworkbench.components.genspace.server;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
@@ -10,6 +11,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import org.geworkbench.components.genspace.entity.User;
+import org.geworkbench.components.genspace.entity.UserNetwork;
 import org.geworkbench.components.genspace.entity.UserWorkflow;
 import org.geworkbench.components.genspace.entity.WorkflowFolder;
 
@@ -30,6 +32,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
     }
 
 	@Override
+	@WebMethod
 	public boolean userExists(String username) {
 		return findByUserName(username) != null;
 	}
@@ -38,12 +41,14 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 
 	@Resource SessionContext ctx;
 	@Override
+	@WebMethod
 	public User getMe() {
 		return getUser();
 	}
 
 	
 	@Override
+	@WebMethod
 	public void updateUser(User user) {
 		this.edit(user);
 	}
@@ -51,6 +56,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	
 
 	@Override
+	@WebMethod
 	public User getProfile(String who) {
 		User o = findByUserName(who);
 		if(o == null)
@@ -60,6 +66,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	}
 
 	@Override
+	@WebMethod
 	public WorkflowFolder getRootFolder() {
 		invalidateCache();
 		WorkflowFolder ret = getUser().getRootFolder();
@@ -120,7 +127,14 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	}
 
 	@Override
+	@WebMethod(exclude=true)
 	public byte[] getRootFolderBytes() {
 		return AbstractFacade.writeObject(getRootFolder());
-	} 
+	}
+	
+	@WebMethod
+	public List<UserNetwork> getMyNetworks()
+	{
+		return getUser().getNetworks();
+	}
 }

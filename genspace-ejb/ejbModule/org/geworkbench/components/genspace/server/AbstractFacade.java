@@ -23,7 +23,11 @@ import org.geworkbench.components.genspace.entity.User;
  * @param <T>
  */
 public abstract class AbstractFacade<T> {
-    private Class<T> entityClass; 
+    private Class<T> entityClass;
+    
+    void setEm(EntityManager em) {
+		this.em = em;
+	}
     @PersistenceContext(unitName="genspace_persist") private EntityManager em;
 
 	 public static Object readObject(byte[] data)

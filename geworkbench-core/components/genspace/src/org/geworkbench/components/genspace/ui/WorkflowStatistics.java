@@ -81,6 +81,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 						m.addElement(s);
 					}
 					toolListing.setModel(m);
+					
 					if(instrument)
 						System.out.println("Entire tool list size: " + GenSpace.getObjectSize((Serializable) results));
 				} catch (InterruptedException e) {
@@ -95,10 +96,8 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			@Override
 			protected List<Tool> doInBackground() {
 				try {
-					Tool[] r = GenSpaceServerFactory.getUsageOps().getAllTools();
-					System.out.println(r);
-					return Arrays.asList(GenSpaceServerFactory.getUsageOps().getAllTools());
-				} catch (RemoteException e) {
+					return (GenSpaceServerFactory.getUsageOps().getAllTools());
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 					return null;
@@ -139,7 +138,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return Arrays.asList(GenSpaceServerFactory.getUsageOps().getToolsByPopularity());
+				return (GenSpaceServerFactory.getUsageOps().getToolsByPopularity());
 			}
 
 		};
@@ -184,7 +183,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 			@Override
 			protected List<Workflow> doInBackground() throws Exception {
 				evt = GenSpace.getStatusBar().start("Retrieving popular workflows");
-				return Arrays.asList(GenSpaceServerFactory.getUsageOps().getWorkflowsByPopularity());
+				return GenSpaceServerFactory.getUsageOps().getWorkflowsByPopularity();
 			}
 
 		};
@@ -221,7 +220,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 
 			@Override
 			protected List<Tool> doInBackground() throws Exception {
-				return Arrays.asList(GenSpaceServerFactory.getUsageOps().getMostPopularWFHeads());
+				return (GenSpaceServerFactory.getUsageOps().getMostPopularWFHeads());
 			}
 
 		};
@@ -249,8 +248,9 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 					String r = get();
 					toolStats.setText("<html>" + r + "</html>");
 				} catch (InterruptedException e) {
-					GenSpace.logger.debug("Error talking to server: ",e);
+					GenSpaceServerFactory.handleException(e);
 				} catch (ExecutionException e) {
+					GenSpaceServerFactory.handleException(e);
 					GenSpaceServerFactory.clearCache();
 					updateItemStats();
 					return;

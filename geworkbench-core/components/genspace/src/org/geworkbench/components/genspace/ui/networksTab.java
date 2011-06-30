@@ -161,7 +161,7 @@ public class networksTab extends SocialTab {
 				if (selected != null)
 					try {
 						GenSpaceServerFactory.getNetworkOps().leaveNetwork(selected.getId());
-					} catch (RemoteException e1) {
+					} catch (Exception e1) {
 					}
 				updateFormFields();
 			}
@@ -282,10 +282,10 @@ public class networksTab extends SocialTab {
 	@Override
 	public void updateFormFields() {
 		if (GenSpaceServerFactory.isLoggedIn()) {
-			SwingWorker<UserNetwork[], Void> worker2 = new SwingWorker<UserNetwork[], Void>() {
+			SwingWorker<List<UserNetwork>, Void> worker2 = new SwingWorker<List<UserNetwork>, Void>() {
 
 				@Override
-				protected UserNetwork[] doInBackground()
+				protected List<UserNetwork> doInBackground()
 						throws Exception {
 					return GenSpaceServerFactory.getNetworkOps().getMyNetworks();
 				}
@@ -293,7 +293,7 @@ public class networksTab extends SocialTab {
 				@Override
 				protected void done() {
 					try {
-						cachedMyNetworks = Arrays.asList(get());
+						cachedMyNetworks = get();
 					} catch (InterruptedException e) {
 						GenSpace.logger.warn("Error",e);
 					} catch (ExecutionException e) {
@@ -316,7 +316,7 @@ public class networksTab extends SocialTab {
 				@Override
 				protected List<Network> doInBackground()
 						throws Exception {
-					return Arrays.asList(GenSpaceServerFactory.getNetworkOps().getAllNetworks());
+					return GenSpaceServerFactory.getNetworkOps().getAllNetworks();
 				}
 
 				@Override

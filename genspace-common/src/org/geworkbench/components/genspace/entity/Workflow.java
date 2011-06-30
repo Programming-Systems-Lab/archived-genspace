@@ -116,6 +116,7 @@ public class Workflow implements Serializable {
 	public void setChildren(List<Workflow> children) {
 		this.children = children;
 	}
+	@XmlTransient
 	@OneToMany(mappedBy="workflow")
 	public List<WorkflowComment> getComments() {
 		return comments;
@@ -124,6 +125,7 @@ public class Workflow implements Serializable {
 		this.comments = comments;
 	}
 	
+	@XmlTransient
 	@OneToMany(mappedBy="workflow")
 	public List<WorkflowRating> getRatings() {
 		return ratings;
@@ -259,6 +261,7 @@ public class Workflow implements Serializable {
 		w.setNumRating(getNumRating());
 		w.setSumRating(getSumRating());
 		w.setCreator(getCreator());
+		w.setNumComments(getComments().size());
 		if(getCachedParentId() < 0 && getParent() != null)
 			w.setCachedParentId(getParent().getId());
 		return w;
@@ -279,8 +282,18 @@ public class Workflow implements Serializable {
 		w.setUsageCount(getUsageCount());
 		w.setNumRating(getNumRating());
 		w.setSumRating(getSumRating());
+		w.setNumComments(getComments().size());
 		if(getCachedParentId() < 0 && getParent() != null)
 			w.setCachedParentId(getParent().getId());
 		return w;
+	}
+	
+	private int numComments;
+	@Transient
+	public int getNumComments() {
+		return numComments;
+	}
+	public void setNumComments(int numComments) {
+		this.numComments = numComments;
 	}
 }

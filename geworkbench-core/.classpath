@@ -77,5 +77,7 @@
 	<classpathentry kind="lib" path="lib/XmlSchema-1.4.3.jar"/>
 	<classpathentry kind="lib" path="/Applications/eclipse/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
 	<classpathentry kind="lib" path="/Applications/eclipse/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"/>
+	<classpathentry kind="lib" path="components/genspace/lib/ha-api.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/genspace-common"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

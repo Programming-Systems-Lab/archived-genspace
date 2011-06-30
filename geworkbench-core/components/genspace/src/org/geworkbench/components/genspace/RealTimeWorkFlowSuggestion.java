@@ -3,13 +3,8 @@ package org.geworkbench.components.genspace;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,13 +17,12 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.border.MatteBorder;
 
+import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
 import org.geworkbench.components.genspace.server.stubs.Tool;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
 import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
-import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
 
@@ -257,8 +251,8 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 	private static List<org.geworkbench.components.genspace.server.stubs.Workflow> getRealTimeWorkFlowSuggestion(WorkflowWrapper cwf) {
 		
 		try {
-			return Arrays.asList(GenSpaceServerFactory.getUsageOps().getToolSuggestion(cwf.getId()));
-		} catch (RemoteException e) {
+			return (GenSpaceServerFactory.getUsageOps().getToolSuggestion(cwf.getId()));
+		} catch (Exception e) {
 			return null;
 		}
 	}

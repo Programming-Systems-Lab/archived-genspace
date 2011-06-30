@@ -31,6 +31,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
     }
 
 	@Override
+	@WebMethod
 	public boolean deleteMyWorkflow(int uw_id) {
 		UserWorkflow uw = getEntityManager().find(UserWorkflow.class, uw_id);
 		if(uw.getOwner().equals(getUser()))
@@ -44,6 +45,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public WorkflowFolder addWorkflow(UserWorkflow uw, int folder_id) {
 		WorkflowFolder folder = getEntityManager().find(WorkflowFolder.class, folder_id);
 		uw.setFolder(folder);
@@ -57,6 +59,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public WorkflowFolder addFolder(WorkflowFolder folder) {
 		System.out.println("Adding " + folder);
 		folder.setOwner(getUser());
@@ -67,6 +70,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public boolean deleteFromInbox(int wiid) {
 		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
 		if(wi.getReceiver().equals(getUser()))
@@ -80,6 +84,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public UserWorkflow addToRepository(int wiid) {
 		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
 
@@ -96,6 +101,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public boolean removeComment(int wcid) {
 		WorkflowComment wc = getEntityManager().find(WorkflowComment.class, wcid);
 
@@ -110,6 +116,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public WorkflowComment addComment(WorkflowComment wc) {
 		wc.setCreatedAt(new Date());
 		wc.setCreator(getUser());
@@ -121,12 +128,14 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public UserWorkflow importWorkflow(UserWorkflow w) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
+	@WebMethod
 	public boolean sendWorkflow(IncomingWorkflow newW, String receiver) {
 		
 		newW.setReceiver(findByUserName(receiver));
@@ -138,6 +147,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public boolean deleteMyFolder(int folderid) {
 		WorkflowFolder folder = getEntityManager().find(WorkflowFolder.class, folderid);
 
@@ -155,6 +165,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	}
 
 	@Override
+	@WebMethod
 	public List<IncomingWorkflow> getIncomingWorkflows() {
 		ArrayList<IncomingWorkflow> ret = new ArrayList<IncomingWorkflow>();
 		for(IncomingWorkflow w : getUser().getIncomingWorkflows())
@@ -183,12 +194,12 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	public byte[] addComment(byte[] comment) {
 		return AbstractFacade.writeObject(addComment((WorkflowComment) AbstractFacade.readObject(comment)));
 	}
-
+	@WebMethod(exclude=true)
 	@Override
 	public boolean sendWorkflowBytes(byte[] newWorkflow, String receiver) {
 		return sendWorkflow((IncomingWorkflow) AbstractFacade.readObject(newWorkflow), receiver);
 	}
-
+	@WebMethod(exclude=true)
 	@Override
 	public byte[] getIncomingWorkflowsBytes() {
 		return AbstractFacade.writeObject(getIncomingWorkflows());

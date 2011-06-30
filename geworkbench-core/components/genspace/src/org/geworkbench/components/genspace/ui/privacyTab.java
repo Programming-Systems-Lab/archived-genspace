@@ -235,7 +235,7 @@ public class privacyTab extends SocialTab {
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
-					return Arrays.asList(GenSpaceServerFactory.getFriendOps().getFriends());
+					return (GenSpaceServerFactory.getFriendOps().getFriends());
 				}
 
 				@Override
@@ -280,7 +280,7 @@ public class privacyTab extends SocialTab {
 				@Override
 				protected List<UserNetwork> doInBackground()
 						throws Exception {
-					return Arrays.asList(GenSpaceServerFactory.getNetworkOps().getMyNetworks());
+					return (GenSpaceServerFactory.getNetworkOps().getMyNetworks());
 				}
 
 				@Override

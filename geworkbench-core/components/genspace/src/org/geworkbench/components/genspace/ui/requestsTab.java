@@ -53,7 +53,7 @@ public class requestsTab extends SocialTab {
 					for (UserNetwork t : GenSpaceServerFactory.getNetworkOps().getMyNetworks()) {
 						Network nt = t.getNetwork();
 						if (nt.getOwner().equals(GenSpaceServerFactory.getUser()))
-							ret.addAll(Arrays.asList(GenSpaceServerFactory.getNetworkOps().getNetworkRequests(nt.getId())));
+							ret.addAll((GenSpaceServerFactory.getNetworkOps().getNetworkRequests(nt.getId())));
 					}
 					return ret;
 				}
@@ -83,11 +83,10 @@ public class requestsTab extends SocialTab {
 
 			SwingWorker<List<User>, Void> worker2 = new SwingWorker<List<User>, Void>() {
 
-				@SuppressWarnings("unchecked")
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {
-					return Arrays.asList((User[]) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendRequestsList()));
+					return GenSpaceServerFactory.getFriendOps().getFriendRequests();
 				}
 
 				@Override
@@ -158,7 +157,7 @@ public class requestsTab extends SocialTab {
 				if (networksList.getSelectedValue() != null) {
 					try {
 						GenSpaceServerFactory.getNetworkOps().acceptNetworkRequest(((UserNetwork) networksList.getSelectedValue()).getId());
-					} catch (RemoteException e1) {
+					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
 					updateFormFields();
@@ -172,7 +171,7 @@ public class requestsTab extends SocialTab {
 				if (networksList.getSelectedValue() != null) {
 					try {
 						GenSpaceServerFactory.getNetworkOps().rejectNetworkRequest(((UserNetwork) networksList.getSelectedValue()).getId());
-					} catch (RemoteException e1) {
+					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
 					updateFormFields();
@@ -187,7 +186,7 @@ public class requestsTab extends SocialTab {
 				{
 					try {
 						GenSpaceServerFactory.getFriendOps().addFriend(((User) friendsList.getSelectedValue()).getId());
-					} catch (RemoteException e1) {
+					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
 					updateFormFields();
@@ -202,7 +201,7 @@ public class requestsTab extends SocialTab {
 				{
 					try {
 						GenSpaceServerFactory.getFriendOps().rejectFriend(((User) friendsList.getSelectedValue()).getId());
-					} catch (RemoteException e1) {
+					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
 					updateFormFields();

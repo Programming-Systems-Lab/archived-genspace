@@ -6,35 +6,32 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
 
 import javax.naming.InitialContext;
 import javax.swing.JOptionPane;
-import javax.xml.rpc.ServiceException;
+import javax.xml.ws.BindingProvider;
 
-import org.apache.axis.client.Stub;
 import org.apache.log4j.Logger;
-import org.geworkbench.components.genspace.server.stubs.FriendFacadeServiceLocator;
-import org.geworkbench.components.genspace.server.stubs.NetworkFacadeServiceLocator;
-import org.geworkbench.components.genspace.server.stubs.PublicFacadeServiceLocator;
-import org.geworkbench.components.genspace.server.stubs.Tool;
-import org.geworkbench.components.genspace.server.stubs.ToolInformationProvider;
-import org.geworkbench.components.genspace.server.stubs.UsageInformationServiceLocator;
-import org.geworkbench.components.genspace.server.stubs.User;
-import org.geworkbench.components.genspace.server.stubs.UserFacadeServiceLocator;
-import org.geworkbench.components.genspace.server.stubs.UserNetwork;
+import org.geworkbench.components.genspace.entity.WorkflowFolder;
 import org.geworkbench.components.genspace.server.stubs.FriendFacade;
+import org.geworkbench.components.genspace.server.stubs.FriendFacadeService;
 import org.geworkbench.components.genspace.server.stubs.NetworkFacade;
+import org.geworkbench.components.genspace.server.stubs.NetworkFacadeService;
 import org.geworkbench.components.genspace.server.stubs.PublicFacade;
+import org.geworkbench.components.genspace.server.stubs.PublicFacadeService;
+import org.geworkbench.components.genspace.server.stubs.Tool;
+import org.geworkbench.components.genspace.server.stubs.ToolUsageInformation;
+import org.geworkbench.components.genspace.server.stubs.ToolUsageInformationService;
 import org.geworkbench.components.genspace.server.stubs.UsageInformation;
+import org.geworkbench.components.genspace.server.stubs.UsageInformationService;
+import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.components.genspace.server.stubs.UserFacade;
+import org.geworkbench.components.genspace.server.stubs.UserFacadeService;
+import org.geworkbench.components.genspace.server.stubs.UserNetwork;
 import org.geworkbench.components.genspace.server.stubs.WorkflowRepository;
-import org.geworkbench.components.genspace.server.stubs.WorkflowRepositoryServiceLocator;
+import org.geworkbench.components.genspace.server.stubs.WorkflowRepositoryService;
 import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
 
 
@@ -52,22 +49,25 @@ public class GenSpaceServerFactory {
 	private static NetworkFacade networkFacade;
 	private static PublicFacade publicFacade;
 	private static WorkflowRepository workflowFacade;
+	private static ToolUsageInformation toolUsageFacade;
+	
 	private static InitialContext ctx;
 	private static Object lock = new Object();
+
+	public static void init()
+	{
+		loadTools();
+	}
 	
 	private static void loadTools()
 	{
 		if(RuntimeEnvironmentSettings.tools == null)
 		{
 			RuntimeEnvironmentSettings.tools = new HashMap<Integer, Tool>();
-			try {
-				for(Tool t : getPublicFacade().getAllTools())
+				for(Tool t : getUsageOps().getAllTools())
 				{
 					RuntimeEnvironmentSettings.tools.put(t.getId(), t);
 				}
-			} catch (RemoteException e) {
-				handleException(e);
-			}
 		}
 	}
 	public static void handleExecutionException(Exception e)
@@ -89,38 +89,40 @@ public class GenSpaceServerFactory {
 	{
 		e.printStackTrace();
 	}
+	private static void addCredentials(BindingProvider svc)
+	{
+		Exception e = new Exception();
+		e.printStackTrace();
+		if(username != null && password != null)
+		{
+			((BindingProvider)svc).getRequestContext().put(BindingProvider.USERNAME_PROPERTY, username);
+			((BindingProvider)svc).getRequestContext().put(BindingProvider.PASSWORD_PROPERTY, password);
+		}
+	}
 	public synchronized static WorkflowRepository getWorkflowOps()
 	{
 		if(workflowFacade == null)
 		{
 			loadTools();
-			try {
-				workflowFacade = (new WorkflowRepositoryServiceLocator()).getWorkflowRepositoryPort();
-			} catch (ServiceException e) {
-				handleException(e);
-			}
-			if(username != null && password != null)
-			{
-				((Stub) workflowFacade).setUsername(username);
-				((Stub) workflowFacade).setPassword(password);
-			}
+			workflowFacade = (new WorkflowRepositoryService()).getWorkflowRepositoryPort();
+			addCredentials((BindingProvider) workflowFacade);
 		}
 		return workflowFacade;
+	}
+	public synchronized static ToolUsageInformation getUsageOps()
+	{
+		if(toolUsageFacade == null)
+		{
+			toolUsageFacade = (new ToolUsageInformationService()).getToolUsageInformationPort();
+		}
+		return toolUsageFacade;
 	}
 	public synchronized static UserFacade getUserOps()
 	{
 		if(userFacade == null)
 		{
-			try {
-				userFacade = (new UserFacadeServiceLocator()).getUserFacadePort();
-			} catch (ServiceException e) {
-				handleException(e);
-			}
-			if(username != null && password != null)
-			{
-				((Stub) userFacade).setUsername(username);
-				((Stub) userFacade).setPassword(password);
-			}
+			userFacade = (new UserFacadeService()).getUserFacadePort();
+			addCredentials((BindingProvider) userFacade);
 		}
 		return userFacade;
 	}
@@ -130,16 +132,8 @@ public class GenSpaceServerFactory {
 		if(publicFacade == null)
 		{
 			loadTools();
-			try {
-				publicFacade = (new PublicFacadeServiceLocator()).getPublicFacadePort();
-			} catch (ServiceException e) {
-				handleException(e);
-			}
-			if(username != null && password != null)
-			{
-				((Stub) publicFacade).setUsername(username);
-				((Stub) publicFacade).setPassword(password);
-			}
+			publicFacade = (new PublicFacadeService()).getPublicFacadePort();
+			addCredentials((BindingProvider) publicFacade);
 		}
 		return publicFacade;
 	}
@@ -151,41 +145,17 @@ public class GenSpaceServerFactory {
 		if(usageFacade == null)
 		{
 			loadTools();
-			try {
-				usageFacade = (new UsageInformationServiceLocator()).getUsageInformationPort();
-			} catch (ServiceException e) {
-				handleException(e);
-			}
-			if(username != null && password != null)
-			{
-				((Stub) usageFacade).setUsername(username);
-				((Stub) usageFacade).setPassword(password);
-			}
+			usageFacade = (new UsageInformationService()).getUsageInformationPort();
+			addCredentials((BindingProvider) usageFacade);
 		}
 		return usageFacade;
 	}
-	public synchronized static ToolInformationProvider getUsageOps()
-	{
-		if(user != null)
-			return getPrivUsageFacade();
-		else
-			return getPublicFacade();
-	}
-
 	public synchronized static FriendFacade getFriendOps()
 	{
 		if(friendFacade == null)
 		{
-			try {
-				friendFacade = (new FriendFacadeServiceLocator()).getFriendFacadePort();
-			} catch (ServiceException e) {
-				handleException(e);
-			}
-			if(username != null && password != null)
-			{
-				((Stub) friendFacade).setUsername(username);
-				((Stub) friendFacade).setPassword(password);
-			}
+			friendFacade = (new FriendFacadeService()).getFriendFacadePort();
+			addCredentials((BindingProvider) friendFacade);
 		}
 		return friendFacade;
 	}
@@ -193,16 +163,8 @@ public class GenSpaceServerFactory {
 	{
 		if(networkFacade == null)
 		{
-			try {
-				networkFacade = (new NetworkFacadeServiceLocator()).getNetworkFacadePort();
-			} catch (ServiceException e) {
-				handleException(e);
-			}
-			if(username != null && password != null)
-			{
-				((Stub) networkFacade).setUsername(username);
-				((Stub) networkFacade).setPassword(password);
-			}
+			networkFacade = (new NetworkFacadeService()).getNetworkFacadePort();
+			addCredentials((BindingProvider) networkFacade);
 		}
 		return networkFacade;
 	}
@@ -211,7 +173,8 @@ public class GenSpaceServerFactory {
 	public GenSpaceServerFactory() {
 		super();
 	}
-
+	public static WorkflowFolder rootFolder = null;
+	
 	public static UserWrapper getWrappedUser() {
 		return new UserWrapper(user);
 	}
@@ -219,13 +182,12 @@ public class GenSpaceServerFactory {
 		return user;
 	}
 	public static boolean userRegister(User u) {
-		System.out.println("Sending up user of size " + getObjectSize(u));
 		try {
 			user = getPublicFacade().register(u);
-		} catch (RemoteException e) {
+		} catch (Exception e) {
 			handleExecutionException(e);
 		}
-		System.out.println("Sent info");
+
 		if(user != null)
 			return true;
 		return false;
@@ -249,17 +211,16 @@ public class GenSpaceServerFactory {
 		{
 			System.setProperty("java.security.auth.login.config", "components/genspace/classes/org/geworkbench/components/genspace/login.conf");
 			try {
-//				if(pm.login(username, password,"GELogin",true))
-//					user = getUserOps().getMe();
-//				else
+				logout();
+				GenSpaceServerFactory.username = username;
+				GenSpaceServerFactory.password = UserWrapper.getEncryptedPassword(password.toCharArray());
+				
+				user = getUserOps().getMe();
 				//TODO
-					return false;
+					return true;
 			} 
-			catch (SecurityException e)
-			{
-				return false;
-			}
 			catch (Exception e) {
+				e.printStackTrace();
 				return false;
 			}
 //			return true;
@@ -270,7 +231,7 @@ public class GenSpaceServerFactory {
 	{
 		try {
 			user = getUserOps().getMe();
-		} catch (RemoteException e) {
+		} catch (Exception e) {
 			handleException(e);
 		}
 	}
@@ -278,14 +239,14 @@ public class GenSpaceServerFactory {
 
 		try {
 			getUserOps().updateUser(user);
-		} catch (RemoteException e) {
+		} catch (Exception e) {
 			handleException(e);
 		}
 		return true;
 	}
 
 	public static List<UserNetwork> getAllNetworks() {
-		return Arrays.asList(user.getNetworks());
+		return getUserOps().getMyNetworks();
 	}
 
 	public static String getUsername() {
@@ -304,8 +265,11 @@ public class GenSpaceServerFactory {
 //			pm.logout(true);
 		} catch (Exception e) {
 		}
+		rootFolder = null;
 		userFacade = null;
 		usageFacade = null;
+		username = null;
+		password = null;
 		friendFacade = null;
 		networkFacade = null;
 		publicFacade = null;

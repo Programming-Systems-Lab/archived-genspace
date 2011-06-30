@@ -5,12 +5,14 @@ import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.concurrent.ExecutionException;
 
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingWorker;
+import javax.xml.datatype.DatatypeFactory;
 
 import org.geworkbench.components.genspace.BrowserLauncher;
 import org.geworkbench.components.genspace.GenSpace;
@@ -179,12 +181,13 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 						UserWorkflow uw = new UserWorkflow();
 						uw.setName(name);
 						uw.setWorkflow(workflow);
-						uw.setFolder(GenSpaceServerFactory.getUser().getRootFolder());
+						uw.setFolder(GenSpaceServerFactory.getUserOps().getRootFolder());
 						uw.setOwner(GenSpaceServerFactory.getUser());
-						uw.setCreatedAt(Calendar.getInstance());
+						
 						try {
-							GenSpaceServerFactory.getWorkflowOps().addWorkflow(uw, GenSpaceServerFactory.getUser().getRootFolder().getId());
-						} catch (RemoteException e) {
+							uw.setCreatedAt(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+							GenSpaceServerFactory.getWorkflowOps().addWorkflow(uw, uw.getFolder().getId());
+						} catch (Exception e) {
 							GenSpaceServerFactory.handleExecutionException(e);
 							return null;
 						}

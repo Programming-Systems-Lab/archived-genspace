@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
@@ -16,6 +17,7 @@ import org.geworkbench.components.genspace.entity.ToolRating;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
+import org.geworkbench.components.genspace.entity.WorkflowComment;
 import org.geworkbench.components.genspace.entity.WorkflowRating;
 
 /**
@@ -31,7 +33,12 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
     public UsageInformation() {
         super(Tool.class);
     }
-
+    @WebMethod
+    @Override
+    public List<WorkflowComment> getWFComments(Workflow w) {
+    	return super.getWFComments(w);
+    }
+    @WebMethod
 	@Override
 	@RolesAllowed("user")
 	public ToolRating getMyToolRating(int tool) {
@@ -57,7 +64,7 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		return r;
 	}
 
-
+    @WebMethod
 	@Override
 	@RolesAllowed("user")
 	public Tool saveToolRating(int tool, int rating) {
@@ -82,7 +89,7 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		return z;
 	}
 
-
+    @WebMethod
 	@Override
 	@RolesAllowed("user")
 	public WorkflowRating getMyWorkflowRating(int workflow) {
@@ -101,7 +108,7 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 		return r;
 	}
 
-
+    @WebMethod
 	@Override
 	@RolesAllowed("user")
 	public Workflow saveWorkflowRating(int workflow, int rating) {
@@ -125,114 +132,17 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 
 		return z;
 	}
-
+    @WebMethod
 	@Override
 	public Tool getTool(int id) {
 		Tool r= getEntityManager().find(Tool.class, id);
 		getEntityManager().refresh(r);
 		return r;
 	}
-
+    @WebMethod
 	@Override
 	public Workflow getWorkflow(int id) {
 		return getEntityManager().find(Workflow.class, id);
 	}
-
-	@Override
-	public List<Tool> getToolsByPopularity() {
-		// TODO Auto-generated method stub
-		return super.getToolsByPopularity();
-	}
-
-	@Override
-	public List<Workflow> getWorkflowsByPopularity() {
-		// TODO Auto-generated method stub
-		return super.getWorkflowsByPopularity();
-	}
-
-	@Override
-	public List<Tool> getMostPopularWFHeads() {
-		// TODO Auto-generated method stub
-		return super.getMostPopularWFHeads();
-	}
-
-	@Override
-	public Tool getMostPopularNextTool(int id) {
-		// TODO Auto-generated method stub
-		return super.getMostPopularNextTool(id);
-	}
-
-	@Override
-	public Tool getMostPopularPreviousTool(int tool) {
-		// TODO Auto-generated method stub
-		return super.getMostPopularPreviousTool(tool);
-	}
-
-	@Override
-	public List<Tool> getAllTools() {
-		// TODO Auto-generated method stub
-		return super.getAllTools();
-	}
-
-	@Override
-	public List<Workflow> getAllWorkflowsIncluding(int tool) {
-		// TODO Auto-generated method stub
-		return super.getAllWorkflowsIncluding(tool);
-	}
-
-	@Override
-	public List<Workflow> getMostPopularWorkflowStartingWith(int tool) {
-		// TODO Auto-generated method stub
-		return super.getMostPopularWorkflowStartingWith(tool);
-	}
-
-	@Override
-	public List<Workflow> getMostPopularWorkflowIncluding(int tool) {
-		// TODO Auto-generated method stub
-		return super.getMostPopularWorkflowIncluding(tool);
-	}
-
-	@Override
-	public List<Workflow> getToolSuggestion(int cwf) {
-		// TODO Auto-generated method stub
-		return super.getToolSuggestion(cwf);
-	}
-
-	@Override
-	public Transaction sendUsageLog(List<AnalysisEvent> e) {
-		// TODO Auto-generated method stub
-		return super.sendUsageLog(e);
-	}
-
-	@Override
-	public Transaction sendUsageEvent(AnalysisEvent e) {
-		// TODO Auto-generated method stub
-		return super.sendUsageEvent(e);
-	}
-
-	@Override
-	public User getExpertUserFor(int tn) {
-		// TODO Auto-generated method stub
-		return super.getExpertUserFor(tn);
-	}
-
-	@Override
-	public byte[] sendUsageSingleEvent(byte[] analysisEvent) {
-		// TODO Auto-generated method stub
-		return super.sendUsageSingleEvent(analysisEvent);
-	}
-
-	@Override
-	public byte[] sendMultipeEvents(byte[] analysisEvent) {
-		// TODO Auto-generated method stub
-		return super.sendMultipeEvents(analysisEvent);
-	}
-
-	@Override
-	public byte[] getWorkflowsByPopularityBytes() {
-		// TODO Auto-generated method stub
-		return super.getWorkflowsByPopularityBytes();
-	}
-
 
 }

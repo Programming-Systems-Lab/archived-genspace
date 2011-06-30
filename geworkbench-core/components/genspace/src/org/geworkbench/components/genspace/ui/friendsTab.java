@@ -128,15 +128,15 @@ public class friendsTab extends SocialTab {
 	@Override
 	public synchronized void updateFormFields() {
 		if (GenSpaceServerFactory.isLoggedIn()) {
-			SwingWorker<User[], Void> worker = new SwingWorker<User[], Void>() {
+			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
 				int evt;
 				@Override
-				protected User[] doInBackground() {
+				protected List<User> doInBackground() {
 
 					evt = GenSpace.getStatusBar().start("Loading profiles");
 					try{
 						if (networkFilter == null)
-							return (User[]) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendsBytes());
+							return GenSpaceServerFactory.getFriendOps().getFriends();
 						else
 							return GenSpaceServerFactory.getNetworkOps().getProfilesByNetwork(networkFilter.getId());
 					}
@@ -152,7 +152,7 @@ public class friendsTab extends SocialTab {
 				protected void done() {
 					GenSpace.logger.info("Done retrieving profiles, calling get");
 					GenSpace.getStatusBar().stop(evt);
-					User[] lsta = null;
+					List<User> lsta = null;
 					try {
 						lsta = get();
 					} catch (InterruptedException e) {
@@ -165,7 +165,7 @@ public class friendsTab extends SocialTab {
 					GenSpace.logger.info("Done retrieving profiles, also called get!");
 					if(lsta == null)
 						return;
-					List<UserWrapper> lst = new ArrayList<UserWrapper>(lsta.length);
+					List<UserWrapper> lst = new ArrayList<UserWrapper>(lsta.size());
 					for(User u : lsta)
 					{
 						lst.add(new UserWrapper(u));

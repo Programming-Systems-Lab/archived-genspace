@@ -15,6 +15,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.concurrent.ExecutionException;
 
 import javax.swing.BorderFactory;
@@ -27,6 +28,7 @@ import javax.swing.JTextArea;
 import javax.swing.SwingWorker;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
+import javax.xml.datatype.DatatypeFactory;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
@@ -103,8 +105,8 @@ ActionListener {
 			result += "Creation date: " + wr.getCreatedAt().toString()	 + "\n";
 		result += "Average rating: " + wr.getAvgRating() + "\n";
 		result += "Usage count: " + wr.getUsageCount() + "\n";
-		result += "Comments count: " + wr.getComments().length + "\n";
-		result += "Ratings count: " + wr.getRatings().length + "\n";
+		result += "Comments count: " + wr.getNumComments() + "\n";
+		result += "Ratings count: " + wr.getNumRating()+ "\n";
 		result += "Tools list: " + wr.toString() + "\n";
 		return result;
 	}
@@ -219,7 +221,7 @@ ActionListener {
 					SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
 						protected Boolean doInBackground() throws Exception {
 							IncomingWorkflow newW = new IncomingWorkflow();
-							newW.setCreatedAt(Calendar.getInstance());
+							newW.setCreatedAt(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
 							newW.setName(wn.userWorkflow.getName());
 							newW.setWorkflow(wn.userWorkflow.getWorkflow());
 							newW.setSender(GenSpaceServerFactory.getUser());

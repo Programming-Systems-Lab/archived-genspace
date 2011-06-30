@@ -13,10 +13,13 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -235,7 +238,15 @@ public class XMLLoader {
 
 			Calendar ct = Calendar.getInstance();
 			ct.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds));
-			t.setDate(ct);
+			try {
+				t.setDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds))));
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (DatatypeConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			t.setHostname(host);
 			if(user == null)
@@ -248,22 +259,27 @@ public class XMLLoader {
 		event.setTransaction(transactions.get(transaction_id));
 
 			Calendar t = Calendar.getInstance();
-			t.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds));
-			event.setCreatedAt(t);
+			try {
+				event.setCreatedAt(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds))));
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (DatatypeConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		event.setToolname(analysis);
 		
-		AnalysisEventParameter[] params = new AnalysisEventParameter[parameters.size()];
-		int i = 0;
+		ArrayList<AnalysisEventParameter> params = new ArrayList<AnalysisEventParameter>();
 		for(String key : parameters.keySet())
 		{
 			AnalysisEventParameter p = new AnalysisEventParameter();
 			p.setParameterKey(key);
 			p.setParameterValue(parameters.get(key));
-			params[i] = p;
-			i++;
+			params.add(p);
 		}
-		event.setParameters(params);
+		event.getParameters().addAll(params);
 		
 		events.add(event);
 

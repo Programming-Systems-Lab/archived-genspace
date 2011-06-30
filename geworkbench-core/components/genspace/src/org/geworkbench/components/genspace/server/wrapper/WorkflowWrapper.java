@@ -5,9 +5,12 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.server.stubs.Transaction;
 import org.geworkbench.components.genspace.server.stubs.User;
+import org.geworkbench.components.genspace.server.stubs.Workflow;
 import org.geworkbench.components.genspace.server.stubs.WorkflowComment;
 import org.geworkbench.components.genspace.server.stubs.WorkflowRating;
 import org.geworkbench.components.genspace.server.stubs.WorkflowTool;
@@ -31,136 +34,83 @@ public class WorkflowWrapper {
 	public void setCachedParentId(int cachedParentId) {
 		delegate.setCachedParentId(cachedParentId);
 	}
-	public org.geworkbench.components.genspace.server.stubs.Workflow[] getChildren() {
+
+	public boolean equals(Object obj) {
+		return delegate.equals(obj);
+	}
+	public List<Workflow> getChildren() {
 		return delegate.getChildren();
 	}
-	public void setChildren(
-			org.geworkbench.components.genspace.server.stubs.Workflow[] children) {
-		delegate.setChildren(children);
-	}
-	public org.geworkbench.components.genspace.server.stubs.Workflow getChildren(int i) {
-		return delegate.getChildren(i);
-	}
-	public void setChildren(int i,
-			org.geworkbench.components.genspace.server.stubs.Workflow _value) {
-		delegate.setChildren(i, _value);
-	}
-	public WorkflowComment[] getComments() {
-		return delegate.getComments();
-	}
-	public void setComments(WorkflowComment[] comments) {
-		delegate.setComments(comments);
-	}
-	public WorkflowComment getComments(int i) {
-		return delegate.getComments(i);
-	}
-	public void setComments(int i, WorkflowComment _value) {
-		delegate.setComments(i, _value);
-	}
-	public Calendar getCreatedAt() {
+	public XMLGregorianCalendar getCreatedAt() {
 		return delegate.getCreatedAt();
-	}
-	public void setCreatedAt(Calendar createdAt) {
-		delegate.setCreatedAt(createdAt);
-	}
-	public Transaction getCreationTransaction() {
-		return delegate.getCreationTransaction();
-	}
-	public void setCreationTransaction(Transaction creationTransaction) {
-		delegate.setCreationTransaction(creationTransaction);
 	}
 	public User getCreator() {
 		return delegate.getCreator();
 	}
-	public void setCreator(User creator) {
-		delegate.setCreator(creator);
-	}
 	public int getId() {
 		return delegate.getId();
 	}
-	public void setId(int id) {
-		delegate.setId(id);
+	public String getIdstr() {
+		return delegate.getIdstr();
 	}
 	public int getNumRating() {
 		return delegate.getNumRating();
 	}
-	public void setNumRating(int numRating) {
-		delegate.setNumRating(numRating);
-	}
-	public org.geworkbench.components.genspace.server.stubs.Workflow getParent() {
+	public Object getParent() {
 		return delegate.getParent();
-	}
-	public void setParent(
-			org.geworkbench.components.genspace.server.stubs.Workflow parent) {
-		delegate.setParent(parent);
-	}
-	public WorkflowRating[] getRatings() {
-		return delegate.getRatings();
-	}
-	public void setRatings(WorkflowRating[] ratings) {
-		delegate.setRatings(ratings);
-	}
-	public WorkflowRating getRatings(int i) {
-		return delegate.getRatings(i);
-	}
-	public void setRatings(int i, WorkflowRating _value) {
-		delegate.setRatings(i, _value);
 	}
 	public int getSumRating() {
 		return delegate.getSumRating();
 	}
-	public void setSumRating(int sumRating) {
-		delegate.setSumRating(sumRating);
-	}
-	public Integer[] getToolIds() {
+	public List<Integer> getToolIds() {
 		return delegate.getToolIds();
 	}
-	public void setToolIds(Integer[] toolIds) {
-		delegate.setToolIds(toolIds);
-	}
-	public Integer getToolIds(int i) {
-		return delegate.getToolIds(i);
-	}
-	public void setToolIds(int i, Integer _value) {
-		delegate.setToolIds(i, _value);
-	}
 	public List<WorkflowTool> getTools() {
-		return Arrays.asList(delegate.getTools());
-	}
-	public void setTools(List<WorkflowTool> tools) {
-		WorkflowTool[] temp = new WorkflowTool[tools.size()];
-		tools.toArray(temp);
-		delegate.setTools(temp);
-	}
-	public WorkflowTool getTools(int i) {
-		return delegate.getTools(i);
-	}
-	public void setTools(int i, WorkflowTool _value) {
-		delegate.setTools(i, _value);
+		return delegate.getTools();
 	}
 	public int getUsageCount() {
 		return delegate.getUsageCount();
 	}
-	public void setUsageCount(int usageCount) {
-		delegate.setUsageCount(usageCount);
-	}
-	public boolean equals(Object obj) {
-		return delegate.equals(obj);
+	public Object getRef() {
+		return delegate.getRef();
 	}
 	public int hashCode() {
 		return delegate.hashCode();
 	}
-
-	
+	public void setCreatedAt(XMLGregorianCalendar value) {
+		delegate.setCreatedAt(value);
+	}
+	public void setCreator(User value) {
+		delegate.setCreator(value);
+	}
+	public void setId(int value) {
+		delegate.setId(value);
+	}
+	public void setIdstr(String value) {
+		delegate.setIdstr(value);
+	}
+	public void setNumRating(int value) {
+		delegate.setNumRating(value);
+	}
+	public void setParent(Object value) {
+		delegate.setParent(value);
+	}
+	public void setSumRating(int value) {
+		delegate.setSumRating(value);
+	}
+	public void setUsageCount(int value) {
+		delegate.setUsageCount(value);
+	}
+	public void setRef(Object value) {
+		delegate.setRef(value);
+	}
 	public double getAvgRating() {
-		double result = 0;
-		if (getRatings().length > 0) {
-			for (WorkflowRating r : getRatings()) {
-				result += r.getRating();
-			}
-			result /= getRatings().length;
-		}
-		return result;
+		return ((double) getSumRating())/((double) getNumRating());
+	}
+	
+	public int getNumComments()
+	{
+		return delegate.getNumComments();
 	}
 	
 	@Override
@@ -174,19 +124,19 @@ public class WorkflowWrapper {
 			r = r.substring(0,r.length()-2);
 		return r;
 	}
-	public void updateRatingsCache()
-	{
-		//TODO make this called automatically
-		int numRating =0;
-		int totalRating =0;
-		for(WorkflowRating tr : getRatings())
-		{
-			numRating++;
-			totalRating += tr.getRating();
-		}
-		setNumRating(numRating);
-		setSumRating(totalRating);
-	}
+//	public void updateRatingsCache()
+//	{
+//		//TODO make this called automatically
+//		int numRating =0;
+//		int totalRating =0;
+//		for(WorkflowRating tr : getRatings())
+//		{
+//			numRating++;
+//			totalRating += tr.getRating();
+//		}
+//		setNumRating(numRating);
+//		setSumRating(totalRating);
+//	}
 	
 	public ToolWrapper getLastTool()
 	{
@@ -220,7 +170,7 @@ public class WorkflowWrapper {
 				ret.add(t);
 				j++;
 			}
-			setTools(ret);
+			getTools().addAll(ret);
 		}
 	}
 	

@@ -340,50 +340,50 @@ public class DynamicTree extends JPanel implements ActionListener,
 	private void newCommand() {
 		// Adds a folder as a child of the root folder
 		// Add button clicked
-		final String folderName = JOptionPane
-				.showInputDialog("Select a folder name");
-		if (folderName != null && !folderName.trim().equals("")
-				&& !GenSpaceServerFactory.getWrappedUser().containsFolderByName(folderName)) {
-			// send add_folder to the server
-			SwingWorker<WorkflowFolder, Void> worker = new SwingWorker<WorkflowFolder, Void>() {
-				protected WorkflowFolder doInBackground() {
-					WorkflowFolder folder = new WorkflowFolder();
-					folder.setName(folderName);
-					folder.setOwner(GenSpaceServerFactory.getUser());
-					folder.setParent(GenSpaceServerFactory.getUser().getRootFolder());
-					WorkflowFolder ret;
-					try {
-						ret = GenSpaceServerFactory.getWorkflowOps().addFolder(folder);
-					} catch (RemoteException e) {
-						ret = null;
-					}
-					GenSpace.getInstance().getWorkflowRepository().updateFormFieldsBG();
-					return ret;
-				};
-
-				protected void done() {
-					WorkflowFolder result = null;
-					try {
-						result = get();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-						GenSpace.logger.warn("Error talking to server", e);
-					} catch (ExecutionException e) {
-						GenSpaceServerFactory.handleExecutionException(e);
-						return;
-					}
-					if (result == null || result.equals("")) {
-//						LoginFactory.getUser().getFolders().add(result);
-						Collections.sort(GenSpaceServerFactory.getWrappedUser().getFolders());
-						recalculateAndReload();
-						// addObject(rootNode, folderName);
-					} else {
-						JOptionPane.showMessageDialog(null, "Success");
-					}
-				};
-			};
-			worker.execute();
-		}
+//		final String folderName = JOptionPane
+//				.showInputDialog("Select a folder name");
+//		if (folderName != null && !folderName.trim().equals("")
+//				&& !GenSpaceServerFactory.getWrappedUser().containsFolderByName(folderName)) {
+//			// send add_folder to the server
+//			SwingWorker<WorkflowFolder, Void> worker = new SwingWorker<WorkflowFolder, Void>() {
+//				protected WorkflowFolder doInBackground() {
+//					WorkflowFolder folder = new WorkflowFolder();
+//					folder.setName(folderName);
+//					folder.setOwner(GenSpaceServerFactory.getUser());
+//					folder.setParent(GenSpaceServerFactory.getUser().getRootFolder());
+//					WorkflowFolder ret;
+//					try {
+//						ret = GenSpaceServerFactory.getWorkflowOps().addFolder(folder);
+//					} catch (RemoteException e) {
+//						ret = null;
+//					}
+//					GenSpace.getInstance().getWorkflowRepository().updateFormFieldsBG();
+//					return ret;
+//				};
+//
+//				protected void done() {
+//					WorkflowFolder result = null;
+//					try {
+//						result = get();
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//						GenSpace.logger.warn("Error talking to server", e);
+//					} catch (ExecutionException e) {
+//						GenSpaceServerFactory.handleExecutionException(e);
+//						return;
+//					}
+//					if (result == null || result.equals("")) {
+////						LoginFactory.getUser().getFolders().add(result);
+//						Collections.sort(GenSpaceServerFactory.getWrappedUser().getFolders());
+//						recalculateAndReload();
+//						// addObject(rootNode, folderName);
+//					} else {
+//						JOptionPane.showMessageDialog(null, "Success");
+//					}
+//				};
+//			};
+//			worker.execute();
+//		}
 
 	}
 

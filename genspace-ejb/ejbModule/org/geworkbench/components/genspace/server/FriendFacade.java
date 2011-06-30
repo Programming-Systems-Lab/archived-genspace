@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -45,6 +46,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		return r;
     }
 
+    @WebMethod
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getFriendRequests() {
@@ -70,6 +72,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	{
 		return getEntityManager().find(User.class,id);
 	}
+	@WebMethod
 	@Override
 	public void addFriend(int o) {
 		User me = getUser();
@@ -102,6 +105,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		}
 
 	}
+	@WebMethod
 	@Override
 	public void rejectFriend(int o) {
 		User me = getUser();
@@ -112,17 +116,19 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		}
 
 	}
+	@WebMethod
 	@Override
 	public void updateFriendVisibility(int user_id, Boolean boolean1) {
 		Friend friend = getFriendRecord(getUser().getId(),user_id);
 		friend.setVisible(boolean1);
 		getEntityManager().merge(friend);
 	}
-
+	@WebMethod
 	public void updateFriendVisibilityByFriend(Friend f)
 	{
 		updateFriendVisibility(f.getRightUser().getId(), f.isVisible());
 	}
+	@WebMethod
 	@Override
 	public void removeFriend(int uid) {
 		User me = getUser();
@@ -142,7 +148,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 
 	}
 
-
+	@WebMethod
 	@Override
 	public List<User> getFriends() {
 		User me = getUser();
@@ -155,12 +161,13 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		getEntityManager().clear();
 		return ret;
 	}
-
+	@WebMethod(exclude = true)
 	@Override
 	public byte[] getFriendsBytes() {
 		List<User> friends = getFriends();
 		return AbstractFacade.writeObject(friends);
 	}
+	@WebMethod(exclude=true)
 	@Override
 	public byte[] getFriendRequestsList() {
 		List<User> friends = getFriendRequests();

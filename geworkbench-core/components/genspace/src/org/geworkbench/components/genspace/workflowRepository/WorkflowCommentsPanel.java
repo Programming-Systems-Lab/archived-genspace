@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -26,6 +27,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
+import javax.xml.datatype.DatatypeFactory;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
@@ -103,7 +105,7 @@ ActionListener {
 		this.workflow = workflow;
 		MyTableModel model = (MyTableModel) table.getModel();
 		if (workflow != null)
-			model.setData(workflow.getComments());
+			model.setData(GenSpaceServerFactory.getUsageOps().getWFComments(workflow));
 		else
 			clearData();
 	}
@@ -181,7 +183,7 @@ ActionListener {
 				protected WorkflowComment doInBackground() throws Exception {
 					WorkflowComment wc = new WorkflowComment();
 					wc.setComment(comment);
-					wc.setCreatedAt(Calendar.getInstance());
+					wc.setCreatedAt(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
 					wc.setCreator(GenSpaceServerFactory.getUser());
 					wc.setWorkflow(workflow);
 					WorkflowComment ret =GenSpaceServerFactory.getWorkflowOps()
@@ -189,7 +191,7 @@ ActionListener {
 					GenSpaceServerFactory.updateCachedUser();
 					if(GenSpaceServerFactory.isLoggedIn())
 					{
-						GenSpace.getInstance().getWorkflowRepository().repositoryPanel.tree.root = (WorkflowFolder) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getUserOps().getRootFolderBytes());
+						GenSpace.getInstance().getWorkflowRepository().repositoryPanel.tree.root = (GenSpaceServerFactory.getUserOps().getRootFolder());
 						GenSpace.getInstance().getWorkflowRepository().repositoryPanel.tree.recalculateAndReload();
 					}
 					return ret;

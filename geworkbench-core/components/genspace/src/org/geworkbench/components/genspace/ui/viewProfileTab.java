@@ -25,7 +25,7 @@ public class viewProfileTab extends SocialTab {
 		this.u = p;
 
 		
-		this.isFriend = p.isFriends();
+		this.isFriend = p.isFriendsWith();
 		
 		String desc = p.toHTML();
 		JLabel profile = new JLabel(desc);
@@ -56,7 +56,7 @@ public class viewProfileTab extends SocialTab {
 							 {
 							try {
 								GenSpaceServerFactory.getFriendOps().removeFriend(u.getId());
-							} catch (RemoteException e) {
+							} catch (Exception e) {
 							}
 							return null;
 							
@@ -88,8 +88,8 @@ public class viewProfileTab extends SocialTab {
 								 {
 								try {
 									GenSpaceServerFactory.getFriendOps().addFriend(u.getId());
-								} catch (RemoteException e) {
-									
+								} catch (Exception e) {
+									GenSpaceServerFactory.handleExecutionException(e);
 								}
 								return null;
 						}

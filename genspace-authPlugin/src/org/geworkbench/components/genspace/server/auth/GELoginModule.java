@@ -63,7 +63,10 @@ public class GELoginModule extends AppservPasswordLoginModule {
             Connection conn = getConnection();
 			PreparedStatement s = conn.prepareStatement("SELECT id FROM registration where username=? and password=?");
 			s.setString(1, _username);
-			s.setString(2, getEncryptedPassword(_password));
+			if(_password.length() == 40)
+				s.setString(2, _password);
+			else
+				s.setString(2, getEncryptedPassword(_password));
 			s.execute();
 			ResultSet rs = s.getResultSet();
 			if(rs.next())

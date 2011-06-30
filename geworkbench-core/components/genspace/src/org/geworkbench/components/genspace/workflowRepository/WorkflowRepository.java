@@ -501,7 +501,7 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		{
 			try {
 				repositoryPanel.tree.root = GenSpaceServerFactory.getUserOps().getRootFolder();
-			} catch (RemoteException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -511,8 +511,8 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 		if(inboxTable != null && GenSpaceServerFactory.isLoggedIn())
 		{
 			try {
-				inboxTable.setData(Arrays.asList(GenSpaceServerFactory.getWorkflowOps().getIncomingWorkflows()));
-			} catch (RemoteException e) {
+				inboxTable.setData((GenSpaceServerFactory.getWorkflowOps().getIncomingWorkflows()));
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

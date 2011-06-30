@@ -25,8 +25,15 @@ public class GenSpaceMenu implements MenuListener {
 		SwingWorker<Void, Void> wkr = new SwingWorker<Void, Void>(){
 
 			@Override
-			protected Void doInBackground() throws Exception {
-				GenSpaceServerFactory.getPublicFacade().getAllTools();
+			protected Void doInBackground() {
+				try
+				{
+				GenSpaceServerFactory.getUsageOps().getAllTools();
+				}
+				catch(Exception e)
+				{
+					
+				}
 				return null;
 			}
 			

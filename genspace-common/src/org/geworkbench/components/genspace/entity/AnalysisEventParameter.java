@@ -7,12 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
-
 @Entity
+@XmlRootElement
 public class AnalysisEventParameter implements Serializable{
 	/**
 	 * 
@@ -32,7 +31,7 @@ public class AnalysisEventParameter implements Serializable{
 		this.id = id;
 	}
 	@ManyToOne
-	@XmlIDREF
+//	@XmlTransient
 	public AnalysisEvent getEvent() {
 		return event;
 	}

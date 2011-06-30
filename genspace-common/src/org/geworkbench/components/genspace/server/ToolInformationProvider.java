@@ -8,6 +8,8 @@ import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
 
+
+
 public interface ToolInformationProvider {
 	
 	/**

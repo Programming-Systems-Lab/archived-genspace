@@ -14,22 +14,7 @@ public class ToolWrapper {
 	{
 		this.delegate = delegate;
 	}
-	public ToolComment[] getComments() {
-		return delegate.getComments();
-	}
-
-	public void setComments(ToolComment[] comments) {
-		delegate.setComments(comments);
-	}
-
-	public ToolComment getComments(int i) {
-		return delegate.getComments(i);
-	}
-
-	public void setComments(int i, ToolComment _value) {
-		delegate.setComments(i, _value);
-	}
-
+	
 	public String getDescription() {
 		return delegate.getDescription();
 	}
@@ -78,21 +63,6 @@ public class ToolWrapper {
 		delegate.setNumRating(numRating);
 	}
 
-	public ToolRating[] getRatings() {
-		return delegate.getRatings();
-	}
-
-	public void setRatings(ToolRating[] ratings) {
-		delegate.setRatings(ratings);
-	}
-
-	public ToolRating getRatings(int i) {
-		return delegate.getRatings(i);
-	}
-
-	public void setRatings(int i, ToolRating _value) {
-		delegate.setRatings(i, _value);
-	}
 
 	public int getSumRating() {
 		return delegate.getSumRating();
@@ -130,21 +100,7 @@ public class ToolWrapper {
 	public String toString() {
 		return getName();
 	}
-	
-	public void updateRatingCache()
-	{
-		//TODO make this called automatically on save of ratings?
-		int numRating =0;
-		int totalRating =0;
-		for(ToolRating tr : getRatings())
-		{
-			numRating++;
-			totalRating += tr.getRating();
-		}
-		setNumRating(numRating);
-		setSumRating(totalRating);
-	}
-	
+		
 	public double getOverallRating() {
 		if(getNumRating() == 0)
 			return 0;

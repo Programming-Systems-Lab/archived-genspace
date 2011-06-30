@@ -255,7 +255,7 @@ public class SocialNetworksHome implements UpdateablePanel {
 				protected List<User> doInBackground()
 						throws Exception {
 					evt = GenSpace.getStatusBar().start("Refreshing social tab");
-					return Arrays.asList((User[]) RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendsBytes()));
+					return GenSpaceServerFactory.getFriendOps().getFriends();
 				}
 
 				@Override
@@ -287,7 +287,7 @@ public class SocialNetworksHome implements UpdateablePanel {
 				@Override
 				protected Integer doInBackground()
 						throws Exception {
-					return ((List<User>) (RuntimeEnvironmentSettings.readObject(GenSpaceServerFactory.getFriendOps().getFriendRequestsList()))).size() +
+					return GenSpaceServerFactory.getFriendOps().getFriendRequests().size() +
 					GenSpaceServerFactory.getNetworkOps().getNumberOfNetworkRequests();
 				}
 
@@ -299,6 +299,7 @@ public class SocialNetworksHome implements UpdateablePanel {
 					} catch (InterruptedException e) {
 						GenSpace.logger.warn("Error",e);
 					} catch (ExecutionException e) {
+						e.printStackTrace();
 						GenSpaceServerFactory.clearCache();
 						updateFormFields();
 						return;
