@@ -167,10 +167,10 @@ public class privacyTab extends SocialTab {
 				final DefaultListModel model2 = (DefaultListModel) listFriends
 						.getModel();
 				final HashMap<Integer, Boolean> s2 = new HashMap<Integer, Boolean>();
-				for (Integer i : listNetworks.getSelectedIndices()) {
+				for (Integer i : listFriends.getSelectedIndices()) {
 					s2.put(i, true);
 				}
-				for (int i = 0; i < model.getSize(); i++) {
+				for (int i = 0; i < model2.getSize(); i++) {
 					if (!s2.containsKey(i))
 						s2.put(i, false);
 				}

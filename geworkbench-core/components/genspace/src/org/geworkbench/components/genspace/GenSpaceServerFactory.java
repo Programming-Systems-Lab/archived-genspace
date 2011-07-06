@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.xml.ws.BindingProvider;
 
 import org.apache.log4j.Logger;
-import org.geworkbench.components.genspace.entity.WorkflowFolder;
+
 import org.geworkbench.components.genspace.server.stubs.FriendFacade;
 import org.geworkbench.components.genspace.server.stubs.FriendFacadeService;
 import org.geworkbench.components.genspace.server.stubs.NetworkFacade;
@@ -30,6 +30,7 @@ import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.components.genspace.server.stubs.UserFacade;
 import org.geworkbench.components.genspace.server.stubs.UserFacadeService;
 import org.geworkbench.components.genspace.server.stubs.UserNetwork;
+import org.geworkbench.components.genspace.server.stubs.WorkflowFolder;
 import org.geworkbench.components.genspace.server.stubs.WorkflowRepository;
 import org.geworkbench.components.genspace.server.stubs.WorkflowRepositoryService;
 import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
@@ -91,8 +92,6 @@ public class GenSpaceServerFactory {
 	}
 	private static void addCredentials(BindingProvider svc)
 	{
-		Exception e = new Exception();
-		e.printStackTrace();
 		if(username != null && password != null)
 		{
 			((BindingProvider)svc).getRequestContext().put(BindingProvider.USERNAME_PROPERTY, username);
@@ -220,7 +219,7 @@ public class GenSpaceServerFactory {
 					return true;
 			} 
 			catch (Exception e) {
-				e.printStackTrace();
+				handleException(e);
 				return false;
 			}
 //			return true;

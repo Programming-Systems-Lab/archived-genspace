@@ -111,7 +111,7 @@ public class WorkflowVisualizationPopup extends JPopupMenu implements
 
 			if (tool.getId() > 0 && GenSpaceServerFactory.isLoggedIn()) {
 				toolSRP = new StarRatingPanel();
-				toolSRP.setTitle("Rate " + tn);
+				toolSRP.setTitle("Rate " + tn.getName());
 				toolSRP.loadRating(tn);
 				add(toolSRP);
 			}

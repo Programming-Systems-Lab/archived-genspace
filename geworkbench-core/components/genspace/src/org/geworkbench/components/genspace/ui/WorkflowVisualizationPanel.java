@@ -190,9 +190,9 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 							mxCell mx = (mxCell) cell;
 							cell = mx.getValue();
 						}
-						if(cell.getClass().equals(WorkflowTool.class))
+						if(cell.getClass().equals(WorkflowToolHolder.class))
 						{
-							WorkflowTool selected = (WorkflowTool) cell;
+							WorkflowToolHolder selected = (WorkflowToolHolder) cell;
 							popup.initialize(selected.getTool(), (Workflow) selected.getWorkflow());
 							popup.show(WorkflowVisualizationPanel.this, (int) e.getX(),
 									(int) e.getY());

@@ -489,6 +489,8 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 			workflowDetailsPanel.clearData();
 		if(graphPanel != null)
 			graphPanel.clearData();
+//		if(inboxTable != null)
+//			inboxTable.clearData();
 	}
 
 	/**
@@ -502,8 +504,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 			try {
 				repositoryPanel.tree.root = GenSpaceServerFactory.getUserOps().getRootFolder();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 		if(repositoryPanel != null && repositoryPanel.tree != null)
@@ -513,8 +513,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 			try {
 				inboxTable.setData((GenSpaceServerFactory.getWorkflowOps().getIncomingWorkflows()));
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 		if(workflowCommentsPanel != null && workflowCommentsPanel.workflow != null)

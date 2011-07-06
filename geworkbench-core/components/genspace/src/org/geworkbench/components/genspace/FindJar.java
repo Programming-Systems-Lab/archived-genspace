@@ -75,11 +75,48 @@ public class FindJar {
 	}
 	public static HashMap<String, String> classesToJar = new HashMap<String, String>();
 	public static HashMap<String, HashSet<String>> conflictsMap = new HashMap<String, HashSet<String>>();
-	public static void main(String[] args) throws FileNotFoundException,
-			IOException {
+	public static void main(String[] args) throws Exception {
+		String s = "SAAJ";
+		findJar("lib/",s);
+System.out.println("genspace now:");
 		
+		findJar("components/genspace/lib/",s);
 		
-		
+	}
+	public static void findJar(String f, String s) throws Exception
+	{
+		File folder = new File(f);
+		File[] libFiles = folder.listFiles();
+		for (int i = 0; i < libFiles.length; i++) {
+			File file = libFiles[i];
+			if (!file.isDirectory()) {
+				String name = file.getName().toLowerCase();
+//				System.out.println(name);
+				if (name.endsWith(".jar")) {
+					// file.toURL() is obsolete
+					/* see http://www.jguru.com/faq/view.jsp?EID=1280051 */
+					JarInputStream jarFile = new JarInputStream(
+							new FileInputStream(file));
+					JarEntry jarEntry;
+
+					while (true) {
+						jarEntry = jarFile.getNextJarEntry();
+						if (jarEntry == null) {
+							break;
+						}
+						if(jarEntry.getName().contains(s))
+						{
+							System.out.println("Found " + jarEntry.getName()+ " in " + name);
+						}
+					}
+				}
+			}
+		}
+
+	}
+	public static void conflictCheck() throws Exception
+	{
+
 		File libdir;
 //		
 		libdir = new File("lib");

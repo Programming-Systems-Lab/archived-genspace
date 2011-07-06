@@ -326,6 +326,10 @@ public class UserWrapper {
 		{
 			return ((User) obj).getId() == this.getId();
 		}
+		else if(obj instanceof UserWrapper)
+		{
+			return ((UserWrapper) obj).getId() == this.getId();
+		}
 		return false;
 	}
 	public int compareTo(UserWrapper o) {

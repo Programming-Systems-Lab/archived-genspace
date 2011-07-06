@@ -119,6 +119,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	@WebMethod
 	@Override
 	public void updateFriendVisibility(int user_id, Boolean boolean1) {
+		System.out.println(user_id + " to " + (boolean1 ? "t" : "f"));
 		Friend friend = getFriendRecord(getUser().getId(),user_id);
 		friend.setVisible(boolean1);
 		getEntityManager().merge(friend);

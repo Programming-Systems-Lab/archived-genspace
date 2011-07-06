@@ -185,7 +185,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 			}
 			for(int i = curIndexIntoTools; i < w.getTools().size(); i++)
 			{
-				nextSteps += w.getTools().get(i) + ", ";
+				nextSteps += w.getTools().get(i).getTool().getName() + ", ";
 			}
 			if(nextSteps.length() > 2)
 				nextSteps = nextSteps.substring(0,nextSteps.length()-2) + "\n";
@@ -222,7 +222,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 //		infoArea.append(statBDisplay + "\n\n");
 
 		if (nextBestRated != null)
-			infoArea.append("Next best rated tool to use: " + nextBestRated
+			infoArea.append("Next best rated tool to use: " + nextBestRated.getName()
 					+ ".\n\n");
 	}
 
@@ -231,7 +231,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 		WorkflowWrapper last = cwf;
 		RealTimeWorkFlowSuggestion.cwf = new WorkflowWrapper(newCWF);
-		viewerStatus.setText("You recently used " + cwf.getTools().get(cwf.getTools().size() -1 ).getTool());
+		viewerStatus.setText("You recently used " + cwf.getTools().get(cwf.getTools().size() -1 ).getTool().getName());
 		displayCWF();
 		
 		if(emptyPanel)

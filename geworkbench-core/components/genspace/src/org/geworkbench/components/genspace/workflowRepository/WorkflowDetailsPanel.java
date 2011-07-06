@@ -225,7 +225,7 @@ ActionListener {
 							newW.setName(wn.userWorkflow.getName());
 							newW.setWorkflow(wn.userWorkflow.getWorkflow());
 							newW.setSender(GenSpaceServerFactory.getUser());
-							return GenSpaceServerFactory.getWorkflowOps().sendWorkflowBytes(RuntimeEnvironmentSettings.writeObject(newW),receiver);
+							return GenSpaceServerFactory.getWorkflowOps().sendWorkflow(newW,receiver);
 						};
 
 						protected void done() {

@@ -52,7 +52,7 @@ public class requestsTab extends SocialTab {
 					LinkedList<UserNetwork> ret = new LinkedList<UserNetwork>();
 					for (UserNetwork t : GenSpaceServerFactory.getNetworkOps().getMyNetworks()) {
 						Network nt = t.getNetwork();
-						if (nt.getOwner().equals(GenSpaceServerFactory.getUser()))
+						if ((new UserWrapper(nt.getOwner())).equals(GenSpaceServerFactory.getWrappedUser()))
 							ret.addAll((GenSpaceServerFactory.getNetworkOps().getNetworkRequests(nt.getId())));
 					}
 					return ret;
@@ -185,7 +185,7 @@ public class requestsTab extends SocialTab {
 				if(friendsList.getSelectedValue() != null)
 				{
 					try {
-						GenSpaceServerFactory.getFriendOps().addFriend(((User) friendsList.getSelectedValue()).getId());
+						GenSpaceServerFactory.getFriendOps().addFriend(((UserWrapper) friendsList.getSelectedValue()).getId());
 					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
@@ -200,7 +200,7 @@ public class requestsTab extends SocialTab {
 				if(friendsList.getSelectedValue() != null)
 				{
 					try {
-						GenSpaceServerFactory.getFriendOps().rejectFriend(((User) friendsList.getSelectedValue()).getId());
+						GenSpaceServerFactory.getFriendOps().rejectFriend(((UserWrapper) friendsList.getSelectedValue()).getId());
 					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}

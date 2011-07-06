@@ -28,20 +28,6 @@ public interface UsageInformation {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.WorkflowComment>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getWFComments", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFComments")
-    @ResponseWrapper(localName = "getWFCommentsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFCommentsResponse")
-    public List<WorkflowComment> getWFComments(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Workflow arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns org.geworkbench.components.genspace.server.stubs.Tool
      */
     @WebMethod
@@ -127,5 +113,19 @@ public interface UsageInformation {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.WorkflowComment>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getWFComments", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFComments")
+    @ResponseWrapper(localName = "getWFCommentsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFCommentsResponse")
+    public List<WorkflowComment> getWFComments(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Workflow arg0);
 
 }

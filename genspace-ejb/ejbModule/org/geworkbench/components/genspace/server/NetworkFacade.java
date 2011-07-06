@@ -145,6 +145,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		{
 			return new ArrayList<UserNetwork>();
 		}
+		System.out.println("Requests for " + network_id + " : " + r);
 		return r;
 	}
 	@WebMethod

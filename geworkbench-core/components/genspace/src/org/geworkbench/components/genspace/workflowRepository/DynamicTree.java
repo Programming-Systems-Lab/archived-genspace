@@ -93,7 +93,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 			{
 				new WorkflowWrapper(uw.getWorkflow()).loadToolsFromCache();
 			}
-			rootNode = new DefaultMutableTreeNode(root);
+			rootNode = new DefaultMutableTreeNode("Workflows");
 			addUserWorkflowTree(root);
 			repaint();
 		}
@@ -122,7 +122,7 @@ public class DynamicTree extends JPanel implements ActionListener,
 			DefaultMutableTreeNode fnode;
 			if(f.getParent() != null)
 			{
-				fnode = new DefaultMutableTreeNode(f);
+				fnode = new DefaultMutableTreeNode("Workflows");
 				folders.put(f, fnode);
 				folders.get(f.getParent()).add(fnode);
 			}

@@ -73,7 +73,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@WebMethod
 	public boolean deleteFromInbox(int wiid) {
 		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
-		if(wi.getReceiver().equals(getUser()))
+		if(wi != null && wi.getReceiver().equals(getUser()))
 		{ 
 			wi = getEntityManager().merge(wi);
 			getEntityManager().remove(wi);
@@ -95,6 +95,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		uw.setName(wi.getName());
 		uw.setOwner(getUser());
 		getEntityManager().persist(uw);
+		getEntityManager().remove(wi);
 		invalidateCache();
 //		getEntityManager().refresh(uw);
 		return uw;
@@ -180,6 +181,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 			ret.add(w2);
 		}
 		getEntityManager().clear();
+		System.out.println(ret);
 		return ret;
 	}
 

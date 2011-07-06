@@ -10,22 +10,13 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="geworkbench-core/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="components/genspace/lib/addressing-1.1.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/axis-ant.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/axis.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/commons-discovery-0.2.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/docking.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/intellij.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/javax.wsdl_1.6.2.v201012040545.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/jaxrpc.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/jgraphx.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/jimi.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/mina-core-1.1.7.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/saaj.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/smack.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/smackx.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/swing-layout-1.0.3.jar"/>
-	<classpathentry kind="lib" path="components/genspace/lib/swing-worker-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/AffxFusion.jar"/>
 	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
 	<classpathentry kind="lib" path="lib/ant.jar"/>
@@ -78,6 +69,6 @@
 	<classpathentry kind="lib" path="/Applications/eclipse/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
 	<classpathentry kind="lib" path="/Applications/eclipse/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/ha-api.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/genspace-common"/>
+	<classpathentry kind="lib" path="components/genspace/lib/genspace-common.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

@@ -96,14 +96,15 @@ public class RosterFrame extends javax.swing.JFrame implements RosterListener {
 					children.remove(g);
 					rootGroups.remove(g);
 				}
-				Collections.sort(children.get(g),new Comparator<RosterEntry>() {
-
-					@Override
-					public int compare(RosterEntry o1, RosterEntry o2) {
-						return o1.getName().compareTo(o2.getName());
-					}
-					
-				});
+				if(g != null && children != null && children.get(g) != null)
+					Collections.sort(children.get(g),new Comparator<RosterEntry>() {
+	
+						@Override
+						public int compare(RosterEntry o1, RosterEntry o2) {
+							return o1.getName().compareTo(o2.getName());
+						}
+						
+					});
 			}
 			
 			Collections.sort(rootGroups, new Comparator<RosterGroup>() {
