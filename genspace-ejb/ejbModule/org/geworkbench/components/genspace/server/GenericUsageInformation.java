@@ -370,7 +370,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		for (WorkflowTool t : e.getTransaction().getWorkflow().getTools()) {
 			t.getTool();
 		}
-
+		e.getTransaction().getWorkflow().setParent(null);
+		e.getTransaction().getWorkflow().setChildren(new ArrayList<Workflow>());
 		return e.getTransaction();
 	}
 
