@@ -33,6 +33,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public boolean deleteMyWorkflow(int uw_id) {
+    	logUsage();
+
 		UserWorkflow uw = getEntityManager().find(UserWorkflow.class, uw_id);
 		if(uw.getOwner().equals(getUser()))
 		{
@@ -47,6 +49,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public WorkflowFolder addWorkflow(UserWorkflow uw, int folder_id) {
+    	logUsage();
+
 		WorkflowFolder folder = getEntityManager().find(WorkflowFolder.class, folder_id);
 		uw.setFolder(folder);
 		uw.setCreatedAt(new Date());
@@ -72,6 +76,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public boolean deleteFromInbox(int wiid) {
+    	logUsage();
+
 		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
 		if(wi != null && wi.getReceiver().equals(getUser()))
 		{ 
@@ -86,6 +92,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public UserWorkflow addToRepository(int wiid) {
+    	logUsage();
+
 		IncomingWorkflow wi = getEntityManager().find(IncomingWorkflow.class, wiid);
 
 		UserWorkflow uw = new UserWorkflow(); 
@@ -104,6 +112,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public boolean removeComment(int wcid) {
+    	logUsage();
+
 		WorkflowComment wc = getEntityManager().find(WorkflowComment.class, wcid);
 
 		if(wc.getCreator().equals(getUser()))
@@ -119,11 +129,13 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public WorkflowComment addComment(WorkflowComment wc) {
+    	logUsage();
+
 		wc.setCreatedAt(new Date());
 		wc.setCreator(getUser());
 		getEntityManager().persist(wc);
 		wc = getEntityManager().merge(wc);
-		getEntityManager().refresh(wc.getWorkflow());
+//		getEntityManager().refresh(wc.getWorkflow());
 		invalidateCache();
 		return wc;
 	}
@@ -138,7 +150,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public boolean sendWorkflow(IncomingWorkflow newW, String receiver) {
-		
+    	logUsage();
+
 		newW.setReceiver(findByUserName(receiver));
 		newW.setSender(getUser());
 		newW.setCreatedAt(new Date());
@@ -168,6 +181,8 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@Override
 	@WebMethod
 	public List<IncomingWorkflow> getIncomingWorkflows() {
+    	logUsage();
+
 		ArrayList<IncomingWorkflow> ret = new ArrayList<IncomingWorkflow>();
 		for(IncomingWorkflow w : getUser().getIncomingWorkflows())
 		{

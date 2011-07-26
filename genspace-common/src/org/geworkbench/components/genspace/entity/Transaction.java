@@ -11,10 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
 
 @Entity
 public class Transaction extends LazyCycleBreaker implements Serializable {
@@ -28,7 +25,7 @@ public class Transaction extends LazyCycleBreaker implements Serializable {
 	private List<AnalysisEvent> analysisEvents;
 	private String dataSetName;
 	private Workflow workflow;
-	private int ipAddr;
+	private long ipAddr;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -88,10 +85,10 @@ public class Transaction extends LazyCycleBreaker implements Serializable {
 		return workflow;
 	}
 	
-	public int getIpAddr() {
+	public long getIpAddr() {
 		return ipAddr;
 	}
-	public void setIpAddr(int ipAddr) {
+	public void setIpAddr(long ipAddr) {
 		this.ipAddr = ipAddr;
 	}
 	private String userName;

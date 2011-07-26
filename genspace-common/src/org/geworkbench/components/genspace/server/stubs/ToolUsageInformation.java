@@ -225,6 +225,7 @@ public interface ToolUsageInformation {
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
+<<<<<<< HEAD
     /**
      * 
      * @param arg1
@@ -242,4 +243,6 @@ public interface ToolUsageInformation {
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
 
+=======
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
 }

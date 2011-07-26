@@ -2,9 +2,16 @@ package org.geworkbench.components.genspace.server;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
+import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
+import javax.xml.ws.handler.soap.SOAPMessageContext;
 
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
@@ -35,6 +42,7 @@ public class PublicFacade extends GenericUsageInformation implements PublicFacad
     @WebMethod
     @Override
     public List<WorkflowComment> getWFComments(Workflow w) {
+    	logUsage();
     	return super.getWFComments(w);
     }
     
@@ -43,6 +51,7 @@ public class PublicFacade extends GenericUsageInformation implements PublicFacad
 	public User register(User u) {
 		if(userExists(u.getUsername()))
 			return null;
+    	logUsage();
 		getEntityManager().persist(u);
 		User myUser = findByUserName(u.getUsername());
 		getEntityManager().detach(myUser);
@@ -55,5 +64,7 @@ public class PublicFacade extends GenericUsageInformation implements PublicFacad
 	public User register(byte[] userObj) {
 		return register((User) AbstractFacade.readObject(userObj));
 	}
+    
 
+   
 }

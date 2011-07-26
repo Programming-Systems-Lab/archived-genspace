@@ -42,6 +42,8 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 	@Override
 	@RolesAllowed("user")
 	public ToolRating getMyToolRating(int tool) {
+    	logUsage();
+
 		Query q = getEntityManager().createQuery("select object(c) from ToolRating as c where c.creator=:user and c.tool.id=:tool");
 		q.setParameter("user", getUser());
 		q.setParameter("tool", tool);
@@ -68,6 +70,8 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 	@Override
 	@RolesAllowed("user")
 	public Tool saveToolRating(int tool, int rating) {
+    	logUsage();
+
 		ToolRating t = getMyToolRating(tool);
 		if(t != null)
 		{
@@ -93,6 +97,8 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 	@Override
 	@RolesAllowed("user")
 	public WorkflowRating getMyWorkflowRating(int workflow) {
+    	logUsage();
+
 		Query q = getEntityManager().createQuery("select object(c) from WorkflowRating as c where c.creator=:user and c.workflow.id=:workflow");
 		q.setParameter("user", getUser());
 		q.setParameter("workflow", workflow);
@@ -112,6 +118,8 @@ public class UsageInformation extends GenericUsageInformation implements UsageIn
 	@Override
 	@RolesAllowed("user")
 	public Workflow saveWorkflowRating(int workflow, int rating) {
+    	logUsage();
+
 		WorkflowRating t = getMyWorkflowRating(workflow);
 		if(t != null)
 		{

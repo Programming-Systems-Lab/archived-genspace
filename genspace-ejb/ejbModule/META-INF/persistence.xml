@@ -23,6 +23,9 @@
          <class>org.geworkbench.components.genspace.entity.WorkflowRating</class>
          <class>org.geworkbench.components.genspace.entity.WorkflowComment</class>
          <class>org.geworkbench.components.genspace.entity.WorkflowFolder</class>
+         <class>org.geworkbench.components.genspace.entity.LogAction</class>
+         <class>org.geworkbench.components.genspace.entity.UsageEvent</class>
+         
          <properties>
            <!--Use the java2db feature -->
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
@@ -31,7 +34,7 @@
 		<property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
 		<property name="eclipselink.ddl-generation.output-mode" value="sql-script" />
 		<property name="eclipselink.ddl-generation.table-creation-suffix" value=" engine=InnoDB" />
-	<!--	<property name="eclipselink.application-location" value="/Users/jon/Documents/PSL/genspace/"/>-->
+		<!-- <property name="eclipselink.application-location" value="/Users/jon/Documents/PSL/Projects/genspace/"/>-->
            </properties>
      </persistence-unit>
 </persistence> 

@@ -48,6 +48,34 @@ public interface UserFacade {
 
     /**
      * 
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.User
+<<<<<<< HEAD
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getProfile", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetProfile")
+    @ResponseWrapper(localName = "getProfileResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetProfileResponse")
+    public User getProfile(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+=======
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMe", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMe")
+    @ResponseWrapper(localName = "getMeResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMeResponse")
+    public User getMe();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns org.geworkbench.components.genspace.server.stubs.User
@@ -74,6 +102,8 @@ public interface UserFacade {
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
+<<<<<<< HEAD
+=======
     /**
      * 
      * @return
@@ -85,15 +115,5 @@ public interface UserFacade {
     @ResponseWrapper(localName = "getMyNetworksResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworksResponse")
     public List<UserNetwork> getMyNetworks();
 
-    /**
-     * 
-     * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMe", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMe")
-    @ResponseWrapper(localName = "getMeResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMeResponse")
-    public User getMe();
-
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
 }

@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
+import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -50,6 +51,8 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	@Override
 	@WebMethod
 	public void updateUser(User user) {
+    	logUsage();
+
 		this.edit(user);
 	}
 	
@@ -58,6 +61,8 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeRemote
 	@Override
 	@WebMethod
 	public User getProfile(String who) {
+    	logUsage();
+
 		User o = findByUserName(who);
 		if(o == null)
 			return null;

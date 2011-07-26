@@ -56,6 +56,7 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of {@link GetProfilesByNetwork }
      * 
      */
@@ -77,6 +78,37 @@ public class ObjectFactory {
      */
     public AcceptNetworkRequest createAcceptNetworkRequest() {
         return new AcceptNetworkRequest();
+=======
+     * Create an instance of {@link GetNetworkRequestsResponse }
+     * 
+     */
+    public GetNetworkRequestsResponse createGetNetworkRequestsResponse() {
+        return new GetNetworkRequestsResponse();
+    }
+
+    /**
+     * Create an instance of {@link AcceptNetworkRequest }
+     * 
+     */
+    public AcceptNetworkRequest createAcceptNetworkRequest() {
+        return new AcceptNetworkRequest();
+    }
+
+    /**
+     * Create an instance of {@link LeaveNetworkResponse }
+     * 
+     */
+    public LeaveNetworkResponse createLeaveNetworkResponse() {
+        return new LeaveNetworkResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMyNetworks }
+     * 
+     */
+    public GetMyNetworks createGetMyNetworks() {
+        return new GetMyNetworks();
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
     }
 
     /**
@@ -88,6 +120,7 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of {@link RejectNetworkRequest }
      * 
      */
@@ -101,6 +134,21 @@ public class ObjectFactory {
      */
     public GetNetworkRequestsResponse createGetNetworkRequestsResponse() {
         return new GetNetworkRequestsResponse();
+=======
+     * Create an instance of {@link LeaveNetwork }
+     * 
+     */
+    public LeaveNetwork createLeaveNetwork() {
+        return new LeaveNetwork();
+    }
+
+    /**
+     * Create an instance of {@link GetProfilesByNetwork }
+     * 
+     */
+    public GetProfilesByNetwork createGetProfilesByNetwork() {
+        return new GetProfilesByNetwork();
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
     }
 
     /**
@@ -112,6 +160,7 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of {@link GetNetworkRequests }
      * 
      */
@@ -165,25 +214,81 @@ public class ObjectFactory {
      */
     public LeaveNetworkResponse createLeaveNetworkResponse() {
         return new LeaveNetworkResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAllNetworksResponse }
+=======
+     * Create an instance of {@link UpdateNetworkVisibility }
      * 
      */
-    public GetAllNetworksResponse createGetAllNetworksResponse() {
-        return new GetAllNetworksResponse();
+    public UpdateNetworkVisibility createUpdateNetworkVisibility() {
+        return new UpdateNetworkVisibility();
     }
 
     /**
-     * Create an instance of {@link GetNumberOfNetworkRequestsResponse }
+     * Create an instance of {@link GetProfilesByNetworkResponse }
      * 
      */
-    public GetNumberOfNetworkRequestsResponse createGetNumberOfNetworkRequestsResponse() {
-        return new GetNumberOfNetworkRequestsResponse();
+    public GetProfilesByNetworkResponse createGetProfilesByNetworkResponse() {
+        return new GetProfilesByNetworkResponse();
     }
 
     /**
+     * Create an instance of {@link GetAllNetworks }
+     * 
+     */
+    public GetAllNetworks createGetAllNetworks() {
+        return new GetAllNetworks();
+    }
+
+    /**
+     * Create an instance of {@link GetNumberOfNetworkRequests }
+     * 
+     */
+    public GetNumberOfNetworkRequests createGetNumberOfNetworkRequests() {
+        return new GetNumberOfNetworkRequests();
+    }
+
+    /**
+     * Create an instance of {@link AcceptNetworkRequestResponse }
+     * 
+     */
+    public AcceptNetworkRequestResponse createAcceptNetworkRequestResponse() {
+        return new AcceptNetworkRequestResponse();
+    }
+
+    /**
+     * Create an instance of {@link RejectNetworkRequestResponse }
+     * 
+     */
+    public RejectNetworkRequestResponse createRejectNetworkRequestResponse() {
+        return new RejectNetworkRequestResponse();
+    }
+
+    /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
+    }
+
+    /**
+     * Create an instance of {@link CreateNetwork }
+     * 
+     */
+    public CreateNetwork createCreateNetwork() {
+        return new CreateNetwork();
+    }
+
+    /**
+     * Create an instance of {@link RejectNetworkRequest }
+     * 
+     */
+    public RejectNetworkRequest createRejectNetworkRequest() {
+        return new RejectNetworkRequest();
+    }
+
+    /**
+<<<<<<< HEAD
      * Create an instance of {@link User }
      * 
      */
@@ -221,17 +326,57 @@ public class ObjectFactory {
      */
     public GetMyNetworks createGetMyNetworks() {
         return new GetMyNetworks();
-    }
-
-    /**
-     * Create an instance of {@link CreateNetwork }
+=======
+     * Create an instance of {@link JoinNetworkResponse }
      * 
      */
-    public CreateNetwork createCreateNetwork() {
-        return new CreateNetwork();
+    public JoinNetworkResponse createJoinNetworkResponse() {
+        return new JoinNetworkResponse();
     }
 
     /**
+     * Create an instance of {@link GetNumberOfNetworkRequestsResponse }
+     * 
+     */
+    public GetNumberOfNetworkRequestsResponse createGetNumberOfNetworkRequestsResponse() {
+        return new GetNumberOfNetworkRequestsResponse();
+    }
+
+    /**
+     * Create an instance of {@link JoinNetwork }
+     * 
+     */
+    public JoinNetwork createJoinNetwork() {
+        return new JoinNetwork();
+    }
+
+    /**
+     * Create an instance of {@link UpdateNetworkVisibilityResponse }
+     * 
+     */
+    public UpdateNetworkVisibilityResponse createUpdateNetworkVisibilityResponse() {
+        return new UpdateNetworkVisibilityResponse();
+    }
+
+    /**
+     * Create an instance of {@link Network }
+     * 
+     */
+    public Network createNetwork() {
+        return new Network();
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
+    }
+
+    /**
+     * Create an instance of {@link GetAllNetworksResponse }
+     * 
+     */
+    public GetAllNetworksResponse createGetAllNetworksResponse() {
+        return new GetAllNetworksResponse();
+    }
+
+    /**
+<<<<<<< HEAD
      * Create an instance of {@link AcceptNetworkRequestResponse }
      * 
      */
@@ -253,6 +398,21 @@ public class ObjectFactory {
      */
     public RejectNetworkRequestResponse createRejectNetworkRequestResponse() {
         return new RejectNetworkRequestResponse();
+=======
+     * Create an instance of {@link GetNetworkRequests }
+     * 
+     */
+    public GetNetworkRequests createGetNetworkRequests() {
+        return new GetNetworkRequests();
+    }
+
+    /**
+     * Create an instance of {@link CreateNetworkResponse }
+     * 
+     */
+    public CreateNetworkResponse createCreateNetworkResponse() {
+        return new CreateNetworkResponse();
+>>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
     }
 
     /**
