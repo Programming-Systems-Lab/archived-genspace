@@ -172,7 +172,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 
 						if (isValid(errMsg))
 						{
-
+		
 							if (GenSpaceServerFactory.userLogin(tf.getText(),new String(pf.getPassword()))) {
 								return GenSpaceServerFactory.getUser();
 

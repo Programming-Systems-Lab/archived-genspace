@@ -76,6 +76,17 @@ public interface FriendFacade {
      * @param arg0
      */
     @WebMethod
+    @RequestWrapper(localName = "updateFriendVisibilityByFriend", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UpdateFriendVisibilityByFriend")
+    @ResponseWrapper(localName = "updateFriendVisibilityByFriendResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UpdateFriendVisibilityByFriendResponse")
+    public void updateFriendVisibilityByFriend(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Friend arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
     @RequestWrapper(localName = "removeFriend", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.RemoveFriend")
     @ResponseWrapper(localName = "removeFriendResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.RemoveFriendResponse")
     public void removeFriend(
@@ -92,16 +103,5 @@ public interface FriendFacade {
     @RequestWrapper(localName = "getFriends", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetFriends")
     @ResponseWrapper(localName = "getFriendsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetFriendsResponse")
     public List<User> getFriends();
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "updateFriendVisibilityByFriend", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UpdateFriendVisibilityByFriend")
-    @ResponseWrapper(localName = "updateFriendVisibilityByFriendResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UpdateFriendVisibilityByFriendResponse")
-    public void updateFriendVisibilityByFriend(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Friend arg0);
 
 }

@@ -20,7 +20,10 @@ import javax.swing.JTextArea;
 import javax.swing.border.MatteBorder;
 
 import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
+import org.geworkbench.components.genspace.server.stubs.GetMe;
 import org.geworkbench.components.genspace.server.stubs.Tool;
+import org.geworkbench.components.genspace.server.stubs.User;
+import org.geworkbench.components.genspace.server.stubs.TasteUser;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
 import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
@@ -147,7 +150,16 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 		splitter.add(workflowInfoPanel);
 		add(splitter, BorderLayout.CENTER);
-
+		
+		
+		Workflow wf = (Workflow) GenSpaceServerFactory.getUsageOps().getWorkflowsByPopularity().get(0);
+		User user = (User) GenSpaceServerFactory.getUser();
+		if (user == null)
+			System.out.println("null");
+		else
+			System.out.println(wf.getId() + " " + user.getId());
+		cwf = new WorkflowWrapper(wf);
+		cwfUpdated(wf);
 	}
 
 	public static void displayCWF() {
@@ -166,9 +178,10 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 		}
 
 		List<Workflow> suggestions = getRealTimeWorkFlowSuggestion(cwf);
+		List<Workflow> mahoutSuggestions = getRealTimeMahoutToolSuggestion(GenSpaceServerFactory.getUser());
 
 		int curIndexIntoTools = cwf.getTools().size();
-		String nextSteps = "";		
+		String nextSteps = "";
 		Tool nextBestRated = null;
 		HashMap<Tool, Integer> toolRatings = new HashMap<Tool, Integer>();
 		for(Workflow wa : suggestions)
@@ -200,6 +213,40 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 			}
 		}
 		
+		String nextSteps1 = "";
+		for(Workflow wa : mahoutSuggestions)
+		{
+			WorkflowWrapper w = new WorkflowWrapper(wa);
+			w.loadToolsFromCache();
+			for(int i = 0; i < w.getTools().size(); i++)
+			{
+				nextSteps1 += w.getTools().get(i).getTool().getName() + ", ";
+			}
+			
+			if(nextSteps1.length() > 2)
+				nextSteps1 = nextSteps1.substring(0,nextSteps1.length()-2) + "\n";
+		}
+		
+		List<TasteUser> peopleLikeYou = getRealTimeMahoutUserSuggestion(GenSpaceServerFactory.getUser());
+		List<TasteUser> peopleLikeYouInNetwork = getRealTimeMahoutUserNetworkSuggestion(GenSpaceServerFactory.getUser());
+		String people = "";
+		String peopleInNetwork = "";
+		
+		for (TasteUser user : peopleLikeYou) {
+			if (user.getUser() == null)
+				people += user.getHostname() + "\n";
+			else
+				people += user.getUser().getUsername() + "\n";
+		}
+		
+		for (TasteUser user : peopleLikeYouInNetwork) {
+			if (user.getUser() == null)
+				peopleInNetwork += user.getHostname() + "\n";
+			else
+				peopleInNetwork += user.getUser().getUsername() + "\n";
+		}
+		
+		
 		infoArea.setText("");
 		// infoArea.append("\n\n\n\n\n\n\n");
 		infoArea.append("Your current workflow: \n");
@@ -218,12 +265,22 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 				+ " times by genSpace users." + "\n\n");
 		infoArea.append("Next steps:" + "\n");
 		infoArea.append(nextSteps + "\n\n");
+		
+		infoArea.append("Next steps by Mahout:" + "\n");
+		infoArea.append(nextSteps1 + "\n\n");
+		
 //		infoArea.append("How users have gotten here: " + "\n");
 //		infoArea.append(statBDisplay + "\n\n");
 
 		if (nextBestRated != null)
 			infoArea.append("Next best rated tool to use: " + nextBestRated.getName()
 					+ ".\n\n");
+		
+		infoArea.append("People like you:" + "\n");
+		infoArea.append(people + "\n\n");
+		
+		infoArea.append("People like you within your network:" + "\n");
+		infoArea.append(peopleInNetwork + "\n\n");
 	}
 
 	private static boolean emptyPanel = true;
@@ -231,7 +288,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 
 		WorkflowWrapper last = cwf;
 		RealTimeWorkFlowSuggestion.cwf = new WorkflowWrapper(newCWF);
-		viewerStatus.setText("You recently used " + cwf.getTools().get(cwf.getTools().size() -1 ).getTool().getName());
+		//viewerStatus.setText("You recently used " + cwf.getTools().get(cwf.getTools().size() -1 ).getTool().getName());
 		displayCWF();
 		
 		if(emptyPanel)
@@ -252,6 +309,35 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 		
 		try {
 			return (GenSpaceServerFactory.getUsageOps().getToolSuggestion(cwf.getId()));
+			
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	private static List<org.geworkbench.components.genspace.server.stubs.Workflow> getRealTimeMahoutToolSuggestion(User user) {
+		
+		try {
+			return (GenSpaceServerFactory.getUsageOps().getMahoutToolSuggestion(120, 0));
+			
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	private static List<org.geworkbench.components.genspace.server.stubs.TasteUser> getRealTimeMahoutUserSuggestion(User user) {
+		
+		try {
+			return (GenSpaceServerFactory.getUsageOps().getMahoutUserSuggestion(120, 0));
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+private static List<org.geworkbench.components.genspace.server.stubs.TasteUser> getRealTimeMahoutUserNetworkSuggestion(User user) {
+		
+		try {
+			return (GenSpaceServerFactory.getUsageOps().getMahoutUserSuggestion(120, 1));
 		} catch (Exception e) {
 			return null;
 		}

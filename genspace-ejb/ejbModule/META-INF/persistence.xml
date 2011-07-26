@@ -15,6 +15,7 @@
          <class>org.geworkbench.components.genspace.entity.ToolComment</class>
          <class>org.geworkbench.components.genspace.entity.Transaction</class>
          <class>org.geworkbench.components.genspace.entity.User</class>
+         <class>org.geworkbench.components.genspace.entity.TasteUser</class>
          <class>org.geworkbench.components.genspace.entity.UserNetwork</class>
          <class>org.geworkbench.components.genspace.entity.UserWorkflow</class>
          <class>org.geworkbench.components.genspace.entity.Workflow</class>

@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "WorkflowRepositoryService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://genspace.cs.columbia.edu:8080/WorkflowRepositoryService/WorkflowRepository?wsdl")
+@WebServiceClient(name = "WorkflowRepositoryService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://127.0.0.1:8080/WorkflowRepositoryService/WorkflowRepository?wsdl")
 public class WorkflowRepositoryService
     extends Service
 {
@@ -30,9 +30,9 @@ public class WorkflowRepositoryService
         try {
             URL baseUrl;
             baseUrl = org.geworkbench.components.genspace.server.stubs.WorkflowRepositoryService.class.getResource(".");
-            url = new URL(baseUrl, "http://genspace.cs.columbia.edu:8080/WorkflowRepositoryService/WorkflowRepository?wsdl");
+            url = new URL(baseUrl, "http://127.0.0.1:8080/WorkflowRepositoryService/WorkflowRepository?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://genspace.cs.columbia.edu:8080/WorkflowRepositoryService/WorkflowRepository?wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'http://127.0.0.1:8080/WorkflowRepositoryService/WorkflowRepository?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         WORKFLOWREPOSITORYSERVICE_WSDL_LOCATION = url;

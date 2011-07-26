@@ -6,11 +6,13 @@
 			<attribute name="owner.project.facets" value="jst.ejb"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM 1.6"/>
+	<classpathentry kind="lib" path="/Users/aaa/glassfish3/glassfish/lib/mahout-core-0.5-job.jar"/>
+	<classpathentry kind="lib" path="/Users/aaa/glassfish3/glassfish/lib/mahout-core-0.5.jar"/>
+	<classpathentry kind="lib" path="/Users/aaa/glassfish3/glassfish/lib/mahout-examples-0.5-job.jar"/>
+	<classpathentry kind="lib" path="/Users/aaa/glassfish3/glassfish/lib/mahout-examples-0.5.jar"/>
+	<classpathentry kind="lib" path="/Users/aaa/glassfish3/glassfish/lib/mahout-math-0.5.jar"/>
+	<classpathentry kind="lib" path="/Users/aaa/glassfish3/glassfish/lib/mahout-utils-0.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

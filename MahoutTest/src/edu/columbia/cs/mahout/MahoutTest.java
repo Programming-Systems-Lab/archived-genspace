@@ -4,14 +4,17 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Vector;
 
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLJDBCDataModel;
 import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLBooleanPrefJDBCDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.CachingRecommender;
+import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.slopeone.SlopeOneRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.CachingItemSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.CachingUserSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
@@ -20,6 +23,8 @@ import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.model.PreferenceArray;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.Recommender;
+import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource;
@@ -36,16 +41,21 @@ public class MahoutTest {
 	private final static String DATABASE = "genspace";
 	
 	private final static int NEIGHBORHOOD = 5;
-	private final static int RECOMMENDATIONS = 5;
+	private final static int RECOMMENDATIONS = 10;
 	
 	public final static int NO_FILTER = 0;
 	public final static int NETWORK_FILTER = 1;
 	public final static int DIVERSITY_FILTER = 2;
 	
-	private static HashMap<Long, Integer> map;
+	private static HashMap<Long, Vector<Integer>> map;
+	private static HashMap<Long, Long> parentMap;
 	
-	public static HashMap<Long, Integer> getMap() {
+	public static HashMap<Long, Vector<Integer>> getMap() {
 		return map;
+	}
+	
+	public static HashMap<Long, Long> getParentMap() {
+		return parentMap;
 	}
 	
 	public static void main (String[] args)
@@ -72,25 +82,31 @@ public class MahoutTest {
 				new GenspaceMySQLJDBCDataModel(dataSource, "mahout_view", "taste_users_id", "workflow_id", "preference", "timestamp", "network_id");
 			ReloadFromJDBCDataModel model = new ReloadFromJDBCDataModel(mysqlModel);
 			
+			ItemSimilarity genspaceItemSimilarity = new GenspaceItemSimilarity(model, filterMethod); 
+			
 			map = mysqlModel.getUserNetworks();
+			parentMap = mysqlModel.getParentMap();
 			
 	        UserSimilarity userSimilarity = new GenspaceSimilarity(model, filterMethod);
+	        
+	        CachingItemSimilarity cachedItemSimilarity = new CachingItemSimilarity(genspaceItemSimilarity, model);
 	        
 			CachingUserSimilarity cachedUserSimilarity = new CachingUserSimilarity(userSimilarity, model);
 			
 	        UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachedUserSimilarity, model);
-	        
-	        for(Long l : neighborhood.getUserNeighborhood(1))
-	        {
-	           	System.out.println("Neighbour: " + l);
-	        }	
 	            
 	        // Slope one recommender
-	        CachingRecommender cachingRecommender1 = new CachingRecommender(new SlopeOneRecommender(model));
+	        CachingRecommender cachingRecommender1 = 
+	        	new CachingRecommender(new SlopeOneRecommender(model));
 	            
-	        // Pearson correlation similarity
-	        CachingRecommender cachingRecommender2 = new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, cachedUserSimilarity));
-
+	        // User similarity
+	        CachingRecommender cachingRecommender2 = 
+	        	new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, cachedUserSimilarity));
+			
+	        // Item similarity 
+	        CachingRecommender cachingRecommender = 
+	        	new CachingRecommender(new GenspaceItemRecommender(model, cachedItemSimilarity));
+	        
 	        while(true)
 	        {
 		        System.out.print("Enter user ID: ");
@@ -113,8 +129,16 @@ public class MahoutTest {
 	            	System.out.println(recommendedItem);
 	            }
 	            
-	            System.out.println("Pearson recommends:");
+	            
+	            System.out.println("User similarity recommends:");
 	            recommendations = cachingRecommender2.recommend(userId, RECOMMENDATIONS);
+	            for (RecommendedItem recommendedItem : recommendations) {
+	            	System.out.println(recommendedItem);
+	            }
+	            
+	            System.out.println("Item similarity recommends:");
+	            
+	            recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
 	            for (RecommendedItem recommendedItem : recommendations) {
 	            	System.out.println(recommendedItem);
 	            }

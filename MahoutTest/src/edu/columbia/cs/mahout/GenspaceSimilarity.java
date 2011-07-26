@@ -1,6 +1,7 @@
 package edu.columbia.cs.mahout;
 
 import java.util.Collection;
+import java.util.Vector;
 
 import org.apache.mahout.cf.taste.common.Refreshable;
 import org.apache.mahout.cf.taste.common.TasteException;
@@ -39,18 +40,29 @@ public class GenspaceSimilarity implements UserSimilarity{
 	public double userSimilarity(long userID1, long userID2) throws TasteException {
 		// TODO Auto-generated method stub
 		double euclideanSimilarity = euclideanDistance.userSimilarity(userID1, userID2);
-		Integer network1;
-		Integer network2;
+		Vector<Integer> networks1;
+		Vector<Integer> networks2;
 		if (filtering == MahoutTest.NO_FILTER)
 			return euclideanSimilarity;
 		else if (filtering == MahoutTest.NETWORK_FILTER) {
 			double r = 0;
-			network1 = MahoutTest.getMap().get(userID1);
-			network2 = MahoutTest.getMap().get(userID2);
-			if (network1.equals(network2))
-				r = 1;
-			else 
-				r = -1;
+			networks1 = MahoutTest.getMap().get(userID1);
+			networks2 = MahoutTest.getMap().get(userID2);
+			int size = networks1.size();
+			int equalItems = 0;
+			
+			/**
+			 * a1 + b = 1
+			 * b = -1; => a = 2
+			 */
+			for (Integer i : networks1) {
+				for (Integer j : networks2) {
+					if (i.equals(j))
+						equalItems++;
+				}
+			}
+			double n = (double) equalItems / size;
+			r = 2*n - 1;
 			double similarity = euclideanSimilarity *3/4 + r*1/4;
 			return similarity;
 		}

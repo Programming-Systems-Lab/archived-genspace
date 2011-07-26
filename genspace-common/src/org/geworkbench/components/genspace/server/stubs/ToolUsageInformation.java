@@ -26,6 +26,20 @@ public interface ToolUsageInformation {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.WorkflowComment>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getWFComments", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFComments")
+    @ResponseWrapper(localName = "getWFCommentsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFCommentsResponse")
+    public List<WorkflowComment> getWFComments(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Workflow arg0);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.Tool>
      */
@@ -154,6 +168,23 @@ public interface ToolUsageInformation {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.Workflow>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMahoutToolSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutToolSuggestion")
+    @ResponseWrapper(localName = "getMahoutToolSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutToolSuggestionResponse")
+    public List<Workflow> getMahoutToolSuggestion(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns org.geworkbench.components.genspace.server.stubs.Transaction
@@ -196,16 +227,19 @@ public interface ToolUsageInformation {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      * @return
-     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.WorkflowComment>
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.TasteUser>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getWFComments", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFComments")
-    @ResponseWrapper(localName = "getWFCommentsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetWFCommentsResponse")
-    public List<WorkflowComment> getWFComments(
+    @RequestWrapper(localName = "getMahoutUserSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserSuggestion")
+    @ResponseWrapper(localName = "getMahoutUserSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserSuggestionResponse")
+    public List<TasteUser> getMahoutUserSuggestion(
         @WebParam(name = "arg0", targetNamespace = "")
-        Workflow arg0);
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
 
 }
