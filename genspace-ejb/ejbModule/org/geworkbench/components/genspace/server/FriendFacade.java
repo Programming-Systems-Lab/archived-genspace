@@ -138,8 +138,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		if(f != null)
 		{
 			//Annotate their relationship to be NOT mutual
-			f.setMutual(false);
-			getEntityManager().merge(f);
+			getEntityManager().remove(f);
 		}
 		f = me.isFriendsWith(u);
 		if(f != null)
