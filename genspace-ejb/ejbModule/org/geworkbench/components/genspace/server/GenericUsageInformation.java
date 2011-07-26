@@ -7,14 +7,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.annotation.security.PermitAll;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
 
 import org.eclipse.persistence.config.QueryHints;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
@@ -53,23 +57,27 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		return z.getComments();
 	}
 	public List<Workflow> getWorkflowsByPopularity() {
-		System.out.println("Getting wf by pop");
+//		System.out.println("Getting wf by pop");
+    	logUsage();
+
 		Query cq = getEntityManager().createQuery("SELECT OBJECT(w) from Workflow w ORDER BY w.usageCount desc").setMaxResults(20); //.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 //		Query cq = getEntityManager().createNativeQuery("SELECT ID, CREATEDAT, NUMRATING, SUMRATING, USAGECOUNT, CREATIONTRANSACTION_ID, CREATOR_ID, PARENT_ID from WORKFLOW w ORDER BY w.USAGECOUNT desc LIMIT 20",
 //				Workflow.class);//.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.creationTransaction");
 		@SuppressWarnings("rawtypes")
 		List r = cq.getResultList();
 		List<Workflow> wr = new ArrayList<Workflow>();
-		System.out.println("queried");
+//		System.out.println("queried");
 		for (Object o : r) {
 			wr.add(((Workflow) o).slimDown());
 		}
-		System.out.println("returning");
+//		System.out.println("returning");
 		return wr;
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Tool> getMostPopularWFHeads() {
+    	logUsage();
+
 		Query q = getEntityManager().createQuery(
 				"select object(c) from Tool as c order by c.wfCountHead desc");
 		List<Tool> r = q.getResultList();
@@ -77,7 +85,9 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 
 	public Tool getMostPopularNextTool(int id) {
-		System.out.println("Selecting next popular tool for " + id);
+    	logUsage();
+
+//		System.out.println("Selecting next popular tool for " + id);
 		long start = System.currentTimeMillis();
 		Query q = getEntityManager()
 				.createNativeQuery(
@@ -94,13 +104,14 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		} catch (NoResultException e) {
 
 		}
-		System.out.println("Finished after "
-				+ (System.currentTimeMillis() - start) + " secs");
+//		System.out.println("Finished after "
+//				+ (System.currentTimeMillis() - start) + " secs");
 		return r;
 	}
 
 	public Tool getMostPopularPreviousTool(int tool) {
-		
+    	logUsage();
+
 		Query q = getEntityManager()
 				.createNativeQuery(
 						"select t.* from TOOL t " +
@@ -123,6 +134,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@PermitAll
 	public List<Tool> getAllTools() {
 //		System.out.println("Caleld get all tools");
+    	logUsage();
+
 		Query q = getEntityManager().createQuery(
 				"select object(c) from Tool as c order by c.name asc");
 		@SuppressWarnings("unchecked")
@@ -154,7 +167,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getAllWorkflowsIncluding(int tool) {
-		
+    	logUsage();
+
 		Query q = getEntityManager().createQuery("SELECT DISTINCT w,w.parent.id FROM Workflow w, WorkflowTool wt WHERE wt MEMBER OF w.tools AND wt.tool=?1 ORDER BY w.usageCount DESC",Object[].class).
 		setMaxResults(150);//.setHint(QueryHints.CACHE_USAGE, CacheUsage.DoNotCheckCache).setHint(QueryHints.QUERY_TYPE, QueryType.ReadAll);//.setHint("eclipselink.join-fetch", "w.children");//.setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 		
@@ -183,6 +197,9 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMostPopularWorkflowStartingWith(int tool) {
+		
+    	logUsage();
+
 		Query q = getEntityManager()
 				.createNativeQuery(
 						"select distinct w.* from WORKFLOW w "
@@ -206,6 +223,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMostPopularWorkflowIncluding(int tool) {
+    	logUsage();
 
 //		System.out.println("Starting to get most popular workflow including "
 //				+ tool);
@@ -232,6 +250,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getToolSuggestion(int cwf) {
+    	logUsage();
+
 		Query q = getEntityManager().createNativeQuery(
 				"select distinct w.* from WORKFLOW w "
 						+ "where w.parent_id=? order by w.usageCount desc",
@@ -251,6 +271,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	@Override
 	public Transaction sendUsageLog(List<AnalysisEvent> e) {
+    	logUsage();
+
 		HashMap<String, Transaction> trans = new HashMap<String, Transaction>();
 		Transaction ret = null;
 		for (AnalysisEvent ev : e) {
@@ -278,6 +300,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	@Override
 	public Transaction sendUsageEvent(AnalysisEvent e) {
+		e.setCreatedAt(new Date());
 		e.setTransaction(createOrFindTransaction(e.getTransaction()));
 		return handleSingleUsageEvent(e);
 	}
@@ -296,12 +319,33 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 				getEntityManager().flush();
 			}
 		}
+		if(e.getParameters() != null)
+			for(AnalysisEventParameter p : e.getParameters())
+			{
+				if(p.getParameterValue().length() > 1500)
+				{
+					System.out.println("Overflow parameter value: " + p.getParameterValue());
+					System.out.println("Source event was " + e.getTool().getName());
+					p.setParameterValue("Overflowed");
+				}
+			}
 		getEntityManager().persist(e);
-		for(AnalysisEventParameter p : e.getParameters())
-		{
-			p.setEvent(e);
-			getEntityManager().merge(p);
-		}
+		if(e.getParameters() != null)
+			for(AnalysisEventParameter p : e.getParameters())
+			{
+				try
+				{
+				p.setEvent(e);
+				getEntityManager().merge(p);
+				}
+				catch(Exception ex)
+				{
+					System.out.println("Overflow parameter value: " + p.getParameterValue());
+					System.out.println("Source event was " + e.getTool().getName());
+					p.setParameterValue("Overflowed");
+					getEntityManager().merge(p);
+				}
+			}
 		// Update the workflow for the transaction
 		e.getTransaction().setWorkflow(
 				getExtendedWorkflow(e.getTransaction(), e.getTool()));
@@ -419,10 +463,14 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		return r;
 	}
 
+	
+
+	    
 	private Transaction createOrFindTransaction(Transaction t) {
 		Transaction r = findTransactionByName(t.getClientID(), t.getUser());
 		if (r == null) {
 			r = t;
+			r.setIpAddr(getRemoteIP());
 			getEntityManager().persist(r);
 		}
 		return r;
@@ -453,13 +501,15 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		} catch (NoResultException e) {
 
 		}
-		System.out.println("using Trans " + r);
+//		System.out.println("using Trans " + r);
 		return r;
 	}
 
 	@Override
 	public User getExpertUserFor(int tn) {
-System.out.println("Getting expert");
+//System.out.println("Getting expert");
+    	logUsage();
+
 		Query q;
 		q = getEntityManager()
 				.createNativeQuery(

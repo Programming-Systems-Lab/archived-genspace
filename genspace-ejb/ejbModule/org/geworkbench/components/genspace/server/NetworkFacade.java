@@ -49,6 +49,7 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	@Override
 	public void joinNetwork(int n_id) { 
 		User me = getUser();
+    	logUsage();
 		Network n = getEntityManager().find(Network.class, n_id);
 		if(me.isInNetwork(n) == null)
 		{
@@ -82,6 +83,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	public void createNetwork(String name) {
 		if(findByName(name) == null)
 		{
+	    	logUsage();
+
 			Network n = new Network();
 			n.setName(name);
 			n.setOwner(getUser());
@@ -95,6 +98,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	@WebMethod
 	public void leaveNetwork(int usernetwork_id) {
 		User me = getUser();
+    	logUsage();
+
 		UserNetwork selected = getEntityManager().find(UserNetwork.class, usernetwork_id);
 		if (selected != null && selected.getUser().equals(me))
 		{
@@ -107,7 +112,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 	public List<UserNetwork> getMyNetworks() {
 		getEntityManager().refresh(getUser());
 		getUser().getNetworks().size();
-		
+    	logUsage();
+
 		return getUser().getNetworks();
 	}
 	@WebMethod
@@ -154,6 +160,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
 		if(un.getNetwork().getOwner().equals(getUser()))
 		{
+	    	logUsage();
+
 			un.setVerified(true);
 			getEntityManager().merge(un);
 		}
@@ -164,6 +172,8 @@ public class NetworkFacade extends AbstractFacade<Network> implements NetworkFac
 		UserNetwork un = getEntityManager().find(UserNetwork.class, un_id);
 		if(un.getNetwork().getOwner().equals(getUser()))
 		{
+	    	logUsage();
+
 			getEntityManager().merge(un);
 			getEntityManager().remove(un);
 		}

@@ -34,7 +34,7 @@ public abstract class LazyCycleBreaker implements CycleRecoverable {
 		
 	}
 	public Object onCycleDetected(Context ctx) {
-		System.out.println("Cycle detected on obj " + this.getClass().getName() + " (#" + getId() + ")");
+//		System.out.println("Cycle detected on obj " + this.getClass().getName() + " (#" + getId() + ")");
 		try {
 			Object u = this.getClass().newInstance();
 			this.getClass().getMethod("setRef", Object.class).invoke(u, this);
@@ -42,7 +42,7 @@ public abstract class LazyCycleBreaker implements CycleRecoverable {
 		} catch (Exception e)
 		{
 			e.printStackTrace();
-			System.out.println("Failing to ");
+//			System.out.println("Failing to ");
 			return null;
 		}
 	}

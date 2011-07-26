@@ -77,7 +77,8 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	public void addFriend(int o) {
 		User me = getUser();
 		getEntityManager().refresh(me);
-		
+    	logUsage();
+
 		if(me.getId() == o)
 			return;
 		User other = getUser(o);
@@ -109,6 +110,8 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	@Override
 	public void rejectFriend(int o) {
 		User me = getUser();
+    	logUsage();
+
 		Friend f = getUser(o).isFriendsWith(me);
 		if(f != null)
 		{
@@ -119,7 +122,7 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 	@WebMethod
 	@Override
 	public void updateFriendVisibility(int user_id, Boolean boolean1) {
-		System.out.println(user_id + " to " + (boolean1 ? "t" : "f"));
+//		System.out.println(user_id + " to " + (boolean1 ? "t" : "f"));
 		Friend friend = getFriendRecord(getUser().getId(),user_id);
 		friend.setVisible(boolean1);
 		getEntityManager().merge(friend);
@@ -146,12 +149,16 @@ public class FriendFacade extends AbstractFacade<Friend> implements FriendFacade
 		{
 			getEntityManager().remove(f);
 		}
+		getEntityManager().flush();
+		getEntityManager().clear();
+		getEntityManager().getEntityManagerFactory().getCache().evictAll();
 
 	}
 
 	@WebMethod
 	@Override
 	public List<User> getFriends() {
+		getEntityManager().getEntityManagerFactory().getCache().evictAll();
 		User me = getUser();
 		List<User> ret = new ArrayList<User>();
 		for(Friend f : me.getFriends())

@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "UsageInformationService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://genspace.cs.columbia.edu:8080/UsageInformationService/UsageInformation?wsdl")
+@WebServiceClient(name = "UsageInformationService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://lasalle.cs.columbia.edu:8080/UsageInformationService/UsageInformation?wsdl")
 public class UsageInformationService
     extends Service
 {
@@ -30,9 +30,9 @@ public class UsageInformationService
         try {
             URL baseUrl;
             baseUrl = org.geworkbench.components.genspace.server.stubs.UsageInformationService.class.getResource(".");
-            url = new URL(baseUrl, "http://genspace.cs.columbia.edu:8080/UsageInformationService/UsageInformation?wsdl");
+            url = new URL(baseUrl, "http://lasalle.cs.columbia.edu:8080/UsageInformationService/UsageInformation?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://genspace.cs.columbia.edu:8080/UsageInformationService/UsageInformation?wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'http://lasalle.cs.columbia.edu:8080/UsageInformationService/UsageInformation?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         USAGEINFORMATIONSERVICE_WSDL_LOCATION = url;

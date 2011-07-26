@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "FriendFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://genspace.cs.columbia.edu:8080/FriendFacadeService/FriendFacade?wsdl")
+@WebServiceClient(name = "FriendFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://lasalle.cs.columbia.edu:8080/FriendFacadeService/FriendFacade?wsdl")
 public class FriendFacadeService
     extends Service
 {
@@ -30,9 +30,9 @@ public class FriendFacadeService
         try {
             URL baseUrl;
             baseUrl = org.geworkbench.components.genspace.server.stubs.FriendFacadeService.class.getResource(".");
-            url = new URL(baseUrl, "http://genspace.cs.columbia.edu:8080/FriendFacadeService/FriendFacade?wsdl");
+            url = new URL(baseUrl, "http://lasalle.cs.columbia.edu:8080/FriendFacadeService/FriendFacade?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://genspace.cs.columbia.edu:8080/FriendFacadeService/FriendFacade?wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'http://lasalle.cs.columbia.edu:8080/FriendFacadeService/FriendFacade?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         FRIENDFACADESERVICE_WSDL_LOCATION = url;
