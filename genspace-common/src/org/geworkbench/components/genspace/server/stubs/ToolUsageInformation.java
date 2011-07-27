@@ -168,23 +168,6 @@ public interface ToolUsageInformation {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.Workflow>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMahoutToolSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutToolSuggestion")
-    @ResponseWrapper(localName = "getMahoutToolSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutToolSuggestionResponse")
-    public List<Workflow> getMahoutToolSuggestion(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns org.geworkbench.components.genspace.server.stubs.Transaction
@@ -225,24 +208,4 @@ public interface ToolUsageInformation {
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
-<<<<<<< HEAD
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.TasteUser>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMahoutUserSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserSuggestion")
-    @ResponseWrapper(localName = "getMahoutUserSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserSuggestionResponse")
-    public List<TasteUser> getMahoutUserSuggestion(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-=======
->>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
 }

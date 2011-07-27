@@ -6,7 +6,7 @@ import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
-import org.geworkbench.components.genspace.entity.TasteUser;
+//import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Workflow;
 
 
@@ -41,8 +41,8 @@ public interface ToolInformationProvider {
 	public List<Workflow> getMostPopularWorkflowIncluding(int toolId);
 	public List<Workflow> getAllWorkflowsIncluding(int toolId);
 	public List<Workflow> getToolSuggestion(int workflowID);
-	public List<Workflow> getMahoutToolSuggestion(int userID, int filterMethod);
-	public List<TasteUser> getMahoutUserSuggestion(int userID, int filterMethod);
+//	public List<Workflow> getMahoutToolSuggestion(int userID, int filterMethod);
+//	public List<TasteUser> getMahoutUserSuggestion(int userID, int filterMethod);
 	
 	public byte[] sendUsageSingleEvent(byte[] analysisEvent);
 	public byte[] sendMultipeEvents(byte[] analysisEvent);

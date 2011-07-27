@@ -11,7 +11,7 @@ import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
-import org.geworkbench.components.genspace.entity.TasteUser;
+//import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowComment;
 
@@ -94,17 +94,17 @@ public class ToolUsageInformation extends GenericUsageInformation{
 		return super.getToolSuggestion(workflowID);
 	}
 	
-	@Override
-	@WebMethod
-	public List<Workflow> getMahoutToolSuggestion(int userID, int filterMethod) {
-		return super.getMahoutToolSuggestion(userID, filterMethod);
-	}
-	
-	@Override
-	@WebMethod
-	public List<TasteUser> getMahoutUserSuggestion(int userID, int filterMethod) {
-		return super.getMahoutUserSuggestion(userID, filterMethod);
-	}
+//	@Override
+//	@WebMethod
+//	public List<Workflow> getMahoutToolSuggestion(int userID, int filterMethod) {
+//		return super.getMahoutToolSuggestion(userID, filterMethod);
+//	}
+//	
+//	@Override
+//	@WebMethod
+//	public List<TasteUser> getMahoutUserSuggestion(int userID, int filterMethod) {
+//		return super.getMahoutUserSuggestion(userID, filterMethod);
+//	}
 
 	@WebMethod(exclude=true)
 	@Override

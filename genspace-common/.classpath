@@ -9,14 +9,14 @@
 			<attribute name="owner.project.facets" value="jst.utility"/>
 		</attributes>
 	</classpathentry>
-<<<<<<< HEAD
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM 1.6.0"/>
-=======
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
->>>>>>> 1e6a71807de12a4f0a72af1411750c5266d9b8c2
+	<classpathentry kind="lib" path="/genspace-ejb/lib/mahout-core-0.5-job.jar"/>
+	<classpathentry kind="lib" path="/genspace-ejb/lib/mahout-core-0.5.jar"/>
+	<classpathentry kind="lib" path="/genspace-ejb/lib/mahout-math-0.5.jar"/>
+	<classpathentry kind="lib" path="/genspace-ejb/lib/mahout-utils-0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

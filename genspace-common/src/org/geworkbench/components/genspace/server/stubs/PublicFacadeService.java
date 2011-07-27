@@ -17,11 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-<<<<<<< HEAD
-@WebServiceClient(name = "PublicFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://127.0.0.1:8080/PublicFacadeService/PublicFacade?wsdl")
-=======
-@WebServiceClient(name = "PublicFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://lasalle.cs.columbia.edu:8080/PublicFacadeService/PublicFacade?wsdl")
->>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
+@WebServiceClient(name = "PublicFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://genspace.cs.columbia.edu:8080/PublicFacadeService/PublicFacade?wsdl")
 public class PublicFacadeService
     extends Service
 {
@@ -34,15 +30,9 @@ public class PublicFacadeService
         try {
             URL baseUrl;
             baseUrl = org.geworkbench.components.genspace.server.stubs.PublicFacadeService.class.getResource(".");
-<<<<<<< HEAD
-            url = new URL(baseUrl, "http://127.0.0.1:8080/PublicFacadeService/PublicFacade?wsdl");
+            url = new URL(baseUrl, "http://genspace.cs.columbia.edu:8080/PublicFacadeService/PublicFacade?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://127.0.0.1:8080/PublicFacadeService/PublicFacade?wsdl', retrying as a local file");
-=======
-            url = new URL(baseUrl, "http://lasalle.cs.columbia.edu:8080/PublicFacadeService/PublicFacade?wsdl");
-        } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://lasalle.cs.columbia.edu:8080/PublicFacadeService/PublicFacade?wsdl', retrying as a local file");
->>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
+            logger.warning("Failed to create URL for the wsdl Location: 'http://genspace.cs.columbia.edu:8080/PublicFacadeService/PublicFacade?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         PUBLICFACADESERVICE_WSDL_LOCATION = url;

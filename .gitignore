@@ -1,2 +1,4 @@
 *.class
 .svn
+genspace-ejb/.classpath
+genspace-common/.classpath

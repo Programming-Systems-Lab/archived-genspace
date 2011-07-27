@@ -48,25 +48,33 @@ public interface UserFacade {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.User
-<<<<<<< HEAD
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getProfile", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetProfile")
-    @ResponseWrapper(localName = "getProfileResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetProfileResponse")
-    public User getProfile(
+    @RequestWrapper(localName = "userExists", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UserExists")
+    @ResponseWrapper(localName = "userExistsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UserExistsResponse")
+    public boolean userExists(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns boolean
-=======
->>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.UserNetwork>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMyNetworks", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworks")
+    @ResponseWrapper(localName = "getMyNetworksResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworksResponse")
+    public List<UserNetwork> getMyNetworks();
+
+    /**
+     * 
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.User
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -88,32 +96,4 @@ public interface UserFacade {
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "userExists", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UserExists")
-    @ResponseWrapper(localName = "userExistsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.UserExistsResponse")
-    public boolean userExists(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-<<<<<<< HEAD
-=======
-    /**
-     * 
-     * @return
-     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.UserNetwork>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMyNetworks", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworks")
-    @ResponseWrapper(localName = "getMyNetworksResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworksResponse")
-    public List<UserNetwork> getMyNetworks();
-
->>>>>>> e1a70a72cf85e3e9d95495858ed1d194be4798d8
 }

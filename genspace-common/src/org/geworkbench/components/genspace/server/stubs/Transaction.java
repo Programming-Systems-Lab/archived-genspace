@@ -27,7 +27,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="hostname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="ipAddr" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="ipAddr" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="user" type="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
  *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="workflow" type="{http://server.genspace.components.geworkbench.org/}workflow" minOccurs="0"/>
@@ -64,7 +64,7 @@ public class Transaction
     protected XMLGregorianCalendar date;
     protected String hostname;
     protected int id;
-    protected int ipAddr;
+    protected long ipAddr;
     protected User user;
     protected String userName;
     protected Workflow workflow;
@@ -214,7 +214,7 @@ public class Transaction
      * Gets the value of the ipAddr property.
      * 
      */
-    public int getIpAddr() {
+    public long getIpAddr() {
         return ipAddr;
     }
 
@@ -222,7 +222,7 @@ public class Transaction
      * Sets the value of the ipAddr property.
      * 
      */
-    public void setIpAddr(int value) {
+    public void setIpAddr(long value) {
         this.ipAddr = value;
     }
 
