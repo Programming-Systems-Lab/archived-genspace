@@ -3066,3 +3066,4 @@ java.net.UnknownHostException: genspace.cs.columbia.edu
 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
 	at java.lang.Thread.run(Thread.java:680)
+[geworkbench - Thread-20 (2011-07-26 19:20:35,715)] ERROR org.geworkbench.components.analysis.AnalysisPanel.analysisDone(358) | unexpected null result
