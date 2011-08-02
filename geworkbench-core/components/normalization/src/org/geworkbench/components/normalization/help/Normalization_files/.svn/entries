@@ -1,14 +1,14 @@
 10
 
 dir
-8016
+8187
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help/Normalization_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-09-13T14:40:56.329012Z
-7051
+2011-07-30T04:31:30.667242Z
+8187
 zji
 
 
@@ -26,13 +26,47 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+index_002.css
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+1af216a5213de867307298bda621b8ed
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+318
+
 Normalization-Housekeeping_invalid_marker_options.png
 file
 
 
 
 
-2011-04-21T17:45:47.000000Z
+2011-08-02T04:29:22.000000Z
 3add1ac8aafb6551a807e0939c81e62a
 2010-06-10T02:39:43.512944Z
 6786
@@ -60,16 +94,16 @@ has-props
 
 7860
 
-Normalization-Mean_Variance.png
+index_003.css
 file
 
 
 
 
-2011-04-21T17:45:47.000000Z
-01283db3cf826c7bbbd34425021f087b
-2010-06-10T02:39:43.512944Z
-6786
+2011-08-02T04:29:22.000000Z
+00bb617ac348ca1eba387234bcdc0ede
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -92,18 +126,18 @@ has-props
 
 
 
-14928
+50
 
-Normalization-Missing_Values.png
+index_004.css
 file
 
 
 
 
-2011-04-21T17:45:47.000000Z
-e48d27cb6cd14808c1b5e3c946738465
-2010-06-10T02:39:43.512944Z
-6786
+2011-08-02T04:29:22.000000Z
+59a83e6f432f762a5525136d8c017853
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -126,109 +160,7 @@ has-props
 
 
 
-15017
-
-Normalization-Log2_Transformation.png
-file
-
-
-
-
-2011-04-21T17:45:47.000000Z
-d99becc91fda380fcbbe8f1beb38c2c4
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10845
-
-Normalizers_in_CCM.png
-file
-
-
-
-
-2011-04-21T17:45:47.000000Z
-0457b1a63c833ae34923658b1ab49d6c
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48514
-
-Normalization-Threshold.png
-file
-
-
-
-
-2011-04-21T17:45:47.000000Z
-a1d4b8345230d0c9169b12dea0f1aaee
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16737
+75
 
 Normalization-Marker_Centering.png
 file
@@ -236,7 +168,7 @@ file
 
 
 
-2011-04-21T17:45:47.000000Z
+2011-08-02T04:29:22.000000Z
 a81f98e3dc2992cc2fe2787d4334c711
 2010-06-10T02:39:43.512944Z
 6786
@@ -270,7 +202,7 @@ file
 
 
 
-2011-04-21T17:45:47.000000Z
+2011-08-02T04:29:22.000000Z
 c96ab7d18c9450dbc37e39b43901f8df
 2010-06-10T02:39:43.512944Z
 6786
@@ -298,16 +230,16 @@ has-props
 
 14709
 
-Normalization-Quantile_full.png
+commonPrint.css
 file
 
 
 
 
-2011-04-21T17:45:47.000000Z
-30629015b63162e7158a186057beeb64
-2010-06-10T02:39:43.512944Z
-6786
+2011-08-02T04:29:22.000000Z
+0257a641ab2ed3788aef2f01e69a3e34
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -330,7 +262,41 @@ has-props
 
 
 
-19010
+4482
+
+index.php
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+7b8173485effa90ed2ef65c029a9838b
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+291
 
 Normalization-HouseKeeping.png
 file
@@ -338,7 +304,7 @@ file
 
 
 
-2011-04-21T17:45:47.000000Z
+2011-08-02T04:29:22.000000Z
 b3901fe2576ff2bb7516dd4c542c02ab
 2010-06-10T02:39:43.512944Z
 6786
@@ -366,13 +332,251 @@ has-props
 
 24044
 
+index.css
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+bb883d0f9391e0e95a98467e3406893f
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50
+
+Normalization-Missing_Values.png
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+e48d27cb6cd14808c1b5e3c946738465
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15017
+
+Normalization-Mean_Variance.png
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+01283db3cf826c7bbbd34425021f087b
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14928
+
+Normalizers_in_CCM.png
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+7a5c48f29935581794ad51502f53044a
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48325
+
+Normalization-Log2_Transformation.png
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+d99becc91fda380fcbbe8f1beb38c2c4
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10845
+
+Normalization-Threshold.png
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+a1d4b8345230d0c9169b12dea0f1aaee
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16737
+
+Normalization-Quantile_full.png
+file
+
+
+
+
+2011-08-02T04:29:22.000000Z
+30629015b63162e7158a186057beeb64
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19010
+
 Normalization-Microarray_Centering.png
 file
 
 
 
 
-2011-04-21T17:45:47.000000Z
+2011-08-02T04:29:22.000000Z
 f427d6cd109b34accc5aa17ef6ee01fc
 2010-06-10T02:39:43.512944Z
 6786

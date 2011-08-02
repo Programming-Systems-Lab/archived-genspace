@@ -13,7 +13,7 @@ import org.jfree.ui.SortableTableModel;
 
 /**
  * CGITask: retrieve disease/agent association from CGI
- * $Id: CGITask.java 7184 2010-11-10 21:09:20Z wangmen $
+ * $Id: CGITask.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class CGITask extends ProgressTask<AgentDiseaseResults, String>{
@@ -59,6 +59,8 @@ public class CGITask extends ProgressTask<AgentDiseaseResults, String>{
         	}catch(InterruptedException e){
         		e.printStackTrace();
         	}
+        	if (agentDiseaseResults == null)
+        		return;
     		MarkerData[] markers = agentDiseaseResults.getMarkers();
             GeneData[] genes = agentDiseaseResults.getGenes();
             DiseaseData[] diseases = agentDiseaseResults.getDiseases();

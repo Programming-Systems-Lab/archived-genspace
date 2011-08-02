@@ -12,6 +12,7 @@
 package org.geworkbench.components.gpmodule;
 
 import java.awt.BorderLayout;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -23,7 +24,7 @@ import org.geworkbench.bison.model.analysis.ParameterPanel;
 
 /**
  * @author: Marc-Danie Nazaire
- * @version $Id: GPAnalysisPanel.java 7978 2011-06-13 17:54:40Z zji $
+ * @version $Id: GPAnalysisPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public abstract class GPAnalysisPanel extends AbstractSaveableParameterPanel {
 
@@ -47,8 +48,8 @@ public abstract class GPAnalysisPanel extends AbstractSaveableParameterPanel {
     }
 
     protected abstract void initParameterPanel();
-    protected abstract String getDescriptionFile();
-    protected abstract String getParamDescriptionFile();
+    protected abstract URL getDescriptionFile();
+    protected abstract URL getParamDescriptionFile();
 
 
     protected void init()

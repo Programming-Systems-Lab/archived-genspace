@@ -43,7 +43,7 @@ import org.geworkbench.util.JAutoList;
 /**
  *
  * @author XZ
- * @version $Id: BlastViewPanel.java 6931 2010-07-30 14:22:09Z zji $
+ * @version $Id: BlastViewPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class BlastViewPanel extends JPanel implements HyperlinkListener {
 	private static final long serialVersionUID = -5271804907456553741L;
@@ -544,7 +544,7 @@ public class BlastViewPanel extends JPanel implements HyperlinkListener {
 					resetToWhite("No hits found");
 					displaySummaryLabel(" " + summaryStr + " Sequence "
 							+ ((CSSequence) sequenceDB.get(index)).getLabel()
-							+ " has 0 hit.");
+							+ " has 0 hits.");
 
 				}
 			} else if (blastDataSet != null && blastDataSet.size()>0
@@ -676,5 +676,17 @@ public class BlastViewPanel extends JPanel implements HyperlinkListener {
 			displayResults("<h4>No alignment hit is selected.");
 		}
 	}
-
+	public void setSummaryPanelOff(){
+		resetButton.setEnabled(false);
+		allButton.setEnabled(false);
+		AddSequenceToProjectButton.setEnabled(false);
+		addAlignedButton.setEnabled(false);
+	}
+	public void setSummaryPanelOn(){		
+		resetButton.setEnabled(true);
+		allButton.setEnabled(true);
+		AddSequenceToProjectButton.setEnabled(true);
+		addAlignedButton.setEnabled(true);
+	}	
+	
 }

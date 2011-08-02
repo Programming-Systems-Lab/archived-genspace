@@ -9,8 +9,6 @@ import java.awt.Insets;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.Serializable;
-import java.rmi.RemoteException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -23,7 +21,6 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextPane;
 import javax.swing.ListCellRenderer;
-import javax.swing.LookAndFeel;
 import javax.swing.SwingWorker;
 import javax.swing.UIManager;
 import javax.swing.text.Style;
@@ -32,7 +29,6 @@ import javax.swing.text.html.HTMLDocument;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.server.stubs.Tool;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
 import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
@@ -232,6 +228,7 @@ public class WorkflowStatistics extends JPanel implements VisualPlugin {
 		updatePopularTools();
 		updatePopularWFHeads();
 		updatePopularWorkflows();
+		GenSpaceServerFactory.clearCache();
 	}
 
 	private void updateItemStats() {

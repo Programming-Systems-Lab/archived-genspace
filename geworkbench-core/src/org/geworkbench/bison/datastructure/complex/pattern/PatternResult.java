@@ -25,7 +25,7 @@ import org.geworkbench.util.patterns.CSMatchedSeqPattern;
 
 /**
  * @author zji
- * @version $Id: PatternResult.java 7780 2011-04-21 14:42:26Z zji $
+ * @version $Id: PatternResult.java 8187 2011-07-30 04:31:30Z zji $
  * 
  */
 public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
@@ -35,6 +35,10 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 
 	private static Log log = LogFactory.getLog(PatternResult.class);
 
+	//algorithm names
+    public static final String DISCOVER = "discovery";
+    public static final String EXHAUSTIVE = "exhaustive";
+    
 	private final PatternDiscoveryParameters parameters;
 	private List<DSMatchedSeqPattern> patterns = new ArrayList<DSMatchedSeqPattern>();
 	private File dataSetFile;
@@ -111,7 +115,7 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 			int i = 0;
 			Iterator<DSMatchedSeqPattern> it = patterns.iterator();
 			String path = this.getDataSetFile().getCanonicalPath();
-			writer.write(org.geworkbench.util.AlgorithmSelectionPanel.DISCOVER);
+			writer.write(DISCOVER);
 			writer.newLine();
 			writer.write("File:" + path);
 			writer.newLine();

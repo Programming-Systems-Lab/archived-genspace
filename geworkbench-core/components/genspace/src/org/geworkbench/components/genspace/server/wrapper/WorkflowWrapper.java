@@ -1,18 +1,13 @@
 package org.geworkbench.components.genspace.server.wrapper;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.server.stubs.Transaction;
 import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
-import org.geworkbench.components.genspace.server.stubs.WorkflowComment;
-import org.geworkbench.components.genspace.server.stubs.WorkflowRating;
 import org.geworkbench.components.genspace.server.stubs.WorkflowTool;
 
 
@@ -159,6 +154,7 @@ public class WorkflowWrapper {
 	{
 		if(getToolIds() != null && RuntimeEnvironmentSettings.tools != null)
 		{
+			getTools().clear();
 			ArrayList<WorkflowTool> ret = new ArrayList<WorkflowTool>();
 			int j = 1;
 			for(int i : getToolIds())

@@ -2,7 +2,6 @@ package org.geworkbench.components.genspace.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.rmi.RemoteException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -14,8 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
+import org.geworkbench.components.genspace.ui.chat.RosterFrame;
 
 public class viewProfileTab extends SocialTab {
 	boolean isFriend;
@@ -58,6 +57,7 @@ public class viewProfileTab extends SocialTab {
 								GenSpaceServerFactory.getFriendOps().removeFriend(u.getId());
 							} catch (Exception e) {
 							}
+							
 							return null;
 							
 						}
@@ -67,6 +67,9 @@ public class viewProfileTab extends SocialTab {
 							JOptionPane.showMessageDialog(panel1,
 									"You are no longer friends with "
 											+ u.getShortName() + "");
+							SocialNetworksHome.getInstance().goToFriends();
+							RosterFrame.removedCache.add(u.getUsername()+"@genspace");
+							GenSpaceLogin.chatHandler.rf.refresh();
 						}
 
 					};

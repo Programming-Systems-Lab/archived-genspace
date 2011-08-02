@@ -57,7 +57,7 @@ import com.jgoodies.forms.builder.ButtonBarBuilder;
  *
  * @author Xuegong Wang
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: AnnotationParser.java 7963 2011-06-07 19:28:34Z zji $
+ * @version $Id: AnnotationParser.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class AnnotationParser implements Serializable {
@@ -75,7 +75,7 @@ public class AnnotationParser implements Serializable {
 
 	public static final String PROBE_SET_ID = "Probe Set ID";
 
-	public static final String MAIN_DELIMITER = "///";
+	public static final String MAIN_DELIMITER = "\\s*///\\s*";
 
 	// field names
 	public static final String DESCRIPTION = "Gene Title"; // (full name)

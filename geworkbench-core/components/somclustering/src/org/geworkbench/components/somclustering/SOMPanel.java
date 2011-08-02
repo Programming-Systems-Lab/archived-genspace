@@ -30,7 +30,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * SOM analysis
  *
  * @author First Genetic Trust
- * @version $Id: SOMPanel.java 7120 2010-10-14 19:58:09Z zji $
+ * @version $Id: SOMPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class SOMPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = 8945772233173480884L;
@@ -92,10 +92,6 @@ public class SOMPanel extends AbstractSaveableParameterPanel {
      * Visual Widget
      */
     private JFormattedTextField radius = new JFormattedTextField();
-    /**
-     * Visual Widget
-     */
-    private JLabel radiusLabel = new JLabel("Radii of Neighborhood");
     /**
      * Visual Widget
      */
@@ -242,16 +238,7 @@ public class SOMPanel extends AbstractSaveableParameterPanel {
      */
     private void jbInit() {
         this.setLayout(borderLayout1);
-//        jPanel1.setLayout(gridLayout1);
-//        jPanel1.setMinimumSize(new Dimension(281, 75));
-//        jPanel1.setPreferredSize(new Dimension(281, 75));
-//        jPanel1.setToolTipText("");
 
-//        this.setMinimumSize(new Dimension(281, 75));
-//        this.setPreferredSize(new Dimension(281, 75));
-        
-//        gridLayout1.setColumns(4);
-//        gridLayout1.setRows(3);
         rowLabel.setBorder(BorderFactory.createEtchedBorder());
         rowLabel.setText("Number of Rows");
         rows.setValue(new Integer(3));
@@ -263,9 +250,7 @@ public class SOMPanel extends AbstractSaveableParameterPanel {
         iterationsLabel.setBorder(BorderFactory.createEtchedBorder());
         iterationsLabel.setText("Iterations");
         iterations.setValue(new Integer(4000));
-        radiusLabel.setBorder(BorderFactory.createEtchedBorder());
-        radiusLabel.setToolTipText("");
-        radiusLabel.setText("Radius");
+
         radius.setValue(new Float(3.0));
         alphaLabel.setText("Learning rate (Alpha)");
         alphaLabel.setBorder(BorderFactory.createEtchedBorder());
@@ -279,10 +264,8 @@ public class SOMPanel extends AbstractSaveableParameterPanel {
                 JComboBox cb = (JComboBox) e.getSource();
                 String selectedItem = (String) cb.getSelectedItem();
                 if (selectedItem.equals(BUBBLE)) {
-                	radiusLabel.setEnabled(true);
                 	radius.setEnabled(true);
                 } else {
-                	radiusLabel.setEnabled(false);
                 	radius.setEnabled(false);
                 }
             }

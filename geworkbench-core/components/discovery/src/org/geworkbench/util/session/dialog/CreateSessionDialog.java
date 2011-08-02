@@ -36,7 +36,7 @@ import org.geworkbench.util.session.LoginPanelModel;
  * <p>Company: </p>
  *
  * @author Aner
- * @version $Id: CreateSessionDialog.java 6511 2010-05-12 05:12:27Z zji $
+ * @version $Id: CreateSessionDialog.java 8187 2011-07-30 04:31:30Z zji $
  */
 class CreateSessionDialog extends JDialog {
 	private static final long serialVersionUID = -6879419192925394259L;
@@ -99,7 +99,6 @@ class CreateSessionDialog extends JDialog {
         cancelButton.addKeyListener(keyAdapter);
         cancelButton.setActionCommand("cancelAction");
         connectButton.setMaximumSize(new Dimension(73, 25));
-        connectButton.setToolTipText("");
         connectButton.setActionCommand("connectAction");
         connectButton.setText("Create");
         connectButton.addActionListener(new CreateSessionDialog_connectButton_actionAdapter());

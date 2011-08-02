@@ -48,7 +48,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 /**
  * @author mhall
  * @author yc2480
- * @version $Id: AracneParamPanel.java 7939 2011-05-26 20:28:23Z wangmen $
+ * @version $Id: AracneParamPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = 4023695671471667725L;
@@ -56,6 +56,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	static Log log = LogFactory.getLog(AracneParamPanel.class);
 
     private static final String DEFAULT_HUB = "31564_at";
+    
 
     private static final String HUB_ALL = "All vs. All";
     private static final String FROM_SETS = "From Sets";
@@ -122,7 +123,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
 
         pThresholdField.setEnabled(false);
         
-        prune.setSelected(true);
+        prune.setSelected(false);
 
         FormLayout layout = new FormLayout(
                 "right:max(40dlu;pref), 3dlu, 90dlu, 3dlu, 90dlu, 3dlu, 90dlu, 3dlu, 90dlu, 7dlu",
@@ -172,7 +173,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
         builder.append("Consensus threshold", pThresholdField);
 
         builder.nextRow();
-        builder.append("Choose edges with highest MI", prune);
+        builder.append("Merge multiple probesets", prune);
         
         markerSetCombo.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent actionEvent) {
@@ -705,8 +706,10 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
         if (params.isDPIToleranceSpecified()) {
             p.setEps(params.getDPITolerance());
         }
-        
-        return p.getParamterDescription();
+        String s=isPrune()?"yes":"no";
+        String resultString=p.getParamterDescription();
+        resultString+="[PARA] Merge multiple probesets: "+ s+"\n";
+        return resultString;
 
 	}
 	protected float pval = -1;

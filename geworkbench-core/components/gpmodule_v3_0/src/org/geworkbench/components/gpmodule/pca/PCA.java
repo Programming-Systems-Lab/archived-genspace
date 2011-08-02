@@ -745,7 +745,7 @@ public class PCA extends MicroarrayViewEventBase
         			}
     		    };
 
-//    		    VirtualUniverse.addRenderingErrorListener(errorListener);
+    		    VirtualUniverse.addRenderingErrorListener(errorListener);
     		}
 
             int pc1 = pComp[0]+1;

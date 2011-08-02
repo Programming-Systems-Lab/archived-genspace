@@ -9,13 +9,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -77,9 +74,7 @@ public class XMLLoader {
 			//Using factory get an instance of document builder
 			DocumentBuilder db = dbf.newDocumentBuilder();
 
-			//parse using builder to get DOM representation of the XML file
-//			dom = db.parse(file);
-			FileReader fr = new FileReader(file);
+			new FileReader(file);
 			String doc = "<measurement>\n";
 			Scanner s = new Scanner(new File(file));
 			while(s.hasNextLine())
@@ -127,14 +122,6 @@ public class XMLLoader {
 
 	}
 
-	private String padToTwo(String s)
-	{
-		int n = Integer.parseInt(s);
-		if(n >= 10)
-			return ""+n;
-		else
-			return "0"+n;
-	}
 	/**
 	 * This method creates objects from the Element and then stores them in the
 	 * ArrayList. It's usually not good to have a "side effect" of altering the state of
@@ -168,9 +155,6 @@ public class XMLLoader {
 				System.out.println("secs " + seconds);
 			 */
 		}
-
-		String timeFormat = year + "." + padToTwo(month) + "." + padToTwo(day) + " at " + padToTwo(hour) +":" + padToTwo(minutes) +":"+ padToTwo(seconds);
-		//System.out.println(timeFormat);
 
 		HashMap<String, String> parameters = new HashMap<String, String>();
 
@@ -258,7 +242,7 @@ public class XMLLoader {
 		
 		event.setTransaction(transactions.get(transaction_id));
 
-			Calendar t = Calendar.getInstance();
+			Calendar.getInstance();
 			try {
 				event.setCreatedAt(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minutes), Integer.parseInt(seconds))));
 			} catch (NumberFormatException e) {

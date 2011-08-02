@@ -50,8 +50,8 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 	private final String analysisName = "MarkUs";
 	
     private MarkUsConfigPanel mcp;
-	String strurl = "http://luna.bioc.columbia.edu/honiglab/mark-us/cgi-bin/submit.pl";
-	String req = "--AaB03x\r\n"
+	private static final String strurl = "http://bhapp.c2b2.columbia.edu/MarkUs/cgi-bin/submit.pl";
+	private String req = "--AaB03x\r\n"
 			+ "content-disposition: form-data; name=\"submit\"\r\n\r\nUpload\r\n--AaB03x\r\n"
 			+ "content-disposition: form-data; name=\"infile\"; filename=\"PDB\"\r\nContent-Type: text/plain\r\n\r\n";
 	private boolean STOPSIG = false;
@@ -145,7 +145,7 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 			return new AlgorithmExecutionResults(false, "MarkUs analysis cancelled", null);
 
 		// start waiting for this job's results
-		String url = "http://luna.bioc.columbia.edu/honiglab/mark-us/cgi-bin/browse.pl?pdb_id="
+		String url = "http://bhapp.c2b2.columbia.edu/MarkUs/cgi-bin/browse.pl?pdb_id="
 				+ results;
 		UrlStatus urlstat = checkUrlStatus(url);
 		log.info("URL status: " + urlstat + " " + url);
@@ -199,8 +199,8 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 		// string
 		bisonParameters.put("chain", paramPanel.getChain());
 		bisonParameters.put("key", paramPanel.getkeyValue());
-		bisonParameters.put("email", paramPanel.getEmail());
-		bisonParameters.put("title", paramPanel.getTitle());
+		bisonParameters.put("email", paramPanel.getEmail(true));
+		bisonParameters.put("title", paramPanel.getTitle(true));
 
 		// delphi
 		bisonParameters.put("grid_size", paramPanel.getgridsizeValue()); // int
@@ -389,9 +389,9 @@ public class MarkUsAnalysis extends AbstractGridAnalysis implements ProteinStruc
 				.append(
 						" C1=PFAM C1T=Pfam C2=BLAST C2T=e@1.0e-3%20identity%200.8 C2E=0.001 C2I=3 C2P=80 C2MSA=Muscle")
 				.append(" chain_ids=").append(chain).append(" chains=").append(
-						chain).append(" email=").append(mcp.getEmail()).append(
+						chain).append(" email=").append(mcp.getEmail(false)).append(
 						" infile=").append(pdbfilename).append(
-						" submit=Mark%20Us").append(" title=").append(mcp.getTitle())
+						" submit=Mark%20Us").append(" title=").append(mcp.getTitle(false))
 				.append(" tmpfile=").append(tmpfile)
 				.append("\r\n--AaB03x--\r\n");
 		String cfgstr = cfgcommand.toString();

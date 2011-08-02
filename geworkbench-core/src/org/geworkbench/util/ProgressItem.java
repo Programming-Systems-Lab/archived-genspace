@@ -20,7 +20,7 @@ import javax.swing.SwingConstants;
 
 /**
  * Implements a generic progress item to show progress of an application task.
- * $Id: ProgressItem.java 7389 2011-01-28 17:13:06Z zji $
+ * $Id: ProgressItem.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class ProgressItem extends JPanel implements PropertyChangeListener {
@@ -100,7 +100,6 @@ public class ProgressItem extends JPanel implements PropertyChangeListener {
 
         //this.setLayout(new GridBagLayout());
         jLabel1 = new JLabel();
-        jLabel1.setToolTipText("");
         jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
         jLabel1.setText("Message");
         jLabel1.setVerticalTextPosition(SwingConstants.CENTER);

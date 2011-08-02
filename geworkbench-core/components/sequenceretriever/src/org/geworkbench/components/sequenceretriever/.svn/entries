@@ -1,15 +1,15 @@
 10
 
 dir
-8016
+8187
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-06-14T15:49:21.883266Z
-7985
-wangmen
+2011-07-30T04:31:30.667242Z
+8187
+zji
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-06-02T16:50:18.000000Z
-0d337b0d593e80ef188928a2a1448727
-2011-05-25T14:27:11.799181Z
-7926
+2011-08-02T04:30:42.000000Z
+eabac8ed2feca40237e2e278e3e861d6
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -58,41 +58,7 @@ has-props
 
 
 
-40050
-
-All.NC.-2k+2k.txt
-file
-
-
-
-
-2011-04-21T17:46:15.000000Z
-c7eeda2b9c90ff4a9f771fb36b4026d2
-2006-08-24T15:08:59.000000Z
-1763
-mkustagi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-46192705
+40584
 
 RetrievedSequencesPanel.java
 file
@@ -100,7 +66,7 @@ file
 
 
 
-2011-04-21T17:46:15.000000Z
+2011-08-02T04:30:42.000000Z
 d5a6280958370e057d06ffb53b271ace
 2010-08-10T21:18:41.945502Z
 6977
@@ -137,7 +103,7 @@ file
 
 
 
-2011-04-21T17:46:15.000000Z
+2011-08-02T04:30:42.000000Z
 b8358d8dce8d82c99ac272fe0999fa26
 2010-08-06T20:00:53.689663Z
 6961
@@ -171,11 +137,11 @@ file
 
 
 
-2011-06-22T15:46:56.000000Z
-e9586954f129901f7daa6d599361c46d
-2011-06-14T15:49:21.883266Z
-7985
-wangmen
+2011-08-02T04:30:42.000000Z
+74e374d1773eafb00db92c8db5d5b14a
+2011-07-30T04:31:30.667242Z
+8187
+zji
 has-props
 
 
@@ -197,7 +163,7 @@ has-props
 
 
 
-14071
+14350
 
 SequenceRetriever.cwb.xml
 file
@@ -205,7 +171,7 @@ file
 
 
 
-2011-04-21T17:46:15.000000Z
+2011-08-02T04:30:42.000000Z
 83687e047f07a2f65b9c6ceafa5582c2
 2011-03-21T22:24:24.377666Z
 7617
@@ -239,7 +205,7 @@ file
 
 
 
-2011-04-21T17:46:15.000000Z
+2011-08-02T04:30:42.000000Z
 8db6221a0312362d9f2934c558d58f8a
 2010-08-06T20:00:53.689663Z
 6961

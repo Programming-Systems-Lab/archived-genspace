@@ -44,7 +44,7 @@ import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
  * This class is used in CMHRuler, CNVRuler and ColorMosaicPanel.
  * 
  * @author Manjunath Kustagi
- * @version $Id: ColorMosaicImage.java 7652 2011-03-25 20:27:03Z zji $
+ * @version $Id: ColorMosaicImage.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class ColorMosaicImage extends JPanel implements Scrollable {
@@ -885,12 +885,6 @@ public class ColorMosaicImage extends JPanel implements Scrollable {
 		ratioWidth += 3;
 		labelWidth += 0;
 		setSize();
-	}
-
-	/* used only in ColorMosaicPanel */
-	void toggleShowPattern(boolean state) {
-		showPattern = state;
-		repaint();
 	}
 
 	/* used only in ColorMosaicPanel */

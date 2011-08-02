@@ -18,6 +18,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.Serializable;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -50,7 +51,7 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 /**
  * @author Marc-Danie Nazaire          
- * @version $Id: WVTrainingPanel.java 7993 2011-06-15 18:04:08Z zji $
+ * @version $Id: WVTrainingPanel.java 8187 2011-07-30 04:31:30Z zji $
  * FIXME: saving parameter set to file not working yet. Only save in memory works.                            
  */
 public class WVTrainingPanel extends GPTrainingPanel {
@@ -212,14 +213,14 @@ public class WVTrainingPanel extends GPTrainingPanel {
         return(featureFileMethod.isSelected());
     }
 
-    protected String getSummaryFile()
+    protected URL getSummaryFile()
     {
-        return WVTrainingPanel.class.getResource("help.html").getPath();
+        return WVTrainingPanel.class.getResource("help.html");
     }
 
-    protected String getParamDescriptFile()
+    protected URL getParamDescriptFile()
     {
-        return WVTrainingPanel.class.getResource("paramDesc.html").getPath();
+        return WVTrainingPanel.class.getResource("paramDesc.html");
     }
     
     protected JPanel getParameterPanel()

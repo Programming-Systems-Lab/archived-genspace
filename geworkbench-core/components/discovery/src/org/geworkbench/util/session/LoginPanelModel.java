@@ -16,7 +16,7 @@ import org.geworkbench.util.PropertiesMonitor;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: LoginPanelModel.java 7670 2011-03-28 20:14:58Z zji $
+ * @version $Id: LoginPanelModel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class LoginPanelModel {
 	
@@ -30,7 +30,7 @@ public class LoginPanelModel {
         normalizeUserName(pm.getUserName());
         
         if(currentHost.equals("")) { // first time
-        	currentHost = "splash.cu-genome.org";
+        	currentHost = "splash.c2b2.columbia.edu";
         	port = "80";
         }
     }

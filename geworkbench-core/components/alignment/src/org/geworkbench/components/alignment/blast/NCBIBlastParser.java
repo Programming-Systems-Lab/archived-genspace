@@ -2,7 +2,7 @@ package org.geworkbench.components.alignment.blast;
 
 /**
  *
- * @version $Id: NCBIBlastParser.java 6673 2010-05-25 03:39:20Z zji $
+ * @version $Id: NCBIBlastParser.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 import java.io.BufferedReader;
@@ -311,10 +311,14 @@ public class NCBIBlastParser {
 	public String getSummary() {
 		if (hitOverLimit) {
 			return "Some sequences have more than 250 hits, only the first "
-					+ HIT_NUMBER_LIMIT + " hits are displayed. Total hits are "
+					+ HIT_NUMBER_LIMIT + " hits are displayed. Total hits: "
 					+ totalHitCount + ".";
 		}
-		return "Total hits for all sequences are " + totalHitCount + ".";
+		return "Total hits for all sequences: " + totalHitCount + ".";
+	}
+	
+	public int getHitCount(){
+		return totalHitCount;
 	}
 
 }

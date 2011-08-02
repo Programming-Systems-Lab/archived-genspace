@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,7 +22,7 @@ public class FindJar {
 	private static HashSet<String> genspaceComponentJarsConflicting = new HashSet<String>();
 	private static void traverseFoldersClassesAndCheck(File folder)
 			throws FileNotFoundException, IOException {
-		HashMap<String,String> conflicts = new HashMap<String,String>();
+
 		if (folder.exists()) {
 			File[] libFiles = folder.listFiles();
 			for (int i = 0; i < libFiles.length; i++) {

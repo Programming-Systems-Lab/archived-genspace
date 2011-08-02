@@ -1,15 +1,15 @@
 10
 
 dir
-8016
+8187
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-06-03T19:13:45.798204Z
-7956
-wangmen
+2011-07-30T04:31:30.667242Z
+8187
+zji
 
 
 
@@ -26,13 +26,47 @@ wangmen
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+SequenceDiscoveryViewWidget.java
+file
+
+
+
+
+2011-08-02T04:27:42.000000Z
+984ea9326dcc2d2a6d2e35fb802b39ba
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29447
+
 ParameterTranslation.java
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
+2011-08-02T04:27:42.000000Z
 9e3506065e7d31ba765000edabb0e3ab
 2011-03-18T17:33:45.195884Z
 7608
@@ -60,87 +94,16 @@ has-props
 
 2184
 
-SequenceDiscoveryViewAppComponent.java
-file
-
-
-
-
-2011-04-21T17:45:27.000000Z
-1dc462447d4ab91fe32e10052b414cf8
-2011-03-25T19:02:00.180283Z
-7646
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15911
-
-SequenceDiscoveryViewWidget.java
-file
-
-
-
-
-2011-06-07T17:21:03.000000Z
-c7f2e34c7440a81fbdd8d3529d6550b8
-2011-06-03T19:13:45.798204Z
-7956
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27046
-
-model
-dir
-
 ParameterPanel.java
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-84a600c8e0226ba906f5ec9e85cf64bd
-2011-03-11T20:12:21.718263Z
-7565
+2011-08-02T04:27:42.000000Z
+a8b548a562e41692e03da0d94063003f
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -163,41 +126,7 @@ has-props
 
 
 
-20889
-
-start.gif
-file
-
-
-
-
-2011-04-21T17:45:27.000000Z
-18140a4a2fbc0dfd3aa41a63e24634bc
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-239
+18401
 
 load.gif
 file
@@ -205,7 +134,7 @@ file
 
 
 
-2011-04-21T17:45:27.000000Z
+2011-08-02T04:27:42.000000Z
 adbe8a131677d7124c9940f7f963db80
 2005-07-28T22:36:56.000000Z
 50
@@ -236,54 +165,17 @@ has-props
 algorithm
 dir
 
-parameters.gif
-file
-
-
-
-
-2011-04-21T17:45:27.000000Z
-719d524c441054ce464bef6229696272
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-969
-
-help
-dir
-
 SequenceDiscoveryViewAppComponent.cwb.xml
 file
 
 
 
 
-2011-04-21T17:45:27.000000Z
-ef77829f58537b4a5bd39627877306a8
-2011-03-21T22:24:24.377666Z
-7617
-smithken
+2011-08-02T04:27:42.000000Z
+70f84a27c9100d0e20f2ba8a6b961da3
+2011-07-30T04:31:30.667242Z
+8187
+zji
 
 
 
@@ -305,7 +197,10 @@ smithken
 
 
 
-1241
+1523
+
+help
+dir
 
 stop.gif
 file
@@ -313,7 +208,7 @@ file
 
 
 
-2011-04-21T17:45:27.000000Z
+2011-08-02T04:27:42.000000Z
 d36021b22ed88b6b9a215c2f57c77824
 2005-07-28T22:36:56.000000Z
 50
@@ -341,8 +236,144 @@ has-props
 
 313
 
-view
+SequenceDiscoveryViewAppComponent.java
+file
+
+
+
+
+2011-08-02T04:27:42.000000Z
+c090dd15c02521118104256bab161742
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15913
+
+model
 dir
+
+start.gif
+file
+
+
+
+
+2011-08-02T04:27:42.000000Z
+18140a4a2fbc0dfd3aa41a63e24634bc
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+239
+
+parameters.gif
+file
+
+
+
+
+2011-08-02T04:27:42.000000Z
+719d524c441054ce464bef6229696272
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+969
+
+PatternDataSource.java
+file
+
+
+
+
+2011-08-02T04:27:42.000000Z
+eb97d7a9a71d44097dfb67c15cbdefba
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1249
 
 PatFilter.java
 file
@@ -350,7 +381,7 @@ file
 
 
 
-2011-04-21T17:45:27.000000Z
+2011-08-02T04:27:42.000000Z
 ae41404921f2ae297e67d11d73e740c5
 2005-07-28T22:36:56.000000Z
 50
@@ -377,4 +408,7 @@ has-props
 
 
 749
+
+view
+dir
 

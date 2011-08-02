@@ -13,6 +13,7 @@ package org.geworkbench.components.gpmodule.classification.svm;
 
 import java.awt.BorderLayout;
 import java.io.Serializable;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +30,7 @@ import com.jgoodies.forms.layout.RowSpec;
 
 /**
  * @author Marc-Danie Nazaire
- * @version $Id: SVMTrainingPanel.java 7993 2011-06-15 18:04:08Z zji $
+ * @version $Id: SVMTrainingPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class SVMTrainingPanel extends GPTrainingPanel
 {
@@ -83,14 +84,14 @@ public class SVMTrainingPanel extends GPTrainingPanel
         return builder.getPanel();
     }
 
-    protected String getParamDescriptFile()
+    protected URL getParamDescriptFile()
     {
         return null;
     }
 
-    protected String getSummaryFile()
+    protected URL getSummaryFile()
     {
-        return SVMTrainingPanel.class.getResource("help.html").getPath();
+        return SVMTrainingPanel.class.getResource("help.html");
     }
 
     protected CSClassifier trainForValidation(java.util.List<float[]> trainingCaseData, java.util.List<float[]> trainingControlData) throws ClassifierException

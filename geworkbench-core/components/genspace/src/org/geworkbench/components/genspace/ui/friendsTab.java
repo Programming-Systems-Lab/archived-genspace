@@ -1,25 +1,33 @@
 package org.geworkbench.components.genspace.ui;
 
-import javax.swing.*;
-
-import org.geworkbench.components.genspace.GenSpace;
-import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.server.stubs.Network;
-import org.geworkbench.components.genspace.server.stubs.User;
-import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.logging.LogManager;
+
+import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.ListCellRenderer;
+import javax.swing.SwingConstants;
+import javax.swing.SwingWorker;
+
+import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.GenSpaceServerFactory;
+import org.geworkbench.components.genspace.server.stubs.Network;
+import org.geworkbench.components.genspace.server.stubs.User;
+import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
 
 /**
  * Created by IntelliJ IDEA. User: jon Date: Aug 28, 2010 Time: 12:20:54 PM To

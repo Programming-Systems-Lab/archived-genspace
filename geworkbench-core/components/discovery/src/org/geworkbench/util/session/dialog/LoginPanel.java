@@ -28,7 +28,7 @@ import org.geworkbench.util.session.LoginPanelModel;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: LoginPanel.java 6511 2010-05-12 05:12:27Z zji $
+ * @version $Id: LoginPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class LoginPanel extends JPanel implements Serializable, org.geworkbench.events.LoginPanelModelListener {
 	private static final long serialVersionUID = -7704117180666397695L;
@@ -133,7 +133,7 @@ public class LoginPanel extends JPanel implements Serializable, org.geworkbench.
         jLabel2.setText("Port:");
         portName.setText("");
         userName.setScrollOffset(0);
-        password.setToolTipText("");
+
         password.setText("");
         
         this.setLayout(new GridBagLayout());

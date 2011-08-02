@@ -5,7 +5,7 @@ package org.geworkbench.components.masterregulator;
 
 /**
  * @author yc2480
- * @version $Id: TableViewer.java 7991 2011-06-15 16:29:27Z zji $
+ * @version $Id: TableViewer.java 8187 2011-07-30 04:31:30Z zji $
  * 
  */
 import java.awt.Color;
@@ -28,6 +28,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
@@ -62,6 +63,7 @@ public class TableViewer extends JPanel {
 		model = new DefaultViewerTableModel(headerNames, data);
 
 		table = new JTable(model);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.getTableHeader().addMouseListener(new TableHeaderMouseListener());
 		// table.getColumnModel().getColumn(0).setCellRenderer(new
 		// CellRenderer());

@@ -59,7 +59,7 @@ import org.jfree.ui.SortableTableModel;
 /**
  * 
  * @author keshav
- * @version $Id: CGemsPanel.java 7934 2011-05-25 18:54:53Z zji $
+ * @version $Id: CGemsPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class CGemsPanel implements VisualPlugin {
@@ -478,7 +478,6 @@ public class CGemsPanel implements VisualPlugin {
 
 		});
 		clearButton.setForeground(Color.black);
-		clearButton.setToolTipText("");
 		clearButton.setFocusPainted(true);
 		clearButton.setText("Clear");
 		clearButton.addActionListener(new ActionListener() {

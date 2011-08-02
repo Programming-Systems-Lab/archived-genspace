@@ -13,8 +13,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.concurrent.ExecutionException;
 
@@ -32,7 +30,6 @@ import javax.xml.datatype.DatatypeFactory;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.server.stubs.IncomingWorkflow;
 import org.geworkbench.components.genspace.server.stubs.UserWorkflow;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
@@ -50,7 +47,6 @@ ActionListener {
 	private JButton sendButton = new JButton("Send Selected Workflow");
 	private JButton importButton = new JButton("Import");
 	private JButton exportButton = new JButton("Export");
-	private JButton publishButton = new JButton("Publish");
 	private JButton refreshButton = new JButton("Refresh Screen");
 	private final JFileChooser fc = new JFileChooser();
 

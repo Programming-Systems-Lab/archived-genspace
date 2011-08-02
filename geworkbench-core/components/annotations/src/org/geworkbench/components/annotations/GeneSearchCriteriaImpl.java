@@ -25,7 +25,7 @@ import org.apache.commons.logging.LogFactory;
  * <p/> Implementation of the <code>GeneSearchCriteria</code> contract
  * 
  * @author First Genetic Trust
- * @version $Id: GeneSearchCriteriaImpl.java 7089 2010-09-29 17:07:22Z wangmen $
+ * @version $Id: GeneSearchCriteriaImpl.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class GeneSearchCriteriaImpl implements GeneSearchCriteria {
 	static Log log = LogFactory.getLog(GeneSearchCriteriaImpl.class);
@@ -101,7 +101,7 @@ public class GeneSearchCriteriaImpl implements GeneSearchCriteria {
 			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, 
-					"geWorkbench cannot retrieve data from the caBIO server for gene annotations.\nIt could be connection error. Please check your internet connection or try again later.",
+					"geWorkbench cannot retrieve gene annotations from the caBIO server.\nThere may be a connection error. Please check your network connection or try again later.",
 					"Data processing/connection error", JOptionPane.ERROR_MESSAGE);
 			return null;
 		}

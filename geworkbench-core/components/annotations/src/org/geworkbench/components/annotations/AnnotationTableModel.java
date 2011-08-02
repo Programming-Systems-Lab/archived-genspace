@@ -32,7 +32,7 @@ import com.Ostermiller.util.CSVPrinter;
 
 /**
  * Used by Annotation sub-component for Pathway annotations.
- * $Id: AnnotationTableModel.java 7354 2010-12-21 20:21:18Z zji $
+ * $Id: AnnotationTableModel.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class AnnotationTableModel extends SortableTableModel {
@@ -143,7 +143,7 @@ public class AnnotationTableModel extends SortableTableModel {
 		public boolean toCSV(String filename) {
 			boolean ret = true;
 
-			String[] annotationsHeader = { "Marker", "Gene", "Entrez GeneId", "Pathway", "Entrez URL", "GeneCards URL" };
+			String[] annotationsHeader = { "Marker", "Gene", "Entrez GeneId", "Pathway", "Entrez URL", "CGAP URL", "GeneCards URL" };
 			File tempAnnot = new File(filename);
 			try {
 				CSVPrinter csvout = new CSVPrinter(new BufferedOutputStream(
@@ -160,6 +160,7 @@ public class AnnotationTableModel extends SortableTableModel {
 			        GeneAnnotation annotation = new GeneAnnotationImpl();
 			        String entrezId = annotation.getEntrezId(geneData[cx].gene);
 		            String entrezUrl = "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=gene&Cmd=ShowDetailView&TermToSearch="+entrezId;
+		            String cgapUrl = AnnotationsPanel2.GENE_FINDER_PREFIX + "ORG=" + geneData[cx].getOrganism() + "&CID=" + geneData[cx].gene.getClusterId();
                     String GeneCardsUrl = AnnotationsPanel2.GeneCards_PREFIX + geneName;
 					String pathwayName = pathwayData[cx].name;
 
@@ -168,6 +169,7 @@ public class AnnotationTableModel extends SortableTableModel {
 					csvout.print(entrezId);
 					csvout.print(pathwayName);
 					csvout.print(entrezUrl);
+					csvout.print(cgapUrl);
 					csvout.print(GeneCardsUrl);
 					csvout.println();
 				}

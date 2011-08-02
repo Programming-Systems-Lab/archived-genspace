@@ -1,7 +1,5 @@
 package org.geworkbench.components.genspace.server.wrapper;
 
-import org.geworkbench.components.genspace.server.stubs.ToolComment;
-import org.geworkbench.components.genspace.server.stubs.ToolRating;
 
 
 public class ToolWrapper {

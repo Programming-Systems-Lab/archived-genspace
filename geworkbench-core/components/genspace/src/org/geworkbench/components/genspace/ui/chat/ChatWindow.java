@@ -32,7 +32,6 @@ import org.geworkbench.components.genspace.RealTimeWorkFlowSuggestion;
 import org.geworkbench.components.genspace.chat.ScreenShareListener;
 import org.geworkbench.components.genspace.chat.ScreenSharePublisher;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
-import org.geworkbench.components.genspace.server.stubs.WorkflowTool;
 import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.GUIFramework;
@@ -463,7 +462,6 @@ public class ChatWindow extends javax.swing.JFrame {
 		Message m = new Message(chat.getParticipant());
 		m.setProperty("specialType", messageTypes.WORKFLOW);
 
-		String wf = "";
 		m.setBody("Workflow attached");
 		m.setProperty("workflow", RealTimeWorkFlowSuggestion.cwf);
 		try {

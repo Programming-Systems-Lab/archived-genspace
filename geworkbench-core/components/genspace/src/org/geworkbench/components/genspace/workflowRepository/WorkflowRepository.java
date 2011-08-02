@@ -12,11 +12,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.rmi.RemoteException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.Map;
 
 import javax.swing.BorderFactory;
@@ -39,11 +36,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.server.stubs.IncomingWorkflow;
 import org.geworkbench.components.genspace.server.stubs.UserWorkflow;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
-import org.geworkbench.components.genspace.server.stubs.WorkflowFolder;
 import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowVisualizationPanel;
 import org.geworkbench.engine.config.VisualPlugin;
@@ -496,7 +490,6 @@ public class WorkflowRepository extends JPanel implements VisualPlugin,
 	/**
 	 * Must be called from a worker thread
 	 */
-	@SuppressWarnings("unchecked")
 	public void updateFormFieldsBG() {
 		Workflow selected = workflowCommentsPanel.workflow;
 		if(GenSpaceServerFactory.isLoggedIn())

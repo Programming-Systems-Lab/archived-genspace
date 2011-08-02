@@ -1,7 +1,6 @@
 package org.geworkbench.components.genspace.server;
 
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,16 +9,8 @@ import java.util.Vector;
 
 import javax.annotation.Resource;
 import javax.annotation.security.PermitAll;
-import javax.ejb.Stateless;
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-import javax.servlet.http.HttpServletRequest;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.apache.mahout.cf.taste.impl.model.jdbc.ReloadFromJDBCDataModel;
@@ -31,23 +22,20 @@ import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
-import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.handler.MessageContext;
-
 import org.eclipse.persistence.config.QueryHints;
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.AnalysisEventParameter;
+import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
-//import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowComment;
-import org.geworkbench.components.genspace.entity.WorkflowFolder;
-import org.geworkbench.components.genspace.entity.WorkflowRating;
 import org.geworkbench.components.genspace.entity.WorkflowTool;
-
-//import org.geworkbench.components.genspace.server.mahout.*;
+import org.geworkbench.components.genspace.server.mahout.GenspaceItemRecommender;
+import org.geworkbench.components.genspace.server.mahout.GenspaceItemSimilarity;
+import org.geworkbench.components.genspace.server.mahout.GenspaceMySQLJDBCDataModel;
+import org.geworkbench.components.genspace.server.mahout.GenspaceUserSimilarity;
 
 
 public abstract class GenericUsageInformation extends AbstractFacade<Tool>
@@ -291,89 +279,87 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	DataSource dataSource;
 	
 	// Added by efedotov
-//	@SuppressWarnings("unchecked")
-//	@Override
-//	public List<Workflow> getMahoutToolSuggestion(int userId, int filterMethod) {
-//		
-//		int RECOMMENDATIONS = 5;
-//		List<Workflow> ret = new ArrayList<Workflow>();
-//		
-//		try {
-//			GenspaceMySQLJDBCDataModel mysqlModel = 
-//				new GenspaceMySQLJDBCDataModel(dataSource, "mahout_view", "taste_users_id", "workflow_id", "preference", "timestamp", "network_id");
-//			ReloadFromJDBCDataModel model = new ReloadFromJDBCDataModel(mysqlModel);
-//			
-//			HashMap<Long, Vector<Integer>> networkMap;
-//			HashMap<Long, Long> parentMap;
-//			networkMap = mysqlModel.getUserNetworks();
-//			parentMap = mysqlModel.getParentMap();
-//			
-//			ItemSimilarity genspaceItemSimilarity = new GenspaceItemSimilarity(model, filterMethod, parentMap);
-//			
-//			CachingItemSimilarity cachedItemSimilarity = new CachingItemSimilarity(genspaceItemSimilarity, model);
-//			CachingRecommender cachingRecommender = 
-//	        	new CachingRecommender(new GenspaceItemRecommender(model, cachedItemSimilarity));
-//			
-//			List<RecommendedItem> recommendations;
-//			
-//			recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
-//	            for (RecommendedItem recommendedItem : recommendations) {
-//	            	ret.add(getEntityManager().find(Workflow.class, (int) recommendedItem.getItemID()));
-//	            }
-//			
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return ret;
-//	}
-//	
-//	// Added by efedotov
-//	@SuppressWarnings("unchecked")
-//	@Override
-//	public List<TasteUser> getMahoutUserSuggestion(int userId, int filterMethod) {
-//		
-//		int RECOMMENDATIONS = 5;
-//		int NEIGHBORHOOD = 5;
-//		List<TasteUser> ret = new ArrayList<TasteUser>();
-//		
-//		try {
-//			GenspaceMySQLJDBCDataModel mysqlModel = 
-//				new GenspaceMySQLJDBCDataModel(dataSource, "mahout_view", "taste_users_id", "workflow_id", "preference", "timestamp", "network_id");
-//			ReloadFromJDBCDataModel model = new ReloadFromJDBCDataModel(mysqlModel);
-//			
-//			HashMap<Long, Vector<Integer>> networkMap;
-//			networkMap = mysqlModel.getUserNetworks();
-//			
-//			UserSimilarity userSimilarity = new GenspaceUserSimilarity(model, filterMethod, networkMap);
-//			
-//			CachingUserSimilarity cachedUserSimilarity = new CachingUserSimilarity(userSimilarity, model);
-//			
-//			UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachedUserSimilarity, model);
-//			
-//			long[] ids = neighborhood.getUserNeighborhood(userId);
-//			for (Long id : ids) {
-//				ret.add(getEntityManager().find(TasteUser.class, new Integer(id.toString())));
-//			}
-//			
-//			/*
-//			CachingRecommender cachingRecommender = 
-//				new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, cachedUserSimilarity));
-//			
-//			
-//			List<RecommendedItem> recommendations;
-//			
-//			recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
-//	            for (RecommendedItem recommendedItem : recommendations) {
-//	            	ret.add(getEntityManager().find(Workflow.class, (int) recommendedItem.getItemID()));
-//	            }
-//	        */
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return ret;
-//	}
+	@SuppressWarnings("unchecked")
+	public List<Workflow> getMahoutToolSuggestion(int userId, int filterMethod) {
+		
+		int RECOMMENDATIONS = 5;
+		List<Workflow> ret = new ArrayList<Workflow>();
+		
+		try {
+			GenspaceMySQLJDBCDataModel mysqlModel = 
+				new GenspaceMySQLJDBCDataModel(dataSource, "mahout_view", "taste_users_id", "workflow_id", "preference", "timestamp", "network_id");
+			ReloadFromJDBCDataModel model = new ReloadFromJDBCDataModel(mysqlModel);
+			
+			HashMap<Long, Vector<Integer>> networkMap;
+			HashMap<Long, Long> parentMap;
+			networkMap = mysqlModel.getUserNetworks();
+			parentMap = mysqlModel.getParentMap();
+			
+			ItemSimilarity genspaceItemSimilarity = new GenspaceItemSimilarity(model, filterMethod, parentMap);
+			
+			CachingItemSimilarity cachedItemSimilarity = new CachingItemSimilarity(genspaceItemSimilarity, model);
+			CachingRecommender cachingRecommender = 
+	        	new CachingRecommender(new GenspaceItemRecommender(model, cachedItemSimilarity));
+			
+			List<RecommendedItem> recommendations;
+			
+			recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
+	            for (RecommendedItem recommendedItem : recommendations) {
+	            	ret.add(getEntityManager().find(Workflow.class, (int) recommendedItem.getItemID()));
+	            }
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ret;
+	}
+	
+	// Added by efedotov
+	@SuppressWarnings("unchecked")
+	public List<TasteUser> getMahoutUserSuggestion(int userId, int filterMethod) {
+		
+		int RECOMMENDATIONS = 5;
+		int NEIGHBORHOOD = 5;
+		List<TasteUser> ret = new ArrayList<TasteUser>();
+		
+		try {
+			GenspaceMySQLJDBCDataModel mysqlModel = 
+				new GenspaceMySQLJDBCDataModel(dataSource, "mahout_view", "taste_users_id", "workflow_id", "preference", "timestamp", "network_id");
+			ReloadFromJDBCDataModel model = new ReloadFromJDBCDataModel(mysqlModel);
+			
+			HashMap<Long, Vector<Integer>> networkMap;
+			networkMap = mysqlModel.getUserNetworks();
+			
+			UserSimilarity userSimilarity = new GenspaceUserSimilarity(model, filterMethod, networkMap);
+			
+			CachingUserSimilarity cachedUserSimilarity = new CachingUserSimilarity(userSimilarity, model);
+			
+			UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachedUserSimilarity, model);
+			
+			long[] ids = neighborhood.getUserNeighborhood(userId);
+			for (Long id : ids) {
+				ret.add(getEntityManager().find(TasteUser.class, new Integer(id.toString())));
+			}
+			
+			/*
+			CachingRecommender cachingRecommender = 
+				new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, cachedUserSimilarity));
+			
+			
+			List<RecommendedItem> recommendations;
+			
+			recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
+	            for (RecommendedItem recommendedItem : recommendations) {
+	            	ret.add(getEntityManager().find(Workflow.class, (int) recommendedItem.getItemID()));
+	            }
+	        */
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ret;
+	}
 
 	@Override
 	public Transaction sendUsageLog(List<AnalysisEvent> e) {

@@ -54,7 +54,7 @@ import org.geworkbench.util.ProgressBar;
 
 /**
  * @author xiaoqing
- * @version $Id: CaARRAYPanel.java 7925 2011-05-25 14:25:11Z zji $
+ * @version $Id: CaARRAYPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 	private static final String LOADING_SELECTED_BIOASSAYS_ELAPSED_TIME = "Loading selected bioassays - elapsed time: ";
@@ -305,7 +305,6 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 		jScrollPane1.getViewport().add(remoteFileTree, null);
 		jPanel6.add(caArrayDetailPanel);
 
-		remoteFileTree.setToolTipText("");
 		remoteFileTree.getSelectionModel().setSelectionMode(
 				TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
 		remoteFileTree.addTreeSelectionListener(new TreeSelectionListener() {

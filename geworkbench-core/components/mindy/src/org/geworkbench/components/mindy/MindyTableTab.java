@@ -35,7 +35,7 @@ import org.apache.commons.logging.LogFactory;
  * Refactored from MindyPlugin.java
  *
  * @author os2201
- * @version $Id: MindyTableTab.java 7948 2011-05-31 20:12:31Z wangmen $
+ * @version $Id: MindyTableTab.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class MindyTableTab extends JSplitPane {
 	private static Log log = LogFactory.getLog(MindyTableTab.class);
@@ -55,8 +55,6 @@ public class MindyTableTab extends JSplitPane {
 	private JButton clearAllTargetsButton = new JButton("Clear");;
 
 	private JCheckBox selectionEnabledCheckBoxTarget;
-
-	private JCheckBox targetAllMarkersCheckBox;
 
 	private JTable targetTable;
 
@@ -138,7 +136,7 @@ public class MindyTableTab extends JSplitPane {
 		tbtarget.add(clearAllTargetsButton);
 		taskContainer.add(tbtarget);
 		taskContainer.add(addToSetButtonTarget);
-		taskContainer.add(targetAllMarkersCheckBox);
+
 		JPanel p = new JPanel(new BorderLayout());
 		p.add(taskContainer, BorderLayout.NORTH);
 		JScrollPane sp = new JScrollPane(p);
@@ -267,8 +265,6 @@ public class MindyTableTab extends JSplitPane {
 
 		lmp.setFont(new Font(lmp.getFont().getName(), Font.BOLD, 12));
 		lmp.setForeground(Color.BLUE);
-		targetAllMarkersCheckBox = new JCheckBox("All Markers");
-		targetAllMarkersCheckBox.setSelected(false);
 
 		gradient.addColorPoint(Color.white, 0f);
 
@@ -391,29 +387,6 @@ public class MindyTableTab extends JSplitPane {
 					}
 				});
 
-		targetAllMarkersCheckBox.addActionListener(
-				new ActionListener() {
-					public void actionPerformed(ActionEvent actionEvent) {
-						selectionEnabledCheckBoxTarget
-								.setText(
-										MindyPlugin.ENABLE_SELECTION
-												+ " "
-												+ aggregateModel
-														.getNumberOfMarkersSelected());
-						if (targetAllMarkersCheckBox
-								.isSelected()
-								|| (aggregateModel.getLimitedTargets() == null)
-								|| (aggregateModel.getLimitedTargets()
-										.size() <= 0)) {
-							aggregateModel.showAllMarkers();
-						} else {
-							aggregateModel
-									.showLimitedMarkers();
-						}
-						setFirstColumnWidth(30);
-					}
-				});
-
 		selectionEnabledCheckBoxTarget.setSelected(true);
 		selectAllModsButton.setEnabled(true);
 		selectAllTargetsButton.setEnabled(true);
@@ -474,11 +447,6 @@ public class MindyTableTab extends JSplitPane {
 
 	JCheckBox getSelectionEnabledCheckBoxTarget() {
 		return selectionEnabledCheckBoxTarget;
-	}
-
-	// only used by AggregateTableModel
-	JCheckBox getTargetAllMarkersCheckBox() {
-		return targetAllMarkersCheckBox;
 	}
 
 	// only used by CheckBoxRenderer 

@@ -23,7 +23,7 @@ import org.geworkbench.parsers.InputFileFormatException;
 
 /**
  * @author John Watkinson
- * @version $Id: AdjacencyMatrixDataSet.java 7997 2011-06-15 20:53:24Z youmi $
+ * @version $Id: AdjacencyMatrixDataSet.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 
@@ -55,7 +55,7 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 		this.networkName = networkName;
 	}
 
-	private static String getExportName(AdjacencyMatrix.Node node) {
+	public String getExportName(AdjacencyMatrix.Node node) {
 		if (node.type == NodeType.MARKER) {
 			return node.marker.getLabel();
 		}
@@ -168,7 +168,10 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 							continue;
 						}else if (m == null && !isRestrict)
 						{
-							node = new AdjacencyMatrix.Node(NodeType.STRING, strGeneId1);
+							if (selectedRepresentedBy.equals(GENE_NAME))
+							   node = new AdjacencyMatrix.Node(NodeType.GENE_SYMBOL, strGeneId1);
+							else 
+							   node = new AdjacencyMatrix.Node(NodeType.STRING, strGeneId1);
 						}
 						else 
 						{
@@ -179,7 +182,7 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 						}
 
 						if (format.equals(SIF_FORMART) && tr.hasMoreTokens())
-							interactionType = tr.nextToken();
+							interactionType = tr.nextToken().toLowerCase();
 						while (tr.hasMoreTokens()) {
 							String strGeneId2 = new String(tr.nextToken());
 							
@@ -197,7 +200,12 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 								continue;
 							}else if (m2 == null && !isRestrict)
 							{
-								node2 = new AdjacencyMatrix.Node(NodeType.STRING, strGeneId2);
+								
+								if (selectedRepresentedBy.equals(GENE_NAME))
+									   node2 = new AdjacencyMatrix.Node(NodeType.GENE_SYMBOL, strGeneId2);
+									else 
+										node2 = new AdjacencyMatrix.Node(NodeType.STRING, strGeneId2);
+								
 							}
 							else
 							{ 

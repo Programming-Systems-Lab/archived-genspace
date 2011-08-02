@@ -6,12 +6,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.lang.Thread.UncaughtExceptionHandler;
-import java.rmi.RemoteException;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,11 +15,7 @@ import javax.swing.SwingWorker;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.geworkbench.components.genspace.server.stubs.PublicFacade;
-import org.geworkbench.components.genspace.server.stubs.PublicFacadeService;
-import org.geworkbench.components.genspace.server.stubs.Tool;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
 import org.geworkbench.components.genspace.ui.UpdateablePanel;
@@ -79,18 +69,7 @@ public class GenSpace {
 	static java.util.logging.Logger glassfishLogger3;
 	public static void main(String[] args) {
 		
-		
-
-//		System.out.println(u);
-//		@SuppressWarnings("unused")
-	
-//		try {
-//			System.out.println(GenSpaceServerFactory.getPublicFacade().getExpertUserFor(22));
-//		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		GenSpace g = new GenSpace();
+		new GenSpace();
 	}
 
 	public static SocialNetworksHome networksPanels = new SocialNetworksHome();

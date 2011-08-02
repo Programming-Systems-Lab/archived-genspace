@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 import java.util.concurrent.ExecutionException;
@@ -20,17 +19,13 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.chat.ChatReceiver;
 import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
 import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
-import org.geworkbench.components.genspace.ui.chat.RosterFrame;
 
 /**
  * Created by IntelliJ IDEA. User: jon Date: Aug 28, 2010 Time: 11:45:56 AM To
@@ -63,6 +58,18 @@ public class SocialNetworksHome implements UpdateablePanel {
 	private Stack<SocialTab> last = new Stack<SocialTab>();
 	private JPanel shownPanel;
 
+	private static SocialNetworksHome instance;
+	public static SocialNetworksHome getInstance()
+	{
+		return instance;
+	}
+	
+	public void goToFriends()
+	{
+		setContent(friends);
+		friends.updateFormFields();
+		updateFormFields();
+	}
 	/**
 	 * @noinspection ALL
 	 */
@@ -91,6 +98,7 @@ public class SocialNetworksHome implements UpdateablePanel {
 	}
 
 	private void init() {
+		instance = this;
 		MouseListener listener = new MouseListener() {
 
 			@Override
@@ -250,7 +258,6 @@ public class SocialNetworksHome implements UpdateablePanel {
 			current.updateFormFields();
 			SwingWorker<List<User>, Void> worker = new SwingWorker<List<User>, Void>() {
 				int evt;
-				@SuppressWarnings("unchecked")
 				@Override
 				protected List<User> doInBackground()
 						throws Exception {

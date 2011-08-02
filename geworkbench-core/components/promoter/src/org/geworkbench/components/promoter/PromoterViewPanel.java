@@ -92,7 +92,7 @@ import org.geworkbench.util.patterns.PatternSequenceDisplayUtil;
  * <p>Company: Califano Lab</p>
  *
  * @author Xuegong Wang, manjunath at genomecenter dot columbia dot edu, Xiaoqing Zhang
- * @version $Id: PromoterViewPanel.java 7480 2011-02-23 19:53:05Z zji $
+ * @version $Id: PromoterViewPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public final class PromoterViewPanel extends JPanel {
 	private static final long serialVersionUID = -6523545577029722522L;
@@ -502,7 +502,6 @@ public final class PromoterViewPanel extends JPanel {
         parametersLabel.setText("Parameters:");
 
         resultLabel.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 12));
-        resultLabel.setToolTipText("");
         resultLabel.setHorizontalTextPosition(SwingConstants.LEFT);
         resultLabel.setText("Results:");
         jLabel1.setText("% with hits:");
@@ -1590,6 +1589,8 @@ public final class PromoterViewPanel extends JPanel {
 
             List<DSPatternMatch<DSSequence,
                     CSSeqRegistration>> matches = pattern.matches();
+            
+            if(p==null) continue;
 
             seqPatternMatches.put(p, matches);
         }

@@ -29,7 +29,7 @@ import org.geworkbench.engine.management.Subscribe;
  * <p>Company: Columbia University</p>
  *
  * @author XZ
- * @version $Id: BlastViewComponent.java 6931 2010-07-30 14:22:09Z zji $
+ * @version $Id: BlastViewComponent.java 8187 2011-07-30 04:31:30Z zji $
  */
 @AcceptTypes( {DSAlignmentResultSet.class})
 public class BlastViewComponent implements
@@ -99,7 +99,14 @@ public class BlastViewComponent implements
 
 				String summary = nbp.getSummary();
 				blastViewPanel.setSummary(summary);
-				df.addDescription(summary);
+				df.addDescription(summary);						
+				if (nbp.getHitCount()==0){					
+					blastViewPanel.resetToWhite("No alignment hit is found.");
+					blastViewPanel.setSummaryPanelOff();
+				}
+				else {
+					blastViewPanel.setSummaryPanelOn();					
+				}
             } else {
                 blastViewPanel.resetToWhite();
             }

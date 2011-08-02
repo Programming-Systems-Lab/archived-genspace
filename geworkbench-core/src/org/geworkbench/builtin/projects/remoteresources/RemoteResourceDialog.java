@@ -33,7 +33,7 @@ import javax.swing.border.EtchedBorder;
  * <p>Company: </p>
  *
  * @author unknown
- * @version $Id: RemoteResourceDialog.java 7192 2010-11-17 20:36:04Z zji $
+ * @version $Id: RemoteResourceDialog.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class RemoteResourceDialog extends JDialog {
 	private static final long serialVersionUID = -4311812466234532113L;
@@ -106,7 +106,6 @@ public class RemoteResourceDialog extends JDialog {
 
         jPanel2.setLayout(boxLayout21);
 
-        jTextField1.setToolTipText("");
         jLabel4.setPreferredSize(new Dimension(100, 20));
         jLabel4.setText("Hostname:");
         jLabel4.setHorizontalAlignment(JLabel.RIGHT);

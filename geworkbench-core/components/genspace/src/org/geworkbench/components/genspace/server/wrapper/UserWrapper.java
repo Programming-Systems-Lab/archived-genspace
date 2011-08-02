@@ -1,26 +1,11 @@
 package org.geworkbench.components.genspace.server.wrapper;
 
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
-import org.geworkbench.components.genspace.server.stubs.Friend;
-import org.geworkbench.components.genspace.server.stubs.IncomingWorkflow;
-import org.geworkbench.components.genspace.server.stubs.Network;
-import org.geworkbench.components.genspace.server.stubs.ToolComment;
-import org.geworkbench.components.genspace.server.stubs.Transaction;
 import org.geworkbench.components.genspace.server.stubs.User;
-import org.geworkbench.components.genspace.server.stubs.UserNetwork;
-import org.geworkbench.components.genspace.server.stubs.Workflow;
-import org.geworkbench.components.genspace.server.stubs.WorkflowComment;
-import org.geworkbench.components.genspace.server.stubs.WorkflowFolder;
 
 public class UserWrapper {
 	private User delegate;

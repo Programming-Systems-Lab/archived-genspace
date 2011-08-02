@@ -1,14 +1,14 @@
 10
 
 dir
-8016
+8187
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/help/Filtering_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-09-13T14:40:56.329012Z
-7051
+2011-07-30T04:31:30.667242Z
+8187
 zji
 
 
@@ -26,13 +26,47 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+index_002.css
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+1af216a5213de867307298bda621b8ed
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+318
+
 Filtering-Expression_Threshold.png
 file
 
 
 
 
-2011-04-21T17:45:45.000000Z
+2011-08-02T04:29:11.000000Z
 d7fc6196e0012a15666297a670f935ff
 2010-06-10T02:39:43.512944Z
 6786
@@ -60,16 +94,16 @@ has-props
 
 22962
 
-Filtering-GenePix_Flag_Filter.png
+index_003.css
 file
 
 
 
 
-2011-04-21T17:45:45.000000Z
-bd871c4ab260af9635c5c12dc66550da
-2010-06-10T02:39:43.512944Z
-6786
+2011-08-02T04:29:11.000000Z
+00bb617ac348ca1eba387234bcdc0ede
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -92,18 +126,18 @@ has-props
 
 
 
-23493
+50
 
-Filtering-Missing_Values_Filter.png
+index_004.css
 file
 
 
 
 
-2011-04-21T17:45:45.000000Z
-1c6cf43cafd0514fbdbe141aa4f202c9
-2010-06-10T02:39:43.512944Z
-6786
+2011-08-02T04:29:11.000000Z
+59a83e6f432f762a5525136d8c017853
+2011-07-30T04:31:30.667242Z
+8187
 zji
 has-props
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-18479
+75
 
 Filtering-Affy_detection_call.png
 file
@@ -134,7 +168,7 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
+2011-08-02T04:29:11.000000Z
 c2a252d3fca18487f72d43c0a9b7d335
 2010-06-10T02:39:43.512944Z
 6786
@@ -162,13 +196,319 @@ has-props
 
 21280
 
+Filtering-Preview.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+9ebd5ae1a2aa2c76efa9d8ef45ecead3
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25204
+
+Multiple_Probeset_Filter.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+5d3a344c7b25ab800326e0d27c85c2d0
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15266
+
+Filtering-Deviation.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+482b07a830eee3a971d547b546a81458
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14836
+
+index.css
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+bb883d0f9391e0e95a98467e3406893f
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50
+
+Multiple_GeneID_Filter.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+2a71dc9f70d130c687a3134a2cecad90
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14241
+
+Filtering-GenePix_Expression_Threshold.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+7a9da44869c2a13125c1d89b2f99a44c
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24422
+
+Multiple_Probeset_Filter_options.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+27a3b53312ec14286864ac96c44c5ede
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10788
+
+Filtering-Missing_Values_Filter.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+1c6cf43cafd0514fbdbe141aa4f202c9
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18479
+
+Filtering-GenePix_Flag_Filter.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+bd871c4ab260af9635c5c12dc66550da
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23493
+
 Filters_in_CCM.png
 file
 
 
 
 
-2011-04-21T17:45:45.000000Z
+2011-08-02T04:29:11.000000Z
 54d0d4d018ed152dcbdf2768eed6d6b8
 2010-09-13T14:40:56.329012Z
 7051
@@ -202,7 +542,7 @@ file
 
 
 
-2011-04-21T17:45:45.000000Z
+2011-08-02T04:29:11.000000Z
 69c75102a92d96b62f90397f969153aa
 2010-06-10T02:39:43.512944Z
 6786
@@ -230,81 +570,13 @@ has-props
 
 24768
 
-Filtering-Preview.png
-file
-
-
-
-
-2011-04-21T17:45:45.000000Z
-9ebd5ae1a2aa2c76efa9d8ef45ecead3
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25204
-
-Filtering-Deviation.png
-file
-
-
-
-
-2011-04-21T17:45:45.000000Z
-482b07a830eee3a971d547b546a81458
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14836
-
 Filtering_COV.png
 file
 
 
 
 
-2011-04-21T17:45:45.000000Z
+2011-08-02T04:29:11.000000Z
 62a22b38b43434936780ecc434649b0d
 2010-09-13T14:40:56.329012Z
 7051
@@ -331,38 +603,4 @@ has-props
 
 
 14682
-
-Filtering-GenePix_Expression_Threshold.png
-file
-
-
-
-
-2011-04-21T17:45:45.000000Z
-7a9da44869c2a13125c1d89b2f99a44c
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24422
 

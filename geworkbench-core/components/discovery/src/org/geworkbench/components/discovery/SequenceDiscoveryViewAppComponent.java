@@ -72,7 +72,7 @@ import polgara.soapPD_wsdl.Parameters;
  * Company: Califano Lab
  * </p>
  *
- * @version $Id: SequenceDiscoveryViewAppComponent.java 7646 2011-03-25 19:02:00Z zji $
+ * @version $Id: SequenceDiscoveryViewAppComponent.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 @AcceptTypes( { CSSequenceSet.class, PatternResult.class } )
@@ -358,7 +358,7 @@ public class SequenceDiscoveryViewAppComponent implements VisualPlugin,
 					password, sName);
 
 		} catch (SessionCreationException exp) {
-			exp.printStackTrace();
+			//exp.printStackTrace();
 			showInfoMessage("DiscoverySession was not created. "
 					+ exp.getMessage(), "DiscoverySession Error");
 			return null;

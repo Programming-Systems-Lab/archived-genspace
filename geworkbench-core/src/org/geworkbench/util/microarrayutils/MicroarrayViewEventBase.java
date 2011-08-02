@@ -36,7 +36,7 @@ import org.geworkbench.events.GeneSelectorEvent;
 /**
  * @author unattributable
  * @see VisualPlugin
- * @version $Id: MicroarrayViewEventBase.java 7400 2011-02-01 16:09:03Z maz $
+ * @version $Id: MicroarrayViewEventBase.java 8187 2011-07-30 04:31:30Z zji $
  */
 public abstract class MicroarrayViewEventBase implements VisualPlugin {
 
@@ -200,7 +200,6 @@ public abstract class MicroarrayViewEventBase implements VisualPlugin {
 		mainPanel = new JPanel();
 
 		jToolBar3 = new JToolBar();
-		chkAllMarkers.setToolTipText("");
 
 		BorderLayout borderLayout2 = new BorderLayout();
 		mainPanel.setLayout(borderLayout2);

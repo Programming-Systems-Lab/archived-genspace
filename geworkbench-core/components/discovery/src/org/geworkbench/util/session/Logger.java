@@ -14,7 +14,7 @@ import java.rmi.RemoteException;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: Logger.java 6428 2010-04-28 15:27:31Z zji $
+ * @version $Id: Logger.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class Logger {
     private SoapPDPortType port;
@@ -34,7 +34,6 @@ public class Logger {
             try {
                 login(userName, password);
             } catch (RemoteException exp) {
-                exp.printStackTrace();
                  throw new LoggerException("Could not connect to the server.");
             }
     }

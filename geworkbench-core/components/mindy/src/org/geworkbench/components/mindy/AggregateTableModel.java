@@ -21,7 +21,7 @@ import org.geworkbench.util.pathwaydecoder.mutualinformation.MindyGeneMarker;
 	 * @author mhall
 	 * @author ch2514
 	 * @author os2201
-	 * @version $Id: AggregateTableModel.java 7958 2011-06-03 20:04:26Z zji $
+	 * @version $Id: AggregateTableModel.java 8187 2011-07-30 04:31:30Z zji $
 */
 class AggregateTableModel extends DefaultTableModel {
 	private static final long serialVersionUID = -5144760407967305076L;
@@ -232,17 +232,12 @@ class AggregateTableModel extends DefaultTableModel {
 			if ((this.enabledModulators != null)
 					&& (this.enabledModulators.size() > 0)) {
 
-				if (mindyTableTab!=null && mindyTableTab.getTargetAllMarkersCheckBox()!=null 
-						&& mindyTableTab.getTargetAllMarkersCheckBox().isSelected()) {
-					this.activeTargets = mindyData.getTargets(this.enabledModulators);
-				} else {
-					if ((this.limitedTargets != null)
+				if ((this.limitedTargets != null)
 							&& (this.limitedTargets.size() > 0)) {
-						this.activeTargets = (List<DSGeneMarker>) ((ArrayList<DSGeneMarker>) this.limitedTargets)
-								.clone();
-					} else {
-						this.activeTargets = mindyData.getTargets(this.enabledModulators);
-					}
+					this.activeTargets = (List<DSGeneMarker>) ((ArrayList<DSGeneMarker>) this.limitedTargets)
+							.clone();
+				} else {
+					this.activeTargets = mindyData.getTargets(this.enabledModulators);
 				}
 
 				// yank out the rows with all zero scores in all columns

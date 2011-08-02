@@ -26,7 +26,7 @@ import javax.swing.SwingConstants;
  * application components.
  *
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: ProgressBar.java 7667 2011-03-28 19:04:31Z zji $
+ * @version $Id: ProgressBar.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class ProgressBar
@@ -288,7 +288,7 @@ public class ProgressBar
         cancelButton.setRequestFocusEnabled(true);
 
         container.setLayout(new GridBagLayout());
-        jLabel1.setToolTipText("");
+
         jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
         jLabel1.setText("Message");
         jLabel1.setVerticalTextPosition(SwingConstants.CENTER);

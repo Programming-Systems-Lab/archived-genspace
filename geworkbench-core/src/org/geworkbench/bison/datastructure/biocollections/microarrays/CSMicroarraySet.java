@@ -27,7 +27,7 @@ import java.util.*;
  * <p>Company: Columbia University</p>
  *
  * @author Adam Margolin
- * @version $Id: CSMicroarraySet.java 7951 2011-06-02 16:05:24Z wangmen $
+ * @version $Id: CSMicroarraySet.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class CSMicroarraySet<T extends DSMicroarray> extends CSDataSet<T> implements DSMicroarraySet<T> {
 	private static final long serialVersionUID = -8604116507886706853L;
@@ -325,7 +325,8 @@ public class CSMicroarraySet<T extends DSMicroarray> extends CSDataSet<T> implem
 		newid = new int[mrkNo];
 		int i = 0;
 		if (GlobalPreferences.getInstance().getMarkerLoadOptions() == GlobalPreferences.ORIGINAL
-				|| AnnotationParser.getCurrentChipType() == null) {
+				|| (AnnotationParser.getCurrentChipType() == null && GlobalPreferences
+						.getInstance().getMarkerLoadOptions() == GlobalPreferences.SORTED_GENE)) {
 			for (i = 0; i < markerVector.size(); newid[i] = i++);
 		} else {
 			if (GlobalPreferences.getInstance().getMarkerLoadOptions() == GlobalPreferences.SORTED_GENE) 

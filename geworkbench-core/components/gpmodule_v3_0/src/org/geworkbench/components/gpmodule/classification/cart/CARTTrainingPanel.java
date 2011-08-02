@@ -13,6 +13,7 @@ package org.geworkbench.components.gpmodule.classification.cart;
 
 import java.awt.BorderLayout;
 import java.io.Serializable;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +30,7 @@ import com.jgoodies.forms.layout.RowSpec;
 
 /**
  * @author Marc-Danie Nazaire
- * @version $Id: CARTTrainingPanel.java 7980 2011-06-13 18:39:27Z zji $
+ * @version $Id: CARTTrainingPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 public class CARTTrainingPanel extends GPTrainingPanel
 {
@@ -83,14 +84,14 @@ public class CARTTrainingPanel extends GPTrainingPanel
         return builder.getPanel();
     }
 
-    protected String getParamDescriptFile()
+    protected URL getParamDescriptFile()
     {
         return null;
     }
 
-    protected String getSummaryFile()
+    protected URL getSummaryFile()
     {
-        return CARTTrainingPanel.class.getResource("help.html").getPath();
+        return CARTTrainingPanel.class.getResource("help.html");
     }
 
     protected CSClassifier trainForValidation(java.util.List<float[]> trainingCaseData, java.util.List<float[]> trainingControlData) throws ClassifierException

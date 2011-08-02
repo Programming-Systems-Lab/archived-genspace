@@ -1,23 +1,36 @@
 package org.geworkbench.components.genspace.ui;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.ListCellRenderer;
+import javax.swing.SwingConstants;
+import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
 import org.geworkbench.components.genspace.server.stubs.Network;
 import org.geworkbench.components.genspace.server.stubs.UserNetwork;
-import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
 import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.rmi.RemoteException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import org.geworkbench.components.genspace.ui.AutoCompleteCombo.Model;
 
 /**
  * Created by IntelliJ IDEA. User: jon Date: Aug 28, 2010 Time: 12:48:15 PM To

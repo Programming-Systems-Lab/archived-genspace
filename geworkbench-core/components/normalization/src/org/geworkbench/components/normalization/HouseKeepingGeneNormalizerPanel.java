@@ -67,7 +67,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * <p>Company: </p>
  *
  * @author Xiaoqing Zhang
- * @version $Id: HouseKeepingGeneNormalizerPanel.java 7455 2011-02-11 22:02:22Z zji $
+ * @version $Id: HouseKeepingGeneNormalizerPanel.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 /**
@@ -505,7 +505,6 @@ public class HouseKeepingGeneNormalizerPanel extends AbstractSaveableParameterPa
             }
         });
         missingValuesLabel.setText("Missing Values");
-        missingValuesCombo.setToolTipText("");
         moveToAboveButton.setToolTipText("Previous highlighted marker");
         moveToAboveButton.setText("^");
         moveToAboveButton.addActionListener(new ActionListener() {

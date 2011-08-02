@@ -16,20 +16,17 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Semaphore;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
+import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
 import org.geworkbench.components.genspace.server.stubs.Tool;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
-import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
 import org.geworkbench.components.genspace.server.stubs.WorkflowTool;
-import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
+import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
 import org.geworkbench.components.genspace.ui.graph.myGraph;
 import org.geworkbench.components.genspace.ui.graph.myStackLayout;
 import org.geworkbench.engine.config.VisualPlugin;
@@ -51,18 +48,16 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 	 * 
 	 */
 	private static final long serialVersionUID = -3300246926475166675L;
-	private ArrayList<WorkflowWrapper> workflows = new ArrayList<WorkflowWrapper>();
 	private WorkflowVisualizationPopup popup = new WorkflowVisualizationPopup();
 	
 	private myGraph graph;
 	private mxGraphComponent graphComponent;
 	private JScrollPane scroller = new JScrollPane();;
-	private Timer redrawTimer;
 	private boolean redrawing = false;
 	public WorkflowVisualizationPanel()
 	{
 		setOpaque(false);
-		redrawTimer = new Timer();
+		new Timer();
 		add(scroller, BorderLayout.CENTER);
 		this.addComponentListener(new ComponentListener() {
 			
@@ -115,7 +110,6 @@ public class WorkflowVisualizationPanel extends JPanel implements VisualPlugin {
 	public void render(WorkflowWrapper w, Tool selected) {
 		wkflwCache = new HashMap<Integer, WorkflowWrapper>();
 		wkflwCache.put(w.getId(), w);
-		workflows.add(w);
 		initGraph();
 		renderSingleWorkflow(w, selected, null);
 		layoutAndShowGraph();	

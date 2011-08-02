@@ -18,7 +18,7 @@ import org.geworkbench.bison.util.Range;
  * </p>
  * 
  * @author Andrea Califano
- * @version $Id: CSExpressionMarker.java 7321 2010-12-10 16:35:50Z zji $
+ * @version $Id: CSExpressionMarker.java 8187 2011-07-30 04:31:30Z zji $
  */
 
 public class CSExpressionMarker extends CSGeneMarker implements
@@ -147,6 +147,8 @@ public class CSExpressionMarker extends CSGeneMarker implements
 		if (this.geneIds == null && label != null) {
 			String[] entrezIds = AnnotationParser.getInfo(label,
 					AnnotationParser.LOCUSLINK);
+			if (entrezIds == null || entrezIds.length <= 0 )
+				return null;
 			geneIds = new int[entrezIds.length];
 			for (int i = 0; i < entrezIds.length; i++) {
 				try {

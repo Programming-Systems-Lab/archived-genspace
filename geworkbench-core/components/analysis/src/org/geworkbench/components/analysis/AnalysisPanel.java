@@ -98,7 +98,7 @@ import edu.columbia.geworkbench.cagrid.dispatcher.client.DispatcherClient;
  * @author First Genetic Trust Inc.
  * @author keshav
  * @author yc2480
- * @version $Id: AnalysisPanel.java 7256 2010-11-30 17:13:37Z zji $
+ * @version $Id: AnalysisPanel.java 8187 2011-07-30 04:31:30Z zji $
  * 
  */
 @AcceptTypes( { DSMicroarraySet.class, EdgeListDataSet.class,
@@ -1082,6 +1082,8 @@ public class AnalysisPanel extends MicroarrayViewEventBase implements
 					.getMessage(), "Invalid Input Data",
 					JOptionPane.ERROR_MESSAGE);
 			return;
+		} else if(validResult.getMessage()!=null && validResult.getMessage().equals("QUIT")) {
+			return;
 		}
 
 		if (selectedGridAnalysis.isAuthorizationRequired()) {
@@ -1179,6 +1181,8 @@ public class AnalysisPanel extends MicroarrayViewEventBase implements
 							"Invalid Input Data", JOptionPane.ERROR_MESSAGE);
 					results = null;
 					analyze.setEnabled(true);
+					return;
+				} else if(validResult.getMessage().equals("QUIT")) {
 					return;
 				}
 			}

@@ -1,23 +1,31 @@
 package org.geworkbench.components.genspace.ui;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListCellRenderer;
+import javax.swing.SwingWorker;
 
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
-import org.geworkbench.components.genspace.RuntimeEnvironmentSettings;
 import org.geworkbench.components.genspace.server.stubs.Network;
 import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.components.genspace.server.stubs.UserNetwork;
 import org.geworkbench.components.genspace.server.wrapper.UserWrapper;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.rmi.RemoteException;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import org.geworkbench.components.genspace.ui.chat.RosterFrame;
 
 /**
  * Created by IntelliJ IDEA. User: jon Date: Aug 28, 2010 Time: 12:56:05 PM To
@@ -157,10 +165,11 @@ public class requestsTab extends SocialTab {
 				if (networksList.getSelectedValue() != null) {
 					try {
 						GenSpaceServerFactory.getNetworkOps().acceptNetworkRequest(((UserNetwork) networksList.getSelectedValue()).getId());
+						GenSpaceLogin.chatHandler.rf.refresh();
 					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
-					updateFormFields();
+					SocialNetworksHome.getInstance().updateFormFields();
 				}
 			}
 		});
@@ -174,7 +183,7 @@ public class requestsTab extends SocialTab {
 					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
-					updateFormFields();
+					SocialNetworksHome.getInstance().updateFormFields();
 				}
 			}
 		});
@@ -186,10 +195,13 @@ public class requestsTab extends SocialTab {
 				{
 					try {
 						GenSpaceServerFactory.getFriendOps().addFriend(((UserWrapper) friendsList.getSelectedValue()).getId());
+						RosterFrame.removedCache.remove(((UserWrapper) friendsList.getSelectedValue()).getUsername()+"@genspace");
+						GenSpaceLogin.chatHandler.rf.refresh();
+						
 					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
-					updateFormFields();
+					SocialNetworksHome.getInstance().updateFormFields();
 				}
 			}
 		});
@@ -204,7 +216,7 @@ public class requestsTab extends SocialTab {
 					} catch (Exception e1) {
 						GenSpaceServerFactory.handleExecutionException(e1);
 					}
-					updateFormFields();
+					SocialNetworksHome.getInstance().updateFormFields();
 				}
 			}
 		});
