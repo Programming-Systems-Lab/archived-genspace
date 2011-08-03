@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/geworkbench/!svn/ver/7085/trunk/geworkbench/components/medusa/lib
+END
+Perseus.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/3156/trunk/geworkbench/components/medusa/lib/Perseus.jar
+END
+chart-0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/3102/trunk/geworkbench/components/medusa/lib/chart-0.1.jar
+END
+activation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/6017/trunk/geworkbench/components/medusa/lib/activation.jar
+END
+colt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/geworkbench/!svn/ver/2753/trunk/geworkbench/components/medusa/lib/colt.jar
+END
+tar_relative.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/6017/trunk/geworkbench/components/medusa/lib/tar_relative.jar
+END
+concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/2753/trunk/geworkbench/components/medusa/lib/concurrent.jar
+END
+xstream.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/2765/trunk/geworkbench/components/medusa/lib/xstream.jar
+END

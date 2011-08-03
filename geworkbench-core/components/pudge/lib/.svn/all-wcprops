@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/geworkbench/!svn/ver/6642/trunk/geworkbench/components/pudge/lib
+END
+libjdic.so
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/libjdic.so
+END
+jdic_stub.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/6642/trunk/geworkbench/components/pudge/lib/jdic_stub.jar
+END
+MozEmbed.exe
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/MozEmbed.exe
+END
+jdic.dll
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/jdic.dll
+END
+mozembed-linux-gtk1.2
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/mozembed-linux-gtk1.2
+END
+jdic.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/5103/trunk/geworkbench/components/pudge/lib/jdic.jar
+END
+mozembed-linux-gtk2
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/mozembed-linux-gtk2
+END
+libjdic.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/6642/trunk/geworkbench/components/pudge/lib/libjdic.jnilib
+END
+libtray.so
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/libtray.so
+END
+tray.dll
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/tray.dll
+END
+IeEmbed.exe
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/IeEmbed.exe
+END
+libmozembed-linux-gtk1.2.so
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/libmozembed-linux-gtk1.2.so
+END
+libmozembed-linux-gtk2.so
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/libmozembed-linux-gtk2.so
+END
+libtray.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/6195/trunk/geworkbench/components/pudge/lib/libtray.jnilib
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/geworkbench/!svn/ver/6848/trunk/geworkbench/components/markus/lib
+END
+libjdic.so
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/libjdic.so
+END
+jdic_stub.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/6641/trunk/geworkbench/components/markus/lib/jdic_stub.jar
+END
+MozEmbed.exe
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/MozEmbed.exe
+END
+jdic.dll
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/jdic.dll
+END
+mozembed-linux-gtk1.2
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/mozembed-linux-gtk1.2
+END
+jdic.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/geworkbench/!svn/ver/3974/trunk/geworkbench/components/markus/lib/jdic.jar
+END
+mozembed-linux-gtk2
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/mozembed-linux-gtk2
+END
+libjdic.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/6641/trunk/geworkbench/components/markus/lib/libjdic.jnilib
+END
+libtray.so
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/libtray.so
+END
+tray.dll
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/tray.dll
+END
+IeEmbed.exe
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/IeEmbed.exe
+END
+libmozembed-linux-gtk1.2.so
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/libmozembed-linux-gtk1.2.so
+END
+libmozembed-linux-gtk2.so
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/libmozembed-linux-gtk2.so
+END
+libtray.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/6196/trunk/geworkbench/components/markus/lib/libtray.jnilib
+END

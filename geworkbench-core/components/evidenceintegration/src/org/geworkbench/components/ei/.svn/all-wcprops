@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
+END
+EvidenceIntegrationVisualization.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationVisualization.cwb.xml
+END
+EIProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EIProgress.java
+END
+GenericDisplayPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/GenericDisplayPanel.java
+END
+EvidenceIntegrationAnalysis.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/geworkbench/!svn/ver/6197/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationAnalysis.cwb.xml
+END
+PriorTableModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/PriorTableModel.java
+END
+ROCComputation.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/ROCComputation.java
+END
+EvidenceIntegrationParamPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationParamPanel.java
+END
+EvidenceIntegrationVisualization.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationVisualization.java
+END
+EvidenceIntegrationAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationAnalysis.java
+END
+EvidenceTableModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceTableModel.java
+END
+EvidenceIntegrationDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationDataSet.java
+END

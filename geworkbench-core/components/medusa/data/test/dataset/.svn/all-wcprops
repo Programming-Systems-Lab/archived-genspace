@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/3052/trunk/geworkbench/components/medusa/data/test/dataset
+END
+web100_test_regulators.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/geworkbench/!svn/ver/3047/trunk/geworkbench/components/medusa/data/test/dataset/web100_test_regulators.txt
+END
+config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/2925/trunk/geworkbench/components/medusa/data/test/dataset/config.xml
+END
+web100_test_targets.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/geworkbench/!svn/ver/3047/trunk/geworkbench/components/medusa/data/test/dataset/web100_test_targets.txt
+END
+web100_test.fasta
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/2883/trunk/geworkbench/components/medusa/data/test/dataset/web100_test.fasta
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/3052/trunk/geworkbench/components/medusa/data/test/dataset/.cvsignore
+END

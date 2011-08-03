@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn
+END
+KNNTraining.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/KNNTraining.java
+END
+KNNTrainingPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/KNNTrainingPanel.java
+END
+paramDesc.html
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/geworkbench/!svn/ver/3225/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/paramDesc.html
+END
+KNNClassifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/KNNClassifier.java
+END
+KNNTraining.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/KNNTraining.cwb.xml
+END
+help.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/2897/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/help.html
+END

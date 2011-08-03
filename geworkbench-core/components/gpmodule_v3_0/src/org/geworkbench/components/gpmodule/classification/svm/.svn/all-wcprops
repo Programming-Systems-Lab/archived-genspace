@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm
+END
+SVMTraining.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTraining.java
+END
+SVMTrainingPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTrainingPanel.java
+END
+SVMClassifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMClassifier.java
+END
+SVMTraining.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTraining.cwb.xml
+END
+help.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/4378/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/help.html
+END

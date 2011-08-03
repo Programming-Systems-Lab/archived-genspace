@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/5103/trunk/geworkbench/components/pudge/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/geworkbench/!svn/ver/5103/trunk/geworkbench/components/pudge/.project
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/pudge/.cvsignore
+END

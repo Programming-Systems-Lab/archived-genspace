@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing
+END
+SkylineGraph.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/SkylineGraph.java
+END
+SkylineViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/SkylineViewer.java
+END
+CelledHotspotManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/CelledHotspotManager.java
+END
+BrowserLauncher.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/BrowserLauncher.java
+END
+SwingUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/SwingUtil.java
+END
+QueryViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/QueryViewer.java
+END
+AbstractNumericAxis.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/AbstractNumericAxis.java
+END
+ColorGradient.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/ColorGradient.java
+END
+GenericSkylineViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/GenericSkylineViewer.java
+END
+SwingPrototype.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/SwingPrototype.java
+END
+HorizontalAxis.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/HorizontalAxis.java
+END
+SkylinePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/SkylinePanel.java
+END
+VerticalAxis.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/geworkbench/!svn/ver/5747/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour/swing/VerticalAxis.java
+END

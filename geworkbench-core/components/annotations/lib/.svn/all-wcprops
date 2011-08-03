@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib
+END
+axis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/axis.jar
+END
+hibernate-search.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/hibernate-search.jar
+END
+batik-squiggle-ext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-squiggle-ext.jar
+END
+batik-dom.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-dom.jar
+END
+TableViewer.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/TableViewer.jar
+END
+acegi-security-1.0.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/acegi-security-1.0.4.jar
+END
+caGrid-CQL-cql.1.0-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/caGrid-CQL-cql.1.0-1.2.jar
+END
+batik-css.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-css.jar
+END
+batik-rasterizer-ext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-rasterizer-ext.jar
+END
+batik-svggen.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-svggen.jar
+END
+batik-bridge.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-bridge.jar
+END
+batik-parser.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-parser.jar
+END
+batik-svgpp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-svgpp.jar
+END
+batik-gui-util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-gui-util.jar
+END
+batik-xml.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-xml.jar
+END
+sdk-client-framework.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/sdk-client-framework.jar
+END
+batik.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik.jar
+END
+cabio43-client-framework.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/cabio43-client-framework.jar
+END
+batik-transcoder.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-transcoder.jar
+END
+batik-script.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-script.jar
+END
+commons-logging-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/commons-logging-1.1.jar
+END
+hibernate-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/hibernate-annotations.jar
+END
+log4j-1.2.14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/log4j-1.2.14.jar
+END
+batik-svg-dom.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-svg-dom.jar
+END
+batik-extension.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-extension.jar
+END
+batik-util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-util.jar
+END
+hibernate-commons-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/hibernate-commons-annotations.jar
+END
+batik-squiggle.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-squiggle.jar
+END
+cabio43-beans.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/cabio43-beans.jar
+END
+xercesImpl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/xercesImpl.jar
+END
+dom4j-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/2279/trunk/geworkbench/components/annotations/lib/dom4j-1.4.jar
+END
+batik-swing.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-swing.jar
+END
+asm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/asm.jar
+END
+batik-rasterizer.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-rasterizer.jar
+END
+hibernate3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/4183/trunk/geworkbench/components/annotations/lib/hibernate3.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/commons-codec-1.3.jar
+END
+sdk-grid-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/sdk-grid-remoting.jar
+END
+sdk-security.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/6062/trunk/geworkbench/components/annotations/lib/sdk-security.jar
+END
+batik-ttf2svg.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-ttf2svg.jar
+END
+castor-1.0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/castor-1.0.2.jar
+END
+commons-collections-3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/commons-collections-3.2.jar
+END
+antlr-2.7.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/antlr-2.7.6.jar
+END
+batik-ext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-ext.jar
+END
+batik-gvt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-gvt.jar
+END
+batik-slideshow.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-slideshow.jar
+END
+batik-awt-util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/annotations/lib/batik-awt-util.jar
+END
+spring.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/lib/spring.jar
+END

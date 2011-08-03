@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction
+END
+MendesEqn.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/MendesEqn.java
+END
+HillTerm.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/HillTerm.java
+END
+ReactionInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/ReactionInfo.java
+END
+StolovitzkyModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/StolovitzkyModel.java
+END
+ElementMath.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/ElementMath.java
+END
+GeneInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/GeneInfo.java
+END
+IReaction.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/1573/trunk/geworkbench/components/simulation/src/org/geworkbench/components/simulation/Reaction/IReaction.java
+END

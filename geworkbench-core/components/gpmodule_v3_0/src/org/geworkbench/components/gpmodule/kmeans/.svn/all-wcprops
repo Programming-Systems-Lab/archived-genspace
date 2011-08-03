@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans
+END
+KMeansViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans/KMeansViewer.java
+END
+KMeansClustering.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/7727/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans/KMeansClustering.cwb.xml
+END
+KMeansViewer.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans/KMeansViewer.cwb.xml
+END
+KMAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7727/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans/KMAnalysis.java
+END
+help.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/7569/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans/help.html
+END
+KMeansPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans/KMeansPanel.java
+END

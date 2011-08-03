@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/geworkbench/!svn/ver/5297/trunk/geworkbench/components/example
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/2155/trunk/geworkbench/components/example/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/geworkbench/!svn/ver/2400/trunk/geworkbench/components/example/.project
+END
+example.iml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/geworkbench/!svn/ver/960/trunk/geworkbench/components/example/example.iml
+END

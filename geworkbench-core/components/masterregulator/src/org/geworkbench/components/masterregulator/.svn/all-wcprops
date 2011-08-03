@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
+END
+MasterRegulatorPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
+END
+MasterRegulatorViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
+END
+MasterRegulatorAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
+END
+TAnalysis.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TAnalysis.java
+END
+FishersExactTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/FishersExactTest.java
+END
+DetailedTFGraphViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/DetailedTFGraphViewer.java
+END
+TableViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TableViewer.java
+END
+MasterRegulatorViewer.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.cwb.xml
+END
+MasterRegulatorAnalysis.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.cwb.xml
+END

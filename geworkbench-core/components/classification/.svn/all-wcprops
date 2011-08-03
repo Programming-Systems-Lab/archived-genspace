@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/geworkbench/!svn/ver/5940/trunk/geworkbench/components/classification
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/2721/trunk/geworkbench/components/classification/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/2721/trunk/geworkbench/components/classification/.project
+END
+smlrtraining.ccm.bak
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/5940/trunk/geworkbench/components/classification/smlrtraining.ccm.bak
+END
+classification.iml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/2747/trunk/geworkbench/components/classification/classification.iml
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/5296/trunk/geworkbench/components/classification/.cvsignore
+END
