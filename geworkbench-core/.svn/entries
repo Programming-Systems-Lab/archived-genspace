@@ -434,40 +434,6 @@ has-props
 
 17571
 
-usage.txt
-file
-
-
-
-
-2011-08-02T04:32:49.000000Z
-853f159edbdd0694ce5995fb9dea00aa
-2006-07-19T01:50:13.000000Z
-1679
-mkustagi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3098
-
 geworkbench-lite.ipr
 file
 
@@ -501,6 +467,40 @@ has-props
 
 
 14878
+
+usage.txt
+file
+
+
+
+
+2011-08-02T04:32:49.000000Z
+853f159edbdd0694ce5995fb9dea00aa
+2006-07-19T01:50:13.000000Z
+1679
+mkustagi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3098
 
 nbproject
 dir
@@ -956,6 +956,12 @@ has-props
 
 25858
 
+components
+dir
+
+conf
+dir
+
 ReleaseNotes_2.0.1.txt
 file
 
@@ -989,46 +995,6 @@ has-props
 
 
 26231
-
-conf
-dir
-
-components
-dir
-
-ReleaseNotes_2.0.2.txt
-file
-
-
-
-
-2011-08-02T04:32:50.000000Z
-6e4673bbc650b9e46d9dabbf58735804
-2010-08-09T23:17:05.434469Z
-6970
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26638
 
 ReleaseNotes_2.2.0.txt
 file
@@ -1064,17 +1030,17 @@ has-props
 
 35965
 
-caWorkbench_Readme_v3.0.txt
+ReleaseNotes_2.0.2.txt
 file
 
 
 
 
 2011-08-02T04:32:50.000000Z
-50723c1aae0c25e1727d8f64fcd900bd
-2005-11-11T16:25:46.000000Z
-798
-xiaoqing
+6e4673bbc650b9e46d9dabbf58735804
+2010-08-09T23:17:05.434469Z
+6970
+smithken
 has-props
 
 
@@ -1096,7 +1062,10 @@ has-props
 
 
 
-2574
+26638
+
+src
+dir
 
 ReleaseNotes_2.2.1.txt
 file
@@ -1132,8 +1101,39 @@ has-props
 
 44234
 
-src
-dir
+caWorkbench_Readme_v3.0.txt
+file
+
+
+
+
+2011-08-02T04:32:50.000000Z
+50723c1aae0c25e1727d8f64fcd900bd
+2005-11-11T16:25:46.000000Z
+798
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2574
 
 ReleaseNotes1.0.5.txt
 file
@@ -1237,40 +1237,6 @@ keshav
 
 19453
 
-ReleaseNotes1.6.2.txt
-file
-
-
-
-
-2011-08-02T04:32:50.000000Z
-15a71a541a6791503d59a5139564546e
-2008-11-18T21:03:08.000000Z
-4470
-keshav
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18940
-
 ReleaseNotes1.8.0.txt
 file
 
@@ -1305,17 +1271,17 @@ jiz
 
 21345
 
-ReleaseNotes1.6.3.txt
+ReleaseNotes1.6.2.txt
 file
 
 
 
 
 2011-08-02T04:32:50.000000Z
-b68f3daf1435f2329e1d82b8a61c3f88
-2009-01-07T20:23:03.000000Z
-4599
-ksmith
+15a71a541a6791503d59a5139564546e
+2008-11-18T21:03:08.000000Z
+4470
+keshav
 
 
 
@@ -1337,7 +1303,7 @@ ksmith
 
 
 
-19053
+18940
 
 YG_cDNA_annot.csv
 file
@@ -1372,6 +1338,40 @@ has-props
 
 
 1529229
+
+ReleaseNotes1.6.3.txt
+file
+
+
+
+
+2011-08-02T04:32:50.000000Z
+b68f3daf1435f2329e1d82b8a61c3f88
+2009-01-07T20:23:03.000000Z
+4599
+ksmith
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19053
 
 build-component.xml
 file
@@ -1697,6 +1697,9 @@ has-props
 _all
 dir
 
+annotation
+dir
+
 devReadme.txt
 file
 
@@ -1730,9 +1733,6 @@ has-props
 
 
 233
-
-annotation
-dir
 
 Bcell-100.exp_ARACNe_FBW_threshold.txt
 file
