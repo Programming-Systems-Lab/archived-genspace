@@ -44,13 +44,12 @@ import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.PropertiesMonitor;
 import org.geworkbench.util.remote.Connection;
 import org.geworkbench.util.remote.ConnectionCreationException;
-import org.geworkbench.util.remote.SPLASHDefinition;
 import org.geworkbench.util.session.DiscoverySession;
 import org.geworkbench.util.session.Logger;
 import org.geworkbench.util.session.LoggerException;
 import org.geworkbench.util.session.LoginPanelModel;
 import org.geworkbench.util.session.SessionCreationException;
-import org.geworkbench.util.session.dialog.SessionChooser;
+import org.geworkbench.util.session.dialog.CreateSessionDialog;
 
 import polgara.soapPD_wsdl.Parameters;
 
@@ -72,7 +71,7 @@ import polgara.soapPD_wsdl.Parameters;
  * Company: Califano Lab
  * </p>
  *
- * @version $Id: SequenceDiscoveryViewAppComponent.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: SequenceDiscoveryViewAppComponent.java 8190 2011-08-03 17:54:51Z zji $
  */
 
 @AcceptTypes( { CSSequenceSet.class, PatternResult.class } )
@@ -139,12 +138,24 @@ public class SequenceDiscoveryViewAppComponent implements VisualPlugin,
 		DSSequenceSet<? extends DSSequence> database = CSSequenceSet
 				.getSequenceDB(seqFile);
 		// the database will be saved with this name on the server.
-		String databaseName = SPLASHDefinition.encodeFile(database.getFile(),
+		String databaseName = encodeFile(database.getFile(),
 				userName);
 		// create a session
 		return new DiscoverySession(sessionName, database, databaseName,
 				connection, userName, logger.getUserId());
 	}
+
+	/**
+     * The method constructs a string from a file and userName.
+     */
+    private static String encodeFile(File toEncode, String userName) {
+        String databaseName = toEncode.getPath();
+        databaseName = databaseName.replace(File.separatorChar, '_').replace(':', '[');
+
+        //append user name to get uniqueness
+        databaseName = userName + '_' + databaseName;
+        return databaseName;
+    }
 
 	private Logger getLogger(Connection connection, String user, char[] password)
 			throws SessionCreationException {
@@ -338,24 +349,37 @@ public class SequenceDiscoveryViewAppComponent implements VisualPlugin,
 		// intermediate values of the loginPanelModel are saved here
 		LoginPanelModel tempLoginModel = new LoginPanelModel();
 		copyLoginPanelModel(loginPanelModel, tempLoginModel);
-		SessionChooser chooser = new SessionChooser(null,
-				"New DiscoverySession", tempLoginModel);
-		int retVal = chooser.show();
-		if (retVal == SessionChooser.CANCEL_OPTION) {
-			return null;
-		}
+		CreateSessionDialog dialog = new CreateSessionDialog(null, "New DiscoverySession", tempLoginModel, true);
 
-		String host = chooser.getHostName();
-		int port = chooser.getPortNum();
-		String userName = chooser.getUserName();
-		char[] password = chooser.getPassWord();
-		String sName = chooser.getSession();
+        dialog.setVisible(true);
+        int ret = dialog.getReturnValue();
+
+        String host = new String();
+        int port = -1;
+        String userName = new String();
+        char[] passWord = null;
+        String sessionName = new String();
+        if (ret == CreateSessionDialog.CONNECT_OPTION) {
+            host = dialog.getHostName();
+            port = dialog.getPortNum();
+            userName = dialog.getUserName();
+            char[] pWord = dialog.getPassWord();
+            if (pWord != null) {
+                passWord = new char[pWord.length];
+                System.arraycopy(pWord, 0, passWord, 0, pWord.length);
+            } else {
+                passWord = new char[0];
+            }
+            sessionName = dialog.getSessionName();
+        } else {
+        	return null;
+        }
 
 		// try to create this session
 		DiscoverySession aDiscoverySession = null;
 		try {
 			aDiscoverySession = connectToService(host, port, userName,
-					password, sName);
+					passWord, sessionName);
 
 		} catch (SessionCreationException exp) {
 			//exp.printStackTrace();

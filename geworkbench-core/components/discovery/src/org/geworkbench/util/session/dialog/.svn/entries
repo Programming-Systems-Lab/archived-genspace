@@ -1,14 +1,14 @@
 10
 
 dir
-8187
+8190
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session/dialog
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
+2011-08-03T17:54:51.934605Z
+8190
 zji
 
 
@@ -26,50 +26,16 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-SessionChooser.java
-file
-
-
-
-
-2011-08-02T04:27:42.000000Z
-973c75ea1e6839eabc9c2725fb26a4b5
-2010-07-19T16:10:02.603322Z
-6880
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3811
-
 CreateSessionDialog.java
 file
 
 
 
 
-2011-08-02T04:27:42.000000Z
-80ae417bdd52fec2b6c3e7440c379f60
-2011-07-30T04:31:30.667242Z
-8187
+2011-08-03T19:17:30.000000Z
+4ca079ad07c0abc45b38292217b2eb81
+2011-08-03T17:54:51.934605Z
+8190
 zji
 has-props
 
@@ -92,7 +58,7 @@ has-props
 
 
 
-10308
+10423
 
 LoginPanel.java
 file

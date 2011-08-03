@@ -57,7 +57,6 @@ import org.geworkbench.events.StatusBarEvent;
 import org.geworkbench.events.listeners.ProgressChangeListener;
 import org.geworkbench.events.listeners.StatusChangeListener;
 import org.geworkbench.util.patterns.DataSource;
-import org.geworkbench.util.remote.SPLASHDefinition;
 import org.geworkbench.util.session.DiscoverySession;
 
 import polgara.soapPD_wsdl.Exhaustive;
@@ -86,7 +85,7 @@ import polgara.soapPD_wsdl.ProfileHMM;
  * </p>
  *
  * @author
- * @version $Id: SequenceDiscoveryViewWidget.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: SequenceDiscoveryViewWidget.java 8189 2011-08-03 15:02:21Z zji $
  */
 public class SequenceDiscoveryViewWidget extends JPanel implements
 		StatusChangeListener, PropertyChangeListener, ProgressChangeListener {
@@ -299,10 +298,10 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 
 		// select the algorithm to run
 		boolean exhaustive = false;
-		String algorithmName = SPLASHDefinition.Algorithm.REGULAR;
+		String algorithmName = REGULAR;
 		if (selectedAlgo.equalsIgnoreCase(PatternResult.EXHAUSTIVE)) {
 			exhaustive = true;
-			algorithmName = SPLASHDefinition.Algorithm.EXHAUSTIVE;
+			algorithmName = EXHAUSTIVE;
 		}
 
 		try {
@@ -330,6 +329,9 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 
 		switchAlgo(selectedAlgo, algorithm, DEFAULT_VIEW);
 	}
+
+	private final static String REGULAR = "regular";
+    private final static String EXHAUSTIVE = "exhaustive";
 
 	private String getSelectedAlgorithmName() {
 		if(discovery.isSelected()) {

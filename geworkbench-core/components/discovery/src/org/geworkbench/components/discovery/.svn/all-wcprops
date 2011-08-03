@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
+/svn/geworkbench/!svn/ver/8190/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 END
 ParameterTranslation.java
 K 25
@@ -13,13 +13,13 @@ SequenceDiscoveryViewAppComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewAppComponent.java
+/svn/geworkbench/!svn/ver/8190/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewAppComponent.java
 END
 SequenceDiscoveryViewWidget.java
 K 25
 svn:wc:ra_dav:version-url
 V 143
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewWidget.java
+/svn/geworkbench/!svn/ver/8189/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewWidget.java
 END
 ParameterPanel.java
 K 25

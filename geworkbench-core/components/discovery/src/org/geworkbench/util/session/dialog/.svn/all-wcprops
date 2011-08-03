@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 109
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session/dialog
-END
-SessionChooser.java
-K 25
-svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/6880/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session/dialog/SessionChooser.java
+/svn/geworkbench/!svn/ver/8190/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session/dialog
 END
 CreateSessionDialog.java
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session/dialog/CreateSessionDialog.java
+/svn/geworkbench/!svn/ver/8190/trunk/geworkbench/components/discovery/src/org/geworkbench/util/session/dialog/CreateSessionDialog.java
 END
 LoginPanel.java
 K 25

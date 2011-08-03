@@ -1,7 +1,7 @@
 10
 
 dir
-8187
+8190
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/help/CNKB_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-CNKB_with_markers.png
-file
-
-
-
-
-2011-08-02T04:30:46.000000Z
-7e629ce43e351af748835ca4e3ca1dab
-2011-05-25T14:27:11.799181Z
-7926
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-44967
 
 index_002.css
 file
@@ -94,6 +60,40 @@ has-props
 
 50
 
+CNKB_with_markers.png
+file
+
+
+
+
+2011-08-02T04:30:46.000000Z
+7e629ce43e351af748835ca4e3ca1dab
+2011-05-25T14:27:11.799181Z
+7926
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+44967
+
 index_003.css
 file
 
@@ -127,40 +127,6 @@ has-props
 
 
 318
-
-CNKB_marker_setup.png
-file
-
-
-
-
-2011-08-02T04:30:46.000000Z
-fe596eeeea6d856b7733ba4e2d82ddf3
-2011-05-25T14:27:11.799181Z
-7926
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-31582
 
 index_004.css
 file
@@ -196,6 +162,40 @@ has-props
 
 50
 
+CNKB_marker_setup.png
+file
+
+
+
+
+2011-08-02T04:30:46.000000Z
+fe596eeeea6d856b7733ba4e2d82ddf3
+2011-05-25T14:27:11.799181Z
+7926
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31582
+
 CNKB_Preferences_Export_Interactome_v2.png
 file
 
@@ -230,40 +230,6 @@ has-props
 
 16515
 
-CNKB_Result_Display_3types_threshold0.png
-file
-
-
-
-
-2011-08-02T04:30:46.000000Z
-194847ab588a6cf7260528cef818dcc3
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-69302
-
 CNKB_Result_Cytoscape_3types_v2.png
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 244447
+
+CNKB_Result_Display_3types_threshold0.png
+file
+
+
+
+
+2011-08-02T04:30:46.000000Z
+194847ab588a6cf7260528cef818dcc3
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69302
 
 CNKB_GO_Right_Click.png
 file
@@ -366,40 +366,6 @@ has-props
 
 53752
 
-CNKB_Preferences_Column_Display_v2.png
-file
-
-
-
-
-2011-08-02T04:30:46.000000Z
-1c1ba1d61f093029eb7affe2c5ff7086
-2011-05-25T14:27:11.799181Z
-7926
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12961
-
 CNKB_throttle_graph_RC.png
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 36822
+
+CNKB_Preferences_Column_Display_v2.png
+file
+
+
+
+
+2011-08-02T04:30:46.000000Z
+1c1ba1d61f093029eb7affe2c5ff7086
+2011-05-25T14:27:11.799181Z
+7926
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12961
 
 CNKB_Gene_List_Right_click.png
 file

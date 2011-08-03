@@ -1,7 +1,7 @@
 10
 
 dir
-8187
+8190
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-PromoterView.java
-file
-
-
-
-
-2011-08-02T04:27:39.000000Z
-2f93c89c7524cddd4b7fec27ee793acf
-2011-03-24T13:43:50.511431Z
-7626
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2632
 
 ImagePanel.java
 file
@@ -93,6 +59,40 @@ has-props
 
 
 2101
+
+PromoterView.java
+file
+
+
+
+
+2011-08-02T04:27:39.000000Z
+2f93c89c7524cddd4b7fec27ee793acf
+2011-03-24T13:43:50.511431Z
+7626
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2632
 
 Matrix.java
 file

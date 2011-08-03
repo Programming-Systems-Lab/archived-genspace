@@ -36,9 +36,9 @@ import org.geworkbench.util.session.LoginPanelModel;
  * <p>Company: </p>
  *
  * @author Aner
- * @version $Id: CreateSessionDialog.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: CreateSessionDialog.java 8190 2011-08-03 17:54:51Z zji $
  */
-class CreateSessionDialog extends JDialog {
+public class CreateSessionDialog extends JDialog {
 	private static final long serialVersionUID = -6879419192925394259L;
 	
 	private BorderLayout borderLayout2 = new BorderLayout();
@@ -145,6 +145,7 @@ class CreateSessionDialog extends JDialog {
             public void componentShown(ComponentEvent ce) {
                 sessionName.requestFocusInWindow();
                 sessionName.setText("session" + sessionNo);
+                // FIXME this is not correct: low level component event triggers increment of session count
                 ++sessionNo;
                 sessionName.selectAll();
             }

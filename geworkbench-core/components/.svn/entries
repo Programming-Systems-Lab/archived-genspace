@@ -1,14 +1,14 @@
 10
 
 dir
-8187
+8190
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
+2011-08-03T17:54:51.934605Z
+8190
 zji
 
 
@@ -59,9 +59,6 @@ dir
 cgems
 dir
 
-patterns
-dir
-
 jmol
 dir
 
@@ -71,31 +68,28 @@ dir
 idea
 dir
 
-ttest
-dir
-
 selectors
 dir
 
-pudge
+ttest
 dir
 
 anova
 dir
 
-promoter
-dir
-
-discovery
+pudge
 dir
 
 cutenet
 dir
 
-skyline
+discovery
 dir
 
-genomebrowser
+promoter
+dir
+
+skyline
 dir
 
 poshistogram
@@ -104,13 +98,10 @@ dir
 caarray
 dir
 
-analysis
-dir
-
 filtering
 dir
 
-simulation
+analysis
 dir
 
 normalization
@@ -119,25 +110,16 @@ dir
 foldchange
 dir
 
-genetegrate
-dir
-
 cytoscape
 dir
 
 geneontology2
 dir
 
-classification
-dir
-
 sequences
 dir
 
 matrixreduce
-dir
-
-am
 dir
 
 netboost
@@ -167,9 +149,6 @@ dir
 gpmodule_v3_0
 dir
 
-tprofiler
-dir
-
 aracne-java
 dir
 
@@ -180,9 +159,6 @@ synteny
 dir
 
 colormosaic
-dir
-
-genepattern
 dir
 
 medusa

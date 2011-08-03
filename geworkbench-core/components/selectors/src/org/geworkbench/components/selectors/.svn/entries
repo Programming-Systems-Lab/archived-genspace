@@ -1,7 +1,7 @@
 10
 
 dir
-8187
+8190
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -301,40 +301,6 @@ has-props
 
 576
 
-SelectorTreeRenderer.java
-file
-
-
-
-
-2011-08-02T04:27:31.000000Z
-6df56a3d9d51349275607eb49b8b2464
-2011-04-22T15:34:27.009281Z
-7804
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3242
-
 GenePanel.cwb.xml
 file
 
@@ -369,17 +335,17 @@ zji
 
 1940
 
-greenpin.gif
+SelectorTreeRenderer.java
 file
 
 
 
 
 2011-08-02T04:27:31.000000Z
-740fee32feac791f544b3a1975b5d3fe
-2005-11-14T18:25:59.000000Z
-816
-watkin
+6df56a3d9d51349275607eb49b8b2464
+2011-04-22T15:34:27.009281Z
+7804
+zji
 has-props
 
 
@@ -401,7 +367,7 @@ has-props
 
 
 
-905
+3242
 
 PhenotypePanel.java
 file
@@ -436,6 +402,40 @@ has-props
 
 
 8891
+
+greenpin.gif
+file
+
+
+
+
+2011-08-02T04:27:31.000000Z
+740fee32feac791f544b3a1975b5d3fe
+2005-11-14T18:25:59.000000Z
+816
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+905
 
 graypin.gif
 file
