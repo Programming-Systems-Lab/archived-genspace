@@ -1,3 +1,4 @@
 *.class
 genspace-ejb/.classpath
 genspace-common/.classpath
+.DS_Store
