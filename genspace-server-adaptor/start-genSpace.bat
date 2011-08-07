@@ -1,0 +1,1 @@
+java -classpath "%CLASSPATH%";D:\genspace\jclaim\bin\sqljdbc.jar;D:\genspace\jclaim\bin;D:\genspace\jclaim\bin\jclaim.jar;D:\genspace\jclaim\bin\joscar.jar;D:\genspace\jclaim\bin\jsocks.jar;D:\genspace\jclaim\bin\msnm.jar;D:\genspace\jclaim\bin\oscar.jar;D:\genspace\jclaim\bin\smack.jar;D:\genspace\jclaim\bin\smackx.jar;D:\genspace\jclaim\bin\ymsg.jar genspace.jclaim.GenSpace

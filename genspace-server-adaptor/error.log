@@ -1,0 +1,23 @@
+Thu Jul 07 16:23:48 EDT 2011: java.lang.NullPointerException
+genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:125)
+
+Thu Jul 07 16:24:05 EDT 2011: java.util.NoSuchElementException: No line found
+java.util.Scanner.nextLine(Scanner.java:1516)
+genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:113)
+
+Thu Jul 07 16:30:54 EDT 2011: java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+java.security.AccessController.doPrivileged(Native Method)
+java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:169)
+genspace.db.DatabaseConnector.getConnection(DatabaseConnector.java:31)
+genspace.db.WorkflowManager.getAllTools(WorkflowManager.java:371)
+genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:183)
+
+Thu Jul 07 16:30:54 EDT 2011: java.lang.NullPointerException
+genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:185)
+

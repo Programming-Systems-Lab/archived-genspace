@@ -1,0 +1,68 @@
+[genspace - Thread-4 (2011-07-07 16:21:17,965)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: HELO
+[genspace - Thread-2 (2011-07-07 16:21:34,309)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-2 (2011-07-07 16:21:37,100)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:115) | Analysis: IDEA ANALYSIS
+[genspace - Thread-2 (2011-07-07 16:22:05,693)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-2 (2011-07-07 16:22:08,196)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:115) | Analysis: IDEA
+[genspace - Thread-5 (2011-07-07 16:22:21,957)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-5 (2011-07-07 16:22:22,309)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:115) | Analysis: Marker Centering Normalizer
+[genspace - Thread-6 (2011-07-07 16:22:37,079)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-6 (2011-07-07 16:22:37,485)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:115) | Analysis: Marker Centering Normalizer
+[genspace - Thread-7 (2011-07-07 16:23:36,960)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: asdf
+[genspace - Thread-3 (2011-07-07 16:23:46,230)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-3 (2011-07-07 16:23:46,735)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:115) | Analysis: loadTools
+[genspace - Thread-5 (2011-07-07 16:24:04,374)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-6 (2011-07-07 16:24:06,254)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-6 (2011-07-07 16:24:06,255)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:115) | Analysis: Marker Centering Normalizer
+[genspace - Thread-7 (2011-07-07 16:30:54,904)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: TOOLS
+[genspace - Thread-3 (2011-07-07 16:31:13,841)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:107) | Type: TOOLS
+[genspace - Thread-9 (2011-07-07 17:24:46,235)] INFO genspace.db.Handler.run(ISBUServer.java:101) | the client is requesting getAllAnalysisTools
+[genspace - Thread-9 (2011-07-07 17:24:46,238)] INFO genspace.db.Handler.run(ISBUServer.java:106) | Server has the result: [Hierarchical Clustering, Multiple Gene ID Filter, T Test Analysis, Marker Centering Normalizer, Coefficient of Variation Filter, SVM Classifier, WV Classifier, MEDUSA, Pudge Analysis, Blast SkyBase, CART Analysis 3.0, WV Analysis 3.0, Fold Change Filter AAA, PCA Analysis 3.0, Threshold Normalizer, SkyLine Comparative Modeling, HouseKeeping Genes Normalizer, Fold Change Analysis, Affy Detection Call Filter, Protein Function Annotation Server: MarkUs, Quantile Normalizer, Multi t Test Analysis, NetBoost Analysis, KNN Classifier, Comparative Modeling Pipeline: SkyLine, Deviation Filter, Log2 Transformation, IDEA Analysis, SMLR Classifier, Mean Variance Normalizer, PCA Analysis, SMLR Analysis, SVM Analysis 3.0, MINDY Analysis, Expression Threshold Filter, Missing Values Normalizer, Genepix Flags Filter, KNN Analysis 3.0, MRA Analysis, K-Means Clustering, Missing Values Filter, Anova Analysis, MarkUs Analysis, SOM Analysis, ARACNE Analysis, MatrixREDUCE Analysis, t Test Analysis, Microarray Centering Normalizer, SkyBase Analysis, GO Terms Analysis, Gene Ontology Term Analysis (Ontologizer 2.0), Evidence Integration Analysis, Genepix Expression Threshold Filter, Fold Change Filter]
+[genspace - Thread-8 (2011-07-07 17:24:46,341)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: TOOLS
+[genspace - Thread-10 (2011-07-07 17:24:54,248)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: START
+[genspace - Thread-10 (2011-07-07 17:24:54,249)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:143) | Analysis: Hierarchical Clustering
+[genspace - Thread-11 (2011-07-07 17:24:56,419)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:107) | Command: getToolId
+[genspace - Thread-11 (2011-07-07 17:24:56,420)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:112) | Hierarchical Clustering
+[genspace - Thread-12 (2011-07-07 17:24:56,530)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:107) | Command: getExpertUser
+[genspace - Thread-12 (2011-07-07 17:24:56,530)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:121) | Hierarchical Clustering:
+[genspace - Thread-13 (2011-07-07 17:24:56,652)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:107) | Command: getToolRating
+[genspace - Thread-13 (2011-07-07 17:24:56,653)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:134) |  is requesting rating for 25.
+[genspace - Thread-13 (2011-07-07 17:24:56,653)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:138) | Rating for 25 is: (Avg:0.0 User:0.0 Total Times Rated:0)
+[genspace - Thread-14 (2011-07-07 17:25:08,708)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: INCLUDE
+[genspace - Thread-14 (2011-07-07 17:25:08,709)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:172) | Analysis: Hierarchical Clustering
+[genspace - Thread-15 (2011-07-07 17:25:11,300)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-15 (2011-07-07 17:25:11,301)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:114) | Analysis: Hierarchical Clustering
+[genspace - Thread-16 (2011-07-07 17:25:13,378)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:106) | Type: ALL
+[genspace - Thread-16 (2011-07-07 17:25:13,379)] INFO genspace.db.WorkflowVisualizationServer$WorkflowVisualizationServerThread.run(WorkflowVisualizationServer.java:114) | Analysis: Hierarchical Clustering
+[genspace - Thread-17 (2011-07-07 17:25:21,970)] INFO genspace.db.Handler.run(ISBUServer.java:119) | the client is requesting getTop3MostPopularTools
+[genspace - Thread-17 (2011-07-07 17:25:22,061)] INFO genspace.db.Handler.run(ISBUServer.java:124) | Server has the result: [Hierarchical Clustering, ARACNE Analysis, t Test Analysis]
+[genspace - Thread-18 (2011-07-07 17:25:22,064)] INFO genspace.db.Handler.run(ISBUServer.java:137) | the client is requesting getTop3MostPopularWFHead
+[genspace - Thread-18 (2011-07-07 17:25:22,157)] INFO genspace.db.Handler.run(ISBUServer.java:142) | Server has the result: [Hierarchical Clustering, t Test Analysis, Anova Analysis]
+[genspace - Thread-19 (2011-07-07 17:25:22,160)] INFO genspace.db.Handler.run(ISBUServer.java:155) | the client is requesting getTop3MostPopularWF
+[genspace - Thread-19 (2011-07-07 17:25:22,858)] INFO genspace.db.Handler.run(ISBUServer.java:160) | Server has the result: [Hierarchical Clustering,Hierarchical Clustering, ARACNE Analysis,ARACNE Analysis, t Test Analysis,t Test Analysis]
+[genspace - Thread-21 (2011-07-07 17:26:12,351)] INFO genspace.db.Handler.run(ISBUServer.java:691) | the client is requesting RTWFS, getRealTimeWorkFlowSuggestion
+[genspace - Thread-21 (2011-07-07 17:26:12,351)] INFO genspace.db.Handler.run(ISBUServer.java:695) | Server has get CWF: Anova Analysis,
+[genspace - Thread-21 (2011-07-07 17:26:12,351)] INFO genspace.db.Handler.run(ISBUServer.java:701) | Server has the result for RTWFS! 
+[genspace - Thread-23 (2011-07-07 17:26:14,204)] INFO genspace.db.Handler.run(ISBUServer.java:691) | the client is requesting RTWFS, getRealTimeWorkFlowSuggestion
+[genspace - Thread-23 (2011-07-07 17:26:14,205)] INFO genspace.db.Handler.run(ISBUServer.java:695) | Server has get CWF: Anova Analysis,Anova Analysis,
+[genspace - Thread-23 (2011-07-07 17:26:14,205)] INFO genspace.db.Handler.run(ISBUServer.java:701) | Server has the result for RTWFS! 
+[genspace - Thread-26 (2011-07-07 17:26:15,514)] INFO genspace.db.Handler.run(ISBUServer.java:691) | the client is requesting RTWFS, getRealTimeWorkFlowSuggestion
+[genspace - Thread-26 (2011-07-07 17:26:15,514)] INFO genspace.db.Handler.run(ISBUServer.java:695) | Server has get CWF: Anova Analysis,Anova Analysis,Anova Analysis,
+[genspace - Thread-26 (2011-07-07 17:26:15,515)] INFO genspace.db.Handler.run(ISBUServer.java:701) | Server has the result for RTWFS! 
+[genspace - Thread-29 (2011-07-07 17:26:16,518)] INFO genspace.db.Handler.run(ISBUServer.java:691) | the client is requesting RTWFS, getRealTimeWorkFlowSuggestion
+[genspace - Thread-29 (2011-07-07 17:26:16,520)] INFO genspace.db.Handler.run(ISBUServer.java:695) | Server has get CWF: Anova Analysis,Anova Analysis,Anova Analysis,Anova Analysis,
+[genspace - Thread-29 (2011-07-07 17:26:16,520)] INFO genspace.db.Handler.run(ISBUServer.java:701) | Server has the result for RTWFS! 
+[genspace - Thread-31 (2011-07-07 17:26:40,718)] INFO genspace.db.Handler.run(ISBUServer.java:691) | the client is requesting RTWFS, getRealTimeWorkFlowSuggestion
+[genspace - Thread-31 (2011-07-07 17:26:40,718)] INFO genspace.db.Handler.run(ISBUServer.java:695) | Server has get CWF: Anova Analysis,Anova Analysis,Anova Analysis,Anova Analysis,Anova Analysis,
+[genspace - Thread-31 (2011-07-07 17:26:40,718)] INFO genspace.db.Handler.run(ISBUServer.java:701) | Server has the result for RTWFS! 
+[genspace - Thread-33 (2011-07-07 17:26:42,236)] INFO genspace.db.Handler.run(ISBUServer.java:691) | the client is requesting RTWFS, getRealTimeWorkFlowSuggestion
+[genspace - Thread-33 (2011-07-07 17:26:42,238)] INFO genspace.db.Handler.run(ISBUServer.java:695) | Server has get CWF: Anova Analysis,Anova Analysis,Anova Analysis,Anova Analysis,Anova Analysis,Anova Analysis,
+[genspace - Thread-33 (2011-07-07 17:26:42,238)] INFO genspace.db.Handler.run(ISBUServer.java:701) | Server has the result for RTWFS! 
+[genspace - Thread-36 (2011-07-07 17:27:05,451)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:107) | Command: getToolId
+[genspace - Thread-36 (2011-07-07 17:27:05,451)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:112) | Anova Analysis
+[genspace - Thread-37 (2011-07-07 17:27:05,546)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:107) | Command: getExpertUser
+[genspace - Thread-37 (2011-07-07 17:27:05,547)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:121) | Anova Analysis:
+[genspace - Thread-39 (2011-07-07 17:27:05,567)] INFO genspace.db.Handler.run(ISBUServer.java:305) | Workflow ID request:[Anova Analysis, Anova Analysis, Anova Analysis]
+[genspace - Thread-38 (2011-07-07 17:27:05,662)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:107) | Command: getToolRating
+[genspace - Thread-38 (2011-07-07 17:27:05,663)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:134) |  is requesting rating for 22.
+[genspace - Thread-38 (2011-07-07 17:27:05,663)] INFO genspace.db.ToolServer$ToolServerHandler.run(ToolServer.java:138) | Rating for 22 is: (Avg:0.0 User:0.0 Total Times Rated:0)
+[genspace - Thread-40 (2011-07-07 17:27:05,787)] INFO genspace.db.Handler.run(ISBUServer.java:305) | Workflow ID request:[Anova Analysis, Anova Analysis, Anova Analysis, Anova Analysis]
