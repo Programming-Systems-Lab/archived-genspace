@@ -59,4 +59,4 @@ BE ABSOLUTELY CERTAIN THAT YOU DID STEP 4 ABOVE FROM SETTING UP GENSPACE!
 
 Load the GlassFish administration console and deploy the axis2 war as a web app
 
-
+//TODO - update details above
