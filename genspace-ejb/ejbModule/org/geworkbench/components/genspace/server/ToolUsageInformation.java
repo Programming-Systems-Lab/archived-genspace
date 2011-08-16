@@ -7,11 +7,12 @@ import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
-//import org.geworkbench.components.genspace.entity.TasteUser;
+import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Workflow;
 import org.geworkbench.components.genspace.entity.WorkflowComment;
 
@@ -94,17 +95,35 @@ public class ToolUsageInformation extends GenericUsageInformation{
 		return super.getToolSuggestion(workflowID);
 	}
 	
-//	@Override
-//	@WebMethod
-//	public List<Workflow> getMahoutToolSuggestion(int userID, int filterMethod) {
-//		return super.getMahoutToolSuggestion(userID, filterMethod);
-//	}
-//	
-//	@Override
-//	@WebMethod
-//	public List<TasteUser> getMahoutUserSuggestion(int userID, int filterMethod) {
-//		return super.getMahoutUserSuggestion(userID, filterMethod);
-//	}
+	@Override
+	@WebMethod
+	public List<Workflow> getMahoutToolSuggestion(int userID, int filterMethod) {
+		return super.getMahoutToolSuggestion(userID, filterMethod);
+	}
+	
+	@Override
+	@WebMethod
+	public List<TasteUser> getMahoutUserSuggestion(int userID, int filterMethod) {
+		return super.getMahoutUserSuggestion(userID, filterMethod);
+	}
+	
+	@Override
+	@WebMethod
+	public List<Workflow> getMahoutUserWorkflowsSuggestion(int userID, int filterMethod) {
+		return super.getMahoutUserWorkflowsSuggestion(userID, filterMethod);
+	}
+	
+	@Override
+	@WebMethod
+	public List<Workflow> getMahoutSimilarWorkflowsSuggestion(List<Tool> tools) {
+		return super.getMahoutSimilarWorkflowsSuggestion(tools);
+	}
+	
+	@Override
+	@WebMethod
+	public void refreshMahoutRecommender() {
+		super.refreshMahoutRecommender();
+	}
 
 	@WebMethod(exclude=true)
 	@Override
@@ -135,4 +154,5 @@ public class ToolUsageInformation extends GenericUsageInformation{
 	public User getExpertUserFor(int toolId) {
 		return super.getExpertUserFor(toolId);
 	}
+
 }

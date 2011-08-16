@@ -11,6 +11,7 @@ import java.util.Vector;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.jdbc.AbstractJDBCDataModel;
 import org.apache.mahout.common.IOUtils;
+import org.geworkbench.components.genspace.entity.Workflow;
 
 public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 
@@ -66,10 +67,13 @@ public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 		"SELECT MAX(" + preferenceColumn + ") FROM " + preferenceTable,
 		"SELECT MIN(" + preferenceColumn + ") FROM " + preferenceTable);
 		
-		getNetworkSQL = "SELECT " + userIDColumn + ", " + networkColumn + " FROM " + preferenceTable;
+		getNetworkSQL = "select t.id, u.network_id " + 
+		"from user_network u, registration r, taste_users t " +
+		"where u.user_id = r.ID and r.ID = t.registration_id";
 	}
 	
 	public HashMap<Long, Long> getParentMap() throws TasteException {
+		
 		Connection conn = null;
 	    PreparedStatement stmt = null;
 	    ResultSet rs = null;
@@ -85,7 +89,6 @@ public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 		    } 
 		    return hashMap;
 	    } catch (SQLException sqle) {
-	    	//log.warn("Exception while retrieving prefs for item", sqle);
 	    	throw new TasteException(sqle);
 	    } finally {
 	    	IOUtils.quietClose(rs, stmt, conn);
@@ -94,7 +97,6 @@ public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 	
 	public HashMap<Long, Vector<Integer>> getUserNetworks() throws TasteException {
 		
-	    //log.debug("Retrieving network for user ID '{}'", userID);
 	    Connection conn = null;
 	    PreparedStatement stmt = null;
 	    ResultSet rs = null;
@@ -103,7 +105,6 @@ public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 	      conn = super.getDataSource().getConnection();
 	      stmt = conn.prepareStatement(getNetworkSQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 
-	      //log.debug("Executing SQL query: {}", getNetworkSQL);
 	      rs = stmt.executeQuery();
 	      while (rs.next()) {
 	        long userId = rs.getLong(1);
@@ -119,7 +120,6 @@ public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 	      } 
 	        return hashMap;
 	    } catch (SQLException sqle) {
-	      //log.warn("Exception while retrieving prefs for item", sqle);
 	      throw new TasteException(sqle);
 	    } finally {
 	      IOUtils.quietClose(rs, stmt, conn);

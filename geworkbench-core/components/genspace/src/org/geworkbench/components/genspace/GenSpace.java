@@ -1,7 +1,11 @@
 package org.geworkbench.components.genspace;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -10,17 +14,20 @@ import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
 import javax.swing.SwingWorker;
+import javax.swing.border.MatteBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
-import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.ui.WorkflowVisualization;
+import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
 
 
@@ -87,10 +94,9 @@ public class GenSpace {
 
 				};
 				};
-wk.execute();
-		
-		
+				wk.execute();
 		}
+	
 	public static void bringUpProfile(Object o)
 	{
 		getInstance().jtp.setSelectedComponent(networksPanels.$$$getRootComponent$$$());
@@ -103,14 +109,19 @@ wk.execute();
 	public WorkflowRepository getWorkflowRepository() {
 		return workflowRepository;
 	}
+	
 	JPanel needLoginPanel;
+	
 	public void handleLogin()
 	{
 		jtp.setComponentAt(5, workflowRepository);
+		//mahoutRecommendationPanel.handleLogin();
 	}
+	
 	public void handleLogout()
 	{
 		jtp.setComponentAt(5, needLoginPanel);
+		//mahoutRecommendationPanel.handleLogout();
 	}
 	private StatusBar statusBar;
 	
@@ -131,6 +142,7 @@ wk.execute();
 		needLoginPanel = new JPanel();
 		needLoginPanel.add(new JLabel("Please login to genSpace to access this area."));
 		org.geworkbench.components.genspace.ui.GenSpaceLogin login = new org.geworkbench.components.genspace.ui.GenSpaceLogin();
+		login.addMahoutPanel();
 
 		jtp.addTab("genSpace Login", login);
 		jtp.addTab("Workflow Visualization", wv);
@@ -149,11 +161,14 @@ wk.execute();
 				}
 			}
 		});
+		
 		jframe.setSize(1024,768);
 		jframe.setLocation(200, 0);
 		jframe.getContentPane().setLayout(new BorderLayout());
-		jframe.add(jtp,BorderLayout.CENTER);
-		jframe.add(statusBar,BorderLayout.SOUTH);
+		jframe.add(jtp, BorderLayout.CENTER);
+	
+		//statusBar.setPreferredSize(new Dimension(1024, 50));
+		jframe.add(statusBar, BorderLayout.SOUTH);
 
 		jframe.pack();
 		jframe.setVisible(true);

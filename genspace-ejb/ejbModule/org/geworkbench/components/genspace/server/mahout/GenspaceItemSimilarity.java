@@ -10,21 +10,14 @@ import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.SpearmanCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
-import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
 
 public class GenspaceItemSimilarity extends AbstractItemSimilarity{
 
 	private int PARENT_DEPTH = 3;
-	private int filtering;
-	private DataModel model;
-	private ItemSimilarity similarity;
 	private HashMap<Long, Long> parentMap;
 	
-	public GenspaceItemSimilarity(DataModel model, int filtering, HashMap<Long, Long> parentMap) throws TasteException {
+	public GenspaceItemSimilarity(DataModel model, HashMap<Long, Long> parentMap) throws TasteException {
 		super(model);
-		similarity = new EuclideanDistanceSimilarity(model);
-		this.filtering = filtering;
-		this.model = model;
 		this.parentMap = parentMap;
 	}
 

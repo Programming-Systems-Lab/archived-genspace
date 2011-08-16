@@ -3,17 +3,20 @@ package org.geworkbench.components.genspace.server;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.annotation.security.PermitAll;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.persistence.Query;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
 
 import org.geworkbench.components.genspace.entity.AnalysisEvent;
+import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Tool;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
@@ -65,6 +68,36 @@ public class PublicFacade extends GenericUsageInformation implements PublicFacad
 		return register((User) AbstractFacade.readObject(userObj));
 	}
     
-
+    @WebMethod
+	public TasteUser getTasteUserByHostname(String hostname)
+	{
+		Query q = getEntityManager().createNativeQuery("select c.* from taste_users as c " +
+				"where c.hostname=?", TasteUser.class);
+		q.setParameter(1, hostname);
+		TasteUser tu = null;
+		try
+		{
+			tu = (TasteUser) q.getSingleResult();
+		} catch (Exception e ) {
+			e.printStackTrace();
+		}
+		return tu;
+	}
+    
+    @WebMethod
+	public TasteUser getTasteUserByUser(User user)
+	{
+		Query q = getEntityManager().createNativeQuery("select c.* from taste_users as c " +
+				"where c.registration_id=?", TasteUser.class);
+		q.setParameter(1, user.getId());
+		TasteUser tu = null;
+		try
+		{
+			tu = (TasteUser) q.getSingleResult();
+		} catch (Exception e ) {
+			e.printStackTrace();
+		}
+		return tu;
+	}
    
 }

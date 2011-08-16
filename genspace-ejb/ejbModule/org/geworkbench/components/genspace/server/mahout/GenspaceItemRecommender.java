@@ -1,32 +1,21 @@
 package org.geworkbench.components.genspace.server.mahout;
 
 import java.util.List;
-
-import org.apache.mahout.cf.taste.recommender.CandidateItemsStrategy;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.Callable;
 
-import org.apache.mahout.cf.taste.common.Refreshable;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.common.FastIDSet;
 import org.apache.mahout.cf.taste.impl.common.FullRunningAverage;
-import org.apache.mahout.cf.taste.impl.common.RefreshHelper;
 import org.apache.mahout.cf.taste.impl.common.RunningAverage;
 import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.TopItems;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.model.PreferenceArray;
 import org.apache.mahout.cf.taste.recommender.IDRescorer;
-import org.apache.mahout.cf.taste.recommender.ItemBasedRecommender;
-import org.apache.mahout.cf.taste.recommender.MostSimilarItemsCandidateItemsStrategy;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.Rescorer;
 import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
 import org.apache.mahout.common.LongPair;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
 
@@ -48,7 +37,6 @@ public class GenspaceItemRecommender extends GenericItemBasedRecommender{
 	    if (preferencesFromUser.length() == 0) {
 	      return Collections.emptyList();
 	    }
-	    
 	   
 
 	    FastIDSet possibleItemIDs = getAllOtherItems(userID, preferencesFromUser);
@@ -61,14 +49,14 @@ public class GenspaceItemRecommender extends GenericItemBasedRecommender{
 	    return topItems;
 	  }
 	
-	private static final class MultiMostSimilarEstimator implements TopItems.Estimator<Long> {
+	public static final class MultiMostSimilarEstimator implements TopItems.Estimator<Long> {
 	    
 	    private final long[] toItemIDs;
 	    private final ItemSimilarity similarity;
 	    private final Rescorer<LongPair> rescorer;
 	    private final boolean excludeItemIfNotSimilarToAll;
 	    
-	    private MultiMostSimilarEstimator(long[] toItemIDs, ItemSimilarity similarity, Rescorer<LongPair> rescorer,
+	    MultiMostSimilarEstimator(long[] toItemIDs, ItemSimilarity similarity, Rescorer<LongPair> rescorer,
 	        boolean excludeItemIfNotSimilarToAll) {
 	      this.toItemIDs = toItemIDs;
 	      this.similarity = similarity;
