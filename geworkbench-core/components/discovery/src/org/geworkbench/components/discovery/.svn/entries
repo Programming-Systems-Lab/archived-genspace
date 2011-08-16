@@ -1,14 +1,14 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-08-03T17:54:51.934605Z
-8190
+2011-08-09T15:33:41.737695Z
+8209
 zji
 
 
@@ -26,13 +26,47 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+SequenceDiscoveryViewWidget.java
+file
+
+
+
+
+2011-08-16T23:57:07.000000Z
+0144e77175e1ff1c8ce102e81704de70
+2011-08-09T15:33:41.737695Z
+8209
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29223
+
 ParameterTranslation.java
 file
 
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-03T19:29:17.000000Z
 9e3506065e7d31ba765000edabb0e3ab
 2011-03-18T17:33:45.195884Z
 7608
@@ -60,47 +94,13 @@ has-props
 
 2184
 
-SequenceDiscoveryViewWidget.java
-file
-
-
-
-
-2011-08-03T19:17:30.000000Z
-85dd61e8fcd02ef0abd9e3d2051532dd
-2011-08-03T15:02:21.490955Z
-8189
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29450
-
 ParameterPanel.java
 file
 
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-02T14:48:03.000000Z
 a8b548a562e41692e03da0d94063003f
 2011-07-30T04:31:30.667242Z
 8187
@@ -134,7 +134,7 @@ file
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-03T19:29:17.000000Z
 adbe8a131677d7124c9940f7f963db80
 2005-07-28T22:36:56.000000Z
 50
@@ -162,11 +162,58 @@ has-props
 
 462
 
+session
+dir
+
 algorithm
 dir
 
-help
-dir
+PatternTableModel.java
+file
+
+
+
+
+2011-08-16T23:57:58.000000Z
+60b46344dc7f7d48494b050eb0ad2b25
+2011-08-04T20:52:12.507327Z
+8202
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7237
+
+PatternTableModelWrapper.java
+file
+
+
+
+
+
+dafe71da2d615ffc6f428b0b4cd322d6
+2011-08-04T20:52:12.507327Z
+8202
+zji
+has-props
 
 SequenceDiscoveryViewAppComponent.cwb.xml
 file
@@ -174,7 +221,7 @@ file
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-02T14:48:03.000000Z
 70f84a27c9100d0e20f2ba8a6b961da3
 2011-07-30T04:31:30.667242Z
 8187
@@ -202,13 +249,16 @@ zji
 
 1523
 
+help
+dir
+
 stop.gif
 file
 
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-03T19:29:17.000000Z
 d36021b22ed88b6b9a215c2f57c77824
 2005-07-28T22:36:56.000000Z
 50
@@ -242,10 +292,10 @@ file
 
 
 
-2011-08-03T19:17:30.000000Z
-1fa238fcafe7b7c2507c7b677304c4f9
-2011-08-03T17:54:51.934605Z
-8190
+2011-08-16T23:57:22.000000Z
+46fa983982b9610c54e162af526cf716
+2011-08-05T19:05:16.117444Z
+8204
 zji
 has-props
 
@@ -268,10 +318,20 @@ has-props
 
 
 
-16826
+16616
 
-model
-dir
+PatternTableView.java
+file
+
+
+
+
+
+06df5b342922a362788cd49bbf6cb0b5
+2011-08-05T21:42:22.037696Z
+8206
+zji
+has-props
 
 start.gif
 file
@@ -279,7 +339,7 @@ file
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-03T19:29:17.000000Z
 18140a4a2fbc0dfd3aa41a63e24634bc
 2005-07-28T22:36:56.000000Z
 50
@@ -313,7 +373,7 @@ file
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-03T19:29:17.000000Z
 719d524c441054ce464bef6229696272
 2005-07-28T22:36:56.000000Z
 50
@@ -347,7 +407,7 @@ file
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-02T14:48:03.000000Z
 eb97d7a9a71d44097dfb67c15cbdefba
 2011-07-30T04:31:30.667242Z
 8187
@@ -375,16 +435,13 @@ has-props
 
 1249
 
-view
-dir
-
 PatFilter.java
 file
 
 
 
 
-2011-08-02T04:27:42.000000Z
+2011-08-03T19:29:17.000000Z
 ae41404921f2ae297e67d11d73e740c5
 2005-07-28T22:36:56.000000Z
 50

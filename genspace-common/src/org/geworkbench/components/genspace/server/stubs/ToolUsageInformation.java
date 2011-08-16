@@ -168,6 +168,79 @@ public interface ToolUsageInformation {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.Workflow>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMahoutToolSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutToolSuggestion")
+    @ResponseWrapper(localName = "getMahoutToolSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutToolSuggestionResponse")
+    public List<Workflow> getMahoutToolSuggestion(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.TasteUser>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMahoutUserSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserSuggestion")
+    @ResponseWrapper(localName = "getMahoutUserSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserSuggestionResponse")
+    public List<TasteUser> getMahoutUserSuggestion(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.Workflow>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMahoutSimilarWorkflowsSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutSimilarWorkflowsSuggestion")
+    @ResponseWrapper(localName = "getMahoutSimilarWorkflowsSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutSimilarWorkflowsSuggestionResponse")
+    public List<Workflow> getMahoutSimilarWorkflowsSuggestion(
+        @WebParam(name = "arg0", targetNamespace = "")
+        List<Tool> arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.Workflow>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMahoutUserWorkflowsSuggestion", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserWorkflowsSuggestion")
+    @ResponseWrapper(localName = "getMahoutUserWorkflowsSuggestionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMahoutUserWorkflowsSuggestionResponse")
+    public List<Workflow> getMahoutUserWorkflowsSuggestion(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     */
+    @WebMethod
+    @RequestWrapper(localName = "refreshMahoutRecommender", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.RefreshMahoutRecommender")
+    @ResponseWrapper(localName = "refreshMahoutRecommenderResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.RefreshMahoutRecommenderResponse")
+    public void refreshMahoutRecommender();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns org.geworkbench.components.genspace.server.stubs.Transaction

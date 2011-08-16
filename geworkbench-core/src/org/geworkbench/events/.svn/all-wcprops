@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/geworkbench/!svn/ver/7757/trunk/geworkbench/src/org/geworkbench/events
+/svn/geworkbench/!svn/ver/8196/trunk/geworkbench/src/org/geworkbench/events
 END
 AnnotationsEvent.java
 K 25
@@ -69,12 +69,6 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/5132/trunk/geworkbench/src/org/geworkbench/events/CaArraySuccessEvent.java
 END
-LoginPanelModelListener.java
-K 25
-svn:wc:ra_dav:version-url
-V 104
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/events/LoginPanelModelListener.java
-END
 GeneSelectorEvent.java
 K 25
 svn:wc:ra_dav:version-url
@@ -105,17 +99,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/CaArrayRequestEvent.java
 END
-ProjectNodeRemovedEvent.java
-K 25
-svn:wc:ra_dav:version-url
-V 104
-/svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/ProjectNodeRemovedEvent.java
-END
 ProjectNodeAddedEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/ProjectNodeAddedEvent.java
+END
+ProjectNodeRemovedEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/ProjectNodeRemovedEvent.java
 END
 HistoryEvent.java
 K 25
@@ -141,29 +135,23 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/events/StatusBarEvent.java
 END
-LoginPanelModelEvent.java
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/geworkbench/!svn/ver/7677/trunk/geworkbench/src/org/geworkbench/events/LoginPanelModelEvent.java
-END
 SingleMicroarrayEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/events/SingleMicroarrayEvent.java
 END
-PhenotypeSelectorEvent.java
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/events/PhenotypeSelectorEvent.java
-END
 AdjacencyMatrixCancelEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 107
 /svn/geworkbench/!svn/ver/7757/trunk/geworkbench/src/org/geworkbench/events/AdjacencyMatrixCancelEvent.java
+END
+PhenotypeSelectorEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/events/PhenotypeSelectorEvent.java
 END
 CaArrayReturnHybridizationListEvent.java
 K 25

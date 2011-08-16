@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/data
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -477,9 +477,6 @@ has-props
 
 107263
 
-cardiogenomics.med.harvard.edu
-dir
-
 samplechipchipdata.chp
 file
 
@@ -514,39 +511,8 @@ has-props
 
 1695745
 
-yeastORFComplete.txt
-file
-
-
-
-
-2011-08-02T04:32:43.000000Z
-601d9abe0bb8eca396d1d1b69a02f332
-2006-04-21T22:37:46.000000Z
-1443
-watkinson
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5616700
+cardiogenomics.med.harvard.edu
+dir
 
 test_data.exp
 file
@@ -582,17 +548,17 @@ has-props
 
 3123
 
-Affy_sample.txt
+yeastORFComplete.txt
 file
 
 
 
 
 2011-08-02T04:32:43.000000Z
-0268550e44d095019545198a06985ee6
-2005-08-02T20:41:12.000000Z
-68
-watkin
+601d9abe0bb8eca396d1d1b69a02f332
+2006-04-21T22:37:46.000000Z
+1443
+watkinson
 has-props
 
 
@@ -614,7 +580,7 @@ has-props
 
 
 
-9904
+5616700
 
 histoall.fa
 file
@@ -649,6 +615,40 @@ has-props
 
 
 61025
+
+Affy_sample.txt
+file
+
+
+
+
+2011-08-02T04:32:43.000000Z
+0268550e44d095019545198a06985ee6
+2005-08-02T20:41:12.000000Z
+68
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9904
 
 21162 ras7-4000markers.gpr
 file
@@ -755,40 +755,6 @@ has-props
 testing
 dir
 
-toluene.pdb
-file
-
-
-
-
-2011-08-02T04:32:43.000000Z
-b6bf46ce369900b33226c3e905e761d9
-2006-03-13T18:03:19.000000Z
-1355
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1509
-
 Y5_600_Bst.fa
 file
 
@@ -822,6 +788,40 @@ has-props
 
 
 3205912
+
+toluene.pdb
+file
+
+
+
+
+2011-08-02T04:32:43.000000Z
+b6bf46ce369900b33226c3e905e761d9
+2006-03-13T18:03:19.000000Z
+1355
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1509
 
 21161 neu10-4000markers.gpr
 file

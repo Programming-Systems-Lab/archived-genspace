@@ -1,14 +1,14 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-04-07T19:16:31.492144Z
-7709
+2011-08-08T20:27:22.158533Z
+8207
 zji
 
 
@@ -366,40 +366,6 @@ has-props
 
 374
 
-DSLocusLinkIdentifiable.java
-file
-
-
-
-
-2011-08-02T04:31:43.000000Z
-a07720fdd9960458bfc9fc98f4d21021
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-155
-
 DSNamed.java
 file
 
@@ -433,38 +399,4 @@ has-props
 
 
 416
-
-DSAffyIdentifiable.java
-file
-
-
-
-
-2011-08-02T04:31:43.000000Z
-c1daf31beeecea3b1d73f55e0237e745
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-200
 

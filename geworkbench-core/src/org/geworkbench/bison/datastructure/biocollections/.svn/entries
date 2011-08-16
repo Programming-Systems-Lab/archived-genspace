@@ -1,14 +1,14 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
+2011-08-08T20:27:22.158533Z
+8207
 zji
 
 
@@ -165,11 +165,39 @@ has-props
 
 1101
 
-microarrays
-dir
-
-sequences
-dir
+DSAncillaryDataSet.java
+file
+
+
+
+
+2011-08-02T04:31:43.000000Z
+e497865e97b50ea9de9426f86e89f5fa
+2008-02-05T16:05:19.000000Z
+3465
+chiangy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+994
 
 CSDataSet.java
 file
@@ -205,73 +233,11 @@ has-props
 
 10028
 
-DSAncillaryDataSet.java
-file
-
-
-
-
-2011-08-02T04:31:43.000000Z
-e497865e97b50ea9de9426f86e89f5fa
-2008-02-05T16:05:19.000000Z
-3465
-chiangy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-994
+sequences
+dir
 
-AdjacencyMatrixDataSet.java
-file
-
-
-
-
-2011-08-02T04:31:43.000000Z
-cad1e8b9837e18f85c777362a001d355
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8650
+microarrays
+dir
 
 DSDataSet.java
 file
@@ -307,8 +273,39 @@ has-props
 
 4800
 
-views
-dir
+AdjacencyMatrixDataSet.java
+file
+
+
+
+
+2011-08-02T04:31:43.000000Z
+cad1e8b9837e18f85c777362a001d355
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8650
 
 CSDataSet.jbx
 file
@@ -343,6 +340,9 @@ has-props
 
 
 1154
+
+views
+dir
 
 pca
 dir

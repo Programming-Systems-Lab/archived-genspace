@@ -1,15 +1,15 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-01-05T17:49:01.763501Z
-7376
-shteynbo
+2011-08-08T20:27:22.158533Z
+8207
+zji
 
 
 
@@ -59,40 +59,6 @@ has-props
 
 
 675
-
-GenomeAnnotation.java
-file
-
-
-
-
-2011-08-02T04:31:42.000000Z
-c69caa97d7de93e36a8d818ccdba3700
-2007-10-25T20:22:18.000000Z
-3284
-mkustagi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-171
 
 CSSeqPatternMatch.java
 file

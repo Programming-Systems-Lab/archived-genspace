@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,9 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-chat
-dir
 
 TransactionElement.java
 file
@@ -63,6 +60,9 @@ bellj
 
 665
 
+chat
+dir
+
 GenSpaceMenu.cwb.xml
 file
 
@@ -96,43 +96,6 @@ zji
 
 
 1338
-
-rating
-dir
-
-GenSpaceServerFactory.java
-file
-
-
-
-
-2011-08-02T04:26:22.000000Z
-caaf199f1e395ad9db28aeb65d5e32fe
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7756
 
 ObjectHandler.java
 file
@@ -168,17 +131,17 @@ has-props
 
 3499
 
-BrowserLauncher.java
+GenSpaceServerFactory.java
 file
 
 
 
 
-2011-06-22T00:54:42.000000Z
-7f3bf87f78d2931944993c3502fcf11f
-2011-04-19T16:07:16.228867Z
-7751
-bellj
+2011-08-02T04:26:22.000000Z
+caaf199f1e395ad9db28aeb65d5e32fe
+2011-07-30T04:31:30.667242Z
+8187
+zji
 
 
 
@@ -200,7 +163,10 @@ bellj
 
 
 
-2068
+7756
+
+rating
+dir
 
 RealTimeWorkFlowSuggestion.java
 file
@@ -235,6 +201,40 @@ zji
 
 
 10022
+
+BrowserLauncher.java
+file
+
+
+
+
+2011-06-22T00:54:42.000000Z
+7f3bf87f78d2931944993c3502fcf11f
+2011-04-19T16:07:16.228867Z
+7751
+bellj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2068
 
 ObjectLogger.java
 file

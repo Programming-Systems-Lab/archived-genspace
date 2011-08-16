@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session
+END
+SessionOperationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/SessionOperationException.java
+END
+CreateSessionDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/CreateSessionDialog.java
+END
+SessionCreationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/SessionCreationException.java
+END
+LoginPanelModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/LoginPanelModel.java
+END
+DiscoverySession.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/DiscoverySession.java
+END

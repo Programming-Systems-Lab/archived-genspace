@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/help/Filtering_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-Filtering-Expression_Threshold.png
-file
-
-
-
-
-2011-08-02T04:29:11.000000Z
-d7fc6196e0012a15666297a670f935ff
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-22962
 
 index_002.css
 file
@@ -93,6 +59,40 @@ has-props
 
 
 318
+
+Filtering-Expression_Threshold.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+d7fc6196e0012a15666297a670f935ff
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22962
 
 index_003.css
 file
@@ -230,40 +230,6 @@ has-props
 
 25204
 
-Filtering-Deviation.png
-file
-
-
-
-
-2011-08-02T04:29:11.000000Z
-482b07a830eee3a971d547b546a81458
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14836
-
 Multiple_Probeset_Filter.png
 file
 
@@ -298,14 +264,14 @@ has-props
 
 15266
 
-Filtering-GenePix_Expression_Threshold.png
+Filtering-Deviation.png
 file
 
 
 
 
 2011-08-02T04:29:11.000000Z
-7a9da44869c2a13125c1d89b2f99a44c
+482b07a830eee3a971d547b546a81458
 2010-06-10T02:39:43.512944Z
 6786
 zji
@@ -330,41 +296,7 @@ has-props
 
 
 
-24422
-
-Multiple_GeneID_Filter.png
-file
-
-
-
-
-2011-08-02T04:29:11.000000Z
-2a71dc9f70d130c687a3134a2cecad90
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14241
+14836
 
 index.css
 file
@@ -400,14 +332,48 @@ has-props
 
 50
 
-Filtering-GenePix_Flag_Filter.png
+Multiple_GeneID_Filter.png
 file
 
 
 
 
 2011-08-02T04:29:11.000000Z
-bd871c4ab260af9635c5c12dc66550da
+2a71dc9f70d130c687a3134a2cecad90
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14241
+
+Filtering-GenePix_Expression_Threshold.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+7a9da44869c2a13125c1d89b2f99a44c
 2010-06-10T02:39:43.512944Z
 6786
 zji
@@ -432,7 +398,41 @@ has-props
 
 
 
-23493
+24422
+
+Multiple_Probeset_Filter_options.png
+file
+
+
+
+
+2011-08-02T04:29:11.000000Z
+27a3b53312ec14286864ac96c44c5ede
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10788
 
 Filtering-Missing_Values_Filter.png
 file
@@ -468,16 +468,16 @@ has-props
 
 18479
 
-Multiple_Probeset_Filter_options.png
+Filtering-GenePix_Flag_Filter.png
 file
 
 
 
 
 2011-08-02T04:29:11.000000Z
-27a3b53312ec14286864ac96c44c5ede
-2011-07-30T04:31:30.667242Z
-8187
+bd871c4ab260af9635c5c12dc66550da
+2010-06-10T02:39:43.512944Z
+6786
 zji
 has-props
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-10788
+23493
 
 Filters_in_CCM.png
 file

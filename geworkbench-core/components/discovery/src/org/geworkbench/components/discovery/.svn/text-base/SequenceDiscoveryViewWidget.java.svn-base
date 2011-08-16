@@ -13,7 +13,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +28,6 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
 import javax.swing.JToolBar;
-import javax.swing.SwingUtilities;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -44,20 +42,16 @@ import org.geworkbench.bison.datastructure.complex.pattern.PatternDiscoveryParam
 import org.geworkbench.bison.datastructure.complex.pattern.PatternResult;
 import org.geworkbench.bison.util.RandomNumberGenerator;
 import org.geworkbench.builtin.projects.ProjectPanel;
-import org.geworkbench.components.discovery.algorithm.AbstractSequenceDiscoveryAlgorithm;
 import org.geworkbench.components.discovery.algorithm.AlgorithmStub;
 import org.geworkbench.components.discovery.algorithm.RegularDiscoveryFileLoader;
 import org.geworkbench.components.discovery.algorithm.ServerBaseDiscovery;
-import org.geworkbench.components.discovery.model.PatternTableModelWrapper;
-import org.geworkbench.components.discovery.view.PatternTableView;
+import org.geworkbench.components.discovery.session.DiscoverySession;
 import org.geworkbench.events.HistoryEvent;
 import org.geworkbench.events.ProgressBarEvent;
 import org.geworkbench.events.ProgressChangeEvent;
 import org.geworkbench.events.StatusBarEvent;
 import org.geworkbench.events.listeners.ProgressChangeListener;
 import org.geworkbench.events.listeners.StatusChangeListener;
-import org.geworkbench.util.patterns.DataSource;
-import org.geworkbench.util.session.DiscoverySession;
 
 import polgara.soapPD_wsdl.Exhaustive;
 import polgara.soapPD_wsdl.Parameters;
@@ -111,8 +105,6 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 
 	// the displayed view component in this widget
 	private Component currentViewComponent = new JPanel();
-	public static final int DEFAULT_VIEW = -1;
-	public static final int PATTERN_TABLE = 0;
 
 	// view and model
 	private JPanel view;
@@ -322,12 +314,37 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		currentStubId = currentNodeID + id;
 		resultData = patternResult;
 
-		AbstractSequenceDiscoveryAlgorithm algorithm = new ServerBaseDiscovery(
-				discoverySession, getParameters(), algorithmName);
-		algorithm.setPatternResult(patternResult);
-		algorithm.setSequenceInputData(this.getSequenceDB());
+		final ServerBaseDiscovery algorithm = new ServerBaseDiscovery(
+				discoverySession, parms, algorithmName, this, patternResult);
 
-		switchAlgo(selectedAlgo, algorithm, DEFAULT_VIEW);
+		algorithm.addProgressChangeListener(this);
+		AlgorithmStub stub = getStub(currentStubId, algorithm);
+		
+		stub.setParameterPanel(parameterPanel);
+		stub.setDescription(selectedAlgo);
+
+		algorithmStubMap.put(currentStubId, stub);
+
+		algorithm.addStatusChangeListener(this);
+
+		stub.gainedFocus(model);
+		model.attach(stub.getResultDataSource());
+
+		// replace the view and model
+		clearTableView();
+
+		// start the algorithm
+        executeButton.setEnabled(false);
+        Thread thread = new Thread(
+        	new Runnable() {
+        		public void run() {
+        			algorithm.start();
+        			executeButton.setEnabled(true);
+        		}
+        	}, 
+        	"Algorithm thread Start");
+        thread.setPriority(Thread.MIN_PRIORITY);
+        thread.start();
 	}
 
 	private final static String REGULAR = "regular";
@@ -350,40 +367,17 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 			parameterPanel.setCurrentSupportMenuStr(currentMinSupportTypeName);
 	};
 
-	private void switchAlgo(String selectedAlgo,
-			AbstractSequenceDiscoveryAlgorithm algorithm, int viewId) {
-		algorithm.addProgressChangeListener(this);
-		AlgorithmStub stub = getStub(currentStubId);
-		
-		stub.setAlgorithm(algorithm);
-		stub.setParameterPanel(parameterPanel);
-		stub.setDescription(selectedAlgo);
-
-		algorithmStubMap.put(currentStubId, stub);
-
-		algorithm.addStatusChangeListener(this);
-		algorithm.setViewWidget(this);
-
-
-		stub.gainedFocus(model);
-		model.attach(stub.getResultDataSource());
-
-		// replace the view and model
-		setCurrentView(viewId);
-
-		// start the algorithm
-		stub.start(executeButton);
-	}
-
 	private DSAncillaryDataSet<? extends DSBioObject> resultData = null;
 
 	public void setResultData(DSAncillaryDataSet<? extends DSBioObject> resultData) {
 		this.resultData = resultData;
 	}
 
+	// only in EDT
 	public void firePropertyChangeAlgo(){
 		appComponent.createNewNode(resultData);
 		firePropertyChange(TABLE_EVENT, null, null);
+		setTableView();
 	}
 
 	/**
@@ -518,6 +512,7 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 	 * @param stub
 	 *            the id of the selected file.
 	 */
+	// only in EDT
 	private void projectFileChanged(String stub) {
 		if (stub == null) {
 			return;
@@ -557,7 +552,7 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 			setSelectedAlgorithm(newStub.getDescription());
 		} else {
 			// set Default View
-			setCurrentView(DEFAULT_VIEW);
+			clearTableView();
 			ParameterPanel paramP = new ParameterPanel();
 
 			//bug 2425
@@ -574,12 +569,13 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
         }
 	}
 
+	// only in EDT
 	private void loadPatternResult(PatternResult result) {
 
 		currentStubId = null;
 
 		// replace the view and model
-		setCurrentView(PATTERN_TABLE);
+		setTableView();
 
 		String idString = RandomNumberGenerator.getID();
 		result.setID(idString);
@@ -594,46 +590,23 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		firePropertyChange(TABLE_EVENT, null, null);
 	}
 
-	/**
-	 * Replaces the view for this component.
-	 * This method is invoked from either EDT or non-EDT.
-	 *
-	 * @param i
-	 *            the index of a view.
-	 */
-	public void setCurrentView(final int i) {
-		if(SwingUtilities.isEventDispatchThread()) {
-			setCurrentViewFromEDT(i);
-		} else {
-			try {
-				SwingUtilities.invokeAndWait(new Runnable() {
+	// replace the original setCurrentView for the 'DEFAULT_VIEW' or empty case
+	// make it public so ServerBaseDiscovery can call. TODO move to one package
+	public void clearTableView() {
+		statusBarChanged(DefaultLook.statusEvt);
+		progressBarChanged(DefaultLook.progressEvt);
 
-					@Override
-					public void run() {
-						setCurrentViewFromEDT(i);
-					}
-					
-				});
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	// this method should be invoked only from EDT
-	private void setCurrentViewFromEDT(int i) {
-		Component comp = null;
-		if (i == DEFAULT_VIEW) {
-			comp = DefaultLook.panel;
-			statusBarChanged(DefaultLook.statusEvt);
-			progressBarChanged(DefaultLook.progressEvt);
-		} else {
-			comp = view;
-		}
 		panelView.remove(currentViewComponent);
-		currentViewComponent = comp;
+		currentViewComponent = DefaultLook.panel;
+		panelView.add(currentViewComponent, BorderLayout.CENTER);
+		revalidate();
+		repaint();
+	}
+	
+	// replace the original setCurrentView for the 'PATTERN_TABLE' or not-empty case
+	void setTableView() {
+		panelView.remove(currentViewComponent);
+		currentViewComponent = view;
 		panelView.add(currentViewComponent, BorderLayout.CENTER);
 		revalidate();
 		repaint();
@@ -642,6 +615,7 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 	/**
 	 * This method tries to attach a DataSource to one of the models.
 	 */
+	// only in EDT
 	private void attachDataSource(
 			org.geworkbench.util.patterns.DataSource source, AlgorithmStub stub) {
 		// only one model now
@@ -649,7 +623,7 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 			// pass the model to the algorithm stub
 			stub.gainedFocus(model);
 			// update the view panel
-			setCurrentView(0);
+			setTableView();
 			setCurrentParameterPanel(stub.getParameterPanel());
 		}
 	}
@@ -667,11 +641,11 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		repaint();
 	}
 
-	private AlgorithmStub getStub(String key) {
+	private AlgorithmStub getStub(String key, ServerBaseDiscovery algorithm) {
 		AlgorithmStub stub = algorithmStubMap.get(key);
 		// if stub is null we need to create stub for this algorithm
 		if (stub == null) {
-			stub = new AlgorithmStub();
+			stub = new AlgorithmStub(algorithm);
 		} else {
 			// we had a stub.
 			// stop the previous algorithm
@@ -679,6 +653,8 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 			// remove the model from the stopped algorithm
 			stub.lostFocus(model);
 			stub.removeStatusChangeListener(this);
+			
+			stub.setAlgorithm(algorithm);
 		}
 		return stub;
 	}
@@ -746,10 +722,6 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		appComponent = s;
 	}
 
-	public Parameters getParameters() {
-		return parms;
-	}
-
 	private void writeObject(ObjectOutputStream oos) throws IOException {
 		oos.defaultWriteObject();
 	}
@@ -759,6 +731,7 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 		ois.defaultReadObject();
 	}
 
+	// only in EDT
 	private void loadPatternFile(File patternfile, boolean newNode) {
 		File sequenceFile = getSequenceDB().getFile();
 		if (!patternfile.getName().endsWith(".pat")) {
@@ -790,26 +763,32 @@ public class SequenceDiscoveryViewWidget extends JPanel implements
 
 		if (type != null
 				&& type.equalsIgnoreCase(PatternResult.DISCOVER)) {
-			@SuppressWarnings("unchecked")
-			AbstractSequenceDiscoveryAlgorithm loader = new RegularDiscoveryFileLoader(
-					sequenceFile, patternfile, appComponent, newNode,
-					(DSDataSet<DSSequence>) getSequenceDB());
+			RegularDiscoveryFileLoader loader = new RegularDiscoveryFileLoader();
 
 			currentStubId = null;
 
 			loader.addProgressChangeListener(this);
 			
 			loader.addStatusChangeListener(this);
-			loader.setViewWidget(this);
 
 			loader.addProgressChangeListener(model);
-			model.attach((DataSource)loader);
+			model.attach(loader.getPatternSource());
 
 			// replace the view and model
-			setCurrentView(PATTERN_TABLE);
+			setTableView();
 
 			// start reading the file without creating new thread
-			loader.start();
+			@SuppressWarnings("unchecked")
+			PatternResult patternDB = loader.read(sequenceFile, patternfile, (DSDataSet<DSSequence>) getSequenceDB());
+            if(newNode) {
+            	if(patternDB!=null) {
+            		appComponent.createNewNode(patternDB);
+            	} else {
+                    JOptionPane.showMessageDialog(null, "The file " + patternfile + " could not be loaded.\n " + "Please make sure that the sequence file" + " is loaded and selected in the project.");
+            	}
+            } else { // the case newNode==false may not be necessary at all 
+            	log.debug("read file "+patternfile+" but do nothing further");
+            }
 
 			// fire a clear table event
 			firePropertyChange(TABLE_EVENT, null, null);

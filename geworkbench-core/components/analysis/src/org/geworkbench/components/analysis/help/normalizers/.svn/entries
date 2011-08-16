@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/normalizers
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -378,7 +378,7 @@ has-props
 
 1853
 
-MarkerMeanNormalizer.htm
+MarkerMean Normalizer.htm
 file
 
 
@@ -386,8 +386,8 @@ file
 
 2011-08-02T04:29:10.000000Z
 589b4cf47ba2e9d0af7e344c3a60076a
-2007-01-16T17:33:02.000000Z
-2240
+2005-11-14T21:51:55.000000Z
+831
 edaly
 has-props
 
@@ -412,7 +412,7 @@ has-props
 
 1982
 
-MarkerMean Normalizer.htm
+MarkerMeanNormalizer.htm
 file
 
 
@@ -420,8 +420,8 @@ file
 
 2011-08-02T04:29:10.000000Z
 589b4cf47ba2e9d0af7e344c3a60076a
-2005-11-14T21:51:55.000000Z
-831
+2007-01-16T17:33:02.000000Z
+2240
 edaly
 has-props
 
@@ -588,40 +588,6 @@ has-props
 
 8077
 
-Housekeeping Gene Normalization.HTML.bak
-file
-
-
-
-
-2011-08-02T04:29:10.000000Z
-a24bbea5a04a584a16723cb85db2a12d
-2005-11-21T21:47:37.000000Z
-924
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8277
-
 FilterNorm Overview.htm.bak
 file
 
@@ -656,7 +622,7 @@ has-props
 
 4840
 
-Housekeeping Gene Normalization.HTML
+Housekeeping Gene Normalization.HTML.bak
 file
 
 
@@ -689,40 +655,6 @@ has-props
 
 
 8277
-
-FilterNorm Overview.htm
-file
-
-
-
-
-2011-08-02T04:29:10.000000Z
-32c5de402308cfd1de42571f2c718770
-2005-11-09T22:01:10.000000Z
-775
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3558
 
 Threshold.HTML
 file
@@ -758,17 +690,17 @@ has-props
 
 2011
 
-foo.txt
+FilterNorm Overview.htm
 file
 
 
 
 
 2011-08-02T04:29:10.000000Z
-d41d8cd98f00b204e9800998ecf8427e
-2005-07-28T22:36:56.000000Z
-50
-watkin
+32c5de402308cfd1de42571f2c718770
+2005-11-09T22:01:10.000000Z
+775
+xiaoqing
 has-props
 
 
@@ -790,7 +722,41 @@ has-props
 
 
 
-0
+3558
+
+Housekeeping Gene Normalization.HTML
+file
+
+
+
+
+2011-08-02T04:29:10.000000Z
+a24bbea5a04a584a16723cb85db2a12d
+2005-11-21T21:47:37.000000Z
+924
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8277
 
 MisValCal Normalizer.htm.bak
 file
@@ -825,6 +791,40 @@ has-props
 
 
 1853
+
+foo.txt
+file
+
+
+
+
+2011-08-02T04:29:10.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
 
 MisValCal Normalizer.htm
 file

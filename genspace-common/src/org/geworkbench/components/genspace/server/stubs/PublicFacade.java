@@ -66,4 +66,32 @@ public interface PublicFacade {
         @WebParam(name = "arg0", targetNamespace = "")
         Workflow arg0);
 
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.TasteUser
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getTasteUserByHostname", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetTasteUserByHostname")
+    @ResponseWrapper(localName = "getTasteUserByHostnameResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetTasteUserByHostnameResponse")
+    public TasteUser getTasteUserByHostname(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.TasteUser
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getTasteUserByUser", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetTasteUserByUser")
+    @ResponseWrapper(localName = "getTasteUserByUserResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetTasteUserByUserResponse")
+    public TasteUser getTasteUserByUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        User arg0);
+
 }

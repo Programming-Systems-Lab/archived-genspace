@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository
+END
+RepositoryPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/RepositoryPanel.java
+END
+WorkflowCommentsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowCommentsPanel.java
+END
+WorkflowDetailsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowDetailsPanel.java
+END
+WorkflowNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowNode.java
+END
+DynamicTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/DynamicTree.java
+END
+InboxTablePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/InboxTablePanel.java
+END
+WorkflowRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowRepository.java
+END

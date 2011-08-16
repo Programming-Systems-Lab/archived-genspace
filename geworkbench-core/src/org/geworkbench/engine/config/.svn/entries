@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine/config
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,17 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-java.policy
+UILauncher.java
 file
 
 
 
 
 2011-08-02T04:31:37.000000Z
-7ddb05e48d53e8bdb44ed3e29e720e3f
-2005-07-28T22:36:56.000000Z
-50
-watkin
+47a5ab675c9aef4ab4100c369acc0476
+2010-07-13T20:50:51.920571Z
+6860
+zji
 has-props
 
 
@@ -58,41 +58,7 @@ has-props
 
 
 
-1127
-
-Bean24.gif
-file
-
-
-
-
-2011-08-02T04:31:37.000000Z
-135b090bf51203122bca26fd429051c5
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-737
+9853
 
 MenuItemInfo.java
 file
@@ -128,17 +94,17 @@ has-props
 
 856
 
-UILauncher.java
+Bean24.gif
 file
 
 
 
 
 2011-08-02T04:31:37.000000Z
-47a5ab675c9aef4ab4100c369acc0476
-2010-07-13T20:50:51.920571Z
-6860
-zji
+135b090bf51203122bca26fd429051c5
+2005-07-28T22:36:56.000000Z
+50
+watkin
 has-props
 
 
@@ -160,7 +126,41 @@ has-props
 
 
 
-9853
+737
+
+java.policy
+file
+
+
+
+
+2011-08-02T04:31:37.000000Z
+7ddb05e48d53e8bdb44ed3e29e720e3f
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1127
 
 Visualeye_Nonactive.gif
 file
@@ -264,40 +264,6 @@ has-props
 
 2611
 
-default.xml
-file
-
-
-
-
-2011-08-02T04:31:37.000000Z
-00175b1e46cfe48f771be687ca040e10
-2006-12-20T22:22:15.000000Z
-2117
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10541
-
 ComponentMetadata.java
 file
 
@@ -332,8 +298,39 @@ has-props
 
 1962
 
-rules
-dir
+default.xml
+file
+
+
+
+
+2011-08-02T04:31:37.000000Z
+00175b1e46cfe48f771be687ca040e10
+2006-12-20T22:22:15.000000Z
+2117
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10541
 
 MenuListener.java
 file
@@ -368,6 +365,9 @@ has-props
 
 
 1106
+
+rules
+dir
 
 PreferencesMenu.cwb.xml
 file

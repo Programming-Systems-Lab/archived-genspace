@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -199,9 +199,6 @@ has-props
 
 225
 
-properties
-dir
-
 visualPluginGrey.png
 file
 
@@ -236,7 +233,7 @@ has-props
 
 163
 
-preferences
+properties
 dir
 
 selectionArea.png
@@ -273,13 +270,13 @@ has-props
 
 224
 
+preferences
+dir
+
 ccm
 dir
 
 skin
-dir
-
-config
 dir
 
 visualPlugin.png
@@ -315,6 +312,9 @@ has-props
 
 
 234
+
+config
+dir
 
 WelcomeScreen.java
 file

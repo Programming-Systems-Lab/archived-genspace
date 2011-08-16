@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7709/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
+/svn/geworkbench/!svn/ver/8207/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
 END
 CSUnigene.java
 K 25
@@ -63,21 +63,9 @@ svn:wc:ra_dav:version-url
 V 117
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSIdentifiable.java
 END
-DSLocusLinkIdentifiable.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSLocusLinkIdentifiable.java
-END
 DSNamed.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSNamed.java
-END
-DSAffyIdentifiable.java
-K 25
-svn:wc:ra_dav:version-url
-V 121
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSAffyIdentifiable.java
 END

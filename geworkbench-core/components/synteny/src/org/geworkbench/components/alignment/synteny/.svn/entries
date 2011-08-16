@@ -1,7 +1,7 @@
 10
 
 dir
-8190
+8215
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/synteny/src/org/geworkbench/components/alignment/synteny
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -502,40 +502,6 @@ has-props
 
 2301
 
-DotsParser.java
-file
-
-
-
-
-2011-08-02T04:31:21.000000Z
-b294e680b72c09a8215ba0cf67ef6341
-2010-02-26T16:57:37.204231Z
-6078
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3932
-
 SyntenyMapViewAppComponent.java
 file
 
@@ -570,14 +536,14 @@ has-props
 
 3184
 
-SyntenyViewAppComponent.java
+DotsParser.java
 file
 
 
 
 
 2011-08-02T04:31:21.000000Z
-a51119ed944680ccea0458fbbfe96238
+b294e680b72c09a8215ba0cf67ef6341
 2010-02-26T16:57:37.204231Z
 6078
 zji
@@ -602,7 +568,7 @@ has-props
 
 
 
-3108
+3932
 
 SyntenyAnnotationParameters.java
 file
@@ -638,14 +604,14 @@ has-props
 
 4427
 
-SyntenyQueryObj.java
+SyntenyViewAppComponent.java
 file
 
 
 
 
 2011-08-02T04:31:21.000000Z
-eb0d6a3793a8ee31dedb7f2659c48b86
+a51119ed944680ccea0458fbbfe96238
 2010-02-26T16:57:37.204231Z
 6078
 zji
@@ -670,7 +636,7 @@ has-props
 
 
 
-2287
+3108
 
 DotMatrixViewWidgetPanel.java
 file
@@ -706,14 +672,14 @@ has-props
 
 21073
 
-SyntenyMapFragment.java
+SyntenyQueryObj.java
 file
 
 
 
 
 2011-08-02T04:31:21.000000Z
-024e40c59378954ae2055b21ebbc8934
+eb0d6a3793a8ee31dedb7f2659c48b86
 2010-02-26T16:57:37.204231Z
 6078
 zji
@@ -738,7 +704,7 @@ has-props
 
 
 
-7017
+2287
 
 AnnotationControlPanel.java
 file
@@ -774,6 +740,40 @@ has-props
 
 8695
 
+SyntenyMapFragment.java
+file
+
+
+
+
+2011-08-02T04:31:21.000000Z
+024e40c59378954ae2055b21ebbc8934
+2010-02-26T16:57:37.204231Z
+6078
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7017
+
 AnnotationColors.java
 file
 
@@ -808,40 +808,6 @@ has-props
 
 2458
 
-SyntenyMapObject.java
-file
-
-
-
-
-2011-08-02T04:31:21.000000Z
-b321de556535d918162c812c4d8e35ac
-2010-02-26T16:57:37.204231Z
-6078
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-764
-
 BasicParser.java
 file
 
@@ -875,6 +841,40 @@ has-props
 
 
 3082
+
+SyntenyMapObject.java
+file
+
+
+
+
+2011-08-02T04:31:21.000000Z
+b321de556535d918162c812c4d8e35ac
+2010-02-26T16:57:37.204231Z
+6078
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+764
 
 RemoteRepeatMasker.java
 file
@@ -944,40 +944,6 @@ has-props
 
 5640
 
-SyntenyMapViewWidget.java
-file
-
-
-
-
-2011-08-02T04:31:21.000000Z
-cfb6da1bfab49fb3280cfebac234638b
-2010-02-26T16:57:37.204231Z
-6078
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3698
-
 SyntenyDataExchange.java
 file
 
@@ -1012,14 +978,14 @@ has-props
 
 469
 
-DotMatrixInfoPanel.java
+SyntenyMapViewWidget.java
 file
 
 
 
 
 2011-08-02T04:31:21.000000Z
-f9a809e15239e782cb9321b52c8fbeba
+cfb6da1bfab49fb3280cfebac234638b
 2010-02-26T16:57:37.204231Z
 6078
 zji
@@ -1044,7 +1010,7 @@ has-props
 
 
 
-1520
+3698
 
 FeatureMatrixObjList.java
 file
@@ -1079,6 +1045,40 @@ has-props
 
 
 2079
+
+DotMatrixInfoPanel.java
+file
+
+
+
+
+2011-08-02T04:31:21.000000Z
+f9a809e15239e782cb9321b52c8fbeba
+2010-02-26T16:57:37.204231Z
+6078
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1520
 
 help
 dir
