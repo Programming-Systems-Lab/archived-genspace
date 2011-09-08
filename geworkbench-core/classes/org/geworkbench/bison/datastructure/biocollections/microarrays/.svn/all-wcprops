@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
-END
-CSAffyMicroarraySet.java
-K 25
-svn:wc:ra_dav:version-url
-V 140
-/svn/geworkbench/!svn/ver/5812/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays/CSAffyMicroarraySet.java
+/svn/geworkbench/!svn/ver/8207/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
 END
 CSExprMicroarraySet.java
 K 25

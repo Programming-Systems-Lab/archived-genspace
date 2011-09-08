@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/7376/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence
+/svn/geworkbench/!svn/ver/8207/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence
 END
 DSMatchedSeqPattern.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
 /svn/geworkbench/!svn/ver/3280/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence/DSMatchedSeqPattern.java
-END
-GenomeAnnotation.java
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/3284/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence/GenomeAnnotation.java
 END
 CSSeqPatternMatch.java
 K 25
