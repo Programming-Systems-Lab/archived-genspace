@@ -48,17 +48,6 @@ public interface UserFacade {
 
     /**
      * 
-     * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMe", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMe")
-    @ResponseWrapper(localName = "getMeResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMeResponse")
-    public User getMe();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns boolean
@@ -81,6 +70,17 @@ public interface UserFacade {
     @RequestWrapper(localName = "getMyNetworks", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworks")
     @ResponseWrapper(localName = "getMyNetworksResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNetworksResponse")
     public List<UserNetwork> getMyNetworks();
+
+    /**
+     * 
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.User
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMe", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMe")
+    @ResponseWrapper(localName = "getMeResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMeResponse")
+    public User getMe();
 
     /**
      * 

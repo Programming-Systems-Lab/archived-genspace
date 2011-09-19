@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "ToolUsageInformationService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://127.0.0.1:8080/ToolUsageInformationService/ToolUsageInformation?wsdl")
+@WebServiceClient(name = "ToolUsageInformationService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://genspace.cs.columbia.edu:8080/ToolUsageInformationService/ToolUsageInformation?wsdl")
 public class ToolUsageInformationService
     extends Service
 {
@@ -30,9 +30,9 @@ public class ToolUsageInformationService
         try {
             URL baseUrl;
             baseUrl = org.geworkbench.components.genspace.server.stubs.ToolUsageInformationService.class.getResource(".");
-            url = new URL(baseUrl, "http://127.0.0.1:8080/ToolUsageInformationService/ToolUsageInformation?wsdl");
+            url = new URL(baseUrl, "http://genspace.cs.columbia.edu:8080/ToolUsageInformationService/ToolUsageInformation?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://127.0.0.1:8080/ToolUsageInformationService/ToolUsageInformation?wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'http://genspace.cs.columbia.edu:8080/ToolUsageInformationService/ToolUsageInformation?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         TOOLUSAGEINFORMATIONSERVICE_WSDL_LOCATION = url;
