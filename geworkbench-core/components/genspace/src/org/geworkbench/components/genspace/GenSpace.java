@@ -10,6 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,6 +24,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
+import org.geworkbench.components.genspace.server.stubs.Tool;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
@@ -75,7 +77,6 @@ public class GenSpace {
 	static java.util.logging.Logger glassfishLogger2;
 	static java.util.logging.Logger glassfishLogger3;
 	public static void main(String[] args) {
-		
 		new GenSpace();
 	}
 

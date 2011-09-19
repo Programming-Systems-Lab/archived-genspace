@@ -49,10 +49,9 @@ import org.geworkbench.components.genspace.server.stubs.GetAllWorkflowsIncluding
 /**
  * Session Bean implementation class MahoutRecommender
  */
-@Stateful
-@LocalBean
 @WebService
-public class MahoutRecommender implements MahoutRecommenderRemote {
+@Stateful
+public class MahoutRecommender implements MahoutRecommenderLocal {
 
 	@PersistenceContext(unitName="genspace_persist") private EntityManager em;
 	

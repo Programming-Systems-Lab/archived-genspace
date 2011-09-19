@@ -60,7 +60,7 @@ import org.geworkbench.components.genspace.server.mahout.GenspaceUserSimilarity;
 public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		implements ToolInformationProvider {
 
-	@EJB MahoutRecommenderRemote mahoutBean;
+	@EJB MahoutRecommenderLocal mahoutBean;
 	
 	/*
     @Schedule(minute="0/5",hour="*", persistent=false)

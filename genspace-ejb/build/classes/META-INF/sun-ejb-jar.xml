@@ -17,6 +17,16 @@
      </webservice-endpoint>
    </ejb>
    <ejb>
+     <ejb-name>MahoutRecommender</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>MahoutRecommender</port-component-name>
+       <login-config>
+         <auth-method>BASIC</auth-method>
+         <realm>GElogin</realm>
+       </login-config>
+     </webservice-endpoint>
+   </ejb>
+   <ejb>
      <ejb-name>NetworkFacade</ejb-name>
      <webservice-endpoint>
        <port-component-name>NetworkFacade</port-component-name>
