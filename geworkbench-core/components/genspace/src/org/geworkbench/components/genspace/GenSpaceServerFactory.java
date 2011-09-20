@@ -70,7 +70,7 @@ public class GenSpaceServerFactory {
 	}
 	public static void handleExecutionException(Exception e)
 	{
-//		e.printStackTrace();
+		e.printStackTrace();
 		GenSpaceServerFactory.clearCache();
 		JOptionPane.showMessageDialog(null, "There was an error communicating with the genSpace server.\n Please try your request again", "Error communicating with server", JOptionPane.ERROR_MESSAGE);
 	}
@@ -85,7 +85,7 @@ public class GenSpaceServerFactory {
 	}
 	public static void handleException(Exception e)
 	{
-//		e.printStackTrace();
+		e.printStackTrace();
 	}
 	private static void addCredentials(BindingProvider svc)
 	{
