@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea
+/svn/geworkbench/!svn/ver/8324/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea
 END
 paramDesc.html
 K 25
@@ -13,7 +13,7 @@ GSEAAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/7981/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.java
+/svn/geworkbench/!svn/ver/8272/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.java
 END
 GSEAAnalysisPanel.java
 K 25

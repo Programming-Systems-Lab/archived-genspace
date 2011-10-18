@@ -29,9 +29,9 @@ import org.geworkbench.util.sequences.SequenceViewWidget;
  * </p>
  * 
  * @author
- * @version $Id: SequenceViewAppComponent.java 7626 2011-03-24 13:43:50Z zji $
+ * @version $Id: SequenceViewAppComponent.java 8403 2011-10-13 23:41:27Z poddutun $
  */
-@AcceptTypes({ CSSequenceSet.class, PatternResult.class })
+@AcceptTypes({ CSSequenceSet.class })
 public class SequenceViewAppComponent implements VisualPlugin {
 	private SequenceViewWidget sViewWidget;
 

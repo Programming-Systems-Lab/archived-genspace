@@ -49,7 +49,7 @@ import org.geworkbench.bison.annotation.CSAnnotationContextManager;
 import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.datastructure.biocollections.CSMarkerVector;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.pca.CSPCADataSet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -96,6 +96,7 @@ import org.tigr.util.FloatMatrix;
  */
 
 @AcceptTypes({CSPCADataSet.class})
+@SuppressWarnings("rawtypes")
 public class PCA extends MicroarrayViewEventBase
 {
     private static Log log = LogFactory.getLog(PCA.class);
@@ -112,7 +113,7 @@ public class PCA extends MicroarrayViewEventBase
     private JButton imageSnapshotButton;
 
     private CSPCADataSet pcaDataSet;
-    private CSExprMicroarraySet dataSet;
+	private CSMicroarraySet dataSet;
 
     private JScrollPane mainScrollPane;
     private Map<String, Set<String>> dataLabelGroups;
@@ -156,7 +157,7 @@ public class PCA extends MicroarrayViewEventBase
         createButton.setEnabled(false);
         createButton.addActionListener(new ActionListener()
         {
-            public void actionPerformed(ActionEvent event)
+			public void actionPerformed(ActionEvent event)
             {
                 int[] pcs = compResultsTable.getSelectedRows();
 
@@ -166,9 +167,9 @@ public class PCA extends MicroarrayViewEventBase
                     return;
                 }
 
-                CSExprMicroarraySet pcDataSet = new CSExprMicroarraySet();
+                CSMicroarraySet pcDataSet = new CSMicroarraySet();
                 pcDataSet.setLabel("PCA_" + dataSet.getFile().getName());
-                 pcDataSet.addObject(ColorContext.class, dataSet.getObject(ColorContext.class));
+                pcDataSet.addObject(ColorContext.class, dataSet.getObject(ColorContext.class));
 
                 FloatMatrix uMatrix = new FloatMatrix(pcaDataSet.getUMatrix());
                 int numRows = uMatrix.getRowDimension();
@@ -186,7 +187,7 @@ public class PCA extends MicroarrayViewEventBase
 
                         if(pcaDataSet.getVariables().equals("experiments"))
                         {
-                            DSGeneMarker marker = ((CSExprMicroarraySet)dataSet).getMarkers().get(r);
+                            DSGeneMarker marker = ((CSMicroarraySet)dataSet).getMarkers().get(r);
                             markerVector.add(marker);
                         }
                         else
@@ -647,7 +648,7 @@ public class PCA extends MicroarrayViewEventBase
 
     private void buildProjectionPlot(int[] pComp)
     {
-        CSExprMicroarraySet maSet = (CSExprMicroarraySet)dataSet;
+    	CSMicroarraySet maSet = (CSMicroarraySet)dataSet;
         List<String> dataLabelList = new ArrayList<String>();
         FloatMatrix u_Matrix = null;
         HashMap<String, Set<String>> dataLabelGps = new HashMap<String, Set<String>>();
@@ -656,7 +657,7 @@ public class PCA extends MicroarrayViewEventBase
         {
             for(int i = 0; i < maSet.size(); i++)
             {
-                dataLabelList.add(maSet.get(i).getLabel());
+                dataLabelList.add(((DSMicroarray) maSet.get(i)).getLabel());
             }
         }
         else
@@ -745,7 +746,7 @@ public class PCA extends MicroarrayViewEventBase
         			}
     		    };
 
-    		    VirtualUniverse.addRenderingErrorListener(errorListener);
+    		   // VirtualUniverse.addRenderingErrorListener(errorListener);
     		}
 
             int pc1 = pComp[0]+1;
@@ -978,8 +979,8 @@ public class PCA extends MicroarrayViewEventBase
         {
             pcaDataSet = ((CSPCADataSet)e.getDataSet());
             DSDataSet<?> parentDataSet = pcaDataSet.getParentDataSet();
-            if(parentDataSet instanceof CSExprMicroarraySet)
-            	dataSet = (CSExprMicroarraySet)parentDataSet;
+            if(parentDataSet instanceof CSMicroarraySet)
+            	dataSet = (CSMicroarraySet)parentDataSet;
 
             reset();
             buildResultsTable();
@@ -1027,7 +1028,7 @@ public class PCA extends MicroarrayViewEventBase
      *            PhenotypeSelectorEvent
     */
     @Subscribe
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" })
     public void receive(PhenotypeSelectorEvent e, Object source)
     {
          log.debug("Source object " + source);
@@ -1110,7 +1111,7 @@ public class PCA extends MicroarrayViewEventBase
                 return;
             if(pcaDataSet.getVariables().equals("genes"))
             {
-                DSMicroarray microarray = ((CSExprMicroarraySet)dataSet).getMicroarrayWithId(label);
+                DSMicroarray microarray = ((CSMicroarraySet)dataSet).getMicroarrayWithId(label);
                 if (microarray != null)
                 {
                     PhenotypeSelectedEvent pse = new PhenotypeSelectedEvent(microarray);
@@ -1119,7 +1120,7 @@ public class PCA extends MicroarrayViewEventBase
             }
             else
             {
-                DSGeneMarker marker = ((CSExprMicroarraySet)dataSet).getMarkers().get(label);
+                DSGeneMarker marker = ((CSMicroarraySet)dataSet).getMarkers().get(label);
                 if (marker != null)
                 {
                     MarkerSelectedEvent mse = new org.geworkbench.events.MarkerSelectedEvent(marker);
@@ -1188,7 +1189,7 @@ public class PCA extends MicroarrayViewEventBase
 
                 if(pcaDataSet.getVariables().equals("experiments"))
                 {
-                    DSMicroarray microarray = ((CSExprMicroarraySet)dataSet).getMicroarrayWithId(label);
+                    DSMicroarray microarray = ((CSMicroarraySet)dataSet).getMicroarrayWithId(label);
                     if (microarray != null)
                     {
                         PhenotypeSelectedEvent pse = new PhenotypeSelectedEvent(microarray);
@@ -1197,7 +1198,7 @@ public class PCA extends MicroarrayViewEventBase
                 }
                 else
                 {
-                    DSGeneMarker marker = ((CSExprMicroarraySet)dataSet).getMarkers().get(label);
+                    DSGeneMarker marker = ((CSMicroarraySet)dataSet).getMarkers().get(label);
                     if (marker != null)
                     {
                         MarkerSelectedEvent mse = new org.geworkbench.events.MarkerSelectedEvent(marker);

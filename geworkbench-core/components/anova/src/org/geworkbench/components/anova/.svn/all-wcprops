@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/8215/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova
+/svn/geworkbench/!svn/ver/8272/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova
 END
 AnovaAnalysis.cwb.xml
 K 25
@@ -13,5 +13,5 @@ AnovaAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/8215/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/AnovaAnalysis.java
+/svn/geworkbench/!svn/ver/8272/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/AnovaAnalysis.java
 END

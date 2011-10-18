@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation
+/svn/geworkbench/!svn/ver/8343/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation
 END
 EdgeList.java
 K 25
@@ -67,5 +67,5 @@ MindyData.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/7490/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyData.java
+/svn/geworkbench/!svn/ver/8343/trunk/geworkbench/src/org/geworkbench/util/pathwaydecoder/mutualinformation/MindyData.java
 END

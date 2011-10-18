@@ -19,7 +19,7 @@ import org.jfree.util.Log;
  * </p>
  * 
  * @author Adam Margolin
- * @version $Id: CSMarkerVector.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: CSMarkerVector.java 8363 2011-10-04 16:25:04Z zji $
  */
 public class CSMarkerVector extends CSSequentialItemList<DSGeneMarker> {
 
@@ -45,44 +45,10 @@ public class CSMarkerVector extends CSSequentialItemList<DSGeneMarker> {
 		}
 	}
 
-	/* reset geneIdMap and genNameMap as a temporary fix */
-	/* TODO to find out whether and why this is necessary */
-	/* this method is only used in HouseKeepingGeneNormalizer */
-	public void correctMaps() {
-		geneIdMap.clear();
-		geneNameMap.clear();
-		for (DSGeneMarker item : this) {
 
-			if (item.getGeneIds() != null && item.getGeneIds().length > 0) {
-				int[] ids = item.getGeneIds();
-				for (int i = 0; i < ids.length; i++) {
-					Integer geneId = new Integer(ids[i]);
-					if (geneId != null && geneId.intValue() > 0) {
-						addItem(geneIdMap, geneId, item);
-					}
-				}
-			}
-
-			if (item.getShortNames() != null && item.getShortNames().length > 0) {
-				String[] geneNames = item.getShortNames();
-				String label = item.getLabel();
-				for (int i = 0; i < geneNames.length; i++) {
-					String geneName = geneNames[i];
-					if (geneName != null && (!"---".equals(geneName.trim()))) {
-						if (label != null && geneName.equals("")) {
-							addItem(geneNameMap, label, item);
-						} else {
-							addItem(geneNameMap, geneName.trim(), item);
-						}
-					}
-				}
-			}
-
-		}
-	}
 
 	/* return all matching markers */
-	/* only used in this class and HouseKeepingGeneNormalizer */
+	/* only used in this class and cytoscape */
 	public Vector<DSGeneMarker> getMatchingMarkers(String aString) {
 		Vector<DSGeneMarker> matchingMarkers = new Vector<DSGeneMarker>();
 		DSGeneMarker uniqueKeyMarker = super.get(aString);

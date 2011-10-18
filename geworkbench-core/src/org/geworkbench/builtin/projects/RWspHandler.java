@@ -35,20 +35,20 @@ import javax.swing.event.ListSelectionListener;
 import org.apache.commons.lang.StringUtils;
 import org.geworkbench.builtin.projects.WorkspaceHandler.OpenTask;
 import org.geworkbench.builtin.projects.WorkspaceHandler.SaveTask;
+import org.geworkbench.engine.config.UILauncher;
 import org.geworkbench.engine.config.rules.GeawConfigObject;
 import org.geworkbench.engine.preferences.GlobalPreferences;
 import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.ProgressDialog;
 import org.geworkbench.util.ProgressItem;
 import org.geworkbench.util.ProgressTask;
-
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
  * Remote Workspace Handler
  * @author mw2518
- * $Id: RWspHandler.java 7760 2011-04-20 15:05:37Z wangmen $
+ * $Id: RWspHandler.java 8323 2011-09-22 18:34:51Z maz $
  */
 public class RWspHandler {
 	protected static final String USER_INFO_DELIMIETER = "==";
@@ -699,6 +699,7 @@ public class RWspHandler {
 		}
 		if(terminating) {
 			GeawConfigObject.getGuiWindow().dispose();
+			UILauncher.printTimeStamp("geWorkbench exited.");
 			System.exit(0);
 		}
 		return true;

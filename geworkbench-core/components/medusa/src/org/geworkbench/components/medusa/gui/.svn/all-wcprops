@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7970/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui
+/svn/geworkbench/!svn/ver/8410/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui
 END
 MedusaParamPanel.java
 K 25
@@ -43,7 +43,7 @@ MedusaVisualComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/geworkbench/!svn/ver/7970/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaVisualComponent.java
+/svn/geworkbench/!svn/ver/8410/trunk/geworkbench/components/medusa/src/org/geworkbench/components/medusa/gui/MedusaVisualComponent.java
 END
 MedusaVisualComponent.cwb.xml
 K 25

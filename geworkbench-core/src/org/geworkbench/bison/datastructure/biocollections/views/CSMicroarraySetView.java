@@ -27,7 +27,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
  * </p>
  * 
  * @author Adam Margolin
- * @version $Id: CSMicroarraySetView.java 7415 2011-02-07 17:37:57Z zji $
+ * @version $Id: CSMicroarraySetView.java 8351 2011-09-29 21:43:32Z zji $
  */
 public class CSMicroarraySetView<T extends DSGeneMarker, Q extends DSMicroarray>
 		implements DSMicroarraySetView<T, Q>, Serializable {
@@ -170,13 +170,6 @@ public class CSMicroarraySetView<T extends DSGeneMarker, Q extends DSMicroarray>
 			rowVals[itemCtr] = getValue(index, itemCtr);
 		}
 		return rowVals;
-	}
-
-	public double[] getRow(T marker) {
-		DSGeneMarker markerValue = markers().get(marker);
-		if (markerValue != null)
-			return getRow(markerValue.getSerial());
-		return null;
 	}
 
 	/**

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/7972/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
+/svn/geworkbench/!svn/ver/8368/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
 END
 ExpressionProfilePanel.java
 K 25
@@ -19,7 +19,7 @@ TabularMicroarrayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 142
-/svn/geworkbench/!svn/ver/7692/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.java
+/svn/geworkbench/!svn/ver/8368/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.java
 END
 bulb_icon_gold.gif
 K 25

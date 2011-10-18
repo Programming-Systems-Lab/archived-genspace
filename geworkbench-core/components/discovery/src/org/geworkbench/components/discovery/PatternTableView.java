@@ -36,7 +36,7 @@ import org.geworkbench.util.patterns.PatternOperations;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PatternTableView.java 8206 2011-08-05 21:42:22Z zji $
+ * @version $Id: PatternTableView.java 8402 2011-10-13 21:06:59Z poddutun $
  */
 
 public class PatternTableView extends JPanel {
@@ -59,7 +59,7 @@ public class PatternTableView extends JPanel {
     private boolean saveAllPatterns;
 
     private JMenuItem addPatToProj = new JMenuItem();
-    private SequenceDiscoveryViewWidget widget = null;
+    private PatternViewPanel widget = null;
 
     private static class JPTable extends JTable {
 		private static final long serialVersionUID = -8375106946681259570L;
@@ -89,7 +89,7 @@ public class PatternTableView extends JPanel {
 
     private JPTable patternTable = new JPTable();
 
-    public PatternTableView(ProgressChangeListener model, SequenceDiscoveryViewWidget widget) {
+    public PatternTableView(ProgressChangeListener model, PatternViewPanel widget) {
         this.model = (PatternTableModelWrapper) model;
         this.widget = widget;
         try {
@@ -327,7 +327,7 @@ public class PatternTableView extends JPanel {
 
     private void addPatToProj_actionPerformed() {
         PatternResult db = getPatternDB();
-        widget.getAppComponent().createNewNode(db);
+        //widget.getAppComponent().createNewNode(db);
     }
 
     /**

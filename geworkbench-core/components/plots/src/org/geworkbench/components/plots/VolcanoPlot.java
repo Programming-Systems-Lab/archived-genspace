@@ -11,8 +11,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.concurrent.ExecutionException;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -57,7 +56,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  * Volcano plot.
  *
  * @author Matt Hall, John Watkinson
- * @version $Id: VolcanoPlot.java 7452 2011-02-11 20:47:15Z zji $
+ * @version $Id: VolcanoPlot.java 8294 2011-09-14 21:32:59Z zji $
  */
 @AcceptTypes({DSTTestResultSet.class})
 public class VolcanoPlot implements VisualPlugin {
@@ -90,11 +89,11 @@ public class VolcanoPlot implements VisualPlugin {
     private class MarkerXYToolTipGenerator extends StandardXYToolTipGenerator implements ChartMouseListener {
 		private static final long serialVersionUID = -6345314319585564074L;
 
-        private SortedSet<MarkerAndStats> markers;         
+        private List<MarkerAndStats> markers;         
         private MarkerAndStats[] markerList;
                
         public MarkerXYToolTipGenerator() {
-            markers = new TreeSet<MarkerAndStats>();            
+            markers = new ArrayList<MarkerAndStats>();            
         }
 
         @Override
@@ -226,23 +225,28 @@ public class VolcanoPlot implements VisualPlugin {
     private void generateChartAndDisplay(final DSMicroarraySetView<DSGeneMarker, DSMicroarray> dataSetView) {
         mainPanel.removeAll();
         final BusySwingWorker<ChartPanel, Void> worker = new BusySwingWorker<ChartPanel, Void>() {
-            ChartPanel cpanel = null;
 
             @Override
             protected ChartPanel doInBackground() {
                 setShowProgress(true);
                 setBusy(mainPanel);
                 MarkerXYToolTipGenerator toolTipGenerator = new MarkerXYToolTipGenerator();
-                cpanel = new ChartPanel(createVolcanoChart(dataSetView, significance, false, false, this, toolTipGenerator));
+                ChartPanel cpanel = new ChartPanel(createVolcanoChart(dataSetView, significance, false, false, this, toolTipGenerator));
                 cpanel.addChartMouseListener(toolTipGenerator);
                 return cpanel;
             }
 
             @Override
             public void done() {
-                mainPanel.removeAll();
-                mainPanel.add(cpanel);
-                mainPanel.revalidate();
+                try {
+                    mainPanel.removeAll();
+					mainPanel.add(get());
+	                mainPanel.revalidate();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					e.printStackTrace();
+				}
             }
         };
         worker.execute();

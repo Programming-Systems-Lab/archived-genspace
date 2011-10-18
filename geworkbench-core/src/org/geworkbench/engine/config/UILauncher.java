@@ -29,7 +29,7 @@ import org.xml.sax.SAXException;
  * <p>Company: First Genetic Trust, Inc.</p>
  *
  * @author First Genetic Trust, Inc.
- * @version $Id: UILauncher.java 6860 2010-07-13 20:50:51Z zji $
+ * @version $Id: UILauncher.java 8322 2011-09-22 18:27:08Z maz $
  */
 
 /**
@@ -139,8 +139,10 @@ public class UILauncher {
      */
     public static void main(String[] args) {
         String configFileArg = null;
-        String lookAndFeelArg = null;
-
+        String lookAndFeelArg = null;       
+        
+        UILauncher.printTimeStamp("geWorkbench invoked");
+        
         for (int i = 0; i < args.length; i++) {
             if (LOOK_AND_FEEL_FLAG.equals(args[i])) {
                 if (args.length == (i + 1)) {
@@ -245,6 +247,16 @@ public class UILauncher {
 
 	public static void setProgressBarString(String name) {
 		splash.setProgressBarString(name);
+	}
+	
+	public static final void printTimeStamp(String s){
+		String currentTime="";        
+        java.util.Date today = new java.util.Date();
+        currentTime+="*******************************************\n";
+        currentTime+=s+" "+new java.sql.Timestamp(today.getTime())+"\n";
+        currentTime+="*******************************************\n";
+        System.err.print(currentTime);
+        System.out.print(currentTime);
 	}
 
 }

@@ -28,11 +28,11 @@ import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.annotation.DSAnnotationContextManager;
 import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMasterRegulatorTableResultSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSSignificanceResultSet;
 import org.geworkbench.bison.datastructure.complex.panels.CSAnnotPanel;
@@ -211,7 +211,7 @@ public class GenePanel extends SelectorPanel<DSGeneMarker> {
 	private void sortByProbe(){
 		Collections.sort(itemList, new MarkerOrderByProbe());
 		sortProbeItem.setEnabled(false);
-		if (AnnotationParser.getCurrentChipType() != null)
+		if (maSet.getAnnotationFileName() != null)
 			sortGeneItem.setEnabled(true);
 		else sortGeneItem.setEnabled(false);
 		sortOriginalItem.setEnabled(true);
@@ -220,7 +220,7 @@ public class GenePanel extends SelectorPanel<DSGeneMarker> {
 	private void sortOriginal(){
 		Collections.sort(itemList, new MarkerOrderOriginal());
 		sortProbeItem.setEnabled(true);
-		if (AnnotationParser.getCurrentChipType() != null)
+		if (maSet.getAnnotationFileName() != null)
 			sortGeneItem.setEnabled(true);
 		else sortGeneItem.setEnabled(false);
 		sortOriginalItem.setEnabled(false);
@@ -468,7 +468,7 @@ public class GenePanel extends SelectorPanel<DSGeneMarker> {
 			sortProbeItem.setEnabled(true);
 			sortOriginalItem.setEnabled(false);
 			maSet = (DSMicroarraySet) dataSet;
-			if (AnnotationParser.getCurrentChipType() != null)
+			if (maSet.getAnnotationFileName() != null)
 				sortGeneItem.setEnabled(true);
 			else sortGeneItem.setEnabled(false);
 			setItemList(maSet.getMarkers());
@@ -600,6 +600,37 @@ public class GenePanel extends SelectorPanel<DSGeneMarker> {
 			 */
 			this.receive(new SubpanelChangedEvent<DSGeneMarker>(DSGeneMarker.class,
 					panelSignificant, SubpanelChangedEvent.NEW), this);
+
+			// 3. change it back
+			context = currentContext;
+
+		}
+		else if ( result instanceof DSMasterRegulatorTableResultSet) {
+			 
+			DSMasterRegulatorTableResultSet mraResultSet = (DSMasterRegulatorTableResultSet)result;
+			DSPanel<DSGeneMarker> selectedMarkers = new CSPanel<DSGeneMarker>(
+					"MRA Genes", "MRA");	
+	 
+			// 1. save current context
+			DSAnnotationContext<DSGeneMarker> currentContext = context;
+			// 2. change to the one need modify
+			dataSetChanged(pnce.getAncillaryDataSet().getParentDataSet());
+
+		    Object[][] data = mraResultSet.getData();			
+			if (data != null)
+			{
+				DSItemList<DSGeneMarker> markers = maSet.getMarkers();
+ 				for (int i=0; i< data.length; i++)
+					selectedMarkers.add(markers.get(data[i][0].toString()));
+			}
+			
+			
+			publishSubpanelChangedEvent(new SubpanelChangedEvent<DSGeneMarker>(
+					DSGeneMarker.class, selectedMarkers,
+					SubpanelChangedEvent.NEW));
+			 
+			this.receive(new SubpanelChangedEvent<DSGeneMarker>(DSGeneMarker.class,
+					selectedMarkers, SubpanelChangedEvent.NEW), this);
 
 			// 3. change it back
 			context = currentContext;

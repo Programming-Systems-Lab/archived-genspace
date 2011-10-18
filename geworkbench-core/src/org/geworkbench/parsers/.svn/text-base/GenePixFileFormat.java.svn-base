@@ -16,9 +16,8 @@ import javax.swing.filechooser.FileFilter;
 
 import org.geworkbench.bison.datastructure.biocollections.CSMarkerVector;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.parsers.GenePixParser;
@@ -114,7 +113,7 @@ public class GenePixFileFormat extends DataSetFileFormat {
 		
 		DSMicroarraySet<DSMicroarray> microarraySet = null;
 		try {
-			microarraySet = new CSExprMicroarraySet();
+			microarraySet = new CSMicroarraySet();
 			microarraySet.setFile(file);
 			List<String> ctu = new ArrayList<String>();
 			ctu.add("Block");
@@ -156,8 +155,6 @@ public class GenePixFileFormat extends DataSetFileFormat {
 			int count = 0;
 			for (String[] acc : v) {
 				markerVector.setLabel(count, acc[0]);
-				markerVector.get(count).setDisPlayType(
-						DSGeneMarker.GENEPIX_TYPE);
 				markerVector.get(count++).setDescription(acc[1]);
 			}
 			reader.close();
@@ -167,7 +164,7 @@ public class GenePixFileFormat extends DataSetFileFormat {
 			reader = new BufferedReader(new InputStreamReader(progressIn));
 
 			CSMicroarray microarray = new CSMicroarray(0, v.size(), file
-					.getName(), null, null, true,
+					.getName(),
 					DSMicroarraySet.genepixGPRType);
 			parser.reset();
 			parser.setMicroarray(microarray);

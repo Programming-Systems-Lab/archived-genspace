@@ -10,16 +10,15 @@ import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.ConnectException;
-import java.io.FileInputStream;
-import java.util.Properties;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
-
+import java.util.Properties;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -38,11 +37,9 @@ import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
-import org.geworkbench.bison.parsers.resources.Resource;
 import org.geworkbench.builtin.projects.DataSetNode;
 import org.geworkbench.builtin.projects.ProjectNode;
-import org.geworkbench.builtin.projects.ProjectTreeNode; 
+import org.geworkbench.builtin.projects.ProjectTreeNode;
 import org.geworkbench.engine.properties.PropertiesManager;
 import org.geworkbench.util.ResultSetlUtil;
 import org.geworkbench.util.Util;
@@ -99,7 +96,6 @@ public class AdjacencyMatrixFileFormat extends DataSetFileFormat {
 		return null;
 	}
 
-	@SuppressWarnings( { "unchecked" })
 	public DSDataSet<? extends DSBioObject> getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
 
@@ -164,13 +160,13 @@ public class AdjacencyMatrixFileFormat extends DataSetFileFormat {
 
 		AdjacencyMatrixDataSet adjMatrixDS = null;
 		if ((selectedDataSetNode != null)) {
-			DSDataSet<DSMicroarray> ds = selectedDataSetNode.dataFile;
+			DSDataSet<? extends DSBioObject> ds = selectedDataSetNode.getDataset();
 			if (!(ds instanceof CSMicroarraySet)) {
 				JOptionPane.showMessageDialog(null,
 						"Not a Microarray Set selected", "Unable to Load",
 						JOptionPane.ERROR_MESSAGE);
 			} else {
-				CSMicroarraySet<DSMicroarray> mASet = (CSMicroarraySet<DSMicroarray>) ds;
+				CSMicroarraySet mASet = (CSMicroarraySet) ds;
 				String adjMatrixFileStr = file.getPath();
 				String fileName = file.getName();
 
@@ -200,11 +196,6 @@ public class AdjacencyMatrixFileFormat extends DataSetFileFormat {
 	@Override
 	public boolean checkFormat(File file) throws InterruptedIOException {
 		return true;
-	}
-
-	@Override
-	public Resource getResource(File file) {
-		return null;
 	}
 
 	@Override

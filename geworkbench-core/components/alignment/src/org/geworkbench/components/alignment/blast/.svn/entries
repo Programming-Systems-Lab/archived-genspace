@@ -1,14 +1,14 @@
 10
 
 dir
-8215
+8410
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
+2011-10-05T20:25:11.006171Z
+8366
 zji
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-08-02T04:31:32.000000Z
+2011-10-18T01:45:34.000000Z
 7ce9adbb878aebef7b6765dc789e1c9b
 2011-01-11T17:08:21.747681Z
 7378
@@ -66,7 +66,7 @@ file
 
 
 
-2011-08-02T04:31:32.000000Z
+2011-10-18T01:45:34.000000Z
 ee212f0af17f3d94c3eb804aad3099b8
 2010-07-29T19:01:21.942013Z
 6930
@@ -94,17 +94,51 @@ has-props
 
 9932
 
-BlastAlgorithm.java
+BlastAnalysis.cwb.xml
 file
 
 
 
 
-2011-08-02T04:31:32.000000Z
-dcf3ac92577d85e3c19e873083ee6e7a
-2010-12-09T19:57:45.788737Z
-7316
-maz
+2011-10-18T01:45:34.000000Z
+e3cbfdb00760a9bd48bf8d09bb43298c
+2011-10-04T16:02:03.460589Z
+8362
+youmi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1556
+
+BlastAnalysis.java
+file
+
+
+
+
+2011-10-18T01:45:34.000000Z
+05f1e677161763136a9c6a2e11c67e2c
+2011-10-04T16:02:03.460589Z
+8362
+youmi
 has-props
 
 
@@ -126,7 +160,75 @@ has-props
 
 
 
-13440
+18414
+
+BlastAnalysisPanel.java
+file
+
+
+
+
+2011-10-18T01:45:34.000000Z
+39f1be5e7d6614131b87036e37e1e122
+2011-10-05T20:25:11.006171Z
+8366
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+52298
+
+AlgorithmMatcher.java
+file
+
+
+
+
+2011-10-18T01:45:34.000000Z
+6638b891f433914fe3b1f7d0a791fa59
+2011-10-04T16:02:03.460589Z
+8362
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29704
 
 NCBIBlastParser.java
 file
@@ -134,7 +236,7 @@ file
 
 
 
-2011-08-02T04:31:32.000000Z
+2011-10-18T01:45:34.000000Z
 90317133a88632636ec6eaf9bfd12888
 2011-07-30T04:31:30.667242Z
 8187
@@ -161,4 +263,38 @@ has-props
 
 
 9154
+
+ParameterSetting.java
+file
+
+
+
+
+2011-10-18T01:45:34.000000Z
+e4b3981b11f5e27a0b8e2f94e6fd27cd
+2011-10-04T16:02:03.460589Z
+8362
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7367
 

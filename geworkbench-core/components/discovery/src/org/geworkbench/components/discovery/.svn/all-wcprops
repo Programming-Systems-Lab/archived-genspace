@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8209/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
+/svn/geworkbench/!svn/ver/8409/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 END
 ParameterTranslation.java
 K 25
@@ -9,59 +9,41 @@ svn:wc:ra_dav:version-url
 V 136
 /svn/geworkbench/!svn/ver/7608/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/ParameterTranslation.java
 END
-SequenceDiscoveryViewAppComponent.java
-K 25
-svn:wc:ra_dav:version-url
-V 149
-/svn/geworkbench/!svn/ver/8204/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewAppComponent.java
-END
-SequenceDiscoveryViewWidget.java
-K 25
-svn:wc:ra_dav:version-url
-V 143
-/svn/geworkbench/!svn/ver/8209/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewWidget.java
-END
-ParameterPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 130
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/ParameterPanel.java
-END
 PatternTableView.java
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/geworkbench/!svn/ver/8206/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternTableView.java
+/svn/geworkbench/!svn/ver/8402/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternTableView.java
 END
-start.gif
+PatternDiscoveryAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/start.gif
+V 143
+/svn/geworkbench/!svn/ver/8402/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternDiscoveryAnalysis.cwb.xml
 END
-load.gif
+PatternViewComponent.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/load.gif
+V 139
+/svn/geworkbench/!svn/ver/8405/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternViewComponent.cwb.xml
+END
+PatternDiscoveryParamPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/8404/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternDiscoveryParamPanel.java
 END
 PatternTableModel.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
-/svn/geworkbench/!svn/ver/8202/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternTableModel.java
-END
-parameters.gif
-K 25
-svn:wc:ra_dav:version-url
-V 123
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/parameters.gif
+/svn/geworkbench/!svn/ver/8402/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternTableModel.java
 END
 PatternTableModelWrapper.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/8202/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternTableModelWrapper.java
+/svn/geworkbench/!svn/ver/8402/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternTableModelWrapper.java
 END
 PatternDataSource.java
 K 25
@@ -69,21 +51,27 @@ svn:wc:ra_dav:version-url
 V 133
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternDataSource.java
 END
-SequenceDiscoveryViewAppComponent.cwb.xml
+PatternViewPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 152
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/SequenceDiscoveryViewAppComponent.cwb.xml
+V 132
+/svn/geworkbench/!svn/ver/8404/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternViewPanel.java
 END
-stop.gif
+PatternDiscoveryAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/stop.gif
+V 140
+/svn/geworkbench/!svn/ver/8409/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternDiscoveryAnalysis.java
 END
 PatFilter.java
 K 25
 svn:wc:ra_dav:version-url
 V 123
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatFilter.java
+END
+PatternViewComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/8404/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/PatternViewComponent.java
 END

@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -36,7 +36,7 @@ public class SampleFileParser {
     static final char UNDEFINED = '\0';  
     char detectionStatus = UNDEFINED;
     
-	CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+	CSMicroarraySet maSet = new CSMicroarraySet();
 	private int possibleMarkers = 0; 
  	
 	/*
@@ -141,7 +141,7 @@ public class SampleFileParser {
 		
 		int i = 0;
 		CSMicroarray array = new CSMicroarray(i, possibleMarkers,
-				arrayName, null, null, false,
+				arrayName,
 				DSMicroarraySet.affyTxtType);
 		maSet.add(array);
 		//This buffered reader is used to put insert marker values for one sample at a time from the Series file
@@ -165,7 +165,8 @@ public class SampleFileParser {
 							if(valString == null){
 								Float v = Float.NaN;
 								CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(v);
-								maSet.get(0).setMarkerValue(j, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(0);
+								microarray.setMarkerValue(j, markerValue);
 								if (v.isNaN()) {
 									markerValue.setMissing(true);
 								} else {
@@ -217,7 +218,8 @@ public class SampleFileParser {
 								Float v = value;
 								CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 										v);
-								maSet.get(0).setMarkerValue(j, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(0);
+								microarray.setMarkerValue(j, markerValue);
 								if (v.isNaN()) {
 									markerValue.setMissing(true);
 								} else {

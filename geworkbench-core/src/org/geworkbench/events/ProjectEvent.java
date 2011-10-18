@@ -14,7 +14,7 @@ import javax.swing.tree.TreeNode;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author First Genetic Trust
- * @version $Id: ProjectEvent.java 7677 2011-03-29 13:24:21Z zji $
+ * @version $Id: ProjectEvent.java 8348 2011-09-27 20:18:47Z zji $
  */
 public class ProjectEvent extends Event {
 
@@ -47,11 +47,13 @@ public class ProjectEvent extends Event {
 			DataSetSubNode subNode = (DataSetSubNode) node;
 			TreeNode parent = subNode.getParent();
 			if (parent instanceof DataSetNode) {
-				return ((DataSetNode) parent).dataFile;
+				return ((DataSetNode) parent).getDataset();
 			}
 		}
 
         return null;
     }
+    
+    public ProjectTreeNode getTreeNode() { return node; }
 
 }

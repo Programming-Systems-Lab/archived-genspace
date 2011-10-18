@@ -24,7 +24,7 @@ import org.geworkbench.bison.util.SequenceUtils;
 /**
  * 
  * @author not attributable
- * @version $Id: CSSequenceSet.java 7487 2011-02-24 14:48:09Z zji $
+ * @version $Id: CSSequenceSet.java 8359 2011-10-04 15:53:24Z youmi $
  */
 
 public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
@@ -43,6 +43,13 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 
 	private int[] matchIndex;
 	private int[] reverseIndex;
+	
+	/**
+	 * Designates if the marker subselection imposed by the activated panels is
+	 * imposed on the this sequence set view.
+	 */
+	private boolean useMarkerPanel = false;
+
 
 	public CSSequenceSet() {
 		setID(RandomNumberGenerator.getID());
@@ -200,6 +207,26 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 	public void writeToResource() {
 
 	}
+	
+	/**
+	 * Set/resets marker subselection based on activated panels.
+	 * 
+	 * @param status
+	 */
+	public void useMarkerPanel(boolean status) {
+		useMarkerPanel = status;
+	}
+
+	/**
+	 * Gets the status of marker activation
+	 * 
+	 * @return the status of marker activation
+	 */
+	public boolean useMarkerPanel() {
+		return useMarkerPanel;
+	}
+
+	
 
 	public boolean isDirty() {
 		return dirty;

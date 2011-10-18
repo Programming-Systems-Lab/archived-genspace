@@ -1,16 +1,22 @@
 package org.geworkbench.components.masterregulator;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
+
+import javax.swing.JOptionPane;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.analysis.AbstractAnalysis;
+import org.geworkbench.analysis.AbstractGridAnalysis;
 import org.geworkbench.bison.annotation.CSAnnotationContext;
 import org.geworkbench.bison.annotation.CSAnnotationContextManager;
 import org.geworkbench.bison.annotation.DSAnnotationContext;
@@ -26,6 +32,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMasterRegulat
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMasterRagulatorResultSet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSItemList;
+import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
@@ -35,20 +42,24 @@ import org.geworkbench.builtin.projects.DataSetNode;
 import org.geworkbench.builtin.projects.DataSetSubNode;
 import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.builtin.projects.ProjectSelection;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.components.masterregulator.TAnalysis.TAnalysisException;
+import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.GeneSelectorEvent;
+import org.geworkbench.events.SubpanelChangedEvent;
 
 /**
  * @author yc2480
  * @version $Id$
  */
-public class MasterRegulatorAnalysis extends AbstractAnalysis implements
+public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
 	private static final long serialVersionUID = 940204157465957195L;
 	
 	private Log log = LogFactory.getLog(this.getClass());
 	private final String analysisName = "MRA";
+    private static final Pattern pattern = Pattern.compile("^mra\\d+$");
 	private MasterRegulatorPanel mraAnalysisPanel = new MasterRegulatorPanel();
 
 	public MasterRegulatorAnalysis() {
@@ -57,7 +68,7 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 
 	@Override
 	public int getAnalysisType() {
-		return AbstractAnalysis.MRA_TYPE;
+		return AbstractGridAnalysis.MRA_TYPE;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -68,6 +79,9 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 					"Input dataset for MRA analysis should be a MicroarraySet.\n"+
 					"But you selected a "+input.getClass().getName(), null);
 		};
+		if (mraAnalysisPanel.getResultid() != null)
+			return new AlgorithmExecutionResults(false,
+					"Retrieving prior result is not supported by local MRA.", null);
 		DSMicroarraySetView<DSGeneMarker, DSMicroarray> view = (DSMicroarraySetView<DSGeneMarker, DSMicroarray>) input;
 		DSMicroarraySet<DSMicroarray> maSet = view.getMicroarraySet();
 		AdjacencyMatrixDataSet amSet = mraAnalysisPanel.getAdjMatrixDataSet();
@@ -93,22 +107,21 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		// analysis
 		DSMasterRagulatorResultSet<DSGeneMarker> mraResultSet = new CSMasterRegulatorResultSet<DSGeneMarker>(
 				maSet, analysisName, view.markers().size());		
-		//t-test
-		log.info("Executing T-Test...");
-		TAnalysis tTestAnalysis= new TAnalysis();
-		Map<DSGeneMarker, Double> tTestResultSet;
+		//t-analysis
+		log.info("Executing T Analysis");
+		Map<DSGeneMarker, Double> tValues = null;
 		try {
-			tTestResultSet = tTestAnalysis.calculate(input);
+			TAnalysis tTestAnalysis= new TAnalysis(view);
+			tValues = tTestAnalysis.calculateTValues();
 		} catch (TAnalysisException e1) {
 			return new AlgorithmExecutionResults(false,
 					e1.getMessage(), 
 					null);
 		}
-		if (tTestResultSet==null) return new AlgorithmExecutionResults(false,
+		if (tValues==null) return new AlgorithmExecutionResults(false,
 				"The set of t values is set null.", 
 				null);
-		mraResultSet.setTValues(tTestResultSet);
-		log.info("We got TGs");
+		mraResultSet.setTValues(tValues);
 	 
 		//get TFs
 		ArrayList<DSGeneMarker> transcriptionFactors=new ArrayList<DSGeneMarker>();
@@ -146,10 +159,7 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			}
 		}
 		log.info("We got "+signatureMarkers.size()+" signature markers");
-		
-		
-		
-			
+
 		//y = size of significantMarkers		 
 		int y = signatureMarkers.size();
 		//x = size of markers
@@ -177,17 +187,10 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			for (DSGeneMarker marker: signatureMarkers){
 				if (nA.contains(marker)){
 					genesInTargetList.add(marker);				 
-					log.debug(tfA.getShortName()+"\t"+ marker.getShortName()+"\tT:"+tTestResultSet.get(marker));
+					log.debug(tfA.getShortName()+"\t"+ marker.getShortName()+"\tT:"+tValues.get(marker));
 				}
 			}
 			
-			for (DSGeneMarker marker: nA){				 
-			     mraResultSet.setPValueOf(tfA,marker, 0); // p-values is ignored
-		    	 Double tValue = tTestResultSet.get(marker);
-		    	 if(tValue==null) tValue = Double.NaN;
-			     mraResultSet.setTTestValueOf(tfA,marker,tValue);
-				 log.debug(tfA.getShortName()+"\t"+ marker.getShortName()+"\tT:"+tTestResultSet.get(marker));
-			}			
 			//now we got w in genesInTargetList
 			int w = genesInTargetList.size();
 			
@@ -215,10 +218,7 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		}
 		
 		// generate result
-		String historyStr ="";
-		historyStr += generateHistoryString(view);
-
-		historyStr += tTestAnalysis.GenerateMarkerString(view);
+		String historyStr = generateHistoryString(view);
 
 		String groupAndChipsString = "Groups analyzed:\n";
 		{//generate group information
@@ -254,7 +254,16 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 		}
 		historyStr += groupAndChipsString;
 
-		ProjectPanel.addToHistory(mraResultSet, historyStr);
+		HistoryPanel.addToHistory(mraResultSet, historyStr);
+		
+		DSPanel<DSGeneMarker> selectedMarkers = new CSPanel<DSGeneMarker>(
+				"MRA Genes", "MRA");
+		
+		selectedMarkers.addAll(mraResultSet.getTFs());
+
+		publishSubpanelChangedEvent(new SubpanelChangedEvent<DSGeneMarker>(
+				DSGeneMarker.class, selectedMarkers,
+				SubpanelChangedEvent.NEW));
 
 		AlgorithmExecutionResults results = new AlgorithmExecutionResults(true,
 				"MRA Analysis", mraResultSet);
@@ -279,18 +288,20 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 
 	private String generateHistoryString(
 			DSMicroarraySetView<DSGeneMarker, DSMicroarray> view) {
-		String histStr = "";
-		// Header
-		histStr += "Generated with MRA run with parameters:\n";
-		histStr += "----------------------------------------\n";
-//		histStr += "Correction: " + mraAnalysisPanel.getCorrection() + "\n";
-//		histStr += "P-Value: " + mraAnalysisPanel.getPValue() + "\n";
-		histStr += "Transcription Factor: " + mraAnalysisPanel.getTranscriptionFactor() + "\n";
-		histStr += "Signature Markers: " + mraAnalysisPanel.getSigMarkers() + "\n";
-		histStr += "adjMatrix: "
-				+ mraAnalysisPanel.getAdjMatrixDataSet().getDataSetName()
-				+ "\n\n\n";
-		return histStr;
+		StringBuffer histStr = new StringBuffer("Generated with MRA run with parameters:\n");
+		histStr .append( "----------------------------------------\n" );
+		histStr .append( "Transcription Factor: " + mraAnalysisPanel.getTranscriptionFactor() ).append("\n");
+		histStr .append( "Signature Markers: " + mraAnalysisPanel.getSigMarkers() ).append("\n");
+		histStr .append( "adjMatrix: " )
+				.append( mraAnalysisPanel.getAdjMatrixDataSet().getDataSetName() )
+						.append( "\n\n\n" );
+
+		histStr .append( view.markers().size()+" markers analyzed:\n" );
+		for (DSGeneMarker marker : view.markers()) {
+			histStr.append( "\t" ).append( marker.getLabel() ).append( "\n" );
+		}
+		
+		return histStr.toString();
 	}
 	
 	@Subscribe
@@ -302,16 +313,6 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			log.debug("MRA Received Gene Selector Event: Selection panel sent was null");
 	}
 
-	@SuppressWarnings("rawtypes")
-	@Subscribe
-	public void receive(org.geworkbench.events.ProjectNodeAddedEvent e,
-			Object source) {
-		DSDataSet dataSet = e.getAncillaryDataSet();
-		if (dataSet instanceof AdjacencyMatrixDataSet) {
-			this.mraAnalysisPanel
-					.addAdjMatrixToCombobox((AdjacencyMatrixDataSet) dataSet);
-		}
-	}
 	@SuppressWarnings("rawtypes")
 	@Subscribe
 	public void receive(org.geworkbench.events.ProjectNodeRemovedEvent e,
@@ -367,6 +368,15 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
             }
         }
 	}
+	
+	
+	@Publish
+	public org.geworkbench.events.SubpanelChangedEvent<DSGeneMarker> publishSubpanelChangedEvent(
+			org.geworkbench.events.SubpanelChangedEvent<DSGeneMarker> event) {
+		return event;
+	}
+	
+	
 	private String GenerateGroupAndChipsString(DSPanel<DSMicroarray> panel) {
 		String histStr = null;
 
@@ -379,5 +389,108 @@ public class MasterRegulatorAnalysis extends AbstractAnalysis implements
 			histStr += "\t\t" + panel.get(aIndex) + "\n";
 
 		return histStr;
+	}
+
+	@Override
+	public String getAnalysisName() {
+		return analysisName;
+	}
+
+	@Override
+	protected Map<Serializable, Serializable> getBisonParameters() {
+		Map<Serializable, Serializable> parameterMap = new HashMap<Serializable, Serializable>();
+		if (mraAnalysisPanel.getResultid() != null){
+			parameterMap.put("resultid", mraAnalysisPanel.getResultid());
+			return parameterMap;
+		}
+		byte[] network = mraAnalysisPanel.getNetwork();
+		if (network == null){
+			parameterMap.put("network", null);
+			return parameterMap;
+		}
+		parameterMap.put("mintg", mraAnalysisPanel.getMintg());
+		parameterMap.put("minsp", mraAnalysisPanel.getMinsp());
+		parameterMap.put("nperm", mraAnalysisPanel.getNperm());
+		parameterMap.put("pvgsea", mraAnalysisPanel.getPValue());
+		parameterMap.put("tail", mraAnalysisPanel.getTail());
+		parameterMap.put("pvshadow", mraAnalysisPanel.getPVshadow());
+		parameterMap.put("pvsynergy", mraAnalysisPanel.getPVsynergy());
+		parameterMap.put("networkname", mraAnalysisPanel.getNetworkFilename());
+		parameterMap.put("network", network);network=null;
+		if (mraAnalysisPanel.allpos && mraAnalysisPanel.getTail()==2){
+			JOptionPane.showMessageDialog(null, "Since all Spearman's correlation >= 0, gsea will use tail = 1.");
+			parameterMap.put("tail", 1);
+		}
+		parameterMap.put("class1", mraAnalysisPanel.getIxClass(CSAnnotationContext.CLASS_CONTROL).toArray(new String[0]));
+		parameterMap.put("class2", mraAnalysisPanel.getIxClass(CSAnnotationContext.CLASS_CASE).toArray(new String[0]));
+		return parameterMap;
+	}
+
+	@Override
+	public Class<?> getBisonReturnType() {
+		return String.class;
+	}
+
+	@Override
+	protected boolean useMicroarraySetView() {
+		return true;
+	}
+
+	@Override
+	protected boolean useOtherDataSet() {
+		return false;
+	}
+
+	@Override
+	public ParamValidationResults validInputData(
+			DSMicroarraySetView<DSGeneMarker, DSMicroarray> maSetView,
+			DSDataSet<?> refMASet) {
+		if (maSetView == null)
+			return new ParamValidationResults(false, "Invalid input.");
+		assert maSetView instanceof DSMicroarraySetView;
+
+		String runid = mraAnalysisPanel.getResultid();
+		if (runid != null){
+			if (!pattern.matcher(runid).find())
+				return new ParamValidationResults(false, "Invalid MRA Result ID: "+runid);
+			else
+				return new ParamValidationResults(true, "No Error");
+		}
+		if (mraAnalysisPanel.getNetworkFilename() == null)
+			return new ParamValidationResults(false, "Network cannot be empty.");
+		
+		if (mraAnalysisPanel.getMintg() <= 0)
+			return new ParamValidationResults(false, "Min targets should be a positive integer.");
+		if (mraAnalysisPanel.getMinsp() <= 0)
+			return new ParamValidationResults(false, "Min samples should be a positive integer.");
+		if (mraAnalysisPanel.getNperm() <= 0)
+			return new ParamValidationResults(false, "Nperm should be a positive integer.");
+		double pvgsea = mraAnalysisPanel.getPValue();
+		if (pvgsea < 0 || pvgsea > 1)
+			return new ParamValidationResults(false, "GSEA Pvalue should be between 0 and 1.");
+		int tail = mraAnalysisPanel.getTail();
+		if (tail != 1 && tail != 2)
+			return new ParamValidationResults(false, "Tail should be 1 or 2.");
+		double pvshadow = mraAnalysisPanel.getPVshadow();
+		if (pvshadow < 0 || pvshadow > 1)
+			return new ParamValidationResults(false, "Shadow Pvalue should be between 0 and 1.");
+		double pvsynergy = mraAnalysisPanel.getPVsynergy();
+		if (pvsynergy < 0 || pvsynergy > 1)
+			return new ParamValidationResults(false, "Synergy Pvalue should be between 0 and 1.");
+		HashSet<String> ctrls = mraAnalysisPanel.getIxClass(CSAnnotationContext.CLASS_CONTROL);
+		if (ctrls.size() == 0)
+			return new ParamValidationResults(false, "Please activate at least one control array.");
+		Iterator<String> casei = mraAnalysisPanel.getIxClass(CSAnnotationContext.CLASS_CASE).iterator();
+		if (!casei.hasNext()){
+			int c = JOptionPane.showConfirmDialog(null, "Are you sure to use only control group?");
+			if (c != JOptionPane.YES_OPTION)
+				return new ParamValidationResults(false, "Please activate both control and case.");
+		}
+		while (casei.hasNext()){
+		    if (ctrls.contains(casei.next()))
+			return new ParamValidationResults(false, "An array cannot be in case and control at the same time.");
+		}
+		
+		return new ParamValidationResults(true, "No Error");
 	}
 }

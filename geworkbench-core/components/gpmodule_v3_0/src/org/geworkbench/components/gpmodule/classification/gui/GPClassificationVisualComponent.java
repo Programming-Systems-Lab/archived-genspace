@@ -32,7 +32,7 @@ import org.geworkbench.engine.management.Subscribe;
 
 /**
  *@author Marc-Danie Nazaire
- *@version $Id: GPClassificationVisualComponent.java 7976 2011-06-10 20:52:40Z zji $
+ *@version $Id: GPClassificationVisualComponent.java 8288 2011-09-14 16:30:57Z zji $
  */
 
 @AcceptTypes( {CSVisualClassifier.class})
@@ -51,18 +51,6 @@ public class GPClassificationVisualComponent implements VisualPlugin
     public Component getComponent()
     {
         return component;
-    }
-
-    @SuppressWarnings("unchecked")
-	@Subscribe
-    public void receive(org.geworkbench.events.ProjectNodeAddedEvent e, Object source)
-    {
-        DSDataSet<?> dataSet = e.getDataSet();
-
-        if (dataSet instanceof DSMicroarraySet)
-        {
-            microarraySets.put(dataSet.getDataSetName(), (DSMicroarraySet<DSMicroarray>)dataSet);
-		}
     }
 
     @Subscribe

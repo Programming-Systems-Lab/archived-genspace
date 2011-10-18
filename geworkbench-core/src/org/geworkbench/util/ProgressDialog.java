@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
  * 2 static progress dialogs: modal & nonmodal;
  * execute ProgressTask: add progress bar, execute swing task, show dialog;
  * remove ProgressTask: remove progress bar, stop swing task, hide dialog if no tasks left
- * $Id: ProgressDialog.java 7183 2010-11-10 21:07:57Z wangmen $
+ * $Id: ProgressDialog.java 8265 2011-09-12 18:05:25Z zji $
  */
 
 public class ProgressDialog extends JDialog {
@@ -51,7 +51,6 @@ public class ProgressDialog extends JDialog {
             tasks = nonmodaltasks;
         }
 
-        this.setMinimumSize(new Dimension(400, 300));
         this.setTitle("Progress");
     	gl = new GridLayout(0, 1); 
         jp = new JPanel(gl);
@@ -90,6 +89,7 @@ public class ProgressDialog extends JDialog {
 
 		ProgressItem pb = task.getProgressItem();
 		jp.add(pb);
+		this.pack();
 
 		task.execute();
 		

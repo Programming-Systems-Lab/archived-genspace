@@ -13,7 +13,7 @@ import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.views.CSMicroarraySetView;
 import org.geworkbench.bison.datastructure.biocollections.views.DSMicroarraySetView;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -34,7 +34,7 @@ import edu.columbia.c2b2.evidenceinegration.EvidenceIntegration;
 
 /**
  * @author mhall
- * @version $Id: EvidenceIntegrationAnalysis.java 7969 2011-06-07 21:47:40Z zji $
+ * @version $Id: EvidenceIntegrationAnalysis.java 8348 2011-09-27 20:18:47Z zji $
  */
 public class EvidenceIntegrationAnalysis extends AbstractGridAnalysis implements ClusteringAnalysis {
 
@@ -113,9 +113,9 @@ public class EvidenceIntegrationAnalysis extends AbstractGridAnalysis implements
         	log.warn("No data node selected.");
         	return;
         }
-        if (dNode.dataFile instanceof CSExprMicroarraySet) {
+        if (dNode.getDataset() instanceof CSMicroarraySet) {
             log.debug("Selected dataset is microarray type.");
-            CSExprMicroarraySet dataFile = (CSExprMicroarraySet) dNode.dataFile;
+            CSMicroarraySet dataFile = (CSMicroarraySet) dNode.getDataset();
             mSetView = new CSMicroarraySetView(dataFile);
         }
         eiParamPanel.clearEvidence();

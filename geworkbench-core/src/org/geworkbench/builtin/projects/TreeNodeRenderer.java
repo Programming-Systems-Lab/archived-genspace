@@ -12,6 +12,8 @@ import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.bison.datastructure.properties.DSNamed;
+import org.geworkbench.engine.management.TypeMap;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
@@ -20,36 +22,10 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * <code>JTree</code> renderer to be used to render the Project Tree
  *
  * @author First Genetic Trust
- * @version $Id: TreeNodeRenderer.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: TreeNodeRenderer.java 8348 2011-09-27 20:18:47Z zji $
  */
 public class TreeNodeRenderer extends DefaultTreeCellRenderer {
 	private static final long serialVersionUID = -1879887785935786137L;
-
-    /**
-     * Current <code>ProjectNodeOld</code> selection
-     */
-    public ProjectNode projectNodeSelection = null;
-    /**
-     * Current <code>ImageNode</code> selection
-     */
-    public ImageNode imageNodeSelection = null;
-
-    /**
-     * Default Constructor
-     */
-    ProjectSelection selection = null;
-
-    public TreeNodeRenderer(ProjectSelection selection) {
-        this.selection = selection;
-    }
-
-    /**
-     * Clears all Node selections
-     */
-    public void clearNodeSelections() {
-        projectNodeSelection = null;
-        imageNodeSelection = null;
-    }
 
     /**
      * <code>Component</code> used for rendering on the <code>ProjectTree</code>
@@ -79,8 +55,8 @@ public class TreeNodeRenderer extends DefaultTreeCellRenderer {
         	setIcon(Icons.BUSY_STATIC_ICON);
         } else {
             if (value.getClass() == DataSetNode.class) {
-                DSDataSet<? extends DSBioObject> df = ((DataSetNode) value).dataFile;
-                ImageIcon icon = ProjectPanel.getIconForType(df.getClass());
+                DSDataSet<? extends DSBioObject> df = ((DataSetNode) value).getDataset();
+                ImageIcon icon = getIconForType(df.getClass());
                 if (icon != null) {
                     setIcon(icon);
                 } else {
@@ -101,7 +77,7 @@ public class TreeNodeRenderer extends DefaultTreeCellRenderer {
                 }
             } else if (value.getClass() == DataSetSubNode.class) {
                 DSAncillaryDataSet<? extends DSBioObject> adf = ((DataSetSubNode) value)._aDataSet;               
-                ImageIcon icon = ProjectPanel.getIconForType(adf.getClass());
+                ImageIcon icon = getIconForType(adf.getClass());
                 if (icon != null) {
                     setIcon(icon);
                 } else {
@@ -131,4 +107,24 @@ public class TreeNodeRenderer extends DefaultTreeCellRenderer {
         return this;
     }
 
+	private static ImageIcon getIconForType(Class<? extends DSNamed> type) {
+		ImageIcon icon = iconMap.get(type);
+		if (icon == null) {
+			return Icons.GENERIC_ICON;
+		} else {
+			return icon;
+		}
+	}
+
+	private static TypeMap<ImageIcon> iconMap = new TypeMap<ImageIcon>();
+
+	// Initialize default icons
+	static {
+		DefaultIconAssignments.initializeDefaultIconAssignments();
+	}
+
+	public static void setIconForType(Class<? extends DSNamed> type,
+			ImageIcon icon) {
+		iconMap.put(type, icon);
+	}
 }

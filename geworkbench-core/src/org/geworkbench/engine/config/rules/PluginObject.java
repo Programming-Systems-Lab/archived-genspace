@@ -31,7 +31,7 @@ import org.jdom.input.SAXBuilder;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust, Inc.</p>
  * @author First Genetic Trust, Inc.
- * @version $Id: PluginObject.java 7258 2010-11-30 19:29:27Z zji $
+ * @version $Id: PluginObject.java 8408 2011-10-14 21:01:08Z zji $
  */
 
 /**
@@ -353,6 +353,8 @@ public class PluginObject {
             topMenu = mainMenuItems[i];
         return addMenuItem(descriptor, tokens, topMenu, icon, accelerator);
     }
+    
+    final public static String escapedMenuItemDelimiter = "\\dot";
 
     /**
      * Recursively navigates the existing menu structure until it finds the
@@ -376,7 +378,7 @@ public class PluginObject {
         JMenuItem theMenuItem;
         int len;
         int i;
-        menuText = tokens.nextToken();
+        menuText = tokens.nextToken().replace(escapedMenuItemDelimiter, GeawConfigObject.menuItemDelimiter);
         // Initialize 'parentMenuItems' with the menu items of the 'parentMenu'.
         MenuElement[] temp = parentMenu.getPopupMenu().getSubElements();
         parentMenuItems = new JMenuItem[temp.length];

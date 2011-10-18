@@ -5,15 +5,13 @@ import java.io.InterruptedIOException;
 
 import javax.swing.filechooser.FileFilter;
 
-import org.geworkbench.bison.parsers.resources.Resource;
-
 /**
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author First Genetic Trust, Inc.
  * @author my2248
- * @version $Id: FileFormat.java 7601 2011-03-17 20:24:16Z youmi $
+ * @version $Id: FileFormat.java 8326 2011-09-26 15:54:29Z zji $
  * 
  * Base class for reading input data files complying to a desired format.
  * Support for any given microarray data format (e.g., Affymetrix MAS 5,
@@ -52,14 +50,6 @@ public abstract class FileFormat {
      *         according to the format or not.
      */
     public abstract boolean checkFormat(File file) throws InterruptedIOException;
-
-    /**
-     * Return a <code>Resource</code> object for the designated file.
-     *
-     * @param file
-     * @return
-     */
-    public abstract Resource getResource(File file);
 
     /**
      * Return the list of extensions (if any) for the files following this

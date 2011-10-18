@@ -1,16 +1,16 @@
 10
 
 dir
-8215
+8410
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/masterregulator
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
+2011-10-12T21:47:36.012146Z
+8398
+youmi
+has-props
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-08-02T04:26:15.000000Z
+2011-10-18T01:42:13.000000Z
 4b991a82f8001c8fc4ed1947cce688ed
 2011-06-16T21:23:08.194040Z
 8006
@@ -66,7 +66,7 @@ file
 
 
 
-2011-08-02T04:26:15.000000Z
+2011-10-18T01:42:13.000000Z
 22be23783aa3f4fec9978a82d2d5c02a
 2011-06-15T16:29:27.888300Z
 7991

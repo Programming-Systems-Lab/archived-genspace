@@ -94,7 +94,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  * @author Marc-Danie Nazaire
- * @version $Id: GPClassificationVisualizationPanel.java 7976 2011-06-10 20:52:40Z zji $
+ * @version $Id: GPClassificationVisualizationPanel.java 8343 2011-09-27 15:47:55Z zji $
  */
 public class GPClassificationVisualizationPanel extends JPanel implements ItemListener
 {
@@ -386,7 +386,6 @@ public class GPClassificationVisualizationPanel extends JPanel implements ItemLi
                     testClass = caseRadioButton.getText();
                     predictedResultPanel = new CSPanel<DSMicroarray>("Predicted Cases");
 
-                    @SuppressWarnings({ "rawtypes" })
 					CSMicroarraySet dataset = (CSMicroarraySet) visualGPClassifier.getParentDataSet();
                     for(int i = 0; i < testResultsTable.getRowCount(); i++)
                     {
@@ -408,7 +407,6 @@ public class GPClassificationVisualizationPanel extends JPanel implements ItemLi
                     testClass = controlRadioButton.getText();
                     predictedResultPanel = new CSPanel<DSMicroarray>("Predicted Controls");
 
-                    @SuppressWarnings("rawtypes")
 					CSMicroarraySet dataset = (CSMicroarraySet) visualGPClassifier.getParentDataSet();
                     for(int i = 0; i < testResultsTable.getRowCount(); i++)
                     {

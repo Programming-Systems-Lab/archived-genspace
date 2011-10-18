@@ -8,7 +8,6 @@ import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.complex.panels.CSSequentialItemList;
 import org.geworkbench.bison.datastructure.properties.CSDescribable;
 import org.geworkbench.bison.datastructure.properties.CSExtendable;
-import org.geworkbench.bison.parsers.resources.Resource;
 
 /**
  * An abstract implementation of {@link DSDataSet}.
@@ -22,9 +21,7 @@ public class CSDataSet <T extends DSBioObject> extends CSSequentialItemList<T> i
 	protected boolean dirty = true;
     protected File file = null;
     protected String label = new String("Unnamed Data Set");
-    protected String absPath = null;
     protected String compatibilityLabel = null; //default
-    protected Resource maResource = null;
 
     /**
      * Used for the implementation of <code>Identifiable</code>.
@@ -135,16 +132,6 @@ public class CSDataSet <T extends DSBioObject> extends CSSequentialItemList<T> i
     }
 
     /**
-     * Gets the path to the file associated with this data set.
-     *
-     * @return the path as a String.
-     * @todo - watkin - This should be phased out and replaced with the resource-management methods.
-     */
-    public String getPath() {
-        return absPath;
-    }
-
-    /**
      * The underlying file associated with this data set.
      *
      * @return the file for this data set.
@@ -168,38 +155,6 @@ public class CSDataSet <T extends DSBioObject> extends CSSequentialItemList<T> i
     }
 
     /**
-     * Associates the given resource with this data set.
-     *
-     * @param resource the resource to associate with this data set.
-     */
-    public void setResource(Resource resource) {
-        maResource = resource;
-    }
-
-    /**
-     * Disassociates the specified resource from this data set.
-     *
-     * @param resource the resource to remove.
-     */
-    public void removeResource(Resource resource) {
-        maResource = null;
-    }
-
-    /**
-     * Reads from the resource associated with this data set.
-     */
-    public void readFromResource() {
-        // @todo - watkin - not implemented anywhere in the class heirarchy!
-    }
-
-    /**
-     * Writes to the resource associated with this data set.
-     */
-    public void writeToResource() {
-        // @todo - watkin - not implemented anywhere in the class heirarchy!
-    }
-
-    /**
      * Return the dirty flag.
      *
      * @return <code>true</code> if dirty, <code>false</code> otherwise.
@@ -216,17 +171,6 @@ public class CSDataSet <T extends DSBioObject> extends CSSequentialItemList<T> i
     public void setDirty(boolean flag) {
         dirty = flag;
     }
-
-    /**
-     * Sets the path to the absolute path given.
-     *
-     * @param absPath the absolute (non-relative) path.
-     * @todo - watkin - This should be phased out and replaced with the resource-management methods.
-     */
-    public void setAbsPath(String absPath) {
-        this.absPath = absPath;
-    }
-
 
     public String getID() {
         return arraySetId;
@@ -361,5 +305,15 @@ public class CSDataSet <T extends DSBioObject> extends CSSequentialItemList<T> i
 	}
 	public void setColumnOrder(ArrayList<Integer> columnOrder) {
 		this.columnOrder = columnOrder;
+	}
+
+	/* Default implement of no-op is OK as long as activate and deactivate match */
+	/* isActive should match this too, but it is also not used by anybody yet */
+	public void deactivate() {
+		// no-op
+	}
+
+	public void activate() {
+		// no-op
 	}
 }

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
+/svn/geworkbench/!svn/ver/8344/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
 END
 IDEAAnalysis.cwb.xml
 K 25
@@ -19,7 +19,7 @@ IDEAPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/7347/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAPanel.java
+/svn/geworkbench/!svn/ver/8317/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAPanel.java
 END
 MutualInfo.java
 K 25
@@ -31,7 +31,7 @@ IDEAViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/7336/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.java
+/svn/geworkbench/!svn/ver/8256/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.java
 END
 IdeaLauncher.java
 K 25
@@ -49,7 +49,7 @@ IDEAAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/7351/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.java
+/svn/geworkbench/!svn/ver/8344/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.java
 END
 AnnotationParser.java
 K 25
@@ -67,7 +67,7 @@ Phenotype.java
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/7334/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Phenotype.java
+/svn/geworkbench/!svn/ver/8316/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Phenotype.java
 END
 IDEAViewer.cwb.xml
 K 25

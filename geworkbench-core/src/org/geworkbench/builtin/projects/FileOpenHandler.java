@@ -9,6 +9,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.InterruptedIOException;
+import java.util.HashSet;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -24,25 +25,28 @@ import javax.swing.UIManager;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
+import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
+import org.geworkbench.bison.util.colorcontext.ColorContext;
 import org.geworkbench.engine.config.rules.GeawConfigObject;
-import org.geworkbench.events.ProjectNodeAddedEvent;
 import org.geworkbench.parsers.AdjacencyMatrixFileFormat;
 import org.geworkbench.parsers.DataSetFileFormat;
+import org.geworkbench.parsers.ExpressionFileFormat;
 import org.geworkbench.parsers.FileFormat;
 import org.geworkbench.parsers.InputFileFormatException;
-import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 
 /**
  * This class is refactored out of ProjectPanel to handle the file open action,
  * especially tackles the progress bar requirement for multiple files.
  *
  * @author zji
- * @version $Id: FileOpenHandler.java,v 1.2 2008/07/25 19:13:17 jiz Exp $
+ * @version $Id: FileOpenHandler.java 8410 2011-10-17 18:11:10Z zji $
  *
  */
 public class FileOpenHandler {
@@ -50,8 +54,10 @@ public class FileOpenHandler {
 
 	private final File[] dataSetFiles;
 	private final FileFormat inputFormat;
-	private final boolean mergeFiles;
-	private final ProjectPanel enclosingProjectPanel;
+
+	private final ProjectPanel projectPanel;
+	private final JProgressBar projectPanelProgressBar;
+	
 	private static final String OUT_OF_MEMORY_MESSAGE = "In order to prevent data corruption,\n"
 			+ "it is strongly suggested that you\n"
 			+ "restart geWorkbench now.\n"
@@ -61,22 +67,17 @@ public class FileOpenHandler {
 			+ "Exit geWorkbench?";
 	private static final String OUT_OF_MEMORY_MESSAGE_TITLE = "Java total heap memory exception";
 
-	ProgressBarDialog pb = null;
-	OpenMultipleFileTask task = null;
-
-	FileOpenHandler(final File[] dataSetFiles, final FileFormat inputFormat,
-			final boolean mergeFiles, final ProjectPanel enclosingProjectPanel)
+	FileOpenHandler(final File[] dataSetFiles, final FileFormat inputFormat)
 			throws InputFileFormatException {
 		this.dataSetFiles = dataSetFiles;
 		this.inputFormat = inputFormat;
 
-		this.mergeFiles = mergeFiles;
-		this.enclosingProjectPanel = enclosingProjectPanel;
-
-		enclosingProjectPanel.progressBar.setStringPainted(true);
-		enclosingProjectPanel.progressBar.setString("Loading");
-		enclosingProjectPanel.progressBar.setIndeterminate(true);
-		enclosingProjectPanel.getComponent().setCursor(Cursor
+		projectPanel = ProjectPanel.getInstance();
+		projectPanelProgressBar = projectPanel.getProgressBar();
+		projectPanelProgressBar.setStringPainted(true);
+		projectPanelProgressBar.setString("Loading");
+		projectPanelProgressBar.setIndeterminate(true);
+		ProjectPanel.getInstance().getComponent().setCursor(Cursor
 				.getPredefinedCursor(Cursor.WAIT_CURSOR));
 	}
 
@@ -84,14 +85,16 @@ public class FileOpenHandler {
 	 *
 	 */
 	public void openFiles() {
-		task = new OpenMultipleFileTask();
-		task.execute();
+		OpenMultipleFileTask task = new OpenMultipleFileTask();
 
-		pb = new ProgressBarDialog(GeawConfigObject.getGuiWindow(),
-				"Files are being opened.");
+		ProgressBarDialog pb = new ProgressBarDialog(GeawConfigObject.getGuiWindow(),
+				"Files are being opened.", task);
 		pb.setMessageAndNote(String.format("Completed %d out of %d files.", 0,
 				dataSetFiles.length), String.format(
 				"Currently being processed is %s.", dataSetFiles[0].getName()));
+		
+		task.progressBarDialog = pb;
+		task.execute();
 
 		task.addPropertyChangeListener(pb);
 	}
@@ -104,19 +107,22 @@ public class FileOpenHandler {
 		private JLabel note = null;
 		private JButton cancelButton = null;
 
-		protected void setMessageAndNote(String message, String note) {
+		private final OpenMultipleFileTask task;
+		private void setMessageAndNote(String message, String note) {
 			this.message.setText(message);
 			this.note.setText(note);
 			this.message.invalidate();
 		}
 
-		ProgressBarDialog(JFrame ownerFrame, String title) {
+		ProgressBarDialog(JFrame ownerFrame, String title, final OpenMultipleFileTask task) {
 			// it is important to make it non-modal - for the same reason
 			// customizing dialog is necessary
 			// because this class FileOpenHandler is used within a file chooser
 			// event handler, so it would leave the file open dialog open
 			// otherwise
 			super(ownerFrame, title, false);
+			
+			this.task = task;
 
 			this.setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
 			JPanel leftPanel = new JPanel();
@@ -173,9 +179,9 @@ public class FileOpenHandler {
 
 				// task is really stopped when checking isCancel between reading
 				// files, but UI should show canceled
-				enclosingProjectPanel.progressBar.setString("");
-				enclosingProjectPanel.progressBar.setIndeterminate(false);
-				enclosingProjectPanel.getComponent().setCursor(Cursor
+				projectPanelProgressBar.setString("");
+				projectPanelProgressBar.setIndeterminate(false);
+				projectPanel.getComponent().setCursor(Cursor
 						.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 
 				dispose();
@@ -192,7 +198,7 @@ public class FileOpenHandler {
 				if (progress >= 0 && progress < dataSetFiles.length)
 					note = String.format("Currently being processed is %s.",
 							dataSetFiles[progress].getName());
-				pb.setMessageAndNote(String.format(
+				setMessageAndNote(String.format(
 						"Completed %d out %d files.", progress,
 						dataSetFiles.length), note);
 			}
@@ -200,6 +206,7 @@ public class FileOpenHandler {
 	} // end of class ProgressBarDialog
 
 	private class OpenMultipleFileTask extends SwingWorker<Void, Void> {
+		ProgressBarDialog progressBarDialog;
 
 		/*
 		 * (non-Javadoc)
@@ -209,55 +216,49 @@ public class FileOpenHandler {
 		@Override
 		protected void done() {
 
-			if (mergeFiles && dataSets[0] instanceof DSMicroarraySet) {
+			if (dataSets.length>1 && dataSets[0] instanceof DSMicroarraySet) {
 				DSMicroarraySet[] maSets = new DSMicroarraySet[dataSets.length];
 
 				for (int i = 0; i < dataSets.length; i++) {
 					maSets[i] = (DSMicroarraySet) dataSets[i];
 				}
-				enclosingProjectPanel.doMergeSets(maSets);
+				DSMicroarraySet<DSMicroarray> mergedSet = doMergeSets(maSets);
+				if(mergedSet!=null) {
+					projectPanel.addDataSetNode(mergedSet, true);
+				}
 			} else {
 				boolean selected = false;
-				for (int i = 0; i < dataSets.length; i++) {
-					DSDataSet set = dataSets[i];
+				DSDataSet set = dataSets[0];
 
-					if (set != null) {
-						// Do intial color context update if it is a
-						// microarray
-						if (set instanceof DSMicroarraySet) {
-							// Add color context
-							enclosingProjectPanel.addColorContext((DSMicroarraySet<DSMicroarray>) set);
-						}
+				if (set == null) {
+					log.error("null dataset encountered");
+					return;
+				}
 
-						if (set instanceof AdjacencyMatrixDataSet) {
-							// adjacency matrix as added as a sub node
-							AdjacencyMatrixDataSet adjMatrixDS = (AdjacencyMatrixDataSet) set;
-							ProjectNodeAddedEvent event = new ProjectNodeAddedEvent(
-									"Adjacency Matrix loaded", null,
-									adjMatrixDS);
-							enclosingProjectPanel.addDataSetSubNode(adjMatrixDS);
-							enclosingProjectPanel.publishProjectNodeAddedEvent(event);
-						} else{
+				// Do initial color context update if it is a microarray
+				if (set instanceof DSMicroarraySet) {
+					ProjectPanel
+							.addColorContext((DSMicroarraySet<DSMicroarray>) set);
+				}
 
-							// String directory = dataSetFile.getPath();
-							// System.setProperty("data.files.dir", directory);
-							if (!selected) {
-								enclosingProjectPanel.addDataSetNode(set, true);
-								selected = true;
-							} else {
-								enclosingProjectPanel.addDataSetNode(set, false);
-							}
-						}
+				if (set instanceof AdjacencyMatrixDataSet) {
+					// adjacency matrix as added as a sub node
+					AdjacencyMatrixDataSet adjMatrixDS = (AdjacencyMatrixDataSet) set;
+					projectPanel.addDataSetSubNode(adjMatrixDS);
+				} else {
+					if (!selected) {
+						projectPanel.addDataSetNode(set, true);
+						selected = true;
 					} else {
-						log.info("Datafile not loaded");
+						projectPanel.addDataSetNode(set, false);
 					}
 				}
 			}
 
-			pb.dispose();
-			enclosingProjectPanel.progressBar.setString("");
-			enclosingProjectPanel.progressBar.setIndeterminate(false);
-			enclosingProjectPanel.getComponent().setCursor(Cursor
+			progressBarDialog.dispose();
+			projectPanelProgressBar.setString("");
+			projectPanelProgressBar.setIndeterminate(false);
+			projectPanel.getComponent().setCursor(Cursor
 					.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		}
 
@@ -267,7 +268,7 @@ public class FileOpenHandler {
 		 * (non-Javadoc)
 		 * @see org.geworkbench.util.threading.SwingWorker#doInBackground()
 		 */
-		@SuppressWarnings({ "unchecked", "rawtypes" })
+		@SuppressWarnings({ "unchecked" })
 		@Override
 		protected Void doInBackground() throws Exception {
 			int n = dataSetFiles.length;
@@ -278,7 +279,7 @@ public class FileOpenHandler {
 				try {
 					// adjacency matrix need access to project node
 					if (dataSetFileFormat instanceof AdjacencyMatrixFileFormat) {
-						ProjectTreeNode selectedNode = enclosingProjectPanel
+						ProjectTreeNode selectedNode = ProjectPanel.getInstance()
 								.getSelection().getSelectedNode();
 						// it has to be a project node
 						if (selectedNode instanceof ProjectNode) {
@@ -289,7 +290,6 @@ public class FileOpenHandler {
 					}
 
 					dataSets[0] = dataSetFileFormat.getDataFile(dataSetFiles[0]);
-					dataSets[0].setAbsPath(dataSetFiles[0].getAbsolutePath());
 				} catch (OutOfMemoryError er) {
 					log.warn("Loading a single file memory error: " + er);
 					int response = JOptionPane.showConfirmDialog(null,
@@ -306,9 +306,9 @@ public class FileOpenHandler {
 							"Parsing Error", JOptionPane.ERROR_MESSAGE);
 				}
 				 catch (InterruptedIOException ie) {
-				       enclosingProjectPanel.progressBar.setString("");
-					   enclosingProjectPanel.progressBar.setIndeterminate(false);
-					   enclosingProjectPanel.getComponent().setCursor(Cursor
+					 projectPanelProgressBar.setString("");
+					 projectPanelProgressBar.setIndeterminate(false);
+					 projectPanel.getComponent().setCursor(Cursor
 							.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 				       if ( ie.getMessage().equals("progress"))
 					        return null;
@@ -323,18 +323,13 @@ public class FileOpenHandler {
 					return null;
 				}
 
-				// watkin - none of the file filters implement the
-				// multiple getDataFile method.
-				// dataSets[0] =
-				// ((DataSetFileFormat)inputFormat).getDataFile(dataSetFiles);
-				// If the data sets are microarray sets, then merge them
-				// if "merge files" is checked
-
 				// invoking AnnotationParser.matchChipType with null dataset is
 				// different from the previous algorithm.
 				// also notice that this will block
-				String chipType = AnnotationParser.matchChipType(null, "", false);; //FileOpenHandler.this.chipType;
-				pb.setVisible(true);
+				String chipType = null; // ignored by other format
+				if(dataSetFileFormat instanceof ExpressionFileFormat)
+					chipType = AnnotationParser.matchChipType(null, "", false);; //FileOpenHandler.this.chipType;
+				progressBarDialog.setVisible(true);
 
 				for (int i = 0; i < dataSetFiles.length; i++) {
 					if (isCancelled()) {
@@ -345,7 +340,6 @@ public class FileOpenHandler {
 						try {
 							dataSets[i] = dataSetFileFormat.getDataFile(dataSetFile, chipType);
 							AnnotationParser.setChipType(dataSets[i], chipType);
-							dataSets[i].setAbsPath(dataSetFiles[i].getAbsolutePath());
 							if(dataSets[i] instanceof CSMicroarraySet) {
 								((CSMicroarraySet)dataSets[i]).setAnnotationFileName(AnnotationParser.getLastAnnotationFileName());
 							}
@@ -372,16 +366,16 @@ public class FileOpenHandler {
 										"The input file does not comply with the designated format.",
 										"Parsing Error",
 										JOptionPane.ERROR_MESSAGE);
-						enclosingProjectPanel.progressBar.setString("");
-						enclosingProjectPanel.progressBar.setIndeterminate(false);
-						enclosingProjectPanel.getComponent().setCursor(Cursor
+						projectPanelProgressBar.setString("");
+						projectPanelProgressBar.setIndeterminate(false);
+						projectPanel.getComponent().setCursor(Cursor
 								.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 						return null;
 					} // end of for loop
 				    catch (InterruptedIOException ie) {
-				       enclosingProjectPanel.progressBar.setString("");
-					   enclosingProjectPanel.progressBar.setIndeterminate(false);
-					   enclosingProjectPanel.getComponent().setCursor(Cursor
+				    	projectPanelProgressBar.setString("");
+				    	projectPanelProgressBar.setIndeterminate(false);
+				    	projectPanel.getComponent().setCursor(Cursor
 							.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 				       if ( ie.getMessage().equals("progress"))
 					        return null;
@@ -397,6 +391,118 @@ public class FileOpenHandler {
 			return null;
 		}
 
+	}
 
+	/**
+	 * Merger an array of MSMicroarraySets and create a new dataset node.
+	 * 
+	 * This method may return null.
+	 *
+	 * @param sets
+	 */
+	@SuppressWarnings("unchecked")
+	public static DSMicroarraySet<DSMicroarray> doMergeSets(DSMicroarraySet<? extends DSMicroarray>[] sets) {
+		if (!isSameMarkerSets(sets)) {
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"Can't merge datasets.  Only datasets with the same markers can be merged.",
+							"Operation failed while merging",
+							JOptionPane.INFORMATION_MESSAGE);
+			return null;
+		}
+		if (sets == null)
+			return null;
+		
+		DSMicroarraySet<DSMicroarray> mergedSet = null;
+
+		String desc = "";
+		if(sets.length>1)desc = "Merged DataSet: ";
+		
+		for (int i = 0; i < sets.length; i++) {
+			DSMicroarraySet<DSMicroarray> set = (DSMicroarraySet<DSMicroarray>) sets[i];
+			if (mergedSet == null) {
+				try {
+					mergedSet = set.getClass().newInstance();
+					mergedSet.addObject(ColorContext.class,
+							set.getObject(ColorContext.class));
+					// mergedSet.setMarkerNo(set.size());
+					// mergedSet.setMicroarrayNo(set.size());
+
+					((DSMicroarraySet<DSMicroarray>) mergedSet)
+							.setCompatibilityLabel(set.getCompatibilityLabel());
+					((DSMicroarraySet<DSMicroarray>) mergedSet).getMarkers()
+							.addAll(set.getMarkers());
+					DSItemList<DSGeneMarker> markerList = set.getMarkers();
+					for (int j = 0; j < markerList.size(); j++) {
+						DSGeneMarker dsGeneMarker = markerList.get(j);
+						((DSMicroarraySet<DSMicroarray>) mergedSet)
+								.getMarkers().add(dsGeneMarker.deepCopy());
+					}
+					for (int k = 0; k < set.size(); k++) {
+						mergedSet.add(set.get(k).deepCopy());
+					}
+					desc += set.getLabel() + " ";
+					// XQ fix bug 1539, add annotation information to the
+					// merged dataset.
+					String chipType = AnnotationParser.getChipType(set);
+					AnnotationParser.setChipType(mergedSet, chipType);
+				} catch (InstantiationException ie) {
+					ie.printStackTrace();
+				} catch (IllegalAccessException iae) {
+					iae.printStackTrace();
+				}
+			} else {
+				desc += set.getLabel() + " ";
+				try {
+					mergedSet.mergeMicroarraySet(set);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null,
+							"Only microarray sets created"
+									+ " from the same chip set can be merged",
+							"Merge Error", JOptionPane.ERROR_MESSAGE);
+					return null;
+				}
+			}
+		}
+
+		if (mergedSet != null) {
+			mergedSet.setLabel("Merged array set");
+			mergedSet.setLabel(desc);
+			mergedSet.addDescription(desc);
+			((CSMicroarraySet) mergedSet)
+					.setAnnotationFileName(((CSMicroarraySet) sets[0])
+							.getAnnotationFileName());
+		}
+		// Add color context
+		ProjectPanel.addColorContext(mergedSet);
+
+		return mergedSet;
+	}
+
+	/**
+	 * Check for markers in DSMicroarraySets, if markers are all the same,
+	 * return true. This method assume there's no duplicate markers within each
+	 * set.
+	 *
+	 * @param sets
+	 * @return
+	 */
+	private static boolean isSameMarkerSets(DSMicroarraySet<? extends DSMicroarray>[] sets) {
+		if (sets == null || sets.length <= 1)
+			return true;
+
+		HashSet<DSGeneMarker> set1 = new HashSet<DSGeneMarker>();
+		set1.addAll(sets[0].getMarkers());
+
+		HashSet<DSGeneMarker> set2 = new HashSet<DSGeneMarker>();
+		for (int i = 1; i < sets.length; i++) {
+			set2.clear();
+			set2.addAll(sets[i].getMarkers());
+			if (!set1.equals(set2))
+				return false;
+		}
+		return true; // all marker sets are identical
 	}
 }

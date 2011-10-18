@@ -17,7 +17,7 @@ import org.geworkbench.events.listeners.ProgressChangeListener;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PatternTableModelWrapper.java 8202 2011-08-04 20:52:12Z zji $
+ * @version $Id: PatternTableModelWrapper.java 8402 2011-10-13 21:06:59Z poddutun $
  */
 
 public class PatternTableModelWrapper implements ProgressChangeListener {
@@ -54,6 +54,7 @@ public class PatternTableModelWrapper implements ProgressChangeListener {
     }
 
     public boolean attach(org.geworkbench.util.patterns.DataSource data) {
+    	
         if (data instanceof org.geworkbench.util.patterns.SequentialPatternSource) {
             clear();
             org.geworkbench.util.patterns.SequentialPatternSource source = (org.geworkbench.util.patterns.SequentialPatternSource) data;

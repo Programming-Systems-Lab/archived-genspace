@@ -48,6 +48,7 @@ import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.AnalysisInvokedEvent;
 import org.geworkbench.events.FilteringEvent;
+import org.geworkbench.util.CommandBase;
 import org.geworkbench.util.ProgressBar;
 import org.ginkgo.labs.util.FileTools;
 
@@ -59,10 +60,10 @@ import com.jgoodies.forms.layout.FormLayout;
  * options.
  * 
  * @author First Genetic Trust, yc2480
- * @version $Id: FilteringPanel.java 7703 2011-04-06 21:31:07Z maz $
+ * @version $Id: FilteringPanel.java 8408 2011-10-14 21:01:08Z zji $
  */
 @AcceptTypes( { DSMicroarraySet.class })
-public class FilteringPanel implements VisualPlugin, ReHighlightable {
+public class FilteringPanel extends CommandBase implements VisualPlugin, ReHighlightable {
 	private Log log = LogFactory.getLog(FilteringPanel.class);
 
 	/**
@@ -70,14 +71,6 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 	 */
 	protected JPanel filteringPanel = new JPanel();
 	private JPanel mainPane1 = new JPanel();
-
-	/**
-	 * Contains the pluggable filters available to the user to choose from.
-	 * These filters will have been defined in the application configuration
-	 * file as <code>plugin</code> components and they are expected to have
-	 * been associated with the extension point <code>filters</code>.
-	 */
-	protected AbstractAnalysis[] availableFilters;
 
 	/**
 	 * The currently selected microarray set.
@@ -89,7 +82,6 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 	 */
 	protected AbstractAnalysis selectedFilter = null;
 
-	private JComboBox pluginFilters = new JComboBox();
 	private JComboBox namedParameters = new JComboBox();
 	
 	BorderLayout borderLayout1 = new BorderLayout();
@@ -122,10 +114,10 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 		}
 
 		/*
-		 * Get (and display) the available normalizers from the
+		 * Get the available normalizers from the
 		 * ComponentRegistry
 		 */
-		reset();
+		getAvailableFilters();
 	}
 
 	public Component getComponent() {
@@ -169,14 +161,7 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 
 		jPanel1.setLayout(new BoxLayout(jPanel1, BoxLayout.LINE_AXIS));
 
-		pluginFilters.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				filterSelected_action(e);
-			}
-
-		});
+		popMenuItem = "Filtering";
 
 		namedParameters.addActionListener(new ActionListener() {
 
@@ -198,8 +183,6 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 		jPanel1.add(Box.createRigidArea(new Dimension(5, 0)));
 		jPanel1.add(new JLabel("Filter"));
 		jPanel1.add(Box.createRigidArea(new Dimension(5, 0)));
-		jPanel1.add(pluginFilters, null);
-		jPanel1.add(Box.createRigidArea(new Dimension(50, 0)));
 		jPanel1.add(new JLabel("Saved Parameters"));
 		jPanel1.add(Box.createRigidArea(new Dimension(5, 0)));
 		jPanel1.add(namedParameters, null);
@@ -300,10 +283,12 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 	@Subscribe
 	public void receive(org.geworkbench.events.ProjectEvent pe, Object source) {
 		DSDataSet<?> dataSet = pe.getDataSet();
-		if (dataSet != null && dataSet instanceof DSMicroarraySet) {
+		if (dataSet != null) clearMenuItems();
+		if (dataSet != null && dataSet instanceof DSMicroarraySet && !pendingNodeSelected()) {
 			maSet = (DSMicroarraySet<?>) dataSet;			 
 			FilterOptionPanel.arrayNumber = maSet.size();
-			reset();
+			getAvailableFilters();
+			updateMenuItems();
 		}
 	}
 
@@ -326,10 +311,10 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 		/* Populate 'availableFilters[]' from ComponentRegistry. */
 		FilteringAnalysis[] analyses = ComponentRegistry.getRegistry()
 				.getModules(FilteringAnalysis.class);
-		availableFilters = new AbstractAnalysis[analyses.length];
+		availableCommands = new AbstractAnalysis[analyses.length];
 		for (int i = 0; i < analyses.length; i++) {
-			availableFilters[i] = (AbstractAnalysis) analyses[i];
-			if (selectedFilter == availableFilters[i])
+			availableCommands[i] = (AbstractAnalysis) analyses[i];
+			if (selectedFilter == availableCommands[i])
 				selectionChanged = false;
 		}
 
@@ -339,52 +324,12 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 		 */
 		if (selectionChanged)
 			if (analyses.length > 0)
-				selectedFilter = availableFilters[0];
+				selectedFilter = availableCommands[0];
 			else
 				selectedFilter = null;
 		
 		AbstractAnalysisLabelComparator comparator = new AbstractAnalysisLabelComparator();
-		Arrays.sort(availableFilters, comparator );
-	}
-
-	/**
-	 * Obtains from the <code>ComponentRegistry</code> and displays the set of
-	 * available filters.
-	 */
-	private void reset() {
-		/* Get the most recent available normalizers. Redisplay */
-		getAvailableFilters();
-		displayFilters();
-	}
-
-	/**
-	 * Displays the list of available filters.
-	 */
-	private void displayFilters() {
-		String selectedName = null;
-		if(selectedFilter!=null) 
-			selectedName = selectedFilter.getLabel();
-		/* Clear the list */
-		pluginFilters.removeAllItems();
-		/* Stores the display names of the available filters. */
-		String[] names = new String[availableFilters.length];
-		for (int i = 0; i < availableFilters.length; i++) {
-			names[i] = availableFilters[i].getLabel();
-			pluginFilters.addItem(names[i]);
-		}
-
-		if (selectedName != null)
-			for(int i=0; i<pluginFilters.getItemCount(); i++) {
-				if(selectedName.equals(pluginFilters.getItemAt(i))) {
-					pluginFilters.setSelectedIndex(i);
-					break;
-				}
-			}
-		else {
-			setParametersPanel(this.emptyParameterPanel);
-			save.setEnabled(false);
-		}
-
+		Arrays.sort(availableCommands, comparator );
 	}
 
 	/**
@@ -450,26 +395,16 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 		highlightCurrentParameterGroup();
 	}
 
-	/**
-	 * Listener invoked when a new filter is selected from the displayed list of
-	 * filters.
-	 * 
-	 * @param lse
-	 *            The <code>ListSelectionEvent</code> received from the list
-	 *            selection.
-	 */
-	private void filterSelected_action(ActionEvent actionEvent) {
-		if (pluginFilters.getSelectedIndex() == -1)
-			return;
+	protected void setSelectedCommandByName(String commandName) {
+
 		deleteSetting.setEnabled(false);
 
-		selectedFilter = availableFilters[pluginFilters.getSelectedIndex()];
+		selectedFilter = getCommandByName(commandName);
 		/* Get the parameters panel for the selected filter. */
 		ParameterPanel paramPanel = selectedFilter.getParameterPanel();
 		/* Set the list of available named parameters for the selected filter. */
 		if (paramPanel != null) {
-			setNamedParameters(availableFilters[pluginFilters
-			                					.getSelectedIndex()].getNamesOfStoredParameterSets());
+			setNamedParameters(selectedFilter.getNamesOfStoredParameterSets());
 			setParametersPanel(paramPanel);
 
 			/*
@@ -551,6 +486,8 @@ public class FilteringPanel implements VisualPlugin, ReHighlightable {
 	 * 
 	 */
 	void filtering_actionPerformed() {
+		hideDialog();
+		
 		if (selectedFilter == null || maSet == null)
 			return;
 		

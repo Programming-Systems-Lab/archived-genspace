@@ -44,7 +44,7 @@ import edu.columbia.ccls.medusa.MedusaLoader;
 /**
  * 
  * @author keshav
- * @version $Id: MedusaAnalysis.java 7534 2011-03-03 16:48:18Z zji $
+ * @version $Id: MedusaAnalysis.java 8410 2011-10-17 18:11:10Z zji $
  */
 public class MedusaAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -250,7 +250,7 @@ public class MedusaAnalysis extends AbstractGridAnalysis implements
 				.getMicroarraySet(), regulators, targets, command);
 		MedusaDataSet dataSet = new MedusaDataSet(newMicroarraySetView
 				.getMicroarraySet(), "MEDUSA Results", medusaData, null);
-		dataSet.setAbsPath(outputDir);
+		dataSet.setOuputPath(outputDir);
 		
 		pBar.stop();
 		return new AlgorithmExecutionResults(true, "MEDUSA Results Loaded.",

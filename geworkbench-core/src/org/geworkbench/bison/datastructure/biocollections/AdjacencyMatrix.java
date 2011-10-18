@@ -18,7 +18,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * AdjacencyMatrix.
  * 
  * @author not attributable
- * @version $Id: AdjacencyMatrix.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: AdjacencyMatrix.java 8371 2011-10-06 21:00:31Z maz $
  */
 
 public class AdjacencyMatrix implements Serializable {
@@ -89,14 +89,28 @@ public class AdjacencyMatrix implements Serializable {
 			stringId = id;
 			intId = -1;
 			marker = null;
-		}
+		}	
+		
+		/*
+		 * if node type is GENE_SYMBOL and intId is 0, it means that the gene does not
+		 * presented in the current microarray set.
+		 */
+		public Node(NodeType type, String stringId, int intId ) {
+			this.type = type;
+			this.stringId = stringId;
+			this.intId = intId;
+			marker = null;
+		}		
+		
+		
 
-		Node(NodeType type, int id) {
+		public Node(NodeType type, int id) {
 			this.type = type;
 			intId = id;
 			stringId = null;
 			marker = null;
-		}
+		}		
+	 
 
 		@Override
 		public boolean equals(Object obj) {
@@ -129,6 +143,10 @@ public class AdjacencyMatrix implements Serializable {
 				h = 31 * h + stringId.hashCode();
 			h = 31 * h + intId;
 			return h;
+		}
+		
+		public DSGeneMarker getMarker(){
+			return marker;
 		}
 	}
 

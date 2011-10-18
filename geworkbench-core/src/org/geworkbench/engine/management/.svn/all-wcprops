@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/geworkbench/!svn/ver/7680/trunk/geworkbench/src/org/geworkbench/engine/management
+/svn/geworkbench/!svn/ver/8347/trunk/geworkbench/src/org/geworkbench/engine/management
 END
 EventException.java
 K 25
@@ -14,12 +14,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/1120/trunk/geworkbench/src/org/geworkbench/engine/management/Overflow.java
-END
-Script.java
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/81/trunk/geworkbench/src/org/geworkbench/engine/management/Script.java
 END
 SynchModel.java
 K 25
