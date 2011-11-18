@@ -60,7 +60,7 @@ import org.geworkbench.components.genspace.server.mahout.GenspaceUserSimilarity;
 public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		implements ToolInformationProvider {
 
-	@EJB MahoutRecommenderLocal mahoutBean;
+//	@EJB MahoutRecommenderLocal mahoutBean;
 	
 	/*
     @Schedule(minute="0/5",hour="*", persistent=false)
@@ -308,35 +308,38 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	// Added by efedotov
 	@SuppressWarnings("unchecked")
 	public List<Workflow> getMahoutToolSuggestion(int userId, int filterMethod) {
-		return mahoutBean.getToolSuggestions(userId, filterMethod);
+		return null;
+//		return mahoutBean.getToolSuggestions(userId, filterMethod);
 	}
 	
 	// Added by efedotov
 	@SuppressWarnings("unchecked")
 	public List<TasteUser> getMahoutUserSuggestion(int userId, int filterMethod) {
-		return mahoutBean.getUserSuggestions(userId, filterMethod);
+		return null;
+//		return mahoutBean.getUserSuggestions(userId, filterMethod);
 	}
 	
 	// Added by efedotov
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMahoutSimilarWorkflowsSuggestion(List<Tool> tools) {
-		
-		return mahoutBean.getSimilarWorkflows(tools);
+		return null;
+//		return mahoutBean.getSimilarWorkflows(tools);
 	}
 	
 	// Added by efedotov
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMahoutUserWorkflowsSuggestion(int userID, int filterMethod) {
-		return mahoutBean.getSimilarUserWorkflows(userID, filterMethod);
+		return null;
+//		return mahoutBean.getSimilarUserWorkflows(userID, filterMethod);
 	}
 	
 	// Added by efedotov
 	@SuppressWarnings("unchecked")
 	@Override
 	public void refreshMahoutRecommender() {
-		mahoutBean.refresh();
+//		mahoutBean.refresh();
 	}
 
 	@Override

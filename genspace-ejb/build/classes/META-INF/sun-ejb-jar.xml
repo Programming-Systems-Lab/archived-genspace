@@ -66,5 +66,17 @@
        </login-config>
      </webservice-endpoint>
    </ejb>
+   <ejb>
+     <ejb-name>AlignmentFacade</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>AlignmentFacade</port-component-name>
+     </webservice-endpoint>
+   </ejb>
+   <ejb>
+     <ejb-name>SequenceFacade</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>SequenceFacade</port-component-name>
+     </webservice-endpoint>
+   </ejb>
    </enterprise-beans>
 </sun-ejb-jar>

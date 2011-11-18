@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "UserFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://genspace.cs.columbia.edu:8080/UserFacadeService/UserFacade?wsdl")
+@WebServiceClient(name = "UserFacadeService", targetNamespace = "http://server.genspace.components.geworkbench.org/", wsdlLocation = "http://:8080/UserFacadeService/UserFacade?wsdl")
 public class UserFacadeService
     extends Service
 {
@@ -30,9 +30,9 @@ public class UserFacadeService
         try {
             URL baseUrl;
             baseUrl = org.geworkbench.components.genspace.server.stubs.UserFacadeService.class.getResource(".");
-            url = new URL(baseUrl, "http://genspace.cs.columbia.edu:8080/UserFacadeService/UserFacade?wsdl");
+            url = new URL(baseUrl, "http://:8080/UserFacadeService/UserFacade?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://genspace.cs.columbia.edu:8080/UserFacadeService/UserFacade?wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'http://:8080/UserFacadeService/UserFacade?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         USERFACADESERVICE_WSDL_LOCATION = url;
