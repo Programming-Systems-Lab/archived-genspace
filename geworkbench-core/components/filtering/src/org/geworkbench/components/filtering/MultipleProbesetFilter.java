@@ -14,17 +14,17 @@ import javax.swing.JOptionPane;
 
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.model.analysis.FilteringAnalysis;
 import org.geworkbench.components.filtering.MultipleProbesetFilterPanel.Action;
+import org.geworkbench.util.annotation.AffyAnnotationUtil;
 
 /**
  * 
  * @author zji
- * @version $Id: MultipleProbesetFilter.java 7940 2011-05-27 15:49:32Z zji $
+ * @version $Id: MultipleProbesetFilter.java 8383 2011-10-10 18:40:54Z zji $
  */
 
 /**
@@ -49,8 +49,7 @@ public class MultipleProbesetFilter extends FilteringAnalysis {
 		maSet = (DSMicroarraySet<DSMicroarray>) input;
 		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();
 
-		String annotation = AnnotationParser.getChipType(maSet);
-		if(annotation==null) {
+		if(maSet.getAnnotationFileName()==null) {
 			JOptionPane.showMessageDialog(null,
 				    "Filtering aborted because no annotation is loaded.",
 				    "No annotation warning",
@@ -67,7 +66,7 @@ public class MultipleProbesetFilter extends FilteringAnalysis {
 			String probeSetID = dsGeneMarker.getLabel();
 			probesetIndexMap.put(probeSetID, i);
 
-			Set<String> set = AnnotationParser.getGeneIDs(probeSetID);
+			Set<String> set = AffyAnnotationUtil.getGeneIDs(probeSetID);
 			if(set.size()==0)
 				continue;
 			

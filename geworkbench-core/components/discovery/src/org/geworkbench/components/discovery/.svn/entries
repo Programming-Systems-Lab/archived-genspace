@@ -1,15 +1,15 @@
 10
 
 dir
-8215
+8410
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-08-09T15:33:41.737695Z
-8209
-zji
+2011-10-14T21:30:28.880361Z
+8409
+poddutun
 
 
 
@@ -26,47 +26,13 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-SequenceDiscoveryViewWidget.java
-file
-
-
-
-
-2011-08-16T23:57:07.000000Z
-0144e77175e1ff1c8ce102e81704de70
-2011-08-09T15:33:41.737695Z
-8209
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29223
-
 ParameterTranslation.java
 file
 
 
 
 
-2011-08-03T19:29:17.000000Z
+2011-10-18T01:43:17.000000Z
 9e3506065e7d31ba765000edabb0e3ab
 2011-03-18T17:33:45.195884Z
 7608
@@ -94,17 +60,17 @@ has-props
 
 2184
 
-ParameterPanel.java
+PatternTableView.java
 file
 
 
 
 
-2011-08-02T14:48:03.000000Z
-a8b548a562e41692e03da0d94063003f
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2011-10-18T01:43:17.000000Z
+d026d1f4dad7b2045ce9eb43f8ed6932
+2011-10-13T21:06:59.911429Z
+8402
+poddutun
 has-props
 
 
@@ -126,20 +92,19 @@ has-props
 
 
 
-18401
+14661
 
-load.gif
+PatternDiscoveryAnalysis.cwb.xml
 file
 
 
 
 
-2011-08-03T19:29:17.000000Z
-adbe8a131677d7124c9940f7f963db80
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
+2011-10-18T01:43:17.000000Z
+760947828ce75099503293fcc0202873
+2011-10-13T21:06:59.911429Z
+8402
+poddutun
 
 
 
@@ -160,13 +125,79 @@ has-props
 
 
 
-462
+
+1486
 
 session
 dir
 
-algorithm
-dir
+PatternViewComponent.cwb.xml
+file
+
+
+
+
+2011-10-18T01:43:17.000000Z
+641d39d9fe5911903435de7bfc5a33a0
+2011-10-14T01:32:41.511995Z
+8405
+poddutun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1429
+
+PatternDiscoveryParamPanel.java
+file
+
+
+
+
+2011-10-18T01:43:17.000000Z
+ee4e47df7c1fb91315aaf3562b501da6
+2011-10-14T01:29:09.229508Z
+8404
+poddutun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19965
 
 PatternTableModel.java
 file
@@ -174,11 +205,11 @@ file
 
 
 
-2011-08-16T23:57:58.000000Z
-60b46344dc7f7d48494b050eb0ad2b25
-2011-08-04T20:52:12.507327Z
-8202
-zji
+2011-10-18T01:43:17.000000Z
+997af4706c9b297bbafe1d89efcc8237
+2011-10-13T21:06:59.911429Z
+8402
+poddutun
 has-props
 
 
@@ -200,7 +231,7 @@ has-props
 
 
 
-7237
+7277
 
 PatternTableModelWrapper.java
 file
@@ -208,24 +239,12 @@ file
 
 
 
-
-dafe71da2d615ffc6f428b0b4cd322d6
-2011-08-04T20:52:12.507327Z
-8202
-zji
+2011-10-18T01:43:17.000000Z
+42f90125d346d126223f9b87cff30c78
+2011-10-13T21:06:59.911429Z
+8402
+poddutun
 has-props
-
-SequenceDiscoveryViewAppComponent.cwb.xml
-file
-
-
-
-
-2011-08-02T14:48:03.000000Z
-70f84a27c9100d0e20f2ba8a6b961da3
-2011-07-30T04:31:30.667242Z
-8187
-zji
 
 
 
@@ -246,160 +265,10 @@ zji
 
 
 
-
-1523
+3573
 
 help
 dir
-
-stop.gif
-file
-
-
-
-
-2011-08-03T19:29:17.000000Z
-d36021b22ed88b6b9a215c2f57c77824
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-313
-
-SequenceDiscoveryViewAppComponent.java
-file
-
-
-
-
-2011-08-16T23:57:22.000000Z
-46fa983982b9610c54e162af526cf716
-2011-08-05T19:05:16.117444Z
-8204
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16616
-
-PatternTableView.java
-file
-
-
-
-
-
-06df5b342922a362788cd49bbf6cb0b5
-2011-08-05T21:42:22.037696Z
-8206
-zji
-has-props
-
-start.gif
-file
-
-
-
-
-2011-08-03T19:29:17.000000Z
-18140a4a2fbc0dfd3aa41a63e24634bc
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-239
-
-parameters.gif
-file
-
-
-
-
-2011-08-03T19:29:17.000000Z
-719d524c441054ce464bef6229696272
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-969
 
 PatternDataSource.java
 file
@@ -407,7 +276,7 @@ file
 
 
 
-2011-08-02T14:48:03.000000Z
+2011-10-18T01:43:17.000000Z
 eb97d7a9a71d44097dfb67c15cbdefba
 2011-07-30T04:31:30.667242Z
 8187
@@ -435,13 +304,81 @@ has-props
 
 1249
 
+PatternViewPanel.java
+file
+
+
+
+
+2011-10-18T01:43:17.000000Z
+af0a9776d73ade00ceb7847d4a3567bd
+2011-10-14T01:29:09.229508Z
+8404
+poddutun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3231
+
+PatternDiscoveryAnalysis.java
+file
+
+
+
+
+2011-10-18T01:43:17.000000Z
+6844326e56a1a15bd0c8b89d1013cf42
+2011-10-14T21:30:28.880361Z
+8409
+poddutun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19190
+
 PatFilter.java
 file
 
 
 
 
-2011-08-03T19:29:17.000000Z
+2011-10-18T01:43:17.000000Z
 ae41404921f2ae297e67d11d73e740c5
 2005-07-28T22:36:56.000000Z
 50
@@ -468,4 +405,38 @@ has-props
 
 
 749
+
+PatternViewComponent.java
+file
+
+
+
+
+2011-10-18T01:43:17.000000Z
+78b11f3089c1e8deab38afe6203a2022
+2011-10-14T01:29:09.229508Z
+8404
+poddutun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2123
 

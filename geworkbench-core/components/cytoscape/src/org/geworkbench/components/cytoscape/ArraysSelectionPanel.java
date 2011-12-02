@@ -2,7 +2,7 @@ package org.geworkbench.components.cytoscape;
 
 /**
  * @author my2248
- * @version $Id: ArraysSelectionPanel.java 8187 2011-07-30 04:31:30Z zji $ 
+ * @version $Id: ArraysSelectionPanel.java 8343 2011-09-27 15:47:55Z zji $ 
  */
 
 import giny.model.Node;
@@ -129,12 +129,16 @@ public class ArraysSelectionPanel extends JPanel   {
 		double[] values = null;
 		
 		String nodeId = node.getIdentifier();
-		 
+		Object geneId = attrs.getAttribute(nodeId,"geneID");						
+		if (geneId == null || geneId.toString().trim().equals(""))
+		   return null;
+		
 		String nodeDisplayedName = attrs.getStringAttribute(nodeId, "displayedName");
 	     
 		Vector<DSGeneMarker> markerSet = null;	 
 	    
-		markerSet = ((CSMicroarraySet<DSMicroarray>)maSet).getMarkers().getMatchingMarkers(nodeDisplayedName);
+		
+		markerSet = ((CSMicroarraySet)maSet).getMarkers().getMatchingMarkers(nodeDisplayedName);
 		 
 	    if (markerSet == null || markerSet.size() == 0)
 			return null;

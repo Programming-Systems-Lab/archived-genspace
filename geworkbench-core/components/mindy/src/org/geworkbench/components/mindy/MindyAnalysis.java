@@ -25,7 +25,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
 import org.geworkbench.bison.model.analysis.ParamValidationResults;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.GeneSelectorEvent;
@@ -49,7 +49,7 @@ import edu.columbia.c2b2.mindy.MindyResults;
  * @author ch2514
  * @author zji
  * @author oshteynb
- * @version $Id: MindyAnalysis.java 7926 2011-05-25 14:27:11Z zji $
+ * @version $Id: MindyAnalysis.java 8343 2011-09-27 15:47:55Z zji $
  */
 @SuppressWarnings("serial")
 public class MindyAnalysis extends AbstractGridAnalysis implements
@@ -439,7 +439,7 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 		}
 
 
-		private MindyData createMindyData(MindyResults results, CSMicroarraySet<DSMicroarray> arraySet, ArrayList<DSMicroarray> arrayForMindyRun, float setFraction, DSGeneMarker transFac){
+		private MindyData createMindyData(MindyResults results, CSMicroarraySet arraySet, ArrayList<DSMicroarray> arrayForMindyRun, float setFraction, DSGeneMarker transFac){
 			MindyData mindyData = new MindyData(arraySet, arrayForMindyRun, setFraction, transFac);
 
 			processResults(mindyData, results, arraySet);
@@ -454,7 +454,7 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 		 * @param arraySet
 		 * @param mindyData
 		 */
-		private void processResults(MindyData mindyData, MindyResults results, CSMicroarraySet<DSMicroarray> arraySet) {
+		private void processResults(MindyData mindyData, MindyResults results, CSMicroarraySet arraySet) {
 			int numWithSymbols = 0;
 			List<MindyResultRow> dataRows = new ArrayList<MindyResultRow>();
 
@@ -541,7 +541,7 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 
 			progressBar.setMessage("Processing MINDY Results");
 
-			MindyData loadedData = createMindyData(results, (CSMicroarraySet<DSMicroarray>) mSet, arrayForMindyRun, setFraction, transFac);
+			MindyData loadedData = createMindyData(results, (CSMicroarraySet) mSet, arrayForMindyRun, setFraction, transFac);
 
 			mindyDataSet = new MindyDataSet(mSet, "MINDY Results", loadedData,
 					candidateModFile);
@@ -559,7 +559,7 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 
 			if (mindyDataSet != null) {
 				log.info(paramDesc);
-				ProjectPanel.addToHistory(mindyDataSet, paramDesc);
+				HistoryPanel.addToHistory(mindyDataSet, paramDesc);
 				progressBar.stop();
 				publishProjectNodeAddedEvent(new ProjectNodeAddedEvent(
 						"Mindy Result Added", null, mindyDataSet));

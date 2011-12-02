@@ -31,5 +31,6 @@
 	<classpathentry kind="lib" path="lib/castor-0.9.6-xml.jar"/>
 	<classpathentry kind="lib" path="lib/Jmol.jar"/>
 	<classpathentry kind="lib" path="lib/jalview.jar"/>
+	<classpathentry kind="lib" path="/geworkbench-core/lib/commons-logging.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

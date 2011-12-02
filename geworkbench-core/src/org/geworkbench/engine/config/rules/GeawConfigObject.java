@@ -27,7 +27,7 @@ import org.geworkbench.util.SplashBitmap;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust, Inc.</p>
  * @author First Genetic Trust, Inc.
- * @version $Id: GeawConfigObject.java 7462 2011-02-16 19:27:33Z zji $
+ * @version $Id: GeawConfigObject.java 8315 2011-09-19 18:11:18Z zji $
  */
 
 /**
@@ -202,11 +202,16 @@ public class GeawConfigObject {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+            	Runtime runtime = Runtime.getRuntime();
+            	long total = runtime.totalMemory();
+            	long free = runtime.freeMemory();
+            	long used = total-free;
 				StringBuffer sb = new StringBuffer("\n========== ==========\n");
 				sb.append("Java memory usage:\n")
-					.append(Runtime.getRuntime().totalMemory()/MEGABYTE).append(" MB total\n")
-					.append(Runtime.getRuntime().freeMemory()/MEGABYTE).append(" MB free\n")
-					.append(Runtime.getRuntime().maxMemory()/MEGABYTE).append(" MB maximum");
+					.append(total/MEGABYTE).append(" MB total\n")
+					.append(free/MEGABYTE).append(" MB free\n")
+					.append(used/MEGABYTE).append(" MB used\n")
+					.append(runtime.maxMemory()/MEGABYTE).append(" MB maximum");
 				JOptionPane.showMessageDialog(null, sysInfo+sb, "System Information", JOptionPane.INFORMATION_MESSAGE);
 			}
 			

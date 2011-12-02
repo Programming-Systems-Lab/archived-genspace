@@ -45,10 +45,8 @@ import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSAnovaResultSet;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSSignificanceResultSet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSTTestResultSet;
-import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.builtin.projects.DataSetNode;
 import org.geworkbench.builtin.projects.DataSetSubNode;
@@ -64,7 +62,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * 
  * @author zji
- * @version $Id: GoAnalysisParameterPanel.java 7776 2011-04-20 22:11:54Z smithken $
+ * @version $Id: GoAnalysisParameterPanel.java 8344 2011-09-27 16:00:51Z zji $
  *
  */
 public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
@@ -109,7 +107,7 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 	private JComboBox calculationMethod = null;
 	private JComboBox correctionMethod = null;
 
-	private CSMicroarraySet<CSMicroarray> dataset;
+	private CSMicroarraySet dataset;
 
 	private JRadioButton loadedAnnotationsRadioButton;
 
@@ -220,7 +218,7 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 		if (listString.length() == 0)
 			return null;
 
-		return listString.split(", ");
+		return listString.split(",| ");
 	}
 
 	/* this is called from getDataHistory */
@@ -631,30 +629,12 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 		}
 	}
 
-	/**
-	 * Get all genes from the marker selection panel.
-	 * @param setName
-	 * @return
-	 */
 	private Set<String> getAllGenes() {
 		Set<String> set = new HashSet<String>();
 		if (dataset == null)
 			return set; // in case maSet is not properly set
-
-		DSAnnotationContextManager manager = CSAnnotationContextManager
-				.getInstance();
-		DSAnnotationContext<DSGeneMarker> markerSet = manager
-				.getCurrentContext(dataset.getMarkers());
-
-		DSItemList<DSGeneMarker> markers = null;
-		try {
-			markers = markerSet.getItemList();
-		} catch (NullPointerException e) {
-			return set;
-		}
-		if(markers==null) return set;
 		
-		for ( DSGeneMarker marker : markers ) {
+		for ( DSGeneMarker marker : dataset.getMarkers() ) {
 			String geneName = marker.getGeneName().trim();
 			if (!geneName.equals("---")) {
 				set.add(geneName);
@@ -739,7 +719,7 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 		}
 	}
 
-	public void setDataset(CSMicroarraySet<CSMicroarray> d) {
+	public void setDataset(CSMicroarraySet d) {
 		dataset = d;
 		annotationFileNameField.setText(dataset.getAnnotationFileName());
 

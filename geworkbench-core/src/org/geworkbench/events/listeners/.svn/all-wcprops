@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/geworkbench/!svn/ver/7264/trunk/geworkbench/src/org/geworkbench/events/listeners
+/svn/geworkbench/!svn/ver/8358/trunk/geworkbench/src/org/geworkbench/events/listeners
 END
 StatusChangeListener.java
 K 25
@@ -19,5 +19,5 @@ ParameterActionListener.java
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/6786/trunk/geworkbench/src/org/geworkbench/events/listeners/ParameterActionListener.java
+/svn/geworkbench/!svn/ver/8358/trunk/geworkbench/src/org/geworkbench/events/listeners/ParameterActionListener.java
 END

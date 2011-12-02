@@ -43,7 +43,6 @@ import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.ProjectEvent;
-import org.geworkbench.events.StructureAnalysisEvent;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -59,7 +58,7 @@ import org.jmol.api.JmolSimpleViewer;
  * SkyLine result viewer for each homology model
  * 
  * @author mw2518
- * @version $Id: SkyLineViewEachPanel.java 7445 2011-02-10 22:37:06Z zji $
+ * @version $Id: SkyLineViewEachPanel.java 8270 2011-09-12 19:59:35Z zji $
  */
 @AcceptTypes( { SkyLineResultDataSet.class })
 public class SkyLineViewEachPanel extends JPanel implements VisualPlugin,
@@ -92,19 +91,6 @@ public class SkyLineViewEachPanel extends JPanel implements VisualPlugin,
 	private static String energycols[] = { "Residue #", "Pair Energy",
 			"Surface Energy", "Combined Energy" };
 	private JmolPanel jmolPanel = new JmolPanel();
-
-	@Subscribe
-	public void receive(StructureAnalysisEvent event, Object source) {
-		DSDataSet<?> dataset = event.getDataSet();
-		if (dataset instanceof DSProteinStructure) {
-			proteinData = (DSProteinStructure) dataset;
-			String htmlText = event.getAnalyzedStructure();
-			if (htmlText == "SkyLine results available") {
-				rootdir = event.getInformation();
-				showResults(proteinData);
-			}
-		}
-	}
 
 	@Subscribe
 	public void receive(ProjectEvent event, Object source) {

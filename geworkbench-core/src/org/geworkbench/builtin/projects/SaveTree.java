@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.geworkbench.bison.datastructure.biocollections.CSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.util.RandomNumberGenerator;
@@ -13,7 +12,7 @@ import org.geworkbench.engine.skin.Skin;
 
 /**
  * @author John Watkinson
- * @version $Id: SaveTree.java 7965 2011-06-07 19:45:35Z zji $
+ * @version $Id: SaveTree.java 8348 2011-09-27 20:18:47Z zji $
  */
 public class SaveTree implements Serializable {
 
@@ -49,37 +48,36 @@ public class SaveTree implements Serializable {
 		}
 	}
 
+	static DSDataSet<?> getDSDataSet(ProjectTreeNode treeNode) {
+		if (treeNode instanceof DataSetNode) {
+			DataSetNode childNode = (DataSetNode) treeNode;
+			return childNode.getDataset();
+		} else if (treeNode instanceof ImageNode) {
+			ImageNode childNode = (ImageNode) treeNode;
+			DSDataSet<?> dataSet = childNode._aDataSet;
+			if (dataSet.getID() == null)
+				dataSet.setID(RandomNumberGenerator.getID());
+			return dataSet;
+		} else if (treeNode instanceof DataSetSubNode) {
+			DataSetSubNode childNode = (DataSetSubNode) treeNode;
+			DSDataSet<?> dataSet = childNode._aDataSet;
+			if (dataSet.getID() == null)
+				dataSet.setID(RandomNumberGenerator.getID());
+			return dataSet;
+		} else if (treeNode instanceof PendingTreeNode) {
+			PendingTreeNode childNode = (PendingTreeNode) treeNode;
+			return childNode.getDSDataSet();
+		}
+		return null; // unexpected;
+	}
+	
 	// Recursively build tree
 	private void addChildren(ProjectTreeNode node, DataSetSaveNode saveNode) {
 		Skin skin = (Skin) GeawConfigObject.getGuiWindow();
 		int n = node.getChildCount();
 		for (int i = 0; i < n; i++) {
 			ProjectTreeNode treeNode = (ProjectTreeNode) node.getChildAt(i);
-			DSDataSet<?> dataSet = null;
-			if (treeNode instanceof DataSetNode) {
-				DataSetNode childNode = (DataSetNode) treeNode;
-				dataSet = childNode.dataFile;
-			} else if (treeNode instanceof ImageNode) {
-				ImageNode childNode = (ImageNode) treeNode;
-				dataSet = childNode._aDataSet;
-				if (dataSet.getID() == null)
-					dataSet.setID(RandomNumberGenerator.getID());
-			} else if (treeNode instanceof DataSetSubNode) {
-				DataSetSubNode childNode = (DataSetSubNode) treeNode;
-				dataSet = childNode._aDataSet;
-				if (dataSet.getID() == null)
-					dataSet.setID(RandomNumberGenerator.getID());
-			} else if (treeNode instanceof PendingTreeNode) {
-				// FIXME don't like how objects are stored by class name.
-				PendingTreeNode childNode = (PendingTreeNode) treeNode;
-				dataSet = new CSDataSet<DSBioObject>();
-				dataSet.addObject(childNode.getGridEpr().getClass(),
-						childNode.getGridEpr());
-				dataSet.addObject(String.class, childNode
-						.getDescription());
-				dataSet.setID(RandomNumberGenerator.getID());
-				dataSet.setLabel(PendingTreeNode.class.getName());
-			}
+			DSDataSet<?> dataSet = getDSDataSet(treeNode);
 
 			DataSetSaveNode childSave = new DataSetSaveNode(dataSet);
 			childSave.setCommandSelected(skin.getCommandLastSelected(dataSet));

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svn/geworkbench/!svn/ver/7944/trunk/geworkbench/src/org/geworkbench/engine/config/rules
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/src/org/geworkbench/engine/config/rules
 END
 GeawConfigObject.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/7462/trunk/geworkbench/src/org/geworkbench/engine/config/rules/GeawConfigObject.java
+/svn/geworkbench/!svn/ver/8315/trunk/geworkbench/src/org/geworkbench/engine/config/rules/GeawConfigObject.java
 END
 GeawConfigRule.java
 K 25
@@ -31,7 +31,7 @@ PluginObject.java
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/7258/trunk/geworkbench/src/org/geworkbench/engine/config/rules/PluginObject.java
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/src/org/geworkbench/engine/config/rules/PluginObject.java
 END
 PluginRule.java
 K 25

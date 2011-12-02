@@ -83,7 +83,7 @@ import org.geworkbench.util.BrowserLauncher;
  * Visual component to show the result from GO Term Analysis.
  * 
  * @author zji
- * @version $Id: GoAnalysisResultView.java 7963 2011-06-07 19:28:34Z zji $
+ * @version $Id: GoAnalysisResultView.java 8228 2011-08-19 16:23:57Z zji $
  *
  */
 @AcceptTypes({GoAnalysisResult.class, DSMicroarraySet.class})
@@ -510,7 +510,7 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 							publishSubpanelChangedEvent(new org.geworkbench.events.SubpanelChangedEvent<DSGeneMarker>(
 									DSGeneMarker.class,
 									GeneToMarkers(getMarkerSetName(), genes),
-									org.geworkbench.events.SubpanelChangedEvent.SET_CONTENTS));
+									org.geworkbench.events.SubpanelChangedEvent.NEW));
 
 						}
 

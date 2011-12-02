@@ -17,7 +17,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author yc2480
- * @version $Id: CSAnovaResultSetTest.java 7411 2011-02-04 20:28:55Z zji $
+ * @version $Id: CSAnovaResultSetTest.java 8343 2011-09-27 15:47:55Z zji $
  */
 public class CSAnovaResultSetTest extends TestCase {
 
@@ -71,7 +71,7 @@ public class CSAnovaResultSetTest extends TestCase {
 
 		// generate arrays
 		view = new CSMicroarraySetView<DSGeneMarker, DSMicroarray>();
-		DSMicroarraySet<DSMicroarray> microarraySet = new CSMicroarraySet<DSMicroarray>();
+		DSMicroarraySet<DSMicroarray> microarraySet = new CSMicroarraySet();
 		microarraySet.setLabel(this.getClass().getName());
 
 		for (int i = 0; i < numArrays; i++) {

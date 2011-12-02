@@ -7,19 +7,19 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
 
 import org.geworkbench.builtin.projects.ImageData;
+import org.geworkbench.builtin.projects.ImageNode;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Subscribe;
-import org.geworkbench.events.ImageSnapshotEvent;
+import org.geworkbench.events.ProjectEvent;
 
 /**
  * A simple image viewer.
  * 
  * @author First Genetic Trust Inc.
- * @version $Id$
+ * @version $Id: ImageViewer.java 8285 2011-09-14 15:28:30Z zji $
  */
 @AcceptTypes( { ImageData.class })
 public class ImageViewer extends JPanel implements VisualPlugin {
@@ -54,9 +54,10 @@ public class ImageViewer extends JPanel implements VisualPlugin {
 	}
 
 	@Subscribe
-	public void receive(ImageSnapshotEvent event, Object source) {
-		if (event.getAction() == org.geworkbench.events.ImageSnapshotEvent.Action.SHOW) {
-			ImageIcon image = event.getImage();
+	public void receive(ProjectEvent event, Object source) {
+		if(event.getTreeNode() instanceof ImageNode) {
+			ImageNode imageNode = (ImageNode)event.getTreeNode();
+			ImageIcon image = imageNode.image;
 			display.setImage(image);
 			if (image != null) {
 				display.setSize(new Dimension(image.getIconWidth(), image
@@ -65,13 +66,7 @@ public class ImageViewer extends JPanel implements VisualPlugin {
 						image.getIconHeight()));
 			}
 
-			if (this.getParent() instanceof JTabbedPane) {
-				((JTabbedPane) this.getParent()).setSelectedComponent(this);
-			}
-
 			repaint();
-		} else {
-			// no-op
 		}
 	}
 

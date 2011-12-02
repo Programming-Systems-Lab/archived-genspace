@@ -3,12 +3,15 @@ package org.geworkbench.components.genspace.entity.msa;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlElement;
@@ -24,7 +27,7 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 	
 	private String emblId;
 	
-	private Set<Sequence> sequences;
+	private Set<DNASequence> sequences;
 	
 	private String definition;
 	
@@ -35,6 +38,10 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 	private Set<Reference> references;
 	
 	@Override
+	public String toString() {
+		return emblId;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@XmlElement
@@ -47,15 +54,15 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 	}
 
 	@ManyToMany(mappedBy="alignments", cascade=CascadeType.ALL)
-	public Set<Sequence> getSequences() {
+	public Set<DNASequence> getSequences() {
 		return sequences;
 	}
 
-	public void setSequences(Set<Sequence> sequences) {
+	public void setSequences(Set<DNASequence> sequences) {
 		this.sequences = sequences;
 	}
 
-	@Column(unique=true)
+	@Column(unique=true, nullable=false)
 	public String getEmblId() {
 		return emblId;
 	}
@@ -72,6 +79,7 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 		this.definition = definition;
 	}
 
+	@Column(length=2000)
 	public String getKeywords() {
 		return keywords;
 	}
@@ -79,7 +87,8 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
 	}
-
+	
+	@Column(length=4000)
 	public String getComments() {
 		return comments;
 	}

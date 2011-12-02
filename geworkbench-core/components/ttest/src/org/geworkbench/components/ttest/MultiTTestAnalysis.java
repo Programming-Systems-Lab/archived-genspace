@@ -21,7 +21,7 @@ import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.PhenotypeSelectorEvent;
@@ -32,7 +32,7 @@ import org.geworkbench.util.ProgressBarT;
 
 /**
  * @author John Watkinson
- * @version $Id: MultiTTestAnalysis.java 6945 2010-08-03 20:40:21Z zji $
+ * @version $Id: MultiTTestAnalysis.java 8272 2011-09-12 21:45:46Z zji $
  */
 public class MultiTTestAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -207,7 +207,7 @@ public class MultiTTestAnalysis extends AbstractAnalysis implements
 						sigSets[i].sortMarkersBySignificance();
 
 						// add to Dataset History
-						ProjectPanel.addToHistory(sigSets[i], histHeader
+						HistoryPanel.addToHistory(sigSets[i], histHeader
 								+ groupAndChipsStringSets[i] + markerString);
 						
 						setFoldChnage (maSet, sigSets[i]);     

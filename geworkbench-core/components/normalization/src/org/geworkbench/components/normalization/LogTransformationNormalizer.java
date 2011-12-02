@@ -8,13 +8,12 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMutableMarker
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.NormalizingAnalysis;
-import org.geworkbench.engine.management.Script;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: LogTransformationNormalizer.java 7455 2011-02-11 22:02:22Z zji $
+ * @version $Id: LogTransformationNormalizer.java 8347 2011-09-27 19:38:25Z zji $
  */
 
 /**
@@ -34,11 +33,6 @@ public class LogTransformationNormalizer extends AbstractAnalysis implements Nor
 
     public int getAnalysisType() {
         return analysisType;
-    }
-
-    @Script
-    public void normalize(Object input) {
-        execute(input);
     }
 
     @SuppressWarnings("unchecked")

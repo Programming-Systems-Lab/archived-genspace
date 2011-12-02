@@ -9,7 +9,7 @@ import org.geworkbench.bison.datastructure.properties.DSNamed;
 
 /**
  * @author John Watkinson
- * @version $Id: CSAnnotationContextManager.java 7132 2010-10-18 19:45:38Z zji $
+ * @version $Id: CSAnnotationContextManager.java 8357 2011-10-03 21:38:59Z zji $
  */
 public class CSAnnotationContextManager implements DSAnnotationContextManager {
 
@@ -148,19 +148,6 @@ public class CSAnnotationContextManager implements DSAnnotationContextManager {
 
     public <T extends DSNamed> void setCurrentContext(DSItemList<T> itemList, DSAnnotationContext<T> context) {
         currentContextMap.put(itemList, context.getName());
-    }
-
-    public <T extends DSNamed> void copyContexts(DSItemList<T> from, DSItemList<T> to) {
-        DSAnnotationContext<T>[] contexts = getAllContexts(from);
-        ListOrderedSet<DSAnnotationContext<?>> contextSet = contextMap.get(to);
-        if (contextSet == null) {
-            contextSet = new ListOrderedSet<DSAnnotationContext<? extends DSNamed>>();
-            contextMap.put(to, contextSet);
-        }
-        for (int i = 0; i < contexts.length; i++) {
-            DSAnnotationContext<T> context = contexts[i];
-            contextSet.add(context.clone());
-        }
     }
 
     public static class SerializableContexts implements Serializable {

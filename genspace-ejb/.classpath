@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="org/geworkbench/components/genspace/server/msa/ReferenceFacade.java" kind="src" path="ejbModule"/>
+	<classpathentry kind="src" path="ejbModule"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="lib/mahout-core-0.5-job.jar"/>
 	<classpathentry kind="lib" path="lib/mahout-core-0.5.jar"/>
 	<classpathentry kind="lib" path="lib/mahout-math-0.5.jar"/>
 	<classpathentry kind="lib" path="lib/mahout-utils-0.5.jar"/>
+	<classpathentry kind="lib" path="lib/opencsv-2.3.jar"/>
 	<classpathentry kind="src" path="/genspace-common"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.sun.enterprise.jst.server.runtimeTarget/GlassFish 3.1.1">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.ejb"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

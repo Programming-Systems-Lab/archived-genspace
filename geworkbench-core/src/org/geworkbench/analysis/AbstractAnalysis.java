@@ -24,7 +24,6 @@ import org.geworkbench.bison.model.analysis.ParamValidationResults;
 import org.geworkbench.bison.model.analysis.ParameterPanel;
 import org.geworkbench.engine.config.PluginRegistry;
 import org.geworkbench.engine.management.ComponentClassLoader;
-import org.geworkbench.engine.management.Script;
 import org.geworkbench.util.FilePathnameUtils;
 
 /**
@@ -44,7 +43,7 @@ import org.geworkbench.util.FilePathnameUtils;
  * @author keshav
  * @author yc2480
  * @author os2201
- * @version $Id: AbstractAnalysis.java 7503 2011-02-28 21:46:01Z maz $
+ * @version $Id: AbstractAnalysis.java 8360 2011-10-04 15:55:55Z youmi $
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractAnalysis implements Analysis, Serializable,
@@ -125,6 +124,9 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
     public static final int MEDUSA_TYPE = 31;
     
     public static final int FOLD_CHANGE_TYPE=32;
+    
+    public static final int  BLAST_TYPE= 33;
+    
 	/**
 	 * Parameters will be saved as XML files in "savedParams" directory under
 	 * each component directory.
@@ -533,11 +535,6 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 	 * @return
 	 */
 	public abstract int getAnalysisType();
-
-	@Script
-	public void setParameter(String key, String value) {
-
-	};
 
 	/**
 	 *

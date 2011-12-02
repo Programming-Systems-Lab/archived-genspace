@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
@@ -16,6 +15,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.FilteringAnalysis;
 import org.geworkbench.components.filtering.MultipleEntrezGeneIDFilterPanel.Action;
 import org.geworkbench.engine.management.Publish;
+import org.geworkbench.util.annotation.AffyAnnotationUtil;
 
 /**
  * Multiple Entrez ID filter.
@@ -23,7 +23,7 @@ import org.geworkbench.engine.management.Publish;
  * The user preferences are collected in this filter's associate parameters GUI
  * (<code>MultipleEntrezGeneIDFilter</code>).
  * 
- * @version $Id: MultipleEntrezGeneIDFilter.java 7795 2011-04-21 21:35:50Z maz $
+ * @version $Id: MultipleEntrezGeneIDFilter.java 8383 2011-10-10 18:40:54Z zji $
  */
 public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 	private static final long serialVersionUID = -3603151182199536102L;
@@ -83,7 +83,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		for (int i = 0; i < markerCount; i++) {
 			DSGeneMarker dsGeneMarker = dsItemList.get(i);
 			String geneMarkerLabel = dsGeneMarker.getLabel();
-			Set<String> geneIDs = AnnotationParser.getGeneIDs(geneMarkerLabel);
+			Set<String> geneIDs = AffyAnnotationUtil.getGeneIDs(geneMarkerLabel);
 
 			if (filterNoEntrezID) {
 				if (geneIDs.size() == 0	|| (geneIDs.size() == 1 && (geneIDs.contains("---") || geneIDs.contains("")))) {
@@ -114,7 +114,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		for (int i = 0; i < markerCount; i++) {
 			DSGeneMarker dsGeneMarker = dsItemList.get(i);
 			String geneMarkerLabel = dsGeneMarker.getLabel();
-			Set<String> geneIDs = AnnotationParser.getGeneIDs(geneMarkerLabel);
+			Set<String> geneIDs = AffyAnnotationUtil.getGeneIDs(geneMarkerLabel);
 			if (filterNoEntrezID) {
 				if (geneIDs.size() == 0	|| (geneIDs.size() == 1 && (geneIDs.contains("---") || geneIDs.contains("")))) {
 					selectedMarkersNoEntrezIDs.add(dsGeneMarker);
@@ -148,7 +148,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 			DSGeneMarker dsGeneMarker = dsItemList.get(i);
 			String geneMarkerLabel = dsGeneMarker.getLabel();
 			
-			Set<String> geneIDs = AnnotationParser.getGeneIDs(geneMarkerLabel);
+			Set<String> geneIDs = AffyAnnotationUtil.getGeneIDs(geneMarkerLabel);
 
 			if (filterNoEntrezID) {
 				if (geneIDs.size() == 0 || (geneIDs.size() == 1 && (geneIDs.contains("---") || geneIDs.contains("")))) {

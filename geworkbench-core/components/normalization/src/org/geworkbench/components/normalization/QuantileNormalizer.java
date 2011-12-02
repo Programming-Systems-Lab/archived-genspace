@@ -1,22 +1,21 @@
 package org.geworkbench.components.normalization;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 import org.geworkbench.analysis.AbstractAnalysis;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMutableMarkerValue;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.NormalizingAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
-import org.geworkbench.engine.management.Script;
-
-import java.util.Arrays;
-import java.util.Comparator;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 
 /**
  * <p>Copyright: Copyright (c) 2005</p>
  * <p>Company: Columbia University</p>
  * @author non attributable
- * @version $Id: QuantileNormalizer.java 7453 2011-02-11 21:07:52Z zji $
+ * @version $Id: QuantileNormalizer.java 8347 2011-09-27 19:38:25Z zji $
  */
 
 /**
@@ -101,7 +100,7 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
         }
 
 		// add to history
-        ProjectPanel.addHistoryDetail(maSet,((QuantileNormalizerPanel) aspp).getParamDetail());
+        HistoryPanel.addHistoryDetail(maSet,((QuantileNormalizerPanel) aspp).getParamDetail());
 
         return new AlgorithmExecutionResults(true, "No errors", input);
     }
@@ -196,12 +195,6 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
             }
 
         return (nonMissing != 0 ? sumOfValues / nonMissing : 0);
-    }
-
-     @Script
-     public void normalize(Object input, String avgtype) {
-        ((QuantileNormalizerPanel) aspp).setAveragingType(avgtype);
-        execute(input);
     }
 
     static class MarkerValueComparator<T extends DSMutableMarkerValue> implements Comparator<T>{

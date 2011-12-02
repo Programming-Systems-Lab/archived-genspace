@@ -11,7 +11,7 @@ import org.geworkbench.bison.datastructure.properties.DSNamed;
  * is a <i>default</i> context associated with each data set.
  *
  * @author John Watkinson
- * @version $Id: DSAnnotationContextManager.java 7129 2010-10-15 22:52:00Z zji $
+ * @version $Id: DSAnnotationContextManager.java 8357 2011-10-03 21:38:59Z zji $
  */
 public interface DSAnnotationContextManager {
 
@@ -94,12 +94,4 @@ public interface DSAnnotationContextManager {
      */
     public <T extends DSNamed> void setCurrentContext(DSItemList<T> itemList, DSAnnotationContext<T> context);
 
-    /**
-     * Copies all context from one item list to another. The results are undefined if the target item list does not
-     * contain all the elements of the source item list. However, the order of the elements need not be the same
-     * between the two lists.
-     * @param from the source item list.
-     * @param to the target item list.
-     */
-    public <T extends DSNamed> void copyContexts(DSItemList<T> from, DSItemList<T> to);
 }

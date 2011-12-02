@@ -7,7 +7,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author John Watkinson
- * @version $Id: DSSignificanceResultSet.java 7994 2011-06-15 18:44:41Z wangmen $
+ * @version $Id: DSSignificanceResultSet.java 8260 2011-09-08 21:24:26Z smithken $
  */
 public interface DSSignificanceResultSet <T extends DSGeneMarker> extends DSAncillaryDataSet<DSMicroarray> {
 
@@ -19,7 +19,7 @@ public interface DSSignificanceResultSet <T extends DSGeneMarker> extends DSAnci
      */
     public Double getSignificance(T marker);
 
-    public void setSignificance(T marker, double signficance);
+    public void setSignificance(T marker, double significance);
 
     public void setTValue(T marker, double value);
     
@@ -27,7 +27,7 @@ public interface DSSignificanceResultSet <T extends DSGeneMarker> extends DSAnci
     
     public Double getFoldChange(T marker);
 
-    public void setFoldChange(T marker, double signficance);
+    public void setFoldChange(T marker, double significance);
     
     public DSPanel<T> getSignificantMarkers();
 
@@ -39,7 +39,7 @@ public interface DSSignificanceResultSet <T extends DSGeneMarker> extends DSAnci
 
     public void sortMarkersBySignificance();
   
-    public void setMarker(T marker, double signficance);
+    public void setMarker(T marker, double significance);
     
     public void addSigGenToPanel(T marker);   
 

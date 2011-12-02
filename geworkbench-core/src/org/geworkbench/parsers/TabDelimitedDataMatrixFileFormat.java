@@ -5,8 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
@@ -27,13 +27,14 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.parsers.resources.Resource;
 
 /**
  * Sequence and Pattern Plugin
  * 
  * @author yc2480
- * @version $Id: TabDelimitedDataMatrixFileFormat.java 7654 2011-03-25 21:11:26Z zji $
+ * @version $Id: TabDelimitedDataMatrixFileFormat.java 8394 2011-10-12 20:28:42Z zji $
  * 
  */
 public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
@@ -215,7 +216,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 	 * 
 	 * @see org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	private CSExprMicroarraySet getMArraySet(File file)
+	private CSMicroarraySet getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
 
 		/* the sign between file name and extesion, ex: file.ext */
@@ -235,7 +236,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 		} catch (InterruptedIOException ie) {
 			throw ie;
 		}
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+		CSMicroarraySet maSet = new CSMicroarraySet();
 		String fileName = file.getName();
 		int dotIndex = fileName.lastIndexOf(extSeperater);
 		if (dotIndex != -1) {
@@ -286,7 +287,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 				for (int i = 0; i < n; i++) {
 					String arrayName = headerTokenizer.nextToken();
 					CSMicroarray array = new CSMicroarray(i, possibleMarkers,
-							arrayName, null, null, false,
+							arrayName,
 							DSMicroarraySet.affyTxtType);
 					maSet.add(array);
 					/*
@@ -349,7 +350,8 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 							Float v = Float.NaN;
 							CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 									v);
-							maSet.get(i).setMarkerValue(m, markerValue);
+							DSMicroarray microarray = (DSMicroarray)maSet.get(i);
+							microarray.setMarkerValue(m, markerValue);
 							if (v.isNaN()) {
 								markerValue.setMissing(true);
 							} else {
@@ -369,7 +371,8 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 							CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 									v);
 							try {
-								maSet.get(i).setMarkerValue(m, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(i);
+								microarray.setMarkerValue(m, markerValue);
 							} catch (IndexOutOfBoundsException ioobe) {
 								log.error("i=" + i + ", m=" + m);
 							}

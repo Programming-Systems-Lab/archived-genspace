@@ -15,19 +15,15 @@ import java.io.IOException;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author First Genetic Trust
- * @version $Id: DataSetNode.java 7947 2011-05-27 22:34:43Z zji $
+ * @version $Id: DataSetNode.java 8348 2011-09-27 20:18:47Z zji $
  */
 
 public class DataSetNode extends ProjectTreeNode {
 	
-	
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1423608759523479212L;
 	
-	@SuppressWarnings("rawtypes")
-	public final DSDataSet dataFile;
+	private final DSDataSet<? extends DSBioObject> dataFile;
+	public DSDataSet<? extends DSBioObject> getDataset() { return dataFile; }
     
     DataSetNode(final DSDataSet<? extends DSBioObject> df) {
         dataFile = df;

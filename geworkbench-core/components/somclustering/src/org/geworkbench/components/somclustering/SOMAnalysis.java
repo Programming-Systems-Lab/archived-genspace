@@ -21,7 +21,7 @@ import org.geworkbench.bison.model.clusters.Cluster;
 import org.geworkbench.bison.model.clusters.DefaultSOMCluster;
 import org.geworkbench.bison.model.clusters.LeafSOMCluster;
 import org.geworkbench.bison.model.clusters.SOMCluster;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.util.ProgressBar;
 
 /**
@@ -29,7 +29,7 @@ import org.geworkbench.util.ProgressBar;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author First Genetic Trust
- * @version $Id: SOMAnalysis.java 7398 2011-02-01 15:14:56Z zji $
+ * @version $Id: SOMAnalysis.java 8272 2011-09-12 21:45:46Z zji $
  */
 
 /**
@@ -254,7 +254,7 @@ public class SOMAnalysis extends AbstractGridAnalysis implements
 		pb.stop();
 		CSSOMClusterDataSet dataSet = new CSSOMClusterDataSet(results,
 				"SOM Clusters", data);
-		ProjectPanel.addToHistory(dataSet, this.generateDataSetHistory(dim_x, dim_y, iterations, is_neighborhood_bubble, radius, alpha, data));
+		HistoryPanel.addToHistory(dataSet, this.generateDataSetHistory(dim_x, dim_y, iterations, is_neighborhood_bubble, radius, alpha, data));
 		return new AlgorithmExecutionResults(true, "SOM Clustering results",
 				dataSet);
 	}

@@ -1,14 +1,14 @@
 10
 
 dir
-8215
+8410
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/geneontology2
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-06-07T19:28:34.894769Z
-7963
+2011-10-14T21:01:08.688138Z
+8408
 zji
 has-props
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-08-02T04:30:24.000000Z
+2011-10-18T01:44:56.000000Z
 d75ca549671eccb9ef79ad6e578ed6f3
 2009-09-21T22:04:40.000000Z
 5583
@@ -66,7 +66,7 @@ file
 
 
 
-2011-08-02T04:30:24.000000Z
+2011-10-18T01:44:56.000000Z
 c200ae0b637c0be982c6822f931bdf1b
 2009-09-21T22:04:40.000000Z
 5583

@@ -67,15 +67,9 @@
      </webservice-endpoint>
    </ejb>
    <ejb>
-     <ejb-name>AlignmentFacade</ejb-name>
+     <ejb-name>MSARecommender</ejb-name>
      <webservice-endpoint>
-       <port-component-name>AlignmentFacade</port-component-name>
-     </webservice-endpoint>
-   </ejb>
-   <ejb>
-     <ejb-name>SequenceFacade</ejb-name>
-     <webservice-endpoint>
-       <port-component-name>SequenceFacade</port-component-name>
+       <port-component-name>MSARecommender</port-component-name>
      </webservice-endpoint>
    </ejb>
    </enterprise-beans>

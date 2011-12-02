@@ -16,7 +16,7 @@ import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeq
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PatternTableModel.java 8202 2011-08-04 20:52:12Z zji $
+ * @version $Id: PatternTableModel.java 8402 2011-10-13 21:06:59Z poddutun $
  */
 
 public class PatternTableModel extends AbstractTableModel {
@@ -24,11 +24,11 @@ public class PatternTableModel extends AbstractTableModel {
 	/**
      * Column definition
      */
-    static final int PTMSupport = 0;
-    static final int PTMSeqNo = 1;
-    static final int PTMTokNo = 2;
-    static final int PTMZScore = 3;
-    static final int PTMPattern = 4;
+    public static final int PTMSupport = 0;
+    public static final int PTMSeqNo = 1;
+    public static final int PTMTokNo = 2;
+    public static final int PTMZScore = 3;
+    public static final int PTMPattern = 4;
     static final String[] headerName = {"Hits", "Sequences Hit", "# of Tokens", "ZScore", "Motif"};
     /**
      * Pattern array - contains the patterns.

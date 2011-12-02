@@ -11,7 +11,7 @@ public interface DSMasterRagulatorResultSet <T extends DSGeneMarker> extends DSA
 
 /**
  * @author Yih-Shien Chiang
- * @version $Id: DSMasterRagulatorResultSet.java 8001 2011-06-16 16:17:07Z zji $
+ * @version $Id: DSMasterRagulatorResultSet.java 8234 2011-08-22 20:15:29Z zji $
  */
 
 	public DSMicroarraySet<DSMicroarray> getMicroarraySet();
@@ -19,12 +19,6 @@ public interface DSMasterRagulatorResultSet <T extends DSGeneMarker> extends DSA
     public void setGenesInTargetList(DSGeneMarker TF, DSItemList<DSGeneMarker> markers);
     public DSItemList<DSGeneMarker> getGenesInRegulon(DSGeneMarker TF);
     public DSItemList<DSGeneMarker> getGenesInTargetList(DSGeneMarker TF);
-    public void setPValueOf(DSGeneMarker TF, DSGeneMarker targetGene, double pValue);
-    public void setTTestValueOf(DSGeneMarker TF, DSGeneMarker targetGene, double tTestValue);
-    public double getPValueOf(DSGeneMarker TF, DSGeneMarker targetGene);
-    public double getTTestValueOf(DSGeneMarker TF, DSGeneMarker targetGene);
-    public int getGeneNumInRegulon(DSGeneMarker TF);
-    public int getGeneNumInTargetList(DSGeneMarker TF);
     public void setPValue(DSGeneMarker TF, double pValue);
     public double getPValue(DSGeneMarker TF);
 	public DSItemList<DSGeneMarker> getTFs();

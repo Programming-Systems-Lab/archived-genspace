@@ -27,7 +27,7 @@
          <class>org.geworkbench.components.genspace.entity.UsageEvent</class>
          <class>org.geworkbench.components.genspace.entity.msa.Alignment</class>
          <class>org.geworkbench.components.genspace.entity.msa.Reference</class>
-         <class>org.geworkbench.components.genspace.entity.msa.Sequence</class>
+         <class>org.geworkbench.components.genspace.entity.msa.DNASequence</class>
          
          <properties>
            <!--Use the java2db feature -->

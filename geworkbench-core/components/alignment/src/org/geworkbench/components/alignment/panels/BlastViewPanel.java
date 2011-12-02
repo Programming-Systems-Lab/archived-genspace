@@ -35,7 +35,6 @@ import org.geworkbench.bison.datastructure.bioobjects.sequence.CSSequence;
 import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
 import org.geworkbench.bison.util.RandomNumberGenerator;
 import org.geworkbench.components.alignment.blast.BlastObj;
-import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.util.BrowserLauncher;
 import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.JAutoList;
@@ -43,7 +42,7 @@ import org.geworkbench.util.JAutoList;
 /**
  *
  * @author XZ
- * @version $Id: BlastViewPanel.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: BlastViewPanel.java 8269 2011-09-12 19:24:58Z zji $
  */
 public class BlastViewPanel extends JPanel implements HyperlinkListener {
 	private static final long serialVersionUID = -5271804907456553741L;
@@ -91,17 +90,6 @@ public class BlastViewPanel extends JPanel implements HyperlinkListener {
 
 	public void setBlastViewComponent(BlastViewComponent bc) {
 		blastViewComponent = bc;
-	}
-
-	@Subscribe
-	public void receive(org.geworkbench.events.ProjectNodeAddedEvent pnae,
-			Object source) {
-		/**
-		 * TODO Implement this
-		 * medusa.components.listeners.ProjectNodeAddedListener method
-		 */
-		throw new java.lang.UnsupportedOperationException(
-				"Method projectNodeAdded() not yet implemented.");
 	}
 
 	public void hyperlinkUpdate(HyperlinkEvent event) {

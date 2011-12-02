@@ -21,10 +21,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.CSMarkerVector;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
-import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
@@ -45,7 +44,7 @@ import org.geworkbench.bison.parsers.resources.Resource;
  * 
  * @author manjunath at genomecenter dot columbia dot edu
  * @author yc2480
- * @version $Id: AffyFileFormat.java 7964 2011-06-07 19:34:19Z zji $
+ * @version $Id: AffyFileFormat.java 8394 2011-10-12 20:28:42Z zji $
  * 
  */
 public class AffyFileFormat extends DataSetFileFormat {
@@ -190,8 +189,7 @@ public class AffyFileFormat extends DataSetFileFormat {
 	 * @throws InputFileFormatException
 	 *             When the input file deviates from the Affy format.
 	 */
-
-	private void getMArraySet(File file, CSExprMicroarraySet maSet)
+	private void getMArraySet(File file, CSMicroarraySet maSet)
 			throws InputFileFormatException, InterruptedIOException {
 		// Check that the file is OK before starting allocating space for it.
 		if (!checkFormat(file))
@@ -244,7 +242,6 @@ public class AffyFileFormat extends DataSetFileFormat {
 				if (geneNames != null) {
 					markerVector.get(count).setGeneName(geneNames[0]);
 				}
-				markerVector.get(count).setDisPlayType(DSGeneMarker.AFFY_TYPE);
 				markerVector.get(count++).setDescription(acc);
 			}
 			reader.close();
@@ -257,7 +254,7 @@ public class AffyFileFormat extends DataSetFileFormat {
 					fileIn);
 			reader = new BufferedReader(new InputStreamReader(progressIn));
 			CSMicroarray microarray = new CSMicroarray(0, v.size(),
-					file.getName(), null, null, true,
+					file.getName(),
 					DSMicroarraySet.affyTxtType);
 			microarray.setLabel(file.getName());
 			parser.reset();
@@ -303,17 +300,15 @@ public class AffyFileFormat extends DataSetFileFormat {
 
 	public DSMicroarraySet<? extends DSBioObject> getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+		CSMicroarraySet maSet = new CSMicroarraySet();
 		getMArraySet(file, maSet);
-		if (maSet.loadingCancelled)
-			return null;
 		return maSet;
 	}
 
 	public DSDataSet<? extends DSBioObject> getDataFile(File file,
 			String compatibilityLabel) throws InputFileFormatException,
 			InterruptedIOException {
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+		CSMicroarraySet maSet = new CSMicroarraySet();
 		maSet.setCompatibilityLabel(compatibilityLabel);
 		getMArraySet(file, maSet);
 		return maSet;

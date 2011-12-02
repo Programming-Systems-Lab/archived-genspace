@@ -16,7 +16,7 @@ import javax.swing.SwingUtilities;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -27,7 +27,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**
  * @author Nikhil
- * @version $Id: SOFTSeriesParser.java 7750 2011-04-19 15:24:58Z wangmen $
+ * @version $Id: SOFTSeriesParser.java 8394 2011-10-12 20:28:42Z zji $
  */
 public class SOFTSeriesParser {
 
@@ -142,7 +142,7 @@ public class SOFTSeriesParser {
 			fileName = fileName.substring(0, dotIndex);
 		}
 
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+		CSMicroarraySet maSet = new CSMicroarraySet();
 		maSet.setLabel(fileName);
 		Map<String, List<CSExpressionMarkerValue>> arrayToMarkers = new HashMap<String, List<CSExpressionMarkerValue>>();
 		List<String> markers = new ArrayList<String>();
@@ -336,7 +336,7 @@ public class SOFTSeriesParser {
 		int arrayIndex = 0;
 		for (String arrayName : arrayToMarkers.keySet()) {
 			CSMicroarray array = new CSMicroarray(arrayIndex, markerCount,
-					arrayName, null, null, false, DSMicroarraySet.affyTxtType);
+					arrayName, DSMicroarraySet.affyTxtType);
 			List<CSExpressionMarkerValue> markerList = arrayToMarkers
 					.get(arrayName);
 			for (int markerIndex = 0; markerIndex < markerList.size(); markerIndex++) {

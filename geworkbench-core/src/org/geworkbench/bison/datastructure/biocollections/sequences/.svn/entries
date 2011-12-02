@@ -1,15 +1,15 @@
 10
 
 dir
-8215
+8410
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/sequences
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-24T14:48:09.523913Z
-7487
-zji
+2011-10-04T15:53:24.576113Z
+8359
+youmi
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-08-02T04:31:43.000000Z
-21ebb9445b4618558f4719121db2ab4a
-2011-02-24T14:48:09.523913Z
-7487
-zji
+2011-10-18T01:45:38.000000Z
+fd4a2a93cb220d2bc1c53a2b054eda71
+2011-10-04T15:53:24.576113Z
+8359
+youmi
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-7246
+7762
 
 DSSequenceSet.java
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-08-02T04:31:43.000000Z
+2011-10-18T01:45:38.000000Z
 14aae497e4ff370ce099b55953dce799
 2011-02-24T14:48:09.523913Z
 7487

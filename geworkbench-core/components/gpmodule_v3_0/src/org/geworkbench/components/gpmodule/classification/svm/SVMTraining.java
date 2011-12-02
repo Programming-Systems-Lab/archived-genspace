@@ -43,7 +43,7 @@ import org.geworkbench.util.TrainingTask;
 
 /**
  * @author Marc-Danie Nazaire
- * @version $Id: SVMTraining.java 7993 2011-06-15 18:04:08Z zji $
+ * @version $Id: SVMTraining.java 8344 2011-09-27 16:00:51Z zji $
  */
 public class SVMTraining extends GPTraining implements TrainingTask
 {
@@ -129,7 +129,8 @@ public class SVMTraining extends GPTraining implements TrainingTask
         return svmClassifier;
     }
 
-    public void runClassifier(DSPanel<DSMicroarray> casePanel, DSPanel<DSMicroarray> controlPanel, DSPanel<DSMicroarray> testPanel, CSClassifier classifier)
+    @SuppressWarnings("unchecked")
+	public void runClassifier(DSPanel<DSMicroarray> casePanel, DSPanel<DSMicroarray> controlPanel, DSPanel<DSMicroarray> testPanel, CSClassifier classifier)
     {
         ProgressBar progressBar;
         progressBar = ProgressBar.create(ProgressBar.INDETERMINATE_TYPE);

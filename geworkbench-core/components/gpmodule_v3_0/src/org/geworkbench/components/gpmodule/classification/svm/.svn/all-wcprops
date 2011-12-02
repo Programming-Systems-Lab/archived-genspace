@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm
 END
 SVMTraining.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTraining.java
+/svn/geworkbench/!svn/ver/8344/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTraining.java
 END
 SVMTrainingPanel.java
 K 25
@@ -25,7 +25,7 @@ SVMTraining.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 152
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTraining.cwb.xml
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm/SVMTraining.cwb.xml
 END
 help.html
 K 25

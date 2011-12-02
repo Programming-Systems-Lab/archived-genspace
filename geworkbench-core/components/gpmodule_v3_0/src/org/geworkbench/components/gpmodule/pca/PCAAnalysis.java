@@ -32,7 +32,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.components.gpmodule.GPAnalysis;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.events.ProjectNodeAddedEvent;
@@ -40,7 +40,7 @@ import org.geworkbench.util.ProgressBar;
 
 /**
  * @author: Marc-Danie Nazaire
- * @version $Id: PCAAnalysis.java 7992 2011-06-15 17:37:40Z zji $
+ * @version $Id: PCAAnalysis.java 8272 2011-09-12 21:45:46Z zji $
  */
 public class PCAAnalysis extends GPAnalysis {
 
@@ -225,7 +225,7 @@ public class PCAAnalysis extends GPAnalysis {
 
 			progress.setProgress(90);
 
-			ProjectPanel.addToHistory(pcaDs, history);
+			HistoryPanel.addToHistory(pcaDs, history);
 
 			progress.setProgress(100);
 
