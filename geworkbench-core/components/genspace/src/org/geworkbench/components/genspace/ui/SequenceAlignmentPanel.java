@@ -15,6 +15,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ import javax.swing.BoxLayout;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -123,7 +125,14 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
 		splitPane.setDividerLocation(0.5);
 
-		splitPane.setLeftComponent(af);
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setPreferredSize(new Dimension(800, 400));
+		desktopPane.add(af);
+		try {
+			af.setMaximum(true);
+		} catch (PropertyVetoException ignore) {
+		}
+		splitPane.setLeftComponent(desktopPane);
 		splitPane.setRightComponent(lowerPanel);
 
 		setLayout(new BorderLayout());
@@ -200,9 +209,6 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 		table.getColumn("Action").setCellEditor(
 				new ButtonEditor(new JCheckBox()));
 		table.setRowHeight(60);
-		table.setShowGrid(true);
-		table.setShowHorizontalLines(true);
-		table.setShowVerticalLines(true);
 		repaint();
 	}
 
