@@ -7,7 +7,7 @@
 
 		<class>org.geworkbench.components.genspace.entity.msa.Alignment</class>
 		<class>org.geworkbench.components.genspace.entity.msa.Reference</class>
-		<class>org.geworkbench.components.genspace.entity.msa.Sequence</class>
+		<class>org.geworkbench.components.genspace.entity.msa.ProteinSequence</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.user" value="genspace" />

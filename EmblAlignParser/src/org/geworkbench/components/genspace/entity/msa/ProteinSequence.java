@@ -15,13 +15,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class Sequence implements Serializable {
+public class ProteinSequence implements Serializable {
 
 	private int id;
 
 	private String accessionNo;
 	private String abbrevation;
 	private String description;
+	private String sequence;
 	
 	private Set<Alignment> alignments;
 
@@ -61,6 +62,14 @@ public class Sequence implements Serializable {
 	}
 	public void setAlignments(Set<Alignment> alignments) {
 		this.alignments = alignments;
+	}
+
+	@Column(length=4000)
+	public String getSequence() {
+		return sequence;
+	}
+	public void setSequence(String sequence) {
+		this.sequence = sequence;
 	}
 	
 }

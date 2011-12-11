@@ -17,7 +17,7 @@ import org.geworkbench.components.genspace.entity.LazyCycleBreaker;
 
 @Entity
 @XmlRootElement
-public class DNASequence extends LazyCycleBreaker implements Serializable {
+public class ProteinSequence extends LazyCycleBreaker implements Serializable {
 
 	private int id;
 

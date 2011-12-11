@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlElement;
@@ -23,7 +22,7 @@ public class Alignment implements Serializable {
 	
 	private String emblId;
 	
-	private Set<Sequence> sequences;
+	private Set<ProteinSequence> sequences;
 	
 	private String definition;
 	
@@ -32,6 +31,11 @@ public class Alignment implements Serializable {
 	private String comments;
 	
 	private Set<Reference> references;
+	
+	@Override
+	public String toString() {
+		return emblId;
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -45,11 +49,11 @@ public class Alignment implements Serializable {
 	}
 
 	@ManyToMany(mappedBy="alignments", cascade=CascadeType.ALL)
-	public Set<Sequence> getSequences() {
+	public Set<ProteinSequence> getSequences() {
 		return sequences;
 	}
 
-	public void setSequences(Set<Sequence> sequences) {
+	public void setSequences(Set<ProteinSequence> sequences) {
 		this.sequences = sequences;
 	}
 
@@ -70,6 +74,7 @@ public class Alignment implements Serializable {
 		this.definition = definition;
 	}
 
+	@Column(length=2000)
 	public String getKeywords() {
 		return keywords;
 	}
@@ -78,7 +83,7 @@ public class Alignment implements Serializable {
 		this.keywords = keywords;
 	}
 	
-	@Lob
+	@Column(length=4000)
 	public String getComments() {
 		return comments;
 	}

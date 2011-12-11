@@ -27,7 +27,7 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 	
 	private String emblId;
 	
-	private Set<DNASequence> sequences;
+	private Set<ProteinSequence> sequences;
 	
 	private String definition;
 	
@@ -54,11 +54,11 @@ public class Alignment extends LazyCycleBreaker implements Serializable {
 	}
 
 	@ManyToMany(mappedBy="alignments", cascade=CascadeType.ALL)
-	public Set<DNASequence> getSequences() {
+	public Set<ProteinSequence> getSequences() {
 		return sequences;
 	}
 
-	public void setSequences(Set<DNASequence> sequences) {
+	public void setSequences(Set<ProteinSequence> sequences) {
 		this.sequences = sequences;
 	}
 

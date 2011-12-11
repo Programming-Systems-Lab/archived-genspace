@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import org.geworkbench.components.genspace.entity.msa.DNASequence;
+import org.geworkbench.components.genspace.entity.msa.ProteinSequence;
 
 @Local
 public interface MSARecommenderLocal {
 
-	public List<DNASequence> getRecommendedSequences(List<DNASequence> queries);
+	public List<ProteinSequence> getRecommendedSequences(List<ProteinSequence> queries);
 
 }

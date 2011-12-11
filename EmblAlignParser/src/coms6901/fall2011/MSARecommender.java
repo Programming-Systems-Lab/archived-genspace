@@ -1,4 +1,4 @@
-package org.geworkbench.components.genspace.server.msa;
+package coms6901.fall2011;
 
 import java.io.File;
 import java.io.FileReader;
@@ -9,17 +9,15 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
-import javax.ejb.Stateless;
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import org.geworkbench.components.genspace.entity.msa.Alignment;
@@ -30,30 +28,38 @@ import blast.Hit;
 import blast.HitHsps;
 import blast.Hsp;
 
-@Stateless
-@WebService
-public class MSARecommender implements MSARecommenderLocal {
+public class MSARecommender {
 
-	@PersistenceContext(unitName = "genspace_persist")
-	private EntityManager em;
+	private static MSARecommender INSTANCE;
 
-	public MSARecommender() {
+	public static MSARecommender getInstance() {
+		if (INSTANCE == null) {
+			INSTANCE = new MSARecommender();
+		}
+		return INSTANCE;
 	}
 
-	@Override
-	@WebMethod
-	public List<ProteinSequence> getRecommendedSequences(List<ProteinSequence> queries) {
+	private EntityManager em;
+
+	private MSARecommender() {
+		EntityManagerFactory emf = Persistence
+				.createEntityManagerFactory("genspace_persist");
+		em = emf.createEntityManager();
+	}
+
+	public Map<ProteinSequence, Set<String>> getRecommendedSequences(
+			List<ProteinSequence> queries) {
 		Map<String, List<Hit>> blastResult = null;
 		try {
 			StringBuilder sb = new StringBuilder();
 			for (ProteinSequence query : queries) {
 				sb.append(">").append(query.getAccessionNo()).append("\n")
-						.append(query.getSequence()).append("\n");
+						.append(query.getSequence());
 			}
-			blastResult = runBlast(sb.toString());
+			blastResult = MSARecommender.runBlast(sb.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ArrayList<ProteinSequence>();
+			return new HashMap<ProteinSequence, Set<String>>();
 		}
 
 		Map<Alignment, Set<String>> alignToQuery = new HashMap<Alignment, Set<String>>();
@@ -78,7 +84,7 @@ public class MSARecommender implements MSARecommenderLocal {
 			}
 		}
 
-		List<ProteinSequence> result = new ArrayList<ProteinSequence>();
+		Map<ProteinSequence, Set<String>> result = new LinkedHashMap<ProteinSequence, Set<String>>();
 		for (Alignment alignment : alignToQuery.keySet()) {
 			System.out.println("Alignment " + alignment.getEmblId() + " has "
 					+ alignment.getSequences().size() + " sequences");
@@ -90,18 +96,18 @@ public class MSARecommender implements MSARecommenderLocal {
 						break;
 					}
 				}
-				if (isQuery || result.contains(sequence)) {
+				if (isQuery) {
 					continue;
 				}
 
-				result.add(sequence);
+				result.put(sequence, alignToQuery.get(alignment));
 			}
 		}
 
 		return result;
 	}
 
-	private float compare(String si, String sj, int start) {
+	public static float compare(String si, String sj, int start) {
 		int ilen = si.length() - 1;
 		int jlen = sj.length() - 1;
 
@@ -113,6 +119,7 @@ public class MSARecommender implements MSARecommenderLocal {
 			jlen--;
 		}
 
+		int count = 0;
 		int match = 0;
 		float pid = -1;
 
@@ -122,6 +129,8 @@ public class MSARecommender implements MSARecommenderLocal {
 						sj.substring(start + j, start + j + 1))) {
 					match++;
 				}
+
+				count++;
 			}
 
 			pid = (float) match / (float) ilen * 100;
@@ -131,6 +140,8 @@ public class MSARecommender implements MSARecommenderLocal {
 						sj.substring(start + j, start + j + 1))) {
 					match++;
 				}
+
+				count++;
 			}
 
 			pid = (float) match / (float) jlen * 100;
@@ -139,11 +150,11 @@ public class MSARecommender implements MSARecommenderLocal {
 		return pid;
 	}
 
-	private boolean isGap(char c) {
+	public static final boolean isGap(char c) {
 		return (c == '-' || c == '.' || c == ' ') ? true : false;
 	}
 
-	private String listToString(Collection<?> sqlList, String delimiter,
+	public static String listToString(Collection<?> sqlList, String delimiter,
 			boolean quote) {
 		StringBuilder constructedSQL = new StringBuilder();
 
@@ -167,11 +178,11 @@ public class MSARecommender implements MSARecommenderLocal {
 		}
 	}
 
-	private Map<String, List<Hit>> runBlast(String query)
-			throws IOException {
-		String blastAllPath = "/Users/ningyu18/Downloads/COMS6901/FALL2011/ncbi-blast-2.2.25+/bin/blastp";
-		String blastDB = "/Users/ningyu18/gsc/projects/genspace/genspace-ejb/data/BlastDB/embl_align";
+	private static String blastAllPath = "/Users/ningyu18/Downloads/COMS6901/FALL2011/ncbi-blast-2.2.25+/bin/blastp";
+	private static String blastDB = "/Users/ningyu18/gsc/projects/genspace/genspace-ejb/data/BlastDB/embl_align.db";
 
+	private static Map<String, List<Hit>> runBlast(String query)
+			throws IOException {
 		File infile = File.createTempFile("blast", ".fa");
 		File outfile = File.createTempFile("blast", ".csv");
 
@@ -180,7 +191,7 @@ public class MSARecommender implements MSARecommenderLocal {
 		out.flush();
 		out.close();
 
-		ProcessBuilder pb = new ProcessBuilder(blastAllPath, "-task", "blastp",
+		ProcessBuilder pb = new ProcessBuilder(blastAllPath, "-task", "blastn",
 				"-db", blastDB, "-outfmt", "10", "-max_target_seqs", "1",
 				"-query", infile.getAbsolutePath(), "-out",
 				outfile.getAbsolutePath());
@@ -235,14 +246,14 @@ public class MSARecommender implements MSARecommenderLocal {
 					+ "GCATATGATAAGGAAAGTAATGGGCTACATTCTCTACTATAGAGCATAACGAATCATATTATGAAACTAAAA"
 					+ "TGCTTGAAGGAGGATTTAGTAGTAAATTAAGAATAGAGAGCTTAATTG\n");
 
-			List<ProteinSequence> recommendations = (new MSARecommender())
+			Map<ProteinSequence, Set<String>> recommendations = (new MSARecommender())
 					.getRecommendedSequences((Arrays
 							.asList(new ProteinSequence[] { query1 })));
 
-			for (ProteinSequence sequence : recommendations) {
+			for (ProteinSequence sequence : recommendations.keySet()) {
 				System.out.print(sequence.getAccessionNo() + " matched ");
-//				System.out.print(listToString(recommendations.get(sequence),
-//						",", false));
+				System.out.print(listToString(recommendations.get(sequence),
+						",", false));
 				System.out.println(" and appeared in "
 						+ sequence.getAlignments().size() + " alignments");
 			}

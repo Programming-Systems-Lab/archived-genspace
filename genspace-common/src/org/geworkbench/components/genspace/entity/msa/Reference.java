@@ -27,6 +27,11 @@ public class Reference extends LazyCycleBreaker implements Serializable {
 	
 	private Alignment alignment;
 	
+	@Override
+	public String toString() {
+		return title + ", " + authors + ", " + locator;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@XmlElement
