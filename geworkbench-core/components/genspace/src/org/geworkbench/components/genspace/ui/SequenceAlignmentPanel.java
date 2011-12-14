@@ -7,6 +7,8 @@ import jalview.datamodel.SequenceI;
 import jalview.gui.AlignFrame;
 import jalview.io.FileLoader;
 import jalview.io.IdentifyFile;
+import jalview.schemes.ColourSchemeI;
+import jalview.schemes.ColourSchemeProperty;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -116,6 +118,7 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 	private AlignmentI alignment;
 	private JTable table;
 	private JLabel status;
+	private AlignFrame af;
 
 	private static SequenceAlignmentPanel INSTANCE;
 	public static SequenceAlignmentPanel getInstance() {
@@ -136,7 +139,7 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 	public void run() {
 
 		alignment = new jalview.datamodel.Alignment(new SequenceI [] {});
-		AlignFrame af = new AlignFrame(alignment, 800, 400);
+		af = new AlignFrame(alignment, 800, 400);
 		af.setPreferredSize(new Dimension(800, 400));
 		alignment = af.getCurrentView().getAlignment();
 		af.toFront();
@@ -168,6 +171,10 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 			af.setMaximum(true);
 		} catch (PropertyVetoException ignore) {
 		}
+		
+		Dimension minimumSize = new Dimension(0, 200);
+		desktopPane.setMinimumSize(minimumSize);
+		lowerPanel.setMinimumSize(minimumSize);
 		splitPane.setLeftComponent(desktopPane);
 		splitPane.setRightComponent(lowerPanel);
 
@@ -273,6 +280,11 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 			this.alignment.deleteSequence(jalSeq);
 		}
 		this.alignment.append(alignment);
+		if (alignment.getSequences().size() > 0) {
+			ColourSchemeI cs = ColourSchemeProperty.getColour(alignment,
+					"CLUSTAL");
+			af.changeColour(cs);
+		}
 		updateRecommendations();
 	}
 	
