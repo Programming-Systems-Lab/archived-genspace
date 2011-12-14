@@ -49,9 +49,9 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 	public static interface MSARecommenderCallback {
 		void sequenceAdded(ProteinSequence proteinSequence);
 	}
-	
+
 	private MSARecommenderCallback msaRecommenderCallback;
-	
+
 	public void setMsaRecommenderCallback(
 			MSARecommenderCallback msaRecommenderCallback) {
 		this.msaRecommenderCallback = msaRecommenderCallback;
@@ -59,6 +59,7 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 
 	private static final class AlignmentsEditor extends DefaultCellEditor {
 		List<Alignment> alignments;
+
 		public AlignmentsEditor(JCheckBox checkBox) {
 			super(checkBox);
 		}
@@ -73,7 +74,7 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 			alignments = (List<Alignment>) value;
 			return new AlignmentsPanel(alignments);
 		}
-		
+
 		@Override
 		public Object getCellEditorValue() {
 			return alignments;
@@ -91,8 +92,7 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 					String title = ref.getTitle();
 					if (title.length() > 2) {
 						sb.append(title).append(" ");
-					}
-					else {
+					} else {
 						sb.append("[NO TITLE]; ");
 					}
 					sb.append(ref.getAuthors()).append(" ");
@@ -115,19 +115,19 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 		}
 	}
 
-	private AlignmentI alignment;
 	private JTable table;
 	private JLabel status;
-	private AlignFrame af;
+	private AlignFrame alignFrame;
 
 	private static SequenceAlignmentPanel INSTANCE;
+
 	public static SequenceAlignmentPanel getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new SequenceAlignmentPanel();
 		}
 		return INSTANCE;
 	}
-	
+
 	/**
 	 * Constructor
 	 */
@@ -138,17 +138,17 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 	@Override
 	public void run() {
 
-		alignment = new jalview.datamodel.Alignment(new SequenceI [] {});
-		af = new AlignFrame(alignment, 800, 400);
-		af.setPreferredSize(new Dimension(800, 400));
-		alignment = af.getCurrentView().getAlignment();
-		af.toFront();
-		af.setVisible(true);
-		af.setClosable(true);
-		af.setResizable(true);
-		af.setMaximizable(true);
-		af.setIconifiable(true);
-		af.setFrameIcon(null);
+		AlignmentI alignment = new jalview.datamodel.Alignment(
+				new SequenceI[] {});
+		alignFrame = new AlignFrame(alignment, 800, 400);
+		alignFrame.setPreferredSize(new Dimension(800, 400));
+		alignFrame.toFront();
+		alignFrame.setVisible(true);
+		alignFrame.setClosable(true);
+		alignFrame.setResizable(true);
+		alignFrame.setMaximizable(true);
+		alignFrame.setIconifiable(true);
+		alignFrame.setFrameIcon(null);
 
 		table = new JTable();
 		status = new JLabel();
@@ -166,12 +166,12 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setPreferredSize(new Dimension(800, 400));
-		desktopPane.add(af);
+		desktopPane.add(alignFrame);
 		try {
-			af.setMaximum(true);
+			alignFrame.setMaximum(true);
 		} catch (PropertyVetoException ignore) {
 		}
-		
+
 		Dimension minimumSize = new Dimension(0, 200);
 		desktopPane.setMinimumSize(minimumSize);
 		lowerPanel.setMinimumSize(minimumSize);
@@ -182,8 +182,9 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 		add(splitPane, BorderLayout.CENTER);
 	}
 
-	public void updateRecommendations() {
+	private void updateRecommendations() {
 		List<ProteinSequence> queries = new ArrayList<ProteinSequence>();
+		AlignmentI alignment = alignFrame.getCurrentView().getAlignment();
 		for (SequenceI seq : alignment.getSequencesArray()) {
 			ProteinSequence ProteinSequence = new ProteinSequence();
 			ProteinSequence.setAccessionNo(seq.getName());
@@ -224,6 +225,8 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 				public void actionPerformed(ActionEvent arg0) {
 					Sequence jalSeq = new Sequence(proteinSequence
 							.getAccessionNo(), proteinSequence.getSequence());
+					AlignmentI alignment = alignFrame.getCurrentView()
+							.getAlignment();
 					alignment.addSequence(jalSeq);
 					updateRecommendations();
 					if (msaRecommenderCallback != null) {
@@ -275,19 +278,20 @@ public class SequenceAlignmentPanel extends JPanel implements VisualPlugin,
 		return this;
 	}
 
-	public void setAlignment(jalview.datamodel.AlignmentI alignment) {
-		for (SequenceI jalSeq : this.alignment.getSequencesArray()) {
-			this.alignment.deleteSequence(jalSeq);
+	public void setAlignment(AlignmentI newAlignment) {
+		AlignmentI alignment = alignFrame.getCurrentView().getAlignment();
+		for (SequenceI jalSeq : alignment.getSequencesArray()) {
+			alignment.deleteSequence(jalSeq);
 		}
-		this.alignment.append(alignment);
-		if (alignment.getSequences().size() > 0) {
-			ColourSchemeI cs = ColourSchemeProperty.getColour(alignment,
+		alignment.append(newAlignment);
+		if (newAlignment.getSequences().size() > 0) {
+			ColourSchemeI cs = ColourSchemeProperty.getColour(newAlignment,
 					"CLUSTAL");
-			af.changeColour(cs);
+			alignFrame.changeColour(cs);
 		}
 		updateRecommendations();
 	}
-	
+
 	public static void main(String[] args) {
 		SequenceAlignmentPanel panel = new SequenceAlignmentPanel();
 
