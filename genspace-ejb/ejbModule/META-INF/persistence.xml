@@ -25,14 +25,18 @@
          <class>org.geworkbench.components.genspace.entity.WorkflowFolder</class>
          <class>org.geworkbench.components.genspace.entity.LogAction</class>
          <class>org.geworkbench.components.genspace.entity.UsageEvent</class>
+         <class>org.geworkbench.components.genspace.entity.msa.Alignment</class>
+         <class>org.geworkbench.components.genspace.entity.msa.Reference</class>
+         <class>org.geworkbench.components.genspace.entity.msa.ProteinSequence</class>
          
          <properties>
            <!--Use the java2db feature -->
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>--> 
 		<property name="eclipselink.ddl-generation" value="create-tables"/>
-		<property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
+<!-- 		<property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
 		<property name="eclipselink.ddl-generation.output-mode" value="sql-script" />
+ -->		<property name="eclipselink.ddl-generation.output-mode" value="database" />
 		<property name="eclipselink.ddl-generation.table-creation-suffix" value=" engine=InnoDB" />
 		<!-- <property name="eclipselink.application-location" value="/Users/jon/Documents/PSL/Projects/genspace/"/>-->
            </properties>

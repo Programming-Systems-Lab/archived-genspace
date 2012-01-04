@@ -25,6 +25,7 @@ import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.geworkbench.components.genspace.server.stubs.Tool;
+import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
@@ -145,13 +146,16 @@ public class GenSpace {
 		org.geworkbench.components.genspace.ui.GenSpaceLogin login = new org.geworkbench.components.genspace.ui.GenSpaceLogin();
 		login.addMahoutPanel();
 
+		SequenceAlignmentPanel saPanel = SequenceAlignmentPanel.getInstance();
+		
 		jtp.addTab("genSpace Login", login);
 		jtp.addTab("Workflow Visualization", wv);
 		jtp.addTab("Real Time Workflow Suggestion", rtwfs);
 		jtp.addTab("Workflow Statistics", stats);
 		jtp.addTab("Social Center", networksPanels.$$$getRootComponent$$$());
 		jtp.addTab("Workflow Repository", needLoginPanel);
-
+		jtp.addTab("MSA Recommender", saPanel);
+		
 		jtp.addChangeListener(new ChangeListener() {
 			
 			@Override

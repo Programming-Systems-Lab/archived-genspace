@@ -66,5 +66,11 @@
        </login-config>
      </webservice-endpoint>
    </ejb>
+   <ejb>
+     <ejb-name>MSARecommender</ejb-name>
+     <webservice-endpoint>
+       <port-component-name>MSARecommender</port-component-name>
+     </webservice-endpoint>
+   </ejb>
    </enterprise-beans>
 </sun-ejb-jar>

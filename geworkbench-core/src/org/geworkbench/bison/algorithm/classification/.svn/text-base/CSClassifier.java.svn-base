@@ -1,5 +1,7 @@
 package org.geworkbench.bison.algorithm.classification;
 
+import java.io.File;
+
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 

@@ -3,6 +3,7 @@ package org.geworkbench.components.genspace.server.stubs;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -18,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="network" type="{http://server.genspace.components.geworkbench.org/}network" minOccurs="0"/>
- *         &lt;element name="user" type="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
+ *         &lt;element ref="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
  *         &lt;element name="verified" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="visible" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
@@ -43,6 +44,7 @@ public class UserNetwork
 
     protected int id;
     protected Network network;
+    @XmlElement(namespace = "http://server.genspace.components.geworkbench.org/")
     protected User user;
     protected boolean verified;
     protected boolean visible;

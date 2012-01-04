@@ -168,48 +168,6 @@ public interface ToolUsageInformation {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.Transaction
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sendUsageEvent", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageEvent")
-    @ResponseWrapper(localName = "sendUsageEventResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageEventResponse")
-    public Transaction sendUsageEvent(
-        @WebParam(name = "arg0", targetNamespace = "")
-        AnalysisEvent arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.Transaction
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sendUsageLog", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageLog")
-    @ResponseWrapper(localName = "sendUsageLogResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageLogResponse")
-    public Transaction sendUsageLog(
-        @WebParam(name = "arg0", targetNamespace = "")
-        List<AnalysisEvent> arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getExpertUserFor", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetExpertUserFor")
-    @ResponseWrapper(localName = "getExpertUserForResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetExpertUserForResponse")
-    public User getExpertUserFor(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -280,5 +238,47 @@ public interface ToolUsageInformation {
     @RequestWrapper(localName = "refreshMahoutRecommender", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.RefreshMahoutRecommender")
     @ResponseWrapper(localName = "refreshMahoutRecommenderResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.RefreshMahoutRecommenderResponse")
     public void refreshMahoutRecommender();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.Transaction
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "sendUsageEvent", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageEvent")
+    @ResponseWrapper(localName = "sendUsageEventResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageEventResponse")
+    public Transaction sendUsageEvent(
+        @WebParam(name = "arg0", targetNamespace = "")
+        AnalysisEvent arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.Transaction
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "sendUsageLog", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageLog")
+    @ResponseWrapper(localName = "sendUsageLogResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SendUsageLogResponse")
+    public Transaction sendUsageLog(
+        @WebParam(name = "arg0", targetNamespace = "")
+        List<AnalysisEvent> arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.User
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getExpertUserFor", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetExpertUserFor")
+    @ResponseWrapper(localName = "getExpertUserForResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetExpertUserForResponse")
+    public User getExpertUserFor(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
 }

@@ -38,9 +38,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "idstr"
 })
 @XmlSeeAlso({
-    User.class,
-    Network.class,
-    UserNetwork.class
+    Alignment.class,
+    Sequence.class,
+    Reference.class
 })
 public abstract class LazyCycleBreaker {
 
