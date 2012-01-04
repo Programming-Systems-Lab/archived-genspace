@@ -75,7 +75,6 @@ import org.geworkbench.bison.datastructure.complex.pattern.DSPattern;
 import org.geworkbench.bison.datastructure.complex.pattern.DSPatternMatch;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.CSSeqRegistration;
 import org.geworkbench.events.GeneSelectorEvent;
-import org.geworkbench.events.SequenceDiscoveryTableEvent;
 import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.RandomSequenceGenerator;
 import org.geworkbench.util.associationdiscovery.statistics.ClusterStatistics;
@@ -92,7 +91,7 @@ import org.geworkbench.util.patterns.PatternSequenceDisplayUtil;
  * <p>Company: Califano Lab</p>
  *
  * @author Xuegong Wang, manjunath at genomecenter dot columbia dot edu, Xiaoqing Zhang
- * @version $Id: PromoterViewPanel.java 8642 2011-12-22 22:30:05Z zji $
+ * @version $Id: PromoterViewPanel.java 8645 2012-01-04 18:53:35Z zji $
  */
 public final class PromoterViewPanel extends JPanel {
 	private static final long serialVersionUID = -6523545577029722522L;
@@ -1559,42 +1558,7 @@ public final class PromoterViewPanel extends JPanel {
         }
     }
 
-    /**
-     * sequenceDiscoveryTableRowSelected
-     * 
-     *	This method is invoked from PromoterView.
-     *
-     * @param e SequenceDiscoveryTableEvent
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-	void sequenceDiscoveryTableRowSelected(SequenceDiscoveryTableEvent e) {
-        updateParameters();
-        seqDisPanel.patternSelectionHasChanged(e);
-
-        //clear previously selected discovered patterns
-        for (DSPattern<DSSequence, CSSeqRegistration> p : seqPatterns) {
-            seqDisPanel.removePattern(p);
-        }
-
-        //add the new patterns into seqPatterns
-        seqPatterns.clear();
-        List<DSMatchedPattern<DSSequence,
-                CSSeqRegistration>> patterns = e.getPatternMatchCollection();
-        seqPatterns = new ArrayList(patterns);
-        for (DSMatchedPattern<DSSequence, CSSeqRegistration> pattern : patterns) {
-            PatternOperations.getPatternColor(pattern.hashCode());
-            DSPattern<DSSequence, CSSeqRegistration> p = pattern.getPattern();
-
-            List<DSPatternMatch<DSSequence,
-                    CSSeqRegistration>> matches = pattern.matches();
-            
-            if(p==null) continue;
-
-            seqPatternMatches.put(p, matches);
-        }
-    }
-
-    // new version to replace the above one
+    /* show the patterns over sequence viewer */
     @SuppressWarnings({ "rawtypes", "unchecked" })
 	void setPatterns(List<DSMatchedPattern<DSSequence, CSSeqRegistration>> patterns) {
         updateParameters();

@@ -3,7 +3,6 @@ package org.geworkbench.components.genspace.server.stubs;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -19,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="hostname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element ref="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
+ *         &lt;element name="user" type="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,7 +37,6 @@ public class TasteUser {
 
     protected String hostname;
     protected int id;
-    @XmlElement(namespace = "http://server.genspace.components.geworkbench.org/")
     protected User user;
 
     /**

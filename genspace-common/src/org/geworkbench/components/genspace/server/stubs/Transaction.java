@@ -28,7 +28,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="hostname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="ipAddr" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element ref="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
+ *         &lt;element name="user" type="{http://server.genspace.components.geworkbench.org/}user" minOccurs="0"/>
  *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="workflow" type="{http://server.genspace.components.geworkbench.org/}workflow" minOccurs="0"/>
  *       &lt;/sequence>
@@ -65,7 +65,6 @@ public class Transaction
     protected String hostname;
     protected int id;
     protected long ipAddr;
-    @XmlElement(namespace = "http://server.genspace.components.geworkbench.org/")
     protected User user;
     protected String userName;
     protected Workflow workflow;

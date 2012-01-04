@@ -24,10 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SaveAlignment_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "saveAlignment");
+    private final static QName _GetRecommendedSequences_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "getRecommendedSequences");
+    private final static QName _GetRecommendedSequencesResponse_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "getRecommendedSequencesResponse");
     private final static QName _Alignment_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "alignment");
-    private final static QName _SaveAlignmentResponse_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "saveAlignmentResponse");
-    private final static QName _Sequence_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "sequence");
+    private final static QName _ProteinSequence_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "proteinSequence");
     private final static QName _Reference_QNAME = new QName("http://msa.server.genspace.components.geworkbench.org/", "reference");
 
     /**
@@ -35,22 +35,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Sequence }
-     * 
-     */
-    public Sequence createSequence() {
-        return new Sequence();
-    }
-
-    /**
-     * Create an instance of {@link SaveAlignment }
-     * 
-     */
-    public SaveAlignment createSaveAlignment() {
-        return new SaveAlignment();
     }
 
     /**
@@ -62,11 +46,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SaveAlignmentResponse }
+     * Create an instance of {@link GetRecommendedSequences }
      * 
      */
-    public SaveAlignmentResponse createSaveAlignmentResponse() {
-        return new SaveAlignmentResponse();
+    public GetRecommendedSequences createGetRecommendedSequences() {
+        return new GetRecommendedSequences();
+    }
+
+    /**
+     * Create an instance of {@link ProteinSequence }
+     * 
+     */
+    public ProteinSequence createProteinSequence() {
+        return new ProteinSequence();
+    }
+
+    /**
+     * Create an instance of {@link GetRecommendedSequencesResponse }
+     * 
+     */
+    public GetRecommendedSequencesResponse createGetRecommendedSequencesResponse() {
+        return new GetRecommendedSequencesResponse();
     }
 
     /**
@@ -78,12 +78,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SaveAlignment }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetRecommendedSequences }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://msa.server.genspace.components.geworkbench.org/", name = "saveAlignment")
-    public JAXBElement<SaveAlignment> createSaveAlignment(SaveAlignment value) {
-        return new JAXBElement<SaveAlignment>(_SaveAlignment_QNAME, SaveAlignment.class, null, value);
+    @XmlElementDecl(namespace = "http://msa.server.genspace.components.geworkbench.org/", name = "getRecommendedSequences")
+    public JAXBElement<GetRecommendedSequences> createGetRecommendedSequences(GetRecommendedSequences value) {
+        return new JAXBElement<GetRecommendedSequences>(_GetRecommendedSequences_QNAME, GetRecommendedSequences.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetRecommendedSequencesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://msa.server.genspace.components.geworkbench.org/", name = "getRecommendedSequencesResponse")
+    public JAXBElement<GetRecommendedSequencesResponse> createGetRecommendedSequencesResponse(GetRecommendedSequencesResponse value) {
+        return new JAXBElement<GetRecommendedSequencesResponse>(_GetRecommendedSequencesResponse_QNAME, GetRecommendedSequencesResponse.class, null, value);
     }
 
     /**
@@ -96,21 +105,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SaveAlignmentResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProteinSequence }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://msa.server.genspace.components.geworkbench.org/", name = "saveAlignmentResponse")
-    public JAXBElement<SaveAlignmentResponse> createSaveAlignmentResponse(SaveAlignmentResponse value) {
-        return new JAXBElement<SaveAlignmentResponse>(_SaveAlignmentResponse_QNAME, SaveAlignmentResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Sequence }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://msa.server.genspace.components.geworkbench.org/", name = "sequence")
-    public JAXBElement<Sequence> createSequence(Sequence value) {
-        return new JAXBElement<Sequence>(_Sequence_QNAME, Sequence.class, null, value);
+    @XmlElementDecl(namespace = "http://msa.server.genspace.components.geworkbench.org/", name = "proteinSequence")
+    public JAXBElement<ProteinSequence> createProteinSequence(ProteinSequence value) {
+        return new JAXBElement<ProteinSequence>(_ProteinSequence_QNAME, ProteinSequence.class, null, value);
     }
 
     /**

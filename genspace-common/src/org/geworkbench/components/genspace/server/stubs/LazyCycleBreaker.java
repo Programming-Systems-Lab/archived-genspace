@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 @XmlSeeAlso({
     Alignment.class,
-    Sequence.class,
+    ProteinSequence.class,
     Reference.class
 })
 public abstract class LazyCycleBreaker {

@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="keywords" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="references" type="{http://msa.server.genspace.components.geworkbench.org/}reference" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="sequences" type="{http://msa.server.genspace.components.geworkbench.org/}sequence" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="sequences" type="{http://msa.server.genspace.components.geworkbench.org/}proteinSequence" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -56,7 +56,7 @@ public class Alignment
     @XmlElement(nillable = true)
     protected List<Reference> references;
     @XmlElement(nillable = true)
-    protected List<Sequence> sequences;
+    protected List<ProteinSequence> sequences;
 
     /**
      * Gets the value of the comments property.
@@ -217,13 +217,13 @@ public class Alignment
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Sequence }
+     * {@link ProteinSequence }
      * 
      * 
      */
-    public List<Sequence> getSequences() {
+    public List<ProteinSequence> getSequences() {
         if (sequences == null) {
-            sequences = new ArrayList<Sequence>();
+            sequences = new ArrayList<ProteinSequence>();
         }
         return this.sequences;
     }

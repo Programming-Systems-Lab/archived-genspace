@@ -3,7 +3,6 @@ package org.geworkbench.components.genspace.server.stubs;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://msa.server.genspace.components.geworkbench.org/}lazyCycleBreaker">
  *       &lt;sequence>
- *         &lt;element ref="{http://msa.server.genspace.components.geworkbench.org/}alignment" minOccurs="0"/>
+ *         &lt;element name="alignment" type="{http://msa.server.genspace.components.geworkbench.org/}alignment" minOccurs="0"/>
  *         &lt;element name="authors" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="locator" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -42,7 +41,6 @@ public class Reference
     extends LazyCycleBreaker
 {
 
-    @XmlElement(namespace = "http://msa.server.genspace.components.geworkbench.org/")
     protected Alignment alignment;
     protected String authors;
     protected int id;

@@ -67,6 +67,8 @@
 	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/XmlSchema-1.4.3.jar"/>
 	<classpathentry kind="lib" path="components/genspace/lib/ha-api.jar"/>
+	<classpathentry kind="lib" path="lib/commons-math-2.2.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/genspace-common"/>
+	<classpathentry kind="lib" path="components/genspace/lib/jalview.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

@@ -28,7 +28,7 @@ import org.geworkbench.util.sequences.SequenceViewWidget;
  * </p>
  * 
  * @author
- * @version $Id: SequenceViewAppComponent.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: SequenceViewAppComponent.java 8645 2012-01-04 18:53:35Z zji $
  */
 @AcceptTypes({ CSSequenceSet.class })
 public class SequenceViewAppComponent implements VisualPlugin {
@@ -36,13 +36,6 @@ public class SequenceViewAppComponent implements VisualPlugin {
 
 	public SequenceViewAppComponent() {
 		sViewWidget = new SequenceViewWidget();
-	}
-
-	@Subscribe
-	public void sequenceDiscoveryTableRowSelected(
-			org.geworkbench.events.SequenceDiscoveryTableEvent e,
-			Object publisher) {
-		sViewWidget.patternSelectionHasChanged(e);
 	}
 
 	/**
