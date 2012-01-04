@@ -17,7 +17,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author yc2480
- * @version $Id: CSAnovaResultSetTest.java 7411 2011-02-04 20:28:55Z zji $
+ * @version $Id: CSAnovaResultSetTest.java 8481 2011-11-02 15:43:58Z zji $
  */
 public class CSAnovaResultSetTest extends TestCase {
 
@@ -71,7 +71,7 @@ public class CSAnovaResultSetTest extends TestCase {
 
 		// generate arrays
 		view = new CSMicroarraySetView<DSGeneMarker, DSMicroarray>();
-		DSMicroarraySet<DSMicroarray> microarraySet = new CSMicroarraySet<DSMicroarray>();
+		DSMicroarraySet microarraySet = new CSMicroarraySet();
 		microarraySet.setLabel(this.getClass().getName());
 
 		for (int i = 0; i < numArrays; i++) {
@@ -256,7 +256,7 @@ public class CSAnovaResultSetTest extends TestCase {
 		DSAnovaResultSet<DSGeneMarker> anovaResultSet = new CSAnovaResultSet<DSGeneMarker>(
 				view, "Anova Analysis Result Set", groupNames, markerNames,
 				result2DArray);
-		assertSame(null, anovaResultSet.getDataSetFile());
+		assertSame(null, anovaResultSet.getFile());
 		assertEquals("Anova Analysis Result Set", anovaResultSet.getLabel());
 		assertSame(groupNames, anovaResultSet.getLabels(0));
 		assertSame(markerNames, anovaResultSet.significantMarkerNamesGetter());

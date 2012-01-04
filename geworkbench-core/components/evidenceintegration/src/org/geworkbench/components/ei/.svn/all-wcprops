@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
+/svn/geworkbench/!svn/ver/8513/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
 END
 EvidenceIntegrationVisualization.cwb.xml
 K 25
@@ -19,7 +19,7 @@ GenericDisplayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/GenericDisplayPanel.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/GenericDisplayPanel.java
 END
 EvidenceIntegrationAnalysis.cwb.xml
 K 25
@@ -43,7 +43,7 @@ EvidenceIntegrationParamPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 148
-/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationParamPanel.java
+/svn/geworkbench/!svn/ver/8513/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationParamPanel.java
 END
 EvidenceIntegrationVisualization.java
 K 25
@@ -55,7 +55,7 @@ EvidenceIntegrationAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 146
-/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationAnalysis.java
+/svn/geworkbench/!svn/ver/8348/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationAnalysis.java
 END
 EvidenceTableModel.java
 K 25
@@ -67,5 +67,5 @@ EvidenceIntegrationDataSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/geworkbench/!svn/ver/7969/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationDataSet.java
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationDataSet.java
 END

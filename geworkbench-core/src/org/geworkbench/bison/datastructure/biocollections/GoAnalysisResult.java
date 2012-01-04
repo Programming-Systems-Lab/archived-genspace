@@ -3,7 +3,6 @@
  */
 package org.geworkbench.bison.datastructure.biocollections;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +18,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GOTerm;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**
  * Go Terms Analysis Result.
@@ -28,9 +27,9 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
  * wrapping for the result from ontologizer 2.0.
  * 
  * @author zji
- * @version $Id: GoAnalysisResult.java 7963 2011-06-07 19:28:34Z zji $
+ * @version $Id: GoAnalysisResult.java 8481 2011-11-02 15:43:58Z zji $
  */
-public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
+public class GoAnalysisResult extends CSAncillaryDataSet<DSMicroarray> {
 	private static final long serialVersionUID = -337000604982427702L;
 	static Log log = LogFactory.getLog(GoAnalysisResult.class);
 	
@@ -80,7 +79,7 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 	 * @param parent
 	 * @param label
 	 */
-	public GoAnalysisResult(DSDataSet<CSMicroarray> parent, String label) {
+	public GoAnalysisResult(DSDataSet<DSMicroarray> parent, String label) {
 		super(parent, label);
 		referenceGenes = new HashSet<String>();
 		changedGenes = new HashSet<String>();
@@ -90,15 +89,6 @@ public class GoAnalysisResult extends CSAncillaryDataSet<CSMicroarray> {
 
 	void addResultRow(int goId, ResultRow row) {
 		result.put(goId, row);
-	}
-	
-	public File getDataSetFile() {
-		// no use. required by the interface
-		return null;
-	}
-
-	public void setDataSetFile(File file) {
-		// no use. required by the interface
 	}
 	
 	/**

@@ -15,9 +15,9 @@ import org.geworkbench.engine.config.events.Event;
  * <p>Company: Columbia Genomics Center</p>
  *
  * @author Saroja Hanasoge
- * @version $Id: SequenceDiscoveryTableEvent.java 7237 2010-11-29 04:41:30Z zji $
+ * @version $Id: SequenceDiscoveryTableEvent.java 8642 2011-12-22 22:30:05Z zji $
  */
-
+@Deprecated // no one publishes this event anymore
 public class SequenceDiscoveryTableEvent extends Event {
 
     public SequenceDiscoveryTableEvent(List<DSMatchedPattern<DSSequence, CSSeqRegistration>> patternMatches) {

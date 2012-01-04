@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge
+/svn/geworkbench/!svn/ver/8324/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge
 END
 PudgeAnalysis.cwb.xml
 K 25
@@ -25,7 +25,7 @@ PudgeBrowser.java
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svn/geworkbench/!svn/ver/8005/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/PudgeBrowser.java
+/svn/geworkbench/!svn/ver/8324/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/PudgeBrowser.java
 END
 PudgeConfigPanel.java
 K 25

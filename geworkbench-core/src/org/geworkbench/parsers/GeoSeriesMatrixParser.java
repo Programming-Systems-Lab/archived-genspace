@@ -17,7 +17,7 @@ import javax.swing.ProgressMonitorInputStream;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -25,10 +25,11 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.A
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.util.AffyAnnotationUtil;
 
 /**  
  * @author Nikhil
- * @version $Id: GeoSeriesMatrixParser.java 7953 2011-06-02 20:04:45Z wangmen $
+ * @version $Id: GeoSeriesMatrixParser.java 8621 2011-12-19 19:24:01Z youmi $
  */
 public class GeoSeriesMatrixParser {
 
@@ -40,7 +41,7 @@ public class GeoSeriesMatrixParser {
 
 	private static final String duplicateLabelModificator = "_2";
 
-	CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+	CSMicroarraySet maSet = new CSMicroarraySet();
 	List<String> markArrays = new ArrayList<String>();
 	
 	private int possibleMarkers = 0;
@@ -76,7 +77,8 @@ public class GeoSeriesMatrixParser {
 				if (line.startsWith(commentSign1) || line.startsWith(commentSign2)) {
 					//Ignoring the lines that has '!series_matrix_table_begin' and '!series_matrix_table_end'
 					if(!line.equalsIgnoreCase("!series_matrix_table_begin") && !line.equalsIgnoreCase("!series_matrix_table_end")) {
-						maSet.addDescription(line.substring(1));
+						// to be consistent, this detailed information should be used else where instead of as "description" field
+						// maSet.setDescription(line.substring(1));
 					}
 				}
 				String[] mark = line.split("\t");
@@ -179,10 +181,8 @@ public class GeoSeriesMatrixParser {
 	 * 
 	 * @see org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	public DSMicroarraySet<DSMicroarray> getMArraySet(File file)
+	public DSMicroarraySet getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
-
-		final int extSeperater = '.';
 
 		if (!checkFormat(file)) {
 			log
@@ -193,10 +193,6 @@ public class GeoSeriesMatrixParser {
 		 }
 
 		String fileName = file.getName();
-		int dotIndex = fileName.lastIndexOf(extSeperater);
-		if (dotIndex != -1) {
-			fileName = fileName.substring(0, dotIndex);
-		}
 		maSet.setLabel(fileName);
 		BufferedReader in = null;
 		try {
@@ -241,7 +237,6 @@ public class GeoSeriesMatrixParser {
 
 				/* Skip first token */
 				headerTokenizer.nextToken();
-				int duplicateLabels = 0;
 
 				for (int i = 0; i < n; i++) {
 					
@@ -252,7 +247,7 @@ public class GeoSeriesMatrixParser {
 										+ ": "
 										+markAnn1;
 					CSMicroarray array = new CSMicroarray(i, possibleMarkers,
-							arrayName1, null, null, false,
+							arrayName1,
 							DSMicroarraySet.affyTxtType);
 					maSet.add(array);
 					
@@ -261,7 +256,6 @@ public class GeoSeriesMatrixParser {
 						array.setLabel(array.getLabel()
 								+ duplicateLabelModificator);
 						maSet.add(array);
-						duplicateLabels++;
 					}
 				}
 				while ((line != null) 
@@ -299,7 +293,7 @@ public class GeoSeriesMatrixParser {
 					String markerName = new String(tokens[0].trim());
 					CSExpressionMarker marker = new CSExpressionMarker(m);
 					marker.setLabel(markerName);
-					maSet.getMarkerVector().add(m, marker);		
+					maSet.getMarkers().add(m, marker);		
 					 
 					for (int i = 0; i < n; i++) {
 							String valString = "";
@@ -311,7 +305,8 @@ public class GeoSeriesMatrixParser {
 								// maSet
 								Float v = Float.NaN;
 								CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(v);
-								maSet.get(i).setMarkerValue(m, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(i);
+								microarray.setMarkerValue(m, markerValue);
 								if (v.isNaN()) {
 									markerValue.setMissing(true);
 								} else {
@@ -329,7 +324,8 @@ public class GeoSeriesMatrixParser {
 								CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 										v);
 								try {
-									maSet.get(i).setMarkerValue(m, markerValue);
+									DSMicroarray microarray = (DSMicroarray)maSet.get(i);
+									microarray.setMarkerValue(m, markerValue);
 								} catch (IndexOutOfBoundsException ioobe) {
 									log.error("i=" + i + ", m=" + m);
 								}
@@ -348,18 +344,17 @@ public class GeoSeriesMatrixParser {
 				// Set chip-type
 				String result = null;
 				for (int i = 0; i < m; i++) {
-					result = AnnotationParser.matchChipType(maSet, maSet
-							.getMarkerVector().get(i).getLabel(), false);
+					result = AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 					if (result != null) {
 						break;
 					}
 				}
 				if (result == null) {
-					AnnotationParser.matchChipType(maSet, "Unknown", true);
+					AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 				} else {
 					maSet.setCompatibilityLabel(result);
 				}
-				for (DSGeneMarker marker : maSet.getMarkerVector()) {
+				for (DSGeneMarker marker : maSet.getMarkers()) {
 					String token = marker.getLabel();
 					String[] locusResult = AnnotationParser.getInfo(token,
 							AnnotationParser.LOCUSLINK);
@@ -399,6 +394,7 @@ public class GeoSeriesMatrixParser {
 				
 			}
 		}
+		maSet.getMarkers().correctMaps();
 		return maSet;
 	}
 

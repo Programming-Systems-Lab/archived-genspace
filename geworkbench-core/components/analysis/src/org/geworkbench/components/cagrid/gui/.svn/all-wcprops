@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/7458/trunk/geworkbench/components/analysis/src/org/geworkbench/components/cagrid/gui
+/svn/geworkbench/!svn/ver/8296/trunk/geworkbench/components/analysis/src/org/geworkbench/components/cagrid/gui
 END
 IndexServiceSelectionButtonListener.java
 K 25
@@ -13,7 +13,7 @@ GridServicePanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/geworkbench/!svn/ver/7458/trunk/geworkbench/components/analysis/src/org/geworkbench/components/cagrid/gui/GridServicePanel.java
+/svn/geworkbench/!svn/ver/8296/trunk/geworkbench/components/analysis/src/org/geworkbench/components/cagrid/gui/GridServicePanel.java
 END
 UrlLabelListener.java
 K 25

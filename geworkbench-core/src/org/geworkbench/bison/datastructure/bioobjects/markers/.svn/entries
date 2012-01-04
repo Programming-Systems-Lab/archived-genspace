@@ -1,14 +1,14 @@
 10
 
 dir
-8215
+8644
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
+2011-10-25T20:06:14.818459Z
+8460
 zji
 
 
@@ -35,44 +35,10 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-43632a0f352d31bed57612df63ef9522
-2006-01-13T22:48:38.000000Z
-1120
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-783
-
-CSGeneMarker.java
-file
-
-
-
-
-2011-08-02T04:31:42.000000Z
-3bda50017af239a45d58fbabc31af6c3
-2011-07-30T04:31:30.667242Z
-8187
+2011-12-29T06:11:38.000000Z
+79bdc1135c4411066f76bd7e106de270
+2011-10-25T20:06:14.818459Z
+8460
 zji
 has-props
 
@@ -95,7 +61,41 @@ has-props
 
 
 
-5930
+604
+
+CSGeneMarker.java
+file
+
+
+
+
+2011-12-29T06:11:38.000000Z
+316ddea4a34c3a8d7e289cd72e6c1334
+2011-10-10T18:55:34.441554Z
+8384
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5535
 
 annotationparser
 dir
@@ -106,10 +106,10 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-efd16e0352fc75c19bb2c468464fb52a
-2011-07-30T04:31:30.667242Z
-8187
+2011-12-29T06:11:38.000000Z
+689cc1299e5e21ec94e414d09a81a6ce
+2011-10-25T20:06:14.818459Z
+8460
 zji
 has-props
 
@@ -132,7 +132,7 @@ has-props
 
 
 
-3953
+3898
 
 DSGeneMarker.java
 file
@@ -140,10 +140,10 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-7651603d49b6982956e3a18846d3066f
-2010-12-08T22:05:28.310804Z
-7314
+2011-12-29T06:11:38.000000Z
+59b82ee78baa186ba5a577b271e25bc6
+2011-10-10T18:55:34.441554Z
+8384
 zji
 has-props
 
@@ -166,7 +166,7 @@ has-props
 
 
 
-1928
+1706
 
 SequenceMarker.java
 file
@@ -174,7 +174,7 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
+2011-08-17T00:10:50.000000Z
 b3d373b459b880081ef83cd703c77fbd
 2010-12-21T22:09:19.155263Z
 7362

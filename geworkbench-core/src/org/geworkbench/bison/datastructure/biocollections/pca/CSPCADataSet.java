@@ -29,7 +29,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**
  * @author: Marc-Danie Nazaire
- * @version $Id: CSPCADataSet.java 7714 2011-04-08 13:51:30Z zji $
+ * @version $Id: CSPCADataSet.java 8481 2011-11-02 15:43:58Z zji $
  */
 @SuppressWarnings("unchecked")
 public class CSPCADataSet extends CSAncillaryDataSet<DSBioObject> implements DSPCADataSet {
@@ -56,35 +56,6 @@ public class CSPCADataSet extends CSAncillaryDataSet<DSBioObject> implements DSP
 		this.eigenValues = eigenValues;
 		this.eigenVectors = eigenVectors;
 		this.percentVariations = percentVariations;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet#getDataSetFile()
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.geworkbench.bison.datastructure.biocollections.pca.DSPCADataSet#getDataSetFile()
-	 */
-	public File getDataSetFile() {
-		// no-op
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet#setDataSetFile(java.io.File)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.geworkbench.bison.datastructure.biocollections.pca.DSPCADataSet#setDataSetFile(java.io.File)
-	 */
-	public void setDataSetFile(File file) {
-		// no-op
 	}
 
 	/*

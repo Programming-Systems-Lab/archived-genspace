@@ -16,7 +16,6 @@ import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMasterRagulatorResultSet;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 
 public class DetailedTFGraphViewer extends JPanel {
@@ -27,14 +26,13 @@ public class DetailedTFGraphViewer extends JPanel {
 	DSGeneMarker tfA;
 
 	private DSMasterRagulatorResultSet<DSGeneMarker> mraResultSet;
-	private DSMicroarraySet<DSMicroarray> mSet;
+	private DSMicroarraySet mSet;
 	private int numberOfMarkers;
 	private HashMap<Integer, DSGeneMarker> Rank2GeneMap;
 	private HashMap<DSGeneMarker, Integer> Gene2RankMap;
-	private double pValue = 1.0;
-	private double minTValue = 0;
-	private double maxTValue = 0;
-	private int numOfPositiveTValues = 0; // included 0
+
+	private double minValue = 0;
+	private double maxValue = 0;
 
 	public void setTFA(DSMasterRagulatorResultSet<DSGeneMarker> mraResultSet,
 			DSGeneMarker tfA) {
@@ -47,21 +45,18 @@ public class DetailedTFGraphViewer extends JPanel {
 			mSet = null;
 			numberOfMarkers = 0;
 		}
-		numOfPositiveTValues = 0;
 		Hashtable<Double, DSGeneMarker> hash = new Hashtable<Double, DSGeneMarker>();
 		for (int cx = 0; cx < numberOfMarkers; cx++) {
 			DSGeneMarker marker = (DSGeneMarker) mSet.getMarkers().get(cx);
-			double tValue = mraResultSet.getTValue(
+			double value = mraResultSet.getValue(
 					marker);
-			log.debug("t-value for " + marker.getShortName() + " is " + tValue
+			log.debug("value for " + marker.getShortName() + " is " + value
 					+ " (index " + cx + ")");
-			hash.put(tValue, marker);
-			if (minTValue > tValue)
-				minTValue = tValue;
-			if (maxTValue < tValue)
-				maxTValue = tValue;
-			if (tValue >= 0)
-				numOfPositiveTValues++;
+			hash.put(value, marker);
+			if (minValue > value)
+				minValue = value;
+			if (maxValue < value)
+				maxValue = value;
 		}
 		Double[] keys = (Double[]) hash.keySet().toArray(new Double[0]);
 		Arrays.sort(keys);
@@ -78,11 +73,6 @@ public class DetailedTFGraphViewer extends JPanel {
 		}
 	}
 
-	public void setPValueFilter(double pValue) {
-		this.pValue = pValue;
-		repaint();
-	};
-
 	public void paintComponent(Graphics g1) {
 		super.paintComponent(g1);
 		Graphics2D g = (Graphics2D) g1;
@@ -96,11 +86,11 @@ public class DetailedTFGraphViewer extends JPanel {
 		g.drawRect(0, 0, width, height);
 		if ((numberOfMarkers > 0) && (mraResultSet != null)) {
 		 
-			Color maxColor = calculateColor(numMarkers, minTValue, maxTValue, 0,
-					maxTValue);
+			Color maxColor = calculateColor(numMarkers, minValue, maxValue,
+					maxValue);
 			
-			Color minColor = calculateColor(numMarkers, minTValue, maxTValue, 0,
-				(-maxTValue));
+			Color minColor = calculateColor(numMarkers, minValue, maxValue,
+				(-maxValue));
 			
 			g.setPaint(new GradientPaint(0,  height * 2 / 3, minColor, getWidth() / 2,  height * 1 / 3,
 					Color.WHITE));
@@ -113,60 +103,52 @@ public class DetailedTFGraphViewer extends JPanel {
 
 			// draw the lines for geneMarkers
 
-			double maxAbsValue = Math.max(Math.abs(minTValue), Math.abs(maxTValue));
-//			for (int i = 0; i < numMarkers; i++) {			 		 
-				DSItemList<DSGeneMarker> genesInRegulonList = mraResultSet.getGenesInRegulon(tfA);					 
-				if (genesInRegulonList == null) { // if user selected wrong
-													// TF, which doesn't have
-													// neighbors
-					System.out.println("Wrong TF");
-					return;//continue;
-				} 
-				for (int cx = 0; cx < genesInRegulonList.size(); cx++) {
-					DSGeneMarker marker = (DSGeneMarker) genesInRegulonList
-							.get(cx);
-					double tValue = mraResultSet.getTValue(marker);	
-					
-//					Integer rank = Gene2RankMap.get(marker);
-//					if (rank != null && rank.intValue() == i) {
-						if (mraResultSet.getPValueOf(tfA, marker) <= pValue) {
-							SpearmansCorrelation SC = new SpearmansCorrelation();
-							double spearCor = 0.0;
-							DSMicroarraySet<DSMicroarray> maSet = mraResultSet
-									.getMicroarraySet();
-							double[] arrayData1 = maSet.getRow(tfA);
-							double[] arrayData2 = maSet.getRow(marker);
+			double maxAbsValue = Math.max(Math.abs(minValue), Math.abs(maxValue));
 
-							spearCor = SC.correlation(arrayData1, arrayData2);
-//							Color save = g.getColor();
-							int center = 0;
-							center = (int) ((width / 2) * (1 + tValue / maxAbsValue));
-							if (spearCor >= 0) {							
-								g.setColor(Color.RED);
-								g.drawLine(center, 0, center, height * 1 / 3);
-							} else {							 
-								g.setColor(Color.BLUE);
-								g.drawLine(center, height * 1 / 3, center,
-										height * 2 / 3);
-							}
-//							g.setColor(save);
-						}
-//					}
-				} 
-//			} 
+			DSItemList<DSGeneMarker> genesInRegulonList = mraResultSet.getGenesInRegulon(tfA);					 
+			if (genesInRegulonList == null) { // if user selected wrong
+												// TF, which doesn't have
+												// neighbors
+				System.out.println("Wrong TF");
+				return;//continue;
+			} 
+			for (int cx = 0; cx < genesInRegulonList.size(); cx++) {
+				DSGeneMarker marker = (DSGeneMarker) genesInRegulonList
+						.get(cx);
+				double value = mraResultSet.getValue(marker);	
+					
+				SpearmansCorrelation SC = new SpearmansCorrelation();
+				double spearCor = 0.0;
+				DSMicroarraySet maSet = mraResultSet
+						.getMicroarraySet();
+				double[] arrayData1 = maSet.getRow(tfA);
+				double[] arrayData2 = maSet.getRow(marker);
+
+				spearCor = SC.correlation(arrayData1, arrayData2);
+
+				int center = 0;
+				center = (int) ((width / 2) * (1 + value / maxAbsValue));
+				if (spearCor >= 0) {							
+					g.setColor(Color.RED);
+					g.drawLine(center, 0, center, height * 1 / 3);
+				} else {							 
+					g.setColor(Color.BLUE);
+					g.drawLine(center, height * 1 / 3, center,
+							height * 2 / 3);
+				}
+			} 
 		}
 	}
 
 	private Color calculateColor(int numMarkers, double minTValue,
-			double maxTValue, int rank, double tValue) {
+			double maxTValue, double value) {
 		int Y = (int) Math.max(Math.abs(minTValue), Math.abs(maxTValue));
-		log.debug(numMarkers + "," + minTValue + "," + maxTValue + "," + rank
-				+ "," + tValue);
+
 		int disToZero = 0;
 		Color result = null;
 		// disToZero = numOfPositiveTValues - rank;
 		if (Y != 0) {
-			int colorindex = (int) (255 * (tValue) / (Math.abs(Y)));
+			int colorindex = (int) (255 * value / (Math.abs(Y)));
 			if (colorindex < 0) {
 				colorindex = Math.abs(colorindex);
 				if (colorindex > 255)

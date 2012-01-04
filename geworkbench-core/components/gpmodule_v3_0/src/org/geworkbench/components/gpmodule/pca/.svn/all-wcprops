@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca
+/svn/geworkbench/!svn/ver/8462/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca
 END
 PCAAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca/PCAAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca/PCAAnalysis.cwb.xml
 END
 paramDesc.html
 K 25
@@ -19,13 +19,13 @@ PCA.java
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/7992/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca/PCA.java
+/svn/geworkbench/!svn/ver/8462/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca/PCA.java
 END
 PCAAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/7992/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca/PCAAnalysis.java
+/svn/geworkbench/!svn/ver/8272/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/pca/PCAAnalysis.java
 END
 PCAAnalysisPanel.java
 K 25

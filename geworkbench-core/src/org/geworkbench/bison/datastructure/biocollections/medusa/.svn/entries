@@ -1,15 +1,15 @@
 10
 
 dir
-8215
+8644
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/medusa
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2010-03-11T20:48:36.492576Z
-6128
-wangmen
+2011-11-02T15:43:58.696033Z
+8481
+zji
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-08-02T04:31:43.000000Z
-55ca9712f61f37a4ced12fa244dd0aab
-2010-03-11T20:48:36.492576Z
-6128
-wangmen
+2011-12-29T06:13:04.000000Z
+0e8490bacaf5f4c08914f450569b5408
+2011-11-02T15:43:58.696033Z
+8481
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ wangmen
 
 
 
-
-1327
+1193
 
 MedusaData.java
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-08-02T04:31:43.000000Z
-78e1a09355e56c9d1c08eb15d0c0e1f4
-2010-03-11T20:48:36.492576Z
-6128
-wangmen
+2011-12-29T06:13:04.000000Z
+9a471f94ba6fdb3c1dcf66be3b5808af
+2011-10-19T16:34:53.735246Z
+8424
+zji
 
 
 
@@ -92,7 +92,7 @@ wangmen
 
 
 
-1871
+1736
 
 MedusaCommand.java
 file
@@ -100,7 +100,7 @@ file
 
 
 
-2011-08-02T04:31:43.000000Z
+2011-12-29T06:13:04.000000Z
 f660ea1560bf45f6e22f9d301a184f30
 2010-03-11T20:48:36.492576Z
 6128

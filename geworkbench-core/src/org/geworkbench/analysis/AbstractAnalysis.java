@@ -18,13 +18,11 @@ import java.util.Vector;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.properties.CSDescribable;
 import org.geworkbench.bison.model.analysis.Analysis;
 import org.geworkbench.bison.model.analysis.ParamValidationResults;
 import org.geworkbench.bison.model.analysis.ParameterPanel;
 import org.geworkbench.engine.config.PluginRegistry;
 import org.geworkbench.engine.management.ComponentClassLoader;
-import org.geworkbench.engine.management.Script;
 import org.geworkbench.util.FilePathnameUtils;
 
 /**
@@ -44,7 +42,7 @@ import org.geworkbench.util.FilePathnameUtils;
  * @author keshav
  * @author yc2480
  * @author os2201
- * @version $Id: AbstractAnalysis.java 7503 2011-02-28 21:46:01Z maz $
+ * @version $Id: AbstractAnalysis.java 8478 2011-11-02 13:48:00Z zji $
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractAnalysis implements Analysis, Serializable,
@@ -125,6 +123,9 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
     public static final int MEDUSA_TYPE = 31;
     
     public static final int FOLD_CHANGE_TYPE=32;
+    
+    public static final int  BLAST_TYPE= 33;
+    
 	/**
 	 * Parameters will be saved as XML files in "savedParams" directory under
 	 * each component directory.
@@ -160,7 +161,7 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 	/**
 	 * Used in the implementation of the <code>Describable</code> interface.
 	 */
-	private CSDescribable descriptions = new CSDescribable();
+	private String description = null;
 
 	/**
 	 * Set <code>stopAlgorithm</code> to true to stop the Algorithm, in the
@@ -476,8 +477,8 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 	 *
 	 * @see org.geworkbench.bison.datastructure.properties.DSDescribable#addDescription(java.lang.String)
 	 */
-	public void addDescription(String desc) {
-		descriptions.addDescription(desc);
+	public void setDescription(String desc) {
+		description = desc;
 	}
 
 	/*
@@ -485,17 +486,8 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 	 *
 	 * @see org.geworkbench.bison.datastructure.properties.DSDescribable#getDescriptions()
 	 */
-	public String[] getDescriptions() {
-		return descriptions.getDescriptions();
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.geworkbench.bison.datastructure.properties.DSDescribable#removeDescription(java.lang.String)
-	 */
-	public void removeDescription(String desc) {
-		descriptions.removeDescription(desc);
+	public String getDescription() {
+		return description;
 	}
 
 	private String label = null;
@@ -533,11 +525,6 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 	 * @return
 	 */
 	public abstract int getAnalysisType();
-
-	@Script
-	public void setParameter(String key, String value) {
-
-	};
 
 	/**
 	 *

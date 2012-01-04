@@ -36,7 +36,7 @@ import polgara.soapPD_wsdl.holders.ArrayOfSOAPOffsetHolder;
  * </p>
  * 
  * @author Aner
- * @version $Id: DiscoverySession.java 8197 2011-08-04 19:33:05Z zji $
+ * @version $Id: DiscoverySession.java 8632 2011-12-20 22:50:58Z zji $
  */
 public class DiscoverySession {
 	// user id and session id as known on the host
@@ -142,11 +142,13 @@ public class DiscoverySession {
 			// returned int is ignored
 			soapPort.setParameters(logToken, parms);
 		} catch (RemoteException exp) {
+			
 			throw new SessionOperationException(
 					"Could not set parameters for the session.");
 		}
 	}
 
+	// TODO document what this method return before the session is done
 	/**
 	 * Get the number of patterns found.
 	 * 
@@ -212,8 +214,10 @@ public class DiscoverySession {
 			soapPort.discover(logToken, algorithm);
 		} catch (RemoteException ex) {
 			String msg = ex.getMessage();
+			System.out.println(msg);
 			throw new SessionOperationException("Unable to run discovery. "
 					+ msg);
+			
 		}
 	}
 

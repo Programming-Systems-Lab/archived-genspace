@@ -5,8 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
@@ -27,13 +27,15 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.parsers.resources.Resource;
+import org.geworkbench.util.AffyAnnotationUtil;
 
 /**
  * Sequence and Pattern Plugin
  * 
  * @author yc2480
- * @version $Id: TabDelimitedDataMatrixFileFormat.java 7654 2011-03-25 21:11:26Z zji $
+ * @version $Id: TabDelimitedDataMatrixFileFormat.java 8621 2011-12-19 19:24:01Z youmi $
  * 
  */
 public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
@@ -215,11 +217,8 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 	 * 
 	 * @see org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	private CSExprMicroarraySet getMArraySet(File file)
+	private CSMicroarraySet getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {
-
-		/* the sign between file name and extesion, ex: file.ext */
-		final int extSeperater = '.';
 
 		try
 		{
@@ -235,12 +234,8 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 		} catch (InterruptedIOException ie) {
 			throw ie;
 		}
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
-		String fileName = file.getName();
-		int dotIndex = fileName.lastIndexOf(extSeperater);
-		if (dotIndex != -1) {
-			fileName = fileName.substring(0, dotIndex);
-		}
+		CSMicroarraySet maSet = new CSMicroarraySet();
+		String fileName = file.getName();		
 		maSet.setLabel(fileName);
 		BufferedReader in = null;
 		try {
@@ -281,12 +276,11 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 
 				/* Skip first token */
 				headerTokenizer.nextToken();
-				int duplicateLabels = 0;
 
 				for (int i = 0; i < n; i++) {
 					String arrayName = headerTokenizer.nextToken();
 					CSMicroarray array = new CSMicroarray(i, possibleMarkers,
-							arrayName, null, null, false,
+							arrayName,
 							DSMicroarraySet.affyTxtType);
 					maSet.add(array);
 					/*
@@ -298,7 +292,6 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 						array.setLabel(array.getLabel()
 								+ duplicateLabelModificator);
 						maSet.add(array);
-						duplicateLabels++;
 					}
 				}
 				while ((line != null) // modified for mantis issue: 1349
@@ -337,7 +330,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 					String markerName = new String(tokens[0].trim());
 					CSExpressionMarker marker = new CSExpressionMarker(m);
 					marker.setLabel(markerName);
-					maSet.getMarkerVector().add(m, marker);
+					maSet.getMarkers().add(m, marker);
 					for (int i = 0; i < n; i++) {
 						String valString = "";
 						if ((i + 1) < tokens.length) {
@@ -349,7 +342,8 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 							Float v = Float.NaN;
 							CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 									v);
-							maSet.get(i).setMarkerValue(m, markerValue);
+							DSMicroarray microarray = (DSMicroarray)maSet.get(i);
+							microarray.setMarkerValue(m, markerValue);
 							if (v.isNaN()) {
 								markerValue.setMissing(true);
 							} else {
@@ -369,7 +363,8 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 							CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 									v);
 							try {
-								maSet.get(i).setMarkerValue(m, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(i);
+								microarray.setMarkerValue(m, markerValue);
 							} catch (IndexOutOfBoundsException ioobe) {
 								log.error("i=" + i + ", m=" + m);
 							}
@@ -387,18 +382,17 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 				// Set chip-type
 				String result = null;
 				for (int i = 0; i < m; i++) {
-					result = AnnotationParser.matchChipType(maSet, maSet
-							.getMarkerVector().get(i).getLabel(), false);
+					result = AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 					if (result != null) {
 						break;
 					}
 				}
 				if (result == null) {
-					AnnotationParser.matchChipType(maSet, "Unknown", true);
+					AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 				} else {
 					maSet.setCompatibilityLabel(result);
 				}
-				for (DSGeneMarker marker : maSet.getMarkerVector()) {
+				for (DSGeneMarker marker : maSet.getMarkers()) {
 					String token = marker.getLabel();
 					String[] locusResult = AnnotationParser.getInfo(token,
 							AnnotationParser.LOCUSLINK);
@@ -437,6 +431,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 				e.printStackTrace();
 			}
 		}
+		maSet.getMarkers().correctMaps();
 		return maSet;
 	}
 

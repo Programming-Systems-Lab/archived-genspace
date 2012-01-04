@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/7972/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
+/svn/geworkbench/!svn/ver/8591/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
 END
 ExpressionProfilePanel.java
 K 25
@@ -19,7 +19,7 @@ TabularMicroarrayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 142
-/svn/geworkbench/!svn/ver/7692/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.java
+/svn/geworkbench/!svn/ver/8495/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/TabularMicroarrayPanel.java
 END
 bulb_icon_gold.gif
 K 25
@@ -43,7 +43,7 @@ MicroarrayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/geworkbench/!svn/ver/7972/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/MicroarrayPanel.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/MicroarrayPanel.java
 END
 ExpressionProfilePanel.cwb.xml
 K 25
@@ -61,17 +61,23 @@ SimpleTTest.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/7101/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/SimpleTTest.java
+/svn/geworkbench/!svn/ver/8591/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/SimpleTTest.java
+END
+Histogram.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/8591/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/Histogram.java
 END
 EVDPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 128
-/svn/geworkbench/!svn/ver/7176/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/EVDPanel.java
+/svn/geworkbench/!svn/ver/8591/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/EVDPanel.java
 END
 MicroarrayDisplay.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/7102/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/MicroarrayDisplay.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/MicroarrayDisplay.java
 END

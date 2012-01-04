@@ -1,5 +1,7 @@
 package org.geworkbench.components.normalization;
 
+import java.util.Arrays;
+
 import org.geworkbench.analysis.AbstractAnalysis;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMarkerValue;
@@ -7,15 +9,13 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMutableMarkerValue;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.NormalizingAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
-
-import java.util.Arrays;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: MicroarrayCenteringNormalizer.java 7455 2011-02-11 22:02:22Z zji $
+ * @version $Id: MicroarrayCenteringNormalizer.java 8617 2011-12-16 20:56:37Z zji $
  */
 
 /**
@@ -25,12 +25,12 @@ import java.util.Arrays;
  * The normalizer also offers options for handling missing
  * values. In particular, the available choices are:
  * <UL>
- * <LI>“Min? replace with the smallest microarray value resulting after the
+ * <LI>Min: replace with the smallest microarray value resulting after the
  * mean/median subtraction),</LI>
- * <LI>“Max? replace with the largest microarray value resulting after the
+ * <LI>Max: replace with the largest microarray value resulting after the
  * mean/median subtraction),</LI>
- * <LI>“Zero? replace with 0,</LI>
- * <LI>“Ignore? No change.</LI>.
+ * <LI>Zero: replace with 0,</LI>
+ * <LI>Ignore: No change.</LI>.
  * </UL>
  */
 public class MicroarrayCenteringNormalizer extends AbstractAnalysis implements NormalizingAnalysis {
@@ -49,8 +49,7 @@ public class MicroarrayCenteringNormalizer extends AbstractAnalysis implements N
         return AbstractAnalysis.MICROARRAY_MEAN_MEDIAN_CENTERING_NORMALIZER_TYPE;
     }
 
-    @SuppressWarnings("unchecked")
-	public AlgorithmExecutionResults execute(Object input) {
+    public AlgorithmExecutionResults execute(Object input) {
         if (input == null || !(input instanceof DSMicroarraySet))
             return new AlgorithmExecutionResults(false, "Invalid input.", null);
 
@@ -58,7 +57,7 @@ public class MicroarrayCenteringNormalizer extends AbstractAnalysis implements N
         meanMedianType = ((CenteringNormalizerPanel) aspp).getAveragingSelection();
         missingValues = ((CenteringNormalizerPanel) aspp).getMissingValueTreatment();
 
-        DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) input;
+        DSMicroarraySet maSet = (DSMicroarraySet) input;
         DSMicroarray mArray = null;
         double[] arrayValues = null;
         DSMutableMarkerValue markerValue = null;
@@ -106,7 +105,7 @@ public class MicroarrayCenteringNormalizer extends AbstractAnalysis implements N
         }
 
 		// add to history
-        ProjectPanel.addHistoryDetail(maSet,((CenteringNormalizerPanel) aspp).getParamDetail());
+        HistoryPanel.addHistoryDetail(maSet,((CenteringNormalizerPanel) aspp).getParamDetail());
 
         return new AlgorithmExecutionResults(true, "No errors", input);
     }
@@ -119,7 +118,7 @@ public class MicroarrayCenteringNormalizer extends AbstractAnalysis implements N
      * @return A <code>double[]</code> array containing only the
      *         non-missing values for the designated microarray.
      */
-    double[] getNonMissingValues(DSMicroarraySet<DSMicroarray> maSet, int index) {
+    double[] getNonMissingValues(DSMicroarraySet maSet, int index) {
         if (maSet == null || index < 0 || index >= maSet.size())
             return null;
         int markerCount = maSet.getMarkers().size();

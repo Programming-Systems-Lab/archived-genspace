@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/geworkbench/!svn/ver/7423/trunk/geworkbench/src/org/geworkbench/bison/model/analysis
+/svn/geworkbench/!svn/ver/8518/trunk/geworkbench/src/org/geworkbench/bison/model/analysis
 END
 ProteinAnnotationAnalysis.java
 K 25
@@ -49,7 +49,7 @@ FilteringAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svn/geworkbench/!svn/ver/6402/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/FilteringAnalysis.java
+/svn/geworkbench/!svn/ver/8518/trunk/geworkbench/src/org/geworkbench/bison/model/analysis/FilteringAnalysis.java
 END
 ProteinDatabaseAnalysis.java
 K 25

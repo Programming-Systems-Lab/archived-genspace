@@ -26,7 +26,7 @@ import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
 import org.geworkbench.bison.model.analysis.ParamValidationResults;
 import org.geworkbench.bison.model.clusters.CSHierClusterDataSet;
 import org.geworkbench.bison.model.clusters.HierCluster;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.util.CorrelationDistance;
 import org.geworkbench.util.Distance;
 import org.geworkbench.util.EuclideanDistance;
@@ -36,7 +36,7 @@ import org.geworkbench.util.SpearmanRankDistance;
 /**
  * 
  * @author unattributable
- * @version $Id: FastHierClustAnalysis.java 7598 2011-03-17 15:17:31Z zji $
+ * @version $Id: FastHierClustAnalysis.java 8424 2011-10-19 16:34:53Z zji $
  * 
  */
 public class FastHierClustAnalysis extends AbstractGridAnalysis implements
@@ -71,7 +71,7 @@ public class FastHierClustAnalysis extends AbstractGridAnalysis implements
 			return new AlgorithmExecutionResults(false, "Invalid input.", null);
 		assert input instanceof DSMicroarraySetView;
 		data = (DSMicroarraySetView<DSGeneMarker, DSMicroarray>) input;
-		DSMicroarraySet<DSMicroarray> maSet = data.getMicroarraySet();
+		DSMicroarraySet maSet = data.getMicroarraySet();
 		int numMAs = data.items().size();
 		int numMarkers = data.getUniqueMarkers().size();
 		if ((numMAs < 3)&&(numMarkers < 3)) {
@@ -155,7 +155,7 @@ public class FastHierClustAnalysis extends AbstractGridAnalysis implements
 		}
 				
 		// add to Dataset History
-		ProjectPanel.addToHistory(dataSet, generateHistoryString());
+		HistoryPanel.addToHistory(dataSet, generateHistoryString());
         
 		
 		return new AlgorithmExecutionResults(true, "No errors.", dataSet);

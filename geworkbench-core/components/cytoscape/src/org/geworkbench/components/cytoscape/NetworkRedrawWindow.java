@@ -38,7 +38,7 @@ import cytoscape.view.CyNetworkView;
 /**
  * 
  * @author my2248
- * @version $Id: NetworkRedrawWindow.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: NetworkRedrawWindow.java 8313 2011-09-16 20:38:34Z youmi $
  */
 public class NetworkRedrawWindow {
 
@@ -340,8 +340,7 @@ public class NetworkRedrawWindow {
  
 		} else {
 			CyNetworkView view = Cytoscape.getCurrentNetworkView();
-			if (view != null && Cytoscape.getCurrentNetwork() != null) {
-
+			if (view != null && Cytoscape.getCurrentNetwork() != null) {			 
 				CyAttributes edgeAttrs = Cytoscape.getEdgeAttributes();
 				Iterator<?> iter = view.getEdgeViewsIterator();
 
@@ -370,9 +369,14 @@ public class NetworkRedrawWindow {
 
 						}
 
-						AdjacencyMatrix.Node node1 = new AdjacencyMatrix.Node(
-									NodeType.GENE_SYMBOL, gene1);
-						AdjacencyMatrix.Node node2 = new AdjacencyMatrix.Node(
+					 
+						AdjacencyMatrix.Node node1 = null;
+						AdjacencyMatrix.Node node2 = null;						
+						 
+					    node1 = new AdjacencyMatrix.Node(
+									NodeType.GENE_SYMBOL, gene1);						
+						 
+						node2 = new AdjacencyMatrix.Node(
 									NodeType.GENE_SYMBOL, gene2);
 
 						matrix.add(node1, node2, 0.8f, interactionType);

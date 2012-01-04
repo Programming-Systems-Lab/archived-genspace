@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
+/svn/geworkbench/!svn/ver/8642/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 END
 Distribution.java
 K 25
@@ -25,19 +25,19 @@ PromoterView.java
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/7626/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.java
+/svn/geworkbench/!svn/ver/8642/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterView.java
 END
 PromoterViewPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterViewPanel.java
+/svn/geworkbench/!svn/ver/8642/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/PromoterViewPanel.java
 END
 Matrix.java
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svn/geworkbench/!svn/ver/5599/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/Matrix.java
+/svn/geworkbench/!svn/ver/8505/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/Matrix.java
 END
 TFListPanel.java
 K 25

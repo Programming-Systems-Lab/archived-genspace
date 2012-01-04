@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by IntelliJ IDEA.
  * User: nazaire
- * @version $Id: CSGSEAResultDataSet.java 7713 2011-04-08 13:49:33Z zji $
+ * @version $Id: CSGSEAResultDataSet.java 8481 2011-11-02 15:43:58Z zji $
  */
 public class CSGSEAResultDataSet extends CSAncillaryDataSet<DSBioObject> implements DSGSEAResultDataSet {
 
@@ -28,30 +28,6 @@ public class CSGSEAResultDataSet extends CSAncillaryDataSet<DSBioObject> impleme
 	public CSGSEAResultDataSet(DSDataSet<? extends DSMicroarray> parent, String label, String reportFile) {
 		super((DSDataSet) parent, label);
 		this.reportFile = reportFile;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet#getDataSetFile()
-	 */
-	public File getDataSetFile() {
-		// no-op
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet#setDataSetFile(java.io.File)
-	 */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.geworkbench.bison.datastructure.biocollections.gsea.DSGSEAResultDataSet#setDataSetFile(java.io.File)
-	 */
-	public void setDataSetFile(File file) {
-		// no-op
 	}
 
 	/*

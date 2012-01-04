@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn
 END
 KNNTraining.java
 K 25
@@ -31,7 +31,7 @@ KNNTraining.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 152
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/KNNTraining.cwb.xml
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn/KNNTraining.cwb.xml
 END
 help.html
 K 25

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/geworkbench/!svn/ver/7503/trunk/geworkbench/src/org/geworkbench/analysis
+/svn/geworkbench/!svn/ver/8478/trunk/geworkbench/src/org/geworkbench/analysis
 END
 AbstractAnalysisLabelComparator.java
 K 25
@@ -25,7 +25,7 @@ AbstractAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/7503/trunk/geworkbench/src/org/geworkbench/analysis/AbstractAnalysis.java
+/svn/geworkbench/!svn/ver/8478/trunk/geworkbench/src/org/geworkbench/analysis/AbstractAnalysis.java
 END
 AbstractSaveableParameterPanel.java
 K 25

@@ -13,12 +13,11 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GOTerm;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**
  * 
  * @author zji
- * @version $Id: GoTableModel.java 7963 2011-06-07 19:28:34Z zji $
+ * @version $Id: GoTableModel.java 8424 2011-10-19 16:34:53Z zji $
  *
  */
 class GoTableModel extends AbstractTableModel {
@@ -78,7 +77,7 @@ class GoTableModel extends AbstractTableModel {
 		}
 	}
 	
-	void populateFromDataSet(DSMicroarraySet<DSMicroarray> dataSet) {
+	void populateFromDataSet(DSMicroarraySet dataSet) {
 
 		Map<Integer, TermPair> map = new HashMap<Integer, TermPair>();
 		for (DSGeneMarker marker : dataSet.getMarkers()) {

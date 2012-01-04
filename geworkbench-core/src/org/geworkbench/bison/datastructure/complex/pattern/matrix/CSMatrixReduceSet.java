@@ -1,6 +1,5 @@
 package org.geworkbench.bison.datastructure.complex.pattern.matrix;
 
-import java.io.File;
 import java.util.List;
 
 import org.apache.commons.collections15.map.ListOrderedMap;
@@ -10,7 +9,7 @@ import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 /**
  * @author John Watkinson
  * @author ch2514
- * @version $Id: CSMatrixReduceSet.java 7967 2011-06-07 20:41:43Z zji $
+ * @version $Id: CSMatrixReduceSet.java 8481 2011-11-02 15:43:58Z zji $
  */
 public class CSMatrixReduceSet extends
 		CSAncillaryDataSet<DSPositionSpecificAffintyMatrix> implements
@@ -28,13 +27,6 @@ public class CSMatrixReduceSet extends
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public CSMatrixReduceSet(DSDataSet parent, String label) {
 		super(parent, label);
-	}
-
-	public File getDataSetFile() {
-		return null;
-	}
-
-	public void setDataSetFile(File file) {
 	}
 
 	public ListOrderedMap<String, String> getSequences() {

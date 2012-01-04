@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/geworkbench/!svn/ver/3946/trunk/geworkbench/components/matrixreduce/lib
+/svn/geworkbench/!svn/ver/8535/trunk/geworkbench/components/matrixreduce/lib
 END
 cyggsl-0.dll
 K 25
@@ -13,7 +13,7 @@ MatrixREDUCE.jar
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/geworkbench/!svn/ver/3946/trunk/geworkbench/components/matrixreduce/lib/MatrixREDUCE.jar
+/svn/geworkbench/!svn/ver/8535/trunk/geworkbench/components/matrixreduce/lib/MatrixREDUCE.jar
 END
 chart-0.1.jar
 K 25

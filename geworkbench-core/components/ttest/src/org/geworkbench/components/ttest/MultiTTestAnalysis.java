@@ -21,7 +21,7 @@ import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.PhenotypeSelectorEvent;
@@ -32,7 +32,7 @@ import org.geworkbench.util.ProgressBarT;
 
 /**
  * @author John Watkinson
- * @version $Id: MultiTTestAnalysis.java 6945 2010-08-03 20:40:21Z zji $
+ * @version $Id: MultiTTestAnalysis.java 8424 2011-10-19 16:34:53Z zji $
  */
 public class MultiTTestAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -79,7 +79,7 @@ public class MultiTTestAnalysis extends AbstractAnalysis implements
 		ProgressBarT pbMTtest = null;
 		try {
 			DSMicroarraySetView<DSGeneMarker, DSMicroarray> view = (DSMicroarraySetView<DSGeneMarker, DSMicroarray>) input;
-			DSMicroarraySet<DSMicroarray> maSet = view.getMicroarraySet();
+			DSMicroarraySet maSet = view.getMicroarraySet();
 			TTest tTest = new TTestImpl();
 			// Get params
 			Set<String> labelSet = panel.getLabels();
@@ -207,7 +207,7 @@ public class MultiTTestAnalysis extends AbstractAnalysis implements
 						sigSets[i].sortMarkersBySignificance();
 
 						// add to Dataset History
-						ProjectPanel.addToHistory(sigSets[i], histHeader
+						HistoryPanel.addToHistory(sigSets[i], histHeader
 								+ groupAndChipsStringSets[i] + markerString);
 						
 						setFoldChnage (maSet, sigSets[i]);     
@@ -238,12 +238,12 @@ public class MultiTTestAnalysis extends AbstractAnalysis implements
 		return null;
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	@Subscribe
 	public void receive(ProjectEvent event, Object source) {
 		DSDataSet dataSet = event.getDataSet();
 		if ((dataSet != null) && (dataSet instanceof DSMicroarraySet)) {
-			panel.setMaSet((DSMicroarraySet<DSMicroarray>) dataSet);
+			panel.setMaSet((DSMicroarraySet) dataSet);
 			panel.rebuildForm();
 		}
 	}
@@ -313,7 +313,7 @@ public class MultiTTestAnalysis extends AbstractAnalysis implements
 
 	}
 	
-	private void setFoldChnage(DSMicroarraySet<DSMicroarray> set, DSSignificanceResultSet<DSGeneMarker> resultSet)
+	private void setFoldChnage(DSMicroarraySet set, DSSignificanceResultSet<DSGeneMarker> resultSet)
 	{ 
                       
              String[] caseLabels = resultSet.getLabels(DSTTestResultSet.CASE);

@@ -9,7 +9,6 @@ import javax.swing.JTextArea;
 
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Subscribe;
@@ -19,7 +18,7 @@ import org.geworkbench.events.ProjectEvent;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust
- * @version $Id: ExperimentInformationPanel.java 7945 2011-05-27 17:42:45Z zji $
+ * @version $Id: ExperimentInformationPanel.java 8478 2011-11-02 13:48:00Z zji $
  */
 
 /**
@@ -37,7 +36,7 @@ public class ExperimentInformationPanel implements VisualPlugin {
     /**
      * The currently selected microarray set.
      */
-    private DSMicroarraySet<DSMicroarray> maSet = null;
+    private DSMicroarraySet maSet = null;
 
     private JTextArea experimentTextArea = new JTextArea(DEFAULT_MESSAGE);
 
@@ -77,21 +76,18 @@ public class ExperimentInformationPanel implements VisualPlugin {
      *
      * @param e
      */
-    @SuppressWarnings("unchecked")
-	@Subscribe public void receive(ProjectEvent e, Object source) {
+    @Subscribe public void receive(ProjectEvent e, Object source) {
         DSDataSet<?> dataSet = e.getDataSet();
         if (dataSet instanceof DSMicroarraySet) {
         	String experimentInfo = DEFAULT_MESSAGE;
             if (e.getMessage().equals(ProjectEvent.CLEARED)) {
                 maSet = null;
             } else {
-                maSet = (DSMicroarraySet<DSMicroarray>) dataSet;
-                String[] descriptions = maSet.getDescriptions();
-                if (descriptions != null && descriptions.length > 0)
-                    experimentInfo = "";
-                for (int i = 0; i < descriptions.length; i++)
-                    experimentInfo += descriptions[i] + "\n";
-                if (experimentInfo == null || experimentInfo.trim().equals(""))
+                maSet = (DSMicroarraySet) dataSet;
+                String description = maSet.getDescription();
+                if (description != null && description.length() > 0)
+                    experimentInfo += description + "\n";
+                else
                     experimentInfo = DEFAULT_MESSAGE;
             }
             experimentTextArea.setText(experimentInfo);

@@ -1,15 +1,15 @@
 10
 
 dir
-8215
+8644
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-08-15T19:37:34.116726Z
-8215
-zji
+2011-12-23T16:28:44.773024Z
+8644
+poddutun
 
 
 
@@ -68,25 +68,28 @@ dir
 idea
 dir
 
-ttest
-dir
-
 selectors
 dir
 
-pudge
+ttest
 dir
 
 anova
 dir
 
-promoter
+pudge
+dir
+
+cupid
+dir
+
+cutenet
 dir
 
 discovery
 dir
 
-cutenet
+promoter
 dir
 
 skyline
@@ -98,25 +101,25 @@ dir
 caarray
 dir
 
-analysis
+filtering
 dir
 
-filtering
+analysis
 dir
 
 normalization
 dir
 
-cytoscape
-dir
-
 foldchange
 dir
 
-sequences
+cytoscape
 dir
 
 geneontology2
+dir
+
+sequences
 dir
 
 matrixreduce

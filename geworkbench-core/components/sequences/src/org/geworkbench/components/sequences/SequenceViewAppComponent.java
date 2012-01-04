@@ -5,7 +5,6 @@ import java.awt.Component;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.sequences.CSSequenceSet;
 import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
-import org.geworkbench.bison.datastructure.complex.pattern.PatternResult;
 import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.builtin.projects.ProjectSelection;
 import org.geworkbench.engine.config.VisualPlugin;
@@ -29,9 +28,9 @@ import org.geworkbench.util.sequences.SequenceViewWidget;
  * </p>
  * 
  * @author
- * @version $Id: SequenceViewAppComponent.java 7626 2011-03-24 13:43:50Z zji $
+ * @version $Id: SequenceViewAppComponent.java 8424 2011-10-19 16:34:53Z zji $
  */
-@AcceptTypes({ CSSequenceSet.class, PatternResult.class })
+@AcceptTypes({ CSSequenceSet.class })
 public class SequenceViewAppComponent implements VisualPlugin {
 	private SequenceViewWidget sViewWidget;
 

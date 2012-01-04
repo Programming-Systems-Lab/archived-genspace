@@ -33,12 +33,11 @@ import org.geworkbench.analysis.AbstractSaveableParameterPanel;
 import org.geworkbench.bison.annotation.CSAnnotationContextManager;
 import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.annotation.DSAnnotationContextManager;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.events.listeners.ParameterActionListener;
-import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
@@ -48,7 +47,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 /**
  * @author mhall
  * @author yc2480
- * @version $Id: AracneParamPanel.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: AracneParamPanel.java 8424 2011-10-19 16:34:53Z zji $
  */
 public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = 4023695671471667725L;
@@ -876,7 +875,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	/**
 	 * This is added to make the marker sets available.
 	 */
-	private DSMicroarraySet<DSMicroarray> maSet=null;
+	private DSMicroarraySet maSet=null;
 
 
 	/**
@@ -890,7 +889,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	 * This method needs to be called to make microarray set available.
 	 * @param maSet
 	 */
-	public void setMicroarraySet(DSMicroarraySet<DSMicroarray> maSet){
+	public void setMicroarraySet(DSMicroarraySet maSet){
 		this.maSet = maSet;
 	}	
 

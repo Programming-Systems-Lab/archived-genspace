@@ -21,7 +21,7 @@ import org.genepattern.util.BrowserLauncher;
 
 /**
  * @author: Marc-Danie Nazaire
- * @version $Id: GPHelpPanel.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: GPHelpPanel.java 8587 2011-12-09 22:25:26Z zji $
  */
 public class GPHelpPanel extends JSplitPane
 {
@@ -141,7 +141,7 @@ public class GPHelpPanel extends JSplitPane
         this.setBorder(BorderFactory.createEmptyBorder());
     }
 
-    protected void initParamDescPanel()
+    private void initParamDescPanel()
     {
         paramDescPanel = new JScrollPane();
 

@@ -1,14 +1,14 @@
 10
 
 dir
-8215
+8644
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/algorithm/classification
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-02-24T04:41:59.656309Z
-7484
+2011-11-02T15:43:58.696033Z
+8481
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-08-02T04:31:41.000000Z
-988713bf864f039579925f54f914f015
-2011-02-24T04:41:59.656309Z
-7484
+2011-12-29T06:11:37.000000Z
+f2e973389e71ba45fdb687497854c2fe
+2011-11-02T15:43:58.696033Z
+8481
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-1624
+1331
 
 CSVisualClassifier.java
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-08-02T04:31:41.000000Z
+2011-08-17T00:10:49.000000Z
 7f3f190ad6b428bfaf10d3d64a50d5f2
 2010-05-05T23:52:31.422766Z
 6479

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic
 END
 CMVRuler.java
 K 25
@@ -43,19 +43,19 @@ ColorMosaicPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicPanel.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicPanel.java
 END
 ColorMosaicImage.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicImage.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicImage.java
 END
 EisenBlock.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/7652/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/EisenBlock.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/EisenBlock.java
 END
 copy.gif
 K 25

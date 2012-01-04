@@ -1,17 +1,5 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svn/geworkbench/!svn/ver/1117/trunk/geworkbench/conf/cruisecontrol
-END
-config.xml
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svn/geworkbench/!svn/ver/1117/trunk/geworkbench/conf/cruisecontrol/config.xml
-END
-build-geworkbench.xml
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/156/trunk/geworkbench/conf/cruisecontrol/build-geworkbench.xml
+/svn/geworkbench/!svn/ver/8493/trunk/geworkbench/conf/cruisecontrol
 END

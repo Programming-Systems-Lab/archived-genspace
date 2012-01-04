@@ -118,7 +118,7 @@ import org.w3c.dom.Element;
  * Index database through caBio. Displays data in two table with 6 columns each.
  *
  * @author yc2480
- * @version $Id: AnnotationsPanel2.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: AnnotationsPanel2.java 8424 2011-10-19 16:34:53Z zji $
  *
  */
 @AcceptTypes({DSMicroarraySet.class})
@@ -1193,7 +1193,7 @@ public class AnnotationsPanel2 implements VisualPlugin{
     GeneSearchCriteria criteria = null;
     Pathway[] pathways = new Pathway[0];
 
-    DSMicroarraySet<DSMicroarray>  maSet = null;
+    DSMicroarraySet  maSet = null;
 
     /**
      * geneSelectorAction
@@ -1227,7 +1227,7 @@ public class AnnotationsPanel2 implements VisualPlugin{
         int hashcode = 0;
 
         if (data != null && data instanceof DSMicroarraySet) {
-            maSet = (DSMicroarraySet<DSMicroarray>) data;
+            maSet = (DSMicroarraySet) data;
 
         }
 

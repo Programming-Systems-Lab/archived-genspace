@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/svn/geworkbench/!svn/ver/7945/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation
+/svn/geworkbench/!svn/ver/8478/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation
 END
 ExperimentInformationPanel.cwb.xml
 K 25
@@ -25,5 +25,5 @@ ExperimentInformationPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/7945/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation/ExperimentInformationPanel.java
+/svn/geworkbench/!svn/ver/8478/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation/ExperimentInformationPanel.java
 END

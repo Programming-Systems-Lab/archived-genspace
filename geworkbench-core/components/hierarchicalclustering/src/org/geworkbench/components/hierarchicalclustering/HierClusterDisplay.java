@@ -16,8 +16,8 @@ import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.views.DSMicroarraySetView;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMutableMarkerValue;
 import org.geworkbench.bison.model.clusters.Cluster;
 import org.geworkbench.bison.model.clusters.MarkerHierCluster;
 import org.geworkbench.bison.model.clusters.MicroarrayHierCluster;
@@ -32,7 +32,7 @@ import org.geworkbench.bison.util.colorcontext.ColorContext;
  * Microarrays used for Hierarchical clustering are painted on
  *
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: HierClusterDisplay.java 7942 2011-05-27 16:24:46Z zji $
+ * @version $Id: HierClusterDisplay.java 8453 2011-10-24 15:02:32Z zji $
  */
 public class HierClusterDisplay extends JPanel {
 	private static final long serialVersionUID = -1551868794872426240L;
@@ -174,7 +174,7 @@ public class HierClusterDisplay extends JPanel {
 		ColorContext colorCtx = null;
 
 		if (microarraySet.getDataSet() instanceof DSMicroarraySet) {
-			colorCtx = (org.geworkbench.bison.util.colorcontext.ColorContext) ((DSMicroarraySet<DSMicroarray>) microarraySet
+			colorCtx = (org.geworkbench.bison.util.colorcontext.ColorContext) ((DSMicroarraySet) microarraySet
 					.getDataSet())
 					.getObject(org.geworkbench.bison.util.colorcontext.ColorContext.class);
 		} else {
@@ -204,7 +204,7 @@ public class HierClusterDisplay extends JPanel {
 
 				int x = (j * geneWidth);
 				int width = ((j + 1) * geneWidth) - x;
-				DSMutableMarkerValue marker = mArray.getMarkerValue(stats);
+				DSMarkerValue marker = mArray.getMarkerValue(stats);
 
 				Color color = colorCtx.getMarkerValueColor(marker, stats,
 						(float) intensity);

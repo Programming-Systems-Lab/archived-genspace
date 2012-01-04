@@ -12,7 +12,7 @@ import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust, Inc.</p>
  * @author First Genetic Trust, Inc.
- * @version $Id: GUIFramework.java 7943 2011-05-27 16:30:27Z zji $
+ * @version $Id: GUIFramework.java 8520 2011-11-11 15:41:09Z zji $
  */
 
 /**
@@ -35,15 +35,6 @@ public abstract class GUIFramework extends JFrame {
     protected GUIFramework() throws HeadlessException {
         frame = this;
     }
-
-    /**
-     * Adds the <code>visualPlugin</code> to the container identified by the name
-     * <code>areaName</code>.
-     *
-     * @param areaName
-     * @param visualPlugin
-     */
-    public abstract void addToContainer(String areaName, Component visualPlugin);
 
     /**
      * Adds the <code>visualPlugin</code> to the container identified by the name

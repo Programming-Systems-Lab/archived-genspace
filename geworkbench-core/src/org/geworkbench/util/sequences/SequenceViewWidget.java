@@ -57,7 +57,7 @@ import org.geworkbench.util.patterns.PatternSequenceDisplayUtil;
  * Company: Califano Lab </p>
  *
  * @author
- * @version $Id: SequenceViewWidget.java 7237 2010-11-29 04:41:30Z zji $
+ * @version $Id: SequenceViewWidget.java 8634 2011-12-22 15:36:43Z zji $
  */
 public class SequenceViewWidget extends JPanel {
 	private static final long serialVersionUID = -6141589995966150788L;
@@ -259,8 +259,15 @@ public class SequenceViewWidget extends JPanel {
 		}
 	}
 
+	@Deprecated
 	public void patternSelectionHasChanged(SequenceDiscoveryTableEvent e) {
 		setPatterns(e.getPatternMatchCollection());
+		refreshMaSetView();
+	}
+	
+	// do the same thing as the above version, but do not go through SequenceDiscoveryTableEvent
+	public void patternSelectionHasChanged(List<DSMatchedPattern<DSSequence, CSSeqRegistration>> patterns) {
+		setPatterns(patterns);
 		refreshMaSetView();
 	}
 

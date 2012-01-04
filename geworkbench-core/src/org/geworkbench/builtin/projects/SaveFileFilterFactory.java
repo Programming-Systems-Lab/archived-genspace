@@ -19,10 +19,11 @@ import org.geworkbench.bison.datastructure.bioobjects.structure.CSProteinStructu
  * savaAsFile method.
  * 
  * @author zji
+ * @version $Id: SaveFileFilterFactory.java 8494 2011-11-04 21:17:57Z youmi $
  * 
  */
-public class SaveFileFilterFactory {
-
+public class SaveFileFilterFactory {	
+	
 	static CustomFileFilter createFilter(
 			DSDataSet<? extends DSBioObject> dataset) {
 		if (dataset instanceof CSMicroarraySet) {
@@ -37,6 +38,13 @@ public class SaveFileFilterFactory {
 			return new DefaultFileFilter();
 		}
 	}
+	
+	static public TabDelimitedFileFilter getTabDelimitedFileFilter()
+	{
+		return new TabDelimitedFileFilter();
+	}
+
+	
 
 	static private enum ImageType {
 		Bitmap, JPEG, PNG, TIFF
@@ -138,6 +146,30 @@ public class SaveFileFilterFactory {
 		}
 
 	}
+	
+	
+
+	static public class TabDelimitedFileFilter extends CustomFileFilter {
+		public String getDescription() {
+			return "tab-delimited file (*.txt)";
+		}
+
+		public boolean accept(File f) {
+			String name = f.getName();
+			boolean tabFile = name.endsWith("txt") || name.endsWith("TXT");
+			if (f.isDirectory() || tabFile) {
+				return true;
+			}
+
+			return false;
+		}
+
+		public String getExtension() {
+			return "txt";
+		}
+
+	}
+	
 
 	static private class SequenceFileFilter extends CustomFileFilter {
 		public String getDescription() {
@@ -162,14 +194,14 @@ public class SaveFileFilterFactory {
 	}
 
 	private static class AdjFileFilter extends CustomFileFilter {
-		private static final String fileExt = ".adj";
+		private static final String fileExt = "adj";
 
 		public String getExtension() {
 			return fileExt;
 		}
 
 		public String getDescription() {
-			return "Adjacency Matrix Files";
+			return "Adjacency Matrix Files (.adj)";
 		}
 
 		public boolean accept(File f) {
@@ -273,5 +305,7 @@ public class SaveFileFilterFactory {
 			return "tif";
 		}
 
-	}
+	}	
+	 
+	
 }

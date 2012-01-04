@@ -1,29 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/4232/trunk/geworkbench/components/example/src/org/geworkbench/components/example
+/svn/geworkbench/!svn/ver/8292/trunk/geworkbench/components/example/src/org/geworkbench/components/example
 END
-JProfileTable.java
+ExampleComponent.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/1451/trunk/geworkbench/components/example/src/org/geworkbench/components/example/JProfileTable.java
-END
-TProfilerResults.java
-K 25
-svn:wc:ra_dav:version-url
-V 128
-/svn/geworkbench/!svn/ver/1450/trunk/geworkbench/components/example/src/org/geworkbench/components/example/TProfilerResults.java
-END
-ProfileGroup.java
-K 25
-svn:wc:ra_dav:version-url
-V 124
-/svn/geworkbench/!svn/ver/1450/trunk/geworkbench/components/example/src/org/geworkbench/components/example/ProfileGroup.java
+V 131
+/svn/geworkbench/!svn/ver/8292/trunk/geworkbench/components/example/src/org/geworkbench/components/example/ExampleComponent.cwb.xml
 END
 ExampleComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 128
-/svn/geworkbench/!svn/ver/4232/trunk/geworkbench/components/example/src/org/geworkbench/components/example/ExampleComponent.java
+/svn/geworkbench/!svn/ver/8292/trunk/geworkbench/components/example/src/org/geworkbench/components/example/ExampleComponent.java
 END

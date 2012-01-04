@@ -2,16 +2,14 @@ package org.geworkbench.bison.algorithm.classification;
 
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
-
-import java.io.File;
 
 /**
  * Implementing classifiers are able to run classifications on objects.
  * 
- * @version $Id: CSClassifier.java 7484 2011-02-24 04:41:59Z zji $
+ * @version $Id: CSClassifier.java 8481 2011-11-02 15:43:58Z zji $
  */
-public abstract class CSClassifier extends CSAncillaryDataSet<DSBioObject> {
+@SuppressWarnings("rawtypes")
+public abstract class CSClassifier extends CSAncillaryDataSet {
 
 	private static final long serialVersionUID = -735452597517969294L;
 	
@@ -19,7 +17,7 @@ public abstract class CSClassifier extends CSAncillaryDataSet<DSBioObject> {
 
     @SuppressWarnings("unchecked")
 	protected CSClassifier(DSDataSet<?> parent, String label, String[] classifications) {
-        super((DSDataSet<DSBioObject>)parent, label);
+        super(parent, label);
         this.classifications = classifications;
     }
 
@@ -37,20 +35,6 @@ public abstract class CSClassifier extends CSAncillaryDataSet<DSBioObject> {
      */
     public String[] getClassifications() {
         return classifications;
-    }
-
-    /**
-     * Not used.
-     */
-    public File getDataSetFile() {
-        return null;
-    }
-
-    /**
-     * Not used.
-     */
-    public void setDataSetFile(File file) {
-        // no-op
     }
 
 }

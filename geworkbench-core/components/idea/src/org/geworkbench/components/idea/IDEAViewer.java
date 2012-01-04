@@ -5,12 +5,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +20,11 @@ import javax.swing.table.AbstractTableModel;
 
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-import org.geworkbench.bison.datastructure.bioobjects.IdeaEdge;
-import org.geworkbench.bison.datastructure.bioobjects.IdeaEdge.InteractionType;
-import org.geworkbench.bison.datastructure.bioobjects.IdeaProbeGene;
-import org.geworkbench.bison.datastructure.bioobjects.IdeaResult;
+import org.geworkbench.bison.datastructure.bioobjects.IdeaGLoc;
+import org.geworkbench.bison.datastructure.bioobjects.IdeaModule;
+import org.geworkbench.bison.datastructure.bioobjects.IdeaNode;
+import org.geworkbench.bison.datastructure.bioobjects.IdeaResultDataSet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
@@ -41,27 +35,26 @@ import org.geworkbench.events.ProjectEvent;
  * IDEAViewer of IDEA analysis component
  * 
  * @author zm2165
- * @version $Id: IDEAViewer.java 7336 2010-12-16 16:33:57Z maz $
+ * @version $Id: IDEAViewer.java 8595 2011-12-14 04:33:40Z zji $
  * 
  */
-@AcceptTypes({ IdeaResult.class })
+@AcceptTypes({ IdeaResultDataSet.class })
 public class IDEAViewer extends JPanel implements VisualPlugin {
 
 	private static final long serialVersionUID = -4415752683103679560L;
 
 	private static class IdeaEdgeTableModel extends AbstractTableModel {
-		private static final int COLUMN_COUNT = 8;
+		private static final int COLUMN_COUNT = 7;
 
 		private static final long serialVersionUID = -6551819301207179797L;
 
 		private static final String[] columnNames = new String[] { "Probe1",
-				"Gene1", "Probe2", "Gene2", "MI", "DeltaMI", "NormDelta",
-				"Z-score" };
+				"Gene1", "Probe2", "Gene2", "MI", "DeltaMI", "Z-score" };
 
-		List<IdeaEdge> list = null;
+		List<IdeaGLoc> list = null;
 
 		public IdeaEdgeTableModel() {
-			list = new ArrayList<IdeaEdge>();
+			list = new ArrayList<IdeaGLoc>();
 		}
 
 		@Override
@@ -76,34 +69,33 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 		@Override
 		public int getRowCount() {
+			if(list==null) return 0;
 			return list.size();
 		}
 
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
-			IdeaEdge edge = list.get(rowIndex);
+			IdeaGLoc e = list.get(rowIndex);
 			switch (columnIndex) {
 			case 0:
-				return edge.getProbeId1();
+				return e.getProbe1();
 			case 1:
-				return edge.getMarker1().getGeneName();
+				return e.getGene1();
 			case 2:
-				return edge.getProbeId2();
+				return e.getProbe2();
 			case 3:
-				return edge.getMarker2().getGeneName();
+				return e.getGene2();
 			case 4:
-				return edge.getMI();
+				return Double.toString((((int) (e.getMi()*1000))/1000.0));
 			case 5:
-				return edge.getDeltaCorr();
-			case 6:
-				return edge.getNormCorr();
-			case 7:
-				return edge.getzDeltaCorr();
+				return Double.toString((((int) (e.getDeltaMi()*1000))/1000.0));
+				case 6:
+				return Double.toString((((int) (e.getzScore()*1000))/1000.0));
 			}
 			return 0;
 		}
 
-		void setValues(List<IdeaEdge> list) {
+		void setValues(List<IdeaGLoc> list) {
 			this.list = list;
 		}
 	}
@@ -114,13 +106,13 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 		private static final int COLUMN_COUNT = 13;
 
-		List<IdeaProbeGene> list = null;
+		List<IdeaNode> list = null;
 		private final String[] columnNames = new String[] { "Probe", "Gene",
 				"ChrBand", "Conn", "Nes", "Loc", "LoCHits", "LoCEs", "LoCNes",
 				"Goc", "GoCHits", "GoCEs", "GoCNes" };
 
 		public IdeaGeneTableModel() {
-			list = new ArrayList<IdeaProbeGene>();
+			list = new ArrayList<IdeaNode>();
 		}
 
 		@Override
@@ -135,81 +127,78 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 		@Override
 		public int getRowCount() {
+			if(list==null) return 0;
 			return list.size();
 		}
-
+		
+		@Override
+		public Class<?> getColumnClass(int column) {
+			if ((column == 3) || (column == 5) || (column == 6)
+					|| (column == 9) || (column == 10)) {
+				return Integer.class;
+			}
+			if ((column == 4) || (column == 7) || (column == 8)
+					|| (column == 11) || (column == 12)) {
+				return Double.class;
+			}
+			return String.class;
+		}
+		
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
 			if (ideaResult == null)
-				return null;
+				return null;			
 
-			DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) ideaResult
-					.getParentDataSet();
-			if (maSet == null)
-				return null;
-
-			IdeaProbeGene ideaProbeGene = list.get(rowIndex);
-			DSGeneMarker m = maSet.getMarkers().get(ideaProbeGene.getProbeId());
-
-			int locHits = 0;
-			int gocHits = 0;
-			for (IdeaEdge e : ideaProbeGene.getEdges()) {
-				if (e.getDeltaCorr() < 0)
-					locHits++;
-				else if (e.getDeltaCorr() > 0)
-					gocHits++;
-			}
-			double locnes = -Math.log(ideaProbeGene.getCumLoc());
-			double gocnes = -Math.log(ideaProbeGene.getCumGoc());
-
+			IdeaNode node = list.get(rowIndex);
+			
 			switch (columnIndex) {
 			case 0:
-				return ideaProbeGene.getProbeId();
+				return node.getProbe();
 			case 1:
-				return m.getGeneName();
+				return node.getGene();
 			case 2:
-				return "chromosomal"; // FIXME placeholder
+				return node.getChrBand(); 
 			case 3:
-				return ideaProbeGene.getEdges().size();
+				return node.getConn();
 			case 4:
-				return ideaProbeGene.getNes();
+				return Math.abs(node.getNes());
 			case 5:
-				return ideaProbeGene.getLocs();
+				return node.getLoc();
 			case 6:
-				return locHits;
+				return node.getLoCHits();
 			case 7:
-				return ideaProbeGene.getCumLoc();
+				return node.getLoCEs();
 			case 8:
-				return locnes;
+				return Math.abs(node.getLoCNes());
 			case 9:
-				return ideaProbeGene.getGocs();
+				return node.getGoc();
 			case 10:
-				return gocHits;
+				return node.getGoCHits();
 			case 11:
-				return ideaProbeGene.getCumGoc();
+				return node.getGoCEs();
 			case 12:
-				return gocnes;
+				return Math.abs(node.getGoCNes());
 			}
 			return 0;
 		}
 
-		void setValues(List<IdeaProbeGene> list) {
+		void setValues(List<IdeaNode> list) {
 			this.list = list;
 		}
 	}
 
-	private class IdeaNodeTableModel extends AbstractTableModel {
+	private class IdeaModuleTableModel extends AbstractTableModel {
 	
 		private static final long serialVersionUID = 9153220106537748604L;
 
-		private static final int COLUMN_COUNT = 5;
+		private static final int COLUMN_COUNT = 4;
 
-		List<String[]> list = null;
+		List<IdeaModule> list = null;
 		private final String[] columnNames = new String[] { "Gene1", "Gene2",
-				"Conn-type", "Loc", "Goc"};
+				"Conn-type", "Loc/Goc"};
 
-		public IdeaNodeTableModel() {
-			list = new ArrayList<String[]>();
+		public IdeaModuleTableModel() {
+			list = new ArrayList<IdeaModule>();
 		}
 
 		@Override
@@ -224,6 +213,7 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 		@Override
 		public int getRowCount() {
+			if(list==null) return 0;
 			return list.size();
 		}
 
@@ -231,32 +221,24 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 		public Object getValueAt(int rowIndex, int columnIndex) {
 			if (ideaResult == null)
 				return null;
-
-			DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) ideaResult
-					.getParentDataSet();
-			if (maSet == null)
-				return null;
-			
-			
+			IdeaModule module = list.get(rowIndex);
 
 			switch (columnIndex) {
 			case 0:
-				return list.get(rowIndex)[0];
+				return module.getGene1();
 			case 1:
-				return list.get(rowIndex)[1];
+				return module.getGene2();
 			case 2:
-				return list.get(rowIndex)[2];
+				return module.getConnType();
 			case 3:
-				return list.get(rowIndex)[3];
-			case 4:
-				return list.get(rowIndex)[4];
+				return module.getGLoc();			
 			}
 			
 			
 			return 0;
 		}
 
-		void setValues(List<String[]> list) {
+		void setValues(List<IdeaModule> list) {
 			this.list = list;
 		}
 	}
@@ -265,7 +247,7 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 	
 	private IdeaEdgeTableModel locTableModel = new IdeaEdgeTableModel();
 	private IdeaEdgeTableModel gocTableModel = new IdeaEdgeTableModel();
-	private IdeaNodeTableModel nodeTableModel= new IdeaNodeTableModel();
+	private IdeaModuleTableModel moduleTableModel= new IdeaModuleTableModel();
 	private IdeaGeneTableModel significantGeneTableModel = new IdeaGeneTableModel();
 
 	public IDEAViewer() {
@@ -273,10 +255,14 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 		JTabbedPane tabbedPane = new JTabbedPane();
 
 		JTable gocTable = new JTable(gocTableModel);
+		gocTable.setAutoCreateRowSorter(true);
 		JTable locTable = new JTable(locTableModel);
-		JTable nodeTable = new JTable(nodeTableModel);
+		locTable.setAutoCreateRowSorter(true);
+		JTable nodeTable = new JTable(moduleTableModel);
+		nodeTable.setAutoCreateRowSorter(true);
 		JTable significantGeneTable = new JTable(significantGeneTableModel);
-
+		significantGeneTable.setAutoCreateRowSorter(true);
+		
 		// significantGeneTable.setPreferredSize(new Dimension(700, 50));
 		tabbedPane.addTab("Genes of Significance", new JScrollPane(
 				significantGeneTable));
@@ -295,15 +281,11 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 		JButton saveGocButton = new JButton();
 		saveGocButton.setText("save Goc edges");
 		JButton saveNodesButton = new JButton("save significant nodes");
-		JButton saveNullButton = new JButton();
-		saveNullButton.setText("save null distribution data");
-		
 
 		bottomPanel.add(saveSigGeneButton);
 		bottomPanel.add(saveLocButton);
 		bottomPanel.add(saveGocButton);
-		bottomPanel.add(saveNodesButton);
-		bottomPanel.add(saveNullButton);		
+		bottomPanel.add(saveNodesButton);		
 		add(bottomPanel, BorderLayout.SOUTH);
 
 		saveNodesButton.addActionListener(new ActionListener() {
@@ -313,8 +295,8 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 				JFileChooser fc = new JFileChooser();
 				int returnVal = fc.showSaveDialog(IDEAViewer.this);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					saveNodeInformationFile(fc.getSelectedFile(),
-							ideaResult.getSignificantGeneList());
+					saveModuleInformation(fc.getSelectedFile(),
+							ideaResult.getModuleList());
 				}
 			}
 
@@ -326,10 +308,10 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 				JFileChooser fc = new JFileChooser();
 				int returnVal = fc.showSaveDialog(IDEAViewer.this);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) ideaResult
+					DSMicroarraySet maSet = (DSMicroarraySet) ideaResult
 							.getParentDataSet();
-					saveSignificantGenesAsFile(fc.getSelectedFile(),
-							ideaResult.getSignificantGeneList(),
+					saveNodeAsFile(fc.getSelectedFile(),
+							ideaResult.getNodeList(),
 							maSet.getMarkers());
 				}
 			}
@@ -356,64 +338,22 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 				}
 			}
 		});
-
-		saveNullButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				JFileChooser fc = new JFileChooser();
-				int returnVal = fc.showSaveDialog(IDEAViewer.this);
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					File outputFile = fc.getSelectedFile();
-					// This is where to save the file.
-					File inputFile = new File(System.getProperty("user.dir")
-							+ "\\data\\null.dat");
-					try {
-						InputStream in = new FileInputStream(inputFile);
-						OutputStream out = new FileOutputStream(outputFile);
-						int c;
-						while ((c = in.read()) != -1)
-							out.write((byte) c);
-
-						in.close();
-						out.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		});
 	}
 
-	private void saveNodeInformationFile(File file,
-			List<IdeaProbeGene> probes) {
+	private void saveModuleInformation(File file,
+			List<IdeaModule> modules) {
 		PrintWriter out = null;
 		try {
 			out = new PrintWriter(file);
 
-			out.print( "Gene1\tGene2\tconn_type\tLoc\tGoc" );
-			for (IdeaProbeGene p : probes) {// present significant node with its
-				// edges
-				if ((p.getCumLoc() < ideaResult.getPvalue()) || (p.getCumGoc() < ideaResult.getPvalue())) {
-					// nodeStr+=p.getProbeId()+"\n";
-					for (IdeaEdge e : p.getEdges()) {
-						String isLoc = "";
-						String isGoc = "";
-						String ppi = "";
-						if (e.isLoc())
-							isLoc = "X";
-						if (e.isGoc())
-							isGoc = "X";
-						if (e.getPpi() == InteractionType.PROTEIN_PROTEIN)
-							ppi = "ppi";
-						else if (e.getPpi() == InteractionType.PROTEIN_DNA)
-							ppi = "pdi";
+			out.print( "Gene1\tGene2\tconn_type\tLoc/Goc" );
+			for (IdeaModule e : modules) {// present significant node with its
+				// edges			
 
-						out.print( "\n" + e.getProbeId1() + "\t"
-								+ e.getProbeId2() + "\t" + ppi + "\t" + isLoc
-								+ "\t" + isGoc );
-					}
-				}
-			}
+				out.print( "\n" + e.getGene1() + "\t"+ e.getGene2() 
+						+ "\t" + e.getConnType() + "\t" + e.getGLoc());
+					
+			}			
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -424,19 +364,15 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 	}
 
-	private void saveAsFile(File file, List<IdeaEdge> list) {
+	private void saveAsFile(File file, List<IdeaGLoc> list) {
 		String edgeStr = "";
 
-		edgeStr += "Probe1\tGene1\tProbe2\tGene2\tMI\tDeltaMI\tNormDelta\tZ-score";
-		int output1Row = 0;
-		for (IdeaEdge e : list) {
-			edgeStr += "\n" + e.getProbeId1() + "\t"
-					+ e.getMarker1().getGeneName() + "\t" + e.getProbeId2()
-					+ "\t" + e.getMarker2().getGeneName() + "\t" + e.getMI()
-					+ "\t" + e.getDeltaCorr() + "\t" + e.getNormCorr() + "\t"
-					+ e.getzDeltaCorr();
-
-			output1Row++;
+		edgeStr += "Probe1\tGene1\tProbe2\tGene2\tMI\tDeltaMI\tZ-score";
+		for (IdeaGLoc e : list) {
+			edgeStr += "\n" + e.getProbe1() + "\t"
+					+ e.getGene1() + "\t" + e.getProbe2()
+					+ "\t" + e.getGene2() + "\t" + e.getMi()
+					+ "\t" + e.getDeltaMi() + "\t" + e.getzScore();
 		}
 
 		PrintWriter out = null;
@@ -450,34 +386,18 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 		}
 	}
 
-	private void saveSignificantGenesAsFile(File file,
-			List<IdeaProbeGene> significantGeneList,
+	private void saveNodeAsFile(File file,
+			List<IdeaNode> nodeList,
 			DSItemList<DSGeneMarker> markers) {
 		String nodeStr = "";
 		nodeStr += "Probe\tGene\tChrBand\tConn\tNes\tLoc\tLoCHits\tLoCEs\tLoCNes\tGoc\tGoCHits\tGoCEs\tGoCNes";
-		int row = 0;
-		for (IdeaProbeGene p : significantGeneList) {// present significant
-														// nodes
-			int locHits = 0;
-			int gocHits = 0;
-			for (IdeaEdge e : p.getEdges()) {
-				if (e.getDeltaCorr() < 0)
-					locHits++;
-				else if (e.getDeltaCorr() > 0)
-					gocHits++;
-			}
-			double locnes = -Math.log(p.getCumLoc());
-			double gocnes = -Math.log(p.getCumGoc());
+		for (IdeaNode p : nodeList) {// present significant nodes			
 
-			DSGeneMarker m = markers.get(p.getProbeId());
-
-			nodeStr += "\n" + p.getProbeId() + "\t" + m.getGeneName() + "\t";
-			nodeStr += "chromosomal" + "\t" + p.getEdges().size() + "\t"
-					+ p.getNes() + "\t" + p.getLocs() + "\t" + locHits + "\t"
-					+ p.getCumLoc() + "\t" + locnes + "\t" + p.getGocs() + "\t"
-					+ gocHits + "\t" + p.getCumGoc() + "\t" + gocnes;
-
-			row++;
+			nodeStr += "\n" + p.getProbe() + "\t" + p.getGene() + "\t";
+			nodeStr += p.getChrBand() + "\t" + p.getConn() + "\t"
+					+ p.getNes() + "\t" + p.getLoc() + "\t" + p.getLoCHits() + "\t"
+					+ p.getLoCEs() + "\t" + p.getLoCEs() + "\t" + p.getGoc() + "\t"
+					+ p.getGoCHits() + "\t" + p.getGoCEs() + "\t" + p.getGoCNes();
 		}
 
 		PrintWriter out = null;
@@ -491,22 +411,22 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 		}
 	}
 
-	private IdeaResult ideaResult = null;
+	private IdeaResultDataSet ideaResult = null;
 
 	@Subscribe
 	public void receive(ProjectEvent event, Object source) {
 		DSDataSet<?> dataSet = event.getDataSet();
-		if (dataSet instanceof IdeaResult) {
+		if (dataSet instanceof IdeaResultDataSet) {
 
-			ideaResult = (IdeaResult) dataSet;
+			ideaResult = (IdeaResultDataSet) dataSet;
 			gocTableModel.setValues(ideaResult.getGocList());
 			gocTableModel.fireTableDataChanged();
 			locTableModel.setValues(ideaResult.getLocList());
 			locTableModel.fireTableDataChanged();
-			nodeTableModel.setValues(ideaResult.getNodeList());
-			nodeTableModel.fireTableDataChanged();
+			moduleTableModel.setValues(ideaResult.getModuleList());
+			moduleTableModel.fireTableDataChanged();
 			significantGeneTableModel.setValues(ideaResult
-					.getSignificantGeneList());
+					.getNodeList());
 			significantGeneTableModel.fireTableDataChanged();
 		}
 	}

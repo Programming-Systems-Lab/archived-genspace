@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/geworkbench/!svn/ver/8194/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork
+/svn/geworkbench/!svn/ver/8576/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork
 END
 TableSelectionEvent.java
 K 25
@@ -31,13 +31,13 @@ ExportSelectionPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 158
-/svn/geworkbench/!svn/ver/7590/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/ExportSelectionPanel.java
+/svn/geworkbench/!svn/ver/8576/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/ExportSelectionPanel.java
 END
 CellSelectionlTableTest.java
 K 25
 svn:wc:ra_dav:version-url
 V 161
-/svn/geworkbench/!svn/ver/7481/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/CellSelectionlTableTest.java
+/svn/geworkbench/!svn/ver/8324/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/CellSelectionlTableTest.java
 END
 CellularNetWorkKnowledgeWidget.cwb.xml
 K 25
@@ -49,13 +49,7 @@ Constants.java
 K 25
 svn:wc:ra_dav:version-url
 V 147
-/svn/geworkbench/!svn/ver/7554/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/Constants.java
-END
-InteractionParticipant.java
-K 25
-svn:wc:ra_dav:version-url
-V 160
-/svn/geworkbench/!svn/ver/7021/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/InteractionParticipant.java
+/svn/geworkbench/!svn/ver/8576/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/Constants.java
 END
 TableSelectionModel.java
 K 25
@@ -63,11 +57,17 @@ svn:wc:ra_dav:version-url
 V 157
 /svn/geworkbench/!svn/ver/7481/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/TableSelectionModel.java
 END
+InteractionParticipant.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/geworkbench/!svn/ver/8469/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/InteractionParticipant.java
+END
 CellularNetworkKnowledgeWidget.java
 K 25
 svn:wc:ra_dav:version-url
 V 168
-/svn/geworkbench/!svn/ver/8194/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/CellularNetworkKnowledgeWidget.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/CellularNetworkKnowledgeWidget.java
 END
 VersionDescriptor.java
 K 25
@@ -97,7 +97,7 @@ CellularNetworkPreferencePanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 168
-/svn/geworkbench/!svn/ver/8194/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/CellularNetworkPreferencePanel.java
+/svn/geworkbench/!svn/ver/8576/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/CellularNetworkPreferencePanel.java
 END
 CellSelectionTable.java
 K 25

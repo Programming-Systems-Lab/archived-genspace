@@ -1,12 +1,10 @@
 package org.geworkbench.bison.datastructure.bioobjects;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.model.clusters.SOMCluster;
 
 /**
@@ -20,9 +18,9 @@ public class KMeansResult extends CSAncillaryDataSet {
 	private static final long serialVersionUID = -5747912398049332993L;	
 	private int clusterBy=0;
 	private ArrayList<List<String[]>> resultList = null;
-	private DSMicroarraySet<DSMicroarray> maSet;
+	private DSMicroarraySet maSet;
 	
-	public KMeansResult(final DSMicroarraySet<DSMicroarray> maSet, String name,
+	public KMeansResult(final DSMicroarraySet maSet, String name,
 			SOMCluster[][] graphResults, 
 			int clusterBy, ArrayList<List<String[]>> resultList) {
 		super(maSet, name);
@@ -31,7 +29,7 @@ public class KMeansResult extends CSAncillaryDataSet {
 		this.maSet=maSet;
 	}
 
-	public DSMicroarraySet<DSMicroarray> getMaSet(){
+	public DSMicroarraySet getMaSet(){
 		return maSet;
 	}	
 	
@@ -43,11 +41,4 @@ public class KMeansResult extends CSAncillaryDataSet {
 		return resultList;
 	}
 	
-	public File getDataSetFile() {
-		return null;
-	}
-
-	public void setDataSetFile(File file) {
-		// no-op
-	}	
 }

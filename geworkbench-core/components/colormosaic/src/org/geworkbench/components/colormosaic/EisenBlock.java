@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSAnnotatedPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
@@ -16,7 +15,7 @@ import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: EisenBlock.java 7652 2011-03-25 20:27:03Z zji $
+ * @version $Id: EisenBlock.java 8424 2011-10-19 16:34:53Z zji $
  */
 
 public final class EisenBlock {
@@ -24,7 +23,7 @@ public final class EisenBlock {
     
     private DSMatrixPattern pattern;
     private DSPanel<DSGeneMarker> panel;
-    private DSMicroarraySet<DSMicroarray> microarraySet = null;
+    private DSMicroarraySet microarraySet = null;
     /**
      * If true, a cache() operation is required before the markers are correctly returned
      */
@@ -32,7 +31,7 @@ public final class EisenBlock {
 
     private HashMap<DSGeneMarker, Object> annotCache = new HashMap<DSGeneMarker, Object>();
 
-    EisenBlock(DSMatrixPattern _pattern, DSPanel<DSGeneMarker> _panel, DSMicroarraySet<DSMicroarray> mArraySet) {
+    EisenBlock(DSMatrixPattern _pattern, DSPanel<DSGeneMarker> _panel, DSMicroarraySet mArraySet) {
         panel = _panel;
         pattern = _pattern;
         microarraySet = mArraySet;

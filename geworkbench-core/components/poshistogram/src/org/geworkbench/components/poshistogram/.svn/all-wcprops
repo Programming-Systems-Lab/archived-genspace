@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/7949/trunk/geworkbench/components/poshistogram/src/org/geworkbench/components/poshistogram
+/svn/geworkbench/!svn/ver/8637/trunk/geworkbench/components/poshistogram/src/org/geworkbench/components/poshistogram
 END
 PositionHistogramAppComponent.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 154
-/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/poshistogram/src/org/geworkbench/components/poshistogram/PositionHistogramAppComponent.cwb.xml
+/svn/geworkbench/!svn/ver/8631/trunk/geworkbench/components/poshistogram/src/org/geworkbench/components/poshistogram/PositionHistogramAppComponent.cwb.xml
 END
 PositionHistogramAppComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 151
-/svn/geworkbench/!svn/ver/7676/trunk/geworkbench/components/poshistogram/src/org/geworkbench/components/poshistogram/PositionHistogramAppComponent.java
+/svn/geworkbench/!svn/ver/8637/trunk/geworkbench/components/poshistogram/src/org/geworkbench/components/poshistogram/PositionHistogramAppComponent.java
 END
 PositionHistogramWidget.java
 K 25

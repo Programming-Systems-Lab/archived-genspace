@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels
+/svn/geworkbench/!svn/ver/8479/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels
 END
 BlastViewPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewPanel.java
+/svn/geworkbench/!svn/ver/8455/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewPanel.java
 END
 start.gif
 K 25
@@ -15,23 +15,11 @@ svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/1332/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/start.gif
 END
-BlastAppComponent.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 143
-/svn/geworkbench/!svn/ver/7668/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastAppComponent.cwb.xml
-END
 BlastViewComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 141
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewComponent.java
-END
-BlastAppComponent.java
-K 25
-svn:wc:ra_dav:version-url
-V 140
-/svn/geworkbench/!svn/ver/7338/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastAppComponent.java
+/svn/geworkbench/!svn/ver/8479/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewComponent.java
 END
 stop.gif
 K 25
@@ -39,21 +27,9 @@ svn:wc:ra_dav:version-url
 V 126
 /svn/geworkbench/!svn/ver/1332/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/stop.gif
 END
-AlgorithmMatcher.java
-K 25
-svn:wc:ra_dav:version-url
-V 139
-/svn/geworkbench/!svn/ver/7629/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/AlgorithmMatcher.java
-END
 BlastViewComponent.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 144
-/svn/geworkbench/!svn/ver/7673/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewComponent.cwb.xml
-END
-ParameterSetting.java
-K 25
-svn:wc:ra_dav:version-url
-V 139
-/svn/geworkbench/!svn/ver/7316/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/ParameterSetting.java
+/svn/geworkbench/!svn/ver/8362/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewComponent.cwb.xml
 END

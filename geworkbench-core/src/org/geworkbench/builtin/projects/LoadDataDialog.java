@@ -4,10 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -19,17 +16,16 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeMap;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -38,25 +34,19 @@ import javax.swing.filechooser.FileFilter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.geworkbench.builtin.projects.remoteresources.CaArrayFilteringDialog;
 import org.geworkbench.builtin.projects.remoteresources.RemoteResourceDialog;
-import org.geworkbench.builtin.projects.remoteresources.query.CaARRAYQueryPanel;
 import org.geworkbench.builtin.projects.util.CaARRAYPanel;
 import org.geworkbench.engine.management.ComponentRegistry;
-import org.geworkbench.events.CaArrayQueryEvent;
-import org.geworkbench.events.CaArrayQueryResultEvent;
-import org.geworkbench.events.CaArrayRequestEvent;
+import org.geworkbench.parsers.DataSetFileFormat;
 import org.geworkbench.parsers.FileFormat;
 import org.geworkbench.util.FilePathnameUtils;
-
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-
 
 /**
  *  Popup to select a file (local or remote) to open.
  *
  * @author First Genetic Trust Inc.
- * @version $Id: LoadData.java,v 1.42 2009-10-26 21:02:43 jiz Exp $
+ * @version $Id: LoadDataDialog.java 8386 2011-10-11 15:47:14Z zji $
  */
 public class LoadDataDialog extends JDialog {
 	private Log log = LogFactory.getLog(LoadDataDialog.class);
@@ -67,86 +57,53 @@ public class LoadDataDialog extends JDialog {
 
 	private static final long serialVersionUID = -1983039293757013174L;
 
-	private BorderLayout borderLayout1 = new BorderLayout();
 	private JPanel jPanel1 = new JPanel();
-	private GridLayout gridLayout1 = new GridLayout();
 	private JPanel jPanel2 = new JPanel();
-	private JPanel jPanel3 = new JPanel();
-	private FlowLayout flowLayout1 = new FlowLayout();
-	private FlowLayout flowLayout2 = new FlowLayout();
+
 	private JRadioButton localFileRadioButton = new JRadioButton();
-	private JRadioButton jRadioButton2 = new JRadioButton();
 	private JPanel jPanel4 = new JPanel();
-	private BorderLayout borderLayout2 = new BorderLayout();
+
 	private JFileChooser jFileChooser1 = new JFileChooser();
-	private JPanel jPanel5 = new JPanel();
-	private ButtonGroup buttonGroup1 = new ButtonGroup();
-	private ButtonGroup buttonGroup2 = new ButtonGroup();
-	private ButtonGroup buttonGroup3 = new ButtonGroup();
-	private JLabel jLabel3 = new JLabel();
-	private JPanel jPanel9 = new JPanel();
-	private JPanel jPanel11 = new JPanel();
-	private JPanel jPanel12 = new JPanel();
-	private JRadioButton jRadioButton6 = new JRadioButton();
-	private JLabel jLabel2 = new JLabel();
-	private JRadioButton jRadioButton5 = new JRadioButton();
-	private GridLayout gridLayout3 = new GridLayout();
-	private JRadioButton jRadioButton4 = new JRadioButton();
-	private JRadioButton jRadioButton3 = new JRadioButton();
-	private JLabel jLabel1 = new JLabel();
-	private GridLayout gridLayout4 = new GridLayout();
-	private GridBagLayout gridBagLayout1 = new GridBagLayout();
-	private JLabel jLabel4 = new JLabel();
+
 	private JTextArea experimentInfoArea = new JTextArea();
-	private GridLayout gridLayout2 = new GridLayout();
-	private GridLayout grid4 = new GridLayout();
+
 	private String format = null;
 
 	private CaARRAYPanel caArrayDisplayPanel = null;
-	private JCheckBox mergeCheckBox;
+
 	private JPanel lowerPanel;
-	private JPanel mergePanel;
 	private RemoteResourceDialog remoteResourceDialog;
 
 	private String currentRemoteResourceName;
 	private String currentDetailedResourceName; // current resource name which
 												// shows detail at the top
 												// panel.
-	private CaARRAYQueryPanel caARRAYQueryPanel;
+	private CaArrayFilteringDialog caarrayFilterQueryDialog;
 	 
-	/**
-	 * The project panel that manages the dialog box.
-	 */
-	public ProjectPanel parentProjectPanel = null;
-
 	/**
 	 * Stores the <code>FileFormat</code> objects for the supported input
 	 * formats.
 	 */
 	private FileFormat[] supportedInputFormats = null;
-	BorderLayout borderLayout7 = new BorderLayout();
-	JPanel jPanel7 = new JPanel();
 
-	JRadioButton remoteRadioButton = new JRadioButton();
-	JPanel jPanel10 = new JPanel();
+	private JRadioButton remoteRadioButton = new JRadioButton();
+	private JPanel jPanel10 = new JPanel();
 
-	String[] DEFAULTRESOUCES = new String[] { "caARRAY", "GEDP" };
-	DefaultComboBoxModel resourceModel = new DefaultComboBoxModel(
-			DEFAULTRESOUCES);
-	JComboBox jComboBox1 = new JComboBox(resourceModel);
+	private DefaultComboBoxModel resourceModel = new DefaultComboBoxModel(
+			new String[] { "caARRAY", "GEDP" } );
+	private JComboBox jComboBox1 = new JComboBox(resourceModel);
 
-	JButton addButton = new JButton();
-	JButton queryButton = new JButton();
-	JButton editButton = new JButton();
-	JButton deleteButton = new JButton();
-	BoxLayout boxLayout21;
-	JButton openRemoteResourceButton = new JButton();
+	private JButton addButton = new JButton();
+	private JButton queryButton = new JButton();
+	private JButton editButton = new JButton();
+	private JButton deleteButton = new JButton();
+
+	private JButton openRemoteResourceButton = new JButton();
 	private boolean isSynchronized = false;
-	private boolean merge;
+
 	private static final String QUERYTITLE = "Query the caARRAY Server.";
 
-	public LoadDataDialog(ProjectPanel parent) {
-		parentProjectPanel = parent;
+	public LoadDataDialog() {
 
 		try {
 			jbInit();
@@ -179,10 +136,6 @@ public class LoadDataDialog extends JDialog {
 		remoteRadioButton.setEnabled(false);
 	}
 
-	public void receive(CaArrayQueryResultEvent ce) {
-		caARRAYQueryPanel.receiveCaAraryQueryResultEvent(ce);
-	}
-
 	public void setCaARRAYServer(String url, int portnumber) {
 		caArrayDisplayPanel.setUrl(url + ":" + portnumber);
 	}
@@ -195,57 +148,26 @@ public class LoadDataDialog extends JDialog {
 		this.format = format;
 	}
 
-	public void setMerge(boolean merge) {
-		this.merge = merge;
-	}
-
 	public CaARRAYPanel getCaArrayDisplayPanel() {
 		return caArrayDisplayPanel;
 	}
 
 	private void jbInit() throws Exception {
 		this.setModal(false);
-		this.getContentPane().setLayout(borderLayout1);
+		this.getContentPane().setLayout(new BorderLayout());
 
-		jPanel1.setLayout(gridLayout1);
-		jPanel2.setLayout(flowLayout1);
-		jPanel3.setLayout(flowLayout2);
+		jPanel1.setLayout(new GridLayout());
+		jPanel2.setLayout(new FlowLayout());
 		localFileRadioButton.setText("Local File");
-		jRadioButton2.setText("GEDP");
-		jPanel4.setLayout(borderLayout2);
-		jLabel3.setFont(new java.awt.Font("Dialog", 1, 11));
-		jLabel3.setText("Select column to use");
-		grid4.setColumns(2);
-		grid4.setHgap(10);
-		grid4.setRows(1);
-		grid4.setVgap(10);
-		jPanel5.setLayout(gridBagLayout1);
-		jRadioButton6.setDebugGraphicsOptions(0);
-		jRadioButton6.setText("Mean");
-		jRadioButton6.setSelected(true);
-		jLabel2.setText("GenePix");
-		jRadioButton5.setText("Median");
-		jPanel12.setLayout(gridLayout3);
-		gridLayout3.setColumns(1);
-		gridLayout3.setRows(3);
-		jRadioButton4.setText("Signal");
-		jRadioButton4.setSelected(true);
-		jRadioButton3.setText("Log Average");
-		jLabel1.setText("Affymetrix");
-		jPanel11.setLayout(gridLayout4);
-		gridLayout4.setColumns(1);
-		gridLayout4.setRows(3);
-		jPanel9.setLayout(gridLayout2);
-		jLabel4.setMaximumSize(new Dimension(200, 15));
-		jLabel4.setMinimumSize(new Dimension(200, 15));
-		jLabel4.setPreferredSize(new Dimension(200, 15));
-		jLabel4.setText("Experiment Information:");
+
+		jPanel4.setLayout(new BorderLayout());
+
 		experimentInfoArea.setPreferredSize(new Dimension(300, 300));
 		experimentInfoArea.setText("");
 		experimentInfoArea.setEditable(false);
 		experimentInfoArea.setLineWrap(true);
 		experimentInfoArea.setWrapStyleWord(true);
-		gridLayout2.setColumns(1);
+
 		this.setResizable(true);
 
 		lowerPanel = new JPanel();
@@ -261,14 +183,20 @@ public class LoadDataDialog extends JDialog {
 
 		});
 
-		caARRAYQueryPanel = new CaARRAYQueryPanel(JOptionPane
+		caarrayFilterQueryDialog = new CaArrayFilteringDialog(JOptionPane
 				.getFrameForComponent(this), QUERYTITLE);
 		queryButton.setToolTipText("Filtering the selections.");
 		queryButton.setText("Filtering");
 		queryButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				displayQueryDialog(RemoteResourceDialog.ADD);
 
+				String remoteSourceName = (String) jComboBox1.getSelectedItem();
+				RemoteResourceDialog.setPreviousResourceName(remoteSourceName);
+				if (caarrayFilterQueryDialog == null) {
+					caarrayFilterQueryDialog = new CaArrayFilteringDialog(JOptionPane
+							.getFrameForComponent(LoadDataDialog.this), QUERYTITLE);
+				}
+				caarrayFilterQueryDialog.display(LoadDataDialog.this, remoteSourceName);
 			}
 
 		});
@@ -300,8 +228,7 @@ public class LoadDataDialog extends JDialog {
 			}
 
 		});
-		boxLayout21 = new BoxLayout(jPanel10, BoxLayout.X_AXIS);
-		jPanel10.setLayout(boxLayout21);
+		jPanel10.setLayout(new BoxLayout(jPanel10, BoxLayout.X_AXIS));
 		openRemoteResourceButton.setText("Go");
 		openRemoteResourceButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -310,34 +237,6 @@ public class LoadDataDialog extends JDialog {
 		});
 		jComboBox1.setPreferredSize(new Dimension(50, 19));
 
-		mergePanel = new JPanel();
-		mergePanel.setLayout(new BoxLayout(mergePanel, BoxLayout.X_AXIS));
-		mergeCheckBox = new JCheckBox("Merge Files", false);
-		mergeCheckBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				merge = mergeCheckBox.isSelected();
-			}
-		});
-		
-		
-		jFileChooser1.addPropertyChangeListener(JFileChooser.FILE_FILTER_CHANGED_PROPERTY, new PropertyChangeListener()
-           {
-                   public void propertyChange(PropertyChangeEvent e) 
-                   {                	 
-                	   if ( jFileChooser1.getFileFilter() !=  null )                           
-                	   {   
-                		   if (!isMergeSupported()) {
-                			   mergeCheckBox.setSelected(false);
-                		   }
-                			   
-                		   
-                	   }
-                   }
-           });
-
-		
-		
-
 		jPanel10.add(jComboBox1);
 		jPanel10.add(openRemoteResourceButton);
 		jPanel10.add(queryButton);
@@ -345,59 +244,31 @@ public class LoadDataDialog extends JDialog {
 		jPanel10.add(editButton);
 		jPanel10.add(deleteButton);
 
-		mergePanel.add(mergeCheckBox);
-		mergePanel.add(Box.createGlue());
 		lowerPanel.add(jPanel1);
 
 		this.getContentPane().add(lowerPanel, BorderLayout.SOUTH);
 
-		jPanel1.add(mergePanel);
 		jPanel1.add(jPanel2, null);
 		jPanel2.add(localFileRadioButton, null);
 
+		JPanel jPanel7 = new JPanel();
 		jPanel1.add(jPanel7, null);
 		remoteRadioButton.setText("Remote");
 		jPanel7.add(remoteRadioButton, null);
 
-		// XQ modification ends here.
 		this.getContentPane().add(jPanel4, BorderLayout.CENTER);
 		jPanel4.add(jFileChooser1, BorderLayout.CENTER);
-		jPanel5.add(jLabel3, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
-						0, 0, 0), 0, 17));
-		jPanel5.add(jPanel12, new GridBagConstraints(0, 1, 1, 1, 1.0, 1.0,
-				GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,
-				new Insets(0, 0, 23, 0), 27, 30));
-		jPanel12.add(jLabel2, null);
-		jPanel12.add(jRadioButton6, null);
-		jPanel12.add(jRadioButton5, null);
-		jPanel5.add(jPanel11, new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0,
-				GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,
-				new Insets(0, 0, 86, 0), 27, 30));
-		jPanel11.add(jLabel1, null);
-		jPanel11.add(jRadioButton4, null);
-		jPanel11.add(jRadioButton3, null);
+
+		ButtonGroup buttonGroup1 = new ButtonGroup();
 		buttonGroup1.add(localFileRadioButton);
-		buttonGroup1.add(jRadioButton2);
 		buttonGroup1.add(remoteRadioButton);
-		buttonGroup2.add(jRadioButton5);
-		buttonGroup2.add(jRadioButton6);
-		buttonGroup3.add(jRadioButton3);
-		buttonGroup3.add(jRadioButton4);
-		jPanel9.setPreferredSize(new Dimension(200, 40));
+
 		localFileRadioButton.setSelected(true);
 		localFileRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!isMergeSupported()) {
-					mergeCheckBox.setSelected(false);
-				}
+
 				switchToLocalFileDialog();
 			
-			}
-		});
-		jRadioButton2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				remoteButtonSelection_actionPerformed(e);
 			}
 		});
 
@@ -485,23 +356,6 @@ public class LoadDataDialog extends JDialog {
 	}
 
 	/**
-	 * Show filtering options.
-	 *
-	 * @param option
-	 *            int
-	 */
-	void displayQueryDialog(int option) {
-
-		String remoteSourceName = (String) jComboBox1.getSelectedItem();
-		RemoteResourceDialog.setPreviousResourceName(remoteSourceName);
-		if (caARRAYQueryPanel == null) {
-			caARRAYQueryPanel = new CaARRAYQueryPanel(JOptionPane
-					.getFrameForComponent(this), QUERYTITLE);
-		}
-		caARRAYQueryPanel.display(this, remoteSourceName);
-	}
-
-	/**
 	 * displayRemoteResourceDiolog for edit/delete an existed resource.
 	 *
 	 */
@@ -532,19 +386,6 @@ public class LoadDataDialog extends JDialog {
 			}
 		}
 
-	}
-
-	public void publishProjectNodeAddedEvent(
-			org.geworkbench.events.ProjectNodeAddedEvent event) {
-		parentProjectPanel.publishProjectNodeAddedEvent(event);
-	}
-
-	public void publishCaArrayRequestEvent(CaArrayRequestEvent event) {
-		parentProjectPanel.publishCaArrayRequestEvent(event);
-	}
-
-	public void publishCaArrayQueryEvent(CaArrayQueryEvent event) {
-		parentProjectPanel.publishCaArrayQueryEvent(event);
 	}
 
 	/**
@@ -631,11 +472,16 @@ public class LoadDataDialog extends JDialog {
 						filepath = jFileChooser1.getCurrentDirectory()
 								.getCanonicalPath();
 						setLastDataInfo(filepath, format);
-						// Delegates the actual file loading to the project
-						// panel
-						parentProjectPanel.fileOpenAction(files,
-								supportedInputFormats[i], mergeCheckBox
-										.isSelected());
+
+						if (supportedInputFormats[i] instanceof DataSetFileFormat) {
+							FileOpenHandler handler = new FileOpenHandler(files,
+									supportedInputFormats[i]);
+							handler.openFiles();
+						} else {
+							log
+									.error("unreachable branch: all FileFormat's are DataSetFileFormat");
+						}
+						
 						dispose();
 						return;
 					} catch (org.geworkbench.parsers.InputFileFormatException iffe) {
@@ -654,20 +500,6 @@ public class LoadDataDialog extends JDialog {
 		} else if (e.getActionCommand() == JFileChooser.CANCEL_SELECTION) {
 			dispose();
 		}
-	}
-
-	/**
-	 * Responds to the user selection to see the remote files.
-	 *
-	 * @param e
-	 */
-	private void remoteButtonSelection_actionPerformed(ActionEvent e) {
-		// jPanel6.getExperiments(e);
-		this.getContentPane().remove(caArrayDisplayPanel);
-		this.getContentPane().remove(jPanel4);
-		// this.getContentPane().add(jPanel6, BorderLayout.CENTER);
-		this.validate();
-		this.repaint();
 	}
 
 	private void updateCurrentView() {
@@ -761,7 +593,6 @@ public class LoadDataDialog extends JDialog {
 	private void addRemotePanel_actionPerformed(ActionEvent e) {
 		addRemotePanel();
 		lowerPanel.add(jPanel10);
-		this.mergeCheckBox.setEnabled(true);
 		this.validate();
 		this.repaint();
 	}
@@ -834,28 +665,12 @@ public class LoadDataDialog extends JDialog {
 		}
 	}
 
-	public boolean isMerge() {
-		return merge;
-	}
-	
-	public boolean isMergeSupported()
-	{		 
-		if(supportedInputFormats == null)
-		{
-			log.warn("supportedInputFormats is null, but it should not happen. Please check code." );
-			return true;
+	public void processCaAraryQueryResult(boolean succeeded, String message, TreeMap<String, Set<String>> treeMap) {
+		if(caarrayFilterQueryDialog==null) { // should never happen
+			log.error("null caarrayFilterQueryDialog");
+			return;
 		}
-		
-		FileFilter selectedFilter = jFileChooser1.getFileFilter(); 
-		for (int i = 0; i < supportedInputFormats.length; ++i) {
-			if (selectedFilter == supportedInputFormats[i].getFileFilter()) {
-	           return supportedInputFormats[i].isMergeSupported();
-			
-			}
-		}
-		
-		return false;
+		caarrayFilterQueryDialog.processCaAraryQueryResult(succeeded, message, treeMap);
 	}
-	
 	
 }

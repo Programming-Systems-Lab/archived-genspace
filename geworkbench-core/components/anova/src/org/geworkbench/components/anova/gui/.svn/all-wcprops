@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/gui
+/svn/geworkbench/!svn/ver/8561/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/gui
 END
 TabularDataViewer.cwb.xml
 K 25
@@ -19,7 +19,7 @@ AnovaAnalysisPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/gui/AnovaAnalysisPanel.java
+/svn/geworkbench/!svn/ver/8561/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/gui/AnovaAnalysisPanel.java
 END
 TableViewer.java
 K 25

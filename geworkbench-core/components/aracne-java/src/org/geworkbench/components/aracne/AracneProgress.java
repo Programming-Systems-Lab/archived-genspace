@@ -9,7 +9,7 @@ import org.geworkbench.util.ProgressBar;
 
 /**
  * @author mhall
- * @version $Id: AracneProgress.java 6503 2010-05-11 04:52:34Z zji $
+ * @version $Id: AracneProgress.java 8585 2011-12-07 20:29:45Z poddutun $
  */
 public class AracneProgress implements Observer {
 	private static Log log = LogFactory.getLog(AracneProgress.class);
@@ -32,10 +32,9 @@ public class AracneProgress implements Observer {
 	public void update(java.util.Observable ob, Object o) {
 		log.debug("initiated close");
 		aracneThread.stop();
-		log.warn("Cancelling ARACNE Analysis.");
-		
 		stopProgress();
-	}
+		ob.deleteObservers();
+    }
     
     public void startProgress(){
     	progressBar.start();

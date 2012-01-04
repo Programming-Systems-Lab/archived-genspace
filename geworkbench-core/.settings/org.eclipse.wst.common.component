@@ -6,6 +6,5 @@
         <wb-resource deploy-path="/" source-path="/annotation"/>
         <wb-resource deploy-path="/" source-path="/test"/>
         <wb-resource deploy-path="/" source-path="/components/genspace/src"/>
-        <wb-resource deploy-path="/" source-path="/components/genspace/test"/>
     </wb-module>
 </project-modules>

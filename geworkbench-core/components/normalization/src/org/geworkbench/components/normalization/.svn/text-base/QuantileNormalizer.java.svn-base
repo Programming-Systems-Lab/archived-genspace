@@ -1,16 +1,17 @@
 package org.geworkbench.components.normalization;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractAnalysis;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMutableMarkerValue;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.NormalizingAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
-import org.geworkbench.engine.management.Script;
-
-import java.util.Arrays;
-import java.util.Comparator;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 
 /**
  * <p>Copyright: Copyright (c) 2005</p>
@@ -43,6 +44,9 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
 	 * 
 	 */
 	private static final long serialVersionUID = 5147146459001795596L;
+	
+	private static Log log = LogFactory.getLog(QuantileNormalizer.class);
+	
 	// Static fields used to designate the available user option within the
     // normalizer's parameters panel.
     public static final int MARKER_PROFILE_MEAN = 0;
@@ -65,12 +69,11 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
         return AbstractAnalysis.QUANTILE_NORMALIZER_TYPE;
     }
 
-    @SuppressWarnings("unchecked")
-	public AlgorithmExecutionResults execute(Object input) {
+    public AlgorithmExecutionResults execute(Object input) {
         if (input == null || !(input instanceof DSMicroarraySet))
             return new AlgorithmExecutionResults(false, "Invalid input.", null);
 
-        DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) input;
+        DSMicroarraySet maSet = (DSMicroarraySet) input;
         
         arrayCount  = maSet.size();
         markerCount = maSet.getMarkers().size();
@@ -86,12 +89,18 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
         replaceMissingValues(maSet);
 
         for (int arrayIndex = 0; arrayIndex < arrayCount; ++arrayIndex){
-            DSMutableMarkerValue[] anArray = maSet.
+            DSMarkerValue[] anArray = maSet.
                                               get(arrayIndex).getMarkerValues();
-            for (int markerIndex = 0; markerIndex < markerCount; ++markerIndex)
-                arrays[arrayIndex][markerIndex] = anArray[markerIndex];
+            for (int markerIndex = 0; markerIndex < markerCount; ++markerIndex) {
+            	if(! (anArray[markerIndex] instanceof DSMutableMarkerValue) ) {
+            		// this may happen after future design improvement. in that case the the value need to set at microarray set level
+            		log.error("anArray[markerIndex] is "+ arrays[arrayIndex][markerIndex].getClass().getName()+", not DSMutableMarkerValue");
+            		return new AlgorithmExecutionResults(false, "mutable marker value expected", null);
+            	}
+                arrays[arrayIndex][markerIndex] = (DSMutableMarkerValue) anArray[markerIndex]; //new CSExpressionMarkerValue((float) anArray[markerIndex].getValue());
+            }
 
-            Arrays.sort(arrays[arrayIndex], new MarkerValueComparator<DSMutableMarkerValue>());
+            Arrays.sort(arrays[arrayIndex], new MarkerValueComparator<DSMarkerValue>());
         }
 
         for (int markerIndex = 0; markerIndex < markerCount; ++markerIndex){
@@ -101,7 +110,7 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
         }
 
 		// add to history
-        ProjectPanel.addHistoryDetail(maSet,((QuantileNormalizerPanel) aspp).getParamDetail());
+        HistoryPanel.addHistoryDetail(maSet,((QuantileNormalizerPanel) aspp).getParamDetail());
 
         return new AlgorithmExecutionResults(true, "No errors", input);
     }
@@ -112,7 +121,7 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
      * value of either their corresponding marker or their correponding microarray,
      * per the preference set in the parameters panel.
      */
-    private void replaceMissingValues(DSMicroarraySet<DSMicroarray> maSet){
+    private void replaceMissingValues(DSMicroarraySet maSet){
         DSMutableMarkerValue markerValue = null;
         double meanValue = 0.0;
         int nonMissingCount;
@@ -198,13 +207,7 @@ public class QuantileNormalizer extends AbstractAnalysis implements NormalizingA
         return (nonMissing != 0 ? sumOfValues / nonMissing : 0);
     }
 
-     @Script
-     public void normalize(Object input, String avgtype) {
-        ((QuantileNormalizerPanel) aspp).setAveragingType(avgtype);
-        execute(input);
-    }
-
-    static class MarkerValueComparator<T extends DSMutableMarkerValue> implements Comparator<T>{
+    static class MarkerValueComparator<T extends DSMarkerValue> implements Comparator<T>{
         public int compare(T v1, T v2){
             if (v1 != null && v2!= null){
                 if (v1.getValue() == v2.getValue())

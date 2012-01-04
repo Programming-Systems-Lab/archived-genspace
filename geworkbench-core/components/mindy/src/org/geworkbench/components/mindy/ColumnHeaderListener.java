@@ -22,7 +22,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
  *
  * @author ch2514
  * @author os2201
- * @version $Id: ColumnHeaderListener.java 7948 2011-05-31 20:12:31Z wangmen $
+ * @version $Id: ColumnHeaderListener.java 8508 2011-11-07 21:37:00Z zji $
  */
 class ColumnHeaderListener extends MouseAdapter {
 	private static Log log = LogFactory.getLog(ColumnHeaderListener.class);
@@ -63,16 +63,6 @@ class ColumnHeaderListener extends MouseAdapter {
 			headerRect.width -= 3; // Hard-coded constant
 		} else {
 			headerRect.grow(-3, 0); // Hard-coded constant
-		}
-		if (!headerRect.contains(evt.getX(), evt.getY())) {
-			// Mouse was clicked between column heads
-			// vColIndex is the column head closest to the click
-
-			// vLeftColIndex is the column head to the left of the click
-			int vLeftColIndex = vColIndex;
-			if (evt.getX() < headerRect.x) {
-				vLeftColIndex--;
-			}
 		}
 
 		if (model instanceof ModulatorModel) {

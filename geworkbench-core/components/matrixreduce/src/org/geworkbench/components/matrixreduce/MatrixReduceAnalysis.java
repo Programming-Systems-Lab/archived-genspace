@@ -1,7 +1,5 @@
 package org.geworkbench.components.matrixreduce;
 
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
@@ -19,8 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Observer;
-
-import javax.swing.ImageIcon;
 
 import org.apache.commons.collections15.map.ListOrderedMap;
 import org.apache.commons.lang.StringUtils;
@@ -49,15 +45,13 @@ import org.geworkbench.bison.datastructure.complex.pattern.matrix.DSPositionSpec
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
 import org.geworkbench.bison.model.analysis.ParamValidationResults;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.ProjectNodePostCompletedEvent;
 import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.ProgressBar;
 import org.geworkbench.util.Util;
-
-import com.larvalabs.chart.PSAMPlot;
 
 /**
  * @author John Watkinson
@@ -235,28 +229,13 @@ public class MatrixReduceAnalysis extends AbstractGridAnalysis implements
 			return new ParamValidationResults(false, errMsg);
 	}
 
-	private static double[][] convertScoresToWeights(double[][] psamData) {
-		double[][] psamddG = new double[psamData.length][4];
-		for (int i = 0; i < psamData.length; i++) {
-			double logMean = 0;
-			for (int j = 0; j < 4; j++) {
-				logMean += Math.log(psamData[i][j]);
-			}
-			logMean /= 4;
-			for (int j = 0; j < 4; j++) {
-				psamddG[i][j] = Math.log(psamData[i][j]) - logMean;
-			}
-		}
-		return psamddG;
-	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	public AlgorithmExecutionResults execute(Object input) {
 		if (input == null) {
 			return new AlgorithmExecutionResults(false, "Invalid input.", null);
 		}
 		try {
-			DSMicroarraySet<DSMicroarray> mSet = ((DSMicroarraySetView) input)
+			DSMicroarraySet mSet = ((DSMicroarraySetView) input)
 					.getMicroarraySet();
 			progressBar = ProgressBar.create(ProgressBar.INDETERMINATE_TYPE);
 			progressBar.addObserver(this);
@@ -522,23 +501,6 @@ public class MatrixReduceAnalysis extends AbstractGridAnalysis implements
 						scores[j][3] = affPos.get(j).get_t();
 					}
 					psam.setScores(scores);
-					// Generate logo
-					PSAMPlot psamPlot = new PSAMPlot(
-							convertScoresToWeights(scores));
-					psamPlot.setMaintainProportions(false);
-					psamPlot.setAxisDensityScale(4);
-					psamPlot.setAxisLabelScale(3);
-					BufferedImage image = new BufferedImage(
-							MatrixReduceViewer.IMAGE_WIDTH,
-							MatrixReduceViewer.IMAGE_HEIGHT,
-							BufferedImage.TYPE_INT_RGB);
-					Graphics2D graphics = (Graphics2D) image.getGraphics();
-					psamPlot.layoutChart(MatrixReduceViewer.IMAGE_WIDTH,
-							MatrixReduceViewer.IMAGE_HEIGHT, graphics
-									.getFontRenderContext());
-					psamPlot.paint(graphics);
-					ImageIcon psamImage = new ImageIcon(image);
-					psam.setPsamImage(psamImage);
 					dataSet.add(psam);
 				}
 				dataSet.setSequences(sequenceMap);
@@ -555,7 +517,7 @@ public class MatrixReduceAnalysis extends AbstractGridAnalysis implements
 					log.info("Saving run log to project history.");
 					progressBar.setMessage("Saving Run Log");
 					if (!StringUtils.isEmpty(mr.stderr)) {
-						ProjectPanel
+						HistoryPanel
 								.addToHistory(
 										dataSet,
 										params.toString()
@@ -575,7 +537,7 @@ public class MatrixReduceAnalysis extends AbstractGridAnalysis implements
 																		.getSequenceFile()));
 						dataSet.setRunLog(mr.stderr);
 					} else {
-						ProjectPanel
+						HistoryPanel
 								.addToHistory(
 										dataSet,
 										params.toString()
@@ -591,7 +553,7 @@ public class MatrixReduceAnalysis extends AbstractGridAnalysis implements
 					paramDescB.append("p Value: "+params.getPValue()+"\n");
 					paramDescB.append("Max Motif: "+params.getMaxMotif()+"\n");
 					paramDescB.append("Strand: "+params.getStrandString()+"\n");
-					ProjectPanel.addToHistory(dataSet, paramDescB.toString());
+					HistoryPanel.addToHistory(dataSet, paramDescB.toString());
 				}
 				progressBar.stop();
 				return new AlgorithmExecutionResults(true, "Completed", dataSet);
@@ -705,7 +667,7 @@ public class MatrixReduceAnalysis extends AbstractGridAnalysis implements
 				String runlog = ((DSMatrixReduceSet) data).getRunLog();
 				if (!StringUtils.isEmpty(runlog)) {
 					log.info("Received run log from grid service.");
-					ProjectPanel.addToHistory(data,
+					HistoryPanel.addToHistory(data,
 							"\nMatrixREDUCE Output:\n----------------------------------------\n"
 									+ runlog);
 				}

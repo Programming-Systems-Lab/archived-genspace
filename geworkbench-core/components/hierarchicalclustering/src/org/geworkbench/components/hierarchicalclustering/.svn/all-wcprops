@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/7942/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
+/svn/geworkbench/!svn/ver/8453/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 END
 HierClusterViewAppComponent.cwb.xml
 K 25
@@ -19,7 +19,7 @@ HierClusterViewAppComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 169
-/svn/geworkbench/!svn/ver/7369/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClusterViewAppComponent.java
+/svn/geworkbench/!svn/ver/8287/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClusterViewAppComponent.java
 END
 HierClusterTree.java
 K 25
@@ -49,7 +49,7 @@ HierClusterDisplay.java
 K 25
 svn:wc:ra_dav:version-url
 V 160
-/svn/geworkbench/!svn/ver/7942/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClusterDisplay.java
+/svn/geworkbench/!svn/ver/8453/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClusterDisplay.java
 END
 HierClusterFactory.java
 K 25
@@ -67,7 +67,7 @@ FastHierClustAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 163
-/svn/geworkbench/!svn/ver/7598/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/FastHierClustAnalysis.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/FastHierClustAnalysis.java
 END
 bulb_icon_gold.gif
 K 25

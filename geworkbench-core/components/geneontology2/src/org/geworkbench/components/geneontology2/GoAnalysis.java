@@ -34,11 +34,11 @@ import org.geworkbench.bison.datastructure.biocollections.GoAnalysisResult;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.views.DSMicroarraySetView;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.ProjectEvent;
@@ -49,7 +49,7 @@ import org.geworkbench.util.ProgressBar;
  * Go Term Analysis component of geWorkbench.
  *
  * @author zji
- * @version $Id: GoAnalysis.java 7963 2011-06-07 19:28:34Z zji $
+ * @version $Id: GoAnalysis.java 8426 2011-10-19 18:14:43Z zji $
  */
 public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 	/* necessary to implement ClusteringAnalysis for the AnalysisPanel to pick it up. No other effect. */
@@ -112,7 +112,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 			return new AlgorithmExecutionResults(false, e1.getMessage(), null);
 		}
 
-		DSMicroarraySetView<DSGeneMarker, CSMicroarray> microArraySetView = (DSMicroarraySetView<DSGeneMarker, CSMicroarray>) input;
+		DSMicroarraySetView<DSGeneMarker, DSMicroarray> microArraySetView = (DSMicroarraySetView<DSGeneMarker, DSMicroarray>) input;
 		GoAnalysisResult analysisResult = new GoAnalysisResult(microArraySetView.getDataSet(), "Go Terms Analysis Result");
 
 		final String studySetFileName = "STUDYSET_TEMPORARY";
@@ -276,7 +276,7 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 				log.error("Error in trying to delete the temporary file "
 						+ populationSet.getAbsolutePath());
 			}
-			ProjectPanel.addToHistory(analysisResult, generateHistoryString(
+			HistoryPanel.addToHistory(analysisResult, generateHistoryString(
 					analysisResult.getCount()));
 			return new AlgorithmExecutionResults(true,
 					"GO Term Analysis succeeded.", analysisResult);
@@ -337,9 +337,9 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 	@SuppressWarnings("unchecked")
 	@Subscribe
 	public void receive(ProjectEvent e, Object source) {
-		DSDataSet<CSMicroarray> dataset = e.getDataSet();
+		DSDataSet<? extends DSMicroarray> dataset = e.getDataSet();
 		if ((dataset != null) && (dataset instanceof CSMicroarraySet)) {
-			CSMicroarraySet<CSMicroarray> d =(CSMicroarraySet<CSMicroarray>)dataset;
+			CSMicroarraySet d =(CSMicroarraySet)dataset;
 			parameterPanel.setDataset(d);
 		}
 	}

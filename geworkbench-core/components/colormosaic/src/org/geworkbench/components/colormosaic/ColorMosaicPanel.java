@@ -81,7 +81,7 @@ import org.geworkbench.util.associationdiscovery.cluster.CSMatrixPattern;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: ColorMosaicPanel.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: ColorMosaicPanel.java 8424 2011-10-19 16:34:53Z zji $
  */
 
 @AcceptTypes({DSMicroarraySet.class, DSSignificanceResultSet.class})
@@ -154,7 +154,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
         }
     }
 
-    private void setChips(DSMicroarraySet<DSMicroarray> chips) {
+    private void setChips(DSMicroarraySet chips) {
         if (chips != null) {
             colorMosaicImage.setChips(chips);
             mainPanel.repaint();
@@ -730,7 +730,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 
     private void displayMosaic() {
         colorMosaicImage.clearPatterns();
-        DSMicroarraySet<DSMicroarray> mArraySet = colorMosaicImage.getGeneChips();
+        DSMicroarraySet mArraySet = colorMosaicImage.getGeneChips();
         if (mArraySet != null) {
             markerSet = mArraySet.getMarkers();
             int markerNo = markerSet.size();
@@ -881,7 +881,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
                 jToggleSortButton.setEnabled(false);
             	exportButton.setEnabled(false);
             	jExportItem.setEnabled(false);
-                DSMicroarraySet<DSMicroarray> set = (DSMicroarraySet<DSMicroarray>) dataFile;
+                DSMicroarraySet set = (DSMicroarraySet) dataFile;
                 if (colorMosaicImage.getChips() != set) {
                     colorMosaicImage.microarrayPanel = null;
                     colorMosaicImage.setMarkerPanel(null);
@@ -913,7 +913,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
                 significanceMode = true;
                 sigSet = (DSSignificanceResultSet<DSGeneMarker>) dataFile;                
                 significance = sigSet;         
-                DSMicroarraySet<DSMicroarray> set = sigSet.getParentDataSet();             
+                DSMicroarraySet set = sigSet.getParentDataSet();             
                 jToggleSortButton.setEnabled(true);
                 exportButton.setEnabled(true);
                 jExportItem.setEnabled(true);

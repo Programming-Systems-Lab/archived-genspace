@@ -17,13 +17,13 @@ import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
  * filtering.
  * 
  * @author zji
- * @version $Id: FilteringAnalysis.java 6402 2010-04-23 04:43:21Z zji $
+ * @version $Id: FilteringAnalysis.java 8518 2011-11-09 16:45:58Z zji $
  */
 public abstract class FilteringAnalysis extends AbstractAnalysis {
 
 	private static final long serialVersionUID = -7232110290771712959L;
 
-	protected DSMicroarraySet<DSMicroarray> maSet = null;
+	protected DSMicroarraySet maSet = null;
 
 	protected enum CriterionOption {
 		COUNT, PERCENT
@@ -40,12 +40,11 @@ public abstract class FilteringAnalysis extends AbstractAnalysis {
 		return AbstractAnalysis.IGNORE_TYPE;
 	}
 
-	@SuppressWarnings("unchecked")
 	public AlgorithmExecutionResults execute(Object input) {
 		if (input == null || !(input instanceof DSMicroarraySet))
 			return new AlgorithmExecutionResults(false, "Invalid input.", null);
 
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+		maSet = (DSMicroarraySet) input;
 
 		if (!expectedType()) {
 			return new AlgorithmExecutionResults(false,
@@ -56,6 +55,10 @@ public abstract class FilteringAnalysis extends AbstractAnalysis {
 		getParametersFromPanel();
 		remove(getMarkersToBeRemoved(maSet));
 		log.debug("finished with fitering");
+		
+		String description = "Microarray experiment. # of microarrays: " + maSet.size() + ",   "
+				+ "# of markers: " + maSet.getMarkers().size();
+		maSet.setDescription(description);
 
 		return new AlgorithmExecutionResults(true, "No errors", input);
 	}
@@ -109,10 +112,9 @@ public abstract class FilteringAnalysis extends AbstractAnalysis {
 
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet<?> input) {
+	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet input) {
 
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+		maSet = (DSMicroarraySet) input;
 
 		getParametersFromPanel();
 

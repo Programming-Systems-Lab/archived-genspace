@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -19,6 +19,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.A
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.util.AffyAnnotationUtil;
 
 /**  
  * @author Nikhil
@@ -36,7 +37,7 @@ public class SampleFileParser {
     static final char UNDEFINED = '\0';  
     char detectionStatus = UNDEFINED;
     
-	CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+	CSMicroarraySet maSet = new CSMicroarraySet();
 	private int possibleMarkers = 0; 
  	
 	/*
@@ -44,16 +45,11 @@ public class SampleFileParser {
 	 * 
 	 * @see org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	public DSMicroarraySet<DSMicroarray> getMArraySet(File file)
+	public DSMicroarraySet getMArraySet(File file)
 			throws InputFileFormatException, InterruptedIOException {   
 		
 		BufferedReader in = null;
-		final int extSeperater = '.';
 		String fileName = file.getName();
-		int dotIndex = fileName.lastIndexOf(extSeperater);
-		if (dotIndex != -1) {
-			fileName = fileName.substring(0, dotIndex);
-		}
 		maSet.setLabel(fileName);
 		String arrayName = null;
 		int m = 0;
@@ -76,7 +72,8 @@ public class SampleFileParser {
 					 	*/
 						if (header.startsWith(commentSign1) || header.startsWith(commentSign2)) {
 							if(!header.equalsIgnoreCase("!sample_table_end") && !header.equalsIgnoreCase("!sample_table_begin")){
-								maSet.addDescription(header.substring(1));
+								// to be consistent, this detailed information should be used else where instead of as "description" field
+								// maSet.setDescription(header.substring(1));
 							}
 						}	
 						String[] temp = null;
@@ -124,7 +121,7 @@ public class SampleFileParser {
 								String markerName = new String(mark[0].trim());
 								CSExpressionMarker marker = new CSExpressionMarker(m);
 								marker.setLabel(markerName);
-								maSet.getMarkerVector().add(m, marker);
+								maSet.getMarkers().add(m, marker);
 								m++;	
 							}
 						}
@@ -141,7 +138,7 @@ public class SampleFileParser {
 		
 		int i = 0;
 		CSMicroarray array = new CSMicroarray(i, possibleMarkers,
-				arrayName, null, null, false,
+				arrayName,
 				DSMicroarraySet.affyTxtType);
 		maSet.add(array);
 		//This buffered reader is used to put insert marker values for one sample at a time from the Series file
@@ -165,7 +162,8 @@ public class SampleFileParser {
 							if(valString == null){
 								Float v = Float.NaN;
 								CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(v);
-								maSet.get(0).setMarkerValue(j, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(0);
+								microarray.setMarkerValue(j, markerValue);
 								if (v.isNaN()) {
 									markerValue.setMissing(true);
 								} else {
@@ -217,7 +215,8 @@ public class SampleFileParser {
 								Float v = value;
 								CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 										v);
-								maSet.get(0).setMarkerValue(j, markerValue);
+								DSMicroarray microarray = (DSMicroarray)maSet.get(0);
+								microarray.setMarkerValue(j, markerValue);
 								if (v.isNaN()) {
 									markerValue.setMissing(true);
 								} else {
@@ -266,18 +265,17 @@ public class SampleFileParser {
 				}
 				String result = null;
 				for (int n = 0; n < possibleMarkers; n++) {
-					result = AnnotationParser.matchChipType(maSet, maSet
-							.getMarkerVector().get(i).getLabel(), false);
+					result = AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 					if (result != null) {
 						break;
 					}
 				}
 				if (result == null) {
-					AnnotationParser.matchChipType(maSet, "Unknown", true);
+					AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 				} else {
 					maSet.setCompatibilityLabel(result);
 				}
-				for (DSGeneMarker marker : maSet.getMarkerVector()) {
+				for (DSGeneMarker marker : maSet.getMarkers()) {
 					String token = marker.getLabel();
 					String[] locusResult = AnnotationParser.getInfo(token,
 							AnnotationParser.LOCUSLINK);
@@ -309,7 +307,7 @@ public class SampleFileParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		maSet.getMarkers().correctMaps();
 		return maSet;
 	}
 }

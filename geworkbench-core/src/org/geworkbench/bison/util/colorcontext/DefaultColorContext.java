@@ -12,7 +12,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust
- * @version $Id: DefaultColorContext.java 7935 2011-05-25 19:28:08Z zji $
+ * @version $Id: DefaultColorContext.java 8609 2011-12-15 17:06:38Z zji $
  */
 
 /**
@@ -31,36 +31,42 @@ public class DefaultColorContext implements ColorContext {
     public DefaultColorContext() {
     }
 
+    private transient Object lock = new Object();
+
     public Color getMarkerValueColor(DSMarkerValue mv, DSGeneMarker mInfo, float intensity) {
         if (mv == null || mv.isMissing())
             return MISSING_VALUE_COLOR;
         double value = mv.getValue();
         Color color = null;
-        float v = (float) (value * intensity / magnitude);
-        if (v > 0) {
-            v = (float)Math.min(1.0, v);
-            // color = new Color(1.0f, (1 - v), (1 - v));
-            color = new Color(v, 0, 0);
-        } else {
-            v = -v;
-            v = (float)Math.min(1.0, v);
-            // color = new Color((1- v), (1 - v), 1.0f);
-            color = new Color(0, v, 0);
+        synchronized (lock) {
+	        float v = (float) (value * intensity / magnitude);
+	        if (v > 0) {
+	            v = (float)Math.min(1.0, v);
+	            // color = new Color(1.0f, (1 - v), (1 - v));
+	            color = new Color(v, 0, 0);
+	        } else {
+	            v = -v;
+	            v = (float)Math.min(1.0, v);
+	            // color = new Color((1- v), (1 - v), 1.0f);
+	            color = new Color(0, v, 0);
+	        }
         }
         return color;
     }
 
     public void updateContext(DSMicroarraySetView<DSGeneMarker, DSMicroarray> view) {
         // Use entire set
-        DSMicroarraySet<DSMicroarray> set = view.getMicroarraySet();
-        magnitude = 0.0;
-        for (int i = 0; i < set.size(); i++) {
-            for (int j = 0; j < set.getMarkers().size(); j++) {
-                double value = Math.abs(set.getValue(j, i));
-                if (value > magnitude) {
-                    magnitude = value;
-                }
-            }
+        DSMicroarraySet set = view.getMicroarraySet();
+        synchronized (lock) {
+        	magnitude = 0.0;
+	        for (int i = 0; i < set.size(); i++) {
+	            for (int j = 0; j < set.getMarkers().size(); j++) {
+	                double value = Math.abs(set.getValue(j, i));
+	                if (value > magnitude) {
+	                    magnitude = value;
+	                }
+	            }
+	        }
         }
     }
 

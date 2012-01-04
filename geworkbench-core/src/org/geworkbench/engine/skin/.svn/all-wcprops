@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svn/geworkbench/!svn/ver/7562/trunk/geworkbench/src/org/geworkbench/engine/skin
-END
-max_grey.gif
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_grey.gif
+/svn/geworkbench/!svn/ver/8524/trunk/geworkbench/src/org/geworkbench/engine/skin
 END
 dock_active.gif
 K 25
@@ -15,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 94
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock_active.gif
 END
+max_grey.gif
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_grey.gif
+END
 ShortCutMenu.java
 K 25
 svn:wc:ra_dav:version-url
 V 98
 /svn/geworkbench/!svn/ver/6192/trunk/geworkbench/src/org/geworkbench/engine/skin/ShortCutMenu.java
-END
-min_active.gif
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min_active.gif
 END
 undock_active.gif
 K 25
@@ -33,11 +27,17 @@ svn:wc:ra_dav:version-url
 V 96
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock_active.gif
 END
-max_active.gif
+min_active.gif
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_active.gif
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min_active.gif
+END
+Skin.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/8524/trunk/geworkbench/src/org/geworkbench/engine/skin/Skin.java
 END
 dock.gif
 K 25
@@ -45,11 +45,11 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/dock.gif
 END
-Skin.java
+max_active.gif
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/7562/trunk/geworkbench/src/org/geworkbench/engine/skin/Skin.java
+V 93
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/max_active.gif
 END
 Thumbs.db
 K 25
@@ -57,17 +57,17 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/Thumbs.db
 END
-min.gif
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min.gif
-END
 undock.gif
 K 25
 svn:wc:ra_dav:version-url
 V 89
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/undock.gif
+END
+min.gif
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/skin/min.gif
 END
 max.gif
 K 25

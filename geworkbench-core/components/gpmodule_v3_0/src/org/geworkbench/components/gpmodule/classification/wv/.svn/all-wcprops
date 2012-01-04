@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/wv
+/svn/geworkbench/!svn/ver/8587/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/wv
 END
 WVClassifier.java
 K 25
@@ -13,7 +13,7 @@ WVTraining.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 150
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/wv/WVTraining.cwb.xml
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/wv/WVTraining.cwb.xml
 END
 paramDesc.html
 K 25
@@ -25,7 +25,7 @@ WVTraining.java
 K 25
 svn:wc:ra_dav:version-url
 V 147
-/svn/geworkbench/!svn/ver/7993/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/wv/WVTraining.java
+/svn/geworkbench/!svn/ver/8587/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/wv/WVTraining.java
 END
 WVTrainingPanel.java
 K 25

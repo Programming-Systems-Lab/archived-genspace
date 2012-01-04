@@ -28,7 +28,7 @@ import org.geworkbench.util.microarrayutils.MicroarrayVisualizer;
  * <p>Company: First Genetic Trust</p>
  *
  * @author Andrea Califano
- * @version $Id: MicroarrayDisplay.java 7102 2010-10-08 15:03:01Z zji $
+ * @version $Id: MicroarrayDisplay.java 8424 2011-10-19 16:34:53Z zji $
  */
 public class MicroarrayDisplay extends JPanel {
 	private static final long serialVersionUID = 8362707074970193407L;
@@ -79,7 +79,7 @@ public class MicroarrayDisplay extends JPanel {
         }
     }
 
-    void setMicroarrays(DSMicroarraySet<DSMicroarray> microarrays) {
+    void setMicroarrays(DSMicroarraySet microarrays) {
         rows = 0;
         cols = 0;
         if (microarrays != null) {

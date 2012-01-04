@@ -6,12 +6,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.bison.datastructure.properties.DSNamed;
+import org.geworkbench.engine.management.TypeMap;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
@@ -20,36 +19,10 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * <code>JTree</code> renderer to be used to render the Project Tree
  *
  * @author First Genetic Trust
- * @version $Id: TreeNodeRenderer.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: TreeNodeRenderer.java 8590 2011-12-12 22:23:41Z wangmen $
  */
 public class TreeNodeRenderer extends DefaultTreeCellRenderer {
 	private static final long serialVersionUID = -1879887785935786137L;
-
-    /**
-     * Current <code>ProjectNodeOld</code> selection
-     */
-    public ProjectNode projectNodeSelection = null;
-    /**
-     * Current <code>ImageNode</code> selection
-     */
-    public ImageNode imageNodeSelection = null;
-
-    /**
-     * Default Constructor
-     */
-    ProjectSelection selection = null;
-
-    public TreeNodeRenderer(ProjectSelection selection) {
-        this.selection = selection;
-    }
-
-    /**
-     * Clears all Node selections
-     */
-    public void clearNodeSelections() {
-        projectNodeSelection = null;
-        imageNodeSelection = null;
-    }
 
     /**
      * <code>Component</code> used for rendering on the <code>ProjectTree</code>
@@ -69,6 +42,7 @@ public class TreeNodeRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
 
+        String description = null;
         if (value == tree.getModel().getRoot()) {
             setIcon(Icons.WORKSPACE_ICON);
             setToolTipText("This is the workspace.");
@@ -77,58 +51,55 @@ public class TreeNodeRenderer extends DefaultTreeCellRenderer {
             setToolTipText("This is a project folder.");
         } else if(value.getClass() == PendingTreeNode.class){
         	setIcon(Icons.BUSY_STATIC_ICON);
+        	setToolTipText(null);
         } else {
             if (value.getClass() == DataSetNode.class) {
-                DSDataSet<? extends DSBioObject> df = ((DataSetNode) value).dataFile;
-                ImageIcon icon = ProjectPanel.getIconForType(df.getClass());
+                DSDataSet<? extends DSBioObject> df = ((DataSetNode) value).getDataset();
+                ImageIcon icon = getIconForType(df.getClass());
                 if (icon != null) {
                     setIcon(icon);
                 } else {
                     setIcon(Icons.MICROARRAYS_ICON);
                 }
-                String[] descriptions = df.getDescriptions();
-                if (df != null && (df instanceof DSMicroarraySet)){
-                	DSMicroarraySet<? extends DSMicroarray> microarraySet = (DSMicroarraySet<? extends DSMicroarray>)df;
-                    setToolTipText("# of microarrays: " +
-                            microarraySet.size() + ",   " +
-                            "# of markers: " +
-                            microarraySet.getMarkers().size() + "\n");
-                }
-                else if (descriptions.length > 0) {
-                    setToolTipText(descriptions[0]);
-                } else {
-                    setToolTipText("This is an undefined Data set");
-                }
+                description = df.getDescription();
             } else if (value.getClass() == DataSetSubNode.class) {
                 DSAncillaryDataSet<? extends DSBioObject> adf = ((DataSetSubNode) value)._aDataSet;               
-                ImageIcon icon = ProjectPanel.getIconForType(adf.getClass());
+                ImageIcon icon = getIconForType(adf.getClass());
                 if (icon != null) {
                     setIcon(icon);
                 } else {
                     setIcon(Icons.DATASUBSET_ICON);
                 }
-                String[] descriptions = adf.getDescriptions();
-                
-                if (descriptions.length > 0) {
-                    setToolTipText("This is a Ancillary Data set: " + descriptions[0]);
-                } else {                	
-	                if (adf instanceof AdjacencyMatrixDataSet){
-	                	AdjacencyMatrixDataSet adjSet = (AdjacencyMatrixDataSet) adf;                
-		                int nodeNumber = adjSet.getMatrix().getNodeNumber();
-		                int edgeNumber = adjSet.getMatrix().getConnectionNo();
-		                //edgeNumber/=2;                
-		                setToolTipText("# of nodes: "+nodeNumber+ ", # of edges: "+ edgeNumber);
-	                }
-	                else {
-	                	setToolTipText("This is an undefined Ancillary Data set");
-	                }
-                }  
+                description = adf.getDescription();
             } else if (value.getClass() == ImageNode.class) {
                 setIcon(Icons.IMAGE_ICON);
             }
+            if (description!=null) {
+                setToolTipText(description);
+            } else setToolTipText(null);
         }
 
         return this;
     }
 
+	private static ImageIcon getIconForType(Class<? extends DSNamed> type) {
+		ImageIcon icon = iconMap.get(type);
+		if (icon == null) {
+			return Icons.GENERIC_ICON;
+		} else {
+			return icon;
+		}
+	}
+
+	private static TypeMap<ImageIcon> iconMap = new TypeMap<ImageIcon>();
+
+	// Initialize default icons
+	static {
+		DefaultIconAssignments.initializeDefaultIconAssignments();
+	}
+
+	public static void setIconForType(Class<? extends DSNamed> type,
+			ImageIcon icon) {
+		iconMap.put(type, icon);
+	}
 }

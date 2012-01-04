@@ -7,7 +7,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: DSMicroarray.java 7359 2010-12-21 21:16:04Z zji $
+ * @version $Id: DSMicroarray.java 8458 2011-10-25 19:07:04Z zji $
  */
 
 /**
@@ -53,7 +53,7 @@ public interface DSMicroarray extends DSBioObject {
     /**
      * @return an array of microarray features.
      */
-    DSMutableMarkerValue[] getMarkerValues();
+    DSMarkerValue[] getMarkerValues();
 
     /**
      * @param markerInfo A marker whose value is requested.
@@ -61,7 +61,7 @@ public interface DSMicroarray extends DSBioObject {
      *         within this microarray, if the marker exists in the
      *         microarray. Null, otherwise.
      */
-    DSMutableMarkerValue getMarkerValue(DSGeneMarker markerInfo);
+    DSMarkerValue getMarkerValue(DSGeneMarker markerInfo);
 
     /**
      * @param index The relative position (index) of a marker within the microarray.
@@ -69,7 +69,7 @@ public interface DSMicroarray extends DSBioObject {
      *         <code>index</code> is non-negative and no larger than the
      *         microarray size. <code>null</code>, otherwise.
      */
-    DSMutableMarkerValue getMarkerValue(int index);
+    DSMarkerValue getMarkerValue(int index);
 
     /**
      * @return A deep copy of the microarray.

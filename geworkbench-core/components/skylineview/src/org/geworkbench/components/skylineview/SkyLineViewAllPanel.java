@@ -36,13 +36,12 @@ import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.ProjectEvent;
-import org.geworkbench.events.StructureAnalysisEvent;
 
 /**
  * SkyLine result viewer for all homology models
  * 
  * @author mw2518
- * @version $Id: SkyLineViewAllPanel.java 7445 2011-02-10 22:37:06Z zji $
+ * @version $Id: SkyLineViewAllPanel.java 8596 2011-12-14 17:30:28Z wangmen $
  */
 @AcceptTypes( { SkyLineResultDataSet.class })
 public class SkyLineViewAllPanel implements VisualPlugin, ActionListener {
@@ -63,20 +62,6 @@ public class SkyLineViewAllPanel implements VisualPlugin, ActionListener {
 	private int maxhitcols = 16;
 
 	@Subscribe
-	public void receive(StructureAnalysisEvent event, Object source) {
-		DSDataSet<?> dataset = event.getDataSet();
-		if (dataset instanceof DSProteinStructure) {
-			proteinData = (DSProteinStructure) dataset;
-			String htmlText = event.getAnalyzedStructure();
-			if (htmlText == "SkyLine results available") {
-				log.info("structure analysis event");
-				rootdir = event.getInformation();
-				showResults(proteinData);
-			}
-		}
-	}
-
-	@Subscribe
 	public void receive(ProjectEvent event, Object source) {
 		DSDataSet<?> dataset = event.getDataSet();
 		if (dataset instanceof SkyLineResultDataSet) {
@@ -88,6 +73,9 @@ public class SkyLineViewAllPanel implements VisualPlugin, ActionListener {
 
 	private void showResults(DSProteinStructure proteinData) {
 		pname = proteinData.getLabel();
+        int index = pname.lastIndexOf('.');
+        if (index != -1)
+            pname = pname.substring(0, index);
 		resultdir = rootdir + "/" + pname + "/";
 
 		try {

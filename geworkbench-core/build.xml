@@ -106,6 +106,7 @@
 				<include name="celprocessing" />
 				<include name="cgems" />
 				<include name="colormosaic" />
+				<include name="cupid" />
 				<include name="cytoscape" />
 				<include name="discovery" />
 				<include name="evidenceintegration" />
@@ -511,13 +512,23 @@
 		</jar>
 		<jar destfile="geworkbench-others.jar" basedir="${classes}" excludes="org/geworkbench/bison/**,org/geworkbench/engine/**,org/geworkbench/events/**,org/geworkbench/parsers/**,org/geworkbench/util/**,org/geworkbench/builtin/**">
 		</jar>
+
+		<!-- jar components -->
+		<subant target="jar" genericantfile="build-component.xml">
+			<dirset dir="components">
+				<include name="analysis" />
+				<include name="ttest" />
+				<include name="hierarchicalclustering" />
+				<!-- exclude the dead projets -->
+				<exclude name="skylinecontour" />
+			</dirset>
+		</subant>
 	</target>
 	<!-- ====================================================================== -->
 	<!-- CREATE   DISTRIBUTION-->
 	<!-- ====================================================================== -->
 	<target name="createDist" depends="compile, jar" description="Creating a new folder for depositing...">
 		<java classname="org.geworkbench.components.versioninfo.VersionInfoDialog" failonerror="true" >
-			<arg value="2.2.1"/>
 			<arg value="./components/versioninfo/classes/org/geworkbench/components/versioninfo/" />
 			<classpath>
 				<path refid="classpath" />

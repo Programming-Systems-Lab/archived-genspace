@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session
+/svn/geworkbench/!svn/ver/8632/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session
 END
 SessionOperationException.java
 K 25
@@ -31,5 +31,5 @@ DiscoverySession.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/8197/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/DiscoverySession.java
+/svn/geworkbench/!svn/ver/8632/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session/DiscoverySession.java
 END

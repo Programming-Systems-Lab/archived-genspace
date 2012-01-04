@@ -5,8 +5,6 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -25,12 +23,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 import javax.swing.border.EtchedBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.filechooser.FileFilter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -72,12 +67,14 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 	TableViewer tv2;
 	String[] columnNames = { "Master Regulator", "FET P-Value", "Genes in regulon",
 			"Genes in intersection set" };
-	String[] detailColumnNames = { "Genes in intersection set", /*"P-Value",*/
-			"T-value" };
+	// for label with -log10 etc, need to do something so Excel does not interpret it as a formula...
+	// Here use leading space.
+	String[] detailColumnNames = { "Genes in intersection set",
+			" -log10(P-value) * sign of t-value" };
 	DSMasterRagulatorResultSet<DSGeneMarker> MRAResultSet;
 	DetailedTFGraphViewer detailedTFGraphViewer;
 	boolean useSymbol = true;
-	private ValueModel pValueHolder = new ValueHolder("1.0");
+
 	private ValueModel tfAHolder = new ValueHolder(" ");
 	JRadioButton currentSelectedRadioButton = null;
 	private static final String EXPORTDIR = "exportDir";
@@ -145,18 +142,10 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		// end of symbol and probe set
 
 		// export part
-		JButton exportAllButton = new JButton("Export all");
+		JButton exportAllButton = new JButton("Export all targets");
 		exportAllButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double threshold = Double.valueOf(pValueHolder.getValue()
-						.toString());
-				/*int n = JOptionPane
-						.showConfirmDialog(
-								null,
-								"Would you like to use threshold when exporting genes?",
-								"Threshold?", JOptionPane.YES_NO_OPTION);*/
-				// PS: we don't need to check n, because "threshold+n" will work
-				// as checking.
+
 				try {
 					String exportFileStr = "exportALL.csv";
 					PropertiesManager properties = PropertiesManager.getInstance();
@@ -165,7 +154,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 					OWFileChooser chooser = new OWFileChooser(exportFile);
 					CSVFileFilter filter = new CSVFileFilter();
 					chooser.setFileFilter(filter);
-					chooser.setDialogTitle("Export All MRA Results");
+					chooser.setDialogTitle("Export All MRA Target Results");
 					String extension = filter.getExtension();
 					int c = chooser.showSaveDialog(MasterRegulatorViewer.this);
 					if (c == OWFileChooser.APPROVE_OPTION && chooser.getSelectedFile() != null) {
@@ -186,18 +175,13 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 							writer.write(str);
 							for (DSGeneMarker marker : MRAResultSet
 									.getGenesInTargetList(tfA)) {
-								if (MRAResultSet.getPValueOf(tfA, marker) < threshold) {
-									str = "";
-									str += marker.getLabel() + ", "
-										+ marker.getShortName() + ", ";
-//									str += new Float(MRAResultSet.getPValueOf(tfA,
-//										marker)).toString()
-//										+ ", ";
-									str += new Float(MRAResultSet.getTTestValueOf(
-										tfA, marker)).toString();
-									writer.write(str);
-									writer.newLine();
-								}
+								str = "";
+								str += marker.getLabel() + ", "
+									+ marker.getShortName() + ", ";
+								str += new Float(MRAResultSet.getValue(
+									marker)).toString();
+								writer.write(str);
+								writer.newLine();
 							}
 							writer.newLine();
 						}
@@ -215,87 +199,9 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		});
 
 		headerBuilder.append(exportAllButton);
-
-		// export selected button and function
-		JButton exportSelectedButton = new JButton("Export selected");
-		exportSelectedButton
-				.addActionListener(new java.awt.event.ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (detailedTFGraphViewer.tfA != null) {
-							try {
-								String exportFileStr = "exportTGs.csv";
-								PropertiesManager properties = PropertiesManager.getInstance();
-								String exportDir = properties.getProperty(this.getClass(), EXPORTDIR, exportFileStr);
-								File exportFile = new File(exportDir);
-								OWFileChooser chooser = new OWFileChooser(
-										exportFile);
-								CSVFileFilter filter = new CSVFileFilter();
-								chooser.setFileFilter(filter);
-								chooser.setDialogTitle("Export Selected MRA Results");
-								String extension = filter.getExtension();
-								int c = chooser
-										.showSaveDialog(MasterRegulatorViewer.this);
-								if (c == OWFileChooser.APPROVE_OPTION && chooser.getSelectedFile() != null) {
-									exportFileStr = chooser.getSelectedFile()
-											.getPath();
-									properties.setProperty(this.getClass(), EXPORTDIR, chooser.getSelectedFile().getParent());
-									if (!exportFileStr.endsWith(extension))
-										exportFileStr += extension;
-									BufferedWriter writer = new BufferedWriter(
-											new FileWriter(exportFileStr));
-									String str = "";
-									str += detailedTFGraphViewer.tfA.getLabel()
-											+ ", "
-											+ detailedTFGraphViewer.tfA
-													.getShortName() + "\n";
-									writer.write(str);
-									for (DSGeneMarker marker : MRAResultSet
-											.getGenesInTargetList(detailedTFGraphViewer.tfA)) {
-										str = "";
-										str += marker.getLabel() + ", "
-												+ marker.getShortName() + ", ";
-//										str += new Float(
-//												MRAResultSet
-//														.getPValueOf(
-//																detailedTFGraphViewer.tfA,
-//																marker))
-//												.toString()
-//												+ ", ";
-										str += new Float(
-												MRAResultSet
-														.getTTestValueOf(
-																detailedTFGraphViewer.tfA,
-																marker))
-												.toString();
-										writer.write(str);
-										writer.newLine();
-									}
-									writer.close();
-									JOptionPane.showMessageDialog(null, "File "
-											+ exportFileStr
-											+ " has been saved.",
-											"File saved.",
-											JOptionPane.INFORMATION_MESSAGE);
-								} else {
-									// user canceled
-								}
-							} catch (IOException ioe) {
-								log.error(ioe);
-							}
-						} else {
-							JOptionPane
-									.showMessageDialog(
-											null,
-											"Please select a Transcription Factor first.",
-											"Please try again.",
-											JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-				});
-		headerBuilder.append(exportSelectedButton);
-
+	 
 		// add to set button and function
-		JButton addToSetButton = new JButton("Add to set");
+		JButton addToSetButton = new JButton("Add targets to set");
 		addToSetButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (detailedTFGraphViewer.tfA == null)
@@ -306,12 +212,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 
 				for (DSGeneMarker marker : MRAResultSet
 						.getGenesInTargetList(detailedTFGraphViewer.tfA)) {
-					if (MRAResultSet.getPValueOf(detailedTFGraphViewer.tfA,
-							marker) < Double.valueOf(pValueHolder.getValue()
-							.toString()))
-						panelSignificant.add(marker,
-								new Float(MRAResultSet.getPValueOf(
-										detailedTFGraphViewer.tfA, marker)));
+					panelSignificant.add(marker, new Float(0));
 				}
 				publishSubpanelChangedEvent(new SubpanelChangedEvent<DSGeneMarker>(
 						DSGeneMarker.class, panelSignificant,
@@ -345,86 +246,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		detailTFFormBuilder.append("Master Regulator:");
 		JLabel tfALabelField = BasicComponentFactory.createLabel(tfAHolder);
 		detailTFFormBuilder.append(tfALabelField);
-		//detailTFFormBuilder.nextColumn();
-		//detailTFFormBuilder.append("P-val threshold:");
-		// detailTFFormBuilder.nextColumn();
 
-		final JTextField pValueTextField = BasicComponentFactory
-				.createTextField(pValueHolder);
-
-		ActionListener pValueActionListener = new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				try {
-					double pValue = Double.valueOf(pValueTextField.getText());
-					if ((pValue < 0) || (pValue > 1)) {
-						SwingUtilities.invokeLater(new Runnable() {
-							public void run() {
-								pValueTextField.setText("1.00");
-								pValueHolder.setValue("1.00");
-							}
-						});
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"P-Value should be a float point number between 0.00 and 1.00",
-										"Invalid P-Value",
-										JOptionPane.INFORMATION_MESSAGE);
-						return;
-					}
-				} catch (Exception e) {
-					SwingUtilities.invokeLater(new Runnable() {
-						public void run() {
-							pValueTextField.setText("1.00");
-							pValueHolder.setValue("1.00");
-						}
-					});
-					JOptionPane
-							.showMessageDialog(
-									null,
-									"P-Value should be a float point number between 0.00 and 1.00",
-									"Invalid P-Value",
-									JOptionPane.INFORMATION_MESSAGE);
-					return;
-				}
-				pValueHolder.setValue(pValueTextField.getText());
-				updateSelectedTF(MRAResultSet, detailedTFGraphViewer.tfA, tv2);
-				// tv2.updateUI();
-				detailedTFGraphViewer.setPValueFilter(Double
-						.valueOf(pValueTextField.getText()));
-			}
-		};
-		pValueTextField.addActionListener(pValueActionListener);
-		pValueTextField.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent arg0) {
-			}
-
-			public void focusLost(FocusEvent arg0) {
-				try {
-					Double.valueOf(pValueTextField.getText());
-				} catch (Exception e) {
-					SwingUtilities.invokeLater(new Runnable() {
-						public void run() {
-							pValueTextField.setText("1.00");
-							pValueHolder.setValue("1.00");
-						}
-					});
-					JOptionPane
-							.showMessageDialog(null,
-									"P-Value should be a float point number",
-									"Invalid P-Value",
-									JOptionPane.INFORMATION_MESSAGE);
-					return;
-				}
-				pValueHolder.setValue(pValueTextField.getText());
-				updateSelectedTF(MRAResultSet, detailedTFGraphViewer.tfA, tv2);
-				// tv2.updateUI();
-				detailedTFGraphViewer.setPValueFilter(Double
-						.valueOf(pValueTextField.getText()));
-			}
-		});
-
-		//detailTFFormBuilder.add(pValueTextField);
-		// detailTFFormBuilder.nextRow();
 		detailTFFormBuilder.nextLine();
 		detailTFFormBuilder.add(tv2, new CellConstraints("1,2,4,1,f,f"));
 
@@ -538,29 +360,21 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 
 
 	public Component getComponent() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
-	protected void updateSelectedTF(
+	private void updateSelectedTF(
 			DSMasterRagulatorResultSet<DSGeneMarker> mraResultSet,
 			DSGeneMarker tfA, TableViewer tv) {
 		boolean usePValue = true;
-		double pValue = Double.valueOf(pValueHolder.getValue().toString());
+
 		int records = 0;
-		int filterCounter = 0;
 		if (tfA == null)
 			return;
 		if (usePValue) {
 			DSItemList<DSGeneMarker> genesInTargetList = mraResultSet
 					.getGenesInTargetList(tfA);
-			for (Iterator<DSGeneMarker> iterator = genesInTargetList.iterator(); iterator
-					.hasNext();) {
-				DSGeneMarker geneInTargetList = (DSGeneMarker) iterator.next();
-				if (mraResultSet.getPValueOf(tfA, geneInTargetList) <= pValue)
-					filterCounter++;
-			}
-			records = filterCounter;
+			records = genesInTargetList.size();
 		} else
 			records = mraResultSet.getGenesInTargetList(tfA).size();
 		Object data[][] = new Object[records][2];
@@ -570,16 +384,14 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		for (Iterator<DSGeneMarker> iterator = genesInTargetList.iterator(); iterator
 				.hasNext();) {
 			DSGeneMarker geneInTargetList = (DSGeneMarker) iterator.next();
-			if ((!usePValue)
-					|| (mraResultSet.getPValueOf(tfA, geneInTargetList) <= pValue)) {
-				if (useSymbol)
-					data[cx][0] = geneInTargetList.getShortName();
-				else
-					data[cx][0] = geneInTargetList.getLabel();
-				//data[cx][1] = mraResultSet.getPValueOf(tfA, geneInTargetList);
-				data[cx][1] = mraResultSet.getTValue(geneInTargetList);
-				cx++;
-			}
+
+			if (useSymbol)
+				data[cx][0] = geneInTargetList.getShortName();
+			else
+				data[cx][0] = geneInTargetList.getLabel();
+
+			data[cx][1] = mraResultSet.getValue(geneInTargetList);
+			cx++;
 		}
 		// myTableModel.updateData(data);
 		tv.setTableModel(data);	 
@@ -599,25 +411,5 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		return event;
 	}
 
-	private static class CSVFileFilter extends FileFilter {
-		private static final String fileExt = ".csv";
-
-		public String getExtension() {
-			return fileExt;
-		}
-
-		public String getDescription() {
-			return "Comma Separated Value Files";
-		}
-
-		public boolean accept(File f) {
-			boolean returnVal = false;
-			if (f.isDirectory() || f.getName().endsWith(fileExt)) {
-				return true;
-			}
-
-			return returnVal;
-		}
-
-	}
+	 
 }

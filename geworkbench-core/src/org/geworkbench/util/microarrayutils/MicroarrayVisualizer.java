@@ -29,7 +29,7 @@ import org.geworkbench.events.ProjectEvent;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: MicroarrayVisualizer.java 7650 2011-03-25 19:50:36Z zji $
+ * @version $Id: MicroarrayVisualizer.java 8424 2011-10-19 16:34:53Z zji $
  */
 
 public abstract class MicroarrayVisualizer {
@@ -70,13 +70,13 @@ public abstract class MicroarrayVisualizer {
         return uniqueMarkers;
     }
 
-    public final void changeMicroArraySet(DSMicroarraySet<DSMicroarray> maSet) {
+    public final void changeMicroArraySet(DSMicroarraySet maSet) {
         dataSetView.setMicroarraySet(maSet);
         reset();
         setMicroarraySet(maSet);
     }
 
-    protected abstract void setMicroarraySet(DSMicroarraySet<? extends DSMicroarray> set);
+    protected abstract void setMicroarraySet(DSMicroarraySet set);
 
     /**
      * Just a dummy implementation rather than an abstract method so that JBuilder does not show
@@ -98,8 +98,7 @@ public abstract class MicroarrayVisualizer {
         repaint();
     }
 
-    @SuppressWarnings("unchecked")
-	@Subscribe public void receive(org.geworkbench.events.ProjectEvent projectEvent, Object source) {
+    @Subscribe public void receive(org.geworkbench.events.ProjectEvent projectEvent, Object source) {
 
         if (projectEvent.getMessage().equals(ProjectEvent.CLEARED)) {
             changeMicroArraySet(null);
@@ -109,7 +108,7 @@ public abstract class MicroarrayVisualizer {
             ProjectSelection selection = ((ProjectPanel) source).getSelection();
             DSDataSet<?> dataFile = selection.getDataSet();
             if (dataFile != null && dataFile instanceof DSMicroarraySet) {
-                changeMicroArraySet((DSMicroarraySet<DSMicroarray>) dataFile);
+                changeMicroArraySet((DSMicroarraySet) dataFile);
             } else {
                 changeMicroArraySet(null);
             }

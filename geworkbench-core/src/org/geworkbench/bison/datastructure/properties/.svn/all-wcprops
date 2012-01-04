@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/8207/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
+/svn/geworkbench/!svn/ver/8478/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
 END
 CSUnigene.java
 K 25
@@ -45,17 +45,11 @@ svn:wc:ra_dav:version-url
 V 118
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSHasActivation.java
 END
-CSDescribable.java
-K 25
-svn:wc:ra_dav:version-url
-V 118
-/svn/geworkbench/!svn/ver/7709/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/CSDescribable.java
-END
 DSDescribable.java
 K 25
 svn:wc:ra_dav:version-url
-V 116
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSDescribable.java
+V 118
+/svn/geworkbench/!svn/ver/8478/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties/DSDescribable.java
 END
 DSIdentifiable.java
 K 25

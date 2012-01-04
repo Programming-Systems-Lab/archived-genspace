@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/skylineview/src/org/geworkbench/components/skylineview
+/svn/geworkbench/!svn/ver/8596/trunk/geworkbench/components/skylineview/src/org/geworkbench/components/skylineview
 END
 SkyLineViewAllPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/7445/trunk/geworkbench/components/skylineview/src/org/geworkbench/components/skylineview/SkyLineViewAllPanel.java
+/svn/geworkbench/!svn/ver/8596/trunk/geworkbench/components/skylineview/src/org/geworkbench/components/skylineview/SkyLineViewAllPanel.java
 END
 SkyLineViewEachPanel.cwb.xml
 K 25
@@ -19,7 +19,7 @@ SkyLineViewEachPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/7445/trunk/geworkbench/components/skylineview/src/org/geworkbench/components/skylineview/SkyLineViewEachPanel.java
+/svn/geworkbench/!svn/ver/8596/trunk/geworkbench/components/skylineview/src/org/geworkbench/components/skylineview/SkyLineViewEachPanel.java
 END
 SkyLineViewAllPanel.cwb.xml
 K 25

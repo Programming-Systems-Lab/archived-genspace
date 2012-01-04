@@ -1,6 +1,5 @@
 package org.geworkbench.bison.datastructure.bioobjects.microarray;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,37 +12,25 @@ import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 public class CSMasterRegulatorResultSet <T extends DSGeneMarker> extends CSAncillaryDataSet<DSMicroarray> implements DSMasterRagulatorResultSet<T> {
 	private static final long serialVersionUID = -416598071322541982L;
 	
-	HashMap<DSGeneMarker,DSItemList<DSGeneMarker>> TF2GenesInRegulon = new HashMap<DSGeneMarker,DSItemList<DSGeneMarker>>();
-	HashMap<DSGeneMarker,DSItemList<DSGeneMarker>> TF2GenesInTargetList = new HashMap<DSGeneMarker,DSItemList<DSGeneMarker>>();
-	HashMap<DSGeneMarker,Double> TF2PValue = new HashMap<DSGeneMarker,Double>();
-	HashMap<String,Double> TFGeneAndTargetGene2PValue = new HashMap<String,Double>();
-	HashMap<String,Double> TFGeneAndTargetGene2TTestValue = new HashMap<String,Double>();
+	private HashMap<DSGeneMarker,DSItemList<DSGeneMarker>> TF2GenesInRegulon = new HashMap<DSGeneMarker,DSItemList<DSGeneMarker>>();
+	private HashMap<DSGeneMarker,DSItemList<DSGeneMarker>> TF2GenesInTargetList = new HashMap<DSGeneMarker,DSItemList<DSGeneMarker>>();
+	private HashMap<DSGeneMarker,Double> TF2PValue = new HashMap<DSGeneMarker,Double>();
 
-	DSMicroarraySet<DSMicroarray> maSet = null;
+	private final DSMicroarraySet maSet;
 	private int markerCount = 0;
 
-	private Map<DSGeneMarker, Double> tValues;
+	private Map<DSGeneMarker, Double> values;
 
-	public CSMasterRegulatorResultSet(DSMicroarraySet<DSMicroarray> parent, String label, int markerCount) {
+	public CSMasterRegulatorResultSet(final DSMicroarraySet parent, String label, int markerCount) {
 		super(parent, label);
 		this.maSet = parent;
 		this.markerCount = markerCount;
 	}
 	
-	public DSMicroarraySet<DSMicroarray> getMicroarraySet(){
+	public DSMicroarraySet getMicroarraySet(){
 		return maSet;
 	}
 	
-	public File getDataSetFile() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setDataSetFile(File file) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public void setGenesInRegulon(DSGeneMarker TF, DSItemList<DSGeneMarker> markers) {
 		TF2GenesInRegulon.put(TF, markers);
 	}
@@ -58,30 +45,6 @@ public class CSMasterRegulatorResultSet <T extends DSGeneMarker> extends CSAncil
 
 	public DSItemList<DSGeneMarker> getGenesInTargetList(DSGeneMarker TF) {
 		return TF2GenesInTargetList.get(TF);
-	}
-
-	public double getPValueOf(DSGeneMarker TF, DSGeneMarker targetGene) {
-		return TFGeneAndTargetGene2PValue.get(TF.getSerial()+"-"+targetGene.getSerial()).doubleValue();
-	}
-
-	public double getTTestValueOf(DSGeneMarker TF, DSGeneMarker targetGene) {
-		return TFGeneAndTargetGene2TTestValue.get(TF.getSerial()+"-"+targetGene.getSerial()).doubleValue();
-	}
-
-	public void setPValueOf(DSGeneMarker TF, DSGeneMarker targetGene, double pValue) {
-		TFGeneAndTargetGene2PValue.put(TF.getSerial()+"-"+targetGene.getSerial(), new Double(pValue));
-	}
-
-	public void setTTestValueOf(DSGeneMarker TF, DSGeneMarker targetGene, double tTestValue) {
-		TFGeneAndTargetGene2TTestValue.put(TF.getSerial()+"-"+targetGene.getSerial(), new Double(tTestValue));
-	}
-
-	public int getGeneNumInRegulon(DSGeneMarker TF) {
-		return getGenesInRegulon(TF).size();
-	}
-
-	public int getGeneNumInTargetList(DSGeneMarker TF) {
-		return getGenesInTargetList(TF).size();
 	}
 
 	public void setPValue(DSGeneMarker TF, double pValue) {
@@ -103,14 +66,14 @@ public class CSMasterRegulatorResultSet <T extends DSGeneMarker> extends CSAncil
 		return markerCount;
 	}
 
-	public void setTValues(Map<DSGeneMarker, Double> tValues){
-		this.tValues = tValues;
+	public void setValues(Map<DSGeneMarker, Double> values){
+		this.values = values;
 	}
 
-	public double getTValue(DSGeneMarker key) {
-		if(tValues==null) return Double.NaN;
+	public double getValue(DSGeneMarker key) {
+		if(values==null) return Double.NaN;
 		
-		Double v =  tValues.get(key);
+		Double v =  values.get(key);
 		if(v==null) v = Double.NaN;
 		return v;
 	}

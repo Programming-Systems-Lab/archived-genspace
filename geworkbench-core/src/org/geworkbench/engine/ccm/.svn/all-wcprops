@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/src/org/geworkbench/engine/ccm
+/svn/geworkbench/!svn/ver/8524/trunk/geworkbench/src/org/geworkbench/engine/ccm
 END
 ComponentConfigurationManagerWindow2.java
 K 25
@@ -25,7 +25,7 @@ ComponentConfigurationManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/7489/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManager.java
+/svn/geworkbench/!svn/ver/8524/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManager.java
 END
 ComponentConfigurationManager2.java
 K 25

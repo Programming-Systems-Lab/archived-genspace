@@ -1,8 +1,12 @@
 package org.geworkbench.components.sequenceretriever;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.HashMap;
+
+import javax.swing.JCheckBox;
 
 import org.geworkbench.bison.datastructure.biocollections.sequences.CSSequenceSet;
 import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
@@ -16,7 +20,7 @@ import org.geworkbench.util.sequences.SequenceViewWidget;
  * That new view takes effect only if it is "line view" AND it is not showing individual sequence detail.
  *  
  * @author xiaoqing
- * @version $Id: RetrievedSequencesPanel.java 6977 2010-08-10 21:18:41Z zji $
+ * @version $Id: RetrievedSequencesPanel.java 8578 2011-12-06 22:28:35Z smithken $
  */
 public final class RetrievedSequencesPanel extends SequenceViewWidget {
 	private static final long serialVersionUID = 430612435863058186L;
@@ -25,6 +29,8 @@ public final class RetrievedSequencesPanel extends SequenceViewWidget {
     	RetrievedSequenceDisplayPanel();
 
     private DSSequence selectedSequence = null;
+
+	private JCheckBox checkBoxHideDuplicate = new JCheckBox("Show only unique transcript-start sites", true);
 
     public RetrievedSequencesPanel() {
         try {
@@ -35,6 +41,15 @@ public final class RetrievedSequencesPanel extends SequenceViewWidget {
     }
 
     private void jbInit() throws Exception {
+    	jToolBar1.add(checkBoxHideDuplicate );
+    	checkBoxHideDuplicate.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				sequenceRetrieverNewLineView.refreshSequenceNameList(checkBoxHideDuplicate.isSelected());
+			}
+    		
+    	});
         
         sequenceRetrieverNewLineView.setRetrievedSequencesPanel(this);
 
@@ -163,7 +178,7 @@ public final class RetrievedSequencesPanel extends SequenceViewWidget {
         //updatePatternSeqMatches();
         isLineView = jViewComboBox.getSelectedItem().equals(LINEVIEW);
         if (isLineView) {
-            sequenceRetrieverNewLineView.initialize(sequenceDB, true);
+            sequenceRetrieverNewLineView.initialize(sequenceDB, true, checkBoxHideDuplicate.isSelected());
             flapToNewView(true);
         } else {
             seqScrollPane.getViewport().removeAll();

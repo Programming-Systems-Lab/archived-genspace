@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors
+/svn/geworkbench/!svn/ver/8600/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors
 END
 SelectorHelper.java
 K 25
@@ -13,7 +13,7 @@ SelectorPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svn/geworkbench/!svn/ver/7974/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/SelectorPanel.java
+/svn/geworkbench/!svn/ver/8600/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/SelectorPanel.java
 END
 SelectorTreeModel.java
 K 25
@@ -61,7 +61,7 @@ PhenotypePanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/7972/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/PhenotypePanel.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/PhenotypePanel.java
 END
 greenpin.gif
 K 25
@@ -85,5 +85,5 @@ GenePanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svn/geworkbench/!svn/ver/7975/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/GenePanel.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/GenePanel.java
 END

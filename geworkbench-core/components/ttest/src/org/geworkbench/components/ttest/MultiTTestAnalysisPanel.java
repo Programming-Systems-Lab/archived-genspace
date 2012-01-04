@@ -30,7 +30,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust
- * @version $Id: MultiTTestAnalysisPanel.java 7203 2010-11-18 21:43:20Z zji $
+ * @version $Id: MultiTTestAnalysisPanel.java 8424 2011-10-19 16:34:53Z zji $
  */
 
 /**
@@ -45,7 +45,7 @@ public class MultiTTestAnalysisPanel extends AbstractSaveableParameterPanel impl
 
     private JFormattedTextField pValue = new JFormattedTextField();
 
-    private DSMicroarraySet<DSMicroarray> maSet = null;
+    private DSMicroarraySet maSet = null;
 
     private ArrayList<JCheckBox> checkBoxes = new ArrayList<JCheckBox>();
 
@@ -138,7 +138,7 @@ public class MultiTTestAnalysisPanel extends AbstractSaveableParameterPanel impl
         return result;
     }
 
-    public void setMaSet(DSMicroarraySet<DSMicroarray> maSet) {
+    public void setMaSet(DSMicroarraySet maSet) {
         this.maSet = maSet;
     }
     

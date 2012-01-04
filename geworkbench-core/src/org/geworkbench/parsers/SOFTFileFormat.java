@@ -20,7 +20,7 @@ import org.geworkbench.bison.annotation.CSAnnotationContext;
 import org.geworkbench.bison.annotation.CSAnnotationContextManager;
 import org.geworkbench.bison.annotation.DSAnnotationContext;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
@@ -29,10 +29,11 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMar
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.parsers.resources.Resource;
+import org.geworkbench.util.AffyAnnotationUtil;
 
 /**  
  * @author Nikhil
- * @version $Id: SOFTFileFormat.java 7544 2011-03-04 21:09:52Z zji $
+ * @version $Id: SOFTFileFormat.java 8621 2011-12-19 19:24:01Z youmi $
  */
 public class SOFTFileFormat extends DataSetFileFormat {
 
@@ -81,6 +82,7 @@ public class SOFTFileFormat extends DataSetFileFormat {
 	public boolean checkFormat(File file) throws InterruptedIOException {
 
 		int arrayNumber = 0;
+		int headerLength = 0;
 		BufferedReader br = null;
 		
 		try {
@@ -96,15 +98,27 @@ public class SOFTFileFormat extends DataSetFileFormat {
 						&& !line.startsWith(commentSign3)) {
 					String[] checkLine = null;
 					checkLine = line.split("\t");
+
 					if (checkLine[0].equals("ID_REF")) {
-						arrayNumber = checkLine.length;
-					}
-					if (!checkLine[0].equals("ID_REF")) {
-						if (checkLine.length != arrayNumber) {
-							errorMessage = "Number of Arrays and number of marker values are not equal for the marker: "
-									+ checkLine[0];
-							return false;
+						//Header length s
+						headerLength = checkLine.length - 2;
+						for(int n = 2; n < checkLine.length; n++){
+							if(checkLine[n].contains("GSM")) {
+								arrayNumber = arrayNumber + 1;		
+							}
 						}
+					} else {
+						// Foor each marker, check number of arrays is correct.  
+						// But - Skip this check for GEO SOFT GDS Full data set, which adds annotation at end of each data line,
+						// making it not possible to tell if we have the correct number of arrays.
+						if(headerLength == arrayNumber) {
+							if ((checkLine.length - 2) != arrayNumber) {
+								errorMessage = "\nUnexpected number of arrays for marker " + checkLine[0] + 
+									":\nExpected  " + arrayNumber + ", found  " + (checkLine.length - 2) + ".";
+								return false;
+							}
+						}
+						
 					}
 				}
 				line = br.readLine();
@@ -137,7 +151,7 @@ public class SOFTFileFormat extends DataSetFileFormat {
 		
 		BufferedReader readIn = null;
 		String lineCh = null; 
-		DSMicroarraySet<DSMicroarray> maSet1 = new CSExprMicroarraySet();
+		DSMicroarraySet maSet1 = new CSMicroarraySet();
 		try {
 			readIn = new BufferedReader(new FileReader(file));
 			try {
@@ -197,7 +211,7 @@ public class SOFTFileFormat extends DataSetFileFormat {
 		return null;
 	}
 	 
-	private DSMicroarraySet<DSMicroarray> parseFile(File file)
+	private DSMicroarraySet parseFile(File file)
 		throws InputFileFormatException, InterruptedIOException {
 		
 		if (!checkFormat(file)) {
@@ -208,16 +222,11 @@ public class SOFTFileFormat extends DataSetFileFormat {
 			throw new InputFileFormatException(errorMessage);
 		}
 					
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+		CSMicroarraySet maSet = new CSMicroarraySet();
 		List<String> arrayNames = new ArrayList<String>();
 		int possibleMarkers = 0;
 		BufferedReader in = null;
-		final int extSeperater = '.';
 		String fileName = file.getName();
-		int dotIndex = fileName.lastIndexOf(extSeperater);
-		if (dotIndex != -1) {
-			fileName = fileName.substring(0, dotIndex);
-		}
 		maSet.setLabel(fileName);
 		
 		List<String> markers = new ArrayList<String>();
@@ -234,7 +243,8 @@ public class SOFTFileFormat extends DataSetFileFormat {
 					 	*/
 						if (header.startsWith(commentSign1) || header.startsWith(commentSign2)) {
 							if(!header.equalsIgnoreCase("!dataset_table_begin") && !header.equalsIgnoreCase("!dataset_table_end")) {
-								maSet.addDescription(header.substring(1));
+								// to be consistent, this detailed information should be used else where instead of as "description" field
+								//maSet.setDescription(header.substring(1));
 							}
 						}	
 						String[] tokens = null;
@@ -242,7 +252,9 @@ public class SOFTFileFormat extends DataSetFileFormat {
 							if(header.subSequence(0, 6).equals("ID_REF")){
 								tokens = header.split("\t");
 								for(int n = 2; n<tokens.length; n++){
-									arrayNames.add(tokens[n]);
+									if(tokens[n].contains("GSM")) {
+										arrayNames.add(tokens[n]);
+									}
 								}
 							}
 							if(!header.subSequence(0, 6).equals("ID_REF")){
@@ -251,7 +263,7 @@ public class SOFTFileFormat extends DataSetFileFormat {
 								String markerName = new String(mark[0].trim());
 								CSExpressionMarker marker = new CSExpressionMarker(m);
 								marker.setLabel(markerName);
-								maSet.getMarkerVector().add(m, marker);
+								maSet.getMarkers().add(m, marker);
 								m++;
 							}
 						}
@@ -268,18 +280,17 @@ public class SOFTFileFormat extends DataSetFileFormat {
 		
 		String result = null;
 		for (int i = 0; i < possibleMarkers; i++) {
-			result = AnnotationParser.matchChipType(maSet, maSet
-					.getMarkerVector().get(i).getLabel(), false);
+			result = AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 			if (result != null) {
 				break;
 			}
 		}
 		if (result == null) {
-			AnnotationParser.matchChipType(maSet, "Unknown", true);
+			AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 		} else {
 			maSet.setCompatibilityLabel(result);
 		}
-		for (DSGeneMarker marker : maSet.getMarkerVector()) {
+		for (DSGeneMarker marker : maSet.getMarkers()) {
 			String token = marker.getLabel();
 			String[] locusResult = AnnotationParser.getInfo(token,
 					AnnotationParser.LOCUSLINK);
@@ -309,7 +320,7 @@ public class SOFTFileFormat extends DataSetFileFormat {
 		for (int i = 0; i < arrayNames.size(); i++) {
 			String arrayName = arrayNames.get(i);
 			CSMicroarray array = new CSMicroarray(i, possibleMarkers,
-					arrayName, null, null, false,
+					arrayName,
 					DSMicroarraySet.affyTxtType);
 			maSet.add(array);	
 		}
@@ -335,7 +346,8 @@ public class SOFTFileFormat extends DataSetFileFormat {
 								if(valString == null){
 									Float v = Float.NaN;
 									CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(v);
-									maSet.get(k).setMarkerValue(maSet.newid[j], markerValue);
+									DSMicroarray microarray = (DSMicroarray)maSet.get(k);
+									microarray.setMarkerValue(maSet.getNewMarkerOrder()[j], markerValue);
 									if (v.isNaN()) {
 										markerValue.setMissing(true);
 									} else {
@@ -352,7 +364,8 @@ public class SOFTFileFormat extends DataSetFileFormat {
 									Float v = value;
 									CSExpressionMarkerValue markerValue = new CSExpressionMarkerValue(
 											v);
-									maSet.get(k).setMarkerValue(maSet.newid[j], markerValue);
+									DSMicroarray microarray = (DSMicroarray)maSet.get(k);
+									microarray.setMarkerValue(maSet.getNewMarkerOrder()[j], markerValue);
 									if (v.isNaN()) {
 										markerValue.setMissing(true);
 									} else {
@@ -374,13 +387,14 @@ public class SOFTFileFormat extends DataSetFileFormat {
 			e.printStackTrace();
 		}
 		labelDisp(file, maSet, arrayNames);
+		maSet.getMarkers().correctMaps();
 		return maSet;
 	}
 	
 	/*
 	 * Method adds data to Array/Phenotype Sets drop down in the selection panel 
 	 */
-	private void labelDisp(File dataFile, CSExprMicroarraySet mArraySet, List<String> arrays)
+	private void labelDisp(File dataFile, CSMicroarraySet mArraySet, List<String> arrays)
 	{ 
 		List<String> arrayNames = arrays;
 		BufferedReader read = null;
@@ -409,7 +423,8 @@ public class SOFTFileFormat extends DataSetFileFormat {
 	                    for(int m=0; m<token.length; m++){
 	                    	for(int n=2; n<arrayNames.size(); n++){
 	                    		if(token[m].contentEquals(arrayNames.get(n))){
-	                    			context.labelItem(mArraySet.get(n-2), phLabel);
+	                    			DSMicroarray microarray = (DSMicroarray)mArraySet.get(n-2);
+	                    			context.labelItem(microarray, phLabel);
 	                    		}
 	                    	}
 	                    }

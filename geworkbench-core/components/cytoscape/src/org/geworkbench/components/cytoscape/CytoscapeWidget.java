@@ -1,7 +1,6 @@
 package org.geworkbench.components.cytoscape;
 
 import giny.model.Node;
-import ding.view.DNodeView;
 import giny.view.EdgeView;
 import giny.view.GraphViewChangeEvent;
 import giny.view.GraphViewChangeListener;
@@ -26,7 +25,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
 
-import javax.swing.Box; 
+import javax.swing.Box;
 import javax.swing.JInternalFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -49,7 +48,6 @@ import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.GeneOntologyUtil;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.builtin.projects.ProjectPanel;
@@ -96,8 +94,9 @@ import cytoscape.visual.VisualStyle;
 import cytoscape.visual.calculators.Calculator;
 import cytoscape.visual.mappings.DiscreteMapping;
 import cytoscape.visual.mappings.ObjectMapping;
-import cytoscape.visual.mappings.PassThroughMapping;
-import cytoscape.visual.parsers.ObjectToString;
+import cytoscape.visual.mappings.PassThroughMapping; 
+import cytoscape.visual.converter.ValueToStringConverterManager;
+import ding.view.DNodeView;
 
 /**
  * 
@@ -105,7 +104,7 @@ import cytoscape.visual.parsers.ObjectToString;
  * 
  * @author manjunath
  * @author yc2480
- * @version $Id: CytoscapeWidget.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: CytoscapeWidget.java 8611 2011-12-15 20:50:41Z youmi $
  */
 @SuppressWarnings("deprecation")
 @AcceptTypes( { AdjacencyMatrixDataSet.class })
@@ -170,7 +169,7 @@ public class CytoscapeWidget implements VisualPlugin {
 	private CyNetworkView view = null;
 
 	private CyNetwork cytoNetwork = null;
-	DSMicroarraySet<? extends DSMicroarray> maSet = null;
+	DSMicroarraySet maSet = null;
 	boolean publishEnabled = true;
 
 	Map<String, String> interactionTypeSifMap = null;
@@ -324,13 +323,14 @@ public class CytoscapeWidget implements VisualPlugin {
 			nodeView.unselect();
 			nodeView.setSelectedPaint(defaultNodeSelectionColor);
 			String id = nodeView.getNode().getIdentifier();
+			Object geneId = attrs.getAttribute(id,"geneID");
 			String displayedName = attrs
 					.getStringAttribute(id, "displayedName");
 			log.debug("Check if " + selected + " contains " + displayedName);
-			if (selected.contains(displayedName)) {
+			if (selected.contains(displayedName.toUpperCase())&& geneId != null && !geneId.toString().trim().equals("")) {
 				if (e.getType() == GeneTaggedEvent.USE_VISUAL_PROPERTY) {
-					attrs.setAttribute(id, NODE_FILL_COLOR, ObjectToString
-							.getStringValue(color));
+					attrs.setAttribute(id, NODE_FILL_COLOR, ValueToStringConverterManager.manager.toString(color));
+						 
 
 					nodeView.setUnselectedPaint(color);
 					// nodeView.setSelectedPaint(color);
@@ -377,10 +377,10 @@ public class CytoscapeWidget implements VisualPlugin {
 	public void receive(org.geworkbench.events.ProjectEvent e, Object source) {
 		int adjMatrixId;
 		try {
-			DSDataSet<?> dataSet = e.getDataSet();			
+			DSDataSet<?> dataSet = e.getDataSet();
 
 			if (dataSet instanceof AdjacencyMatrixDataSet) {
-            
+
 				adjSet = (AdjacencyMatrixDataSet) dataSet;
 				AdjacencyMatrix adjMatrix = adjSet.getMatrix();
 				adjMatrixId = adjMatrix.hashCode();
@@ -394,18 +394,24 @@ public class CytoscapeWidget implements VisualPlugin {
 
 				safeEdgeNum = GlobalPreferences.getInstance()
 						.getMAX_INTERACTION_NUMBER();
-				
+
 				CardLayout cl = (CardLayout) (masterPanel.getLayout());
-				
+
 				if (!dataSetIDs.contains(adjSet.getID())) {
 					dataSetIDs.add(adjSet.getID());
 					if ((edgeNumber + nodeNumber) > safeEdgeNum) {
-						String theMessage = "This network has " + nodeNumber + " nodes and " + edgeNumber +  " edges, which may be too large to display in Cytoscape. \nAn alternate, text view is available instead.";
-						Object[] viewerChoices = { "View as text", "View in Cytoscape"};
+						String theMessage = "This network has "
+								+ nodeNumber
+								+ " nodes and "
+								+ edgeNumber
+								+ " edges, which may be too large to display in Cytoscape. \nAn alternate, text view is available instead.";
+						Object[] viewerChoices = { "View as text",
+								"View in Cytoscape" };
 						int result = JOptionPane.showOptionDialog(
 								(Component) null, theMessage, "Warning",
-								JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
-								null, viewerChoices, viewerChoices[0]);
+								JOptionPane.DEFAULT_OPTION,
+								JOptionPane.WARNING_MESSAGE, null,
+								viewerChoices, viewerChoices[0]);
 						if (result == JOptionPane.NO_OPTION)
 							createNetwork = true;
 						else {
@@ -437,38 +443,36 @@ public class CytoscapeWidget implements VisualPlugin {
 
 					}
 
-					if ((edgeNumber + nodeNumber)> safeEdgeNum) {
+					if ((edgeNumber + nodeNumber) > safeEdgeNum) {
 						createNetwork = false;
 					}
 
 				}
 
 				if (!found) {
-					
+
 					if (createNetwork == false) {
-						adjSet.setNetworkName(adjSet.getNetworkName()+".text");
-						
-						
-						StringBuffer sb = new StringBuffer("This network has " + nodeNumber + " nodes and " + edgeNumber + " edges: \n\n");
-							 
-						 
+						adjSet
+								.setNetworkName(adjSet.getNetworkName()
+										+ ".text");
+
+						StringBuffer sb = new StringBuffer("This network has "
+								+ nodeNumber + " nodes and " + edgeNumber
+								+ " edges: \n\n");
+
 						for (AdjacencyMatrix.Node node1 : adjMatrix.getNodes()) {
 							sb.append(adjSet.getExportName(node1) + "\t");
 
-							for (AdjacencyMatrix.Edge edge : adjMatrix.getEdges(node1)) {
-								sb.append(adjSet.getExportName(edge.node2) + "\t"
-										+ edge.info.value + "\t");
+							for (AdjacencyMatrix.Edge edge : adjMatrix
+									.getEdges(node1)) {
+								sb.append(adjSet.getExportName(edge.node2)
+										+ "\t" + edge.info.value + "\t");
 							}
 							sb.append("\n");
 						}
-						
-						
-						
-						
+
 						textArea.setText(sb.toString());
-						
-						 
-					  
+
 						cl.show(masterPanel, SAFE_CARD);
 						return;
 					} else {
@@ -534,8 +538,11 @@ public class CytoscapeWidget implements VisualPlugin {
 		if (markerSet != null) {
 			for (DSGeneMarker marker : markerSet) {
 				try {
-					results.addAll(AnnotationParser.getSwissProtIDs(marker
-							.getLabel()));
+					String[] ids = AnnotationParser.getInfo(marker
+							.getLabel(), AnnotationParser.SWISSPROT);
+					for (String s : ids) {
+						results.add(s.trim());
+					}
 				} catch (Exception e) {
 					continue;
 				}
@@ -551,13 +558,13 @@ public class CytoscapeWidget implements VisualPlugin {
 			String typeName = interactionTypeSifMap.get(type);
 			if (typeName == null || typeName.trim().equals(""))
 				typeName = type;
-		 
+
 			CyEdge e1 = Cytoscape.getCyEdge(n1, n2, "interaction", type, true);
 			CyEdge e2 = Cytoscape.getCyEdge(n2, n1, "interaction", type, false);
-		 		 
-			if (e2 == null ||!cytoNetwork.containsEdge(e2))
+
+			if (e2 == null || !cytoNetwork.containsEdge(e2))
 				cytoNetwork.addEdge(e1);
-			
+
 			try {
 				Cytoscape.getEdgeAttributes().setAttribute(e1.getIdentifier(),
 						"type", typeName);
@@ -574,18 +581,17 @@ public class CytoscapeWidget implements VisualPlugin {
 					.getIdentifier()
 					+ " () " + n2.getIdentifier(), n2.getIdentifier(), "");
 			// For Aracne edges, if a reverse edge exist, we skip it.
-			if (!cytoNetwork.edgeExists(n2, n1))  
+			if (!cytoNetwork.edgeExists(n2, n1))
 				// Aracne result will not have an type,
 				// so we should check it here.
 				cytoNetwork.addEdge(e);
-			 
+
 			e.setIdentifier(n1.getIdentifier() + " () " + n2.getIdentifier());
 
 		}
 
 	}
 
-	@SuppressWarnings("unchecked")
 	private CyNode createNode(AdjacencyMatrix.Node node) {
 
 		String nodeId = null;
@@ -596,7 +602,8 @@ public class CytoscapeWidget implements VisualPlugin {
 			marker = node.marker;
 			nodeId = node.marker.getGeneName().trim();
 		} else if (node.type == NodeType.GENE_SYMBOL) {
-			marker = maSet.getMarkers().get(node.stringId);
+			if (node.intId != 0)
+				marker = maSet.getMarkers().get(node.stringId);
 			nodeId = node.stringId;
 		} else if (node.type == NodeType.STRING) {
 			nodeId = node.stringId;
@@ -607,7 +614,7 @@ public class CytoscapeWidget implements VisualPlugin {
 					+ ")";
 			nodeId = str;
 		}
- 
+
 		CyNode cyNode = null;
 
 		if (nodeId != null && !nodeId.trim().equals("")) {
@@ -627,11 +634,12 @@ public class CytoscapeWidget implements VisualPlugin {
 			Cytoscape.getNodeAttributes().setAttribute(cyNode.getIdentifier(),
 					"displayedName", nodeId);
 
-		}  
+		}
 
 		try {
 
-			if (node.type == NodeType.GENE_SYMBOL || node.type == NodeType.MARKER) {
+			if (node.type == NodeType.GENE_SYMBOL
+					|| node.type == NodeType.MARKER) {
 				Cytoscape.getNodeAttributes().setAttribute(
 						cyNode.getIdentifier(), "geneName", nodeId);
 			}
@@ -660,7 +668,7 @@ public class CytoscapeWidget implements VisualPlugin {
 					if (node.type == NodeType.MARKER)
 						markerSet.add(marker);
 					else if (node.type == NodeType.GENE_SYMBOL) {
-						markerSet = ((CSMicroarraySet<DSMicroarray>) maSet)
+						markerSet = ((CSMicroarraySet) maSet)
 								.getMarkers().getMatchingMarkers(marker);
 					}
 					Set<String> swissProtIDs = getSwissProtIDsForMarkers(markerSet);
@@ -682,8 +690,8 @@ public class CytoscapeWidget implements VisualPlugin {
 			// we only try to add what we can add, if there's no
 			// data, we add nothing
 		}
-		//if (n1new) {
-		if (!cytoNetwork.nodesList().contains(cyNode)){
+		// if (n1new) {
+		if (!cytoNetwork.nodesList().contains(cyNode)) {
 			cytoNetwork.addNode(cyNode);
 			log.debug("I add " + cyNode.getIdentifier());
 		}
@@ -697,7 +705,7 @@ public class CytoscapeWidget implements VisualPlugin {
 		List<AdjacencyMatrix.Edge> edges = adjMatrix.getEdges(node1);
 
 		if (edges == null || edges.size() == 0) {
-			createNode(node1);		 
+			createNode(node1);
 			return;
 		}
 
@@ -837,8 +845,7 @@ public class CytoscapeWidget implements VisualPlugin {
 
 		safePanel.setLayout(new BorderLayout());
 		safePanel.add(safePanelContent, BorderLayout.CENTER);
-		 
-		
+
 	}
 
 	private JTextArea textArea = null;
@@ -1045,22 +1052,25 @@ public class CytoscapeWidget implements VisualPlugin {
 				EdgeView edgeView = (EdgeView) edgeIter.next();
 				view.showGraphObject(edgeView);
 			}
-
+			Cytoscape.getDesktop().getCytoPanel(SwingConstants.WEST).setSelectedIndex(0);
 			Cytoscape.getCurrentNetworkView().redrawGraph(false, true);
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public DSPanel<DSGeneMarker> nodesToMarkers(Collection<Node> nodes) {
 
 		DSPanel<DSGeneMarker> selectedMarkers = new CSPanel<DSGeneMarker>(
 				"Selected Genes", "Cytoscape");
 
+		CyAttributes nodeAttrs = Cytoscape.getNodeAttributes();
+
 		for (Node node : nodes) {
 			if (node instanceof CyNode) {
 				String id = node.getIdentifier();
-
-				Vector<DSGeneMarker> markerSet = ((CSMicroarraySet<DSMicroarray>) maSet)
+				Object geneId = nodeAttrs.getAttribute(id, "geneID");
+				if (geneId == null || geneId.toString().trim().equals(""))
+					continue;
+				Vector<DSGeneMarker> markerSet = ((CSMicroarraySet) maSet)
 						.getMarkers().getMatchingMarkers(id);
 				selectedMarkers.addAll(markerSet);
 			}

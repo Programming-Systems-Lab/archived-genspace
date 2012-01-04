@@ -6,13 +6,13 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMutableMarkerValue;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.NormalizingAnalysis;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 
 /**
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: ThresholdNormalizer.java 7453 2011-02-11 21:07:52Z zji $
+ * @version $Id: ThresholdNormalizer.java 8424 2011-10-19 16:34:53Z zji $
  */
 
 /**
@@ -42,12 +42,11 @@ public class ThresholdNormalizer extends AbstractAnalysis implements Normalizing
         return THRESHOLD_NORMALIZER_TYPE;
     }
 
-    @SuppressWarnings("unchecked")
-	public AlgorithmExecutionResults execute(Object input) {
+    public AlgorithmExecutionResults execute(Object input) {
         if (input == null || !(input instanceof DSMicroarraySet))
             return new AlgorithmExecutionResults(false, "Invalid input.", null);
 
-        DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) input;
+        DSMicroarraySet maSet = (DSMicroarraySet) input;
         // Collect the parameters needed for the execution of the normalizer
         threshold = ((ThresholdNormalizerPanel) aspp).getCutoffValue();
         thresholdType = ((ThresholdNormalizerPanel) aspp).getCutoffType();
@@ -79,7 +78,7 @@ public class ThresholdNormalizer extends AbstractAnalysis implements Normalizing
         }
 
         // add to history
-        ProjectPanel.addHistoryDetail(maSet,((ThresholdNormalizerPanel) aspp).getParamDetail());
+        HistoryPanel.addHistoryDetail(maSet,((ThresholdNormalizerPanel) aspp).getParamDetail());
 
         return new AlgorithmExecutionResults(true, "No errors", input);
     }

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/8211/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce
+/svn/geworkbench/!svn/ver/8584/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce
 END
 MatrixReduceAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 142
-/svn/geworkbench/!svn/ver/8211/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce/MatrixReduceAnalysis.java
+/svn/geworkbench/!svn/ver/8440/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce/MatrixReduceAnalysis.java
 END
 MatrixReduceViewer.cwb.xml
 K 25
@@ -25,7 +25,7 @@ SequenceGraph.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/geworkbench/!svn/ver/7762/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce/SequenceGraph.java
+/svn/geworkbench/!svn/ver/8584/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce/SequenceGraph.java
 END
 MatrixReduceParamPanel.java
 K 25
@@ -37,5 +37,5 @@ MatrixReduceViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/7762/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce/MatrixReduceViewer.java
+/svn/geworkbench/!svn/ver/8584/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce/MatrixReduceViewer.java
 END

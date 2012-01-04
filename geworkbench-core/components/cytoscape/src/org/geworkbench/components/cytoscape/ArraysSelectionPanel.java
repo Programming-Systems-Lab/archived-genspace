@@ -2,7 +2,7 @@ package org.geworkbench.components.cytoscape;
 
 /**
  * @author my2248
- * @version $Id: ArraysSelectionPanel.java 8187 2011-07-30 04:31:30Z zji $ 
+ * @version $Id: ArraysSelectionPanel.java 8424 2011-10-19 16:34:53Z zji $ 
  */
 
 import giny.model.Node;
@@ -62,7 +62,7 @@ public class ArraysSelectionPanel extends JPanel   {
 	 
 	private ProgressBar computePb = null;
 	 
-	private final DSMicroarraySet<? extends DSMicroarray> maSet;
+	private final DSMicroarraySet maSet;
 	private CalculationWorker worker = null;
 
 	public ArraysSelectionPanel(JDialog parent) {
@@ -129,12 +129,16 @@ public class ArraysSelectionPanel extends JPanel   {
 		double[] values = null;
 		
 		String nodeId = node.getIdentifier();
-		 
+		Object geneId = attrs.getAttribute(nodeId,"geneID");						
+		if (geneId == null || geneId.toString().trim().equals(""))
+		   return null;
+		
 		String nodeDisplayedName = attrs.getStringAttribute(nodeId, "displayedName");
 	     
 		Vector<DSGeneMarker> markerSet = null;	 
 	    
-		markerSet = ((CSMicroarraySet<DSMicroarray>)maSet).getMarkers().getMatchingMarkers(nodeDisplayedName);
+		
+		markerSet = ((CSMicroarraySet)maSet).getMarkers().getMatchingMarkers(nodeDisplayedName);
 		 
 	    if (markerSet == null || markerSet.size() == 0)
 			return null;
@@ -151,7 +155,7 @@ public class ArraysSelectionPanel extends JPanel   {
 			}
 		} else // use all arrays
 		{
-			int num = maSet.getRow(0).length;
+			int num = maSet.size();
 
 			values = new double[num];
 			double[] valuesForOneArray = new double[markerSet.size()];

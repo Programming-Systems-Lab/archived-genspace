@@ -1,14 +1,14 @@
 10
 
 dir
-8215
+8644
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/sequence
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-03-14T15:20:27.814396Z
-7579
+2011-11-02T13:48:00.049131Z
+8478
 zji
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-fe1a05f895d004741948ebf0601446d2
-2011-03-14T15:20:27.814396Z
-7579
-zji
+2011-12-29T06:11:38.000000Z
+07fecaa28d19919c289edb2388ffcd40
+2011-10-24T21:55:30.800329Z
+8454
+youmi
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3610
+3280
 
 DSSequence.java
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
+2011-08-17T00:10:50.000000Z
 84580a1b8ba862077baac1ad0cf8eaf4
 2008-05-06T19:15:21.000000Z
 3762
@@ -100,10 +100,78 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-e3a5a41da05de05260e8e4d54527d40d
-2011-03-12T15:27:59.845248Z
-7572
+2011-12-29T06:11:38.000000Z
+ef5bfdb8987b3cc3b17c3c5503a499e5
+2011-10-24T21:55:30.800329Z
+8454
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+833
+
+BlastObj.java
+file
+
+
+
+
+2011-12-29T06:11:38.000000Z
+24c06bc380cf9729b02e8976c9db4b08
+2011-10-24T21:55:30.800329Z
+8454
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12141
+
+CSSequence.java
+file
+
+
+
+
+2011-12-29T06:11:38.000000Z
+a523b488485af09c9c89839eae764c53
+2011-11-02T13:48:00.049131Z
+8478
 zji
 has-props
 
@@ -126,39 +194,5 @@ has-props
 
 
 
-536
-
-CSSequence.java
-file
-
-
-
-
-2011-08-02T04:31:42.000000Z
-5785c766e55c78e38a5149045574b0a9
-2008-05-06T19:15:21.000000Z
-3762
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4897
+4555
 

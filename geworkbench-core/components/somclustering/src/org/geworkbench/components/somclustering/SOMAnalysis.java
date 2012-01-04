@@ -21,7 +21,7 @@ import org.geworkbench.bison.model.clusters.Cluster;
 import org.geworkbench.bison.model.clusters.DefaultSOMCluster;
 import org.geworkbench.bison.model.clusters.LeafSOMCluster;
 import org.geworkbench.bison.model.clusters.SOMCluster;
-import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.util.ProgressBar;
 
 /**
@@ -29,7 +29,7 @@ import org.geworkbench.util.ProgressBar;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author First Genetic Trust
- * @version $Id: SOMAnalysis.java 7398 2011-02-01 15:14:56Z zji $
+ * @version $Id: SOMAnalysis.java 8503 2011-11-07 21:20:44Z zji $
  */
 
 /**
@@ -254,7 +254,7 @@ public class SOMAnalysis extends AbstractGridAnalysis implements
 		pb.stop();
 		CSSOMClusterDataSet dataSet = new CSSOMClusterDataSet(results,
 				"SOM Clusters", data);
-		ProjectPanel.addToHistory(dataSet, this.generateDataSetHistory(dim_x, dim_y, iterations, is_neighborhood_bubble, radius, alpha, data));
+		HistoryPanel.addToHistory(dataSet, this.generateDataSetHistory(dim_x, dim_y, iterations, is_neighborhood_bubble, radius, alpha, data));
 		return new AlgorithmExecutionResults(true, "SOM Clustering results",
 				dataSet);
 	}
@@ -535,12 +535,10 @@ public class SOMAnalysis extends AbstractGridAnalysis implements
 		}
 
 		int k = number_of_samples;
-		int n = 0;
 		double sum = 0.0;
 		for (int i = 0; i < k && !stopAlgorithm; i++) {
 			if ((!Float.isNaN(matrix[g1][i])) && (!Float.isNaN(M[g2][i]))) {
 				sum += Math.pow((matrix[g1][i] - M[g2][i]), 2);
-				n++;
 			}
 		}
 		return (float) (Math.sqrt(sum) * factor);

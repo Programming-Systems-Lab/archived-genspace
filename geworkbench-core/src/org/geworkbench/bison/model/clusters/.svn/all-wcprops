@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters
-END
-SOMCluster.java
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/SOMCluster.java
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/model/clusters
 END
 NonRecursiveClusterSet.java
 K 25
@@ -15,17 +9,23 @@ svn:wc:ra_dav:version-url
 V 117
 /svn/geworkbench/!svn/ver/6940/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/NonRecursiveClusterSet.java
 END
-DefaultSOMCluster.java
+SOMCluster.java
 K 25
 svn:wc:ra_dav:version-url
-V 112
-/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/DefaultSOMCluster.java
+V 105
+/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/SOMCluster.java
 END
 AbstractCluster.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/geworkbench/!svn/ver/7427/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/AbstractCluster.java
+END
+DefaultSOMCluster.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/DefaultSOMCluster.java
 END
 DSClusterDataSet.java
 K 25
@@ -49,7 +49,7 @@ CSHierClusterDataSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/CSHierClusterDataSet.java
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/CSHierClusterDataSet.java
 END
 DSHierClusterDataSet.java
 K 25
@@ -79,7 +79,7 @@ CSSOMClusterDataSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/CSSOMClusterDataSet.java
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/model/clusters/CSSOMClusterDataSet.java
 END
 DSSOMClusterDataSet.java
 K 25

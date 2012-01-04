@@ -1,6 +1,5 @@
 package org.geworkbench.bison.datastructure.bioobjects.microarray;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,7 +16,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author John Watkinson
- * @version $Id: CSSignificanceResultSet.java 7994 2011-06-15 18:44:41Z wangmen $
+ * @version $Id: CSSignificanceResultSet.java 8481 2011-11-02 15:43:58Z zji $
  */
 public class CSSignificanceResultSet <T extends DSGeneMarker> extends CSAncillaryDataSet<DSMicroarray> implements DSSignificanceResultSet<T> {
 
@@ -52,7 +51,6 @@ public class CSSignificanceResultSet <T extends DSGeneMarker> extends CSAncillar
     private String[][] labels = new String[2][];
     private DSPanel<T> panel;
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
 	public CSSignificanceResultSet(DSMicroarraySet parent, String label, String[] caseLabels, String[] controlLabels, double alpha) {
         super(parent, label);
         this.alpha = alpha;
@@ -62,15 +60,6 @@ public class CSSignificanceResultSet <T extends DSGeneMarker> extends CSAncillar
         labels[0] = caseLabels;
         labels[1] = controlLabels;
         panel = new CSPanel<T>(label);
-    }
-
-    public File getDataSetFile() {
-        // not needed
-        return null;
-    }
-
-    public void setDataSetFile(File file) {
-        // no-op
     }
 
     public Double getSignificance(T marker) {
@@ -159,10 +148,10 @@ public class CSSignificanceResultSet <T extends DSGeneMarker> extends CSAncillar
         
     }
 
-    public DSMicroarraySet<DSMicroarray> getParentDataSet() {
+    public DSMicroarraySet getParentDataSet() {
     	DSDataSet<DSMicroarray> parentDataSet = super.getParentDataSet();
     	if(parentDataSet instanceof DSMicroarraySet) {
-    		return (DSMicroarraySet<DSMicroarray>) super.getParentDataSet();
+    		return (DSMicroarraySet) super.getParentDataSet();
     	} else {
 			log.error("parentDataSet is not an instance DSMicroarraySet");
     		return null;

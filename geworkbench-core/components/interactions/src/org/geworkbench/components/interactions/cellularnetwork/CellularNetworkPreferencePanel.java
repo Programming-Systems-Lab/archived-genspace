@@ -51,7 +51,7 @@ import com.jgoodies.forms.layout.FormLayout;
 
 /**
  * @author Min You
- * @version $Id: CellularNetworkPreferencePanel.java 8194 2011-08-04 18:19:57Z youmi $
+ * @version $Id: CellularNetworkPreferencePanel.java 8576 2011-12-06 21:29:48Z youmi $
  */
 
 public class CellularNetworkPreferencePanel extends javax.swing.JPanel {
@@ -1038,7 +1038,7 @@ public class CellularNetworkPreferencePanel extends javax.swing.JPanel {
 		
 		JDialog exportDialog = new JDialog();
 		exportDialog.setTitle("Export selected interactome");
-		ExportSelectionPanel exportPanel = new ExportSelectionPanel(exportDialog, context, version, networkSelectedInteractionTypes);
+		ExportSelectionPanel exportPanel = new ExportSelectionPanel(c,  exportDialog, context, version, networkSelectedInteractionTypes, isNetworkJCheckBox1Selected());
 		 
 		exportDialog.add(exportPanel);
 		exportDialog.setModal(true);

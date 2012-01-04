@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/geworkbench/!svn/ver/7944/trunk/geworkbench/src/org/geworkbench/engine/config
+/svn/geworkbench/!svn/ver/8534/trunk/geworkbench/src/org/geworkbench/engine/config
 END
-UILauncher.java
+java.policy
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/6860/trunk/geworkbench/src/org/geworkbench/engine/config/UILauncher.java
-END
-MenuItemInfo.java
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/geworkbench/!svn/ver/1003/trunk/geworkbench/src/org/geworkbench/engine/config/MenuItemInfo.java
+V 92
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/config/java.policy
 END
 Bean24.gif
 K 25
@@ -21,11 +15,17 @@ svn:wc:ra_dav:version-url
 V 91
 /svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/config/Bean24.gif
 END
-java.policy
+MenuItemInfo.java
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/config/java.policy
+V 100
+/svn/geworkbench/!svn/ver/1003/trunk/geworkbench/src/org/geworkbench/engine/config/MenuItemInfo.java
+END
+UILauncher.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/8322/trunk/geworkbench/src/org/geworkbench/engine/config/UILauncher.java
 END
 Visualeye_Nonactive.gif
 K 25
@@ -43,19 +43,19 @@ GUIFramework.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/7943/trunk/geworkbench/src/org/geworkbench/engine/config/GUIFramework.java
-END
-ComponentMetadata.java
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/geworkbench/!svn/ver/7943/trunk/geworkbench/src/org/geworkbench/engine/config/ComponentMetadata.java
+/svn/geworkbench/!svn/ver/8520/trunk/geworkbench/src/org/geworkbench/engine/config/GUIFramework.java
 END
 default.xml
 K 25
 svn:wc:ra_dav:version-url
 V 94
 /svn/geworkbench/!svn/ver/2117/trunk/geworkbench/src/org/geworkbench/engine/config/default.xml
+END
+ComponentMetadata.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/7943/trunk/geworkbench/src/org/geworkbench/engine/config/ComponentMetadata.java
 END
 MenuListener.java
 K 25

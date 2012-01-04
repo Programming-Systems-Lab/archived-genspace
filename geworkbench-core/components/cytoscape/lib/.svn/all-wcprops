@@ -1,401 +1,143 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/cytoscape/lib
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib
 END
-sjsxp.jar
+advanced-network-merge-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 83
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/sjsxp.jar
+V 128
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/advanced-network-merge-2.8.2-jar-with-dependencies.jar
 END
-cytoscape-util-intr.jar
+core-commands-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-util-intr.jar
+V 119
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/core-commands-2.8.2-jar-with-dependencies.jar
 END
-psi_mi.jar
+manual-layout-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 84
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/psi_mi.jar
+V 119
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/manual-layout-2.8.2-jar-with-dependencies.jar
 END
-freehep-graphicsio-java-2.1.1.jar
+rfilters-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 107
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-graphicsio-java-2.1.1.jar
+V 114
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/rfilters-2.8.2-jar-with-dependencies.jar
 END
-browser.jar
+sbml-reader-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/browser.jar
+V 117
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/sbml-reader-2.8.2-jar-with-dependencies.jar
 END
-cytoscape-render-export.jar
+cpath-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-render-export.jar
+V 111
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/cpath-2.8.2-jar-with-dependencies.jar
 END
-yLayouts.jar
+biomart-client-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/yLayouts.jar
-END
-cytoscape-task.jar
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-task.jar
-END
-tclib.jar
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svn/geworkbench/!svn/ver/5917/trunk/geworkbench/components/cytoscape/lib/tclib.jar
-END
-freehep-graphicsio-2.1.1.jar
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-graphicsio-2.1.1.jar
-END
-CytoscapeEditor.jar
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/CytoscapeEditor.jar
-END
-giny.jar
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/giny.jar
-END
-freehep-xml-2.1.1.jar
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-xml-2.1.1.jar
-END
-swingx-1.0.jar
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/swingx-1.0.jar
-END
-biojava-1.4.jar
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/5917/trunk/geworkbench/components/cytoscape/lib/biojava-1.4.jar
-END
-ManualLayout.jar
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/ManualLayout.jar
-END
-cytoscape-graph-dynamic.jar
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-graph-dynamic.jar
-END
-freehep-io-2.0.2.jar
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-io-2.0.2.jar
-END
-TableImport.jar
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/TableImport.jar
-END
-fing.jar
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/fing.jar
-END
-AutomaticLayout.jar
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/AutomaticLayout.jar
-END
-jdom-1.0.jar
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/jdom-1.0.jar
-END
-filter.jar
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/filter.jar
-END
-cytoscape-graph-fixed.jar
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-graph-fixed.jar
-END
-looks-2.1.4.jar
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/looks-2.1.4.jar
-END
-piccolo.jar
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/piccolo.jar
-END
-coltginy.jar
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/coltginy.jar
-END
-stax-ex.jar
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/stax-ex.jar
-END
-i4jruntime.jar
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/i4jruntime.jar
+V 120
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/biomart-client-2.8.2-jar-with-dependencies.jar
 END
 cytoscape.jar
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svn/geworkbench/!svn/ver/6863/trunk/geworkbench/components/cytoscape/lib/cytoscape.jar
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/cytoscape.jar
 END
-freehep-export-2.1.1.jar
+attribute-browser-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-export-2.1.1.jar
+V 123
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/attribute-browser-2.8.2-jar-with-dependencies.jar
 END
-cytoscape-render-stateful.jar
+editor-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-render-stateful.jar
+V 112
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/editor-2.8.2-jar-with-dependencies.jar
 END
-freehep-graphicsio-svg-2.1.1.jar
+automatic-layout-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 106
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-graphicsio-svg-2.1.1.jar
+V 122
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/automatic-layout-2.8.2-jar-with-dependencies.jar
 END
-cytoscape-geom-rtree.jar
+quickfind-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-geom-rtree.jar
+V 115
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/quickfind-2.8.2-jar-with-dependencies.jar
 END
-AdvancedNetworkMerge.jar
+cpath2-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/AdvancedNetworkMerge.jar
+V 112
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/cpath2-2.8.2-jar-with-dependencies.jar
 END
-jnlp.jar
+biopax-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/jnlp.jar
+V 112
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/biopax-2.8.2-jar-with-dependencies.jar
 END
-phoebe.dnd.jar
+y-layouts-1.0.1.jar
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/phoebe.dnd.jar
+V 93
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/y-layouts-1.0.1.jar
 END
-violinstrings-1.0.2.jar
+ncbi-client-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/violinstrings-1.0.2.jar
+V 117
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/ncbi-client-2.8.2-jar-with-dependencies.jar
 END
-glf.jar
+equation-functions-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/glf.jar
+V 124
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/equation-functions-2.8.2-jar-with-dependencies.jar
 END
-ncbiClient.jar
+psi-mi-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/ncbiClient.jar
+V 112
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/psi-mi-2.8.2-jar-with-dependencies.jar
 END
-quick_find.jar
+table-import-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/quick_find.jar
+V 118
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/table-import-2.8.2-jar-with-dependencies.jar
 END
-undo.support.jar
+filters-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/undo.support.jar
+V 113
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/filters-2.8.2-jar-with-dependencies.jar
 END
-SBMLReader.jar
+network-analyzer-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/SBMLReader.jar
+V 122
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/network-analyzer-2.8.2-jar-with-dependencies.jar
 END
-freehep-graphicsio-ps-2.1.1.jar
+xercesImpl-jwsdp.jar
 K 25
 svn:wc:ra_dav:version-url
-V 105
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-graphicsio-ps-2.1.1.jar
+V 94
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/xercesImpl-jwsdp.jar
 END
-cpath2.jar
+linkout-2.8.2-jar-with-dependencies.jar
 K 25
 svn:wc:ra_dav:version-url
-V 84
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cpath2.jar
-END
-concurrent.jar
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/concurrent.jar
-END
-cytoscape-geom-spacial.jar
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-geom-spacial.jar
-END
-swingx-beaninfo-1.0.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/swingx-beaninfo-1.0.jar
-END
-biomartClient.jar
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/biomartClient.jar
-END
-swing-layout-1.0.3.jar
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/swing-layout-1.0.3.jar
-END
-com-nerius-math-xform.jar
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/com-nerius-math-xform.jar
-END
-colt.jar
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/6605/trunk/geworkbench/components/cytoscape/lib/colt.jar
-END
-l2fprod-common-all.jar
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/l2fprod-common-all.jar
-END
-filters.jar
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/filters.jar
-END
-freehep-jas-plotter-2.2.jar
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-jas-plotter-2.2.jar
-END
-ding.jar
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/ding.jar
-END
-commons-cli-1.x-cytoscape-custom.jar
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/commons-cli-1.x-cytoscape-custom.jar
-END
-linkout.jar
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/linkout.jar
-END
-freehep-util-2.0.2.jar
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-util-2.0.2.jar
-END
-cytoscape-cruft-obo.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-cruft-obo.jar
-END
-junit.jar
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/junit.jar
-END
-itext-2.0.4.jar
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/itext-2.0.4.jar
-END
-freehep-graphics2d-2.1.1.jar
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-graphics2d-2.1.1.jar
-END
-cPath.jar
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cPath.jar
-END
-cytoscape-render-immed.jar
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/cytoscape-render-immed.jar
-END
-freehep-swing-2.0.3.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/6794/trunk/geworkbench/components/cytoscape/lib/freehep-swing-2.0.3.jar
+V 113
+/svn/geworkbench/!svn/ver/8610/trunk/geworkbench/components/cytoscape/lib/linkout-2.8.2-jar-with-dependencies.jar
 END

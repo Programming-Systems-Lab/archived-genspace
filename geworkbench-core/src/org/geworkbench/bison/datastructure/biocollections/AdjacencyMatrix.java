@@ -12,13 +12,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 
 /**
  * AdjacencyMatrix.
  * 
  * @author not attributable
- * @version $Id: AdjacencyMatrix.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: AdjacencyMatrix.java 8424 2011-10-19 16:34:53Z zji $
  */
 
 public class AdjacencyMatrix implements Serializable {
@@ -89,14 +88,28 @@ public class AdjacencyMatrix implements Serializable {
 			stringId = id;
 			intId = -1;
 			marker = null;
-		}
+		}	
+		
+		/*
+		 * if node type is GENE_SYMBOL and intId is 0, it means that the gene does not
+		 * presented in the current microarray set.
+		 */
+		public Node(NodeType type, String stringId, int intId ) {
+			this.type = type;
+			this.stringId = stringId;
+			this.intId = intId;
+			marker = null;
+		}		
+		
+		
 
-		Node(NodeType type, int id) {
+		public Node(NodeType type, int id) {
 			this.type = type;
 			intId = id;
 			stringId = null;
 			marker = null;
-		}
+		}		
+	 
 
 		@Override
 		public boolean equals(Object obj) {
@@ -130,11 +143,21 @@ public class AdjacencyMatrix implements Serializable {
 			h = 31 * h + intId;
 			return h;
 		}
+		
+		public DSGeneMarker getMarker(){
+			return marker;
+		}
+		public NodeType getNodeType(){
+			return type;
+		}
+		public String getStringId(){
+			return stringId;
+		}
 	}
 
 	private HashMap<Node, HashMap<Node, Set<EdgeInfo>>> geneRows = new HashMap<Node, HashMap<Node, Set<EdgeInfo>>>();
 
-	private final DSMicroarraySet<DSMicroarray> maSet;	
+	private final DSMicroarraySet maSet;	
 
 	private final String name;
 
@@ -144,7 +167,7 @@ public class AdjacencyMatrix implements Serializable {
     
 
 	public AdjacencyMatrix(String name,
-			final DSMicroarraySet<DSMicroarray> microarraySet) {
+			final DSMicroarraySet microarraySet) {
 		this.name = name;
 		maSet = microarraySet;
 		interactionTypeSifMap = null;
@@ -153,7 +176,7 @@ public class AdjacencyMatrix implements Serializable {
 	}
 
 	public AdjacencyMatrix(String name,
-			final DSMicroarraySet<DSMicroarray> microarraySet,
+			final DSMicroarraySet microarraySet,
 			Map<String, String> interactionTypeSifMap) {
 		this.name = name;
 		maSet = microarraySet;
@@ -267,7 +290,7 @@ public class AdjacencyMatrix implements Serializable {
 		return nodeSet.size();
 	}
 
-	public DSMicroarraySet<DSMicroarray> getMicroarraySet() {
+	public DSMicroarraySet getMicroarraySet() {
 		return maSet;
 	}
 

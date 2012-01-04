@@ -17,7 +17,7 @@ import org.geworkbench.bison.parsers.resources.Resource;
 /**
  * Loads PDB structure format.
  * 
- * @version $Id: PDBFileFormat.java 7655 2011-03-25 21:14:46Z zji $
+ * @version $Id: PDBFileFormat.java 8559 2011-12-01 20:30:39Z poddutun $
  */
 public class PDBFileFormat extends DataSetFileFormat {
 
@@ -51,10 +51,6 @@ public class PDBFileFormat extends DataSetFileFormat {
 
     public DSDataSet<? extends DSBioObject> getDataFile(File file) {
         String name = file.getName();
-        int index = name.lastIndexOf('.');
-        if (index != -1) {
-            name = name.substring(0, index);
-        }
         DSProteinStructure dataSet = new CSProteinStructure(null, name);
         dataSet.setFile(file);
         return dataSet;

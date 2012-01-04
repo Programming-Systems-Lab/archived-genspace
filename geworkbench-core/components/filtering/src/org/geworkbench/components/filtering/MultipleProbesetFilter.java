@@ -14,17 +14,17 @@ import javax.swing.JOptionPane;
 
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.model.analysis.FilteringAnalysis;
 import org.geworkbench.components.filtering.MultipleProbesetFilterPanel.Action;
+import org.geworkbench.util.annotation.AffyAnnotationUtil;
 
 /**
  * 
  * @author zji
- * @version $Id: MultipleProbesetFilter.java 7940 2011-05-27 15:49:32Z zji $
+ * @version $Id: MultipleProbesetFilter.java 8570 2011-12-05 21:57:15Z smithken $
  */
 
 /**
@@ -40,19 +40,17 @@ public class MultipleProbesetFilter extends FilteringAnalysis {
 		setDefaultPanel(new MultipleProbesetFilterPanel());
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet<?> input) {
+	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet input) {
 
 		getParametersFromPanel();
 
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+		maSet = (DSMicroarraySet) input;
 		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();
 
-		String annotation = AnnotationParser.getChipType(maSet);
-		if(annotation==null) {
+		if(maSet.getAnnotationFileName()==null) {
 			JOptionPane.showMessageDialog(null,
-				    "Filtering aborted because no annotation is loaded.",
+				    "This filter requires that an annotation file be loaded. You must reload the data file to add an annotation file.",
 				    "No annotation warning",
 				    JOptionPane.WARNING_MESSAGE);
 			return null;
@@ -67,7 +65,7 @@ public class MultipleProbesetFilter extends FilteringAnalysis {
 			String probeSetID = dsGeneMarker.getLabel();
 			probesetIndexMap.put(probeSetID, i);
 
-			Set<String> set = AnnotationParser.getGeneIDs(probeSetID);
+			Set<String> set = AffyAnnotationUtil.getGeneIDs(probeSetID);
 			if(set.size()==0)
 				continue;
 			
@@ -200,23 +198,17 @@ public class MultipleProbesetFilter extends FilteringAnalysis {
 		return median;
 	}
 	
-	private double[] getProfile(DSMicroarraySet<DSMicroarray> maSet, int index) {
+	private double[] getProfile(DSMicroarraySet maSet, int index) {
 		if (maSet == null || index < 0 || index >= maSet.getMarkers().size())
 			return null;
 		int arrayCount = maSet.size();
-		// Compute the profile average (using non-missing values).
-		double average = 0.0;
+
 		int nonMissing = 0;
 		for (int i = 0; i < arrayCount; i++) {
 			DSMarkerValue mv = maSet.get(i).getMarkerValue(index);
 			if (!mv.isMissing()) {
-				average += mv.getValue();
 				++nonMissing;
 			}
-		}
-
-		if (nonMissing > 0) {
-			average /= nonMissing;
 		}
 
 		double[] profile = new double[nonMissing];

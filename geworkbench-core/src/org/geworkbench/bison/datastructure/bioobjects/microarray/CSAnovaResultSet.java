@@ -27,7 +27,7 @@ import org.geworkbench.util.CsvFileFilter;
 
 /**
  * @author yc2480
- * @version $Id: CSAnovaResultSet.java 7994 2011-06-15 18:44:41Z wangmen $
+ * @version $Id: CSAnovaResultSet.java 8450 2011-10-24 13:20:33Z zji $
  * 
  */
 public class CSAnovaResultSet<T extends DSGeneMarker> extends
@@ -112,14 +112,13 @@ public class CSAnovaResultSet<T extends DSGeneMarker> extends
 	public void saveToFile(String filename) {
 		try {
 			PrintWriter out = new PrintWriter(new FileOutputStream(filename));
-			int i = 0;
+
 			for (T o : panel) {
 				out.println(new StringBuilder().append(
 						((CSExpressionMarker) o).getLabel() + "\t").append(
 						Double.toString(result2DArray[0][microarraySetView
 								.getMicroarraySet().getMarkers().indexOf(
 										(CSExpressionMarker) o)])).toString());
-				i++;
 			}
 			out.flush();
 			out.close();

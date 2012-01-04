@@ -67,7 +67,6 @@ import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarr
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationManager;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.builtin.projects.ProjectPanel;
@@ -83,7 +82,7 @@ import org.geworkbench.util.BrowserLauncher;
  * Visual component to show the result from GO Term Analysis.
  * 
  * @author zji
- * @version $Id: GoAnalysisResultView.java 7963 2011-06-07 19:28:34Z zji $
+ * @version $Id: GoAnalysisResultView.java 8499 2011-11-07 15:25:47Z zji $
  *
  */
 @AcceptTypes({GoAnalysisResult.class, DSMicroarraySet.class})
@@ -510,7 +509,7 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 							publishSubpanelChangedEvent(new org.geworkbench.events.SubpanelChangedEvent<DSGeneMarker>(
 									DSGeneMarker.class,
 									GeneToMarkers(getMarkerSetName(), genes),
-									org.geworkbench.events.SubpanelChangedEvent.SET_CONTENTS));
+									org.geworkbench.events.SubpanelChangedEvent.NEW));
 
 						}
 
@@ -546,11 +545,10 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	private DSPanel<DSGeneMarker> GeneToMarkers(String setLabel, Set<String> genes) {
 		DSPanel<DSGeneMarker> selectedMarkers = new CSPanel<DSGeneMarker>(
 				setLabel, "Go Terms Anlaysis");
-		DSMicroarraySet<DSMicroarray> dataset = (DSMicroarraySet<DSMicroarray>) (ProjectPanel
+		DSMicroarraySet dataset = (DSMicroarraySet) (ProjectPanel
 				.getInstance().getSelection().getDataSet());
 		for (Object obj : dataset.getMarkers()) {
 			DSGeneMarker marker = (DSGeneMarker) obj;
@@ -586,12 +584,10 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 		StringBuffer sb = new StringBuffer("Term GO ID: "+goId+"\nGenes annotated:\n");
 	
 		// here are the genes annotated to this term only, not to descendants.
-		int i=0;
 		for(String gene: getAnnotatedGenes(goId)) {
 			sb.append(gene).append("\n   Gene title: ").append(
 					AnnotationManager.getGeneDetail(dataSet, gene))
 					.append("\n\n");
-			i++;
 		}
 		
 		geneDetails.setText(sb.toString());
@@ -717,10 +713,9 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 	}
 	
 	// this is only used in the case of expression data set instead of ontology analysis result
-	private DSMicroarraySet<DSMicroarray> dataSet = null;
+	private DSMicroarraySet dataSet = null;
 	
 	// listen to the even that the user switches between data/result nodes, or new result node is created
-	@SuppressWarnings("unchecked")
 	@Subscribe
 	public void receive(ProjectEvent e, Object source) {
 		DSDataSet<?> dataSet = e.getDataSet();
@@ -737,7 +732,7 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 			repaint();
 		} else if (dataSet instanceof DSMicroarraySet) {
 			result = null;
-			this.dataSet = (DSMicroarraySet<DSMicroarray>)dataSet;
+			this.dataSet = (DSMicroarraySet)dataSet;
 			if(GeneOntologyTree.getInstance()==null) {
 				updateFromBackground();
 				return;

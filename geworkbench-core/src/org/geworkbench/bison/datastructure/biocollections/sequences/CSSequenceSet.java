@@ -24,7 +24,7 @@ import org.geworkbench.bison.util.SequenceUtils;
 /**
  * 
  * @author not attributable
- * @version $Id: CSSequenceSet.java 7487 2011-02-24 14:48:09Z zji $
+ * @version $Id: CSSequenceSet.java 8478 2011-11-02 13:48:00Z zji $
  */
 
 public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
@@ -43,6 +43,13 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 
 	private int[] matchIndex;
 	private int[] reverseIndex;
+	
+	/**
+	 * Designates if the marker subselection imposed by the activated panels is
+	 * imposed on the this sequence set view.
+	 */
+	private boolean useMarkerPanel = false;
+
 
 	public CSSequenceSet() {
 		setID(RandomNumberGenerator.getID());
@@ -137,12 +144,11 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 			T sequence = null;
 			String data = new String();
 			String s = reader.readLine();
-			int num = 0;
+
 			while (reader.ready()) {
 				if (s.trim().length() == 0) {
 
 				} else if (s.startsWith(">")) {
-					num++;
 					if (sequence != null) {
 						sequence.setSequence(data);
 						addASequence(sequence);
@@ -173,7 +179,7 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 		}
 		parseMarkers();
 		databases.put(file.getPath(), this);
-		addDescription("# of sequences: " + size());
+		setDescription("# of sequences: " + size());
 	}
 
 	public void parseMarkers() {
@@ -182,7 +188,7 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 			SequenceMarker marker = new SequenceMarker();
 			DSSequence sequence = this.get(markerId);
 			marker.parseLabel(sequence.getLabel());
-			sequence.addDescription(sequence.getLabel());
+			sequence.setDescription(sequence.getLabel());
 			// Use the short label as the label for the sequence as well (bug
 			// #251)
 			if ((marker.getLabel() != null) && (marker.getLabel().length() > 0)) {
@@ -200,6 +206,26 @@ public class CSSequenceSet<T extends DSSequence> extends CSDataSet<T> implements
 	public void writeToResource() {
 
 	}
+	
+	/**
+	 * Set/resets marker subselection based on activated panels.
+	 * 
+	 * @param status
+	 */
+	public void useMarkerPanel(boolean status) {
+		useMarkerPanel = status;
+	}
+
+	/**
+	 * Gets the status of marker activation
+	 * 
+	 * @return the status of marker activation
+	 */
+	public boolean useMarkerPanel() {
+		return useMarkerPanel;
+	}
+
+	
 
 	public boolean isDirty() {
 		return dirty;

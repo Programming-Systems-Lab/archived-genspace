@@ -16,7 +16,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
  * Company: Columbia University
  * 
  * @author Adam Margolin
- * @version $Id: DSMicroarraySetView.java 7385 2011-01-25 19:36:05Z zji $
+ * @version $Id: DSMicroarraySetView.java 8424 2011-10-19 16:34:53Z zji $
  */
 public interface DSMicroarraySetView<T extends DSGeneMarker, Q extends DSMicroarray>
 		extends DSDataSetView<Q> {
@@ -68,11 +68,9 @@ public interface DSMicroarraySetView<T extends DSGeneMarker, Q extends DSMicroar
 
 	public double getMeanValue(T marker, int maIndex);
 
-	public double[] getRow(T object);
+	public void setMicroarraySet(DSMicroarraySet ma);
 
-	public void setMicroarraySet(DSMicroarraySet<Q> ma);
-
-	public DSMicroarraySet<Q> getMicroarraySet();
+	public DSMicroarraySet getMicroarraySet();
 
 	/**
 	 * @return A DSItemList containing all the <code>T</code> type objects

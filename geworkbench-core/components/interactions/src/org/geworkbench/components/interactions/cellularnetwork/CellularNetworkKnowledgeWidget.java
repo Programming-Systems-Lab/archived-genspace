@@ -72,6 +72,9 @@ import javax.swing.table.TableColumnModel;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix.NodeType;
+import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSGeneMarker;
@@ -80,12 +83,12 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.A
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.GeneOntologyUtil;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GOTerm;
 import org.geworkbench.bison.datastructure.bioobjects.markers.goterms.GeneOntologyTree;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.builtin.projects.ProjectPanel;
+import org.geworkbench.builtin.projects.history.HistoryPanel;
 import org.geworkbench.engine.config.Closable;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
@@ -95,19 +98,16 @@ import org.geworkbench.engine.properties.PropertiesManager;
 import org.geworkbench.events.AdjacencyMatrixCancelEvent;
 import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.ImageSnapshotEvent;
-import org.geworkbench.events.ProjectEvent;
 import org.geworkbench.events.ProjectNodeAddedEvent;
 import org.geworkbench.util.BasicAuthenticator;
 import org.geworkbench.util.BrowserLauncher;
 import org.geworkbench.util.ProgressBar;
 import org.geworkbench.util.ResultSetlUtil;
 import org.geworkbench.util.UnAuthenticatedException;
+import org.geworkbench.util.annotation.AffyAnnotationUtil;
 import org.geworkbench.util.network.CellularNetWorkElementInformation;
 import org.geworkbench.util.network.CellularNetworkPreference;
 import org.geworkbench.util.network.InteractionDetail;
-import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
-import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix.NodeType;
-import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -170,8 +170,6 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 
 	private Vector<CellularNetWorkElementInformation> hits = null;
 
-	private Map<String, List<Integer>> geneIdToMarkerIdMap = new HashMap<String, List<Integer>>();
-
 	private JButton refreshButton;
 
 	private JButton createNetWorkButton;
@@ -213,8 +211,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 
 	private Vector<Vector<Object>> cachedPreviewData = new Vector<Vector<Object>>();
 
-	// this variable is only assigned in method processData
-	private DSMicroarraySet<DSMicroarray> dataset = null;
+	private DSMicroarraySet dataset = null;
 
 	private Map<String, String> geneTypeMap = null;
 
@@ -310,27 +307,15 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 					}
 
 					Integer geneId = c.getdSGeneMarker().getGeneId();
-					Collection<Integer> markerIds = geneIdToMarkerIdMap
-							.get(geneId.toString());
-					if (markerIds != null) {
-						for (Integer markerId : markerIds)
-							selectedMarkers.add((DSGeneMarker) dataset
-									.getMarkers().get(markerId));
-
-					}
+					Collection<DSGeneMarker> markers = AffyAnnotationUtil.getMarkersForGivenGeneId(dataset, geneId.toString());
+					selectedMarkers.addAll(markers);
 
 					for (InteractionDetail detail : arrayList) {
 						Integer interactionGeneId = detail
 								.getInteractionGeneId(geneId);
-						if (interactionGeneId != null)
-							markerIds = geneIdToMarkerIdMap
-									.get(interactionGeneId.toString());
-						if (markerIds != null) {
-							for (Integer markerId : markerIds)
-								selectedMarkers.add((DSGeneMarker) dataset
-										.getMarkers().get(markerId));
-
-						}
+						Collection<DSGeneMarker> markers2
+							= AffyAnnotationUtil.getMarkersForGivenGeneId(dataset, interactionGeneId.toString());
+						selectedMarkers.addAll(markers2);
 					}
 
 				}
@@ -1450,7 +1435,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 		CellularNetworkKnowledgeWidget.EntrezIdComparator eidc = new CellularNetworkKnowledgeWidget.EntrezIdComparator();
 		Collections.sort(copy, eidc);
 
-		Map<String, List<Integer>> geneNameToMarkerIdMap = AnnotationParser
+		Map<String, List<Integer>> geneNameToMarkerIdMap = AffyAnnotationUtil
 				.getGeneNameToMarkerIDMapping(dataset);
 
 		AdjacencyMatrix matrix = new AdjacencyMatrix(null, dataset,
@@ -1541,8 +1526,12 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 							 
 							if (interactionDetail.getDbSource2()
 									.equalsIgnoreCase(Constants.UNIPORT)) {
-								Set<String> SwissProtIds = AnnotationParser
-										.getSwissProtIDs(marker.getLabel());
+								Set<String> SwissProtIds = new HashSet<String>();
+								String[] ids = AnnotationParser.getInfo(marker
+										.getLabel(), AnnotationParser.SWISSPROT);
+								for (String s : ids) {
+									SwissProtIds.add(s.trim());
+								}
 								if (SwissProtIds.contains(interactionDetail
 										.getdSGeneMarker2())) {
 									serial2 = marker.getSerial();
@@ -1573,7 +1562,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 									.equals("")
 							&& !interactionDetail.getdSGeneName2().trim()
 									.equals("null")) {					 
-						node2 = new AdjacencyMatrix.Node(NodeType.GENE_SYMBOL, interactionDetail.getdSGeneName2());
+						node2 = new AdjacencyMatrix.Node(NodeType.GENE_SYMBOL, interactionDetail.getdSGeneName2(), 0);
 					} else {					 
 						node2 = new AdjacencyMatrix.Node(NodeType.STRING, mid2);
 					}
@@ -1618,8 +1607,12 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 							
 							if (interactionDetail.getDbSource1()
 									.equalsIgnoreCase(Constants.UNIPORT)) {
-								Set<String> SwissProtIds = AnnotationParser
-										.getSwissProtIDs(marker.getLabel());
+								Set<String> SwissProtIds = new HashSet<String>();
+								String[] ids = AnnotationParser.getInfo(marker
+										.getLabel(), AnnotationParser.SWISSPROT);
+								for (String s : ids) {
+									SwissProtIds.add(s.trim());
+								}
 								if (SwissProtIds.contains(interactionDetail
 										.getdSGeneMarker1())) {
 									serial1 = marker.getSerial();
@@ -1652,7 +1645,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 							&& !interactionDetail.getdSGeneName1().trim()
 									.equals("null")) {
 					 
-						node1 = new AdjacencyMatrix.Node(NodeType.GENE_SYMBOL, interactionDetail.getdSGeneName1());
+						node1 = new AdjacencyMatrix.Node(NodeType.GENE_SYMBOL, interactionDetail.getdSGeneName1(),0);
 					} else {						 
 						node1 = new AdjacencyMatrix.Node(NodeType.STRING, mid1); 
 					}
@@ -1701,7 +1694,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 					+ "      Threshold:     " + thresholdTextField.getText()
 					+ "\n" + "      Selected Marker List: \n" + historyStr
 					+ "\n";
-			ProjectPanel.addToHistory(adjacencyMatrixdataSet, history);
+			HistoryPanel.addToHistory(adjacencyMatrixdataSet, history);
 
 			if (handler.isCancelled())
 				return;
@@ -2069,10 +2062,8 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 					case 1: {
 						if (value.getGeneName() != null) {
 							return value.getGeneName();
-						} else {
-							return AnnotationParser.getGeneName(value
-									.getLabel());
-
+						} else { // this should never happen
+							return null;
 						}
 					}
 					case 2: {
@@ -2517,17 +2508,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 		return event;
 	}
 
-	@SuppressWarnings("unchecked")
-	@Subscribe
-	public void receive(ProjectEvent pe, Object source) {
-		DSDataSet<?> ds = pe.getDataSet();
-		if (ds != null && ds instanceof DSMicroarraySet) {
-			geneIdToMarkerIdMap = AnnotationParser
-					.getGeneIdToMarkerIDMapping((DSMicroarraySet<DSMicroarray>) ds);
-
-		}
-	}
-
+ 
 	@Subscribe
 	public void receive(GeneSelectorEvent gse, Object source) {
 		log.debug("received GeneSelectorEvent::source="
@@ -2555,7 +2536,7 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 			return;
 
 		if ((dataset == null) || (dataset.hashCode() != ds.hashCode())) {
-			dataset = (DSMicroarraySet<DSMicroarray>) ds;
+			dataset = (DSMicroarraySet) ds;
 			if (dataset.getValuesForName(Constants.CNKB_HITS) == null)
 				dataset.addNameValuePair(Constants.CNKB_HITS,
 						new Vector<CellularNetWorkElementInformation>());
@@ -2580,7 +2561,8 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 
 		}
 
-		int currentCount = hits.size();
+		int currentCount = 0;
+		if(hits!=null) currentCount = hits.size();
 
 		if (panel != null) {
 			if (panel.size() == 0) {
@@ -2784,4 +2766,5 @@ public class CellularNetworkKnowledgeWidget extends javax.swing.JScrollPane
 			timer = null;
 		}
 	}
+
 }

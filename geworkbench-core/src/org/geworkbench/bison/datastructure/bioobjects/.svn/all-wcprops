@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
-END
-IdeaResult.java
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/geworkbench/!svn/ver/7346/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaResult.java
+/svn/geworkbench/!svn/ver/8590/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 END
 DSClassification.java
 K 25
@@ -19,7 +13,7 @@ KMeansResultMarkers.java
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svn/geworkbench/!svn/ver/7941/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResultMarkers.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResultMarkers.java
 END
 DSBioObject.java
 K 25
@@ -39,11 +33,35 @@ svn:wc:ra_dav:version-url
 V 113
 /svn/geworkbench/!svn/ver/7296/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaEdge.java
 END
+IdeaGLoc.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/8254/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaGLoc.java
+END
+IdeaResultDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaResultDataSet.java
+END
+IdeaModule.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/8254/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaModule.java
+END
+IdeaNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/8254/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaNode.java
+END
 FoldChangeResult.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/7504/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/FoldChangeResult.java
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/FoldChangeResult.java
 END
 IdeaProbeGene.java
 K 25
@@ -55,5 +73,5 @@ KMeansResult.java
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/geworkbench/!svn/ver/7720/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResult.java
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResult.java
 END

@@ -59,7 +59,7 @@ import org.jfree.ui.SortableTableModel;
 /**
  * 
  * @author keshav
- * @version $Id: CGemsPanel.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: CGemsPanel.java 8424 2011-10-19 16:34:53Z zji $
  */
 @AcceptTypes( { DSMicroarraySet.class })
 public class CGemsPanel implements VisualPlugin {
@@ -813,7 +813,7 @@ public class CGemsPanel implements VisualPlugin {
 
 	private ApplicationService appService = null;
 
-	private DSMicroarraySet<DSMicroarray> maSet = null;
+	private DSMicroarraySet maSet = null;
 
 	JButton clearButton = new JButton();
 
@@ -844,12 +844,11 @@ public class CGemsPanel implements VisualPlugin {
 	 * @param e
 	 * @param source
 	 */
-	@SuppressWarnings("unchecked")
 	@Subscribe
 	public void receive(ProjectEvent e, Object source) {
 		DSDataSet<?> data = e.getDataSet();
 		if (data != null && data instanceof DSMicroarraySet) {
-			maSet = (DSMicroarraySet<DSMicroarray>) data;
+			maSet = (DSMicroarraySet) data;
 		}
 	}
 }

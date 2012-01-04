@@ -13,11 +13,13 @@ package org.geworkbench.components.gpmodule.classification.wv;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -39,7 +41,7 @@ import org.geworkbench.util.TrainingTask;
 
 /**
  * @author Marc-Danie Nazaire
- * @versino $Id: WVTraining.java 7993 2011-06-15 18:04:08Z zji $
+ * @versino $Id: WVTraining.java 8587 2011-12-09 22:25:26Z zji $
  */
 public class WVTraining extends GPTraining implements TrainingTask
 {
@@ -50,9 +52,28 @@ public class WVTraining extends GPTraining implements TrainingTask
     TrainingProgressListener trainingProgressListener = null;
     private boolean cancelled = false;
 
+    /* This constructor can be invoked from either EDT or nonEDT. 
+     * This may be a design flaw of geWorkbench ccm, but it has to be taken care of properly here for now. */
     public WVTraining()
     {
-        panel = new WVTrainingPanel(this);
+		if (SwingUtilities.isEventDispatchThread()) {
+			panel = new WVTrainingPanel(WVTraining.this);
+		} else {
+			try {
+				SwingUtilities.invokeAndWait(new Runnable() {
+
+					@Override
+					public void run() {
+						panel = new WVTrainingPanel(WVTraining.this);
+					}
+
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+		}
         setDefaultPanel(panel);
     }
 

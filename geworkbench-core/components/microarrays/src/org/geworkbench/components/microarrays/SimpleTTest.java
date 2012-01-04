@@ -13,7 +13,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * For EVD panel, only calculate T test without any correction.
- * @version $Id: SimpleTTest.java 7101 2010-10-07 22:07:30Z zji $
+ * @version $Id: SimpleTTest.java 8591 2011-12-13 16:02:56Z zji $
  */
 public class SimpleTTest {
 
@@ -26,7 +26,7 @@ public class SimpleTTest {
     private float[][] expMatrix;
     private int numGenes, numExps;
     private int[] groupAssignments;
-    private DSItemList<? extends DSGeneMarker> item;
+    private DSItemList<DSGeneMarker> item;
 
     public SimpleTTest() {
         maxT = -100;
@@ -48,9 +48,9 @@ public class SimpleTTest {
 
         assert input instanceof DSMicroarraySetView;
 
-		DSMicroarraySetView<? extends DSGeneMarker, ? extends DSMicroarray> data 
-			= (DSMicroarraySetView<? extends DSGeneMarker, ? extends DSMicroarray>) input;
-		DSMicroarraySet<DSMicroarray> set = (DSMicroarraySet<DSMicroarray>) data
+		DSMicroarraySetView<DSGeneMarker, ? extends DSMicroarray> data 
+			= (DSMicroarraySetView<DSGeneMarker, ? extends DSMicroarray>) input;
+		DSMicroarraySet set = (DSMicroarraySet) data
 				.getDataSet();
 		DSPanel<DSGeneMarker> genes = new CSPanel<DSGeneMarker>("");
 
@@ -76,7 +76,7 @@ public class SimpleTTest {
         }
 
         if (set instanceof DSMicroarraySet) {
-            DSMicroarraySet<DSMicroarray> maSet = (DSMicroarraySet<DSMicroarray>) set;
+            DSMicroarraySet maSet = (DSMicroarraySet) set;
 
             DSAnnotationContext<DSMicroarray> context = CSAnnotationContextManager.getInstance().getCurrentContext(maSet);
             for (int i = 0; i < arrays; i++) {
@@ -236,8 +236,7 @@ public class SimpleTTest {
         return minT;
     }
 
-    @SuppressWarnings("rawtypes")
-	public DSItemList getItem() {
+	public DSItemList<DSGeneMarker> getItem() {
         return item;
     }
 

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/sequences/src/org/geworkbench/components/sequences
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/sequences/src/org/geworkbench/components/sequences
 END
 SequenceViewAppComponent.cwb.xml
 K 25
@@ -13,5 +13,5 @@ SequenceViewAppComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/7626/trunk/geworkbench/components/sequences/src/org/geworkbench/components/sequences/SequenceViewAppComponent.java
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/sequences/src/org/geworkbench/components/sequences/SequenceViewAppComponent.java
 END

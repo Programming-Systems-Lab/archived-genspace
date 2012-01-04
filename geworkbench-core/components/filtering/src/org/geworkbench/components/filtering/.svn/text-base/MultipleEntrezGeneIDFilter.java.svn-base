@@ -8,14 +8,13 @@ import javax.swing.JOptionPane;
 
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.FilteringAnalysis;
 import org.geworkbench.components.filtering.MultipleEntrezGeneIDFilterPanel.Action;
 import org.geworkbench.engine.management.Publish;
+import org.geworkbench.util.annotation.AffyAnnotationUtil;
 
 /**
  * Multiple Entrez ID filter.
@@ -42,12 +41,11 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		filterAction = multipleEntrezGeneIDFilterPanel.getFilterAction();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet<?> input) {
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+	public List<Integer> getMarkersToBeRemoved(DSMicroarraySet input) {
+		maSet = (DSMicroarraySet) input;
 		if(maSet.getAnnotationFileName()==null){
-			JOptionPane.showMessageDialog(null, "The filter needs annotation file. Please load it first.",
+			JOptionPane.showMessageDialog(null, "This filter requires that an annotation file be loaded. You must reload the data file to add an annotation file.",
 					"Multiple Gene ID Filter Error", JOptionPane.ERROR_MESSAGE);
 			return null;
 		}
@@ -62,9 +60,8 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		return null;
 	}
 
-	@SuppressWarnings("unchecked")
-	private List<Integer> remove(DSMicroarraySet<?> input) {
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+	private List<Integer> remove(DSMicroarraySet input) {
+		maSet = (DSMicroarraySet) input;
 		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();		
 		
 		List<Integer> removeList = new ArrayList<Integer>();
@@ -83,7 +80,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		for (int i = 0; i < markerCount; i++) {
 			DSGeneMarker dsGeneMarker = dsItemList.get(i);
 			String geneMarkerLabel = dsGeneMarker.getLabel();
-			Set<String> geneIDs = AnnotationParser.getGeneIDs(geneMarkerLabel);
+			Set<String> geneIDs = AffyAnnotationUtil.getGeneIDs(geneMarkerLabel);
 
 			if (filterNoEntrezID) {
 				if (geneIDs.size() == 0	|| (geneIDs.size() == 1 && (geneIDs.contains("---") || geneIDs.contains("")))) {
@@ -101,9 +98,8 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		return removeList;
 	}
 
-	@SuppressWarnings("unchecked")
-	private void createFromMatching(DSMicroarraySet<?> input){
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+	private void createFromMatching(DSMicroarraySet input){
+		maSet = (DSMicroarraySet) input;
 		String label = input.getLabel();
 		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();
 		getParametersFromPanel();
@@ -114,7 +110,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 		for (int i = 0; i < markerCount; i++) {
 			DSGeneMarker dsGeneMarker = dsItemList.get(i);
 			String geneMarkerLabel = dsGeneMarker.getLabel();
-			Set<String> geneIDs = AnnotationParser.getGeneIDs(geneMarkerLabel);
+			Set<String> geneIDs = AffyAnnotationUtil.getGeneIDs(geneMarkerLabel);
 			if (filterNoEntrezID) {
 				if (geneIDs.size() == 0	|| (geneIDs.size() == 1 && (geneIDs.contains("---") || geneIDs.contains("")))) {
 					selectedMarkersNoEntrezIDs.add(dsGeneMarker);
@@ -136,9 +132,8 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 
 	}
 
-	@SuppressWarnings("unchecked")
-	private void createFromExcluding(DSMicroarraySet<?> input){
-		maSet = (DSMicroarraySet<DSMicroarray>) input;
+	private void createFromExcluding(DSMicroarraySet input){
+		maSet = (DSMicroarraySet) input;
 		String label = input.getLabel();
 		DSItemList<DSGeneMarker> dsItemList = maSet.getMarkers();
 		getParametersFromPanel();
@@ -148,7 +143,7 @@ public class MultipleEntrezGeneIDFilter extends FilteringAnalysis {
 			DSGeneMarker dsGeneMarker = dsItemList.get(i);
 			String geneMarkerLabel = dsGeneMarker.getLabel();
 			
-			Set<String> geneIDs = AnnotationParser.getGeneIDs(geneMarkerLabel);
+			Set<String> geneIDs = AffyAnnotationUtil.getGeneIDs(geneMarkerLabel);
 
 			if (filterNoEntrezID) {
 				if (geneIDs.size() == 0 || (geneIDs.size() == 1 && (geneIDs.contains("---") || geneIDs.contains("")))) {

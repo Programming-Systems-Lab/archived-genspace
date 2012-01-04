@@ -1,7 +1,5 @@
 package org.geworkbench.util.pathwaydecoder.mutualinformation;
 
-import java.io.File;
-
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
@@ -9,7 +7,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 /**
  * @author Matt Hall
  * @author oshteynb
- * @version $Id: MindyDataSet.java 7491 2011-02-24 16:58:20Z zji $
+ * @version $Id: MindyDataSet.java 8481 2011-11-02 15:43:58Z zji $
  */
 public class MindyDataSet extends CSAncillaryDataSet<DSMicroarray> {
 
@@ -18,19 +16,10 @@ public class MindyDataSet extends CSAncillaryDataSet<DSMicroarray> {
     private String filename;
 
 
-	public MindyDataSet(DSMicroarraySet<DSMicroarray> parent, String label, MindyData data, String filename) {
+	public MindyDataSet(DSMicroarraySet parent, String label, MindyData data, String filename) {
         super(parent, label);
         this.data = data;
         this.filename = filename;
-    }
-
-    public File getDataSetFile() {
-        // no-op
-        return null;
-    }
-
-    public void setDataSetFile(File file) {
-        // no-op
     }
 
     public MindyData getData() {

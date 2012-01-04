@@ -1,14 +1,14 @@
 10
 
 dir
-8215
+8644
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/annotationparser
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
+2011-10-21T21:46:20.222360Z
+8447
 zji
 
 
@@ -26,17 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-chiptypeMap.txt
+AnnotationFields.java
 file
 
 
 
 
-2011-08-02T04:31:42.000000Z
-26b93ce471ce4682cdc8cdf5ad7bad10
-2006-03-30T22:55:08.000000Z
-1391
-watkinson
+2011-12-29T06:11:38.000000Z
+537c5b0ac80b73013750d444cddd056a
+2011-10-07T21:46:08.179166Z
+8373
+zji
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-154
+1727
 
 AnnotationManager.java
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-3c46def07e64eb1edf003d1dc062a8b3
-2011-06-07T19:28:34.894769Z
-7963
+2011-12-29T06:11:38.000000Z
+580ece194e5d3e0a8210b0b7131cc4e2
+2011-10-19T16:34:53.735246Z
+8424
 zji
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-5580
+5405
 
 APSerializable.java
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-e9f9f42be952f1a3fd30a33aec3ddd80
-2009-12-08T23:07:22.730643Z
-5802
+2011-12-29T06:11:38.000000Z
+4f94d368d2fe1acfe6bf755382796a48
+2011-10-19T16:34:53.735246Z
+8424
 zji
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1158
+1465
 
 AnnotationParser.java
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
-2111bec96b16fae8daf53bbd9da121d0
-2011-07-30T04:31:30.667242Z
-8187
+2011-12-29T06:11:38.000000Z
+72519095894547aafc18c2cac79d1ef2
+2011-10-21T21:46:20.222360Z
+8447
 zji
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-26116
+8994
 
 GeneOntologyUtil.java
 file
@@ -168,7 +168,7 @@ file
 
 
 
-2011-08-02T04:31:42.000000Z
+2011-08-17T00:10:50.000000Z
 720f3eacf550ffc33d5a8ba61075ee95
 2011-04-18T15:53:19.003425Z
 7735
@@ -195,4 +195,38 @@ has-props
 
 
 1721
+
+AffyAnnotationParser.java
+file
+
+
+
+
+2011-12-29T06:11:38.000000Z
+293f91d8bc733a24d61cdbc4d68a22b5
+2011-10-07T21:46:08.179166Z
+8373
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5621
 

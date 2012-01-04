@@ -14,10 +14,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
+import org.geworkbench.bison.datastructure.biocollections.sequences.DSSequenceSet;
 import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeqPattern;
 import org.geworkbench.bison.util.RandomNumberGenerator;
@@ -25,7 +28,7 @@ import org.geworkbench.util.patterns.CSMatchedSeqPattern;
 
 /**
  * @author zji
- * @version $Id: PatternResult.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: PatternResult.java 8632 2011-12-20 22:50:58Z zji $
  * 
  */
 public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
@@ -39,41 +42,56 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
     public static final String DISCOVER = "discovery";
     public static final String EXHAUSTIVE = "exhaustive";
     
-	private final PatternDiscoveryParameters parameters;
 	private List<DSMatchedSeqPattern> patterns = new ArrayList<DSMatchedSeqPattern>();
 	private File dataSetFile;
+	public DSSequenceSet<? extends DSSequence> sequenceDB;
 
 	@SuppressWarnings("unchecked")
-	public PatternResult(final PatternDiscoveryParameters parameters,
-			String name, DSDataSet<? extends DSSequence> parent) {
+	public PatternResult(
+			String name, final DSDataSet<? extends DSSequence> parent,
+			int minSupport, int minTokens, int minWTokens, int window) {
 		super((DSDataSet<DSSequence>) parent, name);
-		this.parameters = parameters;
+		sequenceDB = (DSSequenceSet<? extends DSSequence>) parent;
+
 		String idString = RandomNumberGenerator.getID();
 		setID(idString);
 		setLabel(name);
+		
+		this.minSupport = minSupport;
+		this.minTokens = minTokens;
+		this.minWTokens = minWTokens;
+		this.window = window;
 	}
 
 	// another constructor originally as PatternDB
 	public PatternResult(File _seqFile, DSDataSet<DSSequence> parent) {
 		super(parent, "PatternResult");
-		parameters = null;
+		this.sequenceDB = (DSSequenceSet<? extends DSSequence>) parent;
+
 		dataSetFile = _seqFile; // this is only used to get track file name
 		String idString = RandomNumberGenerator.getID();
 		setID(idString);
+
+		this.minSupport = -1;
+		this.minTokens = -1;
+		this.minWTokens = -1;
+		this.window = -1;
 	}
 
-	public PatternDiscoveryParameters getParameters() {
-		return parameters;
-	}
-
+	// TODO review the necessity of these (used only in getDataSetName)
+	final private int minSupport;
+	final private int minTokens;
+	final private int minWTokens;
+	final private int window;
+	
 	@Override
 	public String getDataSetName() {
-		if(parameters==null)
+		if(minSupport<0)
 			return "";
 		
-		return "Parms S:" + parameters.getMinSupport() + ", T:"
-				+ parameters.getMinTokens() + ", W["
-				+ parameters.getMinWTokens() + "," + parameters.getWindow()
+		return "Parms S:" + minSupport + ", T:"
+				+ minTokens + ", W["
+				+ minWTokens + "," + window
 				+ "]";
 	}
 
@@ -88,7 +106,9 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 			if (s.startsWith("File:")) {
 				File newFile = new File(s.substring(5));
 				if (!dataSetFile.getName().equalsIgnoreCase(newFile.getName())) {
-					log.error("dataSetFile has a different name from new name");
+					JOptionPane.showMessageDialog(null,
+							"The sequence dataset selected and the sequence filename in the pattern file doesn't match",
+							"Pattern Discovery", JOptionPane.WARNING_MESSAGE);
 					return false;
 				}
 				s = reader.readLine();
@@ -105,6 +125,7 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 			return false;
 		}
 
+		setDescription("Number of Patterns found:" + patterns.size());
 		return true;
 	}
 
@@ -114,7 +135,7 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 			int i = 0;
 			Iterator<DSMatchedSeqPattern> it = patterns.iterator();
-			String path = this.getDataSetFile().getCanonicalPath();
+			String path = dataSetFile.getCanonicalPath();
 			writer.write(DISCOVER);
 			writer.newLine();
 			writer.write("File:" + path);
@@ -132,18 +153,11 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 	}
 
 	public int getPatternNo() {
-		if (patterns == null) {
-			patterns = new ArrayList<DSMatchedSeqPattern>();
-			read(file);
-		}
 		return patterns.size();
 	}
 
 	public DSMatchedSeqPattern getPattern(int i) {
-		if ((patterns.size() == 0) && (file != null)) {
-			read(file);
-		}
-		if (i < patterns.size()) {
+		if (i>=0 && i < patterns.size()) {
 			return (DSMatchedSeqPattern) patterns.get(i);
 		}
 		return null;
@@ -181,14 +195,6 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 		return 0;
 	}
 
-	public File getDataSetFile() {
-		return dataSetFile;
-	}
-
-	public void setDataSetFile(File _file) {
-		dataSetFile = _file;
-	}
-	
     /**
      * writeToFile
      *
@@ -196,9 +202,13 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
      */
     @Override
     public void writeToFile(String fileName) {
-    	// not implemented
-    	// does it matter consider this not implemented both PatternDB and SoapParmsDataSet
-    	log.warn("writeToFile not implemented for PatternResult");
+    	throw new RuntimeException(
+    			"Please right click on the result table and click on" +
+    			"\n" + "\"Save All Patterns\" to save the result dataset");
+    }
+    
+    public DSSequenceSet<? extends DSSequence> getParentSequenceSet() {
+    	return this.sequenceDB;
     }
 
 }

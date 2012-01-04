@@ -39,7 +39,7 @@ import org.geworkbench.events.SubpanelChangedEvent;
  * KMeans Viewer of KMeans clustering analysis component
  * 
  * @author zm2165
- * @version $Id: KMeansViewer.java 7993 2011-06-15 18:04:08Z zji $
+ * @version $Id: KMeansViewer.java 8424 2011-10-19 16:34:53Z zji $
  * 
  */
 @AcceptTypes({ KMeansResult.class })
@@ -47,7 +47,7 @@ public class KMeansViewer extends JPanel implements VisualPlugin {
 
 	private static final long serialVersionUID = 8763573636321803637L;
 	private static final int INDEX_OF_GENE=0;
-	DSMicroarraySet<DSMicroarray> maSet;
+	DSMicroarraySet maSet;
 	
 	private ArrayList<List<String[]>> resultList=null;
 	int selectedRow=0;

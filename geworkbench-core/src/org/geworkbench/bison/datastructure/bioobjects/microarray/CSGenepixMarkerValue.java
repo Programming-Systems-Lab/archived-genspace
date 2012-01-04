@@ -10,7 +10,7 @@ import org.geworkbench.bison.parsers.GenepixParseContext;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust Inc.
- * @version $Id: CSGenepixMarkerValue.java 7585 2011-03-15 16:44:44Z zji $
+ * @version $Id: CSGenepixMarkerValue.java 8451 2011-10-24 13:27:08Z zji $
  */
 
 /**
@@ -321,37 +321,6 @@ public class CSGenepixMarkerValue extends CSMarkerValue implements
         }
         setMissing(false);
     }
-
-    /**
-     * @return
-     */
-    public void adjustForHousekeepingGenes(double newRatio) {
-        ch1f *= newRatio;
-        ch1b *= newRatio;
-        computeSignal();
-
-
-    }
-
-    /**
-     * @param csgArray CSGenepixMarkerValue[]
-     */
-    public void adjustForHousekeepingGenes(CSGenepixMarkerValue[] csgArray) {
-        double newch1f = 0d;
-        double newch2f = 0d;
-        double newch1b = 0d;
-        double newch2b = 0d;
-
-        for (CSGenepixMarkerValue csgMarkerValue : csgArray) {
-            newch1f += csgMarkerValue.ch1f;
-            newch2f += csgMarkerValue.ch2f;
-            newch1b += csgMarkerValue.ch1b;
-            newch2b += csgMarkerValue.ch2b;
-        }
-
-
-    }
-
 
     /**
      * This method returns the dimensionality of the marker. E.g., Genotype markers are 2-dimensional

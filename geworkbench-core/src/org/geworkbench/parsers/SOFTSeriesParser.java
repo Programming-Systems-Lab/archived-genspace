@@ -16,18 +16,18 @@ import javax.swing.SwingUtilities;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.markers.CSExpressionMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.markers.annotationparser.AnnotationParser;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSExpressionMarkerValue;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.CSMicroarray;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
+import org.geworkbench.util.AffyAnnotationUtil;
 
 /**
  * @author Nikhil
- * @version $Id: SOFTSeriesParser.java 7750 2011-04-19 15:24:58Z wangmen $
+ * @version $Id: SOFTSeriesParser.java 8621 2011-12-19 19:24:01Z youmi $
  */
 public class SOFTSeriesParser {
 
@@ -102,10 +102,11 @@ public class SOFTSeriesParser {
 				return null;
 			}
 			platformChoice = chooser.choice;
-
-			if (platformChoice == null)
-				errorMessage = "No choice was made.";
-
+			
+			String Cancel = "cancel";
+			if (platformChoice == null) {
+				return Cancel;
+			}
 			return platformChoice;
 		}
 	}
@@ -126,23 +127,21 @@ public class SOFTSeriesParser {
 	 * @see
 	 * org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	public DSMicroarraySet<DSMicroarray> parseSOFTSeriesFile(File file)
+	public DSMicroarraySet parseSOFTSeriesFile(File file)
 			throws InputFileFormatException, InterruptedIOException {
 
 		String platformChosen = choosePlatform(file);
 		if (platformChosen == null) {
 			throw new InputFileFormatException(errorMessage);
 		}
-
-		BufferedReader in = null;
-		final int extSeperater = '.';
-		String fileName = file.getName();
-		int dotIndex = fileName.lastIndexOf(extSeperater);
-		if (dotIndex != -1) {
-			fileName = fileName.substring(0, dotIndex);
+		if (platformChosen == "cancel") {
+			return null;
 		}
 
-		CSExprMicroarraySet maSet = new CSExprMicroarraySet();
+		BufferedReader in = null;
+		String fileName = file.getName();
+
+		CSMicroarraySet maSet = new CSMicroarraySet();
 		maSet.setLabel(fileName);
 		Map<String, List<CSExpressionMarkerValue>> arrayToMarkers = new HashMap<String, List<CSExpressionMarkerValue>>();
 		List<String> markers = new ArrayList<String>();
@@ -178,7 +177,8 @@ public class SOFTSeriesParser {
 							&& !line.equalsIgnoreCase("!platform_table_begin")
 							&& !line.equalsIgnoreCase("!sample_table_begin")
 							&& !line.equalsIgnoreCase("!sample_table_end")) {
-						maSet.addDescription(line.substring(1));
+						// to be consistent, this detailed information should be used else where instead of as "description" field
+						// maSet.setDescription(line.substring(1));
 					}
 				}
 
@@ -261,7 +261,7 @@ public class SOFTSeriesParser {
 						String markerName = new String(markerToken[0].trim());
 						CSExpressionMarker marker = new CSExpressionMarker(m);
 						marker.setLabel(markerName);
-						maSet.getMarkerVector().add(m, marker);
+						maSet.getMarkers().add(m, marker);
 						m++;
 					}
 
@@ -336,11 +336,15 @@ public class SOFTSeriesParser {
 		int arrayIndex = 0;
 		for (String arrayName : arrayToMarkers.keySet()) {
 			CSMicroarray array = new CSMicroarray(arrayIndex, markerCount,
-					arrayName, null, null, false, DSMicroarraySet.affyTxtType);
+					arrayName, DSMicroarraySet.affyTxtType);
 			List<CSExpressionMarkerValue> markerList = arrayToMarkers
-					.get(arrayName);
-			for (int markerIndex = 0; markerIndex < markerList.size(); markerIndex++) {
-				array.setMarkerValue(markerIndex, markerList.get(markerIndex));
+					.get(arrayName);			
+			if (markerList.size()>array.getMarkerValues().length){
+				errorMessage = "Inconsistent number of markers between two samples: " + markerList.size() + " vs " + array.getMarkerValues().length;
+				throw new InputFileFormatException(errorMessage);
+			}
+			for (int markerIndex = 0; markerIndex < markerList.size(); markerIndex++) {				
+					array.setMarkerValue(markerIndex, markerList.get(markerIndex));
 			}
 
 			maSet.add(array);
@@ -348,11 +352,10 @@ public class SOFTSeriesParser {
 
 		// both the second and the third arguments of matchChipType are in
 		// fact ignored
-		String annotationFilename = AnnotationParser.matchChipType(maSet, null,
-				false);
+		String annotationFilename = AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 		maSet.setCompatibilityLabel(annotationFilename);
 
-		for (DSGeneMarker marker : maSet.getMarkerVector()) {
+		for (DSGeneMarker marker : maSet.getMarkers()) {
 			String token = marker.getLabel();
 			String[] locusResult = AnnotationParser.getInfo(token,
 					AnnotationParser.LOCUSLINK);
@@ -377,6 +380,7 @@ public class SOFTSeriesParser {
 			marker.getUnigene().set(token);
 		}
 
+		maSet.getMarkers().correctMaps();
 		return maSet;
 	}
 }

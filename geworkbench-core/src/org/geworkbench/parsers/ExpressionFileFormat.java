@@ -1,17 +1,13 @@
 package org.geworkbench.parsers;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Arrays;
 
 import javax.swing.filechooser.FileFilter;
 
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.CSExprMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
-import org.geworkbench.bison.parsers.resources.Resource;
 
 /**
  * <p>Title: Sequence and Pattern Plugin</p>
@@ -20,28 +16,17 @@ import org.geworkbench.bison.parsers.resources.Resource;
  * <p>Company: </p>
  *
  *  @xuegong wang
- *  @version $Id: ExpressionFileFormat.java 7559 2011-03-10 19:34:47Z zji $
+ *  @version $Id: ExpressionFileFormat.java 8430 2011-10-19 19:21:07Z zji $
  */
 public class ExpressionFileFormat extends DataSetFileFormat {
 
     private String[] maExtensions = {"exp"};
-    private ExpressionResource resource = new ExpressionResource();
     private AffyFilter maFilter = null;
 
     public ExpressionFileFormat() {
         formatName = "Affymetrix File Matrix";
         maFilter = new AffyFilter();
         Arrays.sort(maExtensions);
-    }
-
-    public Resource getResource(File file) {
-        try {
-            resource.setReader(new BufferedReader(new FileReader(file)));
-            resource.setInputFileName(file.getName());
-        } catch (IOException ioe) {
-            ioe.printStackTrace(System.err);
-        }
-        return resource;
     }
 
     public String[] getFileExtensions() {
@@ -52,18 +37,13 @@ public class ExpressionFileFormat extends DataSetFileFormat {
         return true;
     }
 
-    public DSDataSet<DSMicroarray> getDataFile(File file, String compatibilityLabel) throws InputFileFormatException {
-        CSExprMicroarraySet maSet = new CSExprMicroarraySet();
-        maSet.setCompatibilityLabel(compatibilityLabel);
-        maSet.read(file);
+	public DSDataSet<DSMicroarray> getDataFile(File file, String compatibilityLabel) throws InputFileFormatException {
+        DSMicroarraySet maSet = new MicroarraySetParser().parseCSMicroarraySet(file, compatibilityLabel);
         return maSet;
     }
 
-    public DSDataSet<DSMicroarray> getDataFile(File file) {
-        CSExprMicroarraySet maSet = new CSExprMicroarraySet();
-        maSet.read(file);
-        if (maSet.loadingCancelled)
-            return null;
+	public DSDataSet<DSMicroarray> getDataFile(File file) {
+        DSMicroarraySet maSet = new MicroarraySetParser().parseCSMicroarraySet(file, null);
         return maSet;
     }
 
