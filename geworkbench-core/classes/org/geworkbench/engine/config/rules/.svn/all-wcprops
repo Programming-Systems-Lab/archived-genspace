@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/geworkbench/!svn/ver/8534/trunk/geworkbench/src/org/geworkbench/engine/config/rules
+END
+GeawConfigObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/geworkbench/!svn/ver/8534/trunk/geworkbench/src/org/geworkbench/engine/config/rules/GeawConfigObject.java
+END
+GeawConfigRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/engine/config/rules/GeawConfigRule.java
+END
+NotVisualPluginException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7944/trunk/geworkbench/src/org/geworkbench/engine/config/rules/NotVisualPluginException.java
+END
+GUIWindowObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/geworkbench/!svn/ver/75/trunk/geworkbench/src/org/geworkbench/engine/config/rules/GUIWindowObject.java
+END
+PluginObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/src/org/geworkbench/engine/config/rules/PluginObject.java
+END
+PluginRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/5238/trunk/geworkbench/src/org/geworkbench/engine/config/rules/PluginRule.java
+END
+DynamicMenuItemException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7944/trunk/geworkbench/src/org/geworkbench/engine/config/rules/DynamicMenuItemException.java
+END
+MalformedMenuItemException.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/7944/trunk/geworkbench/src/org/geworkbench/engine/config/rules/MalformedMenuItemException.java
+END
+NotMenuListenerException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7944/trunk/geworkbench/src/org/geworkbench/engine/config/rules/NotMenuListenerException.java
+END

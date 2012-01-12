@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/8648/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
+END
+DSClassification.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/1115/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/DSClassification.java
+END
+KMeansResultMarkers.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResultMarkers.java
+END
+DSBioObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/DSBioObject.java
+END
+DSPValued.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/geworkbench/!svn/ver/1115/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/DSPValued.java
+END
+IdeaEdge.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/7296/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaEdge.java
+END
+IdeaGLoc.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/8254/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaGLoc.java
+END
+IdeaResultDataSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaResultDataSet.java
+END
+IdeaModule.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/geworkbench/!svn/ver/8254/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaModule.java
+END
+IdeaNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/8254/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaNode.java
+END
+FoldChangeResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/FoldChangeResult.java
+END
+IdeaProbeGene.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/7305/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaProbeGene.java
+END
+KMeansResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/8481/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/KMeansResult.java
+END

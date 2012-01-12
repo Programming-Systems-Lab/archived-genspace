@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/8645/trunk/geworkbench/src/org/geworkbench/util/sequences
+END
+PatternTableView.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/8637/trunk/geworkbench/src/org/geworkbench/util/sequences/PatternTableView.java
+END
+back.gif
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/1743/trunk/geworkbench/src/org/geworkbench/util/sequences/back.gif
+END
+dna.GIF
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/816/trunk/geworkbench/src/org/geworkbench/util/sequences/dna.GIF
+END
+PatternTableModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/8637/trunk/geworkbench/src/org/geworkbench/util/sequences/PatternTableModel.java
+END
+SequenceViewWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/geworkbench/!svn/ver/8645/trunk/geworkbench/src/org/geworkbench/util/sequences/SequenceViewWidget.java
+END
+SequenceViewWidgetPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/geworkbench/!svn/ver/8473/trunk/geworkbench/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java
+END
+forward.gif
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/1743/trunk/geworkbench/src/org/geworkbench/util/sequences/forward.gif
+END
+Back24.gif
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/1568/trunk/geworkbench/src/org/geworkbench/util/sequences/Back24.gif
+END
+Sequence.jbx
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/50/trunk/geworkbench/src/org/geworkbench/util/sequences/Sequence.jbx
+END
+PatFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/8637/trunk/geworkbench/src/org/geworkbench/util/sequences/PatFilter.java
+END
+Forward24.gif
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/1568/trunk/geworkbench/src/org/geworkbench/util/sequences/Forward24.gif
+END
+GeneChromosomeMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/geworkbench/!svn/ver/1884/trunk/geworkbench/src/org/geworkbench/util/sequences/GeneChromosomeMatcher.java
+END
