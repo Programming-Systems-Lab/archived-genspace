@@ -274,9 +274,12 @@ public class Workflow implements Serializable {
 		w.setId(this.getId());
 		w.setRatings(this.getRatings());
 		int[] temp = new int[getTools().size()];
+		System.out.println(this.getId());
+		int i = 0;
     	for(WorkflowTool t : getTools())
     	{
-    		temp[t.getOrder()-1] = t.getTool().getId();
+    		temp[i] = t.getTool().getId();
+    		i++;
     	}
 		w.setToolIds(temp);
 		w.setUsageCount(getUsageCount());

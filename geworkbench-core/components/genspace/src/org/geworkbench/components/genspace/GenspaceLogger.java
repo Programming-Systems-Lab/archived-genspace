@@ -28,9 +28,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.sequences.CSSequenceSet;
 import org.geworkbench.bison.datastructure.bioobjects.sequence.CSSequence;
-import org.geworkbench.components.genspace.server.stubs.ProteinSequence;
+//import org.geworkbench.components.genspace.server.stubs.ProteinSequence;
 import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel;
-import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel.MSARecommenderCallback;
+//import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel.MSARecommenderCallback;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.AnalysisInvokedEvent;
 import org.geworkbench.events.EventHandler;
@@ -66,34 +66,34 @@ public class GenspaceLogger {
 		if (event == null || !event.getClass().equals(ProjectEvent.class)) {
 			return;
 		}
-
-		ProjectEvent projectEvent = (ProjectEvent) event;
-		if (!(projectEvent.getDataSet() instanceof CSSequenceSet<?>)) {
-			return;
-		}
-		@SuppressWarnings("unchecked")
-		final CSSequenceSet<CSSequence> sequenceSet = (CSSequenceSet<CSSequence>) projectEvent
-				.getDataSet();
-
-		if (sequenceSet.isDNA()) {
-			return;
-		}
-
-		Alignment alignment = new Alignment(new SequenceI[] {});
-		for (CSSequence sequence : sequenceSet) {
-			Sequence jalSeq = new Sequence(sequence.getLabel(),
-					sequence.getSequence());
-			alignment.addSequence(jalSeq);
-		}
-		SequenceAlignmentPanel.getInstance().setAlignment(alignment);
-		SequenceAlignmentPanel.getInstance().setMsaRecommenderCallback(
-				new MSARecommenderCallback() {
-					@Override
-					public void sequenceAdded(ProteinSequence proteinSequence) {
-						sequenceSet.add(new CSSequence(proteinSequence
-								.getAccessionNo(), proteinSequence
-								.getSequence()));
-					}
-				});
+//
+//		ProjectEvent projectEvent = (ProjectEvent) event;
+//		if (!(projectEvent.getDataSet() instanceof CSSequenceSet<?>)) {
+//			return;
+//		}
+//		@SuppressWarnings("unchecked")
+//		final CSSequenceSet<CSSequence> sequenceSet = (CSSequenceSet<CSSequence>) projectEvent
+//				.getDataSet();
+//
+//		if (sequenceSet.isDNA()) {
+//			return;
+//		}
+//
+//		Alignment alignment = new Alignment(new SequenceI[] {});
+//		for (CSSequence sequence : sequenceSet) {
+//			Sequence jalSeq = new Sequence(sequence.getLabel(),
+//					sequence.getSequence());
+//			alignment.addSequence(jalSeq);
+//		}
+//		SequenceAlignmentPanel.getInstance().setAlignment(alignment);
+//		SequenceAlignmentPanel.getInstance().setMsaRecommenderCallback(
+//				new MSARecommenderCallback() {
+//					@Override
+//					public void sequenceAdded(ProteinSequence proteinSequence) {
+//						sequenceSet.add(new CSSequence(proteinSequence
+//								.getAccessionNo(), proteinSequence
+//								.getSequence()));
+//					}
+//				});
 	}
 }

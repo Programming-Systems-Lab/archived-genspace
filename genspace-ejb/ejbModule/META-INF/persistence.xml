@@ -11,6 +11,7 @@
          <class>org.geworkbench.components.genspace.entity.Network</class>
          <class>org.geworkbench.components.genspace.entity.Setting</class>
          <class>org.geworkbench.components.genspace.entity.Tool</class>
+         <class>org.geworkbench.components.genspace.entity.ToolStatCache</class>
 		 <class>org.geworkbench.components.genspace.entity.ToolRating</class>
          <class>org.geworkbench.components.genspace.entity.ToolComment</class>
          <class>org.geworkbench.components.genspace.entity.Transaction</class>

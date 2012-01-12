@@ -65,7 +65,7 @@ import org.jfree.ui.RectangleInsets;
  * <p>Company: Columbia University</p>
  *
  * @author Xiaoqing Zhang
- * @version $Id: EVDPanel.java 8591 2011-12-13 16:02:56Z zji $
+ * @version $Id: EVDPanel.java 8675 2012-01-09 20:51:15Z zji $
  */
 @AcceptTypes({DSMicroarraySet.class})
 public class EVDPanel extends MicroarrayViewEventBase {
@@ -373,8 +373,9 @@ public class EVDPanel extends MicroarrayViewEventBase {
 
 		// FIXME there may be some more efficient way
 		int numGenes = maSetView.markers().size();
+		int numArraySets = refMASet.size();
 		for (int geneCtr = 0; geneCtr < numGenes; geneCtr++) {
-			for (int maCtr = 0; maCtr < refMASet.size(); maCtr++) {
+			for (int maCtr = 0; maCtr < numArraySets ; maCtr++) {
 				double value = refMASet.getValue(geneCtr, maCtr);
 				if (Double.isNaN(value)) {
 					value = 0;
@@ -396,7 +397,9 @@ public class EVDPanel extends MicroarrayViewEventBase {
             }
 		}
 
-		jMASlider.setMaximum(refMASet.size()-1);
+		if(jMASlider!=null)
+			jMASlider.setMaximum(numArraySets-1);
+		
 		refresh();
 	}
 

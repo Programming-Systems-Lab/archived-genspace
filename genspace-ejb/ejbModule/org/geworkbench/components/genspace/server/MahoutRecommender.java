@@ -49,7 +49,7 @@ import org.geworkbench.components.genspace.server.stubs.GetAllWorkflowsIncluding
 /**
  * Session Bean implementation class MahoutRecommender
  */
-@WebService
+//@WebService
 @Stateful
 public class MahoutRecommender implements MahoutRecommenderLocal {
 

@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange
+/svn/geworkbench/!svn/ver/8649/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange
 END
 FoldChangeViewer.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange/FoldChangeViewer.cwb.xml
+/svn/geworkbench/!svn/ver/8649/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange/FoldChangeViewer.cwb.xml
 END
 FoldChangeAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange/FoldChangeAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8649/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange/FoldChangeAnalysis.cwb.xml
 END
 FoldChangePanel.java
 K 25

@@ -57,7 +57,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  * Volcano plot.
  *
  * @author Matt Hall, John Watkinson
- * @version $Id: VolcanoPlot.java 8572 2011-12-06 19:18:53Z zji $
+ * @version $Id: VolcanoPlot.java 8661 2012-01-05 23:48:31Z smithken $
  */
 @AcceptTypes({DSTTestResultSet.class})
 public class VolcanoPlot implements VisualPlugin {
@@ -341,7 +341,7 @@ public class VolcanoPlot implements VisualPlugin {
         plots.addSeries(series);
 
 
-        JFreeChart mainChart = ChartFactory.createScatterPlot(significance.getLabel(), "Fold Change (Log-2)", "Neg. Log-10 Significance", plots, PlotOrientation.VERTICAL, false, true, false); // Title, (, // X-Axis label,  Y-Axis label,  Dataset,  Show legend
+        JFreeChart mainChart = ChartFactory.createScatterPlot(significance.getLabel(), "Fold Change (Log2)", "Significance (-Log10) ", plots, PlotOrientation.VERTICAL, false, true, false); // Title, (, // X-Axis label,  Y-Axis label,  Dataset,  Show legend
         mainChart.getXYPlot().setRenderer(new VolcanoRenderer(plots, minPlotValue, maxPlotValue, toolTipGenerator));
         
         return mainChart;

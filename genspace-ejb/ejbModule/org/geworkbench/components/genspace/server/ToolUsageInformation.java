@@ -62,7 +62,7 @@ public class ToolUsageInformation extends GenericUsageInformation{
 	@Override
 	@WebMethod
 	public Tool getMostPopularPreviousTool(int toolId) {
-		return super.getMostPopularNextTool(toolId);
+		return super.getMostPopularPreviousTool(toolId);
 	}
 
 	@Override

@@ -106,7 +106,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  * 
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 8636 2011-12-22 17:39:08Z youmi $
+ * @version $Id: ProjectPanel.java 8650 2012-01-05 18:11:48Z zji $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -996,7 +996,7 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 			Date endDate = new Date();
 			long endTime = endDate.getTime();
 			history += "\nGrid service finished at: "
-					+ Util.formatDateStandard(endDate)+ ", milliseconds=" + endTime + FileTools.NEWLINE;
+					+ Util.formatDateStandard(endDate)+ FileTools.NEWLINE;
 			String firstLine = history.split("\n")[0];
 			String startTime = firstLine.split("=")[1].trim();
 			long elspedTime = endTime - (new Long(startTime));

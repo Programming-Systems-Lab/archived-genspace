@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svn/geworkbench/!svn/ver/8575/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections
+/svn/geworkbench/!svn/ver/8665/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections
 END
 AdjacencyMatrix.java
 K 25
@@ -43,7 +43,7 @@ AdjacencyMatrixDataSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/8575/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/AdjacencyMatrixDataSet.java
+/svn/geworkbench/!svn/ver/8665/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/AdjacencyMatrixDataSet.java
 END
 DSDataSet.java
 K 25

@@ -1,19 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/svn/geworkbench/!svn/ver/8511/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
-END
-SocialTab.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/SocialTab.java
-END
-requestsTab.java
-K 25
-svn:wc:ra_dav:version-url
-V 128
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/requestsTab.java
+/svn/geworkbench/!svn/ver/8667/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
 END
 networksTab.java
 K 25
@@ -21,17 +9,11 @@ svn:wc:ra_dav:version-url
 V 128
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/networksTab.java
 END
-privacyTab.java
+GenSpaceRegistration.java
 K 25
 svn:wc:ra_dav:version-url
-V 127
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/privacyTab.java
-END
-GenSpaceGeneralProfile.java
-K 25
-svn:wc:ra_dav:version-url
-V 139
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceGeneralProfile.java
+V 137
+/svn/geworkbench/!svn/ver/8667/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceRegistration.java
 END
 NameRenderer.java
 K 25
@@ -39,71 +21,17 @@ svn:wc:ra_dav:version-url
 V 129
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/NameRenderer.java
 END
-StatusBar.java
+GenSpaceSecurityPanel.java
 K 25
 svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/StatusBar.java
+V 138
+/svn/geworkbench/!svn/ver/7926/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceSecurityPanel.java
 END
-WorkflowVisualizationPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 143
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowVisualizationPanel.java
-END
-GenSpaceLogin.java
-K 25
-svn:wc:ra_dav:version-url
-V 130
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceLogin.java
-END
-GenSpaceRegistration.java
-K 25
-svn:wc:ra_dav:version-url
-V 137
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceRegistration.java
-END
-SocialNetworksHome.java
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/SocialNetworksHome.java
-END
-AutoCompleteCombo.java
-K 25
-svn:wc:ra_dav:version-url
-V 134
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/AutoCompleteCombo.java
-END
-DataVisibility.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/DataVisibility.java
-END
-friendsTab.java
+privacyTab.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/friendsTab.java
-END
-viewProfileTab.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/viewProfileTab.java
-END
-WorkflowStatistics.java
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/8511/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowStatistics.java
-END
-UpdateablePanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 132
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/UpdateablePanel.java
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/privacyTab.java
 END
 profileTab.java
 K 25
@@ -111,15 +39,81 @@ svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/profileTab.java
 END
+SocialTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/SocialTab.java
+END
+AutoCompleteCombo.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/AutoCompleteCombo.java
+END
 WorkflowVisualization.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowVisualization.java
 END
-GenSpaceSecurityPanel.java
+WorkflowStatistics.java
 K 25
 svn:wc:ra_dav:version-url
-V 138
-/svn/geworkbench/!svn/ver/7926/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceSecurityPanel.java
+V 135
+/svn/geworkbench/!svn/ver/8511/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowStatistics.java
+END
+StatusBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/StatusBar.java
+END
+UpdateablePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/UpdateablePanel.java
+END
+friendsTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/friendsTab.java
+END
+DataVisibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/DataVisibility.java
+END
+GenSpaceGeneralProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceGeneralProfile.java
+END
+GenSpaceLogin.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceLogin.java
+END
+requestsTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/requestsTab.java
+END
+SocialNetworksHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/SocialNetworksHome.java
+END
+viewProfileTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/viewProfileTab.java
 END

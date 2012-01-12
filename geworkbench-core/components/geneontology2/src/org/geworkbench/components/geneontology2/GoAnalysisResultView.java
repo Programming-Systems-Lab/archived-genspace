@@ -82,7 +82,7 @@ import org.geworkbench.util.BrowserLauncher;
  * Visual component to show the result from GO Term Analysis.
  * 
  * @author zji
- * @version $Id: GoAnalysisResultView.java 8499 2011-11-07 15:25:47Z zji $
+ * @version $Id: GoAnalysisResultView.java 8648 2012-01-04 22:17:55Z zji $
  *
  */
 @AcceptTypes({GoAnalysisResult.class, DSMicroarraySet.class})
@@ -597,9 +597,13 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 	protected void showGeneDetail(String geneSymbol) {
 		int geneId = AnnotationManager.getEntrezId(dataSet, geneSymbol);
 		geneDetails.setContentType("text/html");
-		geneDetails.setText("Details of Gene " + geneSymbol
+		if(geneId!=-1) {
+			geneDetails.setText("Details of Gene " + geneSymbol
 				+ "<p>Entrez ID: "+geneId+" <a href=http://www.ncbi.nlm.nih.gov/gene/" + geneId
 				+ ">Link to Entrez Gene Database</a>");
+		} else {
+			geneDetails.setText( geneSymbol+" is not a gene symbol" );
+		}
 	}
 	
 	/* (non-Javadoc)

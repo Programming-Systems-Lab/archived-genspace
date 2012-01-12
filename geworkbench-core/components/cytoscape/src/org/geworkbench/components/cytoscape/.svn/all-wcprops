@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8611/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
+/svn/geworkbench/!svn/ver/8659/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
 END
 HistogramGraph.java
 K 25
@@ -31,7 +31,7 @@ CytoscapeWidget.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.cwb.xml
+/svn/geworkbench/!svn/ver/8659/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.cwb.xml
 END
 MarkerSelectionPanel.java
 K 25

@@ -12,7 +12,7 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust
- * @version $Id: DefaultColorContext.java 8609 2011-12-15 17:06:38Z zji $
+ * @version $Id: DefaultColorContext.java 8652 2012-01-05 21:52:03Z zji $
  */
 
 /**
@@ -57,6 +57,9 @@ public class DefaultColorContext implements ColorContext {
     public void updateContext(DSMicroarraySetView<DSGeneMarker, DSMicroarray> view) {
         // Use entire set
         DSMicroarraySet set = view.getMicroarraySet();
+		if(lock==null) {
+			lock = new Object();
+		}
         synchronized (lock) {
         	magnitude = 0.0;
 	        for (int i = 0; i < set.size(); i++) {

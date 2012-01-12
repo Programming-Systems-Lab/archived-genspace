@@ -45,6 +45,7 @@ import org.geworkbench.components.genspace.entity.AnalysisEvent;
 import org.geworkbench.components.genspace.entity.AnalysisEventParameter;
 import org.geworkbench.components.genspace.entity.TasteUser;
 import org.geworkbench.components.genspace.entity.Tool;
+import org.geworkbench.components.genspace.entity.ToolStatCache;
 import org.geworkbench.components.genspace.entity.Transaction;
 import org.geworkbench.components.genspace.entity.User;
 import org.geworkbench.components.genspace.entity.Workflow;
@@ -55,13 +56,16 @@ import org.geworkbench.components.genspace.server.mahout.GenspaceItemRecommender
 import org.geworkbench.components.genspace.server.mahout.GenspaceItemSimilarity;
 import org.geworkbench.components.genspace.server.mahout.GenspaceMySQLJDBCDataModel;
 import org.geworkbench.components.genspace.server.mahout.GenspaceUserSimilarity;
+import org.geworkbench.components.genspace.server.task.WorkflowStatisticsMaintainer;
 
 
 public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		implements ToolInformationProvider {
 
-	@EJB MahoutRecommenderLocal mahoutBean;
+	@EJB
+	MahoutRecommenderLocal mahoutBean;
 	
+	@EJB WorkflowStatisticsMaintainer statsMaintainer;
 	/*
     @Schedule(minute="0/5",hour="*", persistent=false)
     public void doWork(){
@@ -122,48 +126,25 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	public Tool getMostPopularNextTool(int id) {
     	logUsage();
-
-//		System.out.println("Selecting next popular tool for " + id);
-		long start = System.currentTimeMillis();
-		Query q = getEntityManager()
-				.createNativeQuery(
-						"select t.* from TOOL t " +
-						"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
-						"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality-1 " +
-						"inner join WORKFLOW w on w.id=wt.workflow_id " +
-						"where wt2.tool_id=? group by t.id order by SUM(w.usagecount) limit 1",
-						Tool.class);
-		q.setParameter(1, id);
-		Tool r = null;
-		try {
-			r = (Tool) q.getSingleResult();
-		} catch (NoResultException e) {
-
-		}
-//		System.out.println("Finished after "
-//				+ (System.currentTimeMillis() - start) + " secs");
-		return r;
+		return getToolStats(id).getMostPopularNext();
 	}
-
+	private ToolStatCache getToolStats(int tool)
+	{
+		ToolStatCache c;
+		try{
+			c = getEntityManager().find(ToolStatCache.class, tool);
+		}
+		catch(Exception ex)
+		{
+			c = statsMaintainer.calculateToolStats(tool);
+		}
+		if(c == null)
+			c = statsMaintainer.calculateToolStats(tool);
+		return c;
+	}
 	public Tool getMostPopularPreviousTool(int tool) {
     	logUsage();
-
-		Query q = getEntityManager()
-				.createNativeQuery(
-						"select t.* from TOOL t " +
-						"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
-						"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality+1 " +
-						"inner join WORKFLOW w on w.id=wt.workflow_id " +
-						"where wt2.tool_id=? group by t.id order by SUM(w.usagecount) limit 1",
-						Tool.class);
-		q.setParameter(1, tool);
-		Tool r = null;
-		try {
-			r = (Tool) q.getSingleResult();
-		} catch (NoResultException e) {
-
-		}
-		return r;
+		return getToolStats(tool).getMostPopularBefore();
 	}
 
 	@Override
@@ -205,27 +186,27 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	public List<Workflow> getAllWorkflowsIncluding(int tool) {
     	logUsage();
 
-		Query q = getEntityManager().createQuery("SELECT DISTINCT w,w.parent.id FROM Workflow w, WorkflowTool wt WHERE wt MEMBER OF w.tools AND wt.tool=?1 ORDER BY w.usageCount DESC",Object[].class).
-		setMaxResults(150);//.setHint(QueryHints.CACHE_USAGE, CacheUsage.DoNotCheckCache).setHint(QueryHints.QUERY_TYPE, QueryType.ReadAll);//.setHint("eclipselink.join-fetch", "w.children");//.setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
+//		Query q = getEntityManager().createQuery("SELECT DISTINCT w,w.parent.id FROM Workflow w, WorkflowTool wt WHERE wt MEMBER OF w.tools AND wt.tool=?1 ORDER BY w.usageCount DESC",Object[].class).
+//		setMaxResults(150);//.setHint(QueryHints.CACHE_USAGE, CacheUsage.DoNotCheckCache).setHint(QueryHints.QUERY_TYPE, QueryType.ReadAll);//.setHint("eclipselink.join-fetch", "w.children");//.setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");
 		
-//		Query q = getEntityManager().createNativeQuery(
-//				"select distinct w.* from WORKFLOW w "
-//						+ "inner join WORKFLOWTOOL wt on w.id=wt.workflow_id "
-//						+ "where wt.tool_id=? order by w.usageCount desc LIMIT 150",
-//				Workflow.class).setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");;
-		q.setParameter(1, getEntityManager().find(Tool.class, tool));
-		List<Object[]> wf = null;
+		Query q = getEntityManager().createNativeQuery(
+				"select distinct w.* from WORKFLOW w "
+						+ "inner join WORKFLOWTOOL wt on w.id=wt.workflow_id "
+						+ "where wt.tool_id=? order by w.usageCount desc LIMIT 150",
+				Workflow.class);//.setHint(QueryHints.JDBC_FETCH_SIZE, 256).setHint("eclipselink.join-fetch", "w.tools").setHint("eclipselink.join-fetch", "w.parent").setHint("eclipselink.join-fetch", "w.children");;
+		q.setParameter(1, tool);
+		List<Workflow> wf = null;
 		ArrayList<Workflow> ret = new ArrayList<Workflow>();
 		try {
 			wf = q.getResultList();
-			for (Object[] o : wf) {
-				Workflow w = (Workflow) o[0];
-				w.setCachedParentId((Integer) o[1]);
+			for (Workflow o : wf) {
+				Workflow w = o;
+//				w.setCachedParentId(w.getParent().getId());
 				ret.add(w.slimDownTiny());
 			}
 		} catch (NoResultException e) {
-
 		}
+
 //		System.out.println("Returning " + ret.size());
 		return fixParentChildrenCaches(ret);
 	}
@@ -306,19 +287,16 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 	
 	// Added by efedotov
-	@SuppressWarnings("unchecked")
 	public List<Workflow> getMahoutToolSuggestion(int userId, int filterMethod) {
 		return mahoutBean.getToolSuggestions(userId, filterMethod);
 	}
 	
 	// Added by efedotov
-	@SuppressWarnings("unchecked")
 	public List<TasteUser> getMahoutUserSuggestion(int userId, int filterMethod) {
 		return mahoutBean.getUserSuggestions(userId, filterMethod);
 	}
 	
 	// Added by efedotov
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMahoutSimilarWorkflowsSuggestion(List<Tool> tools) {
 		
@@ -326,14 +304,12 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	}
 	
 	// Added by efedotov
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Workflow> getMahoutUserWorkflowsSuggestion(int userID, int filterMethod) {
 		return mahoutBean.getSimilarUserWorkflows(userID, filterMethod);
 	}
 	
 	// Added by efedotov
-	@SuppressWarnings("unchecked")
 	@Override
 	public void refreshMahoutRecommender() {
 		mahoutBean.refresh();

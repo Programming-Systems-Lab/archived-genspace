@@ -1,13 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/8578/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
+/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 END
 SequenceRetriever.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceRetriever.java
+/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceRetriever.java
+END
+SequenceListSelectionListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceListSelectionListener.java
+END
+MarkerPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/MarkerPanel.java
 END
 RetrievedSequencesPanel.java
 K 25
@@ -32,6 +44,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 152
 /svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceRetriever.cwb.xml
+END
+SequenceListRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceListRenderer.java
 END
 RetrievedSequenceView.java
 K 25

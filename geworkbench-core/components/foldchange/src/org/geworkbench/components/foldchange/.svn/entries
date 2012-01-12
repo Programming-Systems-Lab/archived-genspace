@@ -1,15 +1,15 @@
 10
 
 dir
-8645
+8680
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/foldchange/src/org/geworkbench/components/foldchange
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-10-19T16:34:53.735246Z
-8424
-zji
+2012-01-05T17:40:05.819896Z
+8649
+smithken
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-10-18T01:44:55.000000Z
-da1ada469dd0714c851db3984a5f8a32
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-01-10T21:28:13.000000Z
+5fe7d6dc755c55aa68aaab0391c10b78
+2012-01-05T17:40:05.819896Z
+8649
+smithken
 
 
 
@@ -58,7 +58,7 @@ zji
 
 
 
-1217
+1237
 
 FoldChangeAnalysis.cwb.xml
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-10-18T01:44:55.000000Z
-e842229420a41312637e4e482aab0c35
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-01-10T21:28:13.000000Z
+1768d3d0a73bbf94c75fcf2a3f603dc9
+2012-01-05T17:40:05.819896Z
+8649
+smithken
 
 
 
@@ -92,7 +92,7 @@ zji
 
 
 
-1133
+1336
 
 FoldChangePanel.java
 file
@@ -100,7 +100,7 @@ file
 
 
 
-2011-10-18T01:44:55.000000Z
+2011-08-17T00:10:43.000000Z
 4175581275d5d931f5b8ee32abe33513
 2011-03-28T21:17:19.028559Z
 7675
@@ -134,7 +134,7 @@ file
 
 
 
-2011-10-18T01:44:55.000000Z
+2011-08-17T00:10:43.000000Z
 9f912bcb3d10f09d0a9465e684632c0c
 2011-02-28T21:49:26.813759Z
 7506
@@ -168,7 +168,7 @@ file
 
 
 
-2012-01-04T20:52:04.000000Z
+2012-01-10T19:15:25.000000Z
 aacd6f8b4beb5d3575b040135460afe0
 2011-10-19T16:34:53.735246Z
 8424

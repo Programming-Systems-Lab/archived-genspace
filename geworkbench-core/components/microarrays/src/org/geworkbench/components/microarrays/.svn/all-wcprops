@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/8591/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
+/svn/geworkbench/!svn/ver/8675/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
 END
 ExpressionProfilePanel.java
 K 25
@@ -73,7 +73,7 @@ EVDPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 128
-/svn/geworkbench/!svn/ver/8591/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/EVDPanel.java
+/svn/geworkbench/!svn/ver/8675/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/EVDPanel.java
 END
 MicroarrayDisplay.java
 K 25

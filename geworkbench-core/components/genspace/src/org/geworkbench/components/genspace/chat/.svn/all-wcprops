@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/chat
+/svn/geworkbench/!svn/ver/8666/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/chat
 END
 ChatTest.java
 K 25
@@ -19,7 +19,7 @@ ChatReceiver.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/chat/ChatReceiver.java
+/svn/geworkbench/!svn/ver/8666/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/chat/ChatReceiver.java
 END
 ScreenShareListener.java
 K 25

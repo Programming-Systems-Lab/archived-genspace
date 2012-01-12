@@ -37,7 +37,7 @@ import org.geworkbench.events.GeneSelectorEvent;
 /**
  * @author unattributable
  * @see VisualPlugin
- * @version $Id: MicroarrayViewEventBase.java 8592 2011-12-13 22:08:44Z zji $
+ * @version $Id: MicroarrayViewEventBase.java 8675 2012-01-09 20:51:15Z zji $
  */
 public abstract class MicroarrayViewEventBase implements VisualPlugin {
 
@@ -96,8 +96,14 @@ public abstract class MicroarrayViewEventBase implements VisualPlugin {
 		log.debug("Source object " + source);
 
 		if (e.getMessage().equals(org.geworkbench.events.ProjectEvent.CLEARED)) {
+			if(beingRefreshed) {
+				return;
+			}
+
+			beingRefreshed = true;
 			refMASet = null;
 			fireModelChangedEvent();
+			beingRefreshed = false;
 		} else {
 			DSDataSet<?> dataSet = e.getDataSet();
 			if (dataSet instanceof DSMicroarraySet) {
@@ -168,7 +174,7 @@ public abstract class MicroarrayViewEventBase implements VisualPlugin {
 
 	}
 
-	volatile boolean beingRefreshed = false;
+	private volatile boolean beingRefreshed = false;
 	/**
 	 * Refreshes the chart view.
 	 */

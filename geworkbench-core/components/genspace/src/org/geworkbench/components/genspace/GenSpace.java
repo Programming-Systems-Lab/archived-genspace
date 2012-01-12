@@ -146,7 +146,7 @@ public class GenSpace {
 		org.geworkbench.components.genspace.ui.GenSpaceLogin login = new org.geworkbench.components.genspace.ui.GenSpaceLogin();
 		login.addMahoutPanel();
 
-		SequenceAlignmentPanel saPanel = SequenceAlignmentPanel.getInstance();
+//		SequenceAlignmentPanel saPanel = SequenceAlignmentPanel.getInstance();
 		
 		jtp.addTab("genSpace Login", login);
 		jtp.addTab("Workflow Visualization", wv);
@@ -154,7 +154,7 @@ public class GenSpace {
 		jtp.addTab("Workflow Statistics", stats);
 		jtp.addTab("Social Center", networksPanels.$$$getRootComponent$$$());
 		jtp.addTab("Workflow Repository", needLoginPanel);
-		jtp.addTab("MSA Recommender", saPanel);
+//		jtp.addTab("MSA Recommender", saPanel);
 		
 		jtp.addChangeListener(new ChangeListener() {
 			
