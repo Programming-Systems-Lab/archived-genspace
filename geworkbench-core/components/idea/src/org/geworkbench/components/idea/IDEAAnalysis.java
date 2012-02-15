@@ -52,7 +52,7 @@ import org.geworkbench.util.ProgressBar;
  * IDEAAnalysis of IDEA analysis component
  * 
  * @author zm2165
- * @version $Id: IDEAAnalysis.java 8651 2012-01-05 21:41:18Z maz $
+ * @version $Id: IDEAAnalysis.java 8760 2012-01-25 16:51:01Z maz $
  */
 public class IDEAAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -132,8 +132,8 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 
 		TreeSet<Gene> preGeneList = new TreeSet<Gene>();
 		for (IdeaNetworkEdge edge : network) {
-			preGeneList.add(new Gene(edge.geneId1));
-			preGeneList.add(new Gene(edge.geneId2));
+			preGeneList.add(new Gene(edge.getGene1()));
+			preGeneList.add(new Gene(edge.getGene2()));
 		}
 		
 		for (DSGeneMarker marker : datasetView.markers()) {
@@ -170,9 +170,9 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 			Gene gene2 = null;
 
 			for (Gene g : preGeneList) {
-				if (g.getGeneNo() == edge.geneId1) {
-					gene1 = g; // gene1 points to preGeneList
-				} else if (g.getGeneNo() == edge.geneId2) {
+				if (g.getGeneNo() == edge.getGene1()) {
+					gene1 = g; 
+				} else if (g.getGeneNo() == edge.getGene2()) {
 					gene2 = g;
 				}
 			}
@@ -180,11 +180,11 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 				if ((gene1.getMarkers() != null) && (gene2.getMarkers() != null)) {
 					for (DSGeneMarker marker1 : gene1.getMarkers()) {
 						for (DSGeneMarker marker2 : gene2.getMarkers()) {
-							IdeaEdge anEdge = new IdeaEdge(edge.geneId1,
-									edge.geneId2, marker1, marker2,
+							IdeaEdge anEdge = new IdeaEdge(edge.getGene1(),
+									edge.getGene2(), marker1, marker2,
 									marker1.getSerial(), marker2.getSerial(),
 									marker1.getLabel(), marker2.getLabel(),
-									edge.interactionType);
+									edge.getInteractionType());
 							edgeIndex.add(anEdge);
 	
 							gene1.addEdge(anEdge);// add the edge to related
@@ -233,7 +233,7 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 				
 				if (anEdge.getNormCorr() < pvalue / edgeIndex.size()) { // show
 																		// significant
-					// edges
+																		// edges
 					if (anEdge.getDeltaCorr() < 0)
 						anEdge.setLoc(true);// save the flag for significant edge
 					else if (anEdge.getDeltaCorr() > 0)
@@ -453,11 +453,12 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 			}
 			double locnes = Math.abs(-Math.log(pg.getCumLoc()));
 			double gocnes =  Math.abs(-Math.log(pg.getCumGoc()));
-			
-			IdeaNode aNode=new IdeaNode(pg.getProbeId(), m.getGeneName(), "chromosomal", 
-					pg.getEdges().size(), Math.abs(pg.getNes()), pg.getLocs(), locHits, pg.getCumLoc(), 
-					locnes, pg.getGocs(), gocHits, pg.getCumGoc(), gocnes);
-			nodeResultList.add(aNode);			
+			if((locnes>0)||(gocnes>0)){
+				IdeaNode aNode=new IdeaNode(pg.getProbeId(), m.getGeneName(), "chromosomal", 
+						pg.getEdges().size(), Math.abs(pg.getNes()), pg.getLocs(), locHits, pg.getCumLoc(), 
+						locnes, pg.getGocs(), gocHits, pg.getCumGoc(), gocnes);
+				nodeResultList.add(aNode);
+			}
 		}
 		//prepare moduleResultList
 		List<IdeaModule> moduleResultList=new ArrayList<IdeaModule>();
@@ -492,8 +493,8 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 		}		
 		IdeaResultDataSet analysisResult = new IdeaResultDataSet(maSet,
 				"IDEA Analysis Result",locResultList, gocResultList, nodeResultList, moduleResultList,pvalue);
-		String stemp = generateHistoryString();
-		HistoryPanel.addToHistory(analysisResult, stemp+GenerateMarkerString(datasetView));
+		String stemp = generateHistoryString()+"\n";
+		HistoryPanel.addToHistory(analysisResult, stemp+ this.generateHistoryForMaSetView(datasetView,true));
 
 		AlgorithmExecutionResults results = new AlgorithmExecutionResults(true,
 				"Idea Analysis", analysisResult);
@@ -506,21 +507,7 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 		histStr.append(IDEAAnalysisPanel.getDataSetHistory());
 		return histStr.toString();
 	}
-	
-	String GenerateMarkerString(
-			DSMicroarraySetView<? extends DSGeneMarker, ? extends DSMicroarray> view) {
-		String histStr = null;
-		histStr = view.markers().size() + " markers analyzed:\n";
-		for (DSGeneMarker marker : view.markers()) {
-			histStr += "\t" + marker.getLabel() + "\n";
-		}
-		//histStr+=view.items().size() +" microarray analyzed:\n";		
-		//for (DSMicroarray microarray : view.items()){
-		//	histStr+="\t"+microarray.getLabel()+"\n";
-		//}		
-		return histStr;
-	}	
-	
+
 	
 	public void stop(){
 		if (pbIdea!=null)
@@ -546,7 +533,7 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 		bisonParameters.put("phenotype", phenotype);
 		String[] network= paramPanel.getNetworkAsString();
 		bisonParameters.put("network", network);
-		//String[] nullData= nullDataAsString;
+		
 		String[] nullData= nullDataAsString;
 		bisonParameters.put("nullData", nullData);
 		
@@ -583,7 +570,7 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 		
 		if ((params.getIncludeString().equals(""))||(params.getIncludeString().equals(" "))) {
 			return new ParamValidationResults(false,
-					"Phenotype include text field is required.");
+					"Arrays defining phenotype are required.");
 		}
 		double pvalue;
 		try{

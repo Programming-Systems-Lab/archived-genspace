@@ -1,15 +1,15 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-11-07T21:20:44.692583Z
-8503
-zji
+2012-01-11T20:07:01.347231Z
+8690
+maz
 
 
 
@@ -134,11 +134,11 @@ file
 
 
 
-2011-08-17T00:10:46.000000Z
-7b6f838915fd1bcfb5c8110dbff90c7c
-2011-03-31T23:56:29.089934Z
-7697
-smithken
+2012-01-31T19:12:34.000000Z
+b7860bf3982d61d43d61b801bdd7fa4f
+2012-01-11T20:07:01.347231Z
+8690
+maz
 
 
 
@@ -160,7 +160,7 @@ smithken
 
 
 
-1179
+1099
 
 SOMPlot.java
 file

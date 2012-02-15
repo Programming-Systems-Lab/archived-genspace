@@ -5,13 +5,8 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +14,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -38,20 +34,20 @@ import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.ProjectEvent;
-import org.geworkbench.util.FilePathnameUtils;
 
 /**
  * IDEAViewer of IDEA analysis component
  * 
  * @author zm2165
- * @version $Id: IDEAViewer.java 8671 2012-01-09 19:11:49Z maz $
+ * @version $Id: IDEAViewer.java 8810 2012-01-30 19:45:17Z maz $
  * 
  */
 @AcceptTypes({ IdeaResultDataSet.class })
 public class IDEAViewer extends JPanel implements VisualPlugin {
 
 	private static final long serialVersionUID = -4415752683103679560L;
-
+	private enum SaveTableOption{NODE, GOC, LOC, MODULE};	
+	
 	private static class IdeaEdgeTableModel extends AbstractTableModel {
 		private static final int COLUMN_COUNT = 7;
 
@@ -336,14 +332,7 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JFileChooser fc = new JFileChooser();
-				fc.addChoosableFileFilter(new TXTFilter());
-		        fc.setAcceptAllFileFilterUsed(false);
-				int returnVal = fc.showSaveDialog(IDEAViewer.this);
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					saveModuleInformation(fc.getSelectedFile(),
-							ideaResult.getModuleList());
-				}
+				saveTable(SaveTableOption.MODULE);
 			}
 
 		});
@@ -351,43 +340,21 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 		saveSigGeneButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JFileChooser fc = new JFileChooser();
-				fc.addChoosableFileFilter(new TXTFilter());
-		        fc.setAcceptAllFileFilterUsed(false);
-				int returnVal = fc.showSaveDialog(IDEAViewer.this);
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					DSMicroarraySet maSet = (DSMicroarraySet) ideaResult
-							.getParentDataSet();
-					saveNodeAsFile(fc.getSelectedFile(),
-							ideaResult.getNodeList(),
-							maSet.getMarkers());
-				}
+				saveTable(SaveTableOption.NODE);
 			}
 		});
 
 		saveLocButton.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				JFileChooser fc = new JFileChooser();
-				fc.addChoosableFileFilter(new TXTFilter());
-		        fc.setAcceptAllFileFilterUsed(false);
-				int returnVal = fc.showSaveDialog(IDEAViewer.this);
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					saveAsFile(fc.getSelectedFile(), ideaResult.getLocList());
-				}
+			public void actionPerformed(ActionEvent arg0) {				
+				saveTable(SaveTableOption.LOC);
 			}
 		});
 
 		saveGocButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JFileChooser fc = new JFileChooser();
-				fc.addChoosableFileFilter(new TXTFilter());
-		        fc.setAcceptAllFileFilterUsed(false);
-				int returnVal = fc.showSaveDialog(IDEAViewer.this);
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					saveAsFile(fc.getSelectedFile(), ideaResult.getGocList());
-				}
+				saveTable(SaveTableOption.GOC);
 			}
 		});
 	}
@@ -416,6 +383,52 @@ public class IDEAViewer extends JPanel implements VisualPlugin {
 
 	}
 
+	private void saveTable(SaveTableOption option){
+
+		JFileChooser fc = new JFileChooser();
+		fc.addChoosableFileFilter(new TXTFilter());
+        fc.setAcceptAllFileFilterUsed(false);
+		int returnVal = fc.showSaveDialog(IDEAViewer.this);
+		String exportFileStr=fc.getSelectedFile().getPath();				
+		if (!exportFileStr.endsWith(".txt")&&!exportFileStr.endsWith(".TXT"))
+			exportFileStr += ".txt";
+		File exportFile=new File(exportFileStr);
+		
+		if (exportFile.exists()) {
+			int n = JOptionPane.showConfirmDialog(
+					null,
+					"The file exists, are you sure to overwrite?",
+					"Overwrite?", JOptionPane.YES_NO_OPTION);
+			if (n == JOptionPane.NO_OPTION || n == JOptionPane.CLOSED_OPTION) {
+				JOptionPane.showMessageDialog(null, "Save cancelled.");
+				return;
+			}
+		}
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			DSMicroarraySet maSet = (DSMicroarraySet) ideaResult
+					.getParentDataSet();
+			switch (option){
+				case NODE:
+					saveNodeAsFile(exportFile,
+							ideaResult.getNodeList(),
+							maSet.getMarkers());
+					break;
+				case LOC:
+					saveAsFile(exportFile, ideaResult.getLocList());
+					break;
+				case GOC:
+					saveAsFile(exportFile, ideaResult.getGocList());
+					break;
+				case MODULE:
+					saveModuleInformation(exportFile,
+							ideaResult.getModuleList());
+					break;
+			}
+			
+		}
+	
+	}
+	
 	private void saveAsFile(File file, List<IdeaGLoc> list) {
 		String edgeStr = "";
 

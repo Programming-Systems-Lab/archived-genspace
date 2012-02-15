@@ -1,5 +1,6 @@
 package org.geworkbench.components.discovery;
 
+import java.lang.NumberFormatException;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -12,7 +13,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.InputVerifier;
@@ -40,19 +40,19 @@ import org.geworkbench.util.RegularExpressionVerifier;
 
 /**
  * @author Nikhil
- *
+ * 
  */
-@AcceptTypes( { CSSequenceSet.class })
-public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
+@AcceptTypes({ CSSequenceSet.class })
+public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel {
 
 	private static final long serialVersionUID = 7792584092654744039L;
-	
-	private static Log log = LogFactory.getLog(PatternDiscoveryParamPanel.class);	
-	static final String SUPPORT_OCCURRENCES = "Support # Occurrences";
-	static final String SUPPORT_SEQUENCES = "Support # Sequences";
-	static final String SUPPORT_PERCENT_1_100 = "Support Percent %(1-100)";
 
-	private JTextField jMinPatternNoBox = new JTextField();
+	private static Log log = LogFactory
+			.getLog(PatternDiscoveryParamPanel.class);
+	static final String SUPPORT_OCCURRENCES = "Support (Number of Occurrences)";
+	static final String SUPPORT_SEQUENCES = "Support (Number of Sequences)";
+	static final String SUPPORT_PERCENT_1_100 = "Support (Percent of Sequences)";
+
 	private JLabel jMinClusterSizeLabel = new JLabel();
 	private JLabel jMinPatternNoLabel = new JLabel();
 
@@ -70,7 +70,6 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 
 	// Limits Panel
 	private JTextField jMaxPatternNoBox = new JTextField();
-	private JTextField jMaxRunTimeBox = new JTextField();
 
 	private JTextField jDecreaseSupportBox = new JTextField();
 
@@ -83,22 +82,23 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 	private JTextField minPatternNumberField = new JTextField();
 	private JTextField jMinClusterSizeBox = new JTextField();
 	private JCheckBox jUseHMMBox = new JCheckBox();
+	
 	private String currentSupportMenuStr = SUPPORT_PERCENT_1_100;
 	private int maxSeqNumber = Integer.MAX_VALUE;
-	
-    private JRadioButton discovery = new JRadioButton("Normal");
-    private JRadioButton exhaustive = new JRadioButton("Exhaustive");
-    
+
+	private JRadioButton discovery = new JRadioButton("Normal");
+	private JRadioButton exhaustive = new JRadioButton("Exhaustive");
+
 	public PatternDiscoveryParamPanel() {
 		this.setLayout(new BorderLayout());
-		
+
 		final Dimension size1 = new Dimension(150, 30);
 
 		discovery.setSelected(true);
 		ButtonGroup algorithmGroup = new ButtonGroup();
-        algorithmGroup.add(discovery);
-        algorithmGroup.add(exhaustive);
-		
+		algorithmGroup.add(discovery);
+		algorithmGroup.add(exhaustive);
+
 		jMinSupportMenu.addItem(SUPPORT_PERCENT_1_100);
 		jMinSupportMenu.addItem(SUPPORT_SEQUENCES);
 		jMinSupportMenu.addItem(SUPPORT_OCCURRENCES);
@@ -110,7 +110,7 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 				jSupportMenu_actionPerformed();
 			}
 		});
-		Dimension size2 = new Dimension(200, 30);
+		Dimension size2 = new Dimension(220, 30);
 		jMinSupportMenu.setMaximumSize(size2);
 		jMinSupportBox.setMaximumSize(size1);
 		jMinSupportBox.setText("70");
@@ -128,6 +128,8 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 
 		jMinSupportExhaustive.setMaximumSize(size1);
 		jMinSupportExhaustive.setText("10");
+		jMinSupportExhaustive.setInputVerifier(new PercentNumberVerifier(
+				"((\\d){1,10}(.))?(\\d){1,10}"));
 
 		// add a verifier
 		jMinTokensBox.setInputVerifier(new RegularExpressionVerifier(
@@ -136,8 +138,9 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 				"(\\d){1,9}"));
 		jWindowBox
 				.setInputVerifier(new RegularExpressionVerifier("(\\d){1,9}"));
-		jMinSupportBox.setInputVerifier(new SupportVerifier(
-				"0?\\.?(\\d){1,9}(%)?"));
+		jMinSupportBox.setInputVerifier(new BasicMinSupportVerifier(
+				"((\\d){1,10}(.))?(\\d){1,10}"));
+
 		// Advanced Panel
 		jMatrixBox.addItem("BLOSUM50");
 		jMatrixBox.addItem("BLOSUM62");
@@ -151,16 +154,16 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(jExactOnlyBox.isSelected()) {
+				if (jExactOnlyBox.isSelected()) {
 					jMatrixBox.setEnabled(false);
 					jSimThresholdBox.setEnabled(false);
 				} else {
 					jMatrixBox.setEnabled(true);
 					jSimThresholdBox.setEnabled(true);
 				}
-				
+
 			}
-			
+
 		});
 		jExactOnlyBox.setText("Exact Only");
 		jSimThresholdBox.setText("2");
@@ -172,13 +175,9 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		// Limits Panel
 		jMaxPatternNoBox.setMaximumSize(size1);
 		jMaxPatternNoBox.setText("100000");
-		jMaxRunTimeBox.setEnabled(false);
-		jMaxRunTimeBox.setMaximumSize(size1);
-		jMaxRunTimeBox.setText("0");
+
 		// input verifier
 		jMaxPatternNoBox.setInputVerifier(new RegularExpressionVerifier(
-				"(\\d){1,9}"));
-		jMaxRunTimeBox.setInputVerifier(new RegularExpressionVerifier(
 				"(\\d){1,9}"));
 
 		// Exhaustive Panel
@@ -189,10 +188,10 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		jConsRegionExtBox.setEnabled(false);
 		jConsRegionExtBox.setText("");
 
-		jMinPatternNoBox.setPreferredSize(new Dimension(20, 20));
-
 		minPatternNumberField.setMaximumSize(size1);
-		minPatternNumberField.setText("");
+		minPatternNumberField.setText("10");
+		minPatternNumberField.setInputVerifier(new RegularExpressionVerifier(
+		"((\\d){1,10})?"));
 		jMinClusterSizeBox.setPreferredSize(new Dimension(20, 20));
 		jMinClusterSizeBox.setText("10");
 		jMinClusterSizeBox.setInputVerifier(new RegularExpressionVerifier(
@@ -201,18 +200,17 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		jUseHMMBox.setText("Use ProfileHMM");
 
 		// input verifier
-		jDecreaseSupportBox.setInputVerifier(new RegularExpressionVerifier(
-				"(\\d){1,9}(%)?"));
+		jDecreaseSupportBox.setInputVerifier(new PercentNumberVerifier(
+				"((\\d){1,10}(.))?(\\d){1,10}"));
 
 		jMinPatternNoLabel.setText("Min. Pattern Number:");
-		jMinPatternNoBox.setText("10");
 		jMinClusterSizeLabel.setText("Min. Cluster Size:");
 
-		jMinPatternNoBox.setInputVerifier(new RegularExpressionVerifier(
+		minPatternNumberField.setInputVerifier(new RegularExpressionVerifier(
 				"(\\d){1,9}"));
 
 		Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-		
+
 		JPanel basic0 = new JPanel();
 		basic0.setLayout(new BoxLayout(basic0, BoxLayout.LINE_AXIS));
 		basic0.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -221,21 +219,21 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		basic0.add(label0);
 		basic0.add(discovery);
 		basic0.add(exhaustive);
-		
+
 		JPanel basic1 = new JPanel();
 		basic1.setLayout(new BoxLayout(basic1, BoxLayout.LINE_AXIS));
 		basic1.setAlignmentX(Component.LEFT_ALIGNMENT);
 		basic1.add(jMinSupportMenu);
 		basic1.add(jMinSupportBox);
-		
+
 		JPanel basic2 = new JPanel();
 		basic2.setLayout(new BoxLayout(basic2, BoxLayout.LINE_AXIS));
 		basic2.setAlignmentX(Component.LEFT_ALIGNMENT);
-		JLabel label1 = new JLabel("Min. Tokens:");
+		JLabel label1 = new JLabel("Minimum Tokens:");
 		label1.setMaximumSize(size2);
 		basic2.add(label1);
 		basic2.add(jMinTokensBox);
-		
+
 		JPanel basic3 = new JPanel();
 		basic3.setLayout(new BoxLayout(basic3, BoxLayout.LINE_AXIS));
 		basic3.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -243,7 +241,7 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		label2.setMaximumSize(size2);
 		basic3.add(label2);
 		basic3.add(jWindowBox);
-		
+
 		JPanel basic4 = new JPanel();
 		basic4.setLayout(new BoxLayout(basic4, BoxLayout.LINE_AXIS));
 		basic4.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -251,7 +249,7 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		label3.setMaximumSize(size2);
 		basic4.add(label3);
 		basic4.add(jMinWTokensBox);
-		
+
 		JPanel basicPanel = new JPanel();
 		basicPanel.setLayout(new BoxLayout(basicPanel, BoxLayout.PAGE_AXIS));
 		basicPanel.setBorder(emptyBorder);
@@ -260,51 +258,72 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		basicPanel.add(basic2);
 		basicPanel.add(basic3);
 		basicPanel.add(basic4);
-		
 
-		jExactOnlyBox.setAlignmentY(Component.TOP_ALIGNMENT);
-		JPanel advancedPanel = new JPanel();
-		advancedPanel.setLayout(new BoxLayout(advancedPanel, BoxLayout.LINE_AXIS));
-		advancedPanel.setBorder(emptyBorder);
-		advancedPanel.add(Box.createRigidArea(new Dimension(5,0)));
-		advancedPanel.add(jExactOnlyBox);
-		advancedPanel.add(Box.createRigidArea(new Dimension(5,0)));
+		JPanel advancedPanel1 = new JPanel();
+		advancedPanel1.setLayout(new BoxLayout(advancedPanel1,
+				BoxLayout.LINE_AXIS));
+		JLabel advLabel1 = new JLabel("Substitution Matrix:");
+		advLabel1.setMaximumSize(size1);
+		advancedPanel1.add(advLabel1);
+		jExactOnlyBox.setMaximumSize(size1);
+		advancedPanel1.add(jExactOnlyBox);
 
-		JPanel advancedRightPanel = new JPanel();
-		advancedRightPanel.setAlignmentY(Component.TOP_ALIGNMENT);
-		advancedRightPanel.setLayout(new BoxLayout(advancedRightPanel, BoxLayout.PAGE_AXIS));
-		jMatrixBox.setMaximumSize(new Dimension(200, 30));
-		advancedRightPanel.add(jMatrixBox);
-		advancedRightPanel.add(Box.createRigidArea(new Dimension(0,5)));
+		JPanel advancedPanel2 = new JPanel();
+		advancedPanel2.setLayout(new BoxLayout(advancedPanel2,
+				BoxLayout.LINE_AXIS));
+		JLabel advLabel2 = new JLabel("Similarity Matrix:");
+		advLabel2.setMaximumSize(size1);
+		advancedPanel2.add(advLabel2);
+		jMatrixBox.setMaximumSize(size1);
+		advancedPanel2.add(jMatrixBox);
+
 		JPanel similarityThresholdPanel = new JPanel();
-		similarityThresholdPanel.setLayout(new BoxLayout(similarityThresholdPanel, BoxLayout.LINE_AXIS));
-		similarityThresholdPanel.setMaximumSize(new Dimension(200, 30));
-		similarityThresholdPanel.add(new JLabel("Similarity Threshold:"));
+		similarityThresholdPanel.setLayout(new BoxLayout(
+				similarityThresholdPanel, BoxLayout.LINE_AXIS));
+		JLabel advLabel3 = new JLabel("Similarity Threshold:");
+		advLabel3.setMaximumSize(size1);
+		similarityThresholdPanel.add(advLabel3);
+		jSimThresholdBox.setMaximumSize(size1);
 		similarityThresholdPanel.add(jSimThresholdBox);
-		advancedRightPanel.add(similarityThresholdPanel);
-		advancedPanel.add(advancedRightPanel);
-		
+
+		JPanel advancedPanel = new JPanel();
+		advancedPanel.setLayout(new BoxLayout(advancedPanel,
+				BoxLayout.PAGE_AXIS));
+		advancedPanel.setBorder(emptyBorder);
+
+		advancedPanel1.setAlignmentX(Component.LEFT_ALIGNMENT);
+		advancedPanel2.setAlignmentX(Component.LEFT_ALIGNMENT);
+		similarityThresholdPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+		advancedPanel.add(advancedPanel1);
+		advancedPanel.add(advancedPanel2);
+		advancedPanel.add(similarityThresholdPanel);
+
 		JPanel limitPanel = new JPanel();
 		limitPanel.setLayout(new BoxLayout(limitPanel, BoxLayout.PAGE_AXIS));
 		limitPanel.setBorder(emptyBorder);
 		JPanel limitTopPanel = new JPanel();
-		limitTopPanel.setLayout(new BoxLayout(limitTopPanel, BoxLayout.LINE_AXIS));
+		limitTopPanel.setLayout(new BoxLayout(limitTopPanel,
+				BoxLayout.LINE_AXIS));
 		limitTopPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-		limitTopPanel.add(new JLabel("Max. Pattern Number: "));
+		limitTopPanel.add(new JLabel("Maximum Pattern Number: "));
 		limitTopPanel.add(jMaxPatternNoBox);
-		JPanel limitBottomPanel = new JPanel();
-		limitBottomPanel.setLayout(new BoxLayout(limitBottomPanel, BoxLayout.LINE_AXIS));
-		limitBottomPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-		limitBottomPanel.add(new JLabel("Max. Run Time (sec.):"));
-		limitBottomPanel.add(jMaxRunTimeBox);
 		limitPanel.add(limitTopPanel);
-		limitPanel.add(limitBottomPanel);
+		/* no longer used for now */
+		/*
+		 * JPanel limitBottomPanel = new JPanel();
+		 * limitBottomPanel.setLayout(new BoxLayout(limitBottomPanel,
+		 * BoxLayout.LINE_AXIS));
+		 * limitBottomPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+		 * limitBottomPanel.add(new JLabel("Maximum Run Time (sec.):"));
+		 * limitBottomPanel.add(jMaxRunTimeBox);
+		 * limitPanel.add(limitBottomPanel);
+		 */
 
 		JPanel exhaustive1 = new JPanel();
 		exhaustive1.setLayout(new BoxLayout(exhaustive1, BoxLayout.LINE_AXIS));
 		exhaustive1.setBorder(emptyBorder);
-		JLabel label4 = new JLabel("Decrease Support (%):");
-		label4.setMaximumSize(size1);
+		JLabel label4 = new JLabel("Decrement Support (%):");
+		label4.setMaximumSize(size2);
 		exhaustive1.add(label4);
 		exhaustive1.add(jDecreaseSupportBox);
 
@@ -312,7 +331,7 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		exhaustive2.setLayout(new BoxLayout(exhaustive2, BoxLayout.LINE_AXIS));
 		exhaustive2.setBorder(emptyBorder);
 		JLabel label5 = new JLabel("Minimum Support (%):");
-		label5.setMaximumSize(size1);
+		label5.setMaximumSize(size2);
 		exhaustive2.add(label5);
 		exhaustive2.add(jMinSupportExhaustive);
 
@@ -320,12 +339,13 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		exhaustive3.setLayout(new BoxLayout(exhaustive3, BoxLayout.LINE_AXIS));
 		exhaustive3.setBorder(emptyBorder);
 		JLabel label6 = new JLabel("Minimum Pattern Number:");
-		label6.setMaximumSize(size1);
+		label6.setMaximumSize(size2);
 		exhaustive3.add(label6);
 		exhaustive3.add(minPatternNumberField);
-		
+
 		JPanel exhaustivePanel = new JPanel();
-		exhaustivePanel.setLayout(new BoxLayout(exhaustivePanel, BoxLayout.PAGE_AXIS));
+		exhaustivePanel.setLayout(new BoxLayout(exhaustivePanel,
+				BoxLayout.PAGE_AXIS));
 		exhaustivePanel.setBorder(emptyBorder);
 		exhaustive1.setAlignmentX(Component.LEFT_ALIGNMENT);
 		exhaustive2.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -334,11 +354,13 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		exhaustivePanel.add(exhaustive2);
 		exhaustivePanel.add(exhaustive3);
 		JPanel exhaustiveOccurrencePanel = new JPanel();
-		exhaustiveOccurrencePanel.setLayout(new BoxLayout(exhaustiveOccurrencePanel, BoxLayout.LINE_AXIS));
+		exhaustiveOccurrencePanel.setLayout(new BoxLayout(
+				exhaustiveOccurrencePanel, BoxLayout.LINE_AXIS));
 		exhaustiveOccurrencePanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
 		JPanel exhaustiveSequencePanel = new JPanel();
-		exhaustiveSequencePanel.setLayout(new BoxLayout(exhaustiveSequencePanel, BoxLayout.LINE_AXIS));
+		exhaustiveSequencePanel.setLayout(new BoxLayout(
+				exhaustiveSequencePanel, BoxLayout.LINE_AXIS));
 		exhaustiveSequencePanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
 		exhaustivePanel.add(exhaustiveOccurrencePanel);
@@ -350,14 +372,14 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		jTabbedPane1.add(limitPanel, "Limits");
 		jTabbedPane1.add(advancedPanel, "Advanced");
 		jTabbedPane1.setSelectedIndex(0);
-		
+
 		this.setPreferredSize(new Dimension(400, 200));
 		this.add(jTabbedPane1, BorderLayout.CENTER);
-	} 
-	
+	}
+
 	// this class is used for the parametorPanel for verification of input.
 	// It uses a regular expression for the verification
-	private class SupportVerifier extends InputVerifier {
+	private class BasicMinSupportVerifier extends InputVerifier {
 		// TEXT_FIELD = "^(\\S)(.){1,75}(\\S)$";
 		// NON_NEGATIVE_INTEGER_FIELD = "(\\d){1,9}";
 		// INTEGER_FIELD = "(-)?" + NON_NEGATIVE_INTEGER_FIELD;
@@ -367,7 +389,7 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		// MONEY_FIELD = "(-)?" + NON_NEGATIVE_MONEY_FIELD;
 		Pattern p = null;
 
-		public SupportVerifier(String regexp) {
+		public BasicMinSupportVerifier(String regexp) {
 			p = Pattern.compile(regexp);
 		}
 
@@ -404,47 +426,99 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 				if (currentSupportStr == null) {
 					return false;
 				}
-				if (currentSupportStr.endsWith("%")) {
-					currentSupportStr = currentSupportStr.substring(0,
-							currentSupportStr.length() - 1);
-				}
 				if (new Double(currentSupportStr).doubleValue() > 100) {
 					return false;
 				}
 			}
-			if (currentSupportMenuStr.equalsIgnoreCase(SUPPORT_SEQUENCES)) {
-				if (new Integer(tf.getText().trim()).intValue() > maxSeqNumber) {
+			if (currentSupportMenuStr.equalsIgnoreCase(SUPPORT_SEQUENCES)
+					|| currentSupportMenuStr
+							.equalsIgnoreCase(SUPPORT_OCCURRENCES)) {
+				try {
+					if (new Integer(tf.getText().trim()).intValue() > maxSeqNumber) {
+						return false;
+					}
+				} catch (NumberFormatException ne) {
 					return false;
 				}
 			}
 
 			return match;
 		}// end of verify()
-	}	
+	}
+
+	private class PercentNumberVerifier extends InputVerifier {
+		// TEXT_FIELD = "^(\\S)(.){1,75}(\\S)$";
+		// NON_NEGATIVE_INTEGER_FIELD = "(\\d){1,9}";
+		// INTEGER_FIELD = "(-)?" + NON_NEGATIVE_INTEGER_FIELD;
+		// NON_NEGATIVE_FLOATING_POINT_FIELD ="(\\d){1,10}(.)?(\\d){1,10}";
+		// FLOATING_POINT_FIELD = "(-)?" +NON_NEGATIVE_FLOATING_POINT_FIELD;
+		// NON_NEGATIVE_MONEY_FIELD = "(\\d){1,15}(\\.(\\d){2})?";
+		// MONEY_FIELD = "(-)?" + NON_NEGATIVE_MONEY_FIELD;
+		Pattern p = null;
+
+		public PercentNumberVerifier(String regexp) {
+			p = Pattern.compile(regexp);
+		}
+
+		public boolean shouldYieldFocus(JComponent input) {
+			if (verify(input)) {
+				return true;
+			}
+			input.setInputVerifier(null);
+			// Pop up the message dialog.
+			String message = "Data input is not valid, please check and input correct data ";
+			JOptionPane.showMessageDialog(null, message, "Invalid value",
+					JOptionPane.WARNING_MESSAGE);
+
+			// Reinstall the input verifier.
+			input.setInputVerifier(this);
+			// Tell whomever called us that we don't want to yield focus.
+			return false;
+		}
+
+		public boolean verify(JComponent input) {
+			JTextField tf = (JTextField) input;
+			Matcher m = p.matcher(tf.getText());
+			boolean match = m.matches();
+			if (!match) {
+				return match;
+			}
+
+			String currentSupportStr = tf.getText().trim();
+			if (currentSupportStr == null) {
+				return false;
+			}
+			if (new Double(currentSupportStr).doubleValue() > 100) {
+				return false;
+			}
+
+			return match;
+		}// end of verify()
+	}
 
 	private void jSupportMenu_actionPerformed() {
 		String selectedSupportStr = (String) jMinSupportMenu.getSelectedItem();
 		if (!currentSupportMenuStr.equalsIgnoreCase(selectedSupportStr)) {
-			log.debug(currentSupportMenuStr+"=>"+selectedSupportStr);
+			log.debug(currentSupportMenuStr + "=>" + selectedSupportStr);
 			jMinSupportBox.setText("");
 			this.revalidate();
 
 		}
 		currentSupportMenuStr = selectedSupportStr;
-	} 
-	
+	}
+
 	// ------------------------BASIC PANEL
 	public String getSelectedAlgorithmName() {
-		if(discovery.isSelected()) {
+		if (discovery.isSelected()) {
 			return PatternResult.DISCOVER;
-		} else if(exhaustive.isSelected()) {
+		} else if (exhaustive.isSelected()) {
 			return PatternResult.EXHAUSTIVE;
 		} else {
 			log.error("Unexpected choice");
 			return null;
 		}
 	}
-	
+
 	public String getMinSupport() {
 		return (jMinSupportBox.getText().trim());
 	}
@@ -498,9 +572,9 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 		// parms.setGroupingType(groupType);
 	}
 
+	// not implemented. It was from jMaxRunTimeBox before.
 	public int getMaxRunTime() {
-		return (Integer.parseInt(jMaxRunTimeBox.getText()));
-		// parms.setGroupingType(groupType);
+		return 0;
 	}
 
 	// parsing HIEARCHICAL panel
@@ -509,7 +583,7 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 	}
 
 	public int getMinPatternNo() {
-		return (Integer.parseInt(jMinPatternNoBox.getText()));
+		return (Integer.parseInt(minPatternNumberField.getText()));
 	}
 
 	/**
@@ -531,11 +605,11 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 	public boolean useHMM() {
 		return jUseHMMBox.isSelected();
 	}
-	
+
 	public void setParameters(Map<Serializable, Serializable> parameters) {
-		//TODO
+		// TODO
 	}
-	
+
 	public String getDecSupportExhaustive() {
 		return jDecreaseSupportBox.getText().trim();
 	}
@@ -547,22 +621,23 @@ public class PatternDiscoveryParamPanel extends AbstractSaveableParameterPanel{
 	@Override
 	public Map<Serializable, Serializable> getParameters() {
 		Map<Serializable, Serializable> parameters = new HashMap<Serializable, Serializable>();
-		
+
 		return parameters;
 	}
 
 	public void fillDefaultValues(Map<Serializable, Serializable> parameters) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	// TODO such refreshing should be replaced by getting the triggering dataset directly
-	@Subscribe public void receive(org.geworkbench.events.ProjectEvent e,
-            Object source) { 	
+	// TODO such refreshing should be replaced by getting the triggering dataset
+	// directly
+	@Subscribe
+	public void receive(org.geworkbench.events.ProjectEvent e, Object source) {
 
 		DSDataSet<?> data = e.getDataSet();
 		if (data instanceof DSSequenceSet) {
-			DSSequenceSet<?> d = (DSSequenceSet<?>)data;
+			DSSequenceSet<?> d = (DSSequenceSet<?>) data;
 			maxSeqNumber = d.size();
 		}
 	}

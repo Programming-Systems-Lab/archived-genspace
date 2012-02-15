@@ -38,7 +38,6 @@ import org.geworkbench.bison.util.colorcontext.ColorContext;
 import org.geworkbench.engine.config.rules.GeawConfigObject;
 import org.geworkbench.parsers.AdjacencyMatrixFileFormat;
 import org.geworkbench.parsers.DataSetFileFormat;
-import org.geworkbench.parsers.ExpressionFileFormat;
 import org.geworkbench.parsers.FileFormat;
 import org.geworkbench.parsers.InputFileFormatException;
 import org.geworkbench.parsers.PatternFileFormat;
@@ -49,7 +48,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
  * especially tackles the progress bar requirement for multiple files.
  *
  * @author zji
- * @version $Id: FileOpenHandler.java 8524 2011-11-14 22:19:17Z zji $
+ * @version $Id: FileOpenHandler.java 8794 2012-01-27 16:59:16Z zji $
  *
  */
 public class FileOpenHandler {
@@ -263,36 +262,38 @@ public class FileOpenHandler {
 					projectPanel.addDataSetNode(mergedSet);
 				}
 			} else {
-				DSDataSet set = dataSets[0];
-
-				if (set == null) {
-					clearProjectPanelProgressBar();
-					log.info("null dataset encountered");
-					progressBarDialog.dispose();
-					projectPanelProgressBar.setString("");
-					projectPanelProgressBar.setIndeterminate(false);
-					projectPanel.getComponent().setCursor(Cursor
-							.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-					return;
-				}
-
-				// Do initial color context update if it is a microarray
-				if (set instanceof DSMicroarraySet) {
-					ProjectPanel
-							.addColorContext((DSMicroarraySet) set);
-				}
-
-				if (set instanceof AdjacencyMatrixDataSet) {
-					// adjacency matrix as added as a sub node
-					AdjacencyMatrixDataSet adjMatrixDS = (AdjacencyMatrixDataSet) set;
-					projectPanel.addDataSetSubNode(adjMatrixDS);
-				} else {
-					if(set instanceof PatternResult) {
-						// Pattern Result added as a sub node
-						PatternResult patternResult = (PatternResult) set;
-						projectPanel.addDataSetSubNode(patternResult);
-					}else {
-						projectPanel.addDataSetNode(set);
+				for (int i = 0; i < dataSets.length; i++) {
+					DSDataSet set = dataSets[i];
+	
+					if (set == null) {
+						clearProjectPanelProgressBar();
+						log.info("null dataset encountered");
+						progressBarDialog.dispose();
+						projectPanelProgressBar.setString("");
+						projectPanelProgressBar.setIndeterminate(false);
+						projectPanel.getComponent().setCursor(Cursor
+								.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+						return;
+					}
+	
+					// Do initial color context update if it is a microarray
+					if (set instanceof DSMicroarraySet) {
+						ProjectPanel
+								.addColorContext((DSMicroarraySet) set);
+					}
+	
+					if (set instanceof AdjacencyMatrixDataSet) {
+						// adjacency matrix as added as a sub node
+						AdjacencyMatrixDataSet adjMatrixDS = (AdjacencyMatrixDataSet) set;
+						projectPanel.addDataSetSubNode(adjMatrixDS);
+					} else {
+						if(set instanceof PatternResult) {
+							// Pattern Result added as a sub node
+							PatternResult patternResult = (PatternResult) set;
+							projectPanel.addDataSetSubNode(patternResult);
+						}else {
+							projectPanel.addDataSetNode(set);
+						}
 					}
 				}
 			}
@@ -366,7 +367,7 @@ public class FileOpenHandler {
 				// different from the previous algorithm.
 				// also notice that this will block
 				String chipType = null; // ignored by other format
-				if(dataSetFileFormat instanceof ExpressionFileFormat)
+				if(dataSetFileFormat.isMergeSupported())
 					chipType = AffyAnnotationUtil.matchAffyAnnotationFile(null);
 				progressBarDialog.setVisible(true);
 
@@ -377,13 +378,18 @@ public class FileOpenHandler {
 					File dataSetFile = dataSetFiles[i];
 
 					try {
-						dataSets[i] = dataSetFileFormat.getDataFile(
-								dataSetFile, chipType);
-						AnnotationParser.setChipType(dataSets[i], chipType);
-						if (dataSets[i] instanceof CSMicroarraySet) {
-							((CSMicroarraySet) dataSets[i])
-									.setAnnotationFileName(AnnotationParser
-											.getLastAnnotationFileName());
+						if(chipType==null) {
+							dataSets[i] = dataSetFileFormat.getDataFile(
+									dataSetFile);
+						} else {
+							dataSets[i] = dataSetFileFormat.getDataFile(
+									dataSetFile, chipType);
+							AnnotationParser.setChipType(dataSets[i], chipType);
+							if (dataSets[i] instanceof CSMicroarraySet) {
+								((CSMicroarraySet) dataSets[i])
+										.setAnnotationFileName(AnnotationParser
+												.getLastAnnotationFileName());
+							}
 						}
 					} catch (OutOfMemoryError er) {
 						log.warn("Loading multiple files memory error: " + er);
@@ -486,7 +492,7 @@ public class FileOpenHandler {
 		if (mergedSet != null) {
 			mergedSet.setLabel("Merged array set");
 			mergedSet.setLabel(desc);
-			mergedSet.setDescription(desc);
+			mergedSet.setDescription(mergedSet.getDescription());
 			((CSMicroarraySet) mergedSet)
 					.setAnnotationFileName(((CSMicroarraySet) sets[0])
 							.getAnnotationFileName());

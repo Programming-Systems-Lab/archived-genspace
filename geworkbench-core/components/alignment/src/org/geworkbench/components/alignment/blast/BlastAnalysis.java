@@ -38,7 +38,7 @@ import org.geworkbench.util.ProgressBar;
  * 
  * @author XZ
  * @author zji
- * @version $Id: BlastAnalysis.java 8676 2012-01-09 22:15:49Z youmi $
+ * @version $Id: BlastAnalysis.java 8741 2012-01-19 20:53:18Z maz $
  */
 public class BlastAnalysis extends AbstractAnalysis implements
 		ProteinSequenceAnalysis {
@@ -170,7 +170,7 @@ public class BlastAnalysis extends AbstractAnalysis implements
 					pbTtest.setMessage("The Request ID is : " + BLAST_rid);
 			 
 					String resultURLString = "http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Get&FORMAT_TYPE=HTML&RID="
-							+ BLAST_rid;
+							+ BLAST_rid+"&ALIGNMENTS="+parameterSetting.getMaxTargetNumber();
 					Status status = blast.retrieveResult(resultURLString);
 					while (status == Status.WAITING && !this.stopAlgorithm) {
 					 

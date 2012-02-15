@@ -12,7 +12,7 @@ import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarr
  * Data structure to hold the phenotype information from parameter panel. 
  * 
  * @author zji
- * @version $Id: Phenotype.java 8663 2012-01-06 15:18:37Z maz $
+ * @version $Id: Phenotype.java 8793 2012-01-27 16:21:32Z zji $
  *
  */
 public class Phenotype implements Serializable {
@@ -90,7 +90,7 @@ public class Phenotype implements Serializable {
 	
 	public String getPhenotypeInArrayNames(){
 		String s="Phenotype:"+"\n";
-		ArrayList list=new ArrayList(columnIncluded);
+		ArrayList<Integer> list=new ArrayList<Integer>(columnIncluded);
 		Collections.sort(list);
 		for(int i=0;i<list.size();i++){
 			s+=maSet.get((Integer)list.get(i)-1)+"\t";
@@ -101,7 +101,7 @@ public class Phenotype implements Serializable {
 	
 	public String getExcludeInArrayNames(){
 		String s="Exclude:"+"\n";
-		ArrayList list=new ArrayList(columnExcluded);
+		ArrayList<Integer> list=new ArrayList<Integer>(columnExcluded);
 		Collections.sort(list);
 		for(int i=0;i<list.size();i++){
 			s+=maSet.get((Integer)list.get(i)-1)+"\t";

@@ -1,7 +1,7 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -709,40 +709,6 @@ maz
 help
 dir
 
-GenepixFlagsFilter.cwb.xml
-file
-
-
-
-
-2011-08-17T00:10:42.000000Z
-5f44960002675bba342be8eab84a9cd5
-2011-03-21T22:24:24.377666Z
-7617
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1111
-
 ExpressionThresholdFilter.cwb.xml
 file
 
@@ -777,18 +743,17 @@ smithken
 
 1261
 
-MissingValuesFilterPanel.java
+GenepixFlagsFilter.cwb.xml
 file
 
 
 
 
 2011-08-17T00:10:42.000000Z
-302374278bb9383b6a6cbbbc415aacdf
-2010-06-24T15:03:09.921560Z
-6822
-youmi
-has-props
+5f44960002675bba342be8eab84a9cd5
+2011-03-21T22:24:24.377666Z
+7617
+smithken
 
 
 
@@ -809,7 +774,8 @@ has-props
 
 
 
-4889
+
+1111
 
 AffyDetectionCallFilter.cwb.xml
 file
@@ -845,6 +811,40 @@ smithken
 
 1345
 
+MissingValuesFilterPanel.java
+file
+
+
+
+
+2011-08-17T00:10:42.000000Z
+302374278bb9383b6a6cbbbc415aacdf
+2010-06-24T15:03:09.921560Z
+6822
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4889
+
 DeviationBasedFilter.cwb.xml
 file
 
@@ -879,17 +879,17 @@ zji
 
 1212
 
-GenepixFlagsFilter.java
+ExpressionThresholdFilter.java
 file
 
 
 
 
-2012-01-10T19:15:25.000000Z
-e92c84b5639f84db3e4906b3b9ce0a1e
-2011-09-27T16:00:51.065026Z
-8344
-zji
+2011-08-17T00:10:42.000000Z
+1a2d029e6d87710e5c7eb04691daee12
+2010-06-24T15:03:09.921560Z
+6822
+youmi
 has-props
 
 
@@ -911,7 +911,7 @@ has-props
 
 
 
-7472
+3265
 
 GenepixExpressionThresholdFilterPanel.java
 file
@@ -947,17 +947,17 @@ has-props
 
 11604
 
-ExpressionThresholdFilter.java
+GenepixFlagsFilter.java
 file
 
 
 
 
-2011-08-17T00:10:42.000000Z
-1a2d029e6d87710e5c7eb04691daee12
-2010-06-24T15:03:09.921560Z
-6822
-youmi
+2012-01-10T19:15:25.000000Z
+e92c84b5639f84db3e4906b3b9ce0a1e
+2011-09-27T16:00:51.065026Z
+8344
+zji
 has-props
 
 
@@ -979,7 +979,7 @@ has-props
 
 
 
-3265
+7472
 
 MultipleProbesetFilterPanel.java
 file

@@ -1,15 +1,15 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/cytoscape/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-12-15T20:50:28.730778Z
-8610
-youmi
+2012-01-18T18:27:08.206977Z
+8724
+zji
 
 
 
@@ -230,40 +230,6 @@ has-props
 
 173671
 
-table-import-2.8.2-jar-with-dependencies.jar
-file
-
-
-
-
-2012-01-10T19:15:25.000000Z
-405c81517971a2504fcb1922b2481080
-2011-12-15T20:50:28.730778Z
-8610
-youmi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9944666
-
 cpath-2.8.2-jar-with-dependencies.jar
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 40856
+
+table-import-2.8.2-jar-with-dependencies.jar
+file
+
+
+
+
+2012-01-31T19:12:33.000000Z
+d779a311bf007d1f38dae52c1bdf5838
+2012-01-18T18:27:08.206977Z
+8724
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9539051
 
 automatic-layout-2.8.2-jar-with-dependencies.jar
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2012-01-10T19:15:24.000000Z
-57ec7d67f92a9e5bf00f26e7a7b3fe0d
-2011-12-15T20:50:28.730778Z
-8610
-youmi
+2012-01-31T19:12:33.000000Z
+36906ecb22421d1470e68f924282efe9
+2012-01-18T18:27:08.206977Z
+8724
+zji
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-561057
+528398
 
 biopax-2.8.2-jar-with-dependencies.jar
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2012-01-10T19:15:24.000000Z
-31f1e18a46afea759ca0b6f3f7b01d41
-2011-12-15T20:50:28.730778Z
-8610
-youmi
+2012-01-31T19:12:33.000000Z
+17fb5caf7c93979215766059369d473f
+2012-01-18T18:27:08.206977Z
+8724
+zji
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-1774181
+1723518
 
 attribute-browser-2.8.2-jar-with-dependencies.jar
 file

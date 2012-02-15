@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.DefaultListCellRenderer;
+import javax.swing.SwingUtilities;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -65,7 +67,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * 
  * @author zji
- * @version $Id: GoAnalysisParameterPanel.java 8475 2011-11-01 15:30:42Z youmi $
+ * @version $Id: GoAnalysisParameterPanel.java 8772 2012-01-25 22:01:18Z zji $
  * 
  */
 public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
@@ -292,13 +294,7 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 	}
 
 	public String getOntologyFile() {
-		// return ontologyFileNameField.getText();
-		OboSourcePreference pref = OboSourcePreference.getInstance();
-		if (pref.getSourceType() == OboSourcePreference.Source.REMOTE) {
-			return GeneOntologyTree.OBO_FILENAME;
-		} else {
-			return pref.getSourceLocation();
-		}
+		return GeneOntologyTree.getInstanceUntilAvailable().getActualFile();
 	}
 
 	public String getAssociationFile() {
@@ -368,10 +364,11 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 			geneOntologyRadioButton.setSelected(true);
 			geneOntologyRadioButton.setEnabled(false);
 
-			OboSourcePreference pref = OboSourcePreference.getInstance();
-
 			ontologyFileNameField = new JTextField(20);
-			ontologyFileNameField.setText(pref.getSourceLocation());
+			GeneOntologyTree goTree = GeneOntologyTree.getInstance();
+			if(goTree!=null) {
+				ontologyFileNameField.setText(goTree.getActualSource());
+			}
 			ontologyFileNameField.setEnabled(false); // this is always
 														// disabled even in the
 														// future version with
@@ -786,7 +783,7 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 		histStr.append("\nChanged Gene List: ");
 		histStr.append(getChangedGeneListAsString());
 		histStr.append("\nGene Ontology: ");
-		histStr.append(OboSourcePreference.getInstance().getSourceLocation());
+		histStr.append(GeneOntologyTree.getInstance().getActualSource());
 		histStr.append("\nAnnotations: ");
 		histStr.append(getAssociationFile());
 		histStr.append("\nEnrichment Method: ");
@@ -866,17 +863,39 @@ public class GoAnalysisParameterPanel extends AbstractSaveableParameterPanel {
 
 	}
 
-	void setSelectorPanel(GoAnalysisParameterPanel aspp,
-			DSPanel<DSGeneMarker> ap) {
+	/* This method is invoked from both EDT and non-EDT. TODO */
+	void setSelectorPanel(final GoAnalysisParameterPanel aspp,
+			final DSPanel<DSGeneMarker> ap) {
+		if (SwingUtilities.isEventDispatchThread()) {
+			setSelectorPanelFromEDT(aspp, ap);
+		} else {
+			try {
+				SwingUtilities.invokeAndWait(new Runnable() {
+
+					@Override
+					public void run() {
+						setSelectorPanelFromEDT(aspp, ap);
+					}
+
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void setSelectorPanelFromEDT(final GoAnalysisParameterPanel aspp,
+			final DSPanel<DSGeneMarker> ap) {
 		aspp.selectorPanel = ap;
 		if (changedListSource.getSelectedIndex() == 0) // from set
 			modifyListSets(aspp, changedListSets, changedList);
 		if (referenceListSource.getSelectedIndex() == 1) // from set
 			modifyListSets(aspp, referenceListSets, referenceList);
-
 	}
 
-	void modifyListSets(GoAnalysisParameterPanel aspp, JComboBox setListSets,
+	private void modifyListSets(GoAnalysisParameterPanel aspp, JComboBox setListSets,
 			JTextField setList) {
 		String currentTargetSet = (String) setListSets.getSelectedItem();
 		DefaultComboBoxModel targetComboModel = (DefaultComboBoxModel) setListSets

@@ -59,7 +59,7 @@ public class GeneOntologyTree {
 			}.start();
 			System.out.println(new java.util.Date());
 		} else {
-			instance = new GeneOntologyTree(OboSourcePreference.DEFAULT_OBO_FILE);
+			instance = new GeneOntologyTree(OboSourcePreference.getInstance().getSourceLocation()); //OboSourcePreference.DEFAULT_OBO_FILE);
 		}
 	}
 	
@@ -200,8 +200,14 @@ public class GeneOntologyTree {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(oboFileName));
 			parseOBOFile(in);
+		} catch (FileNotFoundException e) {
+			JOptionPane
+					.showMessageDialog(
+							null,
+							oboFileName
+									+ ", which is part of geworkbench istallation, is missing. Gene Ontology related funactionality will not work correctly unless you choose to use remote obo source.",
+							".obo fil missing", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -443,6 +449,7 @@ public class GeneOntologyTree {
 				pw.close();
 				BufferedReader in2 = new BufferedReader(new FileReader(OBO_FILENAME));
 				parseOBOFile(in2);
+				actualUsedOboSource = null;
 			} else {
 				log.warn("error in reading remote obo from "+url);
 			}
@@ -472,7 +479,8 @@ public class GeneOntologyTree {
 				}
 				
 			});
-			BufferedReader in = new BufferedReader(new FileReader(OboSourcePreference.DEFAULT_OBO_FILE));
+			actualUsedOboSource = OboSourcePreference.DEFAULT_OBO_FILE;
+			BufferedReader in = new BufferedReader(new FileReader(actualUsedOboSource));
 			parseOBOFile(in);
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
@@ -491,5 +499,30 @@ public class GeneOntologyTree {
 
 	public String getDate() {
 		return date;
+	}
+
+
+	private String actualUsedOboSource = null;
+	public String getActualSource() {
+		OboSourcePreference pref = OboSourcePreference.getInstance();
+		if (pref.getSourceType() == OboSourcePreference.Source.REMOTE
+				&& actualUsedOboSource!=null) {
+			return actualUsedOboSource;
+		} else {
+			return pref.getSourceLocation();
+		}
+	}
+
+	public String getActualFile() {
+		OboSourcePreference pref = OboSourcePreference.getInstance();
+		if (pref.getSourceType() == OboSourcePreference.Source.REMOTE) {
+			if(actualUsedOboSource==null) {
+				return GeneOntologyTree.OBO_FILENAME;
+			} else {
+				return actualUsedOboSource;
+			}
+		} else {
+			return pref.getSourceLocation();
+		}
 	}
 }

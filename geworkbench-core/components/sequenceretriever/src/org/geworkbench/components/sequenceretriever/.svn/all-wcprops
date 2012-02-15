@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
+/svn/geworkbench/!svn/ver/8783/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 END
 SequenceRetriever.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceRetriever.java
+/svn/geworkbench/!svn/ver/8783/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceRetriever.java
 END
 SequenceListSelectionListener.java
 K 25
@@ -25,13 +25,13 @@ RetrievedSequencesPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 155
-/svn/geworkbench/!svn/ver/8578/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/RetrievedSequencesPanel.java
+/svn/geworkbench/!svn/ver/8783/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/RetrievedSequencesPanel.java
 END
 RetrievedSequenceDisplayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 161
-/svn/geworkbench/!svn/ver/8577/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/RetrievedSequenceDisplayPanel.java
+/svn/geworkbench/!svn/ver/8783/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/RetrievedSequenceDisplayPanel.java
 END
 SequenceFetcher.java
 K 25
@@ -50,6 +50,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 152
 /svn/geworkbench/!svn/ver/8664/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/SequenceListRenderer.java
+END
+RetrievedSequenceTableModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/geworkbench/!svn/ver/8783/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/RetrievedSequenceTableModel.java
 END
 RetrievedSequenceView.java
 K 25

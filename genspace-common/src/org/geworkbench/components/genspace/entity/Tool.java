@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 @Entity
@@ -33,7 +34,8 @@ public class Tool extends LazyCycleBreaker implements Serializable {
 	private int wfCountHead;
 	private int sumRating =0;
 	private int numRating =0;
-		
+	private Tool replacedBy;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@XmlElement
@@ -109,6 +111,13 @@ public class Tool extends LazyCycleBreaker implements Serializable {
 	}
 	public int getNumRating() {
 		return numRating;
+	}
+	@XmlTransient
+	public Tool getReplacedBy() {
+		return replacedBy;
+	}
+	public void setReplacedBy(Tool replacedBy) {
+		this.replacedBy = replacedBy;
 	}
 	@Override
 	public boolean equals(Object o) {

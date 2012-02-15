@@ -2,7 +2,7 @@ package org.geworkbench.components.alignment.blast;
 
 /**
  *
- * @version $Id: NCBIBlastParser.java 8455 2011-10-24 22:06:10Z youmi $
+ * @version $Id: NCBIBlastParser.java 8739 2012-01-19 19:49:36Z zji $
  */
 
 import java.io.BufferedReader;
@@ -138,6 +138,8 @@ public class NCBIBlastParser {
 						description = tagSeparated[2].trim();
 						score = tagSeparated[3].trim();
 						evalue = tagSeparated[4].trim();
+						String[] tokens=evalue.split("\\s");
+						evalue=tokens[0];
 					} else if(tagSeparated.length==3) { // for database alu (without HTML links)
 						String[] fields = tagSeparated[0].split("\\|");
 						id = fields[0];
@@ -223,22 +225,21 @@ public class NCBIBlastParser {
 							each.setLength(new Integer(lengthVal[1].trim())
 									.intValue());
 						}
-						if (line.startsWith("Identities = ")) {
-							/*
-							 * TODO use Match pattern later.
-							 */
-							String alignmentLengthString = line.substring("Identities = ".length(), line.indexOf("/"));
-							int alignmentLength = Integer.parseInt(alignmentLengthString);
-							if(0==each.getAlignmentLength())
+						final Pattern p = Pattern
+								.compile("Identities\\s*=\\s*\\d+/(\\d+)\\s*.\\((\\d+)%\\).+");
+						Matcher m = p.matcher(line);
+						if (m.matches()) {
+							if (0 == each.getAlignmentLength()) {
+								String alignmentLengthString = m.group(1);
+								int alignmentLength = Integer
+										.parseInt(alignmentLengthString);
 								each.setAlignmentLength(alignmentLength);
-							StringTokenizer st1 = new StringTokenizer(line, "(");
-							st1.nextToken();
-							String identity = st1.nextToken();
-							String[] s = identity.split("%");
-							if(0==each.getPercentAligned())
-								each
-									.setPercentAligned(new Integer(s[0])
-											.intValue());
+							}
+							if (0 == each.getPercentAligned()) {
+								String percentString = m.group(2);
+								each.setPercentAligned(new Integer(
+										percentString).intValue());
+							}
 
 						}
 						// get the start point, end point and length
@@ -282,7 +283,7 @@ public class NCBIBlastParser {
 					each.setDetailedAlignment(detaillines.toString());
 
 					index++;
-					if (endofResult) {
+					if (endofResult || index>=hits.size()) {
 						endofResult = false;
 						break;
 					}

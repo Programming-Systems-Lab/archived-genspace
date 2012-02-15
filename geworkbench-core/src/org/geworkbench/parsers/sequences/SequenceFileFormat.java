@@ -21,7 +21,7 @@ import org.geworkbench.parsers.InputFileFormatException;
  * <p>Company: Califano Lab</p>
  *
  * @author Saroja Hanasoge
- * @version $Id: SequenceFileFormat.java 7661 2011-03-28 14:19:10Z zji $
+ * @version $Id: SequenceFileFormat.java 8688 2012-01-11 16:49:19Z youmi $
  */
 
 
@@ -72,7 +72,21 @@ public class SequenceFileFormat extends DataSetFileFormat {
             BufferedReader rd = new BufferedReader(new FileReader(file));
             try {
                 String str = null;
-
+                
+                //check If the description line is missing
+                while ((str = rd.readLine()) != null){
+                    String trim = str.trim();
+                    if (trim.length() == 0){
+                        continue;
+                    }
+                    if (trim.charAt(0) != '>')
+                    	return false;
+                    else
+                    	break;
+                    
+                }
+                
+                // check FASTA format 
                 while ((str = rd.readLine()) != null){
                     String trim = str.trim();
 

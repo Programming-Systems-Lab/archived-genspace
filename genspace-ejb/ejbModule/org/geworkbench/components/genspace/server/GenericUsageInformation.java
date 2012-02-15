@@ -2,7 +2,9 @@ package org.geworkbench.components.genspace.server;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
@@ -84,7 +86,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@SuppressWarnings("unchecked")
 	public List<Tool> getToolsByPopularity() {
 		Query q = getEntityManager().createQuery(
-				"select object(c) from Tool as c order by c.usageCount desc");
+				"select object(c) from Tool as c where c.replacedBy is null order by c.usageCount desc");
 		List<Tool> r = q.getResultList();
 		return r;
 
@@ -119,7 +121,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
     	logUsage();
 
 		Query q = getEntityManager().createQuery(
-				"select object(c) from Tool as c order by c.wfCountHead desc");
+				"select object(c) from Tool as c where c.replacedBy is null order by c.wfCountHead desc");
 		List<Tool> r = q.getResultList();
 		return r;
 	}
@@ -138,8 +140,12 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		{
 			c = statsMaintainer.calculateToolStats(tool);
 		}
-		if(c == null)
+		GregorianCalendar tenDaysAgo = new GregorianCalendar();
+		tenDaysAgo.add(Calendar.DATE, -10);
+		if(c == null || c.getUpdated().before(tenDaysAgo.getTime()))
+		{
 			c = statsMaintainer.calculateToolStats(tool);
+		}
 		return c;
 	}
 	public Tool getMostPopularPreviousTool(int tool) {
@@ -154,7 +160,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
     	logUsage();
 
 		Query q = getEntityManager().createQuery(
-				"select object(c) from Tool as c order by c.name asc");
+				"select object(c) from Tool as c where c.replacedBy is null order by c.name asc");
 		@SuppressWarnings("unchecked")
 		List<Tool> r = q.getResultList();
 		return r;
@@ -347,11 +353,13 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	@Override
 	public Transaction sendUsageEvent(AnalysisEvent e) {
 		e.setCreatedAt(new Date());
+//		System.out.println(">>>Incoming tool: " + e.getTool() + " -> " + e.getToolname());
 		e.setTransaction(createOrFindTransaction(e.getTransaction()));
 		return handleSingleUsageEvent(e);
 	}
 
 	private Transaction handleSingleUsageEvent(AnalysisEvent e) {
+//		System.out.println(e.getTool() + " -> " + e.getToolname());
 		if (e.getTool() == null || !getEntityManager().contains(e.getTool())) {
 			e.setTool(getToolByName(e.getToolname()));
 			if (e.getTool() == null) {
@@ -365,6 +373,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 				getEntityManager().flush();
 			}
 		}
+		if(e.getTool().getReplacedBy() != null)
+			e.setTool(e.getTool().getReplacedBy());
 		if(e.getParameters() != null)
 			for(AnalysisEventParameter p : e.getParameters())
 			{
@@ -430,6 +440,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		Tool r = null;
 		try {
 			r = (Tool) q.getSingleResult();
+			if(r.getReplacedBy() != null)
+				return r.getReplacedBy();
 		} catch (NoResultException e) {
 
 		}
@@ -525,7 +537,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 
 	private Transaction findTransactionByName(String name, User user) {
 		Query q;
-		System.out.println("Checking user " + user + " clientid <" +name+">");
+//		System.out.println("Checking user " + user + " clientid <" +name+">");
 		if (user == null)
 		{
 			q = getEntityManager()

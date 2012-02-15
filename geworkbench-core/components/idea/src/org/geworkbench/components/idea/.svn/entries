@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-09T19:43:01.858390Z
-8672
+2012-01-30T19:45:17.929295Z
+8810
 maz
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2012-01-10T19:15:26.000000Z
-3a9ba5d64271f7b09f18e0719e549c73
-2011-12-07T16:52:48.708366Z
-8580
+2012-01-31T19:12:31.000000Z
+7896cbb57ae18af34fbfd4507b2f6e56
+2012-01-24T20:16:06.824339Z
+8753
 maz
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1853
+2366
 
 IDEAPanel.java
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2012-01-10T21:28:12.000000Z
-ad824fb3b7bfa1ee09a7105b4299a848
-2012-01-09T15:16:43.222044Z
-8669
+2012-01-31T19:12:31.000000Z
+5dfbb48bd875db88e7dc1af774dad8a0
+2012-01-27T22:43:52.710456Z
+8808
 maz
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-28158
+37334
 
 MutualInfo.java
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2012-01-10T21:28:12.000000Z
-70e84e2a53575f6beb260477787c0e15
-2012-01-09T19:11:49.715725Z
-8671
+2012-01-31T19:12:31.000000Z
+0ca809eab9e9c647d95a856c23eb1938
+2012-01-30T19:45:17.929295Z
+8810
 maz
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-15292
+15275
 
 FisherExact.java
 file
@@ -236,10 +236,10 @@ file
 
 
 
-2012-01-10T21:28:12.000000Z
-56b7faecdee83d9cd56386514f8c5cb5
-2012-01-05T21:41:18.827655Z
-8651
+2012-01-31T19:12:31.000000Z
+d48265796717086a031480162a8688a8
+2012-01-25T16:51:01.249549Z
+8760
 maz
 has-props
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-25423
+24947
 
 NullDistribution.java
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2012-01-10T21:28:12.000000Z
-84fa9d34210df6f23e4889368a5a8400
-2012-01-06T15:18:37.647746Z
-8663
-maz
+2012-01-31T19:12:31.000000Z
+bfccd16e65f7faf1eaf5c61d1640765a
+2012-01-27T16:21:32.396819Z
+8793
+zji
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-3694
+3730
 
 IDEAViewer.cwb.xml
 file

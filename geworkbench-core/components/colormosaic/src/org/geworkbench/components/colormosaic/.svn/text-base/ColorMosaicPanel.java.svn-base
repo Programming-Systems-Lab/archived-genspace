@@ -45,6 +45,7 @@ import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -268,7 +269,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 
         jHideMaskedBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                jHideMaskedBtn_actionPerformed(e);
+                jHideMaskedBtn_actionPerformed();
             }
         });
 
@@ -539,10 +540,16 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 		}
     }
 
-    private void jHideMaskedBtn_actionPerformed(ActionEvent e) {
+    /* invoke from EDT only */
+    private void jHideMaskedBtn_actionPerformed() {
         if (colorMosaicImage.isDisplayable()) {
             if (jHideMaskedBtn.isSelected()) {
-                displayMosaic();
+            	if(significanceMode) {
+            		refreshSignificanceResultView();
+            		return;
+            	} else {
+            		displayMosaic();
+            	}
             } else {
                 clearMosaic();
             } 
@@ -869,10 +876,64 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
         colorMosaicImage.setSignal(showSignal);
     }
 
+	// this should be called only from EDT
+	private void refreshSignificanceResultView() {
+		significance = sigSet;
+		DSMicroarraySet set = sigSet.getParentDataSet();
+		jToggleSortButton.setEnabled(true);
+		exportButton.setEnabled(true);
+		jExportItem.setEnabled(true);
+
+		// by default color mosaic displays unsorted markers
+		jToggleSortButton.setSelected(false);
+		if (colorMosaicImage.getChips() != set) {
+			colorMosaicImage.setChips(set);
+		}
+		// // Make panels from the significance data and display only that
+		// Pheno
+		CSPanel<DSMicroarray> phenoPanel = new CSPanel<DSMicroarray>(
+				"Phenotypes");
+		DSItemList<DSPanel<DSMicroarray>> list = phenoPanel.panels();
+		list.clear();
+		DSAnnotationContext<DSMicroarray> context = CSAnnotationContextManager
+				.getInstance().getCurrentContext(set);
+		for (int i = 0; i < 2; i++) {
+			String[] labels = sigSet.getLabels(i);
+			for (int j = 0; j < labels.length; j++) {
+				DSPanel<DSMicroarray> p = new CSPanel<DSMicroarray>(
+						context.getItemsWithLabel(labels[j]));
+				if (p != null) {
+					p.setActive(true);
+					phenoPanel.panels().add(p);
+				}
+			}
+		}
+
+		setMicroarrayPanel(phenoPanel);
+		// Markers
+		CSPanel<DSGeneMarker> genePanel = new CSPanel<DSGeneMarker>("Markers");
+		sigSet.getSignificantMarkers().setActive(true);
+		genePanel.panels().add(sigSet.getSignificantMarkers());
+		setMarkerPanel(genePanel);
+		sortByTValue(genePanel);
+		// Force all arrays and all markers off
+		jAllMArrays.setSelected(false);
+		colorMosaicImage.showAllMArrays(jAllMArrays.isSelected());
+		jAllMarkers.setSelected(false);
+		colorMosaicImage.showAllMarkers(jAllMarkers.isSelected());
+		jHideMaskedBtn.setSelected(true);
+		jAllMArrays.setEnabled(false);
+		jAllMarkers.setEnabled(false);
+
+		setSignificance(sigSet);
+		displayMosaic();
+		revalidate();
+		mainPanel.repaint();
+	}
     
     @SuppressWarnings("unchecked")
     @Subscribe public void receive(ProjectEvent projectEvent, Object source) {
-        DSDataSet<?> dataFile = projectEvent.getDataSet();
+        final DSDataSet<?> dataFile = projectEvent.getDataSet();
         significanceMode = false;
         jAllMArrays.setEnabled(true);
         jAllMarkers.setEnabled(true);
@@ -889,7 +950,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
                     colorMosaicImage.clearSignificanceResultSet();
                     colorMosaicImage.showAllMArrays(true); 
                     colorMosaicImage.showAllMarkers(true);
-                    if (jHideMaskedBtn.isSelected())  jHideMaskedBtn_actionPerformed(null);
+                    if (jHideMaskedBtn.isSelected())  jHideMaskedBtn_actionPerformed();
                 } else{
                 	colorMosaicImage.clearSignificanceResultSet();
                     colorMosaicImage.showAllMArrays(true); 
@@ -911,55 +972,21 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 
             } else if (dataFile instanceof DSSignificanceResultSet) {          
                 significanceMode = true;
-                sigSet = (DSSignificanceResultSet<DSGeneMarker>) dataFile;                
-                significance = sigSet;         
-                DSMicroarraySet set = sigSet.getParentDataSet();             
-                jToggleSortButton.setEnabled(true);
-                exportButton.setEnabled(true);
-                jExportItem.setEnabled(true);
+        		sigSet = (DSSignificanceResultSet<DSGeneMarker>) dataFile;
+                if(SwingUtilities.isEventDispatchThread()) {
+                	refreshSignificanceResultView();
+                } else {
+                	log.debug("non-EDT");
 
-                // by default color mosaic displays unsorted markers
-                jToggleSortButton.setSelected(false);
-                if (colorMosaicImage.getChips() != set) {
-                    colorMosaicImage.setChips(set);
+                	SwingUtilities.invokeLater(new Runnable() {
+
+							@Override
+							public void run() {
+								refreshSignificanceResultView();
+							}
+							
+						});
                 }
-                //// Make panels from the significance data and display only that
-                // Pheno
-                CSPanel<DSMicroarray> phenoPanel = new CSPanel<DSMicroarray>("Phenotypes");
-                DSItemList<DSPanel<DSMicroarray>> list = phenoPanel.panels();
-           		list.clear(); 
-                DSAnnotationContext<DSMicroarray> context = CSAnnotationContextManager.getInstance().getCurrentContext(set);
-                for (int i = 0; i < 2; i++) {
-                    String[] labels = sigSet.getLabels(i);
-                    for (int j = 0; j < labels.length; j++) {
-                        DSPanel<DSMicroarray> p = new CSPanel<DSMicroarray>(context.getItemsWithLabel(labels[j]));
-                        if (p != null) {
-                            p.setActive(true);
-                            phenoPanel.panels().add(p);
-                        }
-                    }
-                }
-
-                setMicroarrayPanel(phenoPanel);
-                // Markers
-                CSPanel<DSGeneMarker> genePanel = new CSPanel<DSGeneMarker>("Markers");
-                sigSet.getSignificantMarkers().setActive(true);
-                genePanel.panels().add(sigSet.getSignificantMarkers());
-                setMarkerPanel(genePanel);
-                sortByTValue(genePanel);
-                // Force all arrays and all markers off
-                jAllMArrays.setSelected(false);
-                colorMosaicImage.showAllMArrays(jAllMArrays.isSelected());
-                jAllMarkers.setSelected(false);
-                colorMosaicImage.showAllMarkers(jAllMarkers.isSelected());
-                jHideMaskedBtn.setSelected(true);
-                jAllMArrays.setEnabled(false);
-               jAllMarkers.setEnabled(false);
-
-                setSignificance(sigSet);
-                displayMosaic();
-                revalidate();
-                mainPanel.repaint();
             }
         } else {
             jHideMaskedBtn.setSelected(false);
@@ -987,7 +1014,7 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
         	setMarkerPanel(null);
         DSPanel<DSMicroarray> pl = e.getTaggedItemSetTree();
         setMicroarrayPanel(pl);    
-        jHideMaskedBtn_actionPerformed(null); 
+        jHideMaskedBtn_actionPerformed(); 
     }
 
     private GeneSelectorEvent gse = null;
@@ -1001,7 +1028,19 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 			colorMosaicImage.pValueWidth = 18;
 			colorMosaicImage.isPrintPValue = true;
 			setMarkerPanel(panel);
-			jHideMaskedBtn_actionPerformed(null);
+			if(SwingUtilities.isEventDispatchThread()) {
+				jHideMaskedBtn_actionPerformed();
+			} else {
+            	log.debug("non-EDT");
+				SwingUtilities.invokeLater(new Runnable() {
+
+						@Override
+						public void run() {
+							jHideMaskedBtn_actionPerformed();
+						}
+						
+					});
+			}
         } 
     }   
     
@@ -1023,7 +1062,24 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
         Dimension topDim = colRuler.getPreferredSize();
         Dimension leftDim = rowRuler.getPreferredSize();
         Dimension dim = new Dimension(mainDim.width + leftDim.width, mainDim.height + topDim.height);
-        BufferedImage image = new BufferedImage(dim.width, dim.height, BufferedImage.TYPE_INT_RGB);
+        int w = dim.width;
+        int h = dim.height;
+		long size = w*h;
+		final long MAX_SIZE = 100*1024*1024;
+		if(size > MAX_SIZE) {
+			JOptionPane.showMessageDialog(this.getComponent(),
+			"The requested snapshot is "+w+" X "+h+" pixels, or about "+size/1000000+" megapixels. Cannot create.");
+			return null;
+		}
+        BufferedImage image;
+		try {
+	        image = new BufferedImage(dim.width, dim.height, BufferedImage.TYPE_INT_RGB);
+		} catch (OutOfMemoryError e) {
+			JOptionPane.showMessageDialog(this.getComponent(),
+					"OutOfMemoryError when the image's size is "+w+"X"+h);
+			return null;
+		}
+
         Graphics2D g = (Graphics2D) image.getGraphics();
         g.setBackground(Color.WHITE);
         g.clearRect(0, 0, dim.width, dim.height);
@@ -1046,6 +1102,8 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 
     public void createImageSnapshot() {
         Image currentImage = getColorMosaicAsImage();
+        if(currentImage==null)return;
+        
         ImageIcon newIcon = new ImageIcon(currentImage, "Color Mosaic View");
         org.geworkbench.events.ImageSnapshotEvent event = new org.geworkbench.events.ImageSnapshotEvent("Color Mosaic View", newIcon, org.geworkbench.events.ImageSnapshotEvent.Action.SAVE);
         publishImageSnapshotEvent(event);

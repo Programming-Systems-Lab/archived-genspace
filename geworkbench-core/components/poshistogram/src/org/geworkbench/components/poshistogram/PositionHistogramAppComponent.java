@@ -1,7 +1,6 @@
 package org.geworkbench.components.poshistogram;
 
 import java.awt.Component;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -35,7 +34,7 @@ import org.geworkbench.util.sequences.PatternTableView;
  * <p>Company: </p>
  *
  * @author Saroja Hanasoge
- * @version $Id: PositionHistogramAppComponent.java 8645 2012-01-04 18:53:35Z zji $
+ * @version $Id: PositionHistogramAppComponent.java 8792 2012-01-27 16:19:50Z zji $
  */
 @AcceptTypes({PatternResult.class})
 public class PositionHistogramAppComponent implements VisualPlugin, MenuListener, PropertyChangeListener {
@@ -46,15 +45,7 @@ public class PositionHistogramAppComponent implements VisualPlugin, MenuListener
     
     public PositionHistogramAppComponent() {
         pHistogramWidget = new PositionHistogramWidget(this);
-        ActionListener listener = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                pHistogramWidget.imageSnapshotAction(e);
-            }
-        };
-
-        listeners.put("File.Image snapshot", listener);
-
-		mainPanel.setOneTouchExpandable(true);
+        mainPanel.setOneTouchExpandable(true);
 		mainPanel.setResizeWeight(.5d);
     }
 

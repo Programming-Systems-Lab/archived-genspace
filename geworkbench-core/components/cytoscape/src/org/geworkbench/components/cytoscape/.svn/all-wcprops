@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8659/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
+/svn/geworkbench/!svn/ver/8809/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
 END
 HistogramGraph.java
 K 25
@@ -55,5 +55,5 @@ CytoscapeWidget.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/8611/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.java
+/svn/geworkbench/!svn/ver/8809/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.java
 END

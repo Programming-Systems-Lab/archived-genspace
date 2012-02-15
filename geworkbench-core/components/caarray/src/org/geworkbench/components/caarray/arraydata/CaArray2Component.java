@@ -56,7 +56,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
  * The wrapper class for CaArray Component.
  *
  * @author xiaoqing
- * @version $Id: CaArray2Component.java 8463 2011-10-25 21:47:59Z zji $
+ * @version $Id: CaArray2Component.java 8785 2012-01-26 21:17:35Z maz $
  *
  */
 @AcceptTypes( { DSMicroarraySet.class, CSSequenceSet.class })
@@ -336,8 +336,7 @@ public class CaArray2Component implements VisualPlugin {
 			throws Exception {
 		CSMicroarraySet microarraySet = null;
 
-		String desc = "";
-		if(hybridzations.size()>1)desc = "Merged DataSet: ";
+		String desc = "";		
 
 		int number = 0;
 		CaArraySuccessEvent caArraySuccessEvent = new CaArraySuccessEvent(hybridzations.size());
@@ -361,7 +360,7 @@ public class CaArray2Component implements VisualPlugin {
 			}
 
 			microarraySet.add(microarray);
-			desc += experimentName + "_" + hybridizationName + " ";
+			desc = experimentName;
 			
 			publishCaArraySuccessEvent(caArraySuccessEvent);
 			number++;

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/geworkbench/!svn/ver/8668/trunk/geworkbench/src/org/geworkbench/parsers
+/svn/geworkbench/!svn/ver/8807/trunk/geworkbench/src/org/geworkbench/parsers
 END
 MicroarraySetParser.java
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/geworkbench/!svn/ver/8527/trunk/geworkbench/src/org/geworkbench/parsers/MicroarraySetParser.java
+/svn/geworkbench/!svn/ver/8761/trunk/geworkbench/src/org/geworkbench/parsers/MicroarraySetParser.java
 END
 SOFTSeriesParser.java
 K 25
@@ -15,23 +15,17 @@ svn:wc:ra_dav:version-url
 V 98
 /svn/geworkbench/!svn/ver/8621/trunk/geworkbench/src/org/geworkbench/parsers/SOFTSeriesParser.java
 END
-PlatformChooser.java
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/7592/trunk/geworkbench/src/org/geworkbench/parsers/PlatformChooser.java
-END
 ExpressionResource.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/7105/trunk/geworkbench/src/org/geworkbench/parsers/ExpressionResource.java
 END
-GenePixFileFormat.java
+PlatformChooser.java
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/8463/trunk/geworkbench/src/org/geworkbench/parsers/GenePixFileFormat.java
+V 97
+/svn/geworkbench/!svn/ver/7592/trunk/geworkbench/src/org/geworkbench/parsers/PlatformChooser.java
 END
 ExpressionFileFormat.java
 K 25
@@ -39,17 +33,23 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/8430/trunk/geworkbench/src/org/geworkbench/parsers/ExpressionFileFormat.java
 END
-MageTabFileFormat.java
+GenePixFileFormat.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/8604/trunk/geworkbench/src/org/geworkbench/parsers/MageTabFileFormat.java
+/svn/geworkbench/!svn/ver/8463/trunk/geworkbench/src/org/geworkbench/parsers/GenePixFileFormat.java
 END
 EdgeListFileFormat.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/geworkbench/!svn/ver/7664/trunk/geworkbench/src/org/geworkbench/parsers/EdgeListFileFormat.java
+END
+MageTabFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/8807/trunk/geworkbench/src/org/geworkbench/parsers/MageTabFileFormat.java
 END
 CELFileFormat.java
 K 25
@@ -63,23 +63,23 @@ svn:wc:ra_dav:version-url
 V 95
 /svn/geworkbench/!svn/ver/8559/trunk/geworkbench/src/org/geworkbench/parsers/PDBFileFormat.java
 END
+TabDelimitedDataMatrixFileFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/geworkbench/!svn/ver/8795/trunk/geworkbench/src/org/geworkbench/parsers/TabDelimitedDataMatrixFileFormat.java
+END
 AdjacencyMatrixFileFormat.java
 K 25
 svn:wc:ra_dav:version-url
 V 107
 /svn/geworkbench/!svn/ver/8348/trunk/geworkbench/src/org/geworkbench/parsers/AdjacencyMatrixFileFormat.java
 END
-TabDelimitedDataMatrixFileFormat.java
-K 25
-svn:wc:ra_dav:version-url
-V 114
-/svn/geworkbench/!svn/ver/8621/trunk/geworkbench/src/org/geworkbench/parsers/TabDelimitedDataMatrixFileFormat.java
-END
 SOFTFileFormat.java
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svn/geworkbench/!svn/ver/8621/trunk/geworkbench/src/org/geworkbench/parsers/SOFTFileFormat.java
+/svn/geworkbench/!svn/ver/8807/trunk/geworkbench/src/org/geworkbench/parsers/SOFTFileFormat.java
 END
 PatternFileFormat.java
 K 25
@@ -121,5 +121,5 @@ SampleFileParser.java
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svn/geworkbench/!svn/ver/8621/trunk/geworkbench/src/org/geworkbench/parsers/SampleFileParser.java
+/svn/geworkbench/!svn/ver/8749/trunk/geworkbench/src/org/geworkbench/parsers/SampleFileParser.java
 END

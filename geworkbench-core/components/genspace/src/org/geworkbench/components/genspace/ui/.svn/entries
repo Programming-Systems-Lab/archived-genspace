@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-06T21:01:06.170581Z
-8667
+2012-01-12T20:41:07.691376Z
+8699
 bellj
 
 
@@ -26,277 +26,8 @@ bellj
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-AutoCompleteCombo.java
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-9e99801a92e4b95a816c654074c41b57
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10105
-
-DataVisibility.java
-file
-
-
-
-
-2011-08-17T00:19:03.000000Z
-348b4fb030e9a05b4b1e403f2346bbae
-2011-04-19T16:07:16.228867Z
-7751
-bellj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7136
-
-GenSpaceGeneralProfile.java
-file
-
-
-
-
-2011-08-17T00:19:03.000000Z
-9c8740734c14e1c81745778680d5983b
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6232
-
-GenSpaceLogin.java
-file
-
-
-
-
-2011-08-02T04:26:22.000000Z
-63b07a6f6ff01367802d7e800fe9e75f
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8163
-
-GenSpaceRegistration.java
-file
-
-
-
-
-2012-01-10T21:28:12.000000Z
-8f152d5de4311dc61a263c7f132c5b39
-2012-01-06T21:01:06.170581Z
-8667
-bellj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7838
-
-GenSpaceSecurityPanel.java
-file
-
-
-
-
-2011-08-02T04:26:22.000000Z
-878f1359f3c956877f66e5c330e7f413
-2011-05-25T14:27:11.799181Z
-7926
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2162
-
-NameRenderer.java
-file
-
-
-
-
-2011-08-17T00:19:03.000000Z
-c8181d14b30f6bda41cda75873d44ed4
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-954
-
-SocialNetworksHome.java
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-177af1e56c0f2f45c5fcfb05fa6d006a
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28932
+chat
+dir
 
 SocialTab.java
 file
@@ -332,6 +63,176 @@ bellj
 
 344
 
+requestsTab.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+9197da0a9b82937aacaa5177f8aebccc
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12409
+
+networksTab.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+08cfe8a0d1025578a04a7021d30b9400
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10929
+
+GenSpaceGeneralProfile.java
+file
+
+
+
+
+2011-08-17T00:19:03.000000Z
+9c8740734c14e1c81745778680d5983b
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6232
+
+privacyTab.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+4c656a9d43404d8a9412cf3eb8e8f86c
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10062
+
+NameRenderer.java
+file
+
+
+
+
+2011-08-17T00:19:03.000000Z
+c8181d14b30f6bda41cda75873d44ed4
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+954
+
 StatusBar.java
 file
 
@@ -366,89 +267,9 @@ zji
 
 1643
 
-UpdateablePanel.java
-file
-
-
-
-
-2011-08-17T00:19:03.000000Z
-bd8bc3f73ee911e87e7583678fb0afa6
-2011-04-19T16:07:16.228867Z
-7751
-bellj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-119
-
-WorkflowStatistics.java
-file
-
-
-
-
-
-376d8b66be66acac996d14f42ac00322
-2011-11-07T21:42:53.414007Z
-8511
-zji
-
-WorkflowVisualization.java
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-0476f1560d130ff465bf3466cab7076e
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5817
-
 WorkflowVisualizationPanel.java
 file
-8699
+
 
 
 
@@ -480,8 +301,175 @@ bellj
 
 13288
 
-chat
-dir
+GenSpaceLogin.java
+file
+
+
+
+
+2011-08-02T04:26:22.000000Z
+63b07a6f6ff01367802d7e800fe9e75f
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8163
+
+SocialNetworksHome.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+177af1e56c0f2f45c5fcfb05fa6d006a
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28932
+
+GenSpaceRegistration.java
+file
+
+
+
+
+2012-01-10T21:28:12.000000Z
+8f152d5de4311dc61a263c7f132c5b39
+2012-01-06T21:01:06.170581Z
+8667
+bellj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7838
+
+DataVisibility.java
+file
+
+
+
+
+2011-08-17T00:19:03.000000Z
+348b4fb030e9a05b4b1e403f2346bbae
+2011-04-19T16:07:16.228867Z
+7751
+bellj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7136
+
+AutoCompleteCombo.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+9e99801a92e4b95a816c654074c41b57
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10105
 
 friendsTab.java
 file
@@ -520,14 +508,14 @@ zji
 graph
 dir
 
-networksTab.java
+viewProfileTab.java
 file
 
 
 
 
 2012-01-10T18:25:35.000000Z
-08cfe8a0d1025578a04a7021d30b9400
+d705b543bcad8a090b78eec8c9a7f135
 2011-07-30T04:31:30.667242Z
 8187
 zji
@@ -552,19 +540,31 @@ zji
 
 
 
-10929
+3237
 
-privacyTab.java
+WorkflowStatistics.java
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-4c656a9d43404d8a9412cf3eb8e8f86c
-2011-07-30T04:31:30.667242Z
-8187
+
+376d8b66be66acac996d14f42ac00322
+2011-11-07T21:42:53.414007Z
+8511
 zji
+
+UpdateablePanel.java
+file
+
+
+
+
+2011-08-17T00:19:03.000000Z
+bd8bc3f73ee911e87e7583678fb0afa6
+2011-04-19T16:07:16.228867Z
+7751
+bellj
 
 
 
@@ -586,7 +586,7 @@ zji
 
 
 
-10062
+119
 
 profileTab.java
 file
@@ -622,14 +622,14 @@ zji
 
 15209
 
-requestsTab.java
+WorkflowVisualization.java
 file
 
 
 
 
 2012-01-10T18:25:35.000000Z
-9197da0a9b82937aacaa5177f8aebccc
+0476f1560d130ff465bf3466cab7076e
 2011-07-30T04:31:30.667242Z
 8187
 zji
@@ -654,18 +654,18 @@ zji
 
 
 
-12409
+5817
 
-viewProfileTab.java
+GenSpaceSecurityPanel.java
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-d705b543bcad8a090b78eec8c9a7f135
-2011-07-30T04:31:30.667242Z
-8187
+2011-08-02T04:26:22.000000Z
+878f1359f3c956877f66e5c330e7f413
+2011-05-25T14:27:11.799181Z
+7926
 zji
 
 
@@ -688,5 +688,5 @@ zji
 
 
 
-3237
+2162
 

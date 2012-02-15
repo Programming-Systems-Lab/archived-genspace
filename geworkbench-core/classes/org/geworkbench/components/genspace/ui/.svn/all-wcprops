@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/svn/geworkbench/!svn/ver/8667/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
+/svn/geworkbench/!svn/ver/8699/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
 END
 SocialTab.java
 K 25
@@ -45,23 +45,11 @@ svn:wc:ra_dav:version-url
 V 126
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/StatusBar.java
 END
-WorkflowVisualizationPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 143
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/WorkflowVisualizationPanel.java
-END
 GenSpaceLogin.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceLogin.java
-END
-SocialNetworksHome.java
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/SocialNetworksHome.java
 END
 GenSpaceRegistration.java
 K 25
@@ -69,17 +57,23 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/geworkbench/!svn/ver/8667/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/GenSpaceRegistration.java
 END
-friendsTab.java
+SocialNetworksHome.java
 K 25
 svn:wc:ra_dav:version-url
-V 127
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/friendsTab.java
+V 135
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/SocialNetworksHome.java
 END
 DataVisibility.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
 /svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/DataVisibility.java
+END
+friendsTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui/friendsTab.java
 END
 AutoCompleteCombo.java
 K 25

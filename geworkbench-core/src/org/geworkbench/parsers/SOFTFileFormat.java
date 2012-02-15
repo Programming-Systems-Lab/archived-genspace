@@ -33,7 +33,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
 
 /**  
  * @author Nikhil
- * @version $Id: SOFTFileFormat.java 8621 2011-12-19 19:24:01Z youmi $
+ * @version $Id: SOFTFileFormat.java 8807 2012-01-27 22:43:49Z zji $
  */
 public class SOFTFileFormat extends DataSetFileFormat {
 
@@ -494,4 +494,7 @@ public class SOFTFileFormat extends DataSetFileFormat {
 			return returnVal;
 		}
 	}
+
+	public boolean isMergeSupported() {return false;}
+	
 }

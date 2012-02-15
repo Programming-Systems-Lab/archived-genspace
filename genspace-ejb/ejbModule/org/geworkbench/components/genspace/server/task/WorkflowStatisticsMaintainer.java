@@ -175,7 +175,7 @@ public class WorkflowStatisticsMaintainer {
 						"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
 						"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality-1 " +
 						"inner join WORKFLOW w on w.id=wt.workflow_id " +
-						"where wt2.tool_id=? group by t.id order by SUM(w.usagecount) limit 1",
+						"where wt2.tool_id=? and t.replacedby_id is null group by t.id order by SUM(w.usagecount) limit 1",
 						Tool.class);
 		q.setParameter(1, t);
 		Tool r = null;
@@ -191,7 +191,7 @@ public class WorkflowStatisticsMaintainer {
 						"inner join WORKFLOWTOOL wt on wt.tool_id=t.id " +
 						"inner join WORKFLOWTOOL wt2 on wt2.workflow_id=wt.workflow_id and wt2.cardinality = wt.cardinality+1 " +
 						"inner join WORKFLOW w on w.id=wt.workflow_id " +
-						"where wt2.tool_id=? group by t.id order by SUM(w.usagecount) limit 1",
+						"where wt2.tool_id=? and t.replacedby_id is null group by t.id order by SUM(w.usagecount) limit 1",
 						Tool.class);
 		q.setParameter(1, t);
 		r = null;

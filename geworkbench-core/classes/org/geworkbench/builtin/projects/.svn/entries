@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-05T18:11:48.744157Z
-8650
+2012-01-27T16:59:16.159585Z
+8794
 zji
 
 
@@ -539,40 +539,6 @@ has-props
 
 1027
 
-psam16x16.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-462e83b2c31fdbe2e540c943503c8f99
-2006-06-28T14:35:15.000000Z
-1589
-watkinson
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-168
-
 structure16x16.gif
 file
 
@@ -606,6 +572,40 @@ has-props
 
 
 107
+
+psam16x16.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+462e83b2c31fdbe2e540c943503c8f99
+2006-06-28T14:35:15.000000Z
+1589
+watkinson
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+168
 
 DataSetNode.java
 file
@@ -641,17 +641,17 @@ has-props
 
 2343
 
-WorkspaceHandler.java
+ProjectTreeNode.java
 file
 
 
 
 
-2012-01-10T19:15:28.000000Z
-f5a148fd67eb62400a9221ff93a8c73a
-2011-09-22T18:34:51.160472Z
-8323
-maz
+2011-08-17T00:10:50.000000Z
+c47e07a526147ab351c79f788d5dfef7
+2008-01-03T19:28:20.000000Z
+3398
+keshav
 has-props
 
 
@@ -673,7 +673,7 @@ has-props
 
 
 
-11565
+995
 
 TreeNodeRenderer.java
 file
@@ -709,17 +709,17 @@ has-props
 
 3869
 
-ProjectTreeNode.java
+WorkspaceHandler.java
 file
 
 
 
 
-2011-08-17T00:10:50.000000Z
-c47e07a526147ab351c79f788d5dfef7
-2008-01-03T19:28:20.000000Z
-3398
-keshav
+2012-01-10T19:15:28.000000Z
+f5a148fd67eb62400a9221ff93a8c73a
+2011-09-22T18:34:51.160472Z
+8323
+maz
 has-props
 
 
@@ -741,7 +741,7 @@ has-props
 
 
 
-995
+11565
 
 FileOpenHandler.java
 file
@@ -749,10 +749,10 @@ file
 
 
 
-2012-01-10T19:15:28.000000Z
-d4b4787dbab07f6d2031a7e18487aab7
-2011-11-14T22:19:17.648563Z
-8524
+2012-01-31T19:12:36.000000Z
+3abe6cca8b963a32f7c5e6a50590e8cd
+2012-01-27T16:59:16.159585Z
+8794
 zji
 has-props
 
@@ -775,7 +775,7 @@ has-props
 
 
 
-17465
+17640
 
 project16x16.gif
 file
@@ -811,17 +811,17 @@ has-props
 
 151
 
-Phenotype16x16.gif
+InformationPanel.java
 file
 
 
 
 
-2011-08-17T00:10:50.000000Z
-8a9ed81c0ae807ca19535a038891e916
-2006-01-13T22:48:38.000000Z
-1120
-watkin
+2012-01-10T19:15:28.000000Z
+057ce4beac3b721488e4af641452d4f8
+2011-10-06T15:38:33.365082Z
+8369
+zji
 has-props
 
 
@@ -843,7 +843,7 @@ has-props
 
 
 
-910
+3100
 
 DataSetSubNode.java
 file
@@ -879,17 +879,17 @@ has-props
 
 776
 
-InformationPanel.java
+Phenotype16x16.gif
 file
 
 
 
 
-2012-01-10T19:15:28.000000Z
-057ce4beac3b721488e4af641452d4f8
-2011-10-06T15:38:33.365082Z
-8369
-zji
+2011-08-17T00:10:50.000000Z
+8a9ed81c0ae807ca19535a038891e916
+2006-01-13T22:48:38.000000Z
+1120
+watkin
 has-props
 
 
@@ -911,13 +911,7 @@ has-props
 
 
 
-3100
-
-remoteresources
-dir
-
-experimentinformation
-dir
+910
 
 busy.gif
 file
@@ -952,6 +946,12 @@ has-props
 
 
 7823
+
+experimentinformation
+dir
+
+remoteresources
+dir
 
 help
 dir

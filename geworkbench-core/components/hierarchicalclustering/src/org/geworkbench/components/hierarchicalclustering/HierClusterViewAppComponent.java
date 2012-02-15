@@ -28,7 +28,7 @@ import org.geworkbench.events.ProjectEvent;
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: First Genetic Trust Inc.</p>
  * @author First Genetic Trust
- * @version $Id: HierClusterViewAppComponent.java 8287 2011-09-14 16:00:49Z zji $
+ * @version $Id: HierClusterViewAppComponent.java 8690 2012-01-11 20:07:01Z maz $
  */
 
 /**
@@ -99,7 +99,7 @@ public class HierClusterViewAppComponent implements VisualPlugin, MenuListener, 
     }
 
     public ActionListener getActionListener(String var) {
-        return (ActionListener) hclWidget.getListeners().get(var);
+        return null;
     }
 
     private void fireModelChanged(HierClusterModelEvent event) {

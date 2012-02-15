@@ -130,7 +130,7 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 	@WebMethod
 	public WorkflowComment addComment(WorkflowComment wc) {
     	logUsage();
-
+    	System.out.println(wc.getWorkflow());
 		wc.setCreatedAt(new Date());
 		wc.setCreator(getUser());
 		getEntityManager().persist(wc);
@@ -140,6 +140,19 @@ public class WorkflowRepository extends AbstractFacade<Workflow> implements Work
 		return wc;
 	}
 
+	@WebMethod
+	public WorkflowComment addCommentToWf(WorkflowComment wc, Workflow w) {
+    	logUsage();
+		wc.setCreatedAt(new Date());
+		wc.setCreator(getUser());
+		wc.setWorkflow(w);
+		getEntityManager().persist(wc);
+		wc = getEntityManager().merge(wc);
+//		getEntityManager().refresh(wc.getWorkflow());
+		invalidateCache();
+		return wc;
+	}
+	
 	@Override
 	@WebMethod
 	public UserWorkflow importWorkflow(UserWorkflow w) {

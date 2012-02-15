@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/8672/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
+/svn/geworkbench/!svn/ver/8810/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea
 END
 IDEAAnalysis.cwb.xml
 K 25
@@ -13,13 +13,13 @@ IdeaNetworkEdge.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/8580/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IdeaNetworkEdge.java
+/svn/geworkbench/!svn/ver/8753/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IdeaNetworkEdge.java
 END
 IDEAPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/8669/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAPanel.java
+/svn/geworkbench/!svn/ver/8808/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAPanel.java
 END
 MutualInfo.java
 K 25
@@ -31,7 +31,7 @@ IDEAViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/8671/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.java
+/svn/geworkbench/!svn/ver/8810/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAViewer.java
 END
 FisherExact.java
 K 25
@@ -43,7 +43,7 @@ IDEAAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8651/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.java
+/svn/geworkbench/!svn/ver/8760/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/IDEAAnalysis.java
 END
 NullDistribution.java
 K 25
@@ -55,7 +55,7 @@ Phenotype.java
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/8663/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Phenotype.java
+/svn/geworkbench/!svn/ver/8793/trunk/geworkbench/components/idea/src/org/geworkbench/components/idea/Phenotype.java
 END
 IDEAViewer.cwb.xml
 K 25

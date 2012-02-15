@@ -81,7 +81,7 @@ import org.geworkbench.util.JAutoList;
  * <p>Company: Columbia University</p>
  *
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: Skin.java 8524 2011-11-14 22:19:17Z zji $
+ * @version $Id: Skin.java 8726 2012-01-18 19:35:30Z zji $
  */
 public class Skin extends GUIFramework {
 	private static final String YES = "yes";
@@ -669,7 +669,11 @@ public class Skin extends GUIFramework {
                 if (acceptors.contains(mainclass)) {
                     log.trace("Found component in "+screenRegion+" to show: " + mainclass.toString());
                     PluginDescriptor desc = ComponentRegistry.getRegistry().getDescriptorForPluginClass(mainclass);
-                    tabsToAdd.put(desc.getPreferredOrder(), component);
+                    int order = desc.getPreferredOrder();
+                    if(desc.getID().equals("informationPanel")) {
+                    	order = 100; // force information panel to behind
+                    }
+                    tabsToAdd.put(order, component);
                 }
             }
         }

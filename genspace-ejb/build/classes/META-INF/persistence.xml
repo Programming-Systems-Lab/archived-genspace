@@ -29,6 +29,7 @@
          <class>org.geworkbench.components.genspace.entity.msa.Alignment</class>
          <class>org.geworkbench.components.genspace.entity.msa.Reference</class>
          <class>org.geworkbench.components.genspace.entity.msa.ProteinSequence</class>
+         <class>org.geworkbench.components.genspace.entity.IgnoredHost</class>
          
          <properties>
            <!--Use the java2db feature -->

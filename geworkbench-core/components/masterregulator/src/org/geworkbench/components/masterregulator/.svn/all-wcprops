@@ -1,25 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svn/geworkbench/!svn/ver/8613/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
+/svn/geworkbench/!svn/ver/8780/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
 END
 MasterRegulatorPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 148
-/svn/geworkbench/!svn/ver/8548/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
-END
-CSVFileFilter.java
-K 25
-svn:wc:ra_dav:version-url
-V 141
-/svn/geworkbench/!svn/ver/8396/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/CSVFileFilter.java
+/svn/geworkbench/!svn/ver/8780/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
 END
 MasterRegulatorViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8613/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
+/svn/geworkbench/!svn/ver/8702/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
 END
 MasterRegulatorTableViewer.cwb.xml
 K 25
@@ -31,13 +25,19 @@ MasterRegulatorAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 151
-/svn/geworkbench/!svn/ver/8590/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
+/svn/geworkbench/!svn/ver/8746/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
 END
 TAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
 /svn/geworkbench/!svn/ver/8532/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TAnalysis.java
+END
+ExportFileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/geworkbench/!svn/ver/8702/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/ExportFileFilter.java
 END
 FishersExactTest.java
 K 25
@@ -55,7 +55,7 @@ TableViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/8586/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TableViewer.java
+/svn/geworkbench/!svn/ver/8755/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TableViewer.java
 END
 MasterRegulatorTableViewer.java
 K 25

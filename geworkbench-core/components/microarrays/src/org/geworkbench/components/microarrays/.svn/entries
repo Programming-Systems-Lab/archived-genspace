@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-09T20:51:15.137498Z
-8675
+2012-01-25T21:38:04.927329Z
+8771
 zji
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-b7ac6d937f3862b959a0fd344957d24d
-2011-03-21T22:24:24.377666Z
-7617
-smithken
+2012-01-31T19:12:31.000000Z
+224d05ddddf386aa3cf6a3ec872b5b38
+2012-01-11T20:07:01.347231Z
+8690
+maz
 
 
 
@@ -92,7 +92,7 @@ smithken
 
 
 
-1560
+1469
 
 TabularMicroarrayPanel.java
 file
@@ -409,10 +409,10 @@ file
 
 
 
-2012-01-10T21:28:12.000000Z
-f03b95b3590b764e57a727a51e29e6ac
-2012-01-09T20:51:15.137498Z
-8675
+2012-01-31T19:12:31.000000Z
+a715acb8d6b4faf0a584d445e0d0ead8
+2012-01-25T21:38:04.927329Z
+8771
 zji
 has-props
 
@@ -435,7 +435,7 @@ has-props
 
 
 
-29993
+30397
 
 MicroarrayDisplay.java
 file

@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-11-17T16:19:54.410185Z
-8534
+2012-01-18T19:35:30.187399Z
+8726
 zji
 
 
@@ -199,6 +199,9 @@ has-props
 
 225
 
+properties
+dir
+
 visualPluginGrey.png
 file
 
@@ -233,7 +236,7 @@ has-props
 
 163
 
-properties
+preferences
 dir
 
 selectionArea.png
@@ -270,13 +273,13 @@ has-props
 
 224
 
-preferences
-dir
-
 ccm
 dir
 
 skin
+dir
+
+config
 dir
 
 visualPlugin.png
@@ -312,9 +315,6 @@ has-props
 
 
 234
-
-config
-dir
 
 WelcomeScreen.java
 file

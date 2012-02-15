@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-06T15:58:30.145837Z
-8664
+2012-01-26T20:50:12.046577Z
+8783
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-10T21:28:29.000000Z
-7114381fc17f28c34086be8531f1c34c
-2012-01-06T15:58:30.145837Z
-8664
+2012-01-31T19:12:34.000000Z
+9a11c1dc957eb2c6b755ac54e689f6c9
+2012-01-26T20:50:12.046577Z
+8783
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-33386
+33515
 
 SequenceListSelectionListener.java
 file
@@ -134,47 +134,10 @@ file
 
 
 
-2012-01-10T19:15:27.000000Z
-ffdacfcfba1224d80bf2e68f0851811a
-2011-12-06T22:28:35.762146Z
-8578
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7089
-
-help
-dir
-
-RetrievedSequenceDisplayPanel.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-63f9cb7f723c40793ed496a081467953
-2011-12-06T22:13:07.162813Z
-8577
+2012-01-31T19:12:34.000000Z
+a552fc8088a4d59fe18ec435d6ddef0e
+2012-01-26T20:50:12.046577Z
+8783
 zji
 has-props
 
@@ -197,7 +160,44 @@ has-props
 
 
 
-15352
+6926
+
+help
+dir
+
+RetrievedSequenceDisplayPanel.java
+file
+
+
+
+
+2012-01-31T19:12:34.000000Z
+d3857289b94ef989b06ba70e5bab99db
+2012-01-26T20:50:12.046577Z
+8783
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12610
 
 SequenceFetcher.java
 file
@@ -300,6 +300,40 @@ has-props
 
 
 1319
+
+RetrievedSequenceTableModel.java
+file
+
+
+
+
+2012-01-31T19:12:34.000000Z
+79764a195aa1e23bfce03fd81a2b29f7
+2012-01-26T20:50:12.046577Z
+8783
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3679
 
 RetrievedSequenceView.java
 file

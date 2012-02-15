@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-04T22:17:55.887786Z
-8648
+2012-01-25T17:48:27.081994Z
+8762
 zji
 
 
@@ -60,40 +60,6 @@ has-props
 
 2398
 
-IdeaResultDataSet.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-995a6ccbb9a5f44c403072b2de6ea6a1
-2011-11-02T15:43:58.696033Z
-8481
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1438
-
 IdeaGLoc.java
 file
 
@@ -128,17 +94,17 @@ maz
 
 1869
 
-IdeaModule.java
+IdeaResultDataSet.java
 file
 
 
 
 
 2012-01-10T19:15:27.000000Z
-647a632f1a47fe916c04f9c50392422d
-2011-09-06T22:30:11.516277Z
-8254
-maz
+995a6ccbb9a5f44c403072b2de6ea6a1
+2011-11-02T15:43:58.696033Z
+8481
+zji
 
 
 
@@ -160,7 +126,7 @@ maz
 
 
 
-801
+1438
 
 IdeaNode.java
 file
@@ -195,6 +161,40 @@ maz
 
 
 2025
+
+IdeaModule.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+647a632f1a47fe916c04f9c50392422d
+2011-09-06T22:30:11.516277Z
+8254
+maz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+801
 
 KMeansResult.java
 file
@@ -270,17 +270,17 @@ has-props
 markers
 dir
 
-IdeaEdge.java
+DSBioObject.java
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-ea57aa0c85ebc8839222acf2d25f3b38
-2010-12-06T22:31:56.790698Z
-7296
-zji
+b4881ef5121d9cf4578d4ee789299b4a
+2006-03-03T18:05:24.000000Z
+1317
+mhall
 has-props
 
 
@@ -302,7 +302,7 @@ has-props
 
 
 
-3867
+377
 
 DSPValued.java
 file
@@ -338,17 +338,17 @@ has-props
 
 395
 
-DSBioObject.java
+IdeaEdge.java
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-b4881ef5121d9cf4578d4ee789299b4a
-2006-03-03T18:05:24.000000Z
-1317
-mhall
+ea57aa0c85ebc8839222acf2d25f3b38
+2010-12-06T22:31:56.790698Z
+7296
+zji
 has-props
 
 
@@ -370,12 +370,12 @@ has-props
 
 
 
-377
-
-sequence
-dir
+3867
 
 microarray
+dir
+
+sequence
 dir
 
 IdeaProbeGene.java

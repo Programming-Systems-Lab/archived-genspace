@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/geworkbench/!svn/ver/8612/trunk/geworkbench/components/analysis/lib
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib
 END
 axis.jar
 K 25
@@ -49,7 +49,7 @@ Dispatcher-common.jar
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/geworkbench/!svn/ver/5218/trunk/geworkbench/components/analysis/lib/Dispatcher-common.jar
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib/Dispatcher-common.jar
 END
 caGrid-metadata-security-1.4.jar
 K 25
@@ -79,13 +79,19 @@ Dispatcher-stubs.jar
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/geworkbench/!svn/ver/5218/trunk/geworkbench/components/analysis/lib/Dispatcher-stubs.jar
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib/Dispatcher-stubs.jar
 END
 jaxrpc.jar
 K 25
 svn:wc:ra_dav:version-url
 V 83
 /svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/jaxrpc.jar
+END
+caGrid-Transfer-client-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib/caGrid-Transfer-client-1.4.jar
 END
 caGrid-metadatautils-1.4.jar
 K 25
@@ -121,7 +127,7 @@ Dispatcher-client.jar
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/geworkbench/!svn/ver/5218/trunk/geworkbench/components/analysis/lib/Dispatcher-client.jar
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib/Dispatcher-client.jar
 END
 jgss.jar
 K 25
@@ -129,17 +135,23 @@ svn:wc:ra_dav:version-url
 V 81
 /svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/jgss.jar
 END
-wss4j.jar
+caGrid-Transfer-stubs-1.4.jar
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/wss4j.jar
+V 102
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib/caGrid-Transfer-stubs-1.4.jar
 END
 cog-axis.jar
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/cog-axis.jar
+END
+wss4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/wss4j.jar
 END
 wsrf_provider_jce.jar
 K 25
@@ -153,17 +165,17 @@ svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/commons-cli-2.0.jar
 END
-saaj.jar
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/saaj.jar
-END
 caGrid-metadata-data-1.4.jar
 K 25
 svn:wc:ra_dav:version-url
 V 101
 /svn/geworkbench/!svn/ver/8612/trunk/geworkbench/components/analysis/lib/caGrid-metadata-data-1.4.jar
+END
+saaj.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/saaj.jar
 END
 addressing-1.0.jar
 K 25
@@ -242,6 +254,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 87
 /svn/geworkbench/!svn/ver/2527/trunk/geworkbench/components/analysis/lib/wsrf_tools.jar
+END
+caGrid-Transfer-common-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/8737/trunk/geworkbench/components/analysis/lib/caGrid-Transfer-common-1.4.jar
 END
 statmlutil.jar
 K 25

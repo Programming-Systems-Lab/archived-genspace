@@ -1,14 +1,14 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/microarrays
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-11-16T16:03:46.079217Z
-8527
+2012-01-25T17:34:14.733766Z
+8761
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-10T19:15:27.000000Z
-2cfb4482fd86ed7f4e5d61203bf0ed96
-2011-11-16T16:03:46.079217Z
-8527
+2012-01-31T19:12:36.000000Z
+ea46f8aad6cb2b9bb8732e8f21e7b872
+2012-01-25T17:34:14.733766Z
+8761
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-15706
+15463
 
 DSMicroarraySet.java
 file

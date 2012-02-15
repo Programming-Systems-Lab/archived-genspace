@@ -54,7 +54,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * 
  * @author y.c. mark, zji
- * @version $Id: MasterRegulatorViewer.java 8613 2011-12-15 22:14:45Z youmi $
+ * @version $Id: MasterRegulatorViewer.java 8702 2012-01-13 15:45:41Z zji $
  *
  */
 @AcceptTypes( { DSMasterRagulatorResultSet.class })
@@ -152,7 +152,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 					String exportDir = properties.getProperty(this.getClass(), EXPORTDIR, exportFileStr);
 					File exportFile = new File(exportDir);
 					OWFileChooser chooser = new OWFileChooser(exportFile);
-					CSVFileFilter filter = new CSVFileFilter();
+					ExportFileFilter filter = new ExportFileFilter("csv", "Comma Separated Value Files", ",");
 					chooser.setFileFilter(filter);
 					chooser.setDialogTitle("Export All MRA Target Results");
 					String extension = filter.getExtension();

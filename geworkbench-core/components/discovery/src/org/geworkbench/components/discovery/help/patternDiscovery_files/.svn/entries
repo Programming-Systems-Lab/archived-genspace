@@ -1,7 +1,7 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -264,40 +264,6 @@ has-props
 
 4482
 
-index.php
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-7b8173485effa90ed2ef65c029a9838b
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-291
-
 PatternDiscovery_Params_Basic_only.png
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 10674
+
+index.php
+file
+
+
+
+
+2012-01-10T18:25:34.000000Z
+7b8173485effa90ed2ef65c029a9838b
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+291
 
 index.css
 file
@@ -366,40 +366,6 @@ has-props
 
 50
 
-PatternDiscovery_Run_Controls.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-3097e59f1995b2fbe80f6f21bcf8a7b1
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5129
-
 PatternDiscovery_Basic_histone_result_exact_seqs.png
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 61626
+
+PatternDiscovery_Run_Controls.png
+file
+
+
+
+
+2012-01-10T18:25:34.000000Z
+3097e59f1995b2fbe80f6f21bcf8a7b1
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5129
 
 PatternDiscovery_Params_Exhaustive.png
 file
@@ -468,40 +468,6 @@ has-props
 
 8358
 
-PatternDiscovery_RunProgress.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-8cf26cb8963ff6144be722daf074f2e6
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6928
-
 PatternDiscovery_Basic_histone_result_blosum50_seqs.png
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 72945
+
+PatternDiscovery_RunProgress.png
+file
+
+
+
+
+2012-01-10T18:25:34.000000Z
+8cf26cb8963ff6144be722daf074f2e6
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6928
 
 PatternDiscovery_Params_Basic_support_options.png
 file

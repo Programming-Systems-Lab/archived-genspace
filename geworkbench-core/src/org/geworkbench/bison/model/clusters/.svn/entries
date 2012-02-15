@@ -1,7 +1,7 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/model/clusters
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SOMCluster.java
-file
-
-
-
-
-2011-08-17T00:19:07.000000Z
-19c5f4d23d6ca552d990a4b1b95c05ad
-2011-05-27T15:53:22.537336Z
-7941
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1632
 
 NonRecursiveClusterSet.java
 file
@@ -94,14 +60,14 @@ has-props
 
 6006
 
-DefaultSOMCluster.java
+SOMCluster.java
 file
 
 
 
 
 2011-08-17T00:19:07.000000Z
-e610d483270f5456b39771998b551e04
+19c5f4d23d6ca552d990a4b1b95c05ad
 2011-05-27T15:53:22.537336Z
 7941
 zji
@@ -126,7 +92,7 @@ has-props
 
 
 
-1628
+1632
 
 AbstractCluster.java
 file
@@ -161,6 +127,40 @@ has-props
 
 
 5979
+
+DefaultSOMCluster.java
+file
+
+
+
+
+2011-08-17T00:19:07.000000Z
+e610d483270f5456b39771998b551e04
+2011-05-27T15:53:22.537336Z
+7941
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1628
 
 DSClusterDataSet.java
 file

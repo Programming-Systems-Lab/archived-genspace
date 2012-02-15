@@ -181,4 +181,21 @@ public interface WorkflowRepository {
     @ResponseWrapper(localName = "getIncomingWorkflowsResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetIncomingWorkflowsResponse")
     public List<IncomingWorkflow> getIncomingWorkflows();
 
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.WorkflowComment
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addCommentToWf", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AddCommentToWf")
+    @ResponseWrapper(localName = "addCommentToWfResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AddCommentToWfResponse")
+    public WorkflowComment addCommentToWf(
+        @WebParam(name = "arg0", targetNamespace = "")
+        WorkflowComment arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        Workflow arg1);
+
 }

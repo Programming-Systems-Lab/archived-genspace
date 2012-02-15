@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/server/wrapper
+/svn/geworkbench/!svn/ver/8699/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/server/wrapper
 END
 UserWrapper.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/server/wrapper/UserWrapper.java
-END
-WorkflowWrapper.java
-K 25
-svn:wc:ra_dav:version-url
-V 144
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/server/wrapper/WorkflowWrapper.java
 END
 ToolWrapper.java
 K 25

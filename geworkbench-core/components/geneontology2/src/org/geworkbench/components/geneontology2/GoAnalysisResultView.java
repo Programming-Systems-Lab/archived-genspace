@@ -82,7 +82,7 @@ import org.geworkbench.util.BrowserLauncher;
  * Visual component to show the result from GO Term Analysis.
  * 
  * @author zji
- * @version $Id: GoAnalysisResultView.java 8648 2012-01-04 22:17:55Z zji $
+ * @version $Id: GoAnalysisResultView.java 8718 2012-01-17 16:40:32Z zji $
  *
  */
 @AcceptTypes({GoAnalysisResult.class, DSMicroarraySet.class})
@@ -336,6 +336,9 @@ public class GoAnalysisResultView extends JPanel implements VisualPlugin {
 		Object[][] data = new Object[0][3]; // empty data at initialization
 		geneListTableModel = new DefaultTableModel(data, geneListHeaders);
 		geneListTable = new JTable(geneListTableModel);
+		TableRowSorter<DefaultTableModel> geneTableSorter = new TableRowSorter<DefaultTableModel>(geneListTableModel);
+		geneListTable.setRowSorter(geneTableSorter);
+
 		prepareCopyToSet();
 		ListSelectionModel geneListModel = geneListTable.getSelectionModel();
 		geneListModel.addListSelectionListener(new ListSelectionListener() {

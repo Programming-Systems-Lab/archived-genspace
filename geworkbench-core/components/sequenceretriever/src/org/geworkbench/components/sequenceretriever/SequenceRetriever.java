@@ -69,7 +69,7 @@ import org.geworkbench.util.sequences.GeneChromosomeMatcher;
  * @author Xuegong Wang
  * @author manjunath at genomecenter dot columbia dot edu
  * @author xiaoqing at genomecenter dot columbia dot edu
- * @version $Id: SequenceRetriever.java 8664 2012-01-06 15:58:30Z zji $
+ * @version $Id: SequenceRetriever.java 8783 2012-01-26 20:50:12Z zji $
  */
 
 @AcceptTypes({ DSMicroarraySet.class })
@@ -113,6 +113,7 @@ public class SequenceRetriever implements VisualPlugin {
 	// //Map the sequence name with the sequence display
 	private HashMap<String, RetrievedSequenceView> retrievedDNAMap = new HashMap<String, RetrievedSequenceView>();
 
+	/* four maps named "cached...' are to support geneSelectorEvent only*/
 	// Map the marker name with associated sequence name.
 	private TreeMap<String, ArrayList<String>> cachedRetrievedProteinSequences = new TreeMap<String, ArrayList<String>>();
 
@@ -326,6 +327,7 @@ public class SequenceRetriever implements VisualPlugin {
 			currentRetrievedMap = retrievedProteinMap;
 			currentRetrievedSequences = retrievedProteinSequences;
 			updateDisplay(proteinSequenceDB, retrievedProteinMap);
+			seqDisPanel.setDNA(false);
 		} else {
 			beforeText.setEnabled(true);
 			afterText.setEnabled(true);
@@ -336,6 +338,7 @@ public class SequenceRetriever implements VisualPlugin {
 			currentRetrievedMap = retrievedDNAMap;
 			currentRetrievedSequences = retrievedDNASequences;
 			updateDisplay(dnaSequenceDB, retrievedDNAMap);
+			seqDisPanel.setDNA(true);
 		}
 		sequenceDB.parseMarkers();
 		jSelectedList.updateUI();
@@ -808,7 +811,7 @@ public class SequenceRetriever implements VisualPlugin {
 		}
 		seqDisPanel.setSequenceDB(selectedSet);
 		seqDisPanel.setRetrievedMap(newMap);
-//		seqDisPanel.initialize(selectedSet);
+		seqDisPanel.initialize(selectedSet);
 		main.revalidate();
 		main.repaint();
 	}

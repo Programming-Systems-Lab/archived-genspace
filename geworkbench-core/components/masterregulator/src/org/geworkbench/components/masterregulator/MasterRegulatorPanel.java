@@ -20,6 +20,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -39,6 +40,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.ListModel;
+import javax.swing.SwingUtilities;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -53,10 +55,11 @@ import org.geworkbench.bison.annotation.DSAnnotationContextManager;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrixDataSet;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix.NodeType;
-import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
+import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet; 
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
+import org.geworkbench.builtin.projects.ProjectPanel;
 import org.geworkbench.events.listeners.ParameterActionListener;
 import org.geworkbench.parsers.AdjacencyMatrixFileFormat;
 import org.geworkbench.parsers.InputFileFormatException;
@@ -73,7 +76,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * Parameter Panel used for Master Regulator Analysis
  * 
  * @author yc2480
- * @version $Id: MasterRegulatorPanel.java 8548 2011-11-29 20:43:13Z wangmen $
+ * @version $Id: MasterRegulatorPanel.java 8780 2012-01-26 20:18:34Z wangmen $
  */
 public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = -6160058089960168299L;
@@ -107,7 +110,7 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 	private JComboBox networkFrom = null;
 	private JComboBox tfFrom = null;
 	private JComboBox sigFrom = null;
-	private JTextField mintg = new JTextField("20");  //minimum number of targets to run GSEA
+	private JTextField mintg = new JTextField("20");  // number of targets minimumto run GSEA
 	private JTextField minsp = new JTextField("6");  //minimum number of samples for label shuffling
 	private JTextField nperm = new JTextField("1000"); //number of permutations
 	private JTextField tail = new JTextField("2");   //tail: If the Spearman's correlation value is not known, use tail = 1. Otherwise tail = 2. 2 for GSEA2, 1 for GSEA
@@ -762,7 +765,30 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 
 	}
 
-	void setSelectorPanel(MasterRegulatorPanel aspp, DSPanel<DSGeneMarker> ap) {
+	/* this method is called from both EDT and non-EDT. this is not a good situation FIXME*/
+	void setSelectorPanel(final MasterRegulatorPanel aspp,
+			final DSPanel<DSGeneMarker> ap) {
+		if (SwingUtilities.isEventDispatchThread()) {
+			setSelectorPanelFromEDT(aspp, ap);
+		} else {
+			try {
+				SwingUtilities.invokeAndWait(new Runnable() {
+
+					@Override
+					public void run() {
+						setSelectorPanelFromEDT(aspp, ap);
+					}
+
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private void setSelectorPanelFromEDT(final MasterRegulatorPanel aspp, final DSPanel<DSGeneMarker> ap) {
 		aspp.selectorPanel = ap;
 		String currentTargetSet = (String) aspp.tfGroups.getSelectedItem();
 		DefaultComboBoxModel targetComboModel = (DefaultComboBoxModel) aspp.tfGroups
@@ -790,7 +816,6 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 				sigComboModel.setSelectedItem(label);
 			}
 		}
-
 	}
 
 	private String getLastDir(){
@@ -1073,6 +1098,8 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 
 	HashSet<String> getIxClass(String contextClass){
 		DSAnnotationContextManager manager = CSAnnotationContextManager.getInstance();
+		if (maSet == null && ProjectPanel.getInstance().getDataSet() instanceof DSMicroarraySet)
+			maSet = (DSMicroarraySet)ProjectPanel.getInstance().getDataSet();
 		DSAnnotationContext<DSMicroarray> context = manager.getCurrentContext(maSet);
 		String[] groups = context.getLabelsForClass(contextClass);
 		HashSet<String> hash = new HashSet<String>();
@@ -1251,6 +1278,28 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 			interactionTypeMap = new org.geworkbench.parsers.AdjacencyMatrixFileFormat().getInteractionTypeMap();
 		}
 		return true;
+	}
+	
+	
+	@Override
+	public String getDataSetHistory() {			 
+		StringBuffer histStr = new StringBuffer("Generated with MRA run with parameters:\n");
+		AdjacencyMatrixDataSet adjset = getAdjMatrixDataSet();
+		histStr .append( "\n[PARA] Load Network: " +(adjset==null?networkFilename:adjset.getDataSetName())  ).append("\n");
+		histStr .append( "[PARA] FET/GSEA p-value : " + pValueTextField.getText() ).append("\n");
+		histStr .append( "[PARA] Minimum number of Targets : " + mintg.getText() ).append("\n");
+		histStr .append( "[PARA] GSEA Tail : " + tail.getText() ).append("\n");
+		histStr .append( "[PARA] Minimum number of Samples : " + minsp.getText() ).append("\n");
+		histStr .append( "[PARA] Shadow P-value : " + pvshadow.getText() ).append("\n");
+		histStr .append( "[PARA] Number of GSEA Permutations : " + nperm.getText() ).append("\n");
+		
+		histStr .append( "[PARA] Synergy P-value: " )
+				.append( pvsynergy.getText() )
+						.append( "\n\n\n" );
+
+	 
+		
+		return histStr.toString();
 	}
 	
 	String validateNetwork(){

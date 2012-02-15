@@ -19,7 +19,7 @@ import java.text.StringCharacterIterator;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: CMVRuler.java 7270 2010-12-03 20:54:22Z zji $
+ * @version $Id: CMVRuler.java 8758 2012-01-24 23:32:07Z zji $
  */
 public final class CMVRuler extends JComponent {
 	private static final long serialVersionUID = -8325233520281492489L;
@@ -102,14 +102,18 @@ public final class CMVRuler extends JComponent {
 
             int geneId = 0;
             EisenBlock[] cluster = colorMosaicImage.getClusters();
+            
+            // TODO we need to review whether cluster and eisenBlock are intended to be possibly null
+            if(cluster==null) return;
 
-            for (int i = 0; i < clusterNo; i++) {
+            for (EisenBlock eisenBlock : cluster) {
+            	if(eisenBlock==null) return;
 
                 // Use clipping bounds to calculate first tick and last tick location.
                 //Vector boundaries = Area.GetChipManager().Boundaries;
-                DSPanel<DSGeneMarker> gm = cluster[i].getPanel();
+                DSPanel<DSGeneMarker> gm = eisenBlock.getPanel();
 
-                if (!cluster[i].showAllMarkers && (gm != null)) {
+                if (!eisenBlock.showAllMarkers && (gm != null)) {
                     for (int j = 0; j < gm.panels().size(); j++) {
 
                         //IMarkerSet gg = gm.getGroup(j);

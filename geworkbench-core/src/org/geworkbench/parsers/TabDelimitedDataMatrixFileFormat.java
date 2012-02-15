@@ -35,7 +35,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
  * Sequence and Pattern Plugin
  * 
  * @author yc2480
- * @version $Id: TabDelimitedDataMatrixFileFormat.java 8621 2011-12-19 19:24:01Z youmi $
+ * @version $Id: TabDelimitedDataMatrixFileFormat.java 8795 2012-01-27 19:28:26Z zji $
  * 
  */
 public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
@@ -206,10 +206,18 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 	 * 
 	 * @see org.geworkbench.components.parsers.microarray.DataSetFileFormat#getDataFile(java.io.File)
 	 */
+	@Override
 	public DSDataSet<? extends DSBioObject> getDataFile(File file) throws InputFileFormatException, InterruptedIOException{
 		  
-		  return (DSDataSet<? extends DSBioObject>) getMArraySet(file);
+		  return (DSDataSet<? extends DSBioObject>) getMArraySet(file, null);
 	    
+	}
+
+	@Override
+	public DSDataSet<? extends DSBioObject> getDataFile(File file,
+			String compatibilityLabel) throws InputFileFormatException,
+			InterruptedIOException {
+		  return (DSDataSet<? extends DSBioObject>) getMArraySet(file, compatibilityLabel);
 	}
 	 
 	/*
@@ -217,7 +225,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 	 * 
 	 * @see org.geworkbench.components.parsers.FileFormat#getMArraySet(java.io.File)
 	 */
-	private CSMicroarraySet getMArraySet(File file)
+	private CSMicroarraySet getMArraySet(File file, String compatibilityLabel)
 			throws InputFileFormatException, InterruptedIOException {
 
 		try
@@ -380,18 +388,12 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 					line = StringUtils.replace(line, "\"", "");
 				}
 				// Set chip-type
-				String result = null;
-				for (int i = 0; i < m; i++) {
-					result = AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
-					if (result != null) {
-						break;
-					}
-				}
-				if (result == null) {
+				if (compatibilityLabel == null) {
 					AffyAnnotationUtil.matchAffyAnnotationFile(maSet);
 				} else {
-					maSet.setCompatibilityLabel(result);
+					maSet.setCompatibilityLabel(compatibilityLabel);
 				}
+				
 				for (DSGeneMarker marker : maSet.getMarkers()) {
 					String token = marker.getLabel();
 					String[] locusResult = AnnotationParser.getInfo(token,

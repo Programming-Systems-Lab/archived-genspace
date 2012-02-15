@@ -73,7 +73,7 @@ import org.geworkbench.util.visualproperties.VisualPropertiesDialog;
 
 /**
  * @author John Watkinson
- * @version $Id: SelectorPanel.java 8600 2011-12-15 16:08:43Z zji $
+ * @version $Id: SelectorPanel.java 8725 2012-01-18 19:01:52Z zji $
  */
 public abstract class SelectorPanel<T extends DSSequential> implements
 		VisualPlugin, MenuListener {
@@ -1123,15 +1123,15 @@ public abstract class SelectorPanel<T extends DSSequential> implements
 		public Object getElementAt(int index) {
 			synchronized(filterItems) {
 				if (itemList == null)      return null;
-				if (searchText.length()==0)   return itemList.get(index);
+				if (searchText.length()==0 && index<itemList.size())   return itemList.get(index);
 				if (index<filterItems.size())  return filterItems.get(index);
 				return null;
 			}
 		}
-		public T getItem(int index) {
+		private T getItem(int index) {
 			synchronized(filterItems) {
 				if (itemList == null)      return null;
-				if (searchText.length()==0)   return itemList.get(index);
+				if (searchText.length()==0 && index<itemList.size())   return itemList.get(index);
 				if (index<filterItems.size())  return filterItems.get(index);
 				return null;
 			}

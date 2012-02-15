@@ -1,15 +1,15 @@
 10
 
 dir
-8680
+8812
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/parsers
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-06T22:02:05.925589Z
-8668
-poddutun
+2012-01-27T22:43:49.471007Z
+8807
+zji
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-10T19:15:28.000000Z
-201494997012cc12386adf2733b63654
-2011-11-16T16:03:46.079217Z
-8527
+2012-01-31T19:12:35.000000Z
+b29c89a55e94b1c3c4aa114dbeba9655
+2012-01-25T17:34:14.733766Z
+8761
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-11084
+11027
 
 SOFTSeriesParser.java
 file
@@ -94,40 +94,6 @@ has-props
 
 11459
 
-PlatformChooser.java
-file
-
-
-
-
-2011-08-17T00:10:51.000000Z
-363b1347d4055e894aea846bc442082d
-2011-03-16T21:34:19.127070Z
-7592
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-691
-
 ExpressionResource.java
 file
 
@@ -162,16 +128,16 @@ has-props
 
 940
 
-GenePixFileFormat.java
+PlatformChooser.java
 file
 
 
 
 
-2012-01-10T19:15:28.000000Z
-8f175a625e3b6c8651ce4a1c67c59a19
-2011-10-25T21:47:59.095740Z
-8463
+2011-08-17T00:10:51.000000Z
+363b1347d4055e894aea846bc442082d
+2011-03-16T21:34:19.127070Z
+7592
 zji
 has-props
 
@@ -194,7 +160,7 @@ has-props
 
 
 
-7032
+691
 
 ExpressionFileFormat.java
 file
@@ -230,17 +196,17 @@ has-props
 
 2475
 
-MageTabFileFormat.java
+GenePixFileFormat.java
 file
 
 
 
 
 2012-01-10T19:15:28.000000Z
-8006a4328a87b79dfae95335e07b79f0
-2011-12-15T16:27:43.198334Z
-8604
-poddutun
+8f175a625e3b6c8651ce4a1c67c59a19
+2011-10-25T21:47:59.095740Z
+8463
+zji
 has-props
 
 
@@ -262,7 +228,7 @@ has-props
 
 
 
-15770
+7032
 
 EdgeListFileFormat.java
 file
@@ -297,6 +263,40 @@ has-props
 
 
 9393
+
+MageTabFileFormat.java
+file
+
+
+
+
+2012-01-31T19:12:35.000000Z
+592031d5c15dd7b7d679dcbaa9965d13
+2012-01-27T22:43:49.471007Z
+8807
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15839
 
 sequences
 dir
@@ -369,6 +369,40 @@ has-props
 
 2816
 
+TabDelimitedDataMatrixFileFormat.java
+file
+
+
+
+
+2012-01-31T19:12:35.000000Z
+2dbd0528b77a6014a4e9d58db7145ae5
+2012-01-27T19:28:26.078686Z
+8795
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15035
+
 AdjacencyMatrixFileFormat.java
 file
 
@@ -403,51 +437,17 @@ has-props
 
 13294
 
-TabDelimitedDataMatrixFileFormat.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-8cfcfd9df6af7eded70ff143b9c4e34c
-2011-12-19T19:24:01.356405Z
-8621
-youmi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14886
-
 SOFTFileFormat.java
 file
 
 
 
 
-2012-01-10T19:15:28.000000Z
-12c3378554d62f8c88af639b3d5da326
-2011-12-19T19:24:01.356405Z
-8621
-youmi
+2012-01-31T19:12:35.000000Z
+bd173e6923c129e15714824213b145c8
+2012-01-27T22:43:49.471007Z
+8807
+zji
 has-props
 
 
@@ -469,7 +469,7 @@ has-props
 
 
 
-16046
+16101
 
 PatternFileFormat.java
 file
@@ -681,11 +681,11 @@ file
 
 
 
-2012-01-10T19:15:28.000000Z
-70877ab24b702de65cad2f9a38c6bb76
-2011-12-19T19:24:01.356405Z
-8621
-youmi
+2012-01-31T19:12:35.000000Z
+80c648e916c0187e7240dbf6319ca7cd
+2012-01-23T16:51:28.101508Z
+8749
+wangmen
 has-props
 
 
@@ -707,5 +707,5 @@ has-props
 
 
 
-10493
+10475
 
