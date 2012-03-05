@@ -15,7 +15,7 @@ import edu.columbia.geworkbench.cagrid.dispatcher.client.DispatcherClient;
  * A thread that handles remote service polling.
  * 
  * @author keshav
- * @version $Id: PollingThread.java 8773 2012-01-25 22:33:51Z wangmen $
+ * @version $Id: PollingThread.java 8924 2012-02-27 22:42:50Z zji $
  */
 public class PollingThread extends Thread {
 
@@ -65,7 +65,9 @@ public class PollingThread extends Thread {
 						errorMessage, "java.rmi.RemoteException: ");
 
 				if (result instanceof OutOfMemoryError){
-					errorMessage += "\nPlease increase max heap size then try it again.";
+					errorMessage = "Out-of-memory error: " + errorMessage
+					+ "\n\nIt is advisable to restart geWorkbench."
+					+ "\n\nYou may also wish to increase the geWorkbench memory size.";
 				}
 
 				JOptionPane.showMessageDialog(null, errorMessage,

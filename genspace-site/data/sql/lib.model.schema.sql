@@ -1273,6 +1273,7 @@ CREATE TABLE [tools]
 	[id] INT  NOT NULL IDENTITY,
 	[tool] VARCHAR(255)  NULL,
 	[description] VARCHAR(255)  NULL,
+	[replacedby_id] INT  NULL,
 	CONSTRAINT [tools_PK] PRIMARY KEY ([id])
 );
 

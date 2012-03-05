@@ -1,25 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svn/geworkbench/!svn/ver/8780/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
 END
 MasterRegulatorPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 148
-/svn/geworkbench/!svn/ver/8780/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
 END
 MasterRegulatorViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8702/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
 END
 MasterRegulatorTableViewer.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 157
-/svn/geworkbench/!svn/ver/8238/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorTableViewer.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorTableViewer.cwb.xml
 END
 MasterRegulatorAnalysis.java
 K 25
@@ -67,11 +67,11 @@ MasterRegulatorViewer.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 152
-/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.cwb.xml
 END
 MasterRegulatorAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 154
-/svn/geworkbench/!svn/ver/8238/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.cwb.xml
 END

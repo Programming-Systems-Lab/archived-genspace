@@ -57,7 +57,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  * Volcano plot.
  *
  * @author Matt Hall, John Watkinson
- * @version $Id: VolcanoPlot.java 8661 2012-01-05 23:48:31Z smithken $
+ * @version $Id: VolcanoPlot.java 8818 2012-01-31 22:07:39Z maz $
  */
 @AcceptTypes({DSTTestResultSet.class})
 public class VolcanoPlot implements VisualPlugin {
@@ -340,8 +340,9 @@ public class VolcanoPlot implements VisualPlugin {
 
         plots.addSeries(series);
 
-
-        JFreeChart mainChart = ChartFactory.createScatterPlot(significance.getLabel(), "Fold Change (Log2)", "Significance (-Log10) ", plots, PlotOrientation.VERTICAL, false, true, false); // Title, (, // X-Axis label,  Y-Axis label,  Dataset,  Show legend
+        boolean isLogNormalized=significance.getIsLogNormalized();
+        String s=isLogNormalized?"(Difference of avg. Log2 values)":"Log2(ratio)";
+        JFreeChart mainChart = ChartFactory.createScatterPlot(significance.getLabel(), "Fold Change "+s, "Significance (-Log10) ", plots, PlotOrientation.VERTICAL, false, true, false); // Title, (, // X-Axis label,  Y-Axis label,  Dataset,  Show legend
         mainChart.getXYPlot().setRenderer(new VolcanoRenderer(plots, minPlotValue, maxPlotValue, toolTipGenerator));
         
         return mainChart;

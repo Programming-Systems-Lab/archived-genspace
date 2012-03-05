@@ -32,7 +32,7 @@ import org.geworkbench.util.ProgressBarT;
 
 /**
  * @author John Watkinson
- * @version $Id: MultiTTestAnalysis.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: MultiTTestAnalysis.java 8818 2012-01-31 22:07:39Z maz $
  */
 public class MultiTTestAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -149,7 +149,7 @@ public class MultiTTestAnalysis extends AbstractAnalysis implements
 							panels[testIndex] = new CSPanel<DSGeneMarker>(label);
 							sigSets[testIndex] = new CSTTestResultSet<DSGeneMarker>(
 									maSet, label, new String[] { labelA },
-									new String[] { labelB }, alpha);
+									new String[] { labelB }, alpha, isLogNormalized);
 
 							groupAndChipsStringSets[testIndex] = label + "\n"
 									+ GenerateGroupAndChipsString(panelA)

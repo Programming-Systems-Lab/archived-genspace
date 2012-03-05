@@ -7,7 +7,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author John Watkinson
- * @version $Id: DSSignificanceResultSet.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: DSSignificanceResultSet.java 8818 2012-01-31 22:07:39Z maz $
  */
 public interface DSSignificanceResultSet <T extends DSGeneMarker> extends DSAncillaryDataSet<DSMicroarray> {
 
@@ -44,4 +44,6 @@ public interface DSSignificanceResultSet <T extends DSGeneMarker> extends DSAnci
     public void addSigGenToPanel(T marker);   
 
     public void saveDataToCSVFile();
+    
+    public boolean getIsLogNormalized();
 }

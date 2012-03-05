@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/skyline/src/org/geworkbench/components/skyline
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/skyline/src/org/geworkbench/components/skyline
 END
 SkyLineAnalysis.java
 K 25
@@ -19,5 +19,5 @@ SkyLineAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/skyline/src/org/geworkbench/components/skyline/SkyLineAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/skyline/src/org/geworkbench/components/skyline/SkyLineAnalysis.cwb.xml
 END

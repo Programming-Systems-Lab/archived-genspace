@@ -2,7 +2,7 @@ package org.geworkbench.components.interactions.cellularnetwork;
 
 /**
  * @author my2248
- * @version $Id: ExportSelectionPanel.java 8748 2012-01-20 22:07:17Z youmi $ 
+ * @version $Id: ExportSelectionPanel.java 8924 2012-02-27 22:42:50Z zji $ 
  */
 
 //import java.io.BufferedReader;
@@ -478,7 +478,7 @@ public class ExportSelectionPanel extends JPanel {
 		StringBuilder restrictedLine = null;
 
 		DSItemList<DSGeneMarker> markers = dataset.getMarkers();
-		StringTokenizer tr = new StringTokenizer(line, "\t: :");
+		StringTokenizer tr = new StringTokenizer(line, "\t");
 		String node1 = tr.nextToken();
 		if (markers.get(node1) == null)
 			return null;

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/lib
+/svn/geworkbench/!svn/ver/8830/trunk/geworkbench/components/genspace/lib
 END
 axis2-saaj-1.5.4.jar
 K 25
@@ -9,23 +9,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/lib/axis2-saaj-1.5.4.jar
 END
-swing-layout-1.0.3.jar
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/swing-layout-1.0.3.jar
-END
-jgraphx.jar
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/jgraphx.jar
-END
-ha-api.jar
+smackx.jar
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/lib/ha-api.jar
+/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/smackx.jar
+END
+jimi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/jimi.jar
 END
 intellij.jar
 K 25
@@ -33,23 +27,11 @@ svn:wc:ra_dav:version-url
 V 85
 /svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/intellij.jar
 END
-smackx.jar
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/lib/smackx.jar
-END
 persistence-common.jar
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/lib/persistence-common.jar
-END
-jimi.jar
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/jimi.jar
 END
 mina-core-1.1.7.jar
 K 25
@@ -62,4 +44,22 @@ K 25
 svn:wc:ra_dav:version-url
 V 82
 /svn/geworkbench/!svn/ver/7734/trunk/geworkbench/components/genspace/lib/smack.jar
+END
+swing-layout-1.0.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/swing-layout-1.0.3.jar
+END
+ha-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/lib/ha-api.jar
+END
+jgraphx.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/geworkbench/!svn/ver/7739/trunk/geworkbench/components/genspace/lib/jgraphx.jar
 END

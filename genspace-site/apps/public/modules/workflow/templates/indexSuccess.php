@@ -3,7 +3,9 @@
 	print "Unable to find requested workflow.";
 	exit(0);
 } ?>
-
+ <div id='forgotpassdialog' style='display:none'>Enter your email address below, and your password will be reset and sent to you:<br/><br/>
+<form action="/tool/forgotpass" method="post">Email:<input name="email" type="text" size="40" /><br/><input type='submit' value='Submit' style='float:right' /></form>
+</div>	        
 <div id="content">	
 	<div id="post">
 

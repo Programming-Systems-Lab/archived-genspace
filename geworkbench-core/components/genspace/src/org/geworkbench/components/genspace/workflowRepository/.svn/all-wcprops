@@ -1,7 +1,31 @@
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svn/geworkbench/!svn/ver/8617/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository
+END
+RepositoryPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/RepositoryPanel.java
+END
+WorkflowDetailsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowDetailsPanel.java
+END
+WorkflowNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowNode.java
+END
+WorkflowCommentsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowCommentsPanel.java
 END
 DynamicTree.java
 K 25
@@ -15,27 +39,9 @@ svn:wc:ra_dav:version-url
 V 148
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/InboxTablePanel.java
 END
-RepositoryPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 148
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/RepositoryPanel.java
-END
 WorkflowRepository.java
 K 25
 svn:wc:ra_dav:version-url
 V 151
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowRepository.java
-END
-WorkflowDetailsPanel.java
-K 25
-svn:wc:ra_dav:version-url
-V 153
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowDetailsPanel.java
-END
-WorkflowNode.java
-K 25
-svn:wc:ra_dav:version-url
-V 145
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/workflowRepository/WorkflowNode.java
 END

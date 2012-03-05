@@ -22,6 +22,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="parameters" type="{http://server.genspace.components.geworkbench.org/}analysisEventParameter" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="tool" type="{http://server.genspace.components.geworkbench.org/}tool" minOccurs="0"/>
  *         &lt;element name="toolname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -38,6 +39,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "analysisEvent", propOrder = {
     "createdAt",
     "id",
+    "note",
     "parameters",
     "tool",
     "toolname",
@@ -50,6 +52,7 @@ public class AnalysisEvent
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar createdAt;
     protected int id;
+    protected String note;
     protected List<AnalysisEventParameter> parameters;
     protected Tool tool;
     protected String toolname;
@@ -93,6 +96,30 @@ public class AnalysisEvent
      */
     public void setId(int value) {
         this.id = value;
+    }
+
+    /**
+     * Gets the value of the note property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNote() {
+        return note;
+    }
+
+    /**
+     * Sets the value of the note property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNote(String value) {
+        this.note = value;
     }
 
     /**

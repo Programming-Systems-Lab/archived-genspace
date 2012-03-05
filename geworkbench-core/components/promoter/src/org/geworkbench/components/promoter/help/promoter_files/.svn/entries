@@ -1,7 +1,7 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoter_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-Promoter_Logo_TBP.png
-file
-
-
-
-
-2012-01-10T18:25:37.000000Z
-75e84913c9161ed8abebc360c645736c
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-55101
 
 index_002.css
 file
@@ -93,6 +59,40 @@ has-props
 
 
 318
+
+Promoter_Logo_TBP.png
+file
+
+
+
+
+2012-01-10T18:25:37.000000Z
+75e84913c9161ed8abebc360c645736c
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+55101
 
 index_003.css
 file
@@ -162,40 +162,6 @@ has-props
 
 75
 
-T_Promoter_CDH2_AP2_2000updn_scan_finalparams.png
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-aec5d08a8a4ddda58bd28c95cbb08820
-2009-11-09T17:28:33.000000Z
-5738
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6032
-
 T_SequenceRetriever_CDH2_seq_in_proj_folder-2.png
 file
 
@@ -230,14 +196,14 @@ has-props
 
 3278
 
-T_Promoter_Sequence_tab_with_mouseover.png
+T_Promoter_CDH2_AP2_2000updn_scan_finalparams.png
 file
 
 
 
 
 2011-08-17T00:10:45.000000Z
-84159a5b71568770536f0fd7fc0787fd
+aec5d08a8a4ddda58bd28c95cbb08820
 2009-11-09T17:28:33.000000Z
 5738
 jiz
@@ -262,7 +228,7 @@ has-props
 
 
 
-8948
+6032
 
 T_SequenceRetriever_Markers_CDH2.png
 file
@@ -297,6 +263,40 @@ has-props
 
 
 8765
+
+T_Promoter_Sequence_tab_with_mouseover.png
+file
+
+
+
+
+2011-08-17T00:10:45.000000Z
+84159a5b71568770536f0fd7fc0787fd
+2009-11-09T17:28:33.000000Z
+5738
+jiz
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8948
 
 Promoter_Taxa_Pulldown.png
 file
@@ -366,40 +366,6 @@ has-props
 
 4482
 
-T_SequenceRetriever_CDH2_2000updn.png
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-30d8f22fbc664e969d684613381b6b4f
-2009-11-09T17:28:33.000000Z
-5738
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11728
-
 index.css
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 50
+
+T_SequenceRetriever_CDH2_2000updn.png
+file
+
+
+
+
+2011-08-17T00:10:45.000000Z
+30d8f22fbc664e969d684613381b6b4f
+2009-11-09T17:28:33.000000Z
+5738
+jiz
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11728
 
 T_Promoter_CDH2_AP2_2000updn_scan_fullseq.png
 file
@@ -468,40 +468,6 @@ has-props
 
 14656
 
-Promoter_TBP_selected.png
-file
-
-
-
-
-2012-01-10T18:25:37.000000Z
-0b0291d853a4b6ce2acdd7d5207af17e
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19809
-
 T_Promoter_CDH2_AP2_2000updn_setup_logo.png
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 27434
+
+Promoter_TBP_selected.png
+file
+
+
+
+
+2012-01-10T18:25:37.000000Z
+0b0291d853a4b6ce2acdd7d5207af17e
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19809
 
 T_Promoter_Parameters_initial.png
 file

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/geworkbench/!svn/ver/8493/trunk/geworkbench/conf
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/conf
 END
 client-config.wsdd
 K 25
@@ -49,5 +49,5 @@ application.properties
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/conf/application.properties
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/conf/application.properties
 END

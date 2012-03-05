@@ -48,7 +48,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
  * especially tackles the progress bar requirement for multiple files.
  *
  * @author zji
- * @version $Id: FileOpenHandler.java 8794 2012-01-27 16:59:16Z zji $
+ * @version $Id: FileOpenHandler.java 8924 2012-02-27 22:42:50Z zji $
  *
  */
 public class FileOpenHandler {
@@ -359,7 +359,7 @@ public class FileOpenHandler {
 			} else {
 				// multiple file selection is not supported for adjacency matrix
 				if (dataSetFileFormat instanceof AdjacencyMatrixFileFormat) {
-					JOptionPane.showMessageDialog(null, "multiple file selection is not supported for adjacency matrix");
+					JOptionPane.showMessageDialog(null, "Multiple file selection is not supported for network files.");
 					return null;
 				}
 

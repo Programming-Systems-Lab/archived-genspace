@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svn/geworkbench/!svn/ver/8524/trunk/geworkbench/src/org/geworkbench/engine/ccm
+/svn/geworkbench/!svn/ver/8918/trunk/geworkbench/src/org/geworkbench/engine/ccm
 END
 ComponentConfigurationManagerWindow2.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/7144/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManagerWindow2.java
+/svn/geworkbench/!svn/ver/8918/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManagerWindow2.java
 END
 PluginComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/6549/trunk/geworkbench/src/org/geworkbench/engine/ccm/PluginComponent.java
+/svn/geworkbench/!svn/ver/8918/trunk/geworkbench/src/org/geworkbench/engine/ccm/PluginComponent.java
 END
 ComponentConfigurationManagerMenu.cwb.xml
 K 25
@@ -25,7 +25,7 @@ ComponentConfigurationManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/8524/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManager.java
+/svn/geworkbench/!svn/ver/8918/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManager.java
 END
 ComponentConfigurationManager2.java
 K 25
@@ -49,7 +49,7 @@ CCMTableModel.java
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svn/geworkbench/!svn/ver/6568/trunk/geworkbench/src/org/geworkbench/engine/ccm/CCMTableModel.java
+/svn/geworkbench/!svn/ver/8918/trunk/geworkbench/src/org/geworkbench/engine/ccm/CCMTableModel.java
 END
 CCMTableModel2.java
 K 25
@@ -61,5 +61,5 @@ ComponentConfigurationManagerWindow.java
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svn/geworkbench/!svn/ver/7144/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManagerWindow.java
+/svn/geworkbench/!svn/ver/8918/trunk/geworkbench/src/org/geworkbench/engine/ccm/ComponentConfigurationManagerWindow.java
 END

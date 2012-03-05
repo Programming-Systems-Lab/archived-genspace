@@ -55,7 +55,7 @@ import org.geworkbench.util.QSort;
  * &nbsp;&nbsp;&nbsp; org.tigr.microarray.mev.cluster.algorithm.impl
  * 
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: TtestAnalysis.java 8501 2011-11-07 21:18:52Z zji $
+ * @version $Id: TtestAnalysis.java 8818 2012-01-31 22:07:39Z maz $
  */
 public class TtestAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -265,7 +265,7 @@ public class TtestAnalysis extends AbstractAnalysis implements
 
 		DSSignificanceResultSet<DSGeneMarker> sigSet = new CSTTestResultSet<DSGeneMarker>(
 				maSet, "T-Test", caseSet.toArray(new String[0]), controlSet
-						.toArray(new String[0]), criticalPValue
+						.toArray(new String[0]), criticalPValue, isLogNormalized
 
 		);
 

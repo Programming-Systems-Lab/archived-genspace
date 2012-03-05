@@ -1,15 +1,15 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-26T20:18:34.577594Z
-8780
-wangmen
+2012-02-27T22:42:50.953800Z
+8924
+zji
 
 
 
@@ -32,44 +32,10 @@ file
 
 
 
-2012-01-31T19:12:31.000000Z
-9ccf72f52b006c817a824f039f0d268c
-2012-01-26T20:18:34.577594Z
-8780
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-46594
-
-MasterRegulatorViewer.java
-file
-
-
-
-
-2012-01-31T19:12:31.000000Z
-caca4170c1f619a94d8644580fe7496d
-2012-01-13T15:45:41.566574Z
-8702
+2012-03-05T20:23:08.000000Z
+d6795367c8eabce159217e511faf7729
+2012-02-27T22:42:50.953800Z
+8924
 zji
 has-props
 
@@ -92,7 +58,41 @@ has-props
 
 
 
-14987
+46782
+
+MasterRegulatorViewer.java
+file
+
+
+
+
+2012-03-05T20:23:08.000000Z
+68c5e773797f4a50933f7b1817ba01cb
+2012-02-27T22:42:50.953800Z
+8924
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14995
 
 MasterRegulatorTableViewer.cwb.xml
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2012-01-10T19:15:26.000000Z
-b69168ad7bd79e94b80623a4b9488e96
-2011-08-23T20:20:49.582715Z
-8238
-wangmen
+2012-03-05T20:23:08.000000Z
+434d3338958e4f5a6ecfc7b0b23dfa22
+2012-02-24T21:49:55.965990Z
+8916
+zji
 
 
 
@@ -126,7 +126,7 @@ wangmen
 
 
 
-1447
+1451
 
 MasterRegulatorAnalysis.java
 file
@@ -375,10 +375,10 @@ file
 
 
 
-2011-08-17T00:19:04.000000Z
-e112b75cf0fabeeef0f55c6b2ee3d23a
-2011-06-15T16:29:27.888300Z
-7991
+2012-03-05T20:23:08.000000Z
+d84bef7295e3af7e414201479c243c38
+2012-02-24T21:49:55.965990Z
+8916
 zji
 has-props
 
@@ -401,7 +401,7 @@ has-props
 
 
 
-1429
+1433
 
 MasterRegulatorAnalysis.cwb.xml
 file
@@ -409,11 +409,11 @@ file
 
 
 
-2012-01-10T19:15:26.000000Z
-522006b1aeca1eeec30d438d29cc4b1f
-2011-08-23T20:20:49.582715Z
-8238
-wangmen
+2012-03-05T20:23:08.000000Z
+724b7f541e466342ffc07338d90bdab9
+2012-02-24T21:49:55.965990Z
+8916
+zji
 has-props
 
 
@@ -435,5 +435,5 @@ has-props
 
 
 
-1671
+1675
 

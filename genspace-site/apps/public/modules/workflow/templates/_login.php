@@ -3,10 +3,9 @@
 	<h3>Login</h3>
 	<?php
 	
-	
 	if ($sf_user->isAuthenticated()): ?>
 		<strong>Logged in as <?php echo $sf_user->getAttribute('name');?>. </strong> 
-		<?php echo link_to('Logout', 'tool/logout'); echo " | "; echo "<a href='/tool/index?user=".$sf_user->getAttribute('username')."'>My Profile</a>"; ?>
+		<?php echo link_to('Logout', 'workflow/logout'); echo " | "; echo "<a href='/tool/index?user=".$sf_user->getAttribute('username')."'>My Profile</a>"; ?>
 	
 	<?php else:
 	if ($sf_user->hasFlash('error')):  echo "<span style='color:red'>".$sf_user->getFlash('error')."</span><br/>"; endif;

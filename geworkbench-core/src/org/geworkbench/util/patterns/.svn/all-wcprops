@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/geworkbench/!svn/ver/8630/trunk/geworkbench/src/org/geworkbench/util/patterns
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/src/org/geworkbench/util/patterns
 END
 Pattern-ii.gif
 K 25
@@ -13,7 +13,7 @@ PatternOperations.java
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternOperations.java
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternOperations.java
 END
 pattern.gif
 K 25
@@ -37,7 +37,7 @@ PatternLocations.java
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svn/geworkbench/!svn/ver/7647/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternLocations.java
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/src/org/geworkbench/util/patterns/PatternLocations.java
 END
 PatternSequenceDisplayUtil.java
 K 25

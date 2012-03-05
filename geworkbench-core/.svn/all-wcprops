@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svn/geworkbench/!svn/ver/8812/trunk/geworkbench
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench
 END
 java.policy
 K 25
@@ -75,6 +75,12 @@ svn:wc:ra_dav:version-url
 V 71
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/ReleaseNotes_2.2.1.txt
 END
+ReleaseNotes_2.3.0.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/ReleaseNotes_2.3.0.txt
+END
 ReleaseNotes_2.2.2.txt
 K 25
 svn:wc:ra_dav:version-url
@@ -139,7 +145,7 @@ build.xml
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/svn/geworkbench/!svn/ver/8640/trunk/geworkbench/build.xml
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/build.xml
 END
 build-component.xml
 K 25
@@ -151,7 +157,7 @@ END
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/svn/geworkbench/!svn/ver/8213/trunk/geworkbench/.classpath
+/svn/geworkbench/!svn/ver/8945/trunk/geworkbench/.classpath
 END
 caWorkbenchLicense.txt
 K 25
@@ -195,23 +201,11 @@ svn:wc:ra_dav:version-url
 V 58
 /svn/geworkbench/!svn/ver/1679/trunk/geworkbench/usage.txt
 END
-geworkbench-lite.ipr
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/geworkbench/!svn/ver/2859/trunk/geworkbench/geworkbench-lite.ipr
-END
 caWorkbench_ReleaseNotes_V3.0.txt
 K 25
 svn:wc:ra_dav:version-url
 V 81
 /svn/geworkbench/!svn/ver/799/trunk/geworkbench/caWorkbench_ReleaseNotes_V3.0.txt
-END
-geworkbench.ipr
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svn/geworkbench/!svn/ver/2747/trunk/geworkbench/geworkbench.ipr
 END
 Mouse430_2_annot.csv
 K 25
@@ -272,12 +266,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/geworkbench/!svn/ver/1893/trunk/geworkbench/tests.xml
-END
-cutenet.properties
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/geworkbench/!svn/ver/5614/trunk/geworkbench/cutenet.properties
 END
 welcometext.html
 K 25

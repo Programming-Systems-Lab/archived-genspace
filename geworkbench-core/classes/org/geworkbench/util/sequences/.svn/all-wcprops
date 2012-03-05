@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svn/geworkbench/!svn/ver/8645/trunk/geworkbench/src/org/geworkbench/util/sequences
+/svn/geworkbench/!svn/ver/8934/trunk/geworkbench/src/org/geworkbench/util/sequences
 END
 PatternTableView.java
 K 25
@@ -37,7 +37,7 @@ SequenceViewWidgetPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svn/geworkbench/!svn/ver/8473/trunk/geworkbench/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java
+/svn/geworkbench/!svn/ver/8934/trunk/geworkbench/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java
 END
 forward.gif
 K 25

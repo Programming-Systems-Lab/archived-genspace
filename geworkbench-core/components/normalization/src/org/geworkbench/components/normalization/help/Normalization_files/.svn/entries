@@ -1,7 +1,7 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help/Normalization_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-Normalization-Housekeeping_invalid_marker_options.png
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-3add1ac8aafb6551a807e0939c81e62a
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7860
 
 index_002.css
 file
@@ -93,6 +59,40 @@ has-props
 
 
 318
+
+Normalization-Housekeeping_invalid_marker_options.png
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+3add1ac8aafb6551a807e0939c81e62a
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7860
 
 index_003.css
 file
@@ -264,40 +264,6 @@ has-props
 
 4482
 
-Normalization-HouseKeeping.png
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-b3901fe2576ff2bb7516dd4c542c02ab
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24044
-
 index.php
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 291
+
+Normalization-HouseKeeping.png
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+b3901fe2576ff2bb7516dd4c542c02ab
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24044
 
 index.css
 file
@@ -366,40 +366,6 @@ has-props
 
 50
 
-Normalization-Mean_Variance.png
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-01283db3cf826c7bbbd34425021f087b
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14928
-
 Normalization-Missing_Values.png
 file
 
@@ -434,14 +400,14 @@ has-props
 
 15017
 
-Normalization-Log2_Transformation.png
+Normalization-Mean_Variance.png
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-d99becc91fda380fcbbe8f1beb38c2c4
+01283db3cf826c7bbbd34425021f087b
 2010-06-10T02:39:43.512944Z
 6786
 zji
@@ -466,7 +432,7 @@ has-props
 
 
 
-10845
+14928
 
 Normalizers_in_CCM.png
 file
@@ -501,6 +467,40 @@ has-props
 
 
 48325
+
+Normalization-Log2_Transformation.png
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+d99becc91fda380fcbbe8f1beb38c2c4
+2010-06-10T02:39:43.512944Z
+6786
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10845
 
 Normalization-Threshold.png
 file

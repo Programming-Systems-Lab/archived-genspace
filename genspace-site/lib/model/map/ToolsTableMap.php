@@ -40,6 +40,7 @@ class ToolsTableMap extends TableMap {
 		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
 		$this->addColumn('TOOL', 'Tool', 'VARCHAR', false, 255, null);
 		$this->addColumn('DESCRIPTION', 'Description', 'VARCHAR', false, 255, null);
+		$this->addColumn('REPLACEDBY_ID', 'ReplacedbyId', 'INTEGER', false, null, null);
 		// validators
 	} // initialize()
 

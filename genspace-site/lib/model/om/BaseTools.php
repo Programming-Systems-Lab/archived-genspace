@@ -43,6 +43,12 @@ abstract class BaseTools extends BaseObject  implements Persistent
 	protected $description;
 
 	/**
+	 * The value for the replacedby_id field.
+	 * @var        int
+	 */
+	protected $replacedby_id;
+
+	/**
 	 * Flag to prevent endless save loop, if this object is referenced
 	 * by another object which falls in this transaction.
 	 * @var        boolean
@@ -84,6 +90,16 @@ abstract class BaseTools extends BaseObject  implements Persistent
 	public function getDescription()
 	{
 		return $this->description;
+	}
+
+	/**
+	 * Get the [replacedby_id] column value.
+	 * 
+	 * @return     int
+	 */
+	public function getReplacedbyId()
+	{
+		return $this->replacedby_id;
 	}
 
 	/**
@@ -147,6 +163,26 @@ abstract class BaseTools extends BaseObject  implements Persistent
 	} // setDescription()
 
 	/**
+	 * Set the value of [replacedby_id] column.
+	 * 
+	 * @param      int $v new value
+	 * @return     Tools The current object (for fluent API support)
+	 */
+	public function setReplacedbyId($v)
+	{
+		if ($v !== null) {
+			$v = (int) $v;
+		}
+
+		if ($this->replacedby_id !== $v) {
+			$this->replacedby_id = $v;
+			$this->modifiedColumns[] = ToolsPeer::REPLACEDBY_ID;
+		}
+
+		return $this;
+	} // setReplacedbyId()
+
+	/**
 	 * Indicates whether the columns in this object are only set to default values.
 	 *
 	 * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -181,6 +217,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 			$this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
 			$this->tool = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
 			$this->description = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+			$this->replacedby_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -189,7 +226,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 				$this->ensureConsistency();
 			}
 
-			return $startcol + 3; // 3 = ToolsPeer::NUM_COLUMNS - ToolsPeer::NUM_LAZY_LOAD_COLUMNS).
+			return $startcol + 4; // 4 = ToolsPeer::NUM_COLUMNS - ToolsPeer::NUM_LAZY_LOAD_COLUMNS).
 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Tools object", $e);
@@ -500,6 +537,9 @@ abstract class BaseTools extends BaseObject  implements Persistent
 			case 2:
 				return $this->getDescription();
 				break;
+			case 3:
+				return $this->getReplacedbyId();
+				break;
 			default:
 				return null;
 				break;
@@ -526,6 +566,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 			$keys[0] => $this->getId(),
 			$keys[1] => $this->getTool(),
 			$keys[2] => $this->getDescription(),
+			$keys[3] => $this->getReplacedbyId(),
 		);
 		return $result;
 	}
@@ -566,6 +607,9 @@ abstract class BaseTools extends BaseObject  implements Persistent
 			case 2:
 				$this->setDescription($value);
 				break;
+			case 3:
+				$this->setReplacedbyId($value);
+				break;
 		} // switch()
 	}
 
@@ -593,6 +637,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
 		if (array_key_exists($keys[1], $arr)) $this->setTool($arr[$keys[1]]);
 		if (array_key_exists($keys[2], $arr)) $this->setDescription($arr[$keys[2]]);
+		if (array_key_exists($keys[3], $arr)) $this->setReplacedbyId($arr[$keys[3]]);
 	}
 
 	/**
@@ -607,6 +652,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 		if ($this->isColumnModified(ToolsPeer::ID)) $criteria->add(ToolsPeer::ID, $this->id);
 		if ($this->isColumnModified(ToolsPeer::TOOL)) $criteria->add(ToolsPeer::TOOL, $this->tool);
 		if ($this->isColumnModified(ToolsPeer::DESCRIPTION)) $criteria->add(ToolsPeer::DESCRIPTION, $this->description);
+		if ($this->isColumnModified(ToolsPeer::REPLACEDBY_ID)) $criteria->add(ToolsPeer::REPLACEDBY_ID, $this->replacedby_id);
 
 		return $criteria;
 	}
@@ -670,6 +716,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 	{
 		$copyObj->setTool($this->tool);
 		$copyObj->setDescription($this->description);
+		$copyObj->setReplacedbyId($this->replacedby_id);
 
 		$copyObj->setNew(true);
 		$copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -721,6 +768,7 @@ abstract class BaseTools extends BaseObject  implements Persistent
 		$this->id = null;
 		$this->tool = null;
 		$this->description = null;
+		$this->replacedby_id = null;
 		$this->alreadyInSave = false;
 		$this->alreadyInValidation = false;
 		$this->clearAllReferences();

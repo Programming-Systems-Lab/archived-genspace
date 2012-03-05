@@ -625,7 +625,7 @@ public class AnalysisPanel extends CommandBase implements
 					return;
 				}
 			}
-			if (selectedAnalysis != null && paramName != null) {
+			if (paramName != null) {
 
 				selectedAnalysis.saveParameters(paramName);
 
@@ -793,6 +793,18 @@ public class AnalysisPanel extends CommandBase implements
 	 */
 	@SuppressWarnings("unchecked")
 	private boolean startAnalysis() {
+		DSDataSet<? extends DSBioObject> dataset = ProjectPanel.getInstance()
+				.getDataSet();
+		if ((refMASet == null && (refOtherSet == null || refOtherSet != dataset))
+				|| (refMASet !=null && refMASet != dataset) ) {
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"Dataset node is not currently selected. Please try to left click the data node first.",
+							"Data not selected",
+							JOptionPane.INFORMATION_MESSAGE);
+			return false;
+		}
 		maSetView = getDataSetView();
 
 		boolean onlyActivatedArrays = false;
@@ -800,13 +812,11 @@ public class AnalysisPanel extends CommandBase implements
 			onlyActivatedArrays = true;
 
 			ParameterPanelIncludingNormalized p = (ParameterPanelIncludingNormalized)currentParameterPanel;
-			Boolean isLogNormalized = p.isLogNormalized();
+			boolean isLogNormalized = p.isLogNormalized();
 
-			Boolean isLogNormalizedFromGuess = guessLogNormalized(maSetView);
+			boolean isLogNormalizedFromGuess = guessLogNormalized(maSetView);
 
-			if (isLogNormalizedFromGuess != null
-					&& isLogNormalizedFromGuess.booleanValue() != isLogNormalized
-							.booleanValue()) {
+			if (isLogNormalizedFromGuess != isLogNormalized) {
 				String theMessage = "The checkbox 'Data is log2-tranformed' may not be set correctly. Do you want to proceed anyway?";
 				int result = JOptionPane.showConfirmDialog((Component) null,
 						theMessage, "alert", JOptionPane.YES_NO_OPTION);
@@ -1074,6 +1084,7 @@ public class AnalysisPanel extends CommandBase implements
 			refOtherSet = null;
 		} else {
 			refOtherSet = dataSet;
+			refMASet = null;
 		}
 		if (event.getParent() == null  && !pendingNodeSelected()) { // if not a sub-node under DataSet node nor a pending node
 			lastDataType = currentDataType;
@@ -1123,12 +1134,12 @@ public class AnalysisPanel extends CommandBase implements
 		Arrays.sort(availableCommands, comparator);
 	}
 	
-	private Boolean guessLogNormalized(DSMicroarraySetView<DSGeneMarker, DSMicroarray> data) {
+	private boolean guessLogNormalized(DSMicroarraySetView<DSGeneMarker, DSMicroarray> data) {
 		if (data == null) {
-			return null;
+			return false;
 		}
 		
-		Boolean isLogNormalized = null;
+		boolean isLogNormalized = false;
 		try {
 			DSDataSet<DSMicroarray> set = data.getDataSet();
 			if (set instanceof DSMicroarraySet) {

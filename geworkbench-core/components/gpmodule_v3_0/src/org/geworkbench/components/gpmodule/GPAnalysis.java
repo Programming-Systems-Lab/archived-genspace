@@ -52,7 +52,7 @@ import org.geworkbench.util.FilePathnameUtils;
 
 /**
  * @author: Marc-Danie Nazaire
- * @version $Id: GPAnalysis.java 7978 2011-06-13 17:54:40Z zji $
+ * @version $Id: GPAnalysis.java 8825 2012-02-01 16:29:46Z zji $
  */
 public abstract class GPAnalysis extends AbstractAnalysis implements ClusteringAnalysis
 {
@@ -186,7 +186,7 @@ public abstract class GPAnalysis extends AbstractAnalysis implements ClusteringA
                             out.close();
                         }
                     }
-                    catch(Exception e){}
+                    catch(IOException e){}
                 }
             }
         }

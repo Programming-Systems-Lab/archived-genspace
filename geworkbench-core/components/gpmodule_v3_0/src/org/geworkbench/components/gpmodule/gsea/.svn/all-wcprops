@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea
 END
 paramDesc.html
 K 25
@@ -37,5 +37,5 @@ GSEAAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/7617/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/gsea/GSEAAnalysis.cwb.xml
 END

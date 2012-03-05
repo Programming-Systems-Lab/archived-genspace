@@ -1,14 +1,14 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-12-20T22:50:58.184856Z
-8632
+2012-03-05T17:45:18.759987Z
+8955
 zji
 
 
@@ -97,40 +97,6 @@ has-props
 matrix
 dir
 
-DSPattern.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-b1f7e1126bbbf8b8bd7add7d93bc228f
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-984
-
 sequence
 dir
 
@@ -140,11 +106,11 @@ file
 
 
 
-2011-08-17T00:10:50.000000Z
-916b12043152f4ced28bac77818bbf37
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2012-03-05T20:23:31.000000Z
+d5753b908823e633dfe5460afb4367e2
+2012-03-05T17:45:18.759987Z
+8955
+zji
 has-props
 
 
@@ -166,7 +132,7 @@ has-props
 
 
 
-2859
+2426
 
 PatternDiscoveryParameters.java
 file
@@ -208,11 +174,11 @@ file
 
 
 
-2011-08-17T00:10:50.000000Z
-17204694c67f0794f9e3533bb06d90a6
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2012-03-05T20:23:31.000000Z
+cf4d28c4610f9101589cb4bfb6873e0c
+2012-03-05T17:45:18.759987Z
+8955
+zji
 has-props
 
 
@@ -234,7 +200,7 @@ has-props
 
 
 
-870
+774
 
 PatternResult.java
 file

@@ -420,6 +420,7 @@
     <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
     <column name="tool" phpName="Tool" type="VARCHAR" size="255" required="false" />
     <column name="description" phpName="Description" type="VARCHAR" size="255" required="false" />
+    <column name="replacedby_id" type="integer" />
   </table>
 
   <table name="workspace">

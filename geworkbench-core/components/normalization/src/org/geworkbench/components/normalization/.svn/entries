@@ -1,15 +1,15 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-12-16T20:56:37.933310Z
-8617
-zji
+2012-02-01T16:55:34.827746Z
+8828
+smithken
 
 
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-ThresholdNormalizer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-44360c7976004d42cf4983527a9a515b
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3496
 
 NormalizationPanel.cwb.xml
 file
@@ -93,6 +59,40 @@ zji
 
 
 1080
+
+ThresholdNormalizer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+44360c7976004d42cf4983527a9a515b
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3496
 
 CenteringNormalizerPanel.java
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-50c167cb70a73aa681bd19eff6048835
-2011-03-21T22:24:24.377666Z
-7617
+2012-03-05T20:23:14.000000Z
+5b88bff49928229ed475c4930e666d1c
+2012-02-01T16:55:34.827746Z
+8828
 smithken
 
 
@@ -194,7 +194,7 @@ smithken
 
 
 
-1249
+1275
 
 LogTransformationNormalizer.cwb.xml
 file
@@ -298,9 +298,6 @@ has-props
 
 19498
 
-help
-dir
-
 HouseKeepingGeneNormalizerPanel.java
 file
 
@@ -335,39 +332,8 @@ has-props
 
 31112
 
-DEFAULT_HOUSEKEEPING_GENES.txt
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-cb1c8b903d4293823c713174870f225f
-2005-08-30T18:07:18.000000Z
-213
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28
+help
+dir
 
 MissingValueNormalizer.java
 file
@@ -402,6 +368,40 @@ has-props
 
 
 5046
+
+DEFAULT_HOUSEKEEPING_GENES.txt
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+cb1c8b903d4293823c713174870f225f
+2005-08-30T18:07:18.000000Z
+213
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28
 
 MicroarrayCenteringNormalizer.java
 file
@@ -477,10 +477,10 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-53ea36c131ca16aad90501632bbec95e
-2011-03-21T22:24:24.377666Z
-7617
+2012-03-05T20:23:14.000000Z
+96922c25afdc06d53a25cbb24db4a656
+2012-02-01T16:55:34.827746Z
+8828
 smithken
 
 
@@ -503,7 +503,7 @@ smithken
 
 
 
-1227
+1253
 
 MarkerMeanVarianceNormalizerPanel.java
 file
@@ -613,10 +613,10 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-a4758ebfe39e7717a32e0f9dd8801642
-2011-03-21T22:24:24.377666Z
-7617
+2012-03-05T20:23:14.000000Z
+830e7099ab536d2f6e08259fbe1c2e30
+2012-02-01T16:55:34.827746Z
+8828
 smithken
 
 
@@ -639,7 +639,7 @@ smithken
 
 
 
-1274
+1300
 
 MarkerCenteringNormalizer.java
 file

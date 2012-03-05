@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/7927/trunk/geworkbench/components/analysis/src/edu/columbia/geworkbench/cagrid/discovery/client
+/svn/geworkbench/!svn/ver/8819/trunk/geworkbench/components/analysis/src/edu/columbia/geworkbench/cagrid/discovery/client
 END
 DiscoveryServiceUtil.java
 K 25
@@ -13,5 +13,5 @@ AnalyticalServiceDiscoveryClient.java
 K 25
 svn:wc:ra_dav:version-url
 V 159
-/svn/geworkbench/!svn/ver/4401/trunk/geworkbench/components/analysis/src/edu/columbia/geworkbench/cagrid/discovery/client/AnalyticalServiceDiscoveryClient.java
+/svn/geworkbench/!svn/ver/8819/trunk/geworkbench/components/analysis/src/edu/columbia/geworkbench/cagrid/discovery/client/AnalyticalServiceDiscoveryClient.java
 END

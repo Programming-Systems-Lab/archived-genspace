@@ -16,7 +16,7 @@ import org.geworkbench.bison.model.analysis.Analysis;
  * A handler used to log events.
  * 
  * @author sheths
- * @version $Id: ObjectHandler.java 8511 2011-11-07 21:42:53Z zji $
+ * @version $Id: ObjectHandler.java 8928 2012-02-28 14:32:25Z zji $
  */
 public class ObjectHandler {
 

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/8266/trunk/geworkbench/components/cupid/src/org/geworkbench/components/cupid
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/cupid/src/org/geworkbench/components/cupid
 END
 Cupid.java
 K 25
@@ -13,7 +13,7 @@ Cupid.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/8246/trunk/geworkbench/components/cupid/src/org/geworkbench/components/cupid/Cupid.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/cupid/src/org/geworkbench/components/cupid/Cupid.cwb.xml
 END
 CupidTableModel.java
 K 25

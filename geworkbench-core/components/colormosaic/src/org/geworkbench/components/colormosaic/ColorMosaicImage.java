@@ -38,7 +38,6 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.util.colorcontext.ColorContext;
 import org.geworkbench.events.MarkerSelectedEvent;
 import org.geworkbench.events.PhenotypeSelectedEvent;
-import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
 
 /**
  * Color mosaic image.
@@ -46,7 +45,7 @@ import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
  * This class is used in CMHRuler, CNVRuler and ColorMosaicPanel.
  * 
  * @author Manjunath Kustagi
- * @version $Id: ColorMosaicImage.java 8805 2012-01-27 22:02:24Z zji $
+ * @version $Id: ColorMosaicImage.java 8955 2012-03-05 17:45:18Z zji $
  */
 
 public class ColorMosaicImage extends JPanel implements Scrollable {

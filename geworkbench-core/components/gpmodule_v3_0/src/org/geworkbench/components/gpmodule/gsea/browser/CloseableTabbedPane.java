@@ -24,7 +24,7 @@ import javax.swing.plaf.metal.MetalTabbedPaneUI;
 /**
  * Created by IntelliJ IDEA.
  * @author nazaire
- * @version $Id: CloseableTabbedPane.java 7993 2011-06-15 18:04:08Z zji $
+ * @version $Id: CloseableTabbedPane.java 8822 2012-02-01 16:24:01Z zji $
  * 
  * A JTabbedPane which has a close ('X') icon on each tab.
  *
@@ -395,7 +395,10 @@ public class CloseableTabbedPane extends JTabbedPane implements MouseListener,
         if ((prop = curPanel.getClientProperty("isClosable")) != null) {
           doPaintCloseIcon = (Boolean) prop;
         }
-      } catch (Exception ignored) {/*Could probably be a ClassCastException*/}
+      } catch (Exception ignored) {
+    	  /*Could probably be a ClassCastException*/
+    	  ignored.printStackTrace();
+      }
       if (doPaintCloseIcon) {
         x_pos = x;
         y_pos = y;

@@ -70,7 +70,7 @@ import com.larvalabs.chart.PSAMPlot;
 /**
  * @author John Watkinson
  * @author ch2514
- * @version $Id: MatrixReduceViewer.java 8584 2011-12-07 19:36:30Z zji $
+ * @version $Id: MatrixReduceViewer.java 8942 2012-02-29 22:21:23Z zji $
  */
 @AcceptTypes(DSMatrixReduceSet.class)
 public class MatrixReduceViewer implements VisualPlugin {
@@ -598,7 +598,9 @@ public class MatrixReduceViewer implements VisualPlugin {
 		long size = w*h;
 		if(size > MAX_PIXEL_MB*1024*1024) {
 			JOptionPane.showMessageDialog(this.getComponent(),
-			"The requested snapshot is "+w+" X "+h+" pixels, or about "+size/1000000+" megapixels. Cannot create.");
+			"Cannot create snapshot.\n"+ 
+			"The requested snapshot is "+w+"X"+h+" pixels, or about "+size/1000000+" megapixels.\n"+ 
+			"The upper limit is 100 megapixels.");
 			return null;
 		}
 		try {

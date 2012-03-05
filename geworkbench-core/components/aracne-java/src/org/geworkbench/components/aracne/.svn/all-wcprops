@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 109
-/svn/geworkbench/!svn/ver/8811/trunk/geworkbench/components/aracne-java/src/org/geworkbench/components/aracne
+/svn/geworkbench/!svn/ver/8919/trunk/geworkbench/components/aracne-java/src/org/geworkbench/components/aracne
 END
 HardenedAracne.java
 K 25
@@ -13,7 +13,7 @@ AracneAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/aracne-java/src/org/geworkbench/components/aracne/AracneAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8919/trunk/geworkbench/components/aracne-java/src/org/geworkbench/components/aracne/AracneAnalysis.cwb.xml
 END
 AracneParamPanel.java
 K 25

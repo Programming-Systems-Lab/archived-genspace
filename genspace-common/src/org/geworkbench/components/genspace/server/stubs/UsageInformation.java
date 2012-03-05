@@ -128,4 +128,32 @@ public interface UsageInformation {
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
 
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "saveNote", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SaveNote")
+    @ResponseWrapper(localName = "saveNoteResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.SaveNoteResponse")
+    public void saveNote(
+        @WebParam(name = "arg0", targetNamespace = "")
+        AnalysisEvent arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.AnalysisEvent>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMyNotes", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNotes")
+    @ResponseWrapper(localName = "getMyNotesResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetMyNotesResponse")
+    public List<AnalysisEvent> getMyNotes(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
 }

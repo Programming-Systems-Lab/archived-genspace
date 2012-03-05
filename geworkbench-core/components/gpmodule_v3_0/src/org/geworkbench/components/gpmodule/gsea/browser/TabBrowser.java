@@ -12,7 +12,7 @@ import org.jdesktop.jdic.browser.WebBrowser;
 
 /**
  * @author nazaire
- * @version $Id: TabBrowser.java 7993 2011-06-15 18:04:08Z zji $
+ * @version $Id: TabBrowser.java 8821 2012-02-01 16:20:08Z zji $
  */
 public class TabBrowser extends WebBrowser
 {
@@ -51,14 +51,9 @@ public class TabBrowser extends WebBrowser
         return rc;
     }
 
-    public void setMainBrowser(GSEABrowser mainbrowser)
+    public static void setMainBrowser(GSEABrowser mainbrowser)
     {
         gb = mainbrowser;
-    }
-
-    public GSEABrowser getMainBrowser()
-    {
-        return gb;
     }
 
     /**

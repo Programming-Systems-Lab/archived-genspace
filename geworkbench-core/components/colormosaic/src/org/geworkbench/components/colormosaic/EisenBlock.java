@@ -6,7 +6,6 @@ import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarr
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.complex.panels.DSAnnotatedPanel;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
-import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
 
 /**
  * <p>Title: Plug And Play</p>
@@ -15,7 +14,7 @@ import org.geworkbench.util.associationdiscovery.cluster.DSMatrixPattern;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: EisenBlock.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: EisenBlock.java 8955 2012-03-05 17:45:18Z zji $
  */
 
 public final class EisenBlock {

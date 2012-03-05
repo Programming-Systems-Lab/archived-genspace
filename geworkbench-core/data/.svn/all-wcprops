@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/data
+/svn/geworkbench/!svn/ver/8827/trunk/geworkbench/data
 END
 gpan.csv
 K 25
@@ -87,29 +87,29 @@ svn:wc:ra_dav:version-url
 V 76
 /svn/geworkbench/!svn/ver/3285/trunk/geworkbench/data/samplechipchipdata.chp
 END
-yeastORFComplete.txt
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/svn/geworkbench/!svn/ver/1443/trunk/geworkbench/data/yeastORFComplete.txt
-END
 test_data.exp
 K 25
 svn:wc:ra_dav:version-url
 V 66
 /svn/geworkbench/!svn/ver/293/trunk/geworkbench/data/test_data.exp
 END
-histoall.fa
+yeastORFComplete.txt
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/svn/geworkbench/!svn/ver/72/trunk/geworkbench/data/histoall.fa
+V 74
+/svn/geworkbench/!svn/ver/1443/trunk/geworkbench/data/yeastORFComplete.txt
 END
 Affy_sample.txt
 K 25
 svn:wc:ra_dav:version-url
 V 67
 /svn/geworkbench/!svn/ver/68/trunk/geworkbench/data/Affy_sample.txt
+END
+histoall.fa
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/geworkbench/!svn/ver/72/trunk/geworkbench/data/histoall.fa
 END
 21162 ras7-4000markers.gpr
 K 25
@@ -129,17 +129,17 @@ svn:wc:ra_dav:version-url
 V 74
 /svn/geworkbench/!svn/ver/1105/trunk/geworkbench/data/rmaExpressSample.txt
 END
-Y5_600_Bst.fa
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/geworkbench/!svn/ver/1637/trunk/geworkbench/data/Y5_600_Bst.fa
-END
 toluene.pdb
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/geworkbench/!svn/ver/1355/trunk/geworkbench/data/toluene.pdb
+END
+Y5_600_Bst.fa
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/geworkbench/!svn/ver/1637/trunk/geworkbench/data/Y5_600_Bst.fa
 END
 21161 neu10-4000markers.gpr
 K 25
@@ -165,29 +165,29 @@ svn:wc:ra_dav:version-url
 V 73
 /svn/geworkbench/!svn/ver/4535/trunk/geworkbench/data/query_skybase.fasta
 END
-brain_mas5_176_filtered.exp
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svn/geworkbench/!svn/ver/6118/trunk/geworkbench/data/brain_mas5_176_filtered.exp
-END
 aml8_965_ab_hu68_4000markers.txt
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/geworkbench/!svn/ver/67/trunk/geworkbench/data/aml8_965_ab_hu68_4000markers.txt
 END
-web100.exp
+brain_mas5_176_filtered.exp
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/svn/geworkbench/!svn/ver/555/trunk/geworkbench/data/web100.exp
+V 81
+/svn/geworkbench/!svn/ver/6118/trunk/geworkbench/data/brain_mas5_176_filtered.exp
 END
 eiTest-100000.txt
 K 25
 svn:wc:ra_dav:version-url
 V 71
 /svn/geworkbench/!svn/ver/2914/trunk/geworkbench/data/eiTest-100000.txt
+END
+web100.exp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/geworkbench/!svn/ver/555/trunk/geworkbench/data/web100.exp
 END
 yeastORFwithClass.txt
 K 25
@@ -223,7 +223,7 @@ gene_ontology.1_2.obo
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/data/gene_ontology.1_2.obo
+/svn/geworkbench/!svn/ver/8827/trunk/geworkbench/data/gene_ontology.1_2.obo
 END
 1e09.fasta
 K 25

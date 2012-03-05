@@ -32,7 +32,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractSaveableParameterPanel;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker; 
+import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.ParamValidationResults;
 import org.geworkbench.util.ValidationUtils;
@@ -251,6 +251,7 @@ public class MindyParamPanel extends AbstractSaveableParameterPanel {
 			public void actionPerformed(ActionEvent actionEvent) {
 				String selected = (String) targetsFrom.getSelectedItem();
 				if (StringUtils.equals(selected, FROM_ALL)) {
+					targetsSets.setSelectedIndex(0);
 					targetsSets.setEnabled(false);
 					targetList.setText("");
 					targetList.setEditable(false);
@@ -765,8 +766,9 @@ public class MindyParamPanel extends AbstractSaveableParameterPanel {
 		ArrayList<String> targetGeneList = getTargetGeneList();
 
 		paramDescB.append("[PARA] Target list: ");
-
-		if ((targetGeneList != null) && (targetGeneList.size() > 0)) {
+		 
+		if ((!getTargetsFrom().getSelectedItem().toString()
+				.equals(MindyParamPanel.FROM_ALL)) && (targetGeneList != null) && (targetGeneList.size() > 0)) {
 			for (String modGene : targetGeneList) {
 
 				paramDescB.append(modGene);
@@ -779,6 +781,8 @@ public class MindyParamPanel extends AbstractSaveableParameterPanel {
 					.equals(MindyParamPanel.FROM_ALL))
 				paramDescB.append("All Markers");
 		}
+		
+		
 		paramDescB.append("\n");
 
 		String transcriptionFactor = getTranscriptionFactor();
@@ -818,8 +822,7 @@ public class MindyParamPanel extends AbstractSaveableParameterPanel {
 		paramDescB.append("[PARA] DPI Tolerance: ");
 		paramDescB.append(getDPITolerance());
 		paramDescB.append("\n");
-		
-		
+
 		return paramDescB.toString();
 
 	}

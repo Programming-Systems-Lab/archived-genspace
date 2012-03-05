@@ -227,6 +227,7 @@ propel:
     id: { phpName: Id, type: INTEGER, size: '11', required: true, defaultValue: '0' }
     tool: { phpName: Tool, type: VARCHAR, size: '255', required: false }
     description: { phpName: Description, type: VARCHAR, size: '255', required: false }
+    REPLACEDBY_ID: { type: integer }
   workspace:
     _attributes: { phpName: Workspace }
     id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }

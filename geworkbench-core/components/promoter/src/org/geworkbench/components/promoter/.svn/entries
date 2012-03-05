@@ -1,14 +1,14 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-04T18:53:35.841898Z
-8645
+2012-03-05T17:45:18.759987Z
+8955
 zji
 
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-PromoterView.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-1bf1409bd8d1864bf7ffecce1cb7f179
-2012-01-04T18:53:35.841898Z
-8645
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3854
 
 ImagePanel.java
 file
@@ -93,6 +59,40 @@ has-props
 
 
 2101
+
+PromoterView.java
+file
+
+
+
+
+2012-03-05T20:23:12.000000Z
+9eeebdfb836066e45e1975f755599b55
+2012-02-27T22:42:50.953800Z
+8924
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3648
 
 Matrix.java
 file
@@ -171,10 +171,10 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-5f947650390472a6c8dec763f68fdad4
-2010-11-29T17:00:22.199621Z
-7241
+2012-03-05T20:23:12.000000Z
+1602299f1798f51929762e564baa8913
+2012-03-05T17:45:18.759987Z
+8955
 zji
 has-props
 
@@ -197,7 +197,7 @@ has-props
 
 
 
-5196
+5280
 
 Distribution.java
 file
@@ -273,10 +273,10 @@ file
 
 
 
-2012-01-10T19:15:27.000000Z
-1eed470f4e406cfd74ec67cc83925380
-2012-01-04T18:53:35.841898Z
-8645
+2012-03-05T20:23:12.000000Z
+c6ea54b45c56bc684807c061953224c4
+2012-03-05T17:45:18.759987Z
+8955
 zji
 has-props
 
@@ -299,7 +299,7 @@ has-props
 
 
 
-82957
+78338
 
 TFListPanel.java
 file
@@ -409,11 +409,11 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-371f37d5cf72750e5967f3dc59930aa1
-2011-03-21T22:24:24.377666Z
-7617
-smithken
+2012-03-05T20:23:12.000000Z
+2c63209d6aef84848140763bb46541cf
+2012-02-24T21:49:55.965990Z
+8916
+zji
 
 
 
@@ -435,7 +435,7 @@ smithken
 
 
 
-1156
+1160
 
 modulediscovery
 dir
@@ -446,10 +446,10 @@ file
 
 
 
-2011-08-17T00:10:44.000000Z
-db98cd78a7cb60a4d8f8a25074d30133
-2010-11-29T05:17:26.333957Z
-7239
+2012-03-05T20:23:12.000000Z
+3286f9772b90a20f0f915b2705b2146c
+2012-03-05T17:45:18.759987Z
+8955
 zji
 has-props
 
@@ -472,5 +472,5 @@ has-props
 
 
 
-3536
+3006
 

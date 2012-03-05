@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/geworkbench/!svn/ver/8285/trunk/geworkbench/components/viewers/src/org/geworkbench/components/viewers
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/viewers/src/org/geworkbench/components/viewers
 END
 ImageViewer.java
 K 25
@@ -19,5 +19,5 @@ ImageViewer.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/viewers/src/org/geworkbench/components/viewers/ImageViewer.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/viewers/src/org/geworkbench/components/viewers/ImageViewer.cwb.xml
 END

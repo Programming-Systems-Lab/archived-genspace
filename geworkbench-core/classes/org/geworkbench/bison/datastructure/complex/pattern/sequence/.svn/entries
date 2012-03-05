@@ -1,14 +1,14 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-08-08T20:27:22.158533Z
-8207
+2012-03-05T17:45:18.759987Z
+8955
 zji
 
 
@@ -161,40 +161,6 @@ has-props
 
 
 612
-
-CSSeqPattern.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-768e62ab7f5230429f1554c0ec08424b
-2007-10-25T19:43:21.000000Z
-3280
-mkustagi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2113
 
 CSSeqCmplxRegistration.java
 file

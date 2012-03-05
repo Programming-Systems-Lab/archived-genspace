@@ -1,6 +1,6 @@
 <?php
 
-require_once '/Users/jon/Documents/PSL/genspace/genspace-site/lib/vendor/symfony/lib/autoload/sfCoreAutoload.class.php';
+require_once '/Users/jon/Documents/PSL/projects/genspace/genspace-site/lib/vendor/symfony/lib/autoload/sfCoreAutoload.class.php';
 sfCoreAutoload::register();
 
 class ProjectConfiguration extends sfProjectConfiguration

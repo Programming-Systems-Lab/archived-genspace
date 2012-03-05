@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/8812/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic
 END
 CMVRuler.java
 K 25
@@ -25,7 +25,7 @@ ColorMosaicPanel.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/8690/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicPanel.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicPanel.cwb.xml
 END
 bulb_icon_gold.gif
 K 25
@@ -39,23 +39,35 @@ svn:wc:ra_dav:version-url
 V 133
 /svn/geworkbench/!svn/ver/4085/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/bulb_icon_grey.gif
 END
+CSMatrixPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/CSMatrixPattern.java
+END
+DSMatrixPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/DSMatrixPattern.java
+END
 ColorMosaicPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/8812/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicPanel.java
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicPanel.java
 END
 ColorMosaicImage.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/8805/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicImage.java
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/ColorMosaicImage.java
 END
 EisenBlock.java
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/EisenBlock.java
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/components/colormosaic/src/org/geworkbench/components/colormosaic/EisenBlock.java
 END
 copy.gif
 K 25

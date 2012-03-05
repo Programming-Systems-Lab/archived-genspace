@@ -52,7 +52,7 @@ import org.geworkbench.util.ProgressBar;
  * IDEAAnalysis of IDEA analysis component
  * 
  * @author zm2165
- * @version $Id: IDEAAnalysis.java 8760 2012-01-25 16:51:01Z maz $
+ * @version $Id: IDEAAnalysis.java 8924 2012-02-27 22:42:50Z zji $
  */
 public class IDEAAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -199,7 +199,7 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 		if(edgeIndex.size()==0){
 			pbIdea.dispose();
 			return new AlgorithmExecutionResults(false,
-					"None of valid network edges loaded, analysis aborted!", null);
+					"No overlap between network edges and data set, analysis aborted!", null);
 		}
 		
 		Phenotype phenotype = IDEAAnalysisPanel.getPhenotype();

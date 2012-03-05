@@ -94,7 +94,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  * @author Marc-Danie Nazaire
- * @version $Id: GPClassificationVisualizationPanel.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: GPClassificationVisualizationPanel.java 8824 2012-02-01 16:28:13Z zji $
  */
 public class GPClassificationVisualizationPanel extends JPanel implements ItemListener
 {
@@ -709,10 +709,10 @@ public class GPClassificationVisualizationPanel extends JPanel implements ItemLi
                 {
                     double domainValue = curveChart.getXYPlot().getDomainCrosshairValue();
 
-                    double sliderValue = (domainValue  + 0.01)/0.01;
+                    int sliderValue = (int)Math.round( (domainValue  + 0.01)/0.01 );
 
                     if(confSlider.getValue() != sliderValue)
-                        confSlider.setValue((int)Math.round(sliderValue));
+                        confSlider.setValue(sliderValue);
                 }
             }
         });

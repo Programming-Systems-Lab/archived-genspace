@@ -14,5 +14,10 @@
  * @package    propel.generator.lib.model
  */
 class ToolsPeer extends BaseToolsPeer {
+  public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
+  {
+    $criteria->add(self::REPLACEDBY_ID, null, Criteria::ISNULL);
 
+    return parent::doSelectStmt($criteria, $con);
+  }
 } // ToolsPeer

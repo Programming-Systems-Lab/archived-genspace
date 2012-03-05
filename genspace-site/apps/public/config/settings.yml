@@ -2,20 +2,20 @@ prod:
   .settings:
     no_script_name:         on
     logging_enabled:        off
-    cache:		    off
+    cache:		    false
 
 dev:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
     web_debug:              on
-    cache:                  off
+    cache:                  false
     no_script_name:         off
     etag:                   off
 
 test:
   .settings:
     error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
-    cache:                  off
+    cache:                  false
     web_debug:              off
     no_script_name:         off
     etag:                   off
@@ -28,7 +28,7 @@ all:
     # Output escaping settings
     escaping_strategy:      false            # Determines how variables are made available to templates. Accepted values: on, off.
     escaping_method:        ESC_SPECIALCHARS # Function or helper used for escaping. Accepted values: ESC_RAW, ESC_ENTITIES, ESC_JS, ESC_JS_NO_ENTITIES, and ESC_SPECIALCHARS.
-
+    cache:		    false
 #all:
 #  .actions:
 #    error_404_module:       default   # To be called when a 404 error is raised

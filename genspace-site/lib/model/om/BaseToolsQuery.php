@@ -9,10 +9,12 @@
  * @method     ToolsQuery orderById($order = Criteria::ASC) Order by the id column
  * @method     ToolsQuery orderByTool($order = Criteria::ASC) Order by the tool column
  * @method     ToolsQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method     ToolsQuery orderByReplacedbyId($order = Criteria::ASC) Order by the replacedby_id column
  *
  * @method     ToolsQuery groupById() Group by the id column
  * @method     ToolsQuery groupByTool() Group by the tool column
  * @method     ToolsQuery groupByDescription() Group by the description column
+ * @method     ToolsQuery groupByReplacedbyId() Group by the replacedby_id column
  *
  * @method     ToolsQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method     ToolsQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -24,10 +26,12 @@
  * @method     Tools findOneById(int $id) Return the first Tools filtered by the id column
  * @method     Tools findOneByTool(string $tool) Return the first Tools filtered by the tool column
  * @method     Tools findOneByDescription(string $description) Return the first Tools filtered by the description column
+ * @method     Tools findOneByReplacedbyId(int $replacedby_id) Return the first Tools filtered by the replacedby_id column
  *
  * @method     array findById(int $id) Return Tools objects filtered by the id column
  * @method     array findByTool(string $tool) Return Tools objects filtered by the tool column
  * @method     array findByDescription(string $description) Return Tools objects filtered by the description column
+ * @method     array findByReplacedbyId(int $replacedby_id) Return Tools objects filtered by the replacedby_id column
  *
  * @package    propel.generator.lib.model.om
  */
@@ -196,6 +200,37 @@ abstract class BaseToolsQuery extends ModelCriteria
 			}
 		}
 		return $this->addUsingAlias(ToolsPeer::DESCRIPTION, $description, $comparison);
+	}
+
+	/**
+	 * Filter the query on the replacedby_id column
+	 * 
+	 * @param     int|array $replacedbyId The value to use as filter.
+	 *            Accepts an associative array('min' => $minValue, 'max' => $maxValue)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    ToolsQuery The current query, for fluid interface
+	 */
+	public function filterByReplacedbyId($replacedbyId = null, $comparison = null)
+	{
+		if (is_array($replacedbyId)) {
+			$useMinMax = false;
+			if (isset($replacedbyId['min'])) {
+				$this->addUsingAlias(ToolsPeer::REPLACEDBY_ID, $replacedbyId['min'], Criteria::GREATER_EQUAL);
+				$useMinMax = true;
+			}
+			if (isset($replacedbyId['max'])) {
+				$this->addUsingAlias(ToolsPeer::REPLACEDBY_ID, $replacedbyId['max'], Criteria::LESS_EQUAL);
+				$useMinMax = true;
+			}
+			if ($useMinMax) {
+				return $this;
+			}
+			if (null === $comparison) {
+				$comparison = Criteria::IN;
+			}
+		}
+		return $this->addUsingAlias(ToolsPeer::REPLACEDBY_ID, $replacedbyId, $comparison);
 	}
 
 	/**

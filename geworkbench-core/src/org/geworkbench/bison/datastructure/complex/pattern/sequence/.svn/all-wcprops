@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/8207/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence
+/svn/geworkbench/!svn/ver/8955/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence
 END
 DSMatchedSeqPattern.java
 K 25
@@ -26,12 +26,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 136
 /svn/geworkbench/!svn/ver/3280/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence/DSSeqPatternMatch.java
-END
-CSSeqPattern.java
-K 25
-svn:wc:ra_dav:version-url
-V 131
-/svn/geworkbench/!svn/ver/3280/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/sequence/CSSeqPattern.java
 END
 CSSeqCmplxRegistration.java
 K 25

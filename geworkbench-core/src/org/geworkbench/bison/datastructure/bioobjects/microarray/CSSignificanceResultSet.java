@@ -16,7 +16,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author John Watkinson
- * @version $Id: CSSignificanceResultSet.java 8481 2011-11-02 15:43:58Z zji $
+ * @version $Id: CSSignificanceResultSet.java 8818 2012-01-31 22:07:39Z maz $
  */
 public class CSSignificanceResultSet <T extends DSGeneMarker> extends CSAncillaryDataSet<DSMicroarray> implements DSSignificanceResultSet<T> {
 
@@ -159,4 +159,10 @@ public class CSSignificanceResultSet <T extends DSGeneMarker> extends CSAncillar
     }
 
     public void saveDataToCSVFile(){}
+
+	@Override
+	public boolean getIsLogNormalized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

@@ -1,16 +1,14 @@
 package org.geworkbench.util.patterns;
 
-import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.CSSeqRegistration;
-import org.geworkbench.bison.datastructure.complex.pattern.DSPattern;
 
 /**
  * 
  * @author not attributable
- * @version $Id: PatternLocations.java 7647 2011-03-25 19:20:20Z zji $
+ * @version $Id: PatternLocations.java 8955 2012-03-05 17:45:18Z zji $
  */
 public class PatternLocations implements Comparable<PatternLocations> {
-	private String ascii;
+	private final String ascii;
 
 	private CSSeqRegistration registration;
 	private int idForDisplay;
@@ -19,17 +17,15 @@ public class PatternLocations implements Comparable<PatternLocations> {
 	public static final String DEFAULTTYPE = "splash";
 	public static final String TFTYPE = "TFBS";
 
-	public PatternLocations(DSPattern<DSSequence, CSSeqRegistration> tf,
-			CSSeqRegistration _registration) {
-
-		registration = _registration;
-		ascii = tf.toString();
-	}
-
 	public PatternLocations(String _ascii, CSSeqRegistration _registration) {
 		ascii = _ascii;
 		registration = _registration;
 		patternType = DEFAULTTYPE;
+	}
+
+	public PatternLocations(String string, CSSeqRegistration reg, String tftype2) {
+		this(string, reg);
+		patternType = tftype2;
 	}
 
 	public int getIdForDisplay() {
@@ -38,6 +34,10 @@ public class PatternLocations implements Comparable<PatternLocations> {
 
 	public String getAscii() {
 		return ascii;
+	}
+
+	public int getAsciiLength() {
+		return ascii.replaceAll("\\[.+?\\]", " ").length();
 	}
 
 	public String getPatternType() {

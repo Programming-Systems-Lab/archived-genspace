@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/8690/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 END
 HierClusterViewAppComponent.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 172
-/svn/geworkbench/!svn/ver/8690/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClusterViewAppComponent.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClusterViewAppComponent.cwb.xml
 END
 bulb_icon_grey.gif
 K 25
@@ -37,7 +37,7 @@ FastHierClustAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 166
-/svn/geworkbench/!svn/ver/8690/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/FastHierClustAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/FastHierClustAnalysis.cwb.xml
 END
 HierarchicalClustering.java
 K 25

@@ -6,4 +6,14 @@ K 12
 svn:keywords
 V 2
 Id
+K 13
+svn:mergeinfo
+V 708
+/branches/filter_enhancement/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:6210-6293
+/branches/geworkbench_2_0_0/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:6674-6785
+/branches/geworkbench_2_1_0/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:6992-7050
+/branches/geworkbench_2_2_0/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:7814-7924
+/branches/geworkbench_2_2_1/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:8008-8186
+/branches/geworkbench_2_3_0/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:8831-8933
+/genspace_integration/src/org/geworkbench/util/sequences/SequenceViewWidgetPanel.java:7736-7750
 END

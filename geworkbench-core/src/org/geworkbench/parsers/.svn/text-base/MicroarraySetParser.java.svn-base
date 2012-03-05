@@ -59,7 +59,10 @@ public class MicroarraySetParser {
 			microarraySet.setCompatibilityLabel(chiptype);
 		}
 
+		microarraySet.setFile( file ); // this seems only used by "View in Editor"
 		microarraySet.setLabel(file.getName());
+
+		AnnotationParser.setCurrentDataSet(microarraySet);
 
 		if (!readFile(file))
 			return null;

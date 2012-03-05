@@ -1,14 +1,14 @@
 10
 
 dir
-8812
+8955
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-01-30T21:31:47.792401Z
-8812
+2012-03-05T17:45:18.759987Z
+8955
 zji
 has-props
 
@@ -162,6 +162,40 @@ has-props
 
 30185
 
+ReleaseNotes_2.3.0.txt
+file
+
+
+
+
+2012-03-05T20:23:35.000000Z
+0d3a4952a754e2d5cb2053b7860fa108
+2012-02-27T22:42:50.953800Z
+8924
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+46561
+
 ReleaseNotes1.5.1.txt
 file
 
@@ -236,33 +270,12 @@ file
 
 
 
-2011-12-29T06:11:39.000000Z
-22f584cd0bb33ed09a2970937175dc34
-2011-12-22T22:00:33.835889Z
-8640
-maz
+
+08f8eb55de9b5ce77452cfc34d5d4622
+2012-02-27T22:42:50.953800Z
+8924
+zji
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26988
 
 .classpath
 file
@@ -271,9 +284,9 @@ file
 
 
 
-1ba2ba0ae2a3b0d99e078c65eae4c235
-2011-08-15T19:17:06.034628Z
-8213
+7a9a61386fb93f168e0c2014be11c893
+2012-03-01T17:46:48.606784Z
+8945
 zji
 has-props
 
@@ -413,40 +426,6 @@ has-props
 
 17571
 
-geworkbench-lite.ipr
-file
-
-
-
-
-2011-08-17T00:10:49.000000Z
-0961f5b52af0c5237c479a684a981bbf
-2007-05-16T20:46:26.000000Z
-2859
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14878
-
 usage.txt
 file
 
@@ -483,40 +462,6 @@ has-props
 
 nbproject
 dir
-
-geworkbench.ipr
-file
-
-
-
-
-2011-08-17T00:10:49.000000Z
-a50513f514d4ae6ff475196c6df6d6b7
-2007-05-01T20:10:16.000000Z
-2747
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16715
 
 Mouse430_2_annot.csv
 file
@@ -1605,40 +1550,6 @@ has-props
 
 6544
 
-cutenet.properties
-file
-
-
-
-
-2011-08-17T00:10:46.000000Z
-69f51ba4d3a6da774f757e90ffb7671b
-2009-09-25T21:14:28.000000Z
-5614
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-577
-
 welcometext.html
 file
 
@@ -1706,12 +1617,6 @@ has-props
 
 
 20176658
-
-_all
-dir
-
-annotation
-dir
 
 devReadme.txt
 file

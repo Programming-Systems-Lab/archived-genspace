@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/7763/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost
 END
 NetBoostAnalysis.java
 K 25
@@ -19,7 +19,7 @@ NetBoostAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 133
-/svn/geworkbench/!svn/ver/7763/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost/NetBoostAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost/NetBoostAnalysis.cwb.xml
 END
 NetBoostPlugin.java
 K 25
@@ -31,7 +31,7 @@ NetBoostVisualComponent.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost/NetBoostVisualComponent.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost/NetBoostVisualComponent.cwb.xml
 END
 NetBoostParamPanel.java
 K 25

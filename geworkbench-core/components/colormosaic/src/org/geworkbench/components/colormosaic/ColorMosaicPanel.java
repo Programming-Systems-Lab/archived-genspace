@@ -73,7 +73,6 @@ import org.geworkbench.events.PhenotypeSelectedEvent;
 import org.geworkbench.events.PhenotypeSelectorEvent;
 import org.geworkbench.events.ProjectEvent;
 import org.geworkbench.util.ColorScale;
-import org.geworkbench.util.associationdiscovery.cluster.CSMatrixPattern;
 
 /**
  * <p>Title: Plug And Play</p>
@@ -82,7 +81,7 @@ import org.geworkbench.util.associationdiscovery.cluster.CSMatrixPattern;
  * <p>Company: First Genetic Trust Inc.</p>
  *
  * @author Manjunath Kustagi
- * @version $Id: ColorMosaicPanel.java 8812 2012-01-30 21:31:47Z zji $
+ * @version $Id: ColorMosaicPanel.java 8955 2012-03-05 17:45:18Z zji $
  */
 
 @AcceptTypes({DSMicroarraySet.class, DSSignificanceResultSet.class})
@@ -1068,7 +1067,9 @@ public class ColorMosaicPanel implements Printable, VisualPlugin, MenuListener {
 		final long MAX_SIZE = 100*1024*1024;
 		if(size > MAX_SIZE) {
 			JOptionPane.showMessageDialog(this.getComponent(),
-			"The requested snapshot is "+w+" X "+h+" pixels, or about "+size/1000000+" megapixels. Cannot create.");
+			"Cannot create snapshot.\n"+ 
+			"The requested snapshot is "+w+"X"+h+" pixels, or about "+size/1000000+" megapixels.\n"+ 
+			"The upper limit is 100 megapixels.");
 			return null;
 		}
         BufferedImage image;

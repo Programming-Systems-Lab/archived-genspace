@@ -34,6 +34,7 @@ public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 	private Transaction transaction;
 	private Set<AnalysisEventParameter> parameters;
 	private String toolname;
+	private String note;
 	
 //	@Override 
 //	protected Object clone() throws CloneNotSupportedException {
@@ -95,5 +96,11 @@ public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 	}
 	public void setCreatedAt(java.util.Date createdAt) {
 		this.createdAt = createdAt;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
 	}
 }

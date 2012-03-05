@@ -26,7 +26,7 @@ abstract class BaseToolsPeer {
 	const TM_CLASS = 'ToolsTableMap';
 	
 	/** The total number of columns. */
-	const NUM_COLUMNS = 3;
+	const NUM_COLUMNS = 4;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -39,6 +39,9 @@ abstract class BaseToolsPeer {
 
 	/** the column name for the DESCRIPTION field */
 	const DESCRIPTION = 'tools.DESCRIPTION';
+
+	/** the column name for the REPLACEDBY_ID field */
+	const REPLACEDBY_ID = 'tools.REPLACEDBY_ID';
 
 	/**
 	 * An identiy map to hold any loaded instances of Tools objects.
@@ -56,12 +59,12 @@ abstract class BaseToolsPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Id', 'Tool', 'Description', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'tool', 'description', ),
-		BasePeer::TYPE_COLNAME => array (self::ID, self::TOOL, self::DESCRIPTION, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TOOL', 'DESCRIPTION', ),
-		BasePeer::TYPE_FIELDNAME => array ('id', 'tool', 'description', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Tool', 'Description', 'ReplacedbyId', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'tool', 'description', 'replacedbyId', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::TOOL, self::DESCRIPTION, self::REPLACEDBY_ID, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TOOL', 'DESCRIPTION', 'REPLACEDBY_ID', ),
+		BasePeer::TYPE_FIELDNAME => array ('id', 'tool', 'description', 'replacedby_id', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
 	);
 
 	/**
@@ -71,12 +74,12 @@ abstract class BaseToolsPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Tool' => 1, 'Description' => 2, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'tool' => 1, 'description' => 2, ),
-		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::TOOL => 1, self::DESCRIPTION => 2, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TOOL' => 1, 'DESCRIPTION' => 2, ),
-		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'tool' => 1, 'description' => 2, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, )
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Tool' => 1, 'Description' => 2, 'ReplacedbyId' => 3, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'tool' => 1, 'description' => 2, 'replacedbyId' => 3, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::TOOL => 1, self::DESCRIPTION => 2, self::REPLACEDBY_ID => 3, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TOOL' => 1, 'DESCRIPTION' => 2, 'REPLACEDBY_ID' => 3, ),
+		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'tool' => 1, 'description' => 2, 'replacedby_id' => 3, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
 	);
 
 	/**
@@ -151,10 +154,12 @@ abstract class BaseToolsPeer {
 			$criteria->addSelectColumn(ToolsPeer::ID);
 			$criteria->addSelectColumn(ToolsPeer::TOOL);
 			$criteria->addSelectColumn(ToolsPeer::DESCRIPTION);
+			$criteria->addSelectColumn(ToolsPeer::REPLACEDBY_ID);
 		} else {
 			$criteria->addSelectColumn($alias . '.ID');
 			$criteria->addSelectColumn($alias . '.TOOL');
 			$criteria->addSelectColumn($alias . '.DESCRIPTION');
+			$criteria->addSelectColumn($alias . '.REPLACEDBY_ID');
 		}
 	}
 

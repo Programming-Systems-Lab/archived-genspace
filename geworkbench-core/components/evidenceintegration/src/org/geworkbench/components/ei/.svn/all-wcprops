@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/8513/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
 END
 EvidenceIntegrationVisualization.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 154
-/svn/geworkbench/!svn/ver/6255/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationVisualization.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationVisualization.cwb.xml
 END
 EIProgress.java
 K 25
@@ -25,7 +25,7 @@ EvidenceIntegrationAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/6197/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/EvidenceIntegrationAnalysis.cwb.xml
 END
 PriorTableModel.java
 K 25

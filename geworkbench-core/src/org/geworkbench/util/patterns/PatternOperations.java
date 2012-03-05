@@ -15,7 +15,6 @@ import org.geworkbench.bison.datastructure.bioobjects.sequence.CSSequence;
 import org.geworkbench.bison.datastructure.bioobjects.sequence.DSSequence;
 import org.geworkbench.bison.datastructure.complex.pattern.CSPatternMatch;
 import org.geworkbench.bison.datastructure.complex.pattern.DSMatchedPattern;
-import org.geworkbench.bison.datastructure.complex.pattern.DSPattern;
 import org.geworkbench.bison.datastructure.complex.pattern.DSPatternMatch;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.CSSeqRegistration;
 import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeqPattern;
@@ -23,7 +22,7 @@ import org.geworkbench.bison.datastructure.complex.pattern.sequence.DSMatchedSeq
 /**
  *
  * @author not attributable
- * @version $Id: PatternOperations.java 8187 2011-07-30 04:31:30Z zji $
+ * @version $Id: PatternOperations.java 8955 2012-03-05 17:45:18Z zji $
  */
 
 public class PatternOperations {
@@ -78,42 +77,6 @@ public class PatternOperations {
 			CSMatchedSeqPattern p = (CSMatchedSeqPattern) pattern;
 			p.updateASCII();
 		}
-	}
-
-	public static void addTFMatches(
-			HashMap<CSSequence, PatternSequenceDisplayUtil> existedPatterns,
-			List<DSPatternMatch<DSSequence, CSSeqRegistration>> matches,
-			DSPattern<DSSequence, CSSeqRegistration> tf) {
-		if (matches == null) {
-			return;
-		}
-		if (existedPatterns == null) {
-			existedPatterns = new HashMap<CSSequence, PatternSequenceDisplayUtil>();
-
-		}
-
-		for (DSPatternMatch<DSSequence, CSSeqRegistration> sp : matches) {
-			DSSequence hitSeq = sp.getObject();
-			CSSeqRegistration reg = sp.getRegistration();
-			if (existedPatterns.containsKey(hitSeq)) {
-				PatternSequenceDisplayUtil pu = (PatternSequenceDisplayUtil) existedPatterns
-						.get(hitSeq);
-				PatternLocations pl = new PatternLocations(tf, reg);
-				pl.setPatternType(PatternLocations.TFTYPE);
-				pl.setIDForDisplay(tf.hashCode());
-				pu.addPattern(pl);
-
-			} else {
-				PatternSequenceDisplayUtil pu = new PatternSequenceDisplayUtil(
-						(CSSequence) hitSeq);
-				PatternLocations pl = new PatternLocations(tf, reg);
-				pl.setPatternType(PatternLocations.TFTYPE);
-				pl.setIDForDisplay(tf.hashCode());
-				pu.addPattern(pl);
-				existedPatterns.put((CSSequence) hitSeq, pu);
-			}
-		}
-
 	}
 
 	/**

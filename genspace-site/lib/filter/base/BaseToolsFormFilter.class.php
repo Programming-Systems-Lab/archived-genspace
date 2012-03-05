@@ -12,13 +12,15 @@ abstract class BaseToolsFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'tool'        => new sfWidgetFormFilterInput(),
-      'description' => new sfWidgetFormFilterInput(),
+      'tool'          => new sfWidgetFormFilterInput(),
+      'description'   => new sfWidgetFormFilterInput(),
+      'replacedby_id' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'tool'        => new sfValidatorPass(array('required' => false)),
-      'description' => new sfValidatorPass(array('required' => false)),
+      'tool'          => new sfValidatorPass(array('required' => false)),
+      'description'   => new sfValidatorPass(array('required' => false)),
+      'replacedby_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('tools_filters[%s]');
@@ -36,9 +38,10 @@ abstract class BaseToolsFormFilter extends BaseFormFilterPropel
   public function getFields()
   {
     return array(
-      'id'          => 'Number',
-      'tool'        => 'Text',
-      'description' => 'Text',
+      'id'            => 'Number',
+      'tool'          => 'Text',
+      'description'   => 'Text',
+      'replacedby_id' => 'Number',
     );
   }
 }

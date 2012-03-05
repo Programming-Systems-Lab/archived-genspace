@@ -4,12 +4,13 @@ import java.io.Serializable;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap; 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Observer;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -18,9 +19,9 @@ import org.geworkbench.analysis.AbstractGridAnalysis;
 import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.CSMicroarraySet;
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
-import org.geworkbench.bison.datastructure.biocollections.views.DSMicroarraySetView; 
+import org.geworkbench.bison.datastructure.biocollections.views.DSMicroarraySetView;
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
-import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray; 
+import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
@@ -52,7 +53,7 @@ import edu.columbia.c2b2.mindy.MindyResults;
  * @author ch2514
  * @author zji
  * @author oshteynb
- * @version $Id: MindyAnalysis.java 8746 2012-01-20 16:28:50Z youmi $
+ * @version $Id: MindyAnalysis.java 8924 2012-02-27 22:42:50Z zji $
  */
 @SuppressWarnings("serial")
 public class MindyAnalysis extends AbstractGridAnalysis implements
@@ -141,11 +142,11 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 		paramsPanel = params;
 
 		DSMicroarraySet mSet = inputSetView.getMicroarraySet();
-	 
+
 		StringBuilder errMsgB = new StringBuilder();
 
 		int numMAs = mSet.size();
-	 
+
 		if (numMAs < 4) {
 			errMsgB.append("Not enough microarrays in the set.  MINDY requires at least 4 microarrays.\n");
 		}
@@ -153,12 +154,11 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 		int numMarkers = mSet.getMarkers().size();
 		ArrayList<Marker> targets = new ArrayList<Marker>();
 		ArrayList<String> targetGeneList = params.getTargetGeneList();
-	 
+
 		if (numMarkers < 2) {
 			errMsgB.append("Not enough markers in the microarrays. (Need at least 2)\n");
 		}
 
-	 
 		ArrayList<Marker> modulators = new ArrayList<Marker>();
 		ArrayList<String> modulatorGeneList = params.getModulatorGeneList();
 		if ((modulatorGeneList != null) && (modulatorGeneList.size() > 0)) {
@@ -168,15 +168,15 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 					errMsgB.append("Couldn't find marker ");
 					errMsgB.append(modGene);
 					errMsgB.append(" from modulator file in microarray set.\n");
-				} else {					 
+				} else {
 					modulators.add(new Marker(modGene));
 				}
 			}
-			 
+
 		} else {
 			errMsgB.append("No modulator specified.\n");
 		}
-	 
+
 		if ((targetGeneList != null) && (targetGeneList.size() > 0)) {
 			for (String modGene : targetGeneList) {
 				DSGeneMarker marker = mSet.getMarkers().get(modGene);
@@ -184,12 +184,12 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 					errMsgB.append("Couldn't find marker ");
 					errMsgB.append(modGene);
 					errMsgB.append(" from target file in microarray set.\n");
-				} else {					 
+				} else {
 					targets.add(new Marker(modGene));
 				}
 			}
 		}
-	 
+
 		ArrayList<Marker> dpiAnnots = new ArrayList<Marker>();
 		ArrayList<String> dpiAnnotList = params.getDPIAnnotatedGeneList();
 		for (String modGene : dpiAnnotList) {
@@ -198,11 +198,11 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 				errMsgB.append("Couldn't find marker ");
 				errMsgB.append(modGene);
 				errMsgB.append(" from DPI annotation file in microarray set.\n");
-			} else {				 
+			} else {
 				dpiAnnots.add(new Marker(modGene));
 			}
 		}
-	 
+
 		String transcriptionFactor = params.getTranscriptionFactor();
 		DSGeneMarker transFac = mSet.getMarkers().get(transcriptionFactor);
 		if (!transcriptionFactor.trim().equals("")) {
@@ -210,13 +210,13 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 				errMsgB.append("Specified hub marker (");
 				errMsgB.append(transcriptionFactor);
 				errMsgB.append(") not found in loadad microarray set.\n");
-			}  
+			}
 		} else {
 			errMsgB.append("No hub marker specified.\n");
 		}
 
 		boolean fullSetMI = false;
-	 
+
 		float fullSetThreshold = 0;
 		boolean subsetMI = false;
 		if (params.getConditional().trim().equals(MindyParamPanel.MI)) {
@@ -226,12 +226,15 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 		if ((!subsetMI)
 				&& (params.getConditionalCorrection()
 						.equals(MindyParamPanel.BONFERRONI))) {
-			subsetThreshold = subsetThreshold / numMarkers;
+			int num = targetGeneList.size();
+			if (num <= 0) { // this is always interpreted as "All Markers"
+				num = numMarkers;
+			}
+			subsetThreshold = subsetThreshold / num;
 		}
 
-	 
 		float setFraction = params.getSetFraction() / 100f;
-		 
+
 		if (Math.round(setFraction * 2 * numMarkers) < 2) {
 			errMsgB.append("Not enough markers in the specified % sample.  MINDY requires at least 2 markers in the sample.\n");
 		}
@@ -256,16 +259,11 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 			return null;
 		}
 		progressBar.setMessage("Running MINDY Algorithm");
-		
-		useMarkersFromSelector(true);
-		if (params.getTargetsFrom().getSelectedItem().toString()
-				.equals(MindyParamPanel.FROM_ALL))
-			inputSetView.useMarkerPanel(false);
-		else
-			useMarkersFromSelector(false);
 
-		String history = params.getDataSetHistory() + generateHistoryForMaSetView(inputSetView, useMarkersFromSelector());
-		
+		String history = params.getDataSetHistory()
+				+ generateHistoryForMaSetView(inputSetView,
+						useMarkersFromSelector());
+
 		MindyThread mt = new MindyThread(mSet, arraySet,
 				params.getTargetGeneList(), transFac, new Marker(
 						params.getTranscriptionFactor()), modulators,
@@ -274,7 +272,7 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 				history, params.getCandidateModulatorsFile());
 		progressBar.addObserver(mt);
 		mt.start();
-		
+
 		return new AlgorithmExecutionResults(true, "MINDY in progress.", null);
 	}
 
@@ -285,7 +283,23 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 	 * @param source
 	 */
 	@Subscribe
-	public void receive(GeneSelectorEvent e, Object source) {
+	public void receive(final GeneSelectorEvent e, Object source) {
+		if (SwingUtilities.isEventDispatchThread()) {
+			processGeneSelectorEvent(e);
+		} else {
+			SwingUtilities.invokeLater(new Runnable() {
+
+				@Override
+				public void run() {
+					processGeneSelectorEvent(e);
+				}
+
+			});
+		}
+	}
+
+	// invoke only from EDT
+	private void processGeneSelectorEvent(GeneSelectorEvent e) {
 		DSGeneMarker marker = e.getGenericMarker(); // GeneselectorEvent can be
 		// a panel event therefore
 		// won't work here,
@@ -297,8 +311,9 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 			this.selectorPanel = e.getPanel();
 			((MindyParamPanel) aspp).setSelectorPanel(((MindyParamPanel) aspp),
 					this.selectorPanel);
-		} else
+		} else {
 			log.debug("Received Gene Selector Event: Selection panel sent was null");
+		}
 	}
 
 	@Subscribe
@@ -465,10 +480,10 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 
 		public void run() {
 			log.debug("Running MINDY algorithm...");
-			
+
 			Date startDate = new Date();
-			Long startTime =startDate.getTime();
-			
+			Long startTime = startDate.getTime();
+
 			Mindy mindy = new Mindy();
 
 			ArrayList<DSMicroarray> arrayForMindyRun = MindyData
@@ -518,18 +533,20 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 
 			if (mindyDataSet != null) {
 				log.info(paramDesc);
-				//add start/end time to history
-				String history = "Analysis started at: " + Util.formatDateStandard(startDate) +  FileTools.NEWLINE;
+				// add start/end time to history
+				String history = "Analysis started at: "
+						+ Util.formatDateStandard(startDate)
+						+ FileTools.NEWLINE;
 				history += "\n" + paramDesc + "\n";
-				 
+
 				Date endDate = new Date();
 				long endTime = endDate.getTime();
 				history += "\nAnalysis finished at: "
-						+ Util.formatDateStandard(endDate) + FileTools.NEWLINE;			 
+						+ Util.formatDateStandard(endDate) + FileTools.NEWLINE;
 				long elapsedTime = endTime - startTime;
 				history += "\nTotal elapsed time: "
 						+ Util.convertLongToTimeStr(elapsedTime);
-				 
+
 				HistoryPanel.addToHistory(mindyDataSet, history);
 				progressBar.stop();
 				publishProjectNodeAddedEvent(new ProjectNodeAddedEvent(
@@ -604,6 +621,28 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 	@Override
 	public String getAnalysisName() {
 		return analysisName;
+	}
+
+	/**
+	 * 
+	 * @param maSetView
+	 * @return
+	 */
+	@Override
+	public String generateHistoryForMaSetView(
+			DSMicroarraySetView<DSGeneMarker, DSMicroarray> maSetView,
+			boolean useMarkersFromSelector) {
+		useMarkersFromSelector(true);
+		MindyParamPanel params = (MindyParamPanel) aspp;
+		if (params.getTargetsFrom().getSelectedItem().toString()
+				.equals(MindyParamPanel.FROM_ALL)
+				|| params.getTargetGeneList() == null
+				|| params.getTargetGeneList().size() == 0)
+			maSetView.useMarkerPanel(false);
+		else
+			useMarkersFromSelector(false);
+		return super.generateHistoryForMaSetView(maSetView,
+				useMarkersFromSelector());
 	}
 
 	@Override
@@ -748,8 +787,7 @@ public class MindyAnalysis extends AbstractGridAnalysis implements
 		}
 
 		return new ParamValidationResults(true, "No Error");
-	}	
-	 
+	}
 
 	// FIXME:
 	// Overriding the method from AbstractAnalysis class.

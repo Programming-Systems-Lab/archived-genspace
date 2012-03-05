@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/geworkbench/!svn/ver/8741/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast
+/svn/geworkbench/!svn/ver/8919/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast
 END
 RemoteBlast.java
 K 25
@@ -13,7 +13,7 @@ BlastAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/8362/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/BlastAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/8919/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/BlastAnalysis.cwb.xml
 END
 BlastAnalysis.java
 K 25
@@ -31,7 +31,7 @@ AlgorithmMatcher.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/8741/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/AlgorithmMatcher.java
+/svn/geworkbench/!svn/ver/8829/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/blast/AlgorithmMatcher.java
 END
 NCBIBlastParser.java
 K 25
