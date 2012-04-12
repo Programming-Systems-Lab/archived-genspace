@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/geworkbench/!svn/ver/8645/trunk/geworkbench/src/org/geworkbench/events
+/svn/geworkbench/!svn/ver/8975/trunk/geworkbench/src/org/geworkbench/events
 END
 AnnotationsEvent.java
 K 25
@@ -79,7 +79,7 @@ CaArrayRequestEvent.java
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/8386/trunk/geworkbench/src/org/geworkbench/events/CaArrayRequestEvent.java
+/svn/geworkbench/!svn/ver/8975/trunk/geworkbench/src/org/geworkbench/events/CaArrayRequestEvent.java
 END
 ProjectNodeAddedEvent.java
 K 25

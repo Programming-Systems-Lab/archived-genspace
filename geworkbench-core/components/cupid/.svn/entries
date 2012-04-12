@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/cupid
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -94,9 +94,9 @@ has-props
 
 381
 
-src
+.settings
 dir
 
-.settings
+src
 dir
 

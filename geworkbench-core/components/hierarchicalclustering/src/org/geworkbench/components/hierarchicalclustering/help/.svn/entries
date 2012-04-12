@@ -1,16 +1,16 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2005-11-03T17:34:27.000000Z
-662
-mhall
-
+2012-03-07T23:52:57.177703Z
+9007
+smithken
+has-props
 
 
 
@@ -26,17 +26,17 @@ mhall
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-hierarchClusteringMap.jhm
+Hierarchical_Clustering.htm
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-d3c628cecdf342fcbc99237477a1dbb5
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2012-03-08T18:51:45.000000Z
+fb06e2b0100f0fdb49fc54688577ec59
+2012-03-07T23:52:57.177703Z
+9007
+smithken
 has-props
 
 
@@ -58,7 +58,10 @@ has-props
 
 
 
-283
+16675
+
+Hierarchical_Clustering_files
+dir
 
 hierarchClusteringHelpSet.hs
 file
@@ -94,17 +97,17 @@ has-props
 
 646
 
-Hierarchical Clustering.htm
+hierarchClusteringMap.jhm
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-1f8a6e2d2f79ddd50c6e4bce587355a1
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2012-03-08T18:51:45.000000Z
+c726afd58f36fbb58995aba2fe106220
+2012-03-07T23:52:57.177703Z
+9007
+smithken
 has-props
 
 
@@ -126,7 +129,41 @@ has-props
 
 
 
-688
+1011
+
+hierarchClusteringtoc.xml
+file
+
+
+
+
+2012-03-08T18:51:45.000000Z
+19eedcc2410bf1241416a41c528ce8d9
+2012-03-07T23:52:57.177703Z
+9007
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+738
 
 ncicb.css
 file
@@ -161,38 +198,4 @@ has-props
 
 
 925
-
-hierarchClusteringtoc.xml
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-06370b8d949a0b603ee7052386f0acbc
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-219
 

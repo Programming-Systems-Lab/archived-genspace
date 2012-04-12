@@ -75,12 +75,12 @@ public class FindJar {
 	public static HashMap<String, String> classesToJar = new HashMap<String, String>();
 	public static HashMap<String, HashSet<String>> conflictsMap = new HashMap<String, HashSet<String>>();
 	public static void main(String[] args) throws Exception {
-		String s = "SAAJ";
-		findJar("lib/",s);
-System.out.println("genspace now:");
+//		String s = "SAAJ";
+//		findJar("lib/",s);
+//System.out.println("genspace now:");
 		
-		findJar("components/genspace/lib/",s);
-		
+//		findJar("components/genspace/lib/",s);
+		conflictCheck();
 	}
 	public static void findJar(String f, String s) throws Exception
 	{
@@ -217,8 +217,6 @@ System.out.println("genspace now:");
 		System.out.println("# of lib/genspace/ jars in conflict with components: " + numConflictingGenSpaceJars);
 		System.out.println("# of component jars in conflict with lib/: " + globalComponentJarsConflicting.size());
 		System.out.println("# of component jars in conflict with lib/genspace/: " + genspaceComponentJarsConflicting.size());
-		genspaceComponentJarsConflicting.removeAll(globalComponentJarsConflicting);
-		System.out.println("# of component jars in conflict with lib/genspace/ but NOT lib/: " + genspaceComponentJarsConflicting.size() + " (" + genspaceComponentJarsConflicting.iterator().next() + ")");
 
 	}
 }

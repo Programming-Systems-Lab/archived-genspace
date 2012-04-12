@@ -8,9 +8,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +16,6 @@ import java.util.concurrent.ExecutionException;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -37,11 +33,7 @@ import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.html.HTMLDocument;
 
-import org.geworkbench.components.genspace.rating.WorkflowVisualizationPopup;
-import org.geworkbench.components.genspace.server.stubs.GetMe;
 import org.geworkbench.components.genspace.server.stubs.Tool;
-import org.geworkbench.components.genspace.server.stubs.User;
-import org.geworkbench.components.genspace.server.stubs.TasteUser;
 import org.geworkbench.components.genspace.server.stubs.Workflow;
 import org.geworkbench.components.genspace.server.wrapper.WorkflowWrapper;
 import org.geworkbench.components.genspace.ui.NameRenderer;
@@ -56,8 +48,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 	ButtonGroup group;
 	JPanel radioPanel, saveReset;
 	JButton save, reset;
-	private static ImageIcon arrow = new ImageIcon(
-			"components/genspace/src/org/geworkbench/components/genspace/rating/arrow_right.png");
+//	private static ImageIcon arrow = new ImageIcon("components/genspace/classes/org/geworkbench/components/genspace/rating/arrow_right.png");
 
 	public static WorkflowWrapper cwf = null;
 	public static ArrayList<WorkflowWrapper> usedWorkFlowToday = new ArrayList<WorkflowWrapper>();
@@ -68,7 +59,7 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 //	private static JPanel workflowNodePanel = new JPanel(new FlowLayout());
 	private static JPanel workflowInfoPanel = new JPanel(new BorderLayout());
 
-	private static WorkflowVisualizationPopup popup = new WorkflowVisualizationPopup();
+//	private static WorkflowVisualizationPopup popup = new WorkflowVisualizationPopup();
 
 	private static JLabel viewerStatus = new JLabel();
 
@@ -458,7 +449,6 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 				
 				if (reta != null) {
 					int lim = 10;
-					int i = 1;
 					String wfs = "";
 					for(Workflow zz : reta)
 					{
@@ -466,7 +456,6 @@ public class RealTimeWorkFlowSuggestion extends JPanel implements VisualPlugin,
 						za.loadToolsFromCache();
 						wfs = wfs + "<li>" + za.toString() + "</li>";
 						lim--;
-						i++;
 						if (lim <= 0)
 							break;
 					}

@@ -61,22 +61,27 @@ public class GELoginModule extends AppservPasswordLoginModule {
 
 		try {
             Connection conn = getConnection();
-			PreparedStatement s = conn.prepareStatement("SELECT id FROM registration where username=? and password=?");
+			PreparedStatement s = conn.prepareStatement("SELECT id,password FROM registration where username=?");
 			s.setString(1, _username);
+			String password;
 			if(_password.length() == 40)
-				s.setString(2, _password);
+				password =  _password;
 			else
-				s.setString(2, getEncryptedPassword(_password));
+				password = getEncryptedPassword(_password);
 			s.execute();
 			ResultSet rs = s.getResultSet();
 			if(rs.next())
 			{
-				String[] groups = new String[1];
-				groups[0] = "users";
-
-				commitUserAuthentication(groups);
-				conn.close();
-				return;
+				String dbPass = rs.getString(2);
+				if(dbPass.equalsIgnoreCase(password))
+				{
+					String[] groups = new String[1];
+					groups[0] = "users";
+	
+					commitUserAuthentication(groups);
+					conn.close();
+					return;
+				}
 			}
         } catch (Exception ex) {
             LoginException le = new LoginException("Unable to read username/password or connect to database");

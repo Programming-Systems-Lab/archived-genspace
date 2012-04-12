@@ -3,8 +3,6 @@ package org.geworkbench.events;
 import java.util.Map;
 import java.util.SortedMap;
 
-import org.geworkbench.bison.datastructure.biocollections.DSDataSet;
-import org.geworkbench.bison.datastructure.bioobjects.DSBioObject;
 import org.geworkbench.engine.config.events.Event;
 
 public class CaArrayRequestEvent extends Event {
@@ -16,7 +14,7 @@ public class CaArrayRequestEvent extends Event {
 	private boolean succeed = true;
 	private Map<String, String> filterCrit;
 	private SortedMap<String, String> assayNameFilter;
-	private DSDataSet<? extends DSBioObject> dataSet = null;
+
 	private String url;
 	private int port;
 	private String requestItem;
@@ -27,10 +25,11 @@ public class CaArrayRequestEvent extends Event {
 	private String username;
 	private String password;
 
-	public CaArrayRequestEvent(String _url, int _port) {
+	public CaArrayRequestEvent(String _url, int _port, String type) {
 		super(null);
 		url = _url;
 		port = _port;
+		requestItem = type;
 	}
 
 	public String getQType() {
@@ -62,10 +61,6 @@ public class CaArrayRequestEvent extends Event {
 		return requestItem;
 	}
 
-	public void setRequestItem(String requestItem) {
-		this.requestItem = requestItem;
-	}
-
 	public boolean isPopulated() {
 		return populated;
 	}
@@ -88,10 +83,6 @@ public class CaArrayRequestEvent extends Event {
 
 	public int getPort() {
 		return port;
-	}
-
-	public DSDataSet<? extends DSBioObject> getDataSet() {
-		return dataSet;
 	}
 
 	public boolean isUseFilterCrit() {

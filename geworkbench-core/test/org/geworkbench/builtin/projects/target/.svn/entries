@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/test/org/geworkbench/builtin/projects/target
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,40 @@ chiangy
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+Readme.txt
+file
+
+
+
+
+2011-08-17T00:10:51.000000Z
+7680e4303cb58ef4682621996aec3ed8
+2006-05-09T15:10:26.000000Z
+1512
+keshav
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+54
 
 test1.wsp
 file
@@ -93,40 +127,6 @@ has-props
 
 
 4
-
-Readme.txt
-file
-
-
-
-
-2011-08-17T00:10:51.000000Z
-7680e4303cb58ef4682621996aec3ed8
-2006-05-09T15:10:26.000000Z
-1512
-keshav
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-54
 
 test4.wsp
 file

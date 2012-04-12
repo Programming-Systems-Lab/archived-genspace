@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,40 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+patternDiscovery.htm
+file
+
+
+
+
+2012-01-10T18:25:34.000000Z
+69ab2e7cf142d2bccbf80abd6932231f
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24578
 
 patternDiscovery.jhm
 file
@@ -130,38 +164,4 @@ has-props
 
 
 946
-
-patternDiscovery.htm
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-69ab2e7cf142d2bccbf80abd6932231f
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24578
 

@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/analysis/src/edu/columbia/geworkbench/cagrid/discovery/client
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-DiscoveryServiceUtil.java
-file
-
-
-
-
-2011-08-17T00:19:01.000000Z
-0a7a72ee346fc8bc876bf1ae13487369
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9125
 
 AnalyticalServiceDiscoveryClient.java
 file
@@ -93,4 +59,38 @@ has-props
 
 
 3193
+
+DiscoveryServiceUtil.java
+file
+
+
+
+
+2011-08-17T00:19:01.000000Z
+0a7a72ee346fc8bc876bf1ae13487369
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9125
 

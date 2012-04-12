@@ -18,12 +18,14 @@ public class GenspaceUserSimilarity implements UserSimilarity{
 	private UserSimilarity spearmanDistance;
 	private int filtering;
 	private HashMap<Long, Vector<Integer>> networkMap;
+	private HashMap<Long, Integer> visibilityMap;
 	
-	public GenspaceUserSimilarity(DataModel model, int filtering, HashMap<Long, Vector<Integer>> networkMap) throws TasteException {
+	public GenspaceUserSimilarity(DataModel model, int filtering, HashMap<Long, Vector<Integer>> networkMap, HashMap<Long, Integer> visibilityMap) throws TasteException {
 		//euclideanDistance = new EuclideanDistanceSimilarity(model);
 		spearmanDistance = new SpearmanCorrelationSimilarity(model);
 		this.filtering = filtering;
 		this.networkMap = networkMap;
+		this.visibilityMap = visibilityMap;
 	}
 	
 	@Override
@@ -43,11 +45,11 @@ public class GenspaceUserSimilarity implements UserSimilarity{
 		double spearmanSimilarity = spearmanDistance.userSimilarity(userID1, userID2);
 		Vector<Integer> networks1;
 		Vector<Integer> networks2;
-		if (filtering == 0)
-			return spearmanSimilarity;
-		
-		else if (filtering == 1) {
-			double r = 0;
+		if(visibilityMap.get(userID1) == 0 || visibilityMap.get(userID2) == 0)
+		{
+			return Double.NaN;
+		}
+			double r = 0; 
 			networks1 = networkMap.get(userID1);
 			networks2 = networkMap.get(userID2);
 			
@@ -67,15 +69,18 @@ public class GenspaceUserSimilarity implements UserSimilarity{
 					}
 				}
 			}
-			if (equalItems != 0) {
-				double n = (double) equalItems / size;
-				r = 2*n - 1; // r is within [-1;1]
-				double similarity = spearmanSimilarity *3/4 + r*1/4;
-				return similarity;
-			} else
+			if( (visibilityMap.get(userID1) == 1 || visibilityMap.get(userID2) == 1) && equalItems == 0)
 				return Double.NaN;
-		}
-		else
+			if(filtering == 1)
+				if (equalItems != 0) {
+					double n = (double) equalItems / size;
+					r = 2*n - 1; // r is within [-1;1]
+					double similarity = spearmanSimilarity *3/4 + r*1/4;
+					return similarity;
+				} else
+					return Double.NaN;
+//			System.out.println("Checking " + userID1 + ", " + userID2 +"->" + spearmanSimilarity);
+
 			return spearmanSimilarity;
 	}
 }

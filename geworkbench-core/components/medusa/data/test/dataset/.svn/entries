@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/medusa/data/test/dataset
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,22 +26,16 @@ has-props
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-output
-dir
-
-pssm
-dir
-
-web100_test_regulators.txt
+.cvsignore
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-461e8f86eeee6865d9fc617a160873e4
-2007-06-28T14:10:32.000000Z
-3047
+e1467a732ac1e61bdc9df9cc1cf6abfd
+2007-06-28T17:58:23.000000Z
+3052
 keshav
 has-props
 
@@ -64,7 +58,7 @@ has-props
 
 
 
-28
+70
 
 config.xml
 file
@@ -100,39 +94,14 @@ has-props
 
 1339
 
-web100_test_targets.txt
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-cffd63a7f351d459fd7d65a64cc3ec01
-2007-06-28T14:10:32.000000Z
-3047
-keshav
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8
+output
+dir
+
+pssm
+dir
+
+small_yeast
+dir
 
 web100_test.fasta
 file
@@ -168,19 +137,16 @@ has-props
 
 73660
 
-small_yeast
-dir
-
-.cvsignore
+web100_test_regulators.txt
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-e1467a732ac1e61bdc9df9cc1cf6abfd
-2007-06-28T17:58:23.000000Z
-3052
+461e8f86eeee6865d9fc617a160873e4
+2007-06-28T14:10:32.000000Z
+3047
 keshav
 has-props
 
@@ -203,5 +169,39 @@ has-props
 
 
 
-70
+28
+
+web100_test_targets.txt
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+cffd63a7f351d459fd7d65a64cc3ec01
+2007-06-28T14:10:32.000000Z
+3047
+keshav
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8
 

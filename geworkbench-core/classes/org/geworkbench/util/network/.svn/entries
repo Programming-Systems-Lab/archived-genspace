@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/util/network
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,17 +26,18 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-InteractionDetail.java
+CellularNetWorkElementInformation.java
 file
 
 
 
 
-2011-08-17T00:10:51.000000Z
-5a8e3fdc60cb6e455801d5a85519d428
-2010-09-04T15:22:26.740416Z
-7019
-youmi
+2011-08-17T00:19:07.000000Z
+dfc31d0466d4dc7fe082cded3b023984
+2011-05-25T14:25:11.688972Z
+7925
+zji
+has-props
 
 
 
@@ -57,8 +58,7 @@ youmi
 
 
 
-
-4268
+11190
 
 CellularNetworkPreference.java
 file
@@ -94,18 +94,17 @@ wangmen
 
 959
 
-CellularNetWorkElementInformation.java
+InteractionDetail.java
 file
 
 
 
 
-2011-08-17T00:19:07.000000Z
-dfc31d0466d4dc7fe082cded3b023984
-2011-05-25T14:25:11.688972Z
-7925
-zji
-has-props
+2011-08-17T00:10:51.000000Z
+5a8e3fdc60cb6e455801d5a85519d428
+2010-09-04T15:22:26.740416Z
+7019
+youmi
 
 
 
@@ -126,5 +125,6 @@ has-props
 
 
 
-11190
+
+4268
 

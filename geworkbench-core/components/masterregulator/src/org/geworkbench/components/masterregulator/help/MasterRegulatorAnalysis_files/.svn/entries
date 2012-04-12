@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/help/MasterRegulatorAnalysis_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,14 +26,14 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-MRA_graph_GBM_ZNF238.png
+Array_set_class_assignment_MRA.png
 file
 
 
 
 
 2011-08-17T00:19:04.000000Z
-bb80ac21bead06e070adf05d6b84c6b8
+802cf2ff53b9311327a85c441b6aa9c5
 2011-06-15T16:29:27.888300Z
 7991
 zji
@@ -58,41 +58,7 @@ has-props
 
 
 
-3177
-
-MRA_Parameters_panel.png
-file
-
-
-
-
-2011-08-17T00:19:04.000000Z
-4bc6acc2176428520bcaca38fa248e28
-2011-06-15T16:29:27.888300Z
-7991
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-36845
+20438
 
 MRA_Detailed_listing.png
 file
@@ -196,14 +162,14 @@ has-props
 
 36154
 
-Array_set_class_assignment_MRA.png
+MRA_Parameters_panel.png
 file
 
 
 
 
 2011-08-17T00:19:04.000000Z
-802cf2ff53b9311327a85c441b6aa9c5
+4bc6acc2176428520bcaca38fa248e28
 2011-06-15T16:29:27.888300Z
 7991
 zji
@@ -228,7 +194,7 @@ has-props
 
 
 
-20438
+36845
 
 MRA_Summary_listing.png
 file
@@ -264,74 +230,6 @@ has-props
 
 16307
 
-MRA_results_node.png
-file
-
-
-
-
-2011-08-17T00:19:04.000000Z
-266d205efb8161e88c068856ccb1d070
-2011-06-15T16:29:27.888300Z
-7991
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5001
-
-commonPrint.css
-file
-
-
-
-
-2011-08-17T00:19:04.000000Z
-8c089c8a9b3e6cff4f00568207330220
-2011-06-15T16:29:27.888300Z
-7991
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4731
-
 MRA_graph_GBM_FOSL2.png
 file
 
@@ -366,6 +264,74 @@ has-props
 
 2861
 
+MRA_graph_GBM_ZNF238.png
+file
+
+
+
+
+2011-08-17T00:19:04.000000Z
+bb80ac21bead06e070adf05d6b84c6b8
+2011-06-15T16:29:27.888300Z
+7991
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3177
+
+MRA_results_node.png
+file
+
+
+
+
+2011-08-17T00:19:04.000000Z
+266d205efb8161e88c068856ccb1d070
+2011-06-15T16:29:27.888300Z
+7991
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5001
+
 MRA_viewer_GBM_FOSL2.png
 file
 
@@ -399,4 +365,38 @@ has-props
 
 
 90992
+
+commonPrint.css
+file
+
+
+
+
+2011-08-17T00:19:04.000000Z
+8c089c8a9b3e6cff4f00568207330220
+2011-06-15T16:29:27.888300Z
+7991
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4731
 

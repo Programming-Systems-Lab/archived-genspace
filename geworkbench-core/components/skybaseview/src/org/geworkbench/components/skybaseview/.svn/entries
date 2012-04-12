@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/skybaseview/src/org/geworkbench/components/skybaseview
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -59,6 +59,40 @@ wangm
 
 
 1454
+
+SkyBaseViewer.cwb.xml
+file
+
+
+
+
+2012-03-05T20:23:10.000000Z
+63e0a1ae74d3f045e18674f2f4677b60
+2012-02-24T21:49:55.965990Z
+8916
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1384
 
 SkyBaseViewer.java
 file
@@ -127,38 +161,4 @@ has-props
 
 
 17005
-
-SkyBaseViewer.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:10.000000Z
-63e0a1ae74d3f045e18674f2f4677b60
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1384
 

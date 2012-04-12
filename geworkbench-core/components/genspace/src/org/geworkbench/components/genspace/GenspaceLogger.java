@@ -20,16 +20,16 @@
 package org.geworkbench.components.genspace;
 
 
-import jalview.datamodel.Alignment;
-import jalview.datamodel.Sequence;
-import jalview.datamodel.SequenceI;
+//import jalview.datamodel.Alignment;
+//import jalview.datamodel.Sequence;
+//import jalview.datamodel.SequenceI;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.bison.datastructure.biocollections.sequences.CSSequenceSet;
-import org.geworkbench.bison.datastructure.bioobjects.sequence.CSSequence;
+//import org.geworkbench.bison.datastructure.biocollections.sequences.CSSequenceSet;
+//import org.geworkbench.bison.datastructure.bioobjects.sequence.CSSequence;
 //import org.geworkbench.components.genspace.server.stubs.ProteinSequence;
-import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel;
+//import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel;
 //import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel.MSARecommenderCallback;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.events.AnalysisInvokedEvent;

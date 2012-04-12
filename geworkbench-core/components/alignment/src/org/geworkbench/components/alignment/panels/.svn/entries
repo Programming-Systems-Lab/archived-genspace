@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,74 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+BlastViewComponent.cwb.xml
+file
+
+
+
+
+2012-01-10T19:15:23.000000Z
+9e98a96557fef8128036f1aa6ebe224c
+2011-10-04T16:02:03.460589Z
+8362
+youmi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1464
+
+BlastViewComponent.java
+file
+
+
+
+
+2012-01-10T19:15:23.000000Z
+086855b153288a41a2ca712445b2030b
+2011-11-02T15:39:37.175113Z
+8479
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3805
 
 BlastViewPanel.java
 file
@@ -94,40 +162,6 @@ has-props
 
 239
 
-BlastViewComponent.java
-file
-
-
-
-
-2012-01-10T19:15:23.000000Z
-086855b153288a41a2ca712445b2030b
-2011-11-02T15:39:37.175113Z
-8479
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3805
-
 stop.gif
 file
 
@@ -161,38 +195,4 @@ has-props
 
 
 313
-
-BlastViewComponent.cwb.xml
-file
-
-
-
-
-2012-01-10T19:15:23.000000Z
-9e98a96557fef8128036f1aa6ebe224c
-2011-10-04T16:02:03.460589Z
-8362
-youmi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1464
 

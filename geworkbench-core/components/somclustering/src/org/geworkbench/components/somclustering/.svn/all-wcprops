@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering
+/svn/geworkbench/!svn/ver/9008/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering
 END
 SOMAnalysis.java
 K 25
@@ -19,7 +19,7 @@ SOMAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/9008/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering/SOMAnalysis.cwb.xml
 END
 SOMDisplay.cwb.xml
 K 25

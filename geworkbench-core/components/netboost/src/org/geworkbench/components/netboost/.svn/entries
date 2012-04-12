@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/netboost/src/org/geworkbench/components/netboost
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,40 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+NetBoostAnalysis.cwb.xml
+file
+
+
+
+
+2012-03-05T20:23:15.000000Z
+8d2568f5fee9a2012a1a366666425612
+2012-02-24T21:49:55.965990Z
+8916
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1382
 
 NetBoostAnalysis.java
 file
@@ -60,14 +94,14 @@ has-props
 
 9515
 
-NetBoostVisualComponent.java
+NetBoostParamPanel.java
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-69c0755433b4d454f47e88b9d6d9e5a7
+5fffa357b918380583239aa48f514ee3
 2011-04-20T15:14:08.624502Z
 7763
 zji
@@ -92,44 +126,7 @@ has-props
 
 
 
-3689
-
-help
-dir
-
-NetBoostAnalysis.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:15.000000Z
-8d2568f5fee9a2012a1a366666425612
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1382
+11307
 
 NetBoostPlugin.java
 file
@@ -199,14 +196,14 @@ zji
 
 1036
 
-NetBoostParamPanel.java
+NetBoostVisualComponent.java
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-5fffa357b918380583239aa48f514ee3
+69c0755433b4d454f47e88b9d6d9e5a7
 2011-04-20T15:14:08.624502Z
 7763
 zji
@@ -231,5 +228,8 @@ has-props
 
 
 
-11307
+3689
+
+help
+dir
 

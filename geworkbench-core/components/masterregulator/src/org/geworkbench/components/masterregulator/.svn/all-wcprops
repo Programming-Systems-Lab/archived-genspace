@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
+/svn/geworkbench/!svn/ver/8990/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
 END
 MasterRegulatorPanel.java
 K 25
@@ -25,7 +25,7 @@ MasterRegulatorAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 151
-/svn/geworkbench/!svn/ver/8746/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
+/svn/geworkbench/!svn/ver/8990/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
 END
 TAnalysis.java
 K 25
@@ -38,12 +38,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 144
 /svn/geworkbench/!svn/ver/8702/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/ExportFileFilter.java
-END
-FishersExactTest.java
-K 25
-svn:wc:ra_dav:version-url
-V 144
-/svn/geworkbench/!svn/ver/7991/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/FishersExactTest.java
 END
 DetailedTFGraphViewer.java
 K 25

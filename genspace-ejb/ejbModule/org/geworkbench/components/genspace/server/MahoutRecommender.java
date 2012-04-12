@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateful;
 import javax.ejb.Schedule;
+import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
@@ -44,254 +46,46 @@ import org.geworkbench.components.genspace.server.mahout.GenspaceItemSimilarity;
 import org.geworkbench.components.genspace.server.mahout.GenspaceMySQLJDBCDataModel;
 import org.geworkbench.components.genspace.server.mahout.GenspaceSimilarWorkflowRecommender;
 import org.geworkbench.components.genspace.server.mahout.GenspaceUserSimilarity;
+import org.geworkbench.components.genspace.server.mahout.MahoutSingleton;
 import org.geworkbench.components.genspace.server.stubs.GetAllWorkflowsIncluding;
 
 /**
  * Session Bean implementation class MahoutRecommender
  */
 //@WebService
-@Stateful
+@Stateless
 public class MahoutRecommender implements MahoutRecommenderLocal {
+	@EJB MahoutSingleton mahoutSingleton;
 
-	@PersistenceContext(unitName="genspace_persist") private EntityManager em;
-	
-    public MahoutRecommender() {
-    	
-    }
-    
-    @Resource(name="jdbc/GenSpaceDB")
-	DataSource dataSource;
-    
-    private CachingItemSimilarity cachingItemSimilarity;
-    private CachingUserSimilarity cachingUserSimilarity;
-    private CachingUserSimilarity cachingUserNetworkSimilarity;
-    private CachingRecommender cachingItemRecommender;
-    private GenspaceMySQLJDBCDataModel mysqlModel;
-    private ReloadFromJDBCDataModel model;
-    
-    private static int RECOMMENDATIONS = 5;
-    private static int NEIGHBORHOOD = 5;
-    
-    @PostConstruct
-    public void initialize() {
-    	try {
-			mysqlModel = 
-				new GenspaceMySQLJDBCDataModel(dataSource, "mahout_view", "taste_users_id", "workflow_id", "preference", "timestamp", "network_id");
-			model = new ReloadFromJDBCDataModel(mysqlModel);
-			
-			HashMap<Long, Vector<Integer>> networkMap;
-			HashMap<Long, Long> parentMap;
-			networkMap = mysqlModel.getUserNetworks();
-			parentMap = mysqlModel.getParentMap();
-			
-			ItemSimilarity genspaceItemSimilarity = new GenspaceItemSimilarity(model, parentMap);
-			
-			UserSimilarity userSimilarity = new GenspaceUserSimilarity(model, 0, networkMap);
-			UserSimilarity userNetworkSimilarity = new GenspaceUserSimilarity(model, 1, networkMap);
-			
-			cachingItemSimilarity = new CachingItemSimilarity(genspaceItemSimilarity, model);
-			cachingItemRecommender = 
-				new CachingRecommender(new GenspaceItemRecommender(model, cachingItemSimilarity));
-			
-			cachingUserSimilarity = new CachingUserSimilarity(userSimilarity, model);
-			cachingUserNetworkSimilarity = new CachingUserSimilarity(userNetworkSimilarity, model);
-			
-		} catch (TasteException e) {
-			e.printStackTrace();
-		}
-    }
-
-    @WebMethod
 	@Override
 	public void refresh() {
-    	try {
-			model.refresh(null);
-			
-			HashMap<Long, Vector<Integer>> networkMap;
-			HashMap<Long, Long> parentMap;
-			networkMap = mysqlModel.getUserNetworks();
-			parentMap = mysqlModel.getParentMap();
-			
-			ItemSimilarity genspaceItemSimilarity = new GenspaceItemSimilarity(model, parentMap);
-			
-			UserSimilarity userSimilarity = new GenspaceUserSimilarity(model, 0, networkMap);
-			UserSimilarity userNetworkSimilarity = new GenspaceUserSimilarity(model, 1, networkMap);
-			
-			cachingItemSimilarity = new CachingItemSimilarity(genspaceItemSimilarity, model);
-			cachingItemRecommender = 
-				new CachingRecommender(new GenspaceItemRecommender(model, cachingItemSimilarity));
-			
-			cachingUserSimilarity = new CachingUserSimilarity(userSimilarity, model);
-			cachingUserNetworkSimilarity = new CachingUserSimilarity(userNetworkSimilarity, model);
-			
-		} catch (TasteException e) {
-			e.printStackTrace();
-		}
+		mahoutSingleton.refresh();
 	}
 
-    @WebMethod
 	@Override
 	public List<Workflow> getToolSuggestions(int userId, int filterMethod) {
-		
-    	List<Workflow> ret = new ArrayList<Workflow>();
-		try {
-			
-			List<RecommendedItem> recommendations = cachingItemRecommender.recommend(userId, RECOMMENDATIONS);
-			if (recommendations != null) {
-				for (RecommendedItem recommendedItem : recommendations) {
-					Workflow wf = em.find(Workflow.class, new Integer(new Long (recommendedItem.getItemID()).toString()));
-					ret.add(wf.slimDown());
-	        	}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return ret;
+		return mahoutSingleton.getToolsSuggestionsForUser(userId, filterMethod);
 	}
 
-    @WebMethod
 	@Override
 	public List<TasteUser> getUserSuggestions(int userId, int filterMethod) {
-		List<TasteUser> ret = new ArrayList<TasteUser>();
-		try {
-		
-			if (filterMethod == 0) {
-				UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachingUserSimilarity, model);
-				
-				long[] ids = neighborhood.getUserNeighborhood(userId);
-				for (Long id : ids) {
-					ret.add(em.find(TasteUser.class, new Integer(id.toString())));
-				}
-			} else {
-				UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachingUserNetworkSimilarity, model);
-				
-				long[] ids = neighborhood.getUserNeighborhood(userId);
-				for (Long id : ids) {
-					ret.add(em.find(TasteUser.class, new Integer(id.toString())));
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return ret;
-	}
-    
-    @WebMethod
-	@Override
-    public List<Workflow> getToolsSuggestionsForUser(int userId, int filterMethod) {
-		List<Workflow> ret = new ArrayList<Workflow>();
-		
-		try {
-		
-			if (filterMethod == 0) {
-				UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachingUserSimilarity, model);
-				
-				Recommender toolsRecommender = 
-		        	new GenericUserBasedRecommender(model, neighborhood, cachingUserSimilarity);
-				List<RecommendedItem> recommendations = toolsRecommender.recommend(userId, RECOMMENDATIONS);
-				if (recommendations != null) {
-					for (RecommendedItem recommendedItem : recommendations) {
-						Workflow wf = em.find(Workflow.class, new Integer(new Long (recommendedItem.getItemID()).toString()));
-						ret.add(wf.slimDown());
-		        	}
-				}
-			} else {
-				UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachingUserNetworkSimilarity, model);
-				Recommender toolsRecommender = 
-		        	new GenericUserBasedRecommender(model, neighborhood, cachingUserNetworkSimilarity);
-				
-				List<RecommendedItem> recommendations = toolsRecommender.recommend(userId, RECOMMENDATIONS);
-				if (recommendations != null) {
-					for (RecommendedItem recommendedItem : recommendations) {
-						Workflow wf = em.find(Workflow.class, new Integer(new Long (recommendedItem.getItemID()).toString()));
-						ret.add(wf.slimDown());
-		        	}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return ret;
+		return mahoutSingleton.getUserSuggestions(userId, filterMethod);
 	}
 
 	@Override
 	public List<Workflow> getSimilarWorkflows(List<Tool> tools) {
-		
-		String criteriaString = "(";
-		List<Integer> toolsIds = new ArrayList<Integer>();
-		for (Tool t : tools) {
-			toolsIds.add(t.getId());
-			criteriaString += "wt.tool_id=" + t.getId() + " or ";
-		}
-		criteriaString = criteriaString.substring(0, criteriaString.length()-4);
-		criteriaString += ") ";
-		
-		System.out.println(criteriaString);
-		
-		List<Workflow> ret = new ArrayList<Workflow>();
-		
-		Query q = em.createNativeQuery(
-				"select tu.* " +
-				"from " + 
-				"(select taste_users_id, workflow_id " +
-				"from TRANSACTION " +
-				"group by taste_users_id, workflow_id) as t, WORKFLOWTOOL wt, TASTE_USERS tu " +
-				"where t.workflow_id = wt.workflow_id and " +
-				"tu.id = t.taste_users_id and "+ criteriaString +
-				"group by t.taste_users_id order by count(*) desc limit 1 ",
-				TasteUser.class);
-		TasteUser tu = null;
-		try {
-			tu = (TasteUser) q.getSingleResult();
-		} catch (NoResultException e) {
-			
-		}
-		
-		if (tu == null)
-			return null;
-		else {
-			Integer tasteUserId = tu.getId();
-			ret = getToolsSuggestionsForUser(tasteUserId, 0);
-			return ret;
-		}
-		
+		return mahoutSingleton.getSimilarWorkflows(tools);
 	}
-	
+
 	@Override
 	public List<Workflow> getSimilarUserWorkflows(int userId, int filterMethod) {
-		
-		List<Workflow> ret = new ArrayList<Workflow>();
-		try {
-			
-			// No Filtering
-			if (filterMethod == 0) { 
-				
-				UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachingUserSimilarity, model);
-				CachingRecommender cachingRecommender = 
-		        	new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, cachingUserSimilarity));
-				List<RecommendedItem> recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
-				if (recommendations != null) {
-					for (RecommendedItem recommendedItem : recommendations) {
-						Workflow wf = em.find(Workflow.class, new Integer(new Long (recommendedItem.getItemID()).toString()));
-						ret.add(wf.slimDown());
-					}
-				}
-			} else { // Filtering within network
-				
-				UserNeighborhood neighborhood = new NearestNUserNeighborhood(NEIGHBORHOOD, cachingUserNetworkSimilarity, model);
-				CachingRecommender cachingRecommender = 
-		        	new CachingRecommender(new GenericUserBasedRecommender(model, neighborhood, cachingUserNetworkSimilarity));
-				List<RecommendedItem> recommendations = cachingRecommender.recommend(userId, RECOMMENDATIONS);
-				if (recommendations != null) {
-					for (RecommendedItem recommendedItem : recommendations) {
-						Workflow wf = em.find(Workflow.class, new Integer(new Long (recommendedItem.getItemID()).toString()));
-						ret.add(wf.slimDown());
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return ret;
+		return mahoutSingleton.getSimilarUserWorkflows(userId, filterMethod);
 	}
+
+	@Override
+	public List<Workflow> getToolsSuggestionsForUser(int userId,
+			int filterMethod) {
+		return mahoutSingleton.getToolsSuggestionsForUser(userId, filterMethod);
+	}
+
 }

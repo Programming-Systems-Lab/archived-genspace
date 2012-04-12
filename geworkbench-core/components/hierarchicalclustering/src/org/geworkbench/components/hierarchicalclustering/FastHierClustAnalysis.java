@@ -36,7 +36,7 @@ import org.geworkbench.util.SpearmanRankDistance;
 /**
  * 
  * @author unattributable
- * @version $Id: FastHierClustAnalysis.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: FastHierClustAnalysis.java 8990 2012-03-07 19:21:35Z zji $
  * 
  */
 public class FastHierClustAnalysis extends AbstractGridAnalysis implements
@@ -159,10 +159,6 @@ public class FastHierClustAnalysis extends AbstractGridAnalysis implements
         
 		
 		return new AlgorithmExecutionResults(true, "No errors.", dataSet);
-	}
-
-	public int getAnalysisType() {
-		return IGNORE_TYPE;
 	}
 
 	/**

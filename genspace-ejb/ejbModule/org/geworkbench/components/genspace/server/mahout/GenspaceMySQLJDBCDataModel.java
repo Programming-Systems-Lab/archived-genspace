@@ -94,7 +94,30 @@ public class GenspaceMySQLJDBCDataModel extends AbstractJDBCDataModel{
 	    	IOUtils.quietClose(rs, stmt, conn);
 	    }
 	}
-	
+	public HashMap<Long, Integer> getUserVisibility() throws TasteException {
+		
+	    Connection conn = null;
+	    PreparedStatement stmt = null;
+	    ResultSet rs = null;
+	    HashMap<Long, Integer> hashMap = new HashMap<Long, Integer>();
+	    try {
+	      conn = super.getDataSource().getConnection();
+	      stmt = conn.prepareStatement("SELECT t.ID,case when r.DATAVISIBILITY is null then 2 else r.DATAVISIBILITY end as DATAVISIBILITY FROM taste_users t left join registration r on r.id=t.registration_id");
+
+	      rs = stmt.executeQuery();
+	      while (rs.next()) {
+	        long userId = rs.getLong(1);
+	        int visible = rs.getInt(2);	        
+	        hashMap.put(userId, visible);
+	      } 
+	        return hashMap;
+	    } catch (SQLException sqle) {
+	      throw new TasteException(sqle);
+	    } finally {
+	      IOUtils.quietClose(rs, stmt, conn);
+	    }
+	  }
+
 	public HashMap<Long, Vector<Integer>> getUserNetworks() throws TasteException {
 		
 	    Connection conn = null;

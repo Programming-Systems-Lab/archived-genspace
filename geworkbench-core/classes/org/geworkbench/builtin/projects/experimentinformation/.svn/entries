@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -59,6 +59,43 @@ has-props
 
 
 391
+
+ExperimentInformationPanel.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+7cc8f09ccfbd239a0946c579dc1f0fac
+2011-11-02T13:48:00.049131Z
+8478
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3122
+
+help
+dir
 
 infoPanel.htm
 file
@@ -127,41 +164,4 @@ has-props
 
 
 925
-
-ExperimentInformationPanel.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-7cc8f09ccfbd239a0946c579dc1f0fac
-2011-11-02T13:48:00.049131Z
-8478
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3122
-
-help
-dir
 

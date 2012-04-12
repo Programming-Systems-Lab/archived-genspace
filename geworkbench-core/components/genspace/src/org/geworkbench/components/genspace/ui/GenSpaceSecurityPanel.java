@@ -3,10 +3,10 @@ package org.geworkbench.components.genspace.ui;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -37,8 +37,11 @@ public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin,
 	public GenSpaceSecurityPanel(String uName) {
 		setLayout(new BorderLayout());
 		JPanel panel = new JPanel();
+		panel.setPreferredSize(new Dimension(1024, 500));
+
 		JTabbedPane mainPanel = new JTabbedPane();
 		DataVisibility dataPanel = new DataVisibility();
+		dataPanel.setLayout(new BoxLayout(dataPanel, BoxLayout.Y_AXIS));
 		mainPanel.addTab("Data Visibility", dataPanel);
 
 		// NetworkVisibility nwPanel = new NetworkVisibility(uName);
@@ -46,13 +49,13 @@ public class GenSpaceSecurityPanel extends JPanel implements VisualPlugin,
 
 		GenSpaceGeneralProfile genPanel = new GenSpaceGeneralProfile();
 		mainPanel.addTab("General Profile", genPanel);
-
+		mainPanel.setMaximumSize(new Dimension(500,500));
+		panel.setMaximumSize(new Dimension(500,500));
 		panel.add(mainPanel);
 		logout = new JButton("logout");
 		panel.add(logout);
 		logout.addActionListener(this);
 		
-		panel.setPreferredSize(new Dimension(1024, 500));
 		add(panel, BorderLayout.CENTER);
 	}
 

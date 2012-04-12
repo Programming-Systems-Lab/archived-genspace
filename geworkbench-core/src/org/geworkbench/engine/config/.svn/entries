@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine/config
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-UILauncher.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-d6db60ca94f17547b8efd62dc4f8f95f
-2011-09-22T18:27:08.782243Z
-8322
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10369
-
-MenuItemInfo.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-522b03f8e0bc30c2f06f0eb0227fa026
-2005-12-19T17:14:25.000000Z
-1003
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-856
 
 Bean24.gif
 file
@@ -128,18 +60,17 @@ has-props
 
 737
 
-java.policy
+Closable.java
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-7ddb05e48d53e8bdb44ed3e29e720e3f
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
+1b3cf2d0d2a30d91c13b63a30ed20e91
+2010-02-01T17:05:10.785143Z
+5981
+youmi
 
 
 
@@ -160,109 +91,8 @@ has-props
 
 
 
-1127
-
-Visualeye_Nonactive.gif
-file
 
-
-
-
-2011-08-17T00:10:50.000000Z
-acc7a8c46c2401ca3b67220fd201150f
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-659
-
-IdentifiableImpl.java
-file
-
-
-
-
-2011-08-17T00:19:07.000000Z
-958bbe7c5a76aa091610957db13b0859
-2011-05-27T16:30:27.302729Z
-7943
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3913
-
-GUIFramework.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-20af0d343b29526c7b433ab5733a199f
-2011-11-11T15:41:09.973193Z
-8520
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2343
+321
 
 ComponentMetadata.java
 file
@@ -298,17 +128,17 @@ has-props
 
 1962
 
-default.xml
+GUIFramework.java
 file
 
 
 
 
-2011-08-17T00:10:50.000000Z
-00175b1e46cfe48f771be687ca040e10
-2006-12-20T22:22:15.000000Z
-2117
-mhall
+2012-01-10T19:15:28.000000Z
+20af0d343b29526c7b433ab5733a199f
+2011-11-11T15:41:09.973193Z
+8520
+zji
 has-props
 
 
@@ -330,7 +160,75 @@ has-props
 
 
 
-10541
+2343
+
+IdentifiableImpl.java
+file
+
+
+
+
+2011-08-17T00:19:07.000000Z
+958bbe7c5a76aa091610957db13b0859
+2011-05-27T16:30:27.302729Z
+7943
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3913
+
+MenuItemInfo.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+522b03f8e0bc30c2f06f0eb0227fa026
+2005-12-19T17:14:25.000000Z
+1003
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+856
 
 MenuListener.java
 file
@@ -366,8 +264,73 @@ has-props
 
 1106
 
-rules
-dir
+PluginDescriptor.java
+file
+
+
+
+
+2011-08-17T00:19:07.000000Z
+540aa9745bfc66e03cc6e2c433c594e7
+2011-05-27T16:30:27.302729Z
+7943
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15314
+
+PluginRegistry.java
+file
+
+
+
+
+2011-08-17T00:19:07.000000Z
+870c868e5fcfb29940eddd253e03b121
+2011-05-26T13:53:44.450572Z
+7937
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6295
 
 PreferencesMenu.cwb.xml
 file
@@ -402,6 +365,74 @@ has-props
 
 
 326
+
+PreferencesMenu.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+abe7a6ce50f6a99f5ccecc3bab30676e
+2006-01-13T22:48:38.000000Z
+1120
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1217
+
+UILauncher.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+d6db60ca94f17547b8efd62dc4f8f95f
+2011-09-22T18:27:08.782243Z
+8322
+maz
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10369
 
 VisualMenu.cwb.xml
 file
@@ -471,111 +502,6 @@ has-props
 
 505
 
-events
-dir
-
-Closable.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-1b3cf2d0d2a30d91c13b63a30ed20e91
-2010-02-01T17:05:10.785143Z
-5981
-youmi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-321
-
-PreferencesMenu.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-abe7a6ce50f6a99f5ccecc3bab30676e
-2006-01-13T22:48:38.000000Z
-1120
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1217
-
-PluginRegistry.java
-file
-
-
-
-
-2011-08-17T00:19:07.000000Z
-870c868e5fcfb29940eddd253e03b121
-2011-05-26T13:53:44.450572Z
-7937
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6295
-
 Visualeye.gif
 file
 
@@ -610,17 +536,17 @@ has-props
 
 1074
 
-PluginDescriptor.java
+Visualeye_Nonactive.gif
 file
 
 
 
 
-2011-08-17T00:19:07.000000Z
-540aa9745bfc66e03cc6e2c433c594e7
-2011-05-27T16:30:27.302729Z
-7943
-zji
+2011-08-17T00:10:50.000000Z
+acc7a8c46c2401ca3b67220fd201150f
+2005-07-28T22:36:56.000000Z
+50
+watkin
 has-props
 
 
@@ -642,5 +568,79 @@ has-props
 
 
 
-15314
+659
+
+default.xml
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+00175b1e46cfe48f771be687ca040e10
+2006-12-20T22:22:15.000000Z
+2117
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10541
+
+events
+dir
+
+java.policy
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+7ddb05e48d53e8bdb44ed3e29e720e3f
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1127
+
+rules
+dir
 

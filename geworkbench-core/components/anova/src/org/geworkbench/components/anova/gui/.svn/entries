@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/gui
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ poddutun
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-TabularDataViewer.cwb.xml
-file
-
-
-
-
-2012-01-10T18:25:31.000000Z
-f59dbe15f2ff4b522d4a222656cd4a51
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1423
-
-TabularDataViewer.java
-file
-
-
-
-
-2012-01-10T18:25:31.000000Z
-2ae74995e99429fef2063a4412bae4f9
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10150
 
 AnovaAnalysisPanel.java
 file
@@ -161,4 +93,72 @@ has-props
 
 
 4396
+
+TabularDataViewer.cwb.xml
+file
+
+
+
+
+2012-01-10T18:25:31.000000Z
+f59dbe15f2ff4b522d4a222656cd4a51
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1423
+
+TabularDataViewer.java
+file
+
+
+
+
+2012-01-10T18:25:31.000000Z
+2ae74995e99429fef2063a4412bae4f9
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10150
 

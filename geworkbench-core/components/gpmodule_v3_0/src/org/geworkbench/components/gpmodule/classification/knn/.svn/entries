@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/knn
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,108 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-KNNTraining.java
-file
-
-
-
-
-2011-08-17T00:19:03.000000Z
-20e47dd577545c40d15b52b73bf07175
-2011-06-15T18:04:08.876954Z
-7993
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8060
-
-KNNTrainingPanel.java
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-0217fa0a56c0522052c41d011ea895bb
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17131
-
-paramDesc.html
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-f257b10216b37128c5136e258c4793e7
-2007-09-19T15:36:16.000000Z
-3225
-marcdanie
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1248
 
 KNNClassifier.java
 file
@@ -196,6 +94,74 @@ zji
 
 1300
 
+KNNTraining.java
+file
+
+
+
+
+2011-08-17T00:19:03.000000Z
+20e47dd577545c40d15b52b73bf07175
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8060
+
+KNNTrainingPanel.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+0217fa0a56c0522052c41d011ea895bb
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17131
+
 help.html
 file
 
@@ -229,4 +195,38 @@ has-props
 
 
 4941
+
+paramDesc.html
+file
+
+
+
+
+2011-08-17T00:10:43.000000Z
+f257b10216b37128c5136e258c4793e7
+2007-09-19T15:36:16.000000Z
+3225
+marcdanie
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1248
 

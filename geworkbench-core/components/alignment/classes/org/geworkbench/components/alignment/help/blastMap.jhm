@@ -11,8 +11,7 @@
 	<mapID target="BLAST_job_setup" url="blast.htm#BLAST_job_setup"/>
 	<mapID target="Parameters_-_Main" url="blast.htm#Parameters_-_Main"/>
 	<mapID target="Algorithm_Parameters" url="blast.htm#Algorithm_Parameters"/>
-	<mapID target="General_controls" url="blast.htm#General_controls"/>
-	<mapID target="Submitting_a_BLAST_job" url="blast.htm#Submitting_a_BLAST_job"/>
+	<mapID target="Analyze" url="blast.htm#Analyze"/>
 	<mapID target="BLAST_results_viewer" url="blast.htm#BLAST_Results_Viewer"/>
 	<mapID target="Controls" url="blast.htm#Controls" />
 	<mapID target="Adding_selected_sequence_hits_to_the_project" url="blast.htm#Adding_selected_sequence_hits_to_the_project" />

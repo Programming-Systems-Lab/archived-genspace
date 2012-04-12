@@ -1,36 +1,26 @@
 package org.geworkbench.components.genspace;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 import javax.swing.SwingWorker;
-import javax.swing.border.MatteBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
-import org.geworkbench.components.genspace.server.stubs.Tool;
-import org.geworkbench.components.genspace.ui.SequenceAlignmentPanel;
 import org.geworkbench.components.genspace.ui.SocialNetworksHome;
 import org.geworkbench.components.genspace.ui.StatusBar;
+import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.ui.WorkflowStatistics;
 import org.geworkbench.components.genspace.ui.WorkflowVisualization;
-import org.geworkbench.components.genspace.ui.UpdateablePanel;
 import org.geworkbench.components.genspace.workflowRepository.WorkflowRepository;
 
 
@@ -77,8 +67,10 @@ public class GenSpace {
 	static java.util.logging.Logger glassfishLogger;
 	static java.util.logging.Logger glassfishLogger2;
 	static java.util.logging.Logger glassfishLogger3;
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		new GenSpace();
+//		Thread.sleep(1500);
+//		GenSpace.getInstance().login.test();
 	}
 
 	public static SocialNetworksHome networksPanels = new SocialNetworksHome();
@@ -126,7 +118,7 @@ public class GenSpace {
 		//mahoutRecommendationPanel.handleLogout();
 	}
 	private StatusBar statusBar;
-	
+	org.geworkbench.components.genspace.ui.GenSpaceLogin login;
 	private void initComponents() {
 		jframe = new JFrame("genSpace");
 
@@ -143,7 +135,7 @@ public class GenSpace {
 		workflowRepository = new WorkflowRepository(jframe);
 		needLoginPanel = new JPanel();
 		needLoginPanel.add(new JLabel("Please login to genSpace to access this area."));
-		org.geworkbench.components.genspace.ui.GenSpaceLogin login = new org.geworkbench.components.genspace.ui.GenSpaceLogin();
+		login = new org.geworkbench.components.genspace.ui.GenSpaceLogin();
 		login.addMahoutPanel();
 
 //		SequenceAlignmentPanel saPanel = SequenceAlignmentPanel.getInstance();

@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -32,9 +32,9 @@ dir
 expressionvaluedist
 dir
 
-tablepanel
+microarraypanel
 dir
 
-microarraypanel
+tablepanel
 dir
 

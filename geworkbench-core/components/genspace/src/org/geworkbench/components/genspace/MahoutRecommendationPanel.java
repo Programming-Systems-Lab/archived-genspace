@@ -184,14 +184,12 @@ public class MahoutRecommendationPanel extends JPanel implements VisualPlugin,
 			List<Workflow> mahoutSuggestions = getRealTimeMahoutToolSuggestion(tu);
 
 			int lim = 10;
-			int i = 1;
 			for(Workflow wa : mahoutSuggestions)
 			{
 				WorkflowWrapper w = new WorkflowWrapper(wa);
 				w.loadToolsFromCache();
 				wfs = wfs + "<li>" + w.toString() + "</li>";
 				lim--;
-				i++;
 				if (lim <= 0)
 					break;
 			}
@@ -217,7 +215,6 @@ public class MahoutRecommendationPanel extends JPanel implements VisualPlugin,
 				}
 			
 				lim = 10;
-				i = 1;
 				List<Workflow> workflowsWithinNetwork = getRealTimeMahoutNetworkWorkflowSuggestion(tu);
 				for(Workflow wa : workflowsWithinNetwork)
 				{
@@ -225,7 +222,6 @@ public class MahoutRecommendationPanel extends JPanel implements VisualPlugin,
 					w.loadToolsFromCache();
 					workflowsWithinNetworkString += "<li>" + w.toString() + "</li>";
 					lim--;
-					i++;
 					if (lim <= 0)
 						break;
 				}

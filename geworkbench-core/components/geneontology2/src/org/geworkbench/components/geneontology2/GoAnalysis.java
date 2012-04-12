@@ -49,7 +49,7 @@ import org.geworkbench.util.ProgressBar;
  * Go Term Analysis component of geWorkbench.
  *
  * @author zji
- * @version $Id: GoAnalysis.java 8426 2011-10-19 18:14:43Z zji $
+ * @version $Id: GoAnalysis.java 8990 2012-03-07 19:21:35Z zji $
  */
 public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 	/* necessary to implement ClusteringAnalysis for the AnalysisPanel to pick it up. No other effect. */
@@ -67,13 +67,6 @@ public class GoAnalysis extends AbstractAnalysis implements ClusteringAnalysis {
 
 	private static final long serialVersionUID = 5914151910006536646L;
 	private GoAnalysisParameterPanel parameterPanel;
-
-	@Override
-	public int getAnalysisType() {
-		/* not used, but required by the AbstractAnalysis interface */
-		return  AbstractAnalysis.ZERO_TYPE;
-	}
-
 
 	@SuppressWarnings("unchecked")
 	public AlgorithmExecutionResults execute(Object input) {

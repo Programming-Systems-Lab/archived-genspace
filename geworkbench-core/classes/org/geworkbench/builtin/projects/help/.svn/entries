@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,315 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+Affy File Matrix Format.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+f1223601905b9c4e0f43ee213148858a
+2006-12-05T19:05:20.000000Z
+2071
+floratos
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4585
+
+Affy File.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+904114304414043e767cae1daaaa181b
+2005-11-03T19:10:22.000000Z
+672
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1589
+
+Affy MAS5_GCOS Format.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+b399abdbcdec42af3f0d00d3846147e3
+2008-06-10T18:43:19.000000Z
+3868
+floratos
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4313
+
+Delete Dataset.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+d7fd75619272113600638a97e184c229
+2006-01-05T20:15:44.000000Z
+1078
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+884
+
+Genepix Format.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+cc5096c1a609c4606f06964c0ca685bf
+2006-12-05T19:05:20.000000Z
+2071
+floratos
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2088
+
+Manage Project.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+b3e54e2b65d9d92fd82de0b2de77e227
+2006-03-03T18:05:24.000000Z
+1317
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2791
+
+Manage Workspace.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+9f3f16b5abc1636f586eab5cf504894c
+2005-11-21T16:53:49.000000Z
+913
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1952
+
+Manage_workspace_files
+dir
+
+Merge Dataset.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+fecdbd38beb8266325ccc4540ccd3a08
+2007-03-23T19:30:59.000000Z
+2616
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2167
+
+Open Dataset.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+7cd12c3580a34990e4a5721e998b8a7c
+2007-03-12T20:56:33.000000Z
+2502
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4837
 
 Project Folders Overview.HTML
 file
@@ -59,6 +368,74 @@ has-props
 
 
 2266
+
+ProjectPanel.htm
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+f554205a4a3caff40617907414971e54
+2005-11-03T16:30:27.000000Z
+651
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+422
+
+RMA Format.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+375d269318c3343af8f1618575be9640
+2008-09-08T11:48:43.000000Z
+4176
+hungc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2070
 
 Rename Dataset.HTML
 file
@@ -128,16 +505,25 @@ has-props
 
 1068
 
-Manage Project.HTML
+delete_dataset_files
+dir
+
+manage_projected_files
+dir
+
+merge_dataset_files
+dir
+
+ncicb.css
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-b3e54e2b65d9d92fd82de0b2de77e227
-2006-03-03T18:05:24.000000Z
-1317
+1f848289e789b9a0980ce8b7ba0b0efb
+2005-11-03T16:30:27.000000Z
+651
 mhall
 has-props
 
@@ -160,7 +546,78 @@ has-props
 
 
 
-2791
+925
+
+open_dataset_files
+dir
+
+preferences.HTML
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+61ba0d07b3c8f0b39fd8cca22420ab12
+2005-11-21T20:08:20.000000Z
+919
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1819
+
+projectPanel.jhm
+file
+
+
+
+
+2011-08-17T00:19:07.000000Z
+a1858f6d5112d89fb213f4f5c3d95ca8
+2011-05-25T14:25:11.688972Z
+7925
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+783
 
 projectPanelHelpSet.hs
 file
@@ -196,86 +653,6 @@ has-props
 
 601
 
-Affy File Matrix Format.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-f1223601905b9c4e0f43ee213148858a
-2006-12-05T19:05:20.000000Z
-2071
-floratos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4585
-
-merge_dataset_files
-dir
-
-Manage_workspace_files
-dir
-
-open_dataset_files
-dir
-
-Affy File.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-904114304414043e767cae1daaaa181b
-2005-11-03T19:10:22.000000Z
-672
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1589
-
-delete_dataset_files
-dir
-
 projectPaneltoc.xml
 file
 
@@ -310,41 +687,7 @@ has-props
 
 715
 
-RMA Format.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-375d269318c3343af8f1618575be9640
-2008-09-08T11:48:43.000000Z
-4176
-hungc
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2070
-
-rename_dataset_files
+projects area_overviewed_files
 dir
 
 remote.HTML
@@ -381,355 +724,12 @@ has-props
 
 3207
 
-user preference_files
-dir
-
-Affy MAS5_GCOS Format.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-b399abdbcdec42af3f0d00d3846147e3
-2008-06-10T18:43:19.000000Z
-3868
-floratos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4313
-
-projects area_overviewed_files
-dir
-
-projectPanel.jhm
-file
-
-
-
-
-2011-08-17T00:19:07.000000Z
-a1858f6d5112d89fb213f4f5c3d95ca8
-2011-05-25T14:25:11.688972Z
-7925
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-783
-
-preferences.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-61ba0d07b3c8f0b39fd8cca22420ab12
-2005-11-21T20:08:20.000000Z
-919
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1819
-
-ncicb.css
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-1f848289e789b9a0980ce8b7ba0b0efb
-2005-11-03T16:30:27.000000Z
-651
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-925
-
-Merge Dataset.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-fecdbd38beb8266325ccc4540ccd3a08
-2007-03-23T19:30:59.000000Z
-2616
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2167
-
-manage_projected_files
-dir
-
-Open Dataset.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-7cd12c3580a34990e4a5721e998b8a7c
-2007-03-12T20:56:33.000000Z
-2502
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4837
-
-Manage Workspace.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-9f3f16b5abc1636f586eab5cf504894c
-2005-11-21T16:53:49.000000Z
-913
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1952
-
-Genepix Format.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-cc5096c1a609c4606f06964c0ca685bf
-2006-12-05T19:05:20.000000Z
-2071
-floratos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2088
-
-Delete Dataset.HTML
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-d7fd75619272113600638a97e184c229
-2006-01-05T20:15:44.000000Z
-1078
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-884
-
 remote_files
 dir
 
-ProjectPanel.htm
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-f554205a4a3caff40617907414971e54
-2005-11-03T16:30:27.000000Z
-651
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-422
+rename_dataset_files
+dir
+
+user preference_files
+dir
 

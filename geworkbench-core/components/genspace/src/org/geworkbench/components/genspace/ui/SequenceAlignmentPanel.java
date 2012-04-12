@@ -1,50 +1,49 @@
 //package genspace.ui;
-package org.geworkbench.components.genspace.ui;
+//package org.geworkbench.components.genspace.ui;
 
-import jalview.datamodel.AlignmentI;
-import jalview.datamodel.Sequence;
-import jalview.datamodel.SequenceI;
-import jalview.gui.AlignFrame;
-import jalview.io.FileLoader;
-import jalview.io.IdentifyFile;
-import jalview.schemes.ColourSchemeI;
-import jalview.schemes.ColourSchemeProperty;
-
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.beans.PropertyVetoException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.BoxLayout;
-import javax.swing.DefaultCellEditor;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTable;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
+//import jalview.datamodel.AlignmentI;
+//import jalview.datamodel.Sequence;
+//import jalview.datamodel.SequenceI;
+//import jalview.gui.AlignFrame;
+//import jalview.io.FileLoader;
+//import jalview.io.IdentifyFile;
+//import jalview.schemes.ColourSchemeI;
+//import jalview.schemes.ColourSchemeProperty;
+//
+//import java.awt.BorderLayout;
+//import java.awt.Component;
+//import java.awt.Dimension;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+//import java.beans.PropertyVetoException;
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import javax.swing.BoxLayout;
+//import javax.swing.DefaultCellEditor;
+//import javax.swing.JButton;
+//import javax.swing.JCheckBox;
+//import javax.swing.JDesktopPane;
+//import javax.swing.JFrame;
+//import javax.swing.JLabel;
+//import javax.swing.JPanel;
+//import javax.swing.JScrollPane;
+//import javax.swing.JSplitPane;
+//import javax.swing.JTable;
+//import javax.swing.ScrollPaneConstants;
+//import javax.swing.table.DefaultTableCellRenderer;
+//import javax.swing.table.DefaultTableModel;
+//import javax.swing.table.TableCellRenderer;
 
 //import org.geworkbench.components.genspace.server.stubs.Alignment;
 //import org.geworkbench.components.genspace.server.stubs.MSARecommender;
 //import org.geworkbench.components.genspace.server.stubs.MSARecommenderService;
 //import org.geworkbench.components.genspace.server.stubs.ProteinSequence;
 //import org.geworkbench.components.genspace.server.stubs.Reference;
-import org.geworkbench.engine.config.VisualPlugin;
+//import org.geworkbench.engine.config.VisualPlugin;
 
-@SuppressWarnings("serial")
-public class SequenceAlignmentPanel //extends JPanel implements VisualPlugin,		Runnable 
-{
+//public class SequenceAlignmentPanel //extends JPanel implements VisualPlugin,		Runnable 
+//{
 
 //	public static interface MSARecommenderCallback {
 //		void sequenceAdded(ProteinSequence proteinSequence);
@@ -314,4 +313,4 @@ public class SequenceAlignmentPanel //extends JPanel implements VisualPlugin,		R
 //		panel.setAlignment(testAlignment);
 //	}
 
-}
+//}

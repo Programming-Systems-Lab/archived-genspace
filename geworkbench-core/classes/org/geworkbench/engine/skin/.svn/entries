@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine/skin
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,18 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-max_grey.gif
+ShortCutMenu.cwb.xml
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-37db8f14e83e6f266c29097434485f5f
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
+ee58b19a2be99d59d07025f807baa37e
+2010-03-22T20:31:33.138341Z
+6192
+garbent
 
 
 
@@ -58,41 +57,8 @@ has-props
 
 
 
-82
-
-dock_active.gif
-file
 
-
-
-
-2011-08-17T00:10:50.000000Z
-3be3aea31a355eabf1c7e893d6b3d22a
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-111
+342
 
 ShortCutMenu.java
 file
@@ -127,142 +93,6 @@ garbent
 
 
 666
-
-min_active.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-ed7f0af14c69de0d17a21bc26d93ea7a
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-64
-
-undock_active.gif
-file
-
-
-
-
-2011-08-17T00:10:51.000000Z
-3fd8527e8b4eb649da68cc294bd16369
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-109
-
-max_active.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-cf6b900c9f4c7bba210b5fe9d85d67cd
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-82
-
-dock.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-eb3e6afd731cab5f0416ed2a3f607b54
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-110
 
 Skin.java
 file
@@ -332,14 +162,14 @@ has-props
 
 6
 
-min.gif
+blue_sphere.bmp
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-be0cc739070bb9279091e2419fa14057
+91521e5e67a86c75771d2023099ab7d5
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -364,84 +194,16 @@ has-props
 
 
 
-64
+4152
 
-undock.gif
+close.gif
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-e7356e5312d1a2d080473af4ad766fd9
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-108
-
-max.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-8f318513be7d91bc6863c41233005ac8
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-82
-
-close_grey.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-a1c47c69c301ad50fa73d7bfa5462d27
+006843b325da49de341104874026e783
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -502,48 +264,14 @@ has-props
 
 71
 
-ShortCutMenu.cwb.xml
+close_grey.gif
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-ee58b19a2be99d59d07025f807baa37e
-2010-03-22T20:31:33.138341Z
-6192
-garbent
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-342
-
-close.gif
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-006843b325da49de341104874026e783
+a1c47c69c301ad50fa73d7bfa5462d27
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -569,6 +297,74 @@ has-props
 
 
 71
+
+dock.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+eb3e6afd731cab5f0416ed2a3f607b54
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+110
+
+dock_active.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+3be3aea31a355eabf1c7e893d6b3d22a
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+111
 
 dock_grey.gif
 file
@@ -604,14 +400,14 @@ has-props
 
 70
 
-blue_sphere.bmp
+max.gif
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-91521e5e67a86c75771d2023099ab7d5
+8f318513be7d91bc6863c41233005ac8
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -636,7 +432,143 @@ has-props
 
 
 
-4152
+82
+
+max_active.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+cf6b900c9f4c7bba210b5fe9d85d67cd
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+82
+
+max_grey.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+37db8f14e83e6f266c29097434485f5f
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+82
+
+min.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+be0cc739070bb9279091e2419fa14057
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+64
+
+min_active.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+ed7f0af14c69de0d17a21bc26d93ea7a
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+64
 
 min_grey.gif
 file
@@ -671,6 +603,74 @@ has-props
 
 
 64
+
+undock.gif
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+e7356e5312d1a2d080473af4ad766fd9
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+108
+
+undock_active.gif
+file
+
+
+
+
+2011-08-17T00:10:51.000000Z
+3fd8527e8b4eb649da68cc294bd16369
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+109
 
 undock_grey.gif
 file

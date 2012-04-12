@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/versioninfo/src/org/geworkbench/components/versioninfo
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,74 @@ maz
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+VersionInfoComponent.cwb.xml
+file
+
+
+
+
+2011-08-17T00:10:46.000000Z
+ce9025264e8ae21f863ffcbb1027cc72
+2010-03-29T23:11:57.396890Z
+6255
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1002
+
+VersionInfoComponent.java
+file
+
+
+
+
+2011-08-17T00:10:46.000000Z
+8feab3db8927348ca5a0f437950b8ce0
+2010-01-15T16:29:40.737791Z
+5919
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1344
 
 VersionInfoDialog.java
 file
@@ -93,72 +161,4 @@ has-props
 
 
 89
-
-VersionInfoComponent.java
-file
-
-
-
-
-2011-08-17T00:10:46.000000Z
-8feab3db8927348ca5a0f437950b8ce0
-2010-01-15T16:29:40.737791Z
-5919
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1344
-
-VersionInfoComponent.cwb.xml
-file
-
-
-
-
-2011-08-17T00:10:46.000000Z
-ce9025264e8ae21f863ffcbb1027cc72
-2010-03-29T23:11:57.396890Z
-6255
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1002
 

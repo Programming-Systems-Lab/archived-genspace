@@ -1,125 +1,137 @@
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files
 END
-index_002.css
+BLAST_Parameters_blastn-discontinuous-megablast.png
 K 25
 svn:wc:ra_dav:version-url
-V 141
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/index_002.css
+V 179
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_blastn-discontinuous-megablast.png
 END
-index_003.css
+BLAST_Parameters_blastp.png
 K 25
 svn:wc:ra_dav:version-url
-V 141
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/index_003.css
+V 155
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_blastp.png
 END
 Blast_Wilms_NM_include_5prime.png
 K 25
 svn:wc:ra_dav:version-url
 V 161
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_Wilms_NM_include_5prime.png
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_Wilms_NM_include_5prime.png
 END
-index_004.css
+poweredby_mediawiki_88x31.png
 K 25
 svn:wc:ra_dav:version-url
-V 141
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/index_004.css
+V 157
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/poweredby_mediawiki_88x31.png
+END
+BLAST_Analysis_Command_invocation.png
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Analysis_Command_invocation.png
 END
 T_SequenceAlignment_BLAST_general_controls.png
 K 25
 svn:wc:ra_dav:version-url
 V 174
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/T_SequenceAlignment_BLAST_general_controls.png
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/T_SequenceAlignment_BLAST_general_controls.png
 END
-Blast_sequence_uploading.png
+BLAST_Parameters_Main-tblastn.png
 K 25
 svn:wc:ra_dav:version-url
-V 156
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_sequence_uploading.png
+V 161
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_Main-tblastn.png
 END
-Blast_blastp_advanced.png
-K 25
-svn:wc:ra_dav:version-url
-V 153
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_blastp_advanced.png
-END
-Blast_blastn_blastn_advanced.png
-K 25
-svn:wc:ra_dav:version-url
-V 160
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_blastn_blastn_advanced.png
-END
-T_SequenceAlignment_BLAST_start_stop.png
-K 25
-svn:wc:ra_dav:version-url
-V 168
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/T_SequenceAlignment_BLAST_start_stop.png
-END
-Blast_blastx_main_options.png
+BLAST_Analysis_invocation.png
 K 25
 svn:wc:ra_dav:version-url
 V 157
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_blastx_main_options.png
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Analysis_invocation.png
+END
+BLAST_Parameters_blastx.png
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_blastx.png
 END
 Blast_result_projects_folder.png
 K 25
 svn:wc:ra_dav:version-url
 V 160
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_result_projects_folder.png
-END
-Blast_blastx_advanced.png
-K 25
-svn:wc:ra_dav:version-url
-V 153
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_blastx_advanced.png
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_result_projects_folder.png
 END
 Blast_Wilms_NM_result.png
 K 25
 svn:wc:ra_dav:version-url
 V 153
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_Wilms_NM_result.png
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_Wilms_NM_result.png
 END
-commonPrint.css
+BLAST_Parameters_Main-tblastx.png
 K 25
 svn:wc:ra_dav:version-url
-V 143
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/commonPrint.css
+V 161
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_Main-tblastx.png
 END
-index.css
+BLAST_Analysis_Progress_Dialog.png
 K 25
 svn:wc:ra_dav:version-url
-V 137
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/index.css
+V 162
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Analysis_Progress_Dialog.png
 END
-Blast_blastn_megablast_advanced.png
+BLAST_Parameters_Main-blastn.png
 K 25
 svn:wc:ra_dav:version-url
-V 163
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_blastn_megablast_advanced.png
+V 160
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_Main-blastn.png
+END
+BLAST_Parameters_Main-blastn-full.png
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_Main-blastn-full.png
+END
+BLAST_Parameters_tblastn.png
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_tblastn.png
+END
+BLAST_Parameters_Main-blastp.png
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_Main-blastp.png
 END
 Blast_Wilms_NM_include_5prime_added.png
 K 25
 svn:wc:ra_dav:version-url
 V 167
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_Wilms_NM_include_5prime_added.png
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_Wilms_NM_include_5prime_added.png
 END
-Blast_tblastn_advanced.png
+BLAST_Parameters_Main-blastx.png
 K 25
 svn:wc:ra_dav:version-url
-V 154
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_tblastn_advanced.png
+V 160
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_Main-blastx.png
 END
-Blast_full_app.png
+BLAST_Parameters_blastn-megablast.png
 K 25
 svn:wc:ra_dav:version-url
-V 146
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_full_app.png
+V 165
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_blastn-megablast.png
 END
-Blast_blastn_discontiguous_megablast_advanced.png
+BLAST_Parameters_tblastx.png
 K 25
 svn:wc:ra_dav:version-url
-V 177
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/Blast_blastn_discontiguous_megablast_advanced.png
+V 156
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_tblastx.png
+END
+BLAST_Parameters_blastn.png
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/geworkbench/!svn/ver/9004/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files/BLAST_Parameters_blastn.png
 END

@@ -41,7 +41,7 @@ import org.geworkbench.events.CaArrayRequestEvent;
 
 /**
  * @author xiaoqing
- * @version $Id: CaArrayFilteringDialog.java 8278 2011-09-13 21:41:40Z zji $
+ * @version $Id: CaArrayFilteringDialog.java 8974 2012-03-07 16:10:55Z zji $
  */
 public final class CaArrayFilteringDialog extends JDialog {
 	private static final long serialVersionUID = -5214948658970068347L;
@@ -438,9 +438,8 @@ public final class CaArrayFilteringDialog extends JDialog {
 			}
 
 			final CaArrayRequestEvent event = new CaArrayRequestEvent(url,
-					portnumber);
+					portnumber, CaArrayRequestEvent.EXPERIMENT);
 			event.setQueryExperiment(true);
-			event.setRequestItem(CaArrayRequestEvent.EXPERIMENT);
 			event.setFilterCrit(filterCrit);
 			event.setUseFilterCrit(true);
 			if (username != null && username.trim().length() > 0) {

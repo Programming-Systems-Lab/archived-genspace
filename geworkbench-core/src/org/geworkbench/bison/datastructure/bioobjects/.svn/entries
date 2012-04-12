@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,16 +26,118 @@ maz
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-KMeansResultMarkers.java
+DSBioObject.java
 file
 
 
 
 
-2012-01-10T19:15:28.000000Z
-209e761e2d371e2d83e942eebb7a9ad4
-2011-10-19T16:34:53.735246Z
-8424
+2011-08-17T00:10:50.000000Z
+b4881ef5121d9cf4578d4ee789299b4a
+2006-03-03T18:05:24.000000Z
+1317
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+377
+
+DSClassification.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+4d86b64d8591358fc3538a8237fff7b6
+2006-01-13T17:35:07.000000Z
+1115
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+724
+
+DSPValued.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+c8f83949b536e6eebebee9583a59bd28
+2006-01-13T17:35:07.000000Z
+1115
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+395
+
+FoldChangeResult.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+d8f035a61df88cb3ce2b9e1537d0dd05
+2011-11-02T15:43:58.696033Z
+8481
 zji
 has-props
 
@@ -58,19 +160,20 @@ has-props
 
 
 
-2398
+700
 
-IdeaResultDataSet.java
+IdeaEdge.java
 file
 
 
 
 
-2012-01-10T19:15:27.000000Z
-995a6ccbb9a5f44c403072b2de6ea6a1
-2011-11-02T15:43:58.696033Z
-8481
+2011-08-17T00:10:50.000000Z
+ea57aa0c85ebc8839222acf2d25f3b38
+2010-12-06T22:31:56.790698Z
+7296
 zji
+has-props
 
 
 
@@ -91,8 +194,7 @@ zji
 
 
 
-
-1438
+3867
 
 IdeaGLoc.java
 file
@@ -196,188 +298,6 @@ maz
 
 2025
 
-KMeansResult.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-287350c4df1e32f5cb7af533f12c5fac
-2011-11-02T15:43:58.696033Z
-8481
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1196
-
-structure
-dir
-
-DSClassification.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-4d86b64d8591358fc3538a8237fff7b6
-2006-01-13T17:35:07.000000Z
-1115
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-724
-
-markers
-dir
-
-IdeaEdge.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-ea57aa0c85ebc8839222acf2d25f3b38
-2010-12-06T22:31:56.790698Z
-7296
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3867
-
-DSPValued.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-c8f83949b536e6eebebee9583a59bd28
-2006-01-13T17:35:07.000000Z
-1115
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-395
-
-DSBioObject.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-b4881ef5121d9cf4578d4ee789299b4a
-2006-03-03T18:05:24.000000Z
-1317
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-377
-
-sequence
-dir
-
-microarray
-dir
-
 IdeaProbeGene.java
 file
 
@@ -412,16 +332,84 @@ has-props
 
 2054
 
-FoldChangeResult.java
+IdeaResultDataSet.java
 file
 
 
 
 
 2012-01-10T19:15:27.000000Z
-d8f035a61df88cb3ce2b9e1537d0dd05
+995a6ccbb9a5f44c403072b2de6ea6a1
 2011-11-02T15:43:58.696033Z
 8481
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1438
+
+KMeansResult.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+287350c4df1e32f5cb7af533f12c5fac
+2011-11-02T15:43:58.696033Z
+8481
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1196
+
+KMeansResultMarkers.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+209e761e2d371e2d83e942eebb7a9ad4
+2011-10-19T16:34:53.735246Z
+8424
 zji
 has-props
 
@@ -444,5 +432,17 @@ has-props
 
 
 
-700
+2398
+
+markers
+dir
+
+microarray
+dir
+
+sequence
+dir
+
+structure
+dir
 

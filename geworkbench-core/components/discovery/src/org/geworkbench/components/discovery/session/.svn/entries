@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/session
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SessionOperationException.java
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-a67d494db1f24fd1a3a9af8c3cb61b72
-2011-08-04T19:33:05.363297Z
-8197
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-564
 
 CreateSessionDialog.java
 file
@@ -94,16 +60,16 @@ has-props
 
 13306
 
-SessionCreationException.java
+DiscoverySession.java
 file
 
 
 
 
-2012-01-10T18:25:34.000000Z
-d78f17866301b2cfe00be69dda410681
-2011-08-04T19:33:05.363297Z
-8197
+2012-01-10T19:15:25.000000Z
+afdd19f593e15698b27df03d3eddfe4a
+2011-12-20T22:50:58.184856Z
+8632
 zji
 has-props
 
@@ -126,7 +92,7 @@ has-props
 
 
 
-560
+9141
 
 LoginPanelModel.java
 file
@@ -162,16 +128,16 @@ has-props
 
 4380
 
-DiscoverySession.java
+SessionCreationException.java
 file
 
 
 
 
-2012-01-10T19:15:25.000000Z
-afdd19f593e15698b27df03d3eddfe4a
-2011-12-20T22:50:58.184856Z
-8632
+2012-01-10T18:25:34.000000Z
+d78f17866301b2cfe00be69dda410681
+2011-08-04T19:33:05.363297Z
+8197
 zji
 has-props
 
@@ -194,5 +160,39 @@ has-props
 
 
 
-9141
+560
+
+SessionOperationException.java
+file
+
+
+
+
+2012-01-10T18:25:34.000000Z
+a67d494db1f24fd1a3a9af8c3cb61b72
+2011-08-04T19:33:05.363297Z
+8197
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+564
 

@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/skylinecontour/src/org/geworkbench/components/skylinecontour
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,15 +25,6 @@ jiz
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-proto
-dir
-
-db
-dir
-
-query
-dir
 
 SkyLineContourMenu.cwb.xml
 file
@@ -69,12 +60,6 @@ jiz
 
 335
 
-swing
-dir
-
-util
-dir
-
 SkyLineContourMenu.java
 file
 
@@ -108,4 +93,19 @@ jiz
 
 
 671
+
+db
+dir
+
+proto
+dir
+
+query
+dir
+
+swing
+dir
+
+util
+dir
 

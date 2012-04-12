@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/properties
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-CSUnigene.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-2f6cfa589d37b97546aa9faba327e422
-2006-05-19T15:49:44.000000Z
-1550
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4645
 
 CSExtendable.java
 file
@@ -94,17 +60,17 @@ has-props
 
 4683
 
-DSSequential.java
+CSUnigene.java
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-f0a227beff384c102bbcc2ac58171a97
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2f6cfa589d37b97546aa9faba327e422
+2006-05-19T15:49:44.000000Z
+1550
+mhall
 has-props
 
 
@@ -126,75 +92,7 @@ has-props
 
 
 
-447
-
-DSUnigene.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-18bb6d0a4d9f66d738a6fb873dea9b50
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-398
-
-DSExtendable.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-ae0c25f71ac13d190bca0b5b7859f141
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2148
+4645
 
 DSAnnotated.java
 file
@@ -230,40 +128,6 @@ has-props
 
 263
 
-DSHasActivation.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-1f65f6f11f4ca861e73413374d86fb86
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-513
-
 DSDescribable.java
 file
 
@@ -297,6 +161,74 @@ has-props
 
 
 546
+
+DSExtendable.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+ae0c25f71ac13d190bca0b5b7859f141
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2148
+
+DSHasActivation.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+1f65f6f11f4ca861e73413374d86fb86
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+513
 
 DSIdentifiable.java
 file
@@ -365,4 +297,72 @@ has-props
 
 
 416
+
+DSSequential.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+f0a227beff384c102bbcc2ac58171a97
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+447
+
+DSUnigene.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+18bb6d0a4d9f66d738a6fb873dea9b50
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+398
 

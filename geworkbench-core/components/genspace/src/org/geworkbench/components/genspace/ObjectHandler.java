@@ -36,7 +36,7 @@ public class ObjectHandler {
 			if (logStatus != 2) {
 
 				Method methods[] = event.getClass().getDeclaredMethods();
-				System.out.println(methods);
+
 				Analysis analysis = null;
 				String dataSetName = "";
 
@@ -46,7 +46,6 @@ public class ObjectHandler {
 							analysis = (Analysis) m.invoke(event);
 						} else if (m.getName().equals("getDataSetName")) {
 							dataSetName = m.invoke(event).toString();
-							System.out.println("Got data set name'" + dataSetName+"'");
 						}
 					} catch (Exception e) {
 						log.info("Could not call this method");
@@ -112,7 +111,6 @@ public class ObjectHandler {
 	 */
 	private void incrementTransactionId() {
 		Random r = new Random();
-		System.out.println("Incrementing transaction id");
 		Integer j = Integer.valueOf(r.nextInt(Integer.MAX_VALUE));
 		lastTransactionId = j.toString();
 	}

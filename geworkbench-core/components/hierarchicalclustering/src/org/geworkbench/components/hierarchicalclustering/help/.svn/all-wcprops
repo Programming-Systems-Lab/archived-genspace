@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
-V 140
-/svn/geworkbench/!svn/ver/662/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help
+V 141
+/svn/geworkbench/!svn/ver/9007/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help
 END
 hierarchClusteringMap.jhm
 K 25
 svn:wc:ra_dav:version-url
-V 165
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/hierarchClusteringMap.jhm
+V 167
+/svn/geworkbench/!svn/ver/9007/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/hierarchClusteringMap.jhm
 END
 hierarchClusteringHelpSet.hs
 K 25
@@ -15,11 +15,11 @@ svn:wc:ra_dav:version-url
 V 169
 /svn/geworkbench/!svn/ver/662/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/hierarchClusteringHelpSet.hs
 END
-Hierarchical Clustering.htm
+Hierarchical_Clustering.htm
 K 25
 svn:wc:ra_dav:version-url
 V 169
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/Hierarchical%20Clustering.htm
+/svn/geworkbench/!svn/ver/9007/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/Hierarchical_Clustering.htm
 END
 ncicb.css
 K 25
@@ -30,6 +30,6 @@ END
 hierarchClusteringtoc.xml
 K 25
 svn:wc:ra_dav:version-url
-V 165
-/svn/geworkbench/!svn/ver/50/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/hierarchClusteringtoc.xml
+V 167
+/svn/geworkbench/!svn/ver/9007/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/hierarchClusteringtoc.xml
 END

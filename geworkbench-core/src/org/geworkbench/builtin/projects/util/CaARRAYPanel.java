@@ -56,7 +56,7 @@ import org.geworkbench.util.ProgressBar;
 
 /**
  * @author xiaoqing
- * @version $Id: CaARRAYPanel.java 8924 2012-02-27 22:42:50Z zji $
+ * @version $Id: CaARRAYPanel.java 8975 2012-03-07 16:50:46Z zji $
  */
 public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 	private static final String LOADING_SELECTED_BIOASSAYS_ELAPSED_TIME = "Loading selected bioassays - elapsed time: ";
@@ -117,9 +117,6 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 	private volatile boolean stillWaitForConnecting = true;
 
 	private transient String lastChosenQuantitationType;
-	private static final int INTERNALTIMEOUTLIMIT = 600;
-	private static final int INCREASE_EACHTIME = 300;
-	private int internalTimeoutLimit = INTERNALTIMEOUTLIMIT;
 
 	public CaARRAYPanel() {
 		try {
@@ -278,6 +275,8 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 		caArrayTreePanel.setLayout(borderLayout4);
 		caArrayDetailPanel.setLayout(borderLayout7);
 		jPanel10.setLayout(new BoxLayout(jPanel10, BoxLayout.Y_AXIS));
+		jPanel10.add(experimentIdLabel);
+		jPanel10.add(Box.createRigidArea(new Dimension(0, 10)));
 		jPanel10.add(jLabel4, null);
 		jPanel10.add(Box.createRigidArea(new Dimension(0, 10)));
 		jPanel10.add(jScrollPane2, null);
@@ -336,7 +335,7 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 			protected Void doInBackground() throws Exception {
 				if (text.startsWith("Loading")) {
 					int i = 0;
-					internalTimeoutLimit = INTERNALTIMEOUTLIMIT;
+
 					do {
 						Thread.sleep(250);
 						i++;
@@ -363,27 +362,19 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 
 	/**
 	 *
-	 * @param seconds
-	 */
-	private void increaseInternalTimeoutLimitBy(int seconds){
-		log.debug("Due time has been increased from "+internalTimeoutLimit+" seconds to " +(internalTimeoutLimit+seconds)+" seconds.");
-		internalTimeoutLimit += seconds;
-	}
-
-	/**
-	 *
 	 * @param ce
 	 * @param source
 	 */
 	@Subscribe
-	public void receive(CaArraySuccessEvent ce, Object source) {
-		this.numCurrentArray = numCurrentArray+1;
-		this.numTotalArrays = ce.getTotalArrays();
-		increaseInternalTimeoutLimitBy(INCREASE_EACHTIME);
+	public synchronized void receive(CaArraySuccessEvent ce, Object source) {
+		numCurrentArray++;
+		numTotalArrays = ce.getTotalArrays();
 	}
 
 	private volatile int numTotalArrays = 0;
-	private volatile int numCurrentArray = 0;
+	private int numCurrentArray = 0;
+
+	private JLabel experimentIdLabel = new JLabel();
 
 	/**
 	 * Action listener invoked when the user presses the "Open" button after
@@ -628,6 +619,7 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 				.getLastSelectedPathComponent();
 
 		if (node == null || node == root) {
+			experimentIdLabel.setText("");
 			experimentInfoArea.setText("");
 			measuredField.setText("");
 			derivedField.setText("");
@@ -635,6 +627,7 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 			// get the parent experiment.
 			CaArray2Experiment exp = (CaArray2Experiment) ((DefaultMutableTreeNode) node.getPath()[1])
 					.getUserObject();
+			experimentIdLabel.setText("<html>Experiment ID: <b>"+exp.getPublicIdentifier()+"</b></html>");
 			experimentInfoArea.setText(exp.getDescription());
 			Map<String, String> hybridization = exp.getHybridizations();
 			if (hybridization != null) {
@@ -650,14 +643,13 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 
 	private void getBioAssay(String currentSelectedExperimentName, Map<String, String> currentSelectedBioAssay,
 			String quantitationType) {
-		CaArrayRequestEvent event = new CaArrayRequestEvent(url, portnumber);
+		CaArrayRequestEvent event = new CaArrayRequestEvent(url, portnumber, CaArrayRequestEvent.BIOASSAY);
 		if (user == null || user.trim().length() == 0) {
 			event.setUsername(null);
 		} else {
 			event.setUsername(user);
 			event.setPassword(passwd);
 		}
-		event.setRequestItem(CaArrayRequestEvent.BIOASSAY);
 		Map<String, String> filterCrit = new HashMap<String, String>();
 		filterCrit.put(CaArrayRequestEvent.EXPERIMENT, currentSelectedExperimentName  );
 		SortedMap<String, String> assayNameFilter = new TreeMap<String, String>(currentSelectedBioAssay);
@@ -695,7 +687,7 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 			stillWaitForConnecting = true;
 			progressBar
 					.setMessage("Connecting with the server... The initial step may take a few minutes.");
-			CaArrayRequestEvent event = new CaArrayRequestEvent(url, portnumber);
+			CaArrayRequestEvent event = new CaArrayRequestEvent(url, portnumber, CaArrayRequestEvent.EXPERIMENT);
 			if (user == null || user.trim().length() == 0) {
 				event.setUsername(null);
 			} else {
@@ -703,7 +695,6 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 				event.setPassword(passwd);
 
 			}
-			event.setRequestItem(CaArrayRequestEvent.EXPERIMENT);
 			Thread thread = new PubilshThread(event);
 			thread.start();
 		} catch (Exception e) {
@@ -733,7 +724,11 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 		progressBar.dispose();
 
 		CaARRAYPanel.cancelledConnectionInfo = CaARRAYPanel.createConnectonInfo( url, portnumber, user, passwd);
-		CaARRAYPanel.isCancelled = true;
+
+		final CaArrayRequestEvent event = new CaArrayRequestEvent(url,
+				portnumber, CaArrayRequestEvent.CANCEL);
+		publishCaArrayRequestEvent(event);
+		
 		// user can get next array now
 		setOpenButtonEnabled(true);
 
@@ -816,7 +811,6 @@ public class CaARRAYPanel extends JPanel implements Observer, VisualPlugin {
 	// refactored, static vars for now, as only one event could be canceled,
 	// eventually will be in some utility class
 	public static volatile String cancelledConnectionInfo = null;
-	public static volatile boolean isCancelled = false;
 
 	// refactored, not sure if needed at all
 	public static String createConnectonInfo(String url, int port, String username,

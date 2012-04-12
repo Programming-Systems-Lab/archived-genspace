@@ -45,7 +45,7 @@ import edu.columbia.ccls.medusa.MedusaLoader;
 /**
  * 
  * @author keshav
- * @version $Id: MedusaAnalysis.java 8458 2011-10-25 19:07:04Z zji $
+ * @version $Id: MedusaAnalysis.java 8990 2012-03-07 19:21:35Z zji $
  */
 public class MedusaAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -53,7 +53,6 @@ public class MedusaAnalysis extends AbstractGridAnalysis implements
 	private Log log = LogFactory.getLog(this.getClass());
 	
 	private final String analysisName = "Medusa";
-	private final int analysisType = MEDUSA_TYPE;
 	
 	private StringBuilder s = null;
 
@@ -136,16 +135,6 @@ public class MedusaAnalysis extends AbstractGridAnalysis implements
 	    parameterMap.put("agg", paramPanel.getAgg());
 
 	    return parameterMap;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.geworkbench.analysis.AbstractAnalysis#getAnalysisType()
-	 */
-	@Override
-	public int getAnalysisType() {
-		return analysisType;
 	}
 
 	/*

@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/kmeans
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,108 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-KMeansViewer.java
-file
-
-
-
-
-2012-01-10T19:15:26.000000Z
-7a2ce64024bc39e9d1bbd8d147833968
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13373
-
-KMeansClustering.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:17.000000Z
-e1b1021797680dee84763ae8690ed39b
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1204
-
-KMeansViewer.cwb.xml
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-5d3a99b728d107233553c31540ee1686
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1224
 
 KMAnalysis.java
 file
@@ -162,17 +60,17 @@ has-props
 
 14569
 
-help.html
+KMeansClustering.cwb.xml
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-2f1e295f3a4d4f8e5d8a796bf2b22025
-2011-03-11T23:12:41.016857Z
-7569
-maz
+2012-03-05T20:23:17.000000Z
+e1b1021797680dee84763ae8690ed39b
+2012-02-24T21:49:55.965990Z
+8916
+zji
 
 
 
@@ -194,7 +92,7 @@ maz
 
 
 
-4030
+1204
 
 KMeansPanel.java
 file
@@ -229,4 +127,106 @@ zji
 
 
 4572
+
+KMeansViewer.cwb.xml
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+5d3a99b728d107233553c31540ee1686
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1224
+
+KMeansViewer.java
+file
+
+
+
+
+2012-01-10T19:15:26.000000Z
+7a2ce64024bc39e9d1bbd8d147833968
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13373
+
+help.html
+file
+
+
+
+
+2011-08-17T00:10:43.000000Z
+2f1e295f3a4d4f8e5d8a796bf2b22025
+2011-03-11T23:12:41.016857Z
+7569
+maz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4030
 

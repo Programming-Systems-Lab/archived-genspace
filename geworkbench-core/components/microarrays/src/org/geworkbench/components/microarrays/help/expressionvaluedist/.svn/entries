@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/help/expressionvaluedist
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,9 @@ edaly
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+EVD_help_files
+dir
 
 evd.HTML
 file
@@ -59,6 +62,74 @@ has-props
 
 
 4389
+
+evdHelpSet.hs
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+742e67ce3f34f94d40d5a761340942c6
+2005-11-03T18:04:01.000000Z
+668
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+636
+
+evdMap.jhm
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+c2981e939845e800c0c31938f2ec7eda
+2005-11-03T18:04:01.000000Z
+668
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+264
 
 evdtoc.xml
 file
@@ -127,75 +198,4 @@ has-props
 
 
 925
-
-EVD_help_files
-dir
-
-evdMap.jhm
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-c2981e939845e800c0c31938f2ec7eda
-2005-11-03T18:04:01.000000Z
-668
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-264
-
-evdHelpSet.hs
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-742e67ce3f34f94d40d5a761340942c6
-2005-11-03T18:04:01.000000Z
-668
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-636
 

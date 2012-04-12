@@ -23,7 +23,6 @@ import javax.swing.JTextField;
 import org.geworkbench.components.genspace.GenSpace;
 import org.geworkbench.components.genspace.GenSpaceServerFactory;
 import org.geworkbench.components.genspace.MahoutRecommendationPanel;
-import org.geworkbench.components.genspace.RealTimeWorkFlowSuggestion;
 import org.geworkbench.components.genspace.chat.ChatReceiver;
 import org.geworkbench.components.genspace.server.stubs.User;
 import org.geworkbench.engine.config.VisualPlugin;
@@ -73,6 +72,7 @@ public class GenSpaceLogin extends JPanel implements VisualPlugin,
 
 	public void test()
 	{
+		System.out.println("test");
 		tf.setText("jon");
 		pf.setText("test123");
 		ActionEvent e = new ActionEvent(b1, 1, "foo");

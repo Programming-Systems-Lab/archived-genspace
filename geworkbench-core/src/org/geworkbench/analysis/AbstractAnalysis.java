@@ -54,7 +54,7 @@ import org.ginkgo.labs.util.FileTools;
  * @author keshav
  * @author yc2480
  * @author os2201
- * @version $Id: AbstractAnalysis.java 8743 2012-01-20 16:26:44Z youmi $
+ * @version $Id: AbstractAnalysis.java 8990 2012-03-07 19:21:35Z zji $
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractAnalysis implements Analysis, Serializable,
@@ -453,9 +453,10 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 	 */
 	public void setDefaultPanel(AbstractSaveableParameterPanel panel) {
 		aspp = panel;
-		if (aspp != null)
+		if (aspp != null) {
 			aspp.setVisible(true);
-		setParameterFilesPath(aspp);
+			setParameterFilesPath(aspp);
+		}
 		loadSavedParameterSets();
 	}
 
@@ -556,13 +557,6 @@ public abstract class AbstractAnalysis implements Analysis, Serializable,
 
 		stopAlgorithm = true;
 	}
-
-	/**
-	 * Return a code identifying the type of the analysis.
-	 * 
-	 * @return
-	 */
-	public abstract int getAnalysisType();
 
 	/**
 	 * 

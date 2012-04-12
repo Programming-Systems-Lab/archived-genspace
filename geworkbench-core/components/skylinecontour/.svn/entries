@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/skylinecontour
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -59,40 +59,6 @@ jiz
 
 
 471
-
-logging.properties
-file
-
-
-
-
-2011-08-17T00:10:46.000000Z
-2a28efbb7b150d114a788d346e41d193
-2009-11-18T16:57:42.000000Z
-5747
-jiz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-635
 
 .project
 file
@@ -165,6 +131,40 @@ jiz
 lib
 dir
 
+logging.properties
+file
+
+
+
+
+2011-08-17T00:10:46.000000Z
+2a28efbb7b150d114a788d346e41d193
+2009-11-18T16:57:42.000000Z
+5747
+jiz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+635
+
 skylinecontourmenu.ccm.xml.copy
 file
 
@@ -199,9 +199,6 @@ has-props
 
 994
 
-src
-dir
-
 skylinecontourmenu.properties
 file
 
@@ -235,4 +232,7 @@ jiz
 
 
 42
+
+src
+dir
 

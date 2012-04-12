@@ -56,7 +56,7 @@ import org.geworkbench.util.patterns.PatternSequenceDisplayUtil;
  * Company: Califano Lab </p>
  *
  * @author
- * @version $Id: SequenceViewWidget.java 8645 2012-01-04 18:53:35Z zji $
+ * @version $Id: SequenceViewWidget.java 9013 2012-03-08 20:05:59Z zji $
  */
 public class SequenceViewWidget extends JPanel {
 	private static final long serialVersionUID = -6141589995966150788L;
@@ -537,7 +537,7 @@ public class SequenceViewWidget extends JPanel {
 				double scale = (r.getWidth() + 3)
 						/ (double) (seqAscii.length());
 				CSSeqRegistration seqReg = (CSSeqRegistration) registration;
-				int patLength = pl.getAscii().length();
+				int patLength = pl.getAsciiLength();
 				int dx = seqReg.x1;
 				double x1 = (dx - startPoint) * scale + 10;
 				double x2 = ((double) patLength) * scale;
@@ -552,7 +552,7 @@ public class SequenceViewWidget extends JPanel {
 						(int) (GAP / 2 + yscale));
 				g.drawString(new Integer(dx + 1).toString(), (int) x1,
 						(int) (GAP / 2 + 2 * yscale));
-				g.drawString(new Integer(dx + seqReg.length()).toString(),
+				g.drawString(new Integer(dx + patLength).toString(),
 						(int) (x1 + x2 - scale), (int) (GAP / 2 + 2 * yscale));
 				if (pl.getPatternType().equals(PatternLocations.TFTYPE)) {
 

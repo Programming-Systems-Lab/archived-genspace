@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/help/expressionprofile
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,14 +60,17 @@ has-props
 
 2821
 
-foo.txt
+ExpProfile Viewed_files
+dir
+
+expProfileHelpSet.hs
 file
 
 
 
 
-2011-09-16T16:52:39.000000Z
-d41d8cd98f00b204e9800998ecf8427e
+2011-08-17T00:10:44.000000Z
+0d35a6023852d017d1310852664aa2da
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -92,7 +95,41 @@ has-props
 
 
 
-0
+638
+
+expProfileMap.jhm
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+1b219af0b80655d6b6941df2675fbdb3
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+283
 
 expProfiletoc.xml
 file
@@ -128,8 +165,39 @@ has-props
 
 199
 
-ExpProfile Viewed_files
-dir
+foo.txt
+file
+
+
+
+
+2011-09-16T16:52:39.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
 
 images
 dir
@@ -167,72 +235,4 @@ has-props
 
 
 925
-
-expProfileMap.jhm
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-1b219af0b80655d6b6941df2675fbdb3
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-283
-
-expProfileHelpSet.hs
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-0d35a6023852d017d1310852664aa2da
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-638
 

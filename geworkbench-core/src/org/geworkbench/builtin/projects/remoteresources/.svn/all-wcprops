@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources
+/svn/geworkbench/!svn/ver/8974/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources
 END
 RemoteResource.java
 K 25
@@ -19,7 +19,7 @@ CaArrayFilteringDialog.java
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svn/geworkbench/!svn/ver/8278/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/CaArrayFilteringDialog.java
+/svn/geworkbench/!svn/ver/8974/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources/CaArrayFilteringDialog.java
 END
 RemoteResourceManager.java
 K 25

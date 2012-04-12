@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/complex/pattern/matrix
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-CSPositionSpecificAffinityMatrix.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-28e3168075a83fad488240448e213486
-2011-11-02T13:48:00.049131Z
-8478
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3252
-
-DSMatrixReduceSet.java
-file
-
-
-
-
-2011-08-17T00:19:07.000000Z
-f39c084084a878428db042af8585aedb
-2011-06-07T20:41:43.573745Z
-7967
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-851
 
 CSMatrixReduceExperiment.java
 file
@@ -128,17 +60,17 @@ has-props
 
 1984
 
-DSMatrixReduceExperiment.java
+CSMatrixReduceSet.java
 file
 
 
 
 
-2011-08-17T00:10:50.000000Z
-b0a845a4b948b20b280cfcd5644c7058
-2008-05-28T19:20:13.000000Z
-3809
-hungc
+2012-01-10T19:15:28.000000Z
+bcadf362fa4692b444a5d40655e3b5d8
+2011-11-02T15:43:58.696033Z
+8481
+zji
 has-props
 
 
@@ -160,7 +92,7 @@ has-props
 
 
 
-481
+1573
 
 CSPValued.java
 file
@@ -196,6 +128,108 @@ has-props
 
 624
 
+CSPositionSpecificAffinityMatrix.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+28e3168075a83fad488240448e213486
+2011-11-02T13:48:00.049131Z
+8478
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3252
+
+DSMatrixReduceExperiment.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+b0a845a4b948b20b280cfcd5644c7058
+2008-05-28T19:20:13.000000Z
+3809
+hungc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+481
+
+DSMatrixReduceSet.java
+file
+
+
+
+
+2011-08-17T00:19:07.000000Z
+f39c084084a878428db042af8585aedb
+2011-06-07T20:41:43.573745Z
+7967
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+851
+
 DSPositionSpecificAffintyMatrix.java
 file
 
@@ -229,38 +263,4 @@ has-props
 
 
 1087
-
-CSMatrixReduceSet.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-bcadf362fa4692b444a5d40655e3b5d8
-2011-11-02T15:43:58.696033Z
-8481
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1573
 

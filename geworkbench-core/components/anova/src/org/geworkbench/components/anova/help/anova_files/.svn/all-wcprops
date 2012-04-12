@@ -1,83 +1,59 @@
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files
 END
-index_002.css
+poweredby_mediawiki_88x31.png
 K 25
 svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/index_002.css
-END
-index_003.css
-K 25
-svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/index_003.css
-END
-index_004.css
-K 25
-svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/index_004.css
+V 149
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/poweredby_mediawiki_88x31.png
 END
 ANOVA_in_ProjectFolders.png
 K 25
 svn:wc:ra_dav:version-url
 V 147
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_in_ProjectFolders.png
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_in_ProjectFolders.png
 END
 ANOVA_Example_Color_Mosaic_simple.png
 K 25
 svn:wc:ra_dav:version-url
 V 157
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Color_Mosaic_simple.png
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Color_Mosaic_simple.png
 END
 ANOVA_Parameters_Example.png
 K 25
 svn:wc:ra_dav:version-url
 V 148
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Parameters_Example.png
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Parameters_Example.png
 END
 ANOVA_Example_Markers.png
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Markers.png
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Markers.png
 END
 ANOVA_Array_Selection.png
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Array_Selection.png
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Array_Selection.png
 END
 ANOVA_Parameters.png
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Parameters.png
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Parameters.png
 END
 ANOVA_Example_Color_Mosaic.png
 K 25
 svn:wc:ra_dav:version-url
 V 150
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Color_Mosaic.png
-END
-commonPrint.css
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/commonPrint.css
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Color_Mosaic.png
 END
 ANOVA_Example_Tabular_Preferences.png
 K 25
 svn:wc:ra_dav:version-url
 V 157
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Tabular_Preferences.png
-END
-index.css
-K 25
-svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/index.css
+/svn/geworkbench/!svn/ver/8997/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova/help/anova_files/ANOVA_Example_Tabular_Preferences.png
 END

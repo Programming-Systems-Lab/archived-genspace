@@ -1,7 +1,7 @@
 10
 
 dir
-8955
+9024
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/biocollections/views
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,40 +60,6 @@ has-props
 
 7210
 
-DSMicroarraySetView.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-76d624296f9ca1f58ff744f5abaa43c2
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3062
-
 DSDataSetView.java
 file
 
@@ -127,4 +93,38 @@ has-props
 
 
 1001
+
+DSMicroarraySetView.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+76d624296f9ca1f58ff744f5abaa43c2
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3062
 
