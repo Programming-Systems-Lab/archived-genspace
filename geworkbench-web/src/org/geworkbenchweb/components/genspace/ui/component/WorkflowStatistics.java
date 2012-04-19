@@ -55,6 +55,7 @@ public class WorkflowStatistics extends CustomComponent implements GenSpaceTab {
 	
 	
 	
+	
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 

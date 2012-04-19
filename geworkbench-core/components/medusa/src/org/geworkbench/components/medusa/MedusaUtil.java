@@ -3,13 +3,15 @@ package org.geworkbench.components.medusa;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -18,6 +20,15 @@ import java.util.Map;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -29,9 +40,6 @@ import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.components.medusa.gui.TranscriptionFactorInfoBean;
 import org.geworkbench.util.FilePathnameUtils;
-import org.ginkgo.labs.reader.XmlReader;
-import org.ginkgo.labs.reader.XmlWriter;
-import org.ginkgo.labs.util.FileTools;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -47,7 +55,7 @@ import edu.columbia.ccls.medusa.io.SerializedRule;
  * updating the configuration file, etc.
  * 
  * @author keshav
- * @version $Id: MedusaUtil.java,v 1.24 2008-03-07 17:14:25 chiangy Exp $
+ * @version $Id: MedusaUtil.java 9252 2012-04-02 17:07:37Z zji $
  */
 public class MedusaUtil {
 
@@ -360,7 +368,7 @@ public class MedusaUtil {
 	 */
 	public static String updateConfigXml(String configFile, String outFile,
 			MedusaCommand command) {
-		Document doc = XmlReader.readXmlFile(configFile);
+		Document doc = readXmlFile(configFile);
 
 		updateXmlNode(doc, "parameters", "iterations", String.valueOf(command
 				.getIter()));
@@ -416,9 +424,52 @@ public class MedusaUtil {
 		if (outFile == null)
 			outFile = configFile;
 
-		XmlWriter.writeXml(doc, outFile);
+		writeXml(doc, outFile);
 
 		return "run_"+String.valueOf(nowLong);
+	}
+
+	private static Document readXmlFile(String filename) {
+
+		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
+				.newInstance();
+		DocumentBuilder docBuilder = null;
+		Document doc = null;
+		try {
+			docBuilder = docBuilderFactory.newDocumentBuilder();
+			InputStream is = new FileInputStream(filename);
+			doc = docBuilder.parse(is);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
+		return doc;
+	}
+
+	private static void writeXml(Document doc, String hackedConfig)
+			throws TransformerFactoryConfigurationError {
+
+		Transformer transformer;
+		try {
+			transformer = TransformerFactory.newInstance().newTransformer();
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+			// initialize StreamResult with File object to save to file
+			StreamResult result = new StreamResult(new StringWriter());
+			DOMSource source = new DOMSource(doc);
+			transformer.transform(source, result);
+			String xmlString = result.getWriter().toString();
+			log.info(xmlString);
+
+			File outFile = new File(hackedConfig);
+
+			FileWriter writer = new FileWriter(outFile);
+			writer.write(xmlString);
+			writer.close();
+
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	/**
@@ -438,59 +489,6 @@ public class MedusaUtil {
 		Node fastaFileNode = nodeMap.getNamedItem(targetAttribute);
 		fastaFileNode.setNodeValue(newAttributeVal);
 
-	}
-
-	/**
-	 * Deletes the medusa run.
-	 * 
-	 */
-	public static void deleteRunDir() {
-		File runDir = new File("temp/medusa/dataset/output/run1/");
-
-		if (runDir.exists()) {
-			Collection<File> dirFiles = FileTools.listDirectoryFiles(runDir);
-			FileTools.deleteFiles(dirFiles);
-
-			// delete rules files
-			try {
-			File rulesDir = new File("temp/medusa/dataset/output/run1/rules/");
-			Collection<File> rulesFiles = FileTools.listDirectoryFiles(rulesDir);
-			FileTools.deleteFiles(rulesFiles);
-			}catch(IllegalArgumentException iAE){
-			}
-			// delete data
-			try{
-			File dataDir = new File(
-					"temp/medusa/dataset/output/run1/state/data/");
-			Collection<File> dataFiles = FileTools.listDirectoryFiles(dataDir);
-			FileTools.deleteFiles(dataFiles);
-			FileTools.deleteDir(dataDir);
-			}catch(IllegalArgumentException iAE){
-			}
-
-			// delete features
-			try{
-			File featuresDir = new File(
-					"temp/medusa/dataset/output/run1/state/features/");
-			Collection<File> featuresFiles = FileTools
-					.listDirectoryFiles(featuresDir);
-			FileTools.deleteFiles(featuresFiles);
-			FileTools.deleteDir(featuresDir);
-			}catch(IllegalArgumentException iAE){
-			}
-
-			try{
-			File stateDir = new File("temp/medusa/dataset/output/run1/state/");
-			FileTools.deleteDir(stateDir);
-			}catch(IllegalArgumentException iAE){
-			}
-
-			try{
-			FileTools.deleteDir(runDir);
-			}catch(IllegalArgumentException iAE){
-			}
-		}
-		log.error("Directory " + runDir + " does not exist.");
 	}
 
 	/**
@@ -518,17 +516,13 @@ public class MedusaUtil {
 
 			for (SerializedRule srule : srules) {
 				/* write out comment */
-				out.write(FileTools.HASH_MARK);
-				out.write(FileTools.SPACE);
+				out.write("# ");
 				// out.write("the comment");
-				out.write(FileTools.NEWLINE);
-				out.write(FileTools.FASTA_PREFIX);
+				out.write("\n>"); // FASTA_PREFIX;
 
 				/* write out name and description of pssm */
-				out.write("PSSM Name: ");
-				out.write(FileTools.TAB);
-				out.write("PSSM Description: ");
-				out.write(FileTools.NEWLINE);
+				out.write("PSSM Name: \t");
+				out.write("PSSM Description: \n");
 
 				/* write out each pssm */
 
@@ -537,9 +531,9 @@ public class MedusaUtil {
 					for (int j = 0; j < pssm[i].length; j++) {
 						out.write(String.valueOf(pssm[i][j]));
 						if (j < pssm[i].length - 1)
-							out.write(FileTools.TAB);
+							out.write("\t");
 						else
-							out.write(FileTools.NEWLINE);
+							out.write("\n");
 					}
 				}
 			}

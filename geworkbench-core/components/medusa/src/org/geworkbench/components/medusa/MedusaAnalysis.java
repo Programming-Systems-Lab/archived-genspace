@@ -38,14 +38,13 @@ import org.geworkbench.components.medusa.gui.MedusaParamPanel;
 import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.ProgressBar;
 import org.geworkbench.util.Util;
-import org.ginkgo.labs.util.FileTools;
 
 import edu.columbia.ccls.medusa.MedusaLoader;
 
 /**
  * 
  * @author keshav
- * @version $Id: MedusaAnalysis.java 8990 2012-03-07 19:21:35Z zji $
+ * @version $Id: MedusaAnalysis.java 9250 2012-04-02 15:34:08Z zji $
  */
 public class MedusaAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -67,8 +66,7 @@ public class MedusaAnalysis extends AbstractGridAnalysis implements
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 9030365941219312428L;
 	/**
 	 * 
 	 * 
@@ -172,7 +170,10 @@ public class MedusaAnalysis extends AbstractGridAnalysis implements
 		pBar.start();
 
 		/* create output dir */
-		FileTools.createDir(outdir);
+	    File dirPath = new File(outdir);
+	    if (!(dirPath.exists())) {
+	    	dirPath.mkdirs();
+	    }
 
 		/* cleanup other runs */
 		//TODO: we'll need to find a way to delete outputDir/ 

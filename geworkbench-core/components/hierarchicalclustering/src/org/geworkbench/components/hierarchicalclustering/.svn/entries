@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-03-07T23:52:57.177703Z
-9007
-smithken
+2012-03-27T16:53:05.991988Z
+9220
+zji
 
 
 
@@ -26,16 +26,84 @@ smithken
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-ClusteringAlgorithm.java
+HierClusterViewAppComponent.cwb.xml
+file
+
+
+
+
+2012-03-05T20:23:18.000000Z
+8ea2a53c009e502b52d242ea8b4e95fd
+2012-02-24T21:49:55.965990Z
+8916
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1394
+
+bulb_icon_grey.gif
 file
 
 
 
 
 2011-08-17T00:10:43.000000Z
-e06083dd055b0ab703df40f28c1bb6d2
-2010-12-22T17:06:09.863058Z
-7368
+c7383f4939a385b087504cb8bc868b36
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+576
+
+HierClusterViewAppComponent.java
+file
+
+
+
+
+2012-03-08T18:51:45.000000Z
+511ae146c463d0c2bbf0713da9730440
+2012-03-07T19:51:41.483715Z
+8993
 zji
 has-props
 
@@ -58,7 +126,78 @@ has-props
 
 
 
-6902
+6068
+
+help
+dir
+
+HierClusterTree.java
+file
+
+
+
+
+2011-08-17T00:10:43.000000Z
+36b9f34ffcd20fb59774fe541cca5157
+2011-02-11T19:41:01.648866Z
+7449
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15720
+
+HierClusterLabels.java
+file
+
+
+
+
+2011-08-17T00:10:43.000000Z
+b4c5e1ea48de84fb9915669553c0e139
+2010-07-16T21:08:20.463149Z
+6875
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9628
 
 FastHierClustAnalysis.cwb.xml
 file
@@ -94,16 +233,16 @@ zji
 
 1517
 
-FastHierClustAnalysis.java
+HierarchicalClustering.java
 file
 
 
 
 
-2012-03-08T18:51:45.000000Z
-315e12fcb67925c79447fea2c5e34954
-2012-03-07T19:21:35.661934Z
-8990
+2012-04-19T14:07:31.000000Z
+60505e48c642bbfa3056ecfb6a8cfe0d
+2012-03-16T16:13:59.510162Z
+9179
 zji
 has-props
 
@@ -126,75 +265,7 @@ has-props
 
 
 
-12607
-
-HNode.java
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-9275e9451912fad59419bebcc1886349
-2010-12-22T20:18:43.433357Z
-7369
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1755
-
-HierClustPanel.java
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-b7fe4bd1a5ca40613c960f9f2b04ca85
-2011-02-09T15:07:04.872224Z
-7429
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9385
+2270
 
 HierClusterDisplay.java
 file
@@ -264,16 +335,16 @@ has-props
 
 2201
 
-HierClusterLabels.java
+HierClustPanel.java
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-b4c5e1ea48de84fb9915669553c0e139
-2010-07-16T21:08:20.463149Z
-6875
+2012-04-19T14:07:31.000000Z
+861417e02408f807ad0b1ec398b85ec2
+2012-03-27T16:53:05.991988Z
+9220
 zji
 has-props
 
@@ -296,18 +367,18 @@ has-props
 
 
 
-9628
+6849
 
-HierClusterTree.java
+FastHierClustAnalysis.java
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-36b9f34ffcd20fb59774fe541cca5157
-2011-02-11T19:41:01.648866Z
-7449
+2012-04-19T14:07:31.000000Z
+0fcf51ffc64b58870106ea1b0ef8a0cf
+2012-03-16T16:13:59.510162Z
+9179
 zji
 has-props
 
@@ -330,177 +401,7 @@ has-props
 
 
 
-15720
-
-HierClusterViewAppComponent.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:18.000000Z
-8ea2a53c009e502b52d242ea8b4e95fd
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1394
-
-HierClusterViewAppComponent.java
-file
-
-
-
-
-2012-03-08T18:51:45.000000Z
-511ae146c463d0c2bbf0713da9730440
-2012-03-07T19:51:41.483715Z
-8993
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6068
-
-HierClusterViewWidget.java
-file
-
-
-
-
-2012-01-31T19:12:35.000000Z
-865208e52c6f23f0c4e4de6be6443075
-2012-01-11T20:07:01.347231Z
-8690
-maz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27389
-
-HierarchicalClustering.java
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-a96b33a195dbc51c4d3b61d4d3e7e3ea
-2011-01-28T21:02:21.478325Z
-7390
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3716
-
-SortStruct.java
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-77d07e7bf3a3013d10703f046ba60a4b
-2010-12-22T17:06:09.863058Z
-7368
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1847
+13633
 
 bulb_icon_gold.gif
 file
@@ -536,17 +437,17 @@ has-props
 
 576
 
-bulb_icon_grey.gif
+ClusteringAlgorithm.java
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-c7383f4939a385b087504cb8bc868b36
-2005-07-28T22:36:56.000000Z
-50
-watkin
+2012-04-19T14:07:31.000000Z
+9e859a5e068a011460e8fcf3ae019ed6
+2012-03-16T16:13:59.510162Z
+9179
+zji
 has-props
 
 
@@ -568,8 +469,107 @@ has-props
 
 
 
-576
+5966
 
-help
-dir
+HierClusterViewWidget.java
+file
+
+
+
+
+2012-01-31T19:12:35.000000Z
+865208e52c6f23f0c4e4de6be6443075
+2012-01-11T20:07:01.347231Z
+8690
+maz
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27389
+
+SortStruct.java
+file
+
+
+
+
+2011-08-17T00:10:43.000000Z
+77d07e7bf3a3013d10703f046ba60a4b
+2010-12-22T17:06:09.863058Z
+7368
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1847
+
+HNode.java
+file
+
+
+
+
+2011-08-17T00:10:43.000000Z
+9275e9451912fad59419bebcc1886349
+2010-12-22T20:18:43.433357Z
+7369
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1755
 

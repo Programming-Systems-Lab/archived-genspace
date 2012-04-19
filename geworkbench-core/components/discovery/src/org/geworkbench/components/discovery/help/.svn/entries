@@ -1,16 +1,16 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
+2012-03-09T20:13:44.054213Z
+9092
+smithken
+has-props
 
 
 
@@ -26,51 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-patternDiscovery.htm
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-69ab2e7cf142d2bccbf80abd6932231f
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24578
-
 patternDiscovery.jhm
 file
 
 
 
 
-2011-08-17T00:19:02.000000Z
-983f302d441c41aba12322005dfe55a8
-2011-05-25T14:27:40.523570Z
-7927
-zji
+2012-04-19T14:07:18.000000Z
+bbe2c6186089c5a8f5a508ca451ef7ac
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -92,7 +58,7 @@ has-props
 
 
 
-1221
+1049
 
 patternDiscoveryHelpSet.hs
 file
@@ -137,11 +103,11 @@ file
 
 
 
-2011-08-17T00:19:02.000000Z
-cea012d9fb6526d672bd72ea6010f327
-2011-05-25T14:27:40.523570Z
-7927
-zji
+2012-04-19T14:07:18.000000Z
+7ac141104181331ad931565baa3c8183
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -163,5 +129,39 @@ has-props
 
 
 
-946
+810
+
+patternDiscovery.htm
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+e3ff9c29176af46f3536a81f84f264da
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22363
 

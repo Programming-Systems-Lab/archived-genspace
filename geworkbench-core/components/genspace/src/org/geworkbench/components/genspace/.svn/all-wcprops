@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/8928/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
-END
-ObjectLogger.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectLogger.java
+/svn/geworkbench/!svn/ver/9048/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
 END
 TransactionElement.java
 K 25
@@ -15,11 +9,11 @@ svn:wc:ra_dav:version-url
 V 132
 /svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/TransactionElement.java
 END
-RuntimeEnvironmentSettings.java
+GenSpaceMenu.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 140
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/RuntimeEnvironmentSettings.java
+V 129
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.cwb.xml
 END
 ObjectHandler.java
 K 25
@@ -27,11 +21,17 @@ svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/8928/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectHandler.java
 END
-GenSpaceLogPreferences.java
+BrowserLauncher.java
 K 25
 svn:wc:ra_dav:version-url
-V 136
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceLogPreferences.java
+V 129
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/BrowserLauncher.java
+END
+ObjectLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectLogger.java
 END
 XMLLoader.java
 K 25
@@ -39,11 +39,23 @@ svn:wc:ra_dav:version-url
 V 123
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/XMLLoader.java
 END
-BrowserLauncher.java
+RuntimeEnvironmentSettings.java
 K 25
 svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/BrowserLauncher.java
+V 140
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/RuntimeEnvironmentSettings.java
+END
+GenSpaceLogPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceLogPreferences.java
+END
+GenSpaceMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.java
 END
 login.conf
 K 25
@@ -57,23 +69,11 @@ svn:wc:ra_dav:version-url
 V 126
 /svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ServerConfig.java
 END
-GenSpaceMenu.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.java
-END
 FindJar.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/FindJar.java
-END
-GenSpaceMenu.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.cwb.xml
 END
 GenspaceLogger.cwb.xml
 K 25

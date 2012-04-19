@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/geworkbench/!svn/ver/8818/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
+/svn/geworkbench/!svn/ver/9288/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects
 END
 DSClassification.java
 K 25
@@ -31,7 +31,7 @@ IdeaEdge.java
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/7296/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaEdge.java
+/svn/geworkbench/!svn/ver/9240/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaEdge.java
 END
 IdeaGLoc.java
 K 25
@@ -68,6 +68,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 118
 /svn/geworkbench/!svn/ver/7305/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/IdeaProbeGene.java
+END
+SamResultData.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/9286/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/SamResultData.java
 END
 KMeansResult.java
 K 25

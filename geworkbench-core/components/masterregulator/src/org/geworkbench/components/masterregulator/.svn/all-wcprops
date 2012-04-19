@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svn/geworkbench/!svn/ver/8990/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
+/svn/geworkbench/!svn/ver/9235/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator
 END
 MasterRegulatorPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 148
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
+/svn/geworkbench/!svn/ver/9227/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorPanel.java
 END
 MasterRegulatorViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
+/svn/geworkbench/!svn/ver/9235/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorViewer.java
 END
 MasterRegulatorTableViewer.cwb.xml
 K 25
@@ -25,7 +25,7 @@ MasterRegulatorAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 151
-/svn/geworkbench/!svn/ver/8990/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
+/svn/geworkbench/!svn/ver/9227/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/MasterRegulatorAnalysis.java
 END
 TAnalysis.java
 K 25
@@ -43,13 +43,13 @@ DetailedTFGraphViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/geworkbench/!svn/ver/8532/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/DetailedTFGraphViewer.java
+/svn/geworkbench/!svn/ver/9198/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/DetailedTFGraphViewer.java
 END
 TableViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/8755/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TableViewer.java
+/svn/geworkbench/!svn/ver/9198/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/TableViewer.java
 END
 MasterRegulatorTableViewer.java
 K 25

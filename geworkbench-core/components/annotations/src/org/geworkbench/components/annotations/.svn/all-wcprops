@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations
+/svn/geworkbench/!svn/ver/9060/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations
 END
 AnnotationsPanel2.java
 K 25
@@ -117,12 +117,6 @@ svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/CGITask.java
 END
-PathwayPanel.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/5216/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/PathwayPanel.cwb.xml
-END
 GeneSearchCriteria.java
 K 25
 svn:wc:ra_dav:version-url
@@ -133,7 +127,7 @@ AnnotationsPanel2.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/AnnotationsPanel2.cwb.xml
+/svn/geworkbench/!svn/ver/9059/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/AnnotationsPanel2.cwb.xml
 END
 GeneAnnotationImpl.java
 K 25

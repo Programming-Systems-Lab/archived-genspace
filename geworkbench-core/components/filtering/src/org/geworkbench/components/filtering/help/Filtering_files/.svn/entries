@@ -1,15 +1,15 @@
 10
 
 dir
-9024
-https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/help/Filtering_files
+9328
+https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/help/filtering_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 
 
 
@@ -26,17 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-Filtering-Affy_detection_call.png
+Filtering_GenePix_Expression_Threshold.png
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-c2a252d3fca18487f72d43c0a9b7d335
-2010-06-10T02:39:43.512944Z
-6786
-zji
+2012-04-19T14:07:23.000000Z
+5c961bace3dbada8b9103d484f618c34
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -58,19 +58,19 @@ has-props
 
 
 
-21280
+32643
 
-Filtering-Affy_detection_call_full.png
+poweredby_mediawiki_88x31.png
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-69c75102a92d96b62f90397f969153aa
-2010-06-10T02:39:43.512944Z
-6786
-zji
+2012-04-19T14:07:23.000000Z
+faf87cb68c3ea99313b3e41dfb0dfa52
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -92,19 +92,19 @@ has-props
 
 
 
-24768
+1927
 
-Filtering-Deviation.png
+CCM_Filters_Default.png
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-482b07a830eee3a971d547b546a81458
-2010-06-10T02:39:43.512944Z
-6786
-zji
+2012-04-19T14:07:23.000000Z
+4905443025fd6026c2934da8f77e726f
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -126,19 +126,19 @@ has-props
 
 
 
-14836
+51823
 
-Filtering-Expression_Threshold.png
+Filtering_Multiple_Probeset.png
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-d7fc6196e0012a15666297a670f935ff
-2010-06-10T02:39:43.512944Z
-6786
-zji
+2012-04-19T14:07:23.000000Z
+f1e0b04c8b367a6a44a8ba6713182099
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -160,19 +160,19 @@ has-props
 
 
 
-22962
+23000
 
-Filtering-GenePix_Expression_Threshold.png
+Filtering_Standard_Deviation.png
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-7a9da44869c2a13125c1d89b2f99a44c
-2010-06-10T02:39:43.512944Z
-6786
-zji
+2012-04-19T14:07:23.000000Z
+df54b9254ebf1d60b840fa3233cd0718
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -194,19 +194,19 @@ has-props
 
 
 
-24422
+22000
 
-Filtering-GenePix_Flag_Filter.png
+Menu_Bar_Commands_Filtering.png
 file
 
 
 
 
-2011-08-17T00:10:43.000000Z
-bd871c4ab260af9635c5c12dc66550da
-2010-06-10T02:39:43.512944Z
-6786
-zji
+2012-04-19T14:07:23.000000Z
+dcf2da2f52113cc4c02aa62fc4c18d12
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -228,211 +228,7 @@ has-props
 
 
 
-23493
-
-Filtering-Missing_Values_Filter.png
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-1c6cf43cafd0514fbdbe141aa4f202c9
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18479
-
-Filtering-Preview.png
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-9ebd5ae1a2aa2c76efa9d8ef45ecead3
-2010-06-10T02:39:43.512944Z
-6786
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25204
-
-Filtering_COV.png
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-62a22b38b43434936780ecc434649b0d
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14682
-
-Filters_in_CCM.png
-file
-
-
-
-
-2011-08-17T00:10:43.000000Z
-54d0d4d018ed152dcbdf2768eed6d6b8
-2010-09-13T14:40:56.329012Z
-7051
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-36871
-
-Multiple_GeneID_Filter.png
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-2a71dc9f70d130c687a3134a2cecad90
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14241
-
-Multiple_Probeset_Filter.png
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-5d3a344c7b25ab800326e0d27c85c2d0
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15266
+14796
 
 Multiple_Probeset_Filter_options.png
 file
@@ -440,11 +236,11 @@ file
 
 
 
-2012-01-10T18:25:35.000000Z
+2012-04-19T14:07:23.000000Z
 27a3b53312ec14286864ac96c44c5ede
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -468,17 +264,17 @@ has-props
 
 10788
 
-index.css
+Filtering_GenePix_Flags.png
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-bb883d0f9391e0e95a98467e3406893f
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:23.000000Z
+cf870a6e5987013058a6971cc6133a69
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -500,19 +296,19 @@ has-props
 
 
 
-50
+29802
 
-index_002.css
+Filtering_Expression_Threshold.png
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-1af216a5213de867307298bda621b8ed
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:23.000000Z
+335c4595ac22d54f4a3d93fa48f71e23
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -534,19 +330,19 @@ has-props
 
 
 
-318
+30625
 
-index_003.css
+Filtering_Search_MYC.png
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-00bb617ac348ca1eba387234bcdc0ede
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:23.000000Z
+d876fb83ad88636133d75756016db1a9
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -568,19 +364,19 @@ has-props
 
 
 
-50
+24871
 
-index_004.css
+Filtering_Coefficient_of_Variation.png
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-59a83e6f432f762a5525136d8c017853
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:23.000000Z
+451d4eb957b48e3238164fc3b9998627
+2012-03-09T21:28:54.000652Z
+9100
+smithken
 has-props
 
 
@@ -602,5 +398,175 @@ has-props
 
 
 
-75
+22564
+
+Filtering_Affy_Detection_Call.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+e8ce646bd83da1c4e1d5a00556b39b2a
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28423
+
+Filtering_Preview.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+c0348f7d31b0c806ab122a431e01a688
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27862
+
+Filtering_Entrez_Gene_ID.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+fb31773e98458d2b5103fcf215086d9d
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21179
+
+Project_Folders_Filtering.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+c3ea22dbda1a919c09f62c0d042af4e2
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15260
+
+Filtering_Missing_Values.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+6727a5a1fa3f0a4beca57635c366ef74
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25548
 

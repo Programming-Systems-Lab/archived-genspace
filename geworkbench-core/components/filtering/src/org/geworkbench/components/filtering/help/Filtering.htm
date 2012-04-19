@@ -4,17 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="MediaWiki 1.16.0">
 <meta name="robots" content="noindex,follow">
-<link rel="alternate" type="application/x-wiki" title="Edit" href="http://wiki.c2b2.columbia.edu/workbench/index.php?title=Filtering&amp;action=edit">
-<link rel="edit" title="Edit" href="http://wiki.c2b2.columbia.edu/workbench/index.php?title=Filtering&amp;action=edit">
-<link rel="shortcut icon" href="http://wiki.c2b2.columbia.edu/workbench/skins/common/images/favicon.ico">
-<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.c2b2.columbia.edu/workbench/opensearch_desc.php" title="Workbench (en)">
-<link rel="alternate" type="application/atom+xml" title="Workbench Atom feed" href="http://wiki.c2b2.columbia.edu/workbench/index.php?title=Special:RecentChanges&amp;feed=atom">
-<link rel="stylesheet" href="Filtering_files/commonPrint.css" media="">
-<link rel="stylesheet" href="Filtering_files/index_003.css">
-<link rel="stylesheet" href="Filtering_files/index.css" media="">
-<link rel="stylesheet" href="Filtering_files/index_002.css">
-<link rel="stylesheet" href="Filtering_files/index_004.css">
-
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Filtering skin-monobook">
@@ -24,15 +13,12 @@
 	
 	<h1 id="firstHeading" class="firstHeading">Filtering</h1>
 	<div id="bodyContent">
-
 		<!-- start content -->
 <p><br>
 </p>
 <a name="Overview"></a><h1> <span class="mw-headline" id="Overview">Overview</span></h1>
-<p>The Filters panel is located in the <b>Command and Analysis Area</b> 
-in the lower right of the application. The application offers a 
-selection of pluggable filters to assist in the preparation of data for 
-analysis. 
+<p>geWorkbench offers a selection of pluggable filters to assist in the 
+preparation of microarray gene expression data for analysis. 
 </p><p>Filtering can be used to remove low quality data or reduce the 
 size of the dataset by removing less interesting data.  Most geWorkbench
  filters allow the user to specify a minimum number or percentage of 
@@ -42,55 +28,85 @@ removed.
 are not reversible.  A separate copy of the data is not generated.  
 Filtering operations do not respect any marker or array sets that may be
  activated; filtering always acts on the entire data set.
+</p><p>A microarray dataset must be loaded into the Project Folders component before filtering can be undertaken.
+</p><p>The filtering dialogs can be reached in two ways, either directly
+ from the Project Folders component by a right-click menu on a 
+microarray dataset, 
+</p><p><img alt="Project Folders Filtering.png" src="filtering_files/Project_Folders_Filtering.png" height="359" width="406">
+</p><p><br>
+or through the Menu_Bar-&gt;Commands-&gt;Filtering submenu.
+</p><p><br>
+<img alt="Menu Bar Commands Filtering.png" src="filtering_files/Menu_Bar_Commands_Filtering.png" height="191" width="418">
 </p>
 <a name="Filter_Configuration"></a><h1> <span class="mw-headline" id="Filter_Configuration">Filter Configuration</span></h1>
-<p>Some filters are not loaded by default in geWorkbench.  To configure which filters to load, use the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Tutorial_-_Component_Configuration_Manager" title="Tutorial - Component Configuration Manager" class="mw-redirect"> Component Configuration Manager</a>.  It is available in the top menu-bar under  <b>Tools-&gt;Component Configuration</b>.
-</p><p><img alt="Filters in CCM.png" src="Filtering_files/Filters_in_CCM.png" height="212" width="785">
+<p>Some filters are not loaded by default in geWorkbench.  To configure which filters to load, use the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Tutorial_-_Component_Configuration_Manager" title="Tutorial - Component Configuration Manager" class="mw-redirect"> Component Configuration Manager (CCM)</a>.  It is available in the top menu-bar under  <b>Tools-&gt;Component Configuration</b>.
+</p><p>Only filters that have been loaded in the CCM will appear in the menus.
+</p><p><br>
+<img alt="CCM Filters Default.png" src="filtering_files/CCM_Filters_Default.png" height="250" width="790">
 </p>
 <a name="Available_Filters"></a><h1> <span class="mw-headline" id="Available_Filters">Available Filters</span></h1>
+<ul><li> <b>Affy Detection Call</b> - Applicable to Affymetrix data only. Filters on Present, Marginal or Absent calls.
+</li><li> <b>Coefficient of Variation</b> - Removes markers for which 
+the coefficient of variation (standard deviation scaled by the mean) is 
+less than a specified value across all microarrays.
+</li><li> <b>Entrez Gene ID</b> - Filter out probesets which have no gene, or more than one gene, annotated to them. 
+</li><li> <b>Expression Threshold</b> - Removes markers for which more 
+than a specified number (or percentage) have values inside (or outside) a
+ user-defined range.  
+</li><li> <b>GenePix Expression Threshold</b> - Applicable to 2-channel 
+arrays (Genepix) data only. Defines applicable ranges for each channel, 
+and removes markers for which, for more than a specified number (or 
+percentage) of markers, either channel intensity is inside (or outside) 
+the defined range.
+</li><li> <b>GenePix Flags</b> - Remove markers for which more than a 
+specified number (or percentage) of values match the selected flag 
+(flagged in GenePix software).
+</li><li> <b>Missing Values</b> - Removes markers for which more than a specified number (or percentage) of values have been marked as  “missing”. 
+</li><li> <b>Multiple Probeset per Gene</b> - For genes represented by more than one probesets, filter out all but one based on several methods. 
+</li><li> <b>Standard Deviation</b> - Removes markers for which the <b>sample standard deviation</b> is less than a specified value across all microarrays.
+</li></ul>
 <a name="Basic_Controls"></a><h1> <span class="mw-headline" id="Basic_Controls">Basic Controls</span></h1>
 <a name="Overview_2"></a><h2> <span class="mw-headline" id="Overview_2">Overview</span></h2>
-<p><img alt="Filtering-Affy detection call full.png" src="Filtering_files/Filtering-Affy_detection_call_full.png" height="273" width="764">
+<p><img alt="Filtering Affy Detection Call.png" src="filtering_files/Filtering_Affy_Detection_Call.png" height="241" width="749">
 </p>
-<ul><li> <b>Filter</b> (menu) - Select the desired filter.
-</li></ul>
 <ul><li> <b>Saved Parameters</b> (menu) - Allows selection of stored parameter settings.
+</li><li> <b>Filter</b> (button)- Run the selected filter.
+</li><li> <b>Preview</b> - Preview the filtering action (see following section).
+</li><li> <b>Save Settings</b> - Save the current settings (see following section).
+</li><li> <b>Delete Settings</b>- Delete the currently selected parameter set.
 </li></ul>
-<ul><li> <b>Filter</b> (button)- Run the selected filter.
-</li></ul>
-<ul><li> <b>Preview</b> - Preview the filtering action (see following section).
-</li></ul>
-<ul><li> <b>Save Settings</b> - Save the current settings (see following section).
-</li></ul>
-<ul><li> <b>Delete Settings</b>- Delete the currently selected parameter set.
+<a name="Saving_Parameters"></a><h2> <span class="mw-headline" id="Saving_Parameters">Saving Parameters</span></h2>
+<p>The current parameter settings can be saved to a named parameter set.
+  Saved sets can be selected from the pulldown-menu at the top of the 
+component. Any number of parameter sets can be saved.  Selecting a saved
+ parameter set will load its settings.  If the currently set parameters 
+match a saved set, that set's entry will be shown in the menu.
+</p>
+<ul><li> <b>Save Settings</b> - Save the current settings to a new parameter set.
+</li><li> <b>Delete Settings</b> - Delete the currently selected parameter set from the menu.
 </li></ul>
 <a name="Filtering_Preview"></a><h2> <span class="mw-headline" id="Filtering_Preview">Filtering Preview</span></h2>
 <p>The filtering action can be previewed to allow the user to judge 
 whether to proceed with the current parameter settings.  The  markers 
 that will be removed are listed, as is a count of the markers in the 
 list.  The list displays marker names and, where available, gene names. 
- Either list can be searched on.
-</p><p><img alt="Filtering-Preview.png" src="Filtering_files/Filtering-Preview.png" height="299" width="390">
+ 
+</p><p><img alt="Filtering Preview.png" src="filtering_files/Filtering_Preview.png" height="336" width="286">
 </p>
-<ul><li> <b>Search Marker</b> - Search the list by marker name.
-</li><li> <b>Search Gene</b> - Search the list by gene name.
+<a name="Controls"></a><h3> <span class="mw-headline" id="Controls">Controls</span></h3>
+<ul><li> <b>Search </b> - Dynamically search the list by marker or gene name. 
 </li><li> <b>Filter</b> - Perform the filtering action.
 </li><li> <b>Cancel</b> - Cancel the filtering action, no change is made.
 </li></ul>
-<a name="Saving_Parameters"></a><h2> <span class="mw-headline" id="Saving_Parameters">Saving Parameters</span></h2>
-<p>The current parameter settings can be saved to a named parameter set.
-  The saved set will be displayed in the pull-down menu at upper right 
-in the component. Any number of parameter sets can be saved.  Selecting a
- saved parameter set will load its settings.  If the currently set 
-parameters match a saved set, that set's entry will be shown in the 
-menu.
+<a name="Search"></a><h3> <span class="mw-headline" id="Search">Search</span></h3>
+<p>The search function applies to both the marker and gene symbol 
+columns and updates dynamically as each new character is typed.  The 
+search is case-insensitive.
+</p><p><img alt="Filtering Search MYC.png" src="filtering_files/Filtering_Search_MYC.png" height="336" width="286">
 </p>
-<ul><li> <b>Save Settings</b> - Save the current settings to a new parameter set.
-</li><li> <b>Delete Settings</b> - Delete the currently selected parameter set from the menu.
-</li></ul>
 <a name="Specific_Controls_for_each_Filter"></a><h1> <span class="mw-headline" id="Specific_Controls_for_each_Filter">Specific Controls for each Filter</span></h1>
 <a name="Affymetrix_Detection_Call_Filter"></a><h2> <span class="mw-headline" id="Affymetrix_Detection_Call_Filter">Affymetrix Detection Call Filter</span></h2>
-<p><img alt="Filtering-Affy detection call.png" src="Filtering_files/Filtering-Affy_detection_call.png" height="235" width="783">
+<p><img alt="Filtering Affy Detection Call.png" src="filtering_files/Filtering_Affy_Detection_Call.png" height="241" width="749">
 </p><p>Certain Affymetrix data analysis software, e.g. MAS5/GCOS, 
 produces a confidence value for the expression measurement of each 
 probeset (marker) on each array.  These confidence values (actually 
@@ -115,11 +131,11 @@ which any of the checked conditions are met for a given marker will be
 summed.
 </p>
 <a name="Filtering_Options"></a><h3> <span class="mw-headline" id="Filtering_Options">Filtering Options</span></h3>
-<ul><li> <b>Remove the marker if the <i>percentage</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the sum of detection calls matching those chosen by the user exceeds the given percentage <i>N</i>, the marker will be removed.
+<ul><li> <b>Remove the marker if the <i>percentage</i> of matching arrays is more than <i>N</i>&nbsp;%.</b> - If for a given marker, the sum of detection calls matching those chosen by the user exceeds the given percentage <i>N</i>, the marker will be removed.
 </li><li> <b>Remove the marker if the <i>number</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the sum of detection calls matching those chosen by the user exceeds the given number <i>N</i>, the marker will be removed.
 </li></ul>
 <a name="Coefficient_of_Variation_Filter"></a><h2> <span class="mw-headline" id="Coefficient_of_Variation_Filter">Coefficient of Variation Filter</span></h2>
-<p><img alt="Filtering COV.png" src="Filtering_files/Filtering_COV.png" height="212" width="691">
+<p><img alt="Filtering Coefficient of Variation.png" src="filtering_files/Filtering_Coefficient_of_Variation.png" height="219" width="599">
 </p><p>This filter calculates, for each marker, the coefficient of 
 variation (the standard deviation divided by the mean).  It allows the 
 variation to be compared across markers which may have very different 
@@ -140,26 +156,30 @@ methods are
 </li><li>  <b>Ignore</b> - Do not replace any missing values.
 </li></ul>
 </li></ul>
-<a name="Deviation_Filter"></a><h2> <span class="mw-headline" id="Deviation_Filter">Deviation Filter</span></h2>
-<p><img alt="Filtering-Deviation.png" src="Filtering_files/Filtering-Deviation.png" height="204" width="783">
-</p><p>This filter measures, for each marker, the sample standard 
-deviation of the expression values across all arrays.  If the sample 
-standard deviation is less than the given "bound", then the marker will 
-be filtered out.
+<a name="Entrez_Gene_ID_Filter"></a><h2> <span class="mw-headline" id="Entrez_Gene_ID_Filter">Entrez Gene ID Filter</span></h2>
+<a name="Overview_3"></a><h3> <span class="mw-headline" id="Overview_3">Overview</span></h3>
+<p>This filter uses Entrez IDs assigned to markers (probesets) in the 
+microarray annotation file.  As such, an annotation file must be loaded 
+along with the microarray dataset to make use of this filter.
+</p><p>For various reasons, a marker (probeset) many end up being 
+associated with no gene, or more than one gene.  This may arise due to 
+changes in the genome build for an organism as new and more accurate 
+data becomes available.  
+</p><p>The "Entrez Gene ID" filter provides users with the capability to
+ remove such markers should they so desire.  For example, removing 
+markers that are not annotated to any gene can reduce the degree of 
+multiple testing correction needed.  Removing markers annotated to 
+multiple genes can reduce ambiguous results, however, whether this is 
+desirable is up to the individual investigator.
+</p><p><br>
+<img alt="Filtering Entrez Gene ID.png" src="filtering_files/Filtering_Entrez_Gene_ID.png" height="234" width="463">
 </p>
-<ul><li> <b>Std. Deviation bound</b> - Markers showing a sample standard deviation <b>below</b> this bound will be filtered out.
-</li></ul>
-<ul><li> <b>Missing values</b> - Before computing the standard 
-deviation, this filter can temporarily (just for the filtering 
-operation) replace any missing values in the data.  The available 
-methods are
-<ul><li>  <b>Marker Average</b> - Replace any missing values for a particular marker with the average of its available values across all arrays.
-</li><li>  <b>Microarray Average</b> - Replace any missing values for a particular array with the average of its available values across all markers.
-</li><li>  <b>Ignore</b> - Do not replace any missing values.
-</li></ul>
+<a name="Options"></a><h3> <span class="mw-headline" id="Options">Options</span></h3>
+<ul><li> <b>No Entrez Gene ID</b> - Filter out markers that are not annotated to any gene.
+</li><li> <b>Multiple Entrez Gene IDs</b> - Filter out markers that are annotated to more than one gene.
 </li></ul>
 <a name="Expression_Threshold_Filter"></a><h2> <span class="mw-headline" id="Expression_Threshold_Filter">Expression Threshold Filter</span></h2>
-<p><img alt="Filtering-Expression Threshold.png" src="Filtering_files/Filtering-Expression_Threshold.png" height="262" width="784">
+<p><img alt="Filtering Expression Threshold.png" src="filtering_files/Filtering_Expression_Threshold.png" height="290" width="749">
 </p><p>In this filter, a reference range is defined by a lower and upper
  bound.  Values either inside or outside of this range can then be 
 filtered out.
@@ -176,8 +196,8 @@ filtered out.
 <ul><li> <b>Remove the marker if the <i>percentage</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the <b>percentage</b> of expression values meeting the range setting exceeds the given percentage <i>N</i>, the marker will be removed.
 </li><li> <b>Remove the marker if the <i>number</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the <b>number</b> of expression values meeting the range setting exceeds the given number <i>N</i>, the marker will be removed.
 </li></ul>
-<a name="GenePix_Expression_Threshold"></a><h2> <span class="mw-headline" id="GenePix_Expression_Threshold">GenePix Expression Threshold</span></h2>
-<p><img alt="Filtering-GenePix Expression Threshold.png" src="Filtering_files/Filtering-GenePix_Expression_Threshold.png" height="274" width="785">
+<a name="GenePix_Expression_Threshold_Filter"></a><h2> <span class="mw-headline" id="GenePix_Expression_Threshold_Filter">GenePix Expression Threshold Filter</span></h2>
+<p><img alt="Filtering GenePix Expression Threshold.png" src="filtering_files/Filtering_GenePix_Expression_Threshold.png" height="290" width="785">
 </p><p>This filter supports filtering of two-channel data from the 
 GenePix platform.  Based on the chemical labels often used to 
 differentiate the two channels, they are referred to in the component as
@@ -215,7 +235,7 @@ of the relative expression values.
 </li><li> <b>Remove the marker if the <i>number</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the <b>number</b> of expression values (Cy3 or Cy5) meeting the range setting exceeds the given number <i>N</i>, the marker will be removed.
 </li></ul>
 <a name="GenePix_Flags_Filter"></a><h2> <span class="mw-headline" id="GenePix_Flags_Filter">GenePix Flags Filter</span></h2>
-<p><img alt="Filtering-GenePix Flag Filter.png" src="Filtering_files/Filtering-GenePix_Flag_Filter.png" height="248" width="759">
+<p><img alt="Filtering GenePix Flags.png" src="filtering_files/Filtering_GenePix_Flags.png" height="351" width="749">
 </p><p>GenePix software allows individual expression values to be 
 flagged, using integer flags with defined meanings.  The flags can be 
 assigned either directly by the software or by the user.
@@ -241,7 +261,7 @@ Instruments, Inc. (Now Molecular Devices).
 <p><br>
 </p>
 <a name="Missing_Values_Filter"></a><h2> <span class="mw-headline" id="Missing_Values_Filter">Missing Values Filter</span></h2>
-<p><img alt="Filtering-Missing Values Filter.png" src="Filtering_files/Filtering-Missing_Values_Filter.png" height="221" width="790">
+<p><img alt="Filtering Missing Values.png" src="filtering_files/Filtering_Missing_Values.png" height="234" width="754">
 </p><p>If a value is missing in the input file, it will be marked as 
 missing in geWorkbench.  Markers with more than a certain number or 
 percentage of missing values can be removed with this filter.
@@ -250,27 +270,6 @@ percentage of missing values can be removed with this filter.
 <a name="Filtering_Options_5"></a><h3> <span class="mw-headline" id="Filtering_Options_5">Filtering Options</span></h3>
 <ul><li> <b>Remove the marker if the <i>percentage</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the <b>percentage</b> of arrays containing a missing expression value exceeds the given percentage <i>N</i>, the marker will be removed.
 </li><li> <b>Remove the marker if the <i>number</i> of matching arrays is more than <i>N</i>.</b> - If for a given marker, the <b>number</b> of arrays containing a missing expression value exceeds the given number <i>N</i>, the marker will be removed.
-</li></ul>
-<p><br>
-</p>
-<a name="Multiple_Gene_ID_Filter"></a><h2> <span class="mw-headline" id="Multiple_Gene_ID_Filter">Multiple Gene ID Filter</span></h2>
-<a name="Overview_3"></a><h3> <span class="mw-headline" id="Overview_3">Overview</span></h3>
-<p>For various reasons, a marker (probeset) many end up being associated
- with no gene, or more than one gene.  This may arise due to changes in 
-the genome build for an organism as new and more accurate data becomes 
-available.
-</p><p>The "Multiple Gene ID" filter provides users with the capability 
-to remove such markers should they so desire.  For example, removing 
-markers that are not annotated to any gene can reduce the degree of 
-multiple testing correction needed.  Removing markers annotated to 
-multiple genes can reduce ambiguous results, however, whether this is 
-desirable is up to the individual investigator.
-</p><p>Using this filter presupposes that an annotation file has been loaded along with the microarray dataset.
-</p><p><img alt="Multiple GeneID Filter.png" src="Filtering_files/Multiple_GeneID_Filter.png" height="220" width="683">
-</p>
-<a name="Options"></a><h3> <span class="mw-headline" id="Options">Options</span></h3>
-<ul><li> <b>No Entrez Gene ID</b> - Filter out markers that are not annotated to any gene.
-</li><li> <b>Multiple Entrez Gene IDs</b> - Filter out markers that are annotated to more than one gene.
 </li></ul>
 <p><br>
 </p>
@@ -284,7 +283,7 @@ for selecting which marker to retain for those genes represented by more
  than one.
 </p><p>Use of this filter presupposes that an annotation file was loaded along with the microarray gene expression dataset.
 </p><p><br>
-<img alt="Multiple Probeset Filter.png" src="Filtering_files/Multiple_Probeset_Filter.png" height="215" width="681">
+<img alt="Filtering Multiple Probeset.png" src="filtering_files/Filtering_Multiple_Probeset.png" height="234" width="590">
 </p><p><br>
 </p>
 <a name="Options_2"></a><h3> <span class="mw-headline" id="Options_2">Options</span></h3>
@@ -293,23 +292,43 @@ for selecting which marker to retain for those genes represented by more
 in the dataset.  Only the one marker meeting the criterion is retained 
 for each such gene.
 </p><p><br>
-<img alt="Multiple Probeset Filter options.png" src="Filtering_files/Multiple_Probeset_Filter_options.png" height="162" width="332">
+<img alt="Multiple Probeset Filter options.png" src="filtering_files/Multiple_Probeset_Filter_options.png" height="162" width="332">
 </p><p><br>
 </p>
 <ul><li> retain marker with highest coefficient of variation.
 </li><li> retain marker with highest mean expression.
 </li><li> retain marker with highest median expression.
 </li></ul>
+<p><br>
+</p>
+<a name="Standard_Deviation_Filter"></a><h2> <span class="mw-headline" id="Standard_Deviation_Filter">Standard Deviation Filter</span></h2>
+<p><img alt="Filtering Standard Deviation.png" src="filtering_files/Filtering_Standard_Deviation.png" height="234" width="560">
+</p><p>This filter measures, for each marker, the sample standard 
+deviation of the expression values across all arrays.  If the sample 
+standard deviation is less than the given "bound", then the marker will 
+be filtered out.
+</p>
+<ul><li> <b>Std. Deviation bound</b> - Markers showing a sample standard deviation <b>below</b> this bound will be filtered out.
+</li></ul>
+<ul><li> <b>Missing values</b> - Before computing the standard 
+deviation, this filter can temporarily (just for the filtering 
+operation) replace any missing values in the data.  The available 
+methods are
+<ul><li>  <b>Marker Average</b> - Replace any missing values for a particular marker with the average of its available values across all arrays.
+</li><li>  <b>Microarray Average</b> - Replace any missing values for a particular array with the average of its available values across all markers.
+</li><li>  <b>Ignore</b> - Do not replace any missing values.
+</li></ul>
+</li></ul>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 126/1000000
-Post-expand include size: 1889/2097152 bytes
+Preprocessor node count: 134/1000000
+Post-expand include size: 1907/2097152 bytes
 Template argument size: 0/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key workbench:pcache:idhash:2108-0!1!0!!en!2!printable=1 and timestamp 20110729015447 -->
+<!-- Saved in parser cache with key workbench:pcache:idhash:2108-0!1!0!!en!2!printable=1 and timestamp 20120309212408 -->
 <div class="printfooter">
 Retrieved from "<a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Filtering">http://wiki.c2b2.columbia.edu/workbench/index.php/Filtering</a>"</div>
 		<div id="catlinks" class="catlinks catlinks-allhidden"></div>		<!-- end content -->
@@ -318,12 +337,10 @@ Retrieved from "<a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Filte
 </div></div>
 <div class="visualClear"></div>
 <div id="footer">
-
-This page was last modified on 1 June 2011, at 15:20.
-
-
+	<div id="f-poweredbyico"><img src="filtering_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 9 March 2012, at 16:23.</li>
+	</ul>
 </div>
 </div>
 
-<!-- Served in 0.397 secs. -->
-</body></html>

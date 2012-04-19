@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help
+/svn/geworkbench/!svn/ver/9106/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help
 END
 normalizerHelpSet.hs
 K 25
@@ -15,15 +15,15 @@ svn:wc:ra_dav:version-url
 V 141
 /svn/geworkbench/!svn/ver/6786/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help/normalizertoc.xml
 END
-Normalization.htm
-K 25
-svn:wc:ra_dav:version-url
-V 141
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help/Normalization.htm
-END
 normalizerMap.jhm
 K 25
 svn:wc:ra_dav:version-url
 V 141
 /svn/geworkbench/!svn/ver/6786/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help/normalizerMap.jhm
+END
+normalization.htm
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/geworkbench/!svn/ver/9106/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/help/normalization.htm
 END

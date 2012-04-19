@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8828/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization
-END
-NormalizationPanel.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 145
-/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/NormalizationPanel.cwb.xml
+/svn/geworkbench/!svn/ver/9106/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization
 END
 ThresholdNormalizer.java
 K 25
 svn:wc:ra_dav:version-url
 V 143
 /svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/ThresholdNormalizer.java
+END
+NormalizationPanel.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/geworkbench/!svn/ver/8408/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/NormalizationPanel.cwb.xml
 END
 CenteringNormalizerPanel.java
 K 25
@@ -57,17 +57,17 @@ svn:wc:ra_dav:version-url
 V 155
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/HouseKeepingGeneNormalizerPanel.java
 END
-MissingValueNormalizer.java
-K 25
-svn:wc:ra_dav:version-url
-V 146
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/MissingValueNormalizer.java
-END
 DEFAULT_HOUSEKEEPING_GENES.txt
 K 25
 svn:wc:ra_dav:version-url
 V 148
 /svn/geworkbench/!svn/ver/213/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/DEFAULT_HOUSEKEEPING_GENES.txt
+END
+MissingValueNormalizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization/MissingValueNormalizer.java
 END
 MicroarrayCenteringNormalizer.java
 K 25

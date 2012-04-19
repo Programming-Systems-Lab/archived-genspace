@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/parsers/sequences
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ youmi
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SequenceFileFormat.java
-file
-
-
-
-
-2012-01-31T19:12:35.000000Z
-6d89237514e029c03081e3130f08dfec
-2012-01-11T16:49:19.397839Z
-8688
-youmi
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5146
 
 SequenceResource.java
 file
@@ -93,4 +59,38 @@ has-props
 
 
 931
+
+SequenceFileFormat.java
+file
+
+
+
+
+2012-01-31T19:12:35.000000Z
+6d89237514e029c03081e3130f08dfec
+2012-01-11T16:49:19.397839Z
+8688
+youmi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5146
 

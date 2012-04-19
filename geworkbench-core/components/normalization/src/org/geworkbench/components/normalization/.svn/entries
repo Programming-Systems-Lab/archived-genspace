@@ -1,14 +1,14 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/normalization/src/org/geworkbench/components/normalization
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-02-01T16:55:34.827746Z
-8828
+2012-03-09T21:42:00.501165Z
+9106
 smithken
 
 
@@ -25,6 +25,74 @@ smithken
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+NormalizationPanel.cwb.xml
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+02f500b55ac8537580cae5beabc0a416
+2011-10-14T21:01:08.688138Z
+8408
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1080
+
+ThresholdNormalizer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+44360c7976004d42cf4983527a9a515b
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3496
 
 CenteringNormalizerPanel.java
 file
@@ -60,18 +128,17 @@ has-props
 
 5772
 
-DEFAULT_HOUSEKEEPING_GENES.txt
+MissingValueNormalizer.cwb.xml
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-cb1c8b903d4293823c713174870f225f
-2005-08-30T18:07:18.000000Z
-213
-xiaoqing
-has-props
+a1c42c40be902100d6351a178f3b0a7f
+2011-04-22T19:09:01.504147Z
+7808
+smithken
 
 
 
@@ -92,16 +159,17 @@ has-props
 
 
 
-28
+
+1341
 
-HouseKeepingGeneNormalizer.cwb.xml
+MicroarrayCenteringNormalizer.cwb.xml
 file
 
 
 
 
 2012-03-05T20:23:14.000000Z
-830e7099ab536d2f6e08259fbe1c2e30
+5b88bff49928229ed475c4930e666d1c
 2012-02-01T16:55:34.827746Z
 8828
 smithken
@@ -126,18 +194,52 @@ smithken
 
 
 
-1300
+1275
 
-HouseKeepingGeneNormalizer.java
+LogTransformationNormalizer.cwb.xml
 file
 
 
 
 
-2012-01-10T19:15:27.000000Z
-37606720c2c46fa079708ec14140c00d
-2011-10-19T19:07:26.856673Z
-8429
+2011-08-17T00:10:44.000000Z
+db987e804259529c7a6a60bfbb0045ca
+2011-03-21T22:24:24.377666Z
+7617
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1201
+
+QuantileNormalizerPanel.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+6022605df4283ad1316a1bfd3585dac0
+2011-02-11T21:07:52.896917Z
+7453
 zji
 has-props
 
@@ -160,7 +262,41 @@ has-props
 
 
 
-18513
+4591
+
+NormalizationPanel.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+399d436519e1f7b6516be632d88fb524
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19498
 
 HouseKeepingGeneNormalizerPanel.java
 file
@@ -196,17 +332,21 @@ has-props
 
 31112
 
-LogTransformationNormalizer.cwb.xml
+help
+dir
+
+DEFAULT_HOUSEKEEPING_GENES.txt
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-db987e804259529c7a6a60bfbb0045ca
-2011-03-21T22:24:24.377666Z
-7617
-smithken
+cb1c8b903d4293823c713174870f225f
+2005-08-30T18:07:18.000000Z
+213
+xiaoqing
+has-props
 
 
 
@@ -227,8 +367,75 @@ smithken
 
 
 
+28
+
+MissingValueNormalizer.java
+file
 
-1201
+
+
+
+2012-01-10T19:15:27.000000Z
+ca7058099f7fb486fc7251d7b2d08d05
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5046
+
+MicroarrayCenteringNormalizer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+28579e50930066839e310b12d43a5680
+2011-12-16T20:56:37.933310Z
+8617
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7176
 
 LogTransformationNormalizer.java
 file
@@ -298,108 +505,6 @@ smithken
 
 1253
 
-MarkerCenteringNormalizer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-77b35c4c27c72a9f8d18c7078d4e19c8
-2011-12-16T20:56:37.933310Z
-8617
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6692
-
-MarkerMeanVarianceNormalizer.cwb.xml
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-180653ada9319d2d97117edcd8e80e97
-2011-05-05T22:38:24.550661Z
-7853
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1291
-
-MarkerMeanVarianceNormalizer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-26436ed50f92ece692a6db298aec04cf
-2011-12-16T20:56:37.933310Z
-8617
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7410
-
 MarkerMeanVarianceNormalizerPanel.java
 file
 
@@ -433,244 +538,6 @@ has-props
 
 
 4627
-
-MicroarrayCenteringNormalizer.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:14.000000Z
-5b88bff49928229ed475c4930e666d1c
-2012-02-01T16:55:34.827746Z
-8828
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1275
-
-MicroarrayCenteringNormalizer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-28579e50930066839e310b12d43a5680
-2011-12-16T20:56:37.933310Z
-8617
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7176
-
-MissingValueNormalizer.cwb.xml
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-a1c42c40be902100d6351a178f3b0a7f
-2011-04-22T19:09:01.504147Z
-7808
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1341
-
-MissingValueNormalizer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-ca7058099f7fb486fc7251d7b2d08d05
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5046
-
-MissingValueNormalizerPanel.java
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-cb437316990a2882c24e95edcda0a454
-2011-02-11T21:07:52.896917Z
-7453
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4121
-
-NormalizationPanel.cwb.xml
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-02f500b55ac8537580cae5beabc0a416
-2011-10-14T21:01:08.688138Z
-8408
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1080
-
-NormalizationPanel.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-399d436519e1f7b6516be632d88fb524
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19498
 
 QuantileNormalizer.cwb.xml
 file
@@ -706,6 +573,108 @@ smithken
 
 1210
 
+ThresholdNormalizerPanel.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+cb0c7484eb998251a7b217d5735c130d
+2011-02-11T21:07:52.896917Z
+7453
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5977
+
+HouseKeepingGeneNormalizer.cwb.xml
+file
+
+
+
+
+2012-03-05T20:23:14.000000Z
+830e7099ab536d2f6e08259fbe1c2e30
+2012-02-01T16:55:34.827746Z
+8828
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1300
+
+MarkerCenteringNormalizer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+77b35c4c27c72a9f8d18c7078d4e19c8
+2011-12-16T20:56:37.933310Z
+8617
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6692
+
 QuantileNormalizer.java
 file
 
@@ -740,16 +709,50 @@ has-props
 
 9584
 
-QuantileNormalizerPanel.java
+MarkerMeanVarianceNormalizer.cwb.xml
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-6022605df4283ad1316a1bfd3585dac0
-2011-02-11T21:07:52.896917Z
-7453
+180653ada9319d2d97117edcd8e80e97
+2011-05-05T22:38:24.550661Z
+7853
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1291
+
+HouseKeepingGeneNormalizer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+37606720c2c46fa079708ec14140c00d
+2011-10-19T19:07:26.856673Z
+8429
 zji
 has-props
 
@@ -772,7 +775,7 @@ has-props
 
 
 
-4591
+18513
 
 ThresholdNormalizer.cwb.xml
 file
@@ -808,48 +811,14 @@ smithken
 
 1280
 
-ThresholdNormalizer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-44360c7976004d42cf4983527a9a515b
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3496
-
-ThresholdNormalizerPanel.java
+MissingValueNormalizerPanel.java
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-cb0c7484eb998251a7b217d5735c130d
+cb437316990a2882c24e95edcda0a454
 2011-02-11T21:07:52.896917Z
 7453
 zji
@@ -874,8 +843,39 @@ has-props
 
 
 
-5977
+4121
 
-help
-dir
+MarkerMeanVarianceNormalizer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+26436ed50f92ece692a6db298aec04cf
+2011-12-16T20:56:37.933310Z
+8617
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7410
 

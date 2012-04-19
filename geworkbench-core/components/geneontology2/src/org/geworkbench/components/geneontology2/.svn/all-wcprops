@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/geworkbench/!svn/ver/8990/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
+/svn/geworkbench/!svn/ver/9168/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2
 END
 GoTermMatcher.java
 K 25
@@ -13,7 +13,7 @@ GoAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.cwb.xml
+/svn/geworkbench/!svn/ver/9168/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysis.cwb.xml
 END
 GoAnalysisResultView.java
 K 25
@@ -43,7 +43,7 @@ GoAnalysisResultView.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 147
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisResultView.cwb.xml
+/svn/geworkbench/!svn/ver/9168/trunk/geworkbench/components/geneontology2/src/org/geworkbench/components/geneontology2/GoAnalysisResultView.cwb.xml
 END
 GoTableModel.java
 K 25

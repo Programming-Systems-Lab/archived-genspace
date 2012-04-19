@@ -11,7 +11,7 @@ public interface DSMasterRagulatorResultSet <T extends DSGeneMarker> extends DSA
 
 /**
  * @author Yih-Shien Chiang
- * @version $Id: DSMasterRagulatorResultSet.java 8532 2011-11-16 22:59:21Z zji $
+ * @version $Id: DSMasterRagulatorResultSet.java 9199 2012-03-22 15:53:03Z wangmen $
  */
 
 	public DSMicroarraySet getMicroarraySet();
@@ -23,7 +23,20 @@ public interface DSMasterRagulatorResultSet <T extends DSGeneMarker> extends DSA
     public double getPValue(DSGeneMarker TF);
 	public DSItemList<DSGeneMarker> getTFs();
 
+    public static final char ACTIVATOR = '+';
+	public static final char REPRESSOR = '-';
+    public void setMode(DSGeneMarker TF, char mode);
+    public char getMode(DSGeneMarker TF);
+	public DSItemList<DSGeneMarker> getActivators();
+	public DSItemList<DSGeneMarker> getRepressors();
+
 	public int getMarkerCount();
 	public double getValue(DSGeneMarker marker);
 	public void setValues(Map<DSGeneMarker, Double> values);
+	public void setMinValue(double val);
+	public void setMaxValue(double val);
+	public double getMinValue();
+	public double getMaxValue();
+	public int getRank(DSGeneMarker marker);
+	public void setRanks(Map<DSGeneMarker, Integer> ranks);
 }

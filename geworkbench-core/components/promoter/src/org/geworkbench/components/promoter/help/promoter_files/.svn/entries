@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoter_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2012-01-10T18:25:37.000000Z
-75e84913c9161ed8abebc360c645736c
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+d08b4365574bf202e7ea6be99b26bc7b
+2012-03-09T18:17:19.117706Z
+9080
+smithken
 has-props
 
 
@@ -58,19 +58,19 @@ has-props
 
 
 
-55101
+51655
 
-Promoter_TBP_selected.png
+poweredby_mediawiki_88x31.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-0b0291d853a4b6ce2acdd7d5207af17e
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+faf87cb68c3ea99313b3e41dfb0dfa52
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -92,19 +92,19 @@ has-props
 
 
 
-19809
+1927
 
-Promoter_Taxa_Pulldown.png
+Promoter_Result_CDH2_Parameter_View.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-6de6564cf95eac363ef86f4d4c3c3640
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+62579ad6b1e0d76f5e0d0203aff8adde
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -126,19 +126,19 @@ has-props
 
 
 
-8919
+56602
 
-T_Promoter_CDH2_AP2_2000updn_scan.png
+Sequence_Retriever_CDH2.png
 file
 
 
 
 
-2011-08-17T00:10:45.000000Z
-1c234a20df26a905bf919b66205aa5f0
-2009-11-09T17:28:33.000000Z
-5738
-jiz
+2012-04-19T14:07:19.000000Z
+bffce7aea8c7ba5a7c6a2eea452072aa
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -160,19 +160,19 @@ has-props
 
 
 
-12582
+34512
 
-T_Promoter_CDH2_AP2_2000updn_scan_finalparams.png
+Promoter_CDH2_AP2_2000updn_setup_logo.png
 file
 
 
 
 
-2011-08-17T00:10:45.000000Z
-aec5d08a8a4ddda58bd28c95cbb08820
-2009-11-09T17:28:33.000000Z
-5738
-jiz
+2012-04-19T14:07:19.000000Z
+20160ae52e35cbfe5c940b90e9d688dd
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -194,19 +194,19 @@ has-props
 
 
 
-6032
+44831
 
-T_Promoter_CDH2_AP2_2000updn_scan_fullseq.png
+Promoter_Parameters_initial.png
 file
 
 
 
 
-2011-08-17T00:10:45.000000Z
-96983b6495b7a373e7d8019a005056cf
-2009-11-09T17:28:33.000000Z
-5738
-jiz
+2012-04-19T14:07:19.000000Z
+c7f0078fe1411eab9b3274459e9dd955
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -228,143 +228,7 @@ has-props
 
 
 
-14656
-
-T_Promoter_CDH2_AP2_2000updn_setup_logo.png
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-e318d517875b93e84ccae7a7b6f5538e
-2009-11-09T17:28:33.000000Z
-5738
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27434
-
-T_Promoter_Parameters_initial.png
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-3c9905d8ae6f4034728d390ef1196870
-2009-11-09T17:28:33.000000Z
-5738
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6000
-
-T_Promoter_Sequence_tab_with_mouseover.png
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-84159a5b71568770536f0fd7fc0787fd
-2009-11-09T17:28:33.000000Z
-5738
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8948
-
-T_SequenceRetriever_CDH2_2000updn.png
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-30d8f22fbc664e969d684613381b6b4f
-2009-11-09T17:28:33.000000Z
-5738
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11728
+23069
 
 T_SequenceRetriever_CDH2_seq_in_proj_folder-2.png
 file
@@ -400,17 +264,17 @@ has-props
 
 3278
 
-T_SequenceRetriever_Markers_CDH2.png
+Promoter_Taxa_Pulldown.png
 file
 
 
 
 
-2011-08-17T00:10:45.000000Z
-5ca8e0b95f4e9447f5159211c93c5b04
-2009-11-09T17:28:33.000000Z
-5738
-jiz
+2012-04-19T14:07:19.000000Z
+91d3bba8e6f22a775ccc42c2fb353e90
+2012-03-09T18:17:19.117706Z
+9080
+smithken
 has-props
 
 
@@ -432,19 +296,19 @@ has-props
 
 
 
-8765
+9273
 
-commonPrint.css
+Promoter_Result_CDH2_Sequence_View_Full.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-0257a641ab2ed3788aef2f01e69a3e34
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+0d8ebc12b59a8e7e3a96060809edc268
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -466,19 +330,19 @@ has-props
 
 
 
-4482
+31201
 
-index.css
+Markers_Set_CDH2.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-bb883d0f9391e0e95a98467e3406893f
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+7242082ffc7eb389eb5a4fac76056f97
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -500,19 +364,19 @@ has-props
 
 
 
-50
+18304
 
-index_002.css
+Promoter_TBP_selected.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-1af216a5213de867307298bda621b8ed
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+e4f01ab6ca201fcfe3c9b9c5782c6d40
+2012-03-09T18:17:19.117706Z
+9080
+smithken
 has-props
 
 
@@ -534,19 +398,19 @@ has-props
 
 
 
-318
+12599
 
-index_003.css
+Promoter_Result_CDH2_Sequence_View.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-00bb617ac348ca1eba387234bcdc0ede
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+74cd49592ce516cbeef3f51361184145
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -568,19 +432,19 @@ has-props
 
 
 
-50
+38390
 
-index_004.css
+Promoter_Result_CDH2_Sequence_View_hover.png
 file
 
 
 
 
-2012-01-10T18:25:37.000000Z
-59a83e6f432f762a5525136d8c017853
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:19.000000Z
+a7ce84b2a411ae801204222102a88cb7
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 has-props
 
 
@@ -602,5 +466,5 @@ has-props
 
 
 
-75
+17007
 

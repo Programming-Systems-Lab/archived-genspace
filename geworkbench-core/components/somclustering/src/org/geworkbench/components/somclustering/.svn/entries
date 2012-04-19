@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/somclustering/src/org/geworkbench/components/somclustering
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ has-props
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SOMAnalysis.cwb.xml
-file
-
-
-
-
-2012-03-08T18:51:41.000000Z
-270570d97d3fcfc8c27d4a1a492b42fb
-2012-03-07T23:55:26.130133Z
-9008
-smithken
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1155
 
 SOMAnalysis.java
 file
@@ -94,40 +60,6 @@ has-props
 
 20449
 
-SOMDisplay.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:15.000000Z
-43e4550366e3beaefaca716e55f7708f
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1103
-
 SOMDisplay.java
 file
 
@@ -162,18 +94,54 @@ has-props
 
 12527
 
-SOMPanel.java
+help
+dir
+
+SOMAnalysis.cwb.xml
 file
 
 
 
 
-2012-01-10T18:25:38.000000Z
-cb2c6f766618e7686cccf7527a816c6e
-2011-07-30T04:31:30.667242Z
-8187
+2012-03-08T18:51:41.000000Z
+270570d97d3fcfc8c27d4a1a492b42fb
+2012-03-07T23:55:26.130133Z
+9008
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1155
+
+SOMDisplay.cwb.xml
+file
+
+
+
+
+2012-03-05T20:23:15.000000Z
+43e4550366e3beaefaca716e55f7708f
+2012-02-24T21:49:55.965990Z
+8916
 zji
-has-props
 
 
 
@@ -194,7 +162,8 @@ has-props
 
 
 
-12749
+
+1103
 
 SOMPlot.java
 file
@@ -230,6 +199,37 @@ has-props
 
 9690
 
-help
-dir
+SOMPanel.java
+file
+
+
+
+
+2012-01-10T18:25:38.000000Z
+cb2c6f766618e7686cccf7527a816c6e
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12749
 

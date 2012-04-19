@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/viewers/src/org/geworkbench/components/viewers
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,40 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+ImageViewer.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+97d4965a2034f3e1333f49d9a90d519e
+2011-09-14T15:28:30.112758Z
+8285
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1979
 
 ImageDisplay.java
 file
@@ -93,38 +127,4 @@ zji
 
 
 1018
-
-ImageViewer.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-97d4965a2034f3e1333f49d9a90d519e
-2011-09-14T15:28:30.112758Z
-8285
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1979
 

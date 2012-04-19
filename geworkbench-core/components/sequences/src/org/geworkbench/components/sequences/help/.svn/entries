@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/sequences/src/org/geworkbench/components/sequences/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,11 +26,76 @@ xiaoqing
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
+sequencestoc.xml
+file
+
+
+
+
+2011-08-17T00:10:45.000000Z
+a4179c3b3f4c3c46addffa697889e810
+2006-08-10T17:03:19.000000Z
+1723
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+250
+
 SequenceRetriever_files
 dir
 
-Sequence_files
-dir
+sequenceretriever.HTML
+file
+
+
+
+
+2011-08-17T00:10:45.000000Z
+08b94934184a1f60aee3eec10f63829b
+2007-03-23T19:30:59.000000Z
+2616
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5472
 
 ncicb.css
 file
@@ -65,40 +130,6 @@ has-props
 
 
 925
-
-sequence.HTML
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-29adb3191e1a924e98f7f015d259346a
-2006-09-05T18:04:27.000000Z
-1809
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3348
 
 sequence.jhm
 file
@@ -168,50 +199,19 @@ has-props
 
 586
 
-sequenceretriever.HTML
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-08b94934184a1f60aee3eec10f63829b
-2007-03-23T19:30:59.000000Z
-2616
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5472
+Sequence_files
+dir
 
-sequencestoc.xml
+sequence.HTML
 file
 
 
 
 
 2011-08-17T00:10:45.000000Z
-a4179c3b3f4c3c46addffa697889e810
-2006-08-10T17:03:19.000000Z
-1723
+29adb3191e1a924e98f7f015d259346a
+2006-09-05T18:04:27.000000Z
+1809
 edaly
 has-props
 
@@ -234,5 +234,5 @@ has-props
 
 
 
-250
+3348
 

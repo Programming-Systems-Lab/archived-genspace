@@ -1,5 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/geworkbench/!svn/ver/5476/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/help
+/svn/geworkbench/!svn/ver/9060/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/help
+END
+markerAnnotationPaneltoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/9060/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/help/markerAnnotationPaneltoc.xml
+END
+markerAnnotations.htm
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/geworkbench/!svn/ver/9060/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/help/markerAnnotations.htm
+END
+markerAnnotationPanelMap.jhm
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/geworkbench/!svn/ver/9060/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/help/markerAnnotationPanelMap.jhm
+END
+markerAnnotationPanelHelpSet.hs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/geworkbench/!svn/ver/9060/trunk/geworkbench/components/annotations/src/org/geworkbench/components/annotations/help/markerAnnotationPanelHelpSet.hs
 END

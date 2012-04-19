@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/8818/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
+/svn/geworkbench/!svn/ver/9322/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
 END
 TtestAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svn/geworkbench/!svn/ver/8649/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.cwb.xml
-END
-TTestUtil.java
-K 25
-svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/8502/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TTestUtil.java
+/svn/geworkbench/!svn/ver/9031/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.cwb.xml
 END
 MultiTTestAnalysis.java
 K 25
@@ -27,11 +21,41 @@ svn:wc:ra_dav:version-url
 V 131
 /svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/MultiTTestAnalysisPanel.java
 END
+TTestException.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TTestException.java
+END
+SignificanceMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/SignificanceMethod.java
+END
+TTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/9322/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TTest.java
+END
+TTestInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TTestInput.java
+END
+TTestOutput.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TTestOutput.java
+END
 TtestAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/8818/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.java
+/svn/geworkbench/!svn/ver/9196/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.java
 END
 TtestAnalysisPanel.java
 K 25

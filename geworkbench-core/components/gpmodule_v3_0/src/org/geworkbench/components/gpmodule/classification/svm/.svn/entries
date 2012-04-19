@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/gpmodule_v3_0/src/org/geworkbench/components/gpmodule/classification/svm
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-SVMClassifier.java
-file
-
-
-
-
-2011-08-17T00:19:03.000000Z
-ea363e31ecc5dfa569c41d9c104f3ef2
-2011-06-15T18:04:08.876954Z
-7993
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2396
-
-SVMTraining.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:17.000000Z
-d57a741aa40d9ee27c9ae25e43d5bc59
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1424
 
 SVMTraining.java
 file
@@ -164,6 +96,74 @@ has-props
 
 gui
 dir
+
+SVMClassifier.java
+file
+
+
+
+
+2011-08-17T00:19:03.000000Z
+ea363e31ecc5dfa569c41d9c104f3ef2
+2011-06-15T18:04:08.876954Z
+7993
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2396
+
+SVMTraining.cwb.xml
+file
+
+
+
+
+2012-03-05T20:23:17.000000Z
+d57a741aa40d9ee27c9ae25e43d5bc59
+2012-02-24T21:49:55.965990Z
+8916
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1424
 
 help.html
 file

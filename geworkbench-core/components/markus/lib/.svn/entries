@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/markus/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,14 +26,14 @@ wangmen
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-IeEmbed.exe
+libjdic.so
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-b016e984b75557179ed455a1064b9ee8
+2a18f243f6ca0dfb5a536ab579319044
 2010-03-23T14:15:13.527444Z
 6196
 wangmen
@@ -58,7 +58,41 @@ has-props
 
 
 
-61440
+21447
+
+jdic_stub.jar
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+aaeb712ff9591d6eeb66a4574981e73e
+2010-05-21T15:30:09.386846Z
+6641
+wangmen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+81356
 
 MozEmbed.exe
 file
@@ -128,6 +162,40 @@ has-props
 
 110592
 
+mozembed-linux-gtk1.2
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+db5a2e1d49bf5a58f0d52e19957ce764
+2010-03-23T14:15:13.527444Z
+6196
+wangmen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9511
+
 jdic.jar
 file
 
@@ -162,16 +230,16 @@ has-props
 
 58761
 
-jdic_stub.jar
+mozembed-linux-gtk2
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-aaeb712ff9591d6eeb66a4574981e73e
-2010-05-21T15:30:09.386846Z
-6641
+266c6c8c2e13ed19fb34e8f8388352c4
+2010-03-23T14:15:13.527444Z
+6196
 wangmen
 has-props
 
@@ -194,7 +262,7 @@ has-props
 
 
 
-81356
+9547
 
 libjdic.jnilib
 file
@@ -230,14 +298,14 @@ has-props
 
 168072
 
-libjdic.so
+libtray.so
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-2a18f243f6ca0dfb5a536ab579319044
+de159f56cd6a25c2989fcdab67c22453
 2010-03-23T14:15:13.527444Z
 6196
 wangmen
@@ -262,7 +330,75 @@ has-props
 
 
 
-21447
+18501
+
+tray.dll
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+3a0c363227b1a535c4f8c5a668cea83d
+2010-03-23T14:15:13.527444Z
+6196
+wangmen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45056
+
+IeEmbed.exe
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+b016e984b75557179ed455a1064b9ee8
+2010-03-23T14:15:13.527444Z
+6196
+wangmen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+61440
 
 libmozembed-linux-gtk1.2.so
 file
@@ -365,140 +501,4 @@ has-props
 
 
 82348
-
-libtray.so
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-de159f56cd6a25c2989fcdab67c22453
-2010-03-23T14:15:13.527444Z
-6196
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18501
-
-mozembed-linux-gtk1.2
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-db5a2e1d49bf5a58f0d52e19957ce764
-2010-03-23T14:15:13.527444Z
-6196
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9511
-
-mozembed-linux-gtk2
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-266c6c8c2e13ed19fb34e8f8388352c4
-2010-03-23T14:15:13.527444Z
-6196
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9547
-
-tray.dll
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-3a0c363227b1a535c4f8c5a668cea83d
-2010-03-23T14:15:13.527444Z
-6196
-wangmen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-45056
 

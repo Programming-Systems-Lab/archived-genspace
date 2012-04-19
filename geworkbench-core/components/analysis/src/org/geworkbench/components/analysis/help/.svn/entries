@@ -1,14 +1,14 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-03-07T21:08:01.500068Z
-8996
+2012-03-14T22:13:05.190422Z
+9174
 smithken
 
 
@@ -60,16 +60,19 @@ has-props
 
 624
 
-analysisPanelMap.jhm
+analysisFramework_files
+dir
+
+analysisFramework_toc.xml
 file
 
 
 
 
-2012-03-08T18:51:40.000000Z
-9a5d5525146e0fcd898be16d428f1ebc
-2012-03-07T21:08:01.500068Z
-8996
+2012-04-19T14:07:24.000000Z
+24647051358f6aae778d7b736e99681b
+2012-03-14T22:13:05.190422Z
+9174
 smithken
 has-props
 
@@ -92,7 +95,7 @@ has-props
 
 
 
-268
+700
 
 analysisPaneltoc.xml
 file
@@ -127,4 +130,140 @@ has-props
 
 
 192
+
+analysisFramework.htm
+file
+
+
+
+
+2012-04-19T14:07:24.000000Z
+d43b37ca89676864f995c8c8b464445e
+2012-03-14T22:13:05.190422Z
+9174
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5454
+
+analysisFramework_Map.jhm
+file
+
+
+
+
+2012-04-19T14:07:24.000000Z
+fa8302c0096ae751126be53f730e1546
+2012-03-14T22:13:05.190422Z
+9174
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+979
+
+analysisPanelMap.jhm
+file
+
+
+
+
+2012-03-08T18:51:40.000000Z
+9a5d5525146e0fcd898be16d428f1ebc
+2012-03-07T21:08:01.500068Z
+8996
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+268
+
+analysisFramework_HelpSet.hs
+file
+
+
+
+
+2012-04-19T14:07:24.000000Z
+76db8eb2c51934cafea84a838fa61d53
+2012-03-14T22:13:05.190422Z
+9174
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+635
 

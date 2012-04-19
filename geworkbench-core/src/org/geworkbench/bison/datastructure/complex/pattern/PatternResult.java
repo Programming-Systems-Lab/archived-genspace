@@ -28,7 +28,7 @@ import org.geworkbench.util.patterns.CSMatchedSeqPattern;
 
 /**
  * @author zji
- * @version $Id: PatternResult.java 8632 2011-12-20 22:50:58Z zji $
+ * @version $Id: PatternResult.java 9130 2012-03-13 14:29:16Z zji $
  * 
  */
 public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
@@ -107,7 +107,7 @@ public class PatternResult extends CSAncillaryDataSet<DSSequence> implements
 				File newFile = new File(s.substring(5));
 				if (!dataSetFile.getName().equalsIgnoreCase(newFile.getName())) {
 					JOptionPane.showMessageDialog(null,
-							"The sequence dataset selected and the sequence filename in the pattern file doesn't match",
+							"The sequence dataset selected and the sequence filename in the pattern file do not match.",
 							"Pattern Discovery", JOptionPane.WARNING_MESSAGE);
 					return false;
 				}

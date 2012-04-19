@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/9007/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
+/svn/geworkbench/!svn/ver/9220/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering
 END
 HierClusterViewAppComponent.cwb.xml
 K 25
@@ -43,7 +43,7 @@ HierarchicalClustering.java
 K 25
 svn:wc:ra_dav:version-url
 V 164
-/svn/geworkbench/!svn/ver/7390/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierarchicalClustering.java
+/svn/geworkbench/!svn/ver/9179/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierarchicalClustering.java
 END
 HierClusterDisplay.java
 K 25
@@ -61,13 +61,13 @@ HierClustPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 156
-/svn/geworkbench/!svn/ver/7429/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClustPanel.java
+/svn/geworkbench/!svn/ver/9220/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/HierClustPanel.java
 END
 FastHierClustAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 163
-/svn/geworkbench/!svn/ver/8990/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/FastHierClustAnalysis.java
+/svn/geworkbench/!svn/ver/9179/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/FastHierClustAnalysis.java
 END
 bulb_icon_gold.gif
 K 25
@@ -79,7 +79,7 @@ ClusteringAlgorithm.java
 K 25
 svn:wc:ra_dav:version-url
 V 161
-/svn/geworkbench/!svn/ver/7368/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/ClusteringAlgorithm.java
+/svn/geworkbench/!svn/ver/9179/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/ClusteringAlgorithm.java
 END
 HierClusterViewWidget.java
 K 25

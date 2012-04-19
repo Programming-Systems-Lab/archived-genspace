@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-11-02T13:48:00.049131Z
-8478
-zji
+2012-03-12T18:24:14.301669Z
+9117
+smithken
 
 
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-ExperimentInformationPanel.cwb.xml
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-4315ad20f8fc53b6ae8bf4434d8eaaae
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-391
 
 ExperimentInformationPanel.java
 file
@@ -93,75 +59,4 @@ has-props
 
 
 3122
-
-help
-dir
-
-infoPanel.htm
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-94085bb9257088211efb87266dae220a
-2005-11-03T17:10:46.000000Z
-656
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2797
-
-ncicb.css
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-1f848289e789b9a0980ce8b7ba0b0efb
-2005-11-04T18:44:24.000000Z
-723
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-925
 

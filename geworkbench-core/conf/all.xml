@@ -3,8 +3,19 @@
 	xsi:noNamespaceSchemaLocation="ConfigurationFile Schema.xsd">
 
 	<gui-window name="Main GUI" class="org.geworkbench.engine.skin.Skin" />
+	<!-- Preferences is only loaded here so that its help file appears -->
+	<plugin id="Preferences" name="for Preferences Help"
+		class="org.geworkbench.engine.preferences.Preferences" />	
+	
+	<!-- FileFormatHelp is a dummy class used only to load the help file. -->
+	<plugin id="fileFormatHelp" name="for File Format Help"
+		class="org.geworkbench.parsers.FileFormatHelp" />
 
-    <plugin id="SoftFileFilter" name="soft. Format"
+	<!-- LocalDataFilesHelp is a dummy class used only to load the help file-->	
+	<plugin id="localDataFilesHelp" name="for Local Data File Help"
+		class="org.geworkbench.builtin.projects.LocalDataFilesHelp" />	
+
+	<plugin id="SoftFileFilter" name="soft. Format"
 		class="org.geworkbench.parsers.SOFTFileFormat" />
 
 	<plugin id="MageTabFileFilter" name="MAGE-TAB. Format"

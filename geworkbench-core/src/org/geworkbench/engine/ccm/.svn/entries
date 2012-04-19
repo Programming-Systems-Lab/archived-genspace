@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/engine/ccm
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,17 +26,18 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-CCMTableModel.java
+ComponentConfigurationManagerWindow2.java
 file
 
 
 
 
 2012-03-05T20:23:31.000000Z
-b5639aa98b2f75bf66066fb28bdc2757
+fd6f02326754c95a7bed5e3e41c58a5e
 2012-02-24T22:36:08.417360Z
 8918
 zji
+has-props
 
 
 
@@ -57,20 +58,53 @@ zji
 
 
 
-
-13784
+35319
 
-CCMTableModel2.java
+PluginComponent.java
+file
+
+
+
+
+2012-03-05T20:23:31.000000Z
+c78d73ad91c060c51601708b3b6710e5
+2012-02-24T22:36:08.417360Z
+8918
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3512
+
+ComponentConfigurationManagerMenu.cwb.xml
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-098e4ff9e78e9d8d513602b6b8ea29b8
-2010-05-24T21:57:20.213093Z
-6670
-zji
+b01832f36869b934af23289517729cda
+2009-06-10T18:58:01.000000Z
+5197
+tgarben
 
 
 
@@ -92,7 +126,7 @@ zji
 
 
 
-3414
+365
 
 ComponentConfigurationManager.java
 file
@@ -162,17 +196,17 @@ zji
 
 13985
 
-ComponentConfigurationManagerMenu.cwb.xml
+DependencyManager.java
 file
 
 
 
 
-2011-08-17T00:10:50.000000Z
-b01832f36869b934af23289517729cda
-2009-06-10T18:58:01.000000Z
-5197
-tgarben
+2012-01-10T18:25:39.000000Z
+bcd56f31d37663470dd57e145fdc1312
+2011-07-30T04:31:30.667242Z
+8187
+zji
 
 
 
@@ -194,7 +228,7 @@ tgarben
 
 
 
-365
+6499
 
 ComponentConfigurationManagerMenu.java
 file
@@ -230,6 +264,74 @@ zji
 
 790
 
+CCMTableModel.java
+file
+
+
+
+
+2012-03-05T20:23:31.000000Z
+b5639aa98b2f75bf66066fb28bdc2757
+2012-02-24T22:36:08.417360Z
+8918
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13784
+
+CCMTableModel2.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+098e4ff9e78e9d8d513602b6b8ea29b8
+2010-05-24T21:57:20.213093Z
+6670
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3414
+
 ComponentConfigurationManagerWindow.java
 file
 
@@ -263,106 +365,4 @@ has-props
 
 
 24873
-
-ComponentConfigurationManagerWindow2.java
-file
-
-
-
-
-2012-03-05T20:23:31.000000Z
-fd6f02326754c95a7bed5e3e41c58a5e
-2012-02-24T22:36:08.417360Z
-8918
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-35319
-
-DependencyManager.java
-file
-
-
-
-
-2012-01-10T18:25:39.000000Z
-bcd56f31d37663470dd57e145fdc1312
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6499
-
-PluginComponent.java
-file
-
-
-
-
-2012-03-05T20:23:31.000000Z
-c78d73ad91c060c51601708b3b6710e5
-2012-02-24T22:36:08.417360Z
-8918
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3512
 

@@ -2,7 +2,7 @@ package org.geworkbench.components.interactions.cellularnetwork;
 
 /**
  * @author my2248
- * @version $Id: ExportSelectionPanel.java 8924 2012-02-27 22:42:50Z zji $ 
+ * @version $Id: ExportSelectionPanel.java 9327 2012-04-18 17:44:38Z youmi $ 
  */
 
 //import java.io.BufferedReader;
@@ -431,7 +431,7 @@ public class ExportSelectionPanel extends JPanel {
 							      matrix = new AdjacencyMatrix(null, dataset,
 							    		  CellularNetworkPreferencePanel.interactionTypeSifMap);
 						AdjacencyMatrixDataSet adjacencyMatrixdataSet = new AdjacencyMatrixDataSet(
-								matrix, 0.5f, "export_" + context + "_" + version,
+								matrix, 0.0f, "export_" + context + "_" + version,
 								dataset.getLabel(), dataset);
 
 						c.publishProjectNodeAddedEvent(new ProjectNodeAddedEvent(
@@ -487,7 +487,7 @@ public class ExportSelectionPanel extends JPanel {
 
 		if (format.equals(Constants.SIF_FORMAT) && tr.hasMoreTokens())
 			restrictedLine.append("\t" + tr.nextToken());
-
+        boolean hasRestrictedNode = false;
 		while (tr.hasMoreTokens()) {
 			String node2 = tr.nextToken();
 			if (markers.get(node2) == null) {
@@ -498,9 +498,10 @@ public class ExportSelectionPanel extends JPanel {
 			restrictedLine.append("\t" + node2);
 			if (format.equals(Constants.ADJ_FORMAT))
 				restrictedLine.append("\t" + tr.nextToken());
-
+			hasRestrictedNode = true;
 		}
-
+         if (!hasRestrictedNode)
+        	 return null;
 		return restrictedLine.toString();
 	}
 

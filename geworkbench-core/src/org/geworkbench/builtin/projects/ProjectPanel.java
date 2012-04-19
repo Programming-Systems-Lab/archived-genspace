@@ -46,6 +46,7 @@ import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DurationFormatUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.bison.datastructure.biocollections.CSAncillaryDataSet;
@@ -92,7 +93,6 @@ import org.geworkbench.util.ProgressDialog;
 import org.geworkbench.util.ProgressItem;
 import org.geworkbench.util.SaveImage;
 import org.geworkbench.util.Util;
-import org.ginkgo.labs.util.FileTools;
 import org.ginkgo.labs.ws.GridEndpointReferenceType;
 
 /**
@@ -106,7 +106,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  * 
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 8650 2012-01-05 18:11:48Z zji $
+ * @version $Id: ProjectPanel.java 9247 2012-03-30 21:02:42Z zji $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -996,12 +996,12 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 			Date endDate = new Date();
 			long endTime = endDate.getTime();
 			history += "\nGrid service finished at: "
-					+ Util.formatDateStandard(endDate)+ FileTools.NEWLINE;
+					+ Util.formatDateStandard(endDate)+ "\n";
 			String firstLine = history.split("\n")[0];
 			String startTime = firstLine.split("=")[1].trim();
 			long elspedTime = endTime - (new Long(startTime));
 			history += "\nTotal elsped time: "
-					+ Util.convertLongToTimeStr(elspedTime);
+					+ DurationFormatUtils.formatDurationHMS(elspedTime);
 		} catch(NumberFormatException ne)
 		{
 			history += "\nError processing elspedTime: " + ne.getMessage();

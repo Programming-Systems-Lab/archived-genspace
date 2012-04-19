@@ -1,53 +1,77 @@
 K 25
 svn:wc:ra_dav:version-url
 V 155
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files
 END
-T_SequenceRetriever_sequence_detail.png
+Sequence_Retriever_DNA_Full_View.png
 K 25
 svn:wc:ra_dav:version-url
-V 195
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_sequence_detail.png
+V 192
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_DNA_Full_View.png
 END
-T_SequenceRetriever_sequence_dataset_name.png
+Sequence_Retriever_MAP4K4_Protein_Result.png
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_MAP4K4_Protein_Result.png
+END
+poweredby_mediawiki_88x31.png
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/poweredby_mediawiki_88x31.png
+END
+Sequence_Retriever_MAP4K4_DNA_result.png
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_MAP4K4_DNA_result.png
+END
+Project_Folders_MAP4K4_2_seqs.png
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Project_Folders_MAP4K4_2_seqs.png
+END
+Sequence_Retriever_Protein_Line_View.png
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_Protein_Line_View.png
+END
+Sequence_Retriever_MAP4K4_DNA_Add_to_project.png
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_MAP4K4_DNA_Add_to_project.png
+END
+Sequence_Retriever_DNA_Line_View.png
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_DNA_Line_View.png
+END
+Markers_MAP4K4.png
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Markers_MAP4K4.png
+END
+Sequence_Retriever_DNA_Full_Sequence_View.png
 K 25
 svn:wc:ra_dav:version-url
 V 201
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_sequence_dataset_name.png
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_DNA_Full_Sequence_View.png
 END
-T_SequenceRetriever_sequence_selection.png
+Sequence_Retriever_Select_Genome.png
 K 25
 svn:wc:ra_dav:version-url
-V 198
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_sequence_selection.png
+V 192
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_Select_Genome.png
 END
-T_SequenceRetriever_sequence_dataset_added.png
+Sequence_Retriever_MAP4K4_DNA_result_unrestricted.png
 K 25
 svn:wc:ra_dav:version-url
-V 202
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_sequence_dataset_added.png
-END
-T_SequenceRetriever_Assembly.png
-K 25
-svn:wc:ra_dav:version-url
-V 188
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_Assembly.png
-END
-T_SequenceRetriever.png
-K 25
-svn:wc:ra_dav:version-url
-V 179
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever.png
-END
-T_SequenceRetriever_Markers.png
-K 25
-svn:wc:ra_dav:version-url
-V 187
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_Markers.png
-END
-T_SequenceRetriever_retrievedSeqs.png
-K 25
-svn:wc:ra_dav:version-url
-V 193
-/svn/geworkbench/!svn/ver/4453/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/T_SequenceRetriever_retrievedSeqs.png
+V 209
+/svn/geworkbench/!svn/ver/9095/trunk/geworkbench/components/sequenceretriever/src/org/geworkbench/components/sequenceretriever/help/SequenceRetriever_files/Sequence_Retriever_MAP4K4_DNA_result_unrestricted.png
 END

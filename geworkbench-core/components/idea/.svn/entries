@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/idea
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-03-07T19:21:35.661934Z
-8990
-zji
+2012-03-29T19:29:37.608154Z
+9238
+maz
 has-props
 
 
@@ -94,9 +94,6 @@ maz
 
 380
 
-.settings
-dir
-
 lib
 dir
 
@@ -104,5 +101,8 @@ src
 dir
 
 test_data
+dir
+
+.settings
 dir
 

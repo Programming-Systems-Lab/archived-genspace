@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/src/org/geworkbench/engine/preferences
+/svn/geworkbench/!svn/ver/9164/trunk/geworkbench/src/org/geworkbench/engine/preferences
 END
 IntegerField.java
 K 25
@@ -50,6 +50,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 112
 /svn/geworkbench/!svn/ver/7680/trunk/geworkbench/src/org/geworkbench/engine/preferences/ValidationException.java
+END
+Preferences.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/geworkbench/!svn/ver/9164/trunk/geworkbench/src/org/geworkbench/engine/preferences/Preferences.cwb.xml
 END
 PreferencesManager.java
 K 25

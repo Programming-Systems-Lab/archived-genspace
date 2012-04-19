@@ -1,16 +1,16 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
+2012-03-09T18:22:36.373649Z
+9084
+smithken
+has-props
 
 
 
@@ -25,111 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-ncicb.css
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-1f848289e789b9a0980ce8b7ba0b0efb
-2005-11-04T16:50:17.000000Z
-711
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-925
-
-promoter panel_files
-dir
-
-promoter.HTML
-file
-
-
-
-
-2011-08-17T00:10:45.000000Z
-5c2624c9a3498ffa53d75f19b005b547
-2008-02-28T16:37:10.000000Z
-3560
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8271
-
-promoter.htm
-file
-
-
-
-
-2012-01-10T18:25:37.000000Z
-c68a923f23413dbd5bb576a0c1fbed21
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26317
 
 promoter.jhm
 file
@@ -164,6 +59,40 @@ has-props
 
 
 753
+
+ncicb.css
+file
+
+
+
+
+2011-08-17T00:10:45.000000Z
+1f848289e789b9a0980ce8b7ba0b0efb
+2005-11-04T16:50:17.000000Z
+711
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+925
 
 promoterHelpSet.hs
 file
@@ -202,9 +131,6 @@ has-props
 promoter_files
 dir
 
-promoterpanel_files
-dir
-
 promotertoc.xml
 file
 
@@ -238,4 +164,38 @@ has-props
 
 
 606
+
+promoter.htm
+file
+
+
+
+
+2012-04-19T14:07:19.000000Z
+914e39ebac98cf02effa83522f760ab0
+2012-03-09T18:17:19.117706Z
+9080
+smithken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25723
 

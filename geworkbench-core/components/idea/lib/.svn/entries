@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/idea/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,14 +26,14 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-distributions.jar
+weka.jar
 file
 
 
 
 
 2011-08-17T00:10:43.000000Z
-d7a2ee03c8379612f94d3f7b8459416b
+efc8c2988e7e3e5f247faa64e979c1ca
 2010-11-24T19:56:46.345667Z
 7225
 maz
@@ -58,7 +58,7 @@ has-props
 
 
 
-50811
+7201660
 
 ostermillerutils_1_04_03_for_kaffe.jar
 file
@@ -94,14 +94,14 @@ has-props
 
 408185
 
-weka.jar
+distributions.jar
 file
 
 
 
 
 2011-08-17T00:10:43.000000Z
-efc8c2988e7e3e5f247faa64e979c1ca
+d7a2ee03c8379612f94d3f7b8459416b
 2010-11-24T19:56:46.345667Z
 7225
 maz
@@ -126,5 +126,5 @@ has-props
 
 
 
-7201660
+50811
 

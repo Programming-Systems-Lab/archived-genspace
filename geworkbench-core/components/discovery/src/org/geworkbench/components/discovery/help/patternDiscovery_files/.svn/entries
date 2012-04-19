@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 
 
 
@@ -26,17 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-PatternDiscovery_Basic_Histones_Result_exact_3.png
+poweredby_mediawiki_88x31.png
 file
 
 
 
 
-2012-01-10T18:25:34.000000Z
-85c85962d5f7842faaefd149c995bcca
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:18.000000Z
+faf87cb68c3ea99313b3e41dfb0dfa52
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-41182
+1927
 
 PatternDiscovery_Basic_Histones_Result_exact_3_histogram.png
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-08-17T00:19:02.000000Z
-7027275290a0b3257e7bcd091915f1e5
-2011-05-25T14:27:40.523570Z
-7927
-zji
+2012-04-19T14:07:18.000000Z
+235a1d11071ac9e8721ada10d77742fa
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -92,449 +92,7 @@ has-props
 
 
 
-62831
-
-PatternDiscovery_Basic_Histones_Result_exact_3_hover.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-6a83024c53e2271997844c50a6b6d413
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11493
-
-PatternDiscovery_Basic_histone_result_blosum50_seqs.png
-file
-
-
-
-
-2011-08-17T00:19:02.000000Z
-3aa2ca750a532699fdfa9307b58ba90d
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-72945
-
-PatternDiscovery_Basic_histone_result_exact.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-1c842a2064d1cc20c17baf0c209a702b
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-54164
-
-PatternDiscovery_Basic_histone_result_exact_Matching.png
-file
-
-
-
-
-2011-08-17T00:19:02.000000Z
-21f9b938271d2c213a30e57b06d8b079
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12045
-
-PatternDiscovery_Basic_histone_result_exact_seqs.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-d47492c4a38af5898129b3ab27793dd4
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-61626
-
-PatternDiscovery_Params_Advanced_Exact.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-eedada7332a46a29f1e7f5013f14a23e
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8239
-
-PatternDiscovery_Params_Advanced_Matrix.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-723356bb2413469a9cf5084e9f4b2e1d
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8397
-
-PatternDiscovery_Params_Basic_Norm.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-a8ddcde3e1b946f1eb283fa2864beee3
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16918
-
-PatternDiscovery_Params_Basic_histone_setup.png
-file
-
-
-
-
-2011-08-17T00:19:02.000000Z
-97d0cd4f9e8903361446da6ee384a4cf
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19851
-
-PatternDiscovery_Params_Basic_only.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-416a089eee2022a26c8dfd6e892d38c3
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10674
-
-PatternDiscovery_Params_Basic_support_options.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-9e8a043264bb1bf469fa165b89a6500d
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11804
-
-PatternDiscovery_Params_Exhaustive.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-94eaba8ffc01cd689b83fbcb05ade60e
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8358
-
-PatternDiscovery_Params_Limits.png
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-34a7acf92fad716ede962d76e254fe3a
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6482
+54707
 
 PatternDiscovery_Result_Node.png
 file
@@ -570,14 +128,116 @@ has-props
 
 6504
 
-PatternDiscovery_Right_click_menu.png
+PatternDiscovery_Params_Basic.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+ab5812df186ce890e8b8e73b45f0db16
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36307
+
+PatternDiscovery_Basic_histone_result_exact_seqs.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+07c0e28ef0785db635fabc3e653acd75
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48986
+
+PatternDiscovery_Params_Exhaustive.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+f5989e6829b1365a8f3c0a3f8c35ca98
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10369
+
+PatternDiscovery_Basic_histone_result_blosum50_seqs.png
 file
 
 
 
 
 2011-08-17T00:19:02.000000Z
-6983c54d9004ff17b694c75a51ad4ef8
+3aa2ca750a532699fdfa9307b58ba90d
 2011-05-25T14:27:40.523570Z
 7927
 zji
@@ -602,19 +262,19 @@ has-props
 
 
 
-22135
+72945
 
-PatternDiscovery_RunProgress.png
+PatternDiscovery_ProgressBar.png
 file
 
 
 
 
-2012-01-10T18:25:34.000000Z
-8cf26cb8963ff6144be722daf074f2e6
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:18.000000Z
+620389a2cf57e75512a15296c8efde15
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -636,19 +296,19 @@ has-props
 
 
 
-6928
+12888
 
-PatternDiscovery_Run_Controls.png
+PatternDiscovery_Params_Basic_support_options.png
 file
 
 
 
 
-2012-01-10T18:25:34.000000Z
-3097e59f1995b2fbe80f6f21bcf8a7b1
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:18.000000Z
+f0021ac122519827853b155287dac20e
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -670,7 +330,109 @@ has-props
 
 
 
-5129
+14366
+
+PatternDiscovery_Params_Advanced_Matrix.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+855f0b7a2cd01050da9703a2be574aad
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11336
+
+PatternDiscovery_Params_Advanced_Exact.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+cbbd7d563158f29a4a143532d335ce7a
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11694
+
+PatternDiscovery_Basic_histone_result_exact.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+21ebdef8fef485900bbeec0ac4fdc332
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38501
 
 PatternDiscovery_SessionConnect.png
 file
@@ -706,14 +468,116 @@ has-props
 
 22642
 
-commonPrint.css
+PatternDiscovery_Basic_Histones_Result_exact_3.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+f76077c591a1c0e70d6eefd97e3be741
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31097
+
+PatternDiscovery_Params_Limits.png
+file
+
+
+
+
+2012-04-19T14:07:18.000000Z
+dce99411f967a405550b2956138db9d6
+2012-03-09T17:36:26.107811Z
+9076
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6674
+
+PatternDiscovery_Basic_Histones_Result_exact_3_hover.png
+file
+
+
+
+
+2012-01-10T18:25:34.000000Z
+6a83024c53e2271997844c50a6b6d413
+2011-07-30T04:31:30.667242Z
+8187
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11493
+
+PatternDiscovery_Basic_histone_result_exact_Matching.png
 file
 
 
 
 
 2011-08-17T00:19:02.000000Z
-0257a641ab2ed3788aef2f01e69a3e34
+21f9b938271d2c213a30e57b06d8b079
 2011-05-25T14:27:40.523570Z
 7927
 zji
@@ -738,19 +602,19 @@ has-props
 
 
 
-4482
+12045
 
-index.css
+PatternDiscovery_Right_click_menu.png
 file
 
 
 
 
-2012-01-10T18:25:34.000000Z
-bb883d0f9391e0e95a98467e3406893f
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:18.000000Z
+597d14a4f63507027899521caaf18446
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -772,19 +636,19 @@ has-props
 
 
 
-50
+10179
 
-index.php
+PatternDiscovery_Params_Basic_histone_setup_new.png
 file
 
 
 
 
-2012-01-10T18:25:34.000000Z
-7b8173485effa90ed2ef65c029a9838b
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-04-19T14:07:18.000000Z
+bf934d721783295ccf780eda63a77383
+2012-03-09T17:36:26.107811Z
+9076
+smithken
 has-props
 
 
@@ -806,107 +670,5 @@ has-props
 
 
 
-291
-
-index_002.css
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-1af216a5213de867307298bda621b8ed
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-318
-
-index_003.css
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-00bb617ac348ca1eba387234bcdc0ede
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-50
-
-index_004.css
-file
-
-
-
-
-2012-01-10T18:25:34.000000Z
-59a83e6f432f762a5525136d8c017853
-2011-07-30T04:31:30.667242Z
-8187
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-75
+38486
 

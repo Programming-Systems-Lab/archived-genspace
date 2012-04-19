@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/geworkbench/!svn/ver/8479/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels
+/svn/geworkbench/!svn/ver/9310/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels
 END
 BlastViewPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/geworkbench/!svn/ver/8455/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewPanel.java
+/svn/geworkbench/!svn/ver/9310/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewPanel.java
 END
 start.gif
 K 25
@@ -19,7 +19,7 @@ BlastViewComponent.java
 K 25
 svn:wc:ra_dav:version-url
 V 141
-/svn/geworkbench/!svn/ver/8479/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewComponent.java
+/svn/geworkbench/!svn/ver/9310/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/panels/BlastViewComponent.java
 END
 stop.gif
 K 25

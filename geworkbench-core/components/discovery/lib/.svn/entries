@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,17 +60,17 @@ has-props
 
 1174629
 
-cog-jglobus.jar
+polgara.jar
 file
 
 
 
 
 2011-08-17T00:10:42.000000Z
-a6c2b89894bcf13bf78275454a939556
-2010-09-24T19:44:36.132420Z
-7079
-zji
+2c9aefb7e1621e97a14c2f9b8e2bd485
+2007-01-10T22:09:38.000000Z
+2197
+watkinson
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-641395
+39146
 
 ogsa.jar
 file
@@ -128,50 +128,16 @@ has-props
 
 1322286
 
-polgara.jar
+cog-jglobus.jar
 file
 
 
 
 
 2011-08-17T00:10:42.000000Z
-2c9aefb7e1621e97a14c2f9b8e2bd485
-2007-01-10T22:09:38.000000Z
-2197
-watkinson
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-39146
-
-xalan.jar
-file
-
-
-
-
-2011-08-17T00:10:42.000000Z
-8f2b06c3cfb81dbf88eb6b94f5c29a54
-2010-04-27T17:53:30.307289Z
-6418
+a6c2b89894bcf13bf78275454a939556
+2010-09-24T19:44:36.132420Z
+7079
 zji
 has-props
 
@@ -194,7 +160,7 @@ has-props
 
 
 
-1645473
+641395
 
 xmlsec.jar
 file
@@ -229,4 +195,38 @@ has-props
 
 
 309937
+
+xalan.jar
+file
+
+
+
+
+2011-08-17T00:10:42.000000Z
+8f2b06c3cfb81dbf88eb6b94f5c29a54
+2010-04-27T17:53:30.307289Z
+6418
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1645473
 

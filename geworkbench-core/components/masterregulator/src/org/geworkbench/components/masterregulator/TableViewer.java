@@ -5,7 +5,7 @@ package org.geworkbench.components.masterregulator;
 
 /**
  * @author yc2480
- * @version $Id: TableViewer.java 8755 2012-01-24 21:36:08Z zji $
+ * @version $Id: TableViewer.java 9198 2012-03-22 15:52:15Z wangmen $
  * 
  */
 import java.awt.event.ActionEvent;
@@ -92,7 +92,6 @@ public class TableViewer extends JPanel {
 		}
 
 		pane = new JScrollPane(table);
-		JButton exportButton = new JButton("Export table");
 		exportButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -102,11 +101,11 @@ public class TableViewer extends JPanel {
 		});
 
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		add(exportButton);
 		add(pane);
 		this.setAlignmentX(LEFT_ALIGNMENT);
 
 	}
+	JButton exportButton = new JButton("Export table");
 
 	public Expression getExpression() {
 		return new Expression(this, this.getClass(), "new", new Object[] {
@@ -429,9 +428,15 @@ public class TableViewer extends JPanel {
 					int tableCol = header.columnAtPoint(evt.getPoint());
 					int modelCol = table.convertColumnIndexToModel(tableCol);
 					((DefaultViewerTableModel) model).sort(modelCol);
+					if (mrviewer != null)   mrviewer.updateGraph();
 				}
 			}
 		}
+	}
+
+	private MasterRegulatorViewer mrviewer = null;
+	void setMRViewer(MasterRegulatorViewer v){
+		mrviewer = v;
 	}
 
 	private void exportTableData() {

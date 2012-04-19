@@ -37,6 +37,7 @@ import javax.swing.JToolBar;
 
 import org.apache.axis.types.URI.MalformedURIException;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DurationFormatUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.geworkbench.analysis.AbstractAnalysis;
@@ -76,6 +77,8 @@ import org.geworkbench.engine.management.ComponentRegistry;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.engine.properties.PropertiesManager;
+import org.geworkbench.events.AnalysisAbortEvent;
+import org.geworkbench.events.AnalysisCompleteEvent;
 import org.geworkbench.events.AnalysisInvokedEvent;
 import org.geworkbench.events.GeneSelectorEvent;
 import org.geworkbench.events.SubpanelChangedEvent;
@@ -83,7 +86,6 @@ import org.geworkbench.util.CommandBase;
 import org.geworkbench.util.ProgressBar;
 import org.geworkbench.util.Util;
 import org.geworkbench.util.pathwaydecoder.mutualinformation.EdgeListDataSet;
-import org.ginkgo.labs.util.FileTools;
 import org.ginkgo.labs.ws.GridEndpointReferenceType;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
@@ -116,6 +118,9 @@ public class AnalysisPanel extends CommandBase implements
 	private static final int ANALYSIS_TAB_COUNT = 1;
 	private static final String USER_INFO_DELIMIETER = "==";
 
+	private static final String NEWLINE = "\n";
+	private static final String TAB = "\t";
+	
 	/* from application.properties */
 	private final static String DISPATCHER_URL = "dispatcher.url";
 
@@ -366,8 +371,10 @@ public class AnalysisPanel extends CommandBase implements
 
 		for (GridEndpointReferenceType gridEpr : gridEprs) {
 
+			// to control the complexity, let's not support the analysis Abort/Complete event
+			// in the case of restoring workspace for now
 			PollingThread pollingThread = new PollingThread(gridEpr,
-					dispatcherClient);
+					dispatcherClient, null, this);
 			threadList.add(pollingThread);
 			pollingThread.start();
 
@@ -832,19 +839,21 @@ public class AnalysisPanel extends CommandBase implements
 			return false;
 		}
 
+		AnalysisInvokedEvent event = null;
 		if (refOtherSet != null) { /*
 									 * added for analysis that do not take in
 									 * microarray data set
 									 */
 
-			AnalysisInvokedEvent event = new AnalysisInvokedEvent(
+			event = new AnalysisInvokedEvent(
 					selectedAnalysis, "");
 			publishAnalysisInvokedEvent(event);
 		} else if ((maSetView != null) && (refMASet != null)) {
-			AnalysisInvokedEvent event = new AnalysisInvokedEvent(
+			event = new AnalysisInvokedEvent(
 					selectedAnalysis, maSetView.getDataSet().getLabel());
 			publishAnalysisInvokedEvent(event);
 		}
+		final AnalysisInvokedEvent invokeEvent = event;
 
 		ParamValidationResults pvr = selectedAnalysis.validateParameters();
 		if (!pvr.isValid()) {
@@ -859,9 +868,9 @@ public class AnalysisPanel extends CommandBase implements
 				public void run() {
 					/* check if we are dealing with a grid analysis */
 					if (isGridAnalysis()) {
-						submitAsCaGridService();
+						submitAsCaGridService(invokeEvent);
 					} else {						
-						executeLocally();
+						executeLocally(invokeEvent);
 					}
 					analyze.setEnabled(true);
 				}
@@ -873,7 +882,7 @@ public class AnalysisPanel extends CommandBase implements
 		}
 	}
 
-	private void submitAsCaGridService() {
+	private void submitAsCaGridService(final AnalysisInvokedEvent invokeEvent) {
 
 		Date startDate = new Date();
 		Long startTime =startDate.getTime();
@@ -901,10 +910,12 @@ public class AnalysisPanel extends CommandBase implements
 								"Please make sure you entered a valid username and password",
 								"Invalid User Account",
 								JOptionPane.ERROR_MESSAGE);
+				publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 				return;
 			}
 			if (StringUtils.isEmpty(userInfo)) {
 				userInfo = null;
+				publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 				return;
 			}
 		}
@@ -915,6 +926,7 @@ public class AnalysisPanel extends CommandBase implements
 			JOptionPane.showMessageDialog(null,
 					"Cannot execute grid analysis: Invalid URL "+url+" specified.",
 					"Invalid grid URL Error", JOptionPane.ERROR_MESSAGE);
+			publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 			return;
 		}
 
@@ -939,25 +951,27 @@ public class AnalysisPanel extends CommandBase implements
 							.getBisonReturnType());
 		} catch (MalformedURIException e) {
 			e.printStackTrace();
+			publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 			return;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 			return;
 		} finally {
 			pBar.stop();
 		}
 
 		/* generate history for grid analysis */	
-		String history = "Grid service started at: " + Util.formatDateStandard(startDate) + ", milliseconds=" + startTime + FileTools.NEWLINE;
-		history += "Grid service information:" + FileTools.NEWLINE;
-		history += FileTools.TAB + "Index server url: "
-				+ jGridServicePanel.getIndexServerUrl() + FileTools.NEWLINE;
-		history += FileTools.TAB + "Dispatcher url: " + dispatcherUrl
-				+ FileTools.NEWLINE;
-		history += FileTools.TAB + "Service url: " + url + FileTools.NEWLINE
-				+ FileTools.NEWLINE;
+		String history = "Grid service started at: " + Util.formatDateStandard(startDate) + ", milliseconds=" + startTime + NEWLINE;
+		history += "Grid service information:" + NEWLINE;
+		history += TAB + "Index server url: "
+				+ jGridServicePanel.getIndexServerUrl() + NEWLINE;
+		history += TAB + "Dispatcher url: " + dispatcherUrl
+				+ NEWLINE;
+		history += TAB + "Service url: " + url + NEWLINE
+				+ NEWLINE;
 		history += selectedGridAnalysis.createHistory()
-	            + FileTools.NEWLINE;
+	            + NEWLINE;
 		
 		if (refOtherSet != null) {
 			history += selectedGridAnalysis.generateHistoryStringForGeneralDataSet(refOtherSet);
@@ -969,14 +983,14 @@ public class AnalysisPanel extends CommandBase implements
 				selectedGridAnalysis.getLabel() + " (pending)", history, false);
 
 		PollingThread pollingThread = new PollingThread(gridEpr,
-				dispatcherClient);
+				dispatcherClient, invokeEvent, this);
 		threadList.add(pollingThread);
 		pollingThread.start();
 	}
 
 	// this method is only invoked form background thread
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	private void executeLocally() {
+	private void executeLocally(final AnalysisInvokedEvent invokeEvent) {
 		
 		Date startDate = new Date();
 		Long startTime =startDate.getTime();
@@ -997,8 +1011,10 @@ public class AnalysisPanel extends CommandBase implements
 							"Invalid Input Data", JOptionPane.ERROR_MESSAGE);
 					results = null;
 					analyze.setEnabled(true);
+					publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 					return;
 				} else if(validResult.getMessage().equals("QUIT")) {
+					publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 					return;
 				}
 			}
@@ -1007,7 +1023,8 @@ public class AnalysisPanel extends CommandBase implements
 		
 		// check the result before further publishing event 
 		if (results == null) {
-			log.error("unexpected null result");
+			log.info("null result"); // e.g. cancelled
+			publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 			return;
 		}
 		/*
@@ -1019,6 +1036,7 @@ public class AnalysisPanel extends CommandBase implements
 		if (!results.isExecutionSuccessful()) {
 			JOptionPane.showMessageDialog(null, results.getMessage(),
 					"Analysis Error", JOptionPane.ERROR_MESSAGE);
+			publishAnalysisAbortEvent(new AnalysisAbortEvent(invokeEvent));
 			return;
 		}
 		Object resultObject = results.getResults();
@@ -1026,20 +1044,18 @@ public class AnalysisPanel extends CommandBase implements
 			DSAncillaryDataSet<DSBioObject> dataSet = (DSAncillaryDataSet<DSBioObject>) resultObject;		
 			
 			//add start/end time to history
-			String history = "Analysis started at: " + Util.formatDateStandard(startDate) +  FileTools.NEWLINE;
+			String history = "Analysis started at: " + Util.formatDateStandard(startDate) +  NEWLINE;
 			HistoryPanel.addBeforeToHistory(dataSet, history);
 			 
 			Date endDate = new Date();
 			long endTime = endDate.getTime();
 			history = "\nAnalysis finished at: "
-					+ Util.formatDateStandard(endDate) + FileTools.NEWLINE;			 
+					+ Util.formatDateStandard(endDate) + NEWLINE;			 
 			long elapsedTime = endTime - startTime;
-			history += "\nTotal elapsed time: "
-					+ Util.convertLongToTimeStr(elapsedTime);
+			history += "\nTotal elapsed time: " + DurationFormatUtils.formatDurationHMS(elapsedTime);
 			HistoryPanel.addToHistory(dataSet, history);
 			
 			ProjectPanel.getInstance().addProjectNode(null, dataSet);
-			return;
 		}
 		if (resultObject instanceof Hashtable) {
 			DSPanel<DSGeneMarker> panel = ((Hashtable<?, DSPanel<DSGeneMarker>>) resultObject)
@@ -1049,8 +1065,19 @@ public class AnalysisPanel extends CommandBase implements
 						DSGeneMarker.class, panel, SubpanelChangedEvent.NEW));
 			}
 		}
+		publishAnalysisCompleteEvent(new AnalysisCompleteEvent(invokeEvent));
 	}
 	
+	@Publish
+	public AnalysisAbortEvent publishAnalysisAbortEvent(AnalysisAbortEvent analysisAbortEvent) {
+		return analysisAbortEvent;
+	}
+
+	@Publish
+	public AnalysisCompleteEvent publishAnalysisCompleteEvent(AnalysisCompleteEvent analysisCompleteEvent) {
+		return analysisCompleteEvent;
+	}
+
 	private Class<?> currentDataType = null, lastDataType = null;
 	private HashMap<Class<?>, AbstractAnalysis> pidMap = new HashMap<Class<?>, AbstractAnalysis>();
 

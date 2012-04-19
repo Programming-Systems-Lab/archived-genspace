@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/help/tablepanel
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,6 +25,74 @@ edaly
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
+
+tabular.htm
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+c7b48fd936c569ec8db6efe42a40acaa
+2005-11-01T18:57:07.000000Z
+620
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5695
+
+tablePanelMap.jhm
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+583861335da3090603dd9f83a88856a7
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+272
 
 ncicb.css
 file
@@ -94,14 +162,14 @@ has-props
 
 620
 
-tablePanelMap.jhm
+tabularview-affymetrix.gif
 file
 
 
 
 
 2011-08-17T00:10:44.000000Z
-583861335da3090603dd9f83a88856a7
+b649d5e3bdd861566a98a90292288fda
 2005-07-28T22:36:56.000000Z
 50
 watkin
@@ -126,7 +194,75 @@ has-props
 
 
 
-272
+21498
+
+tabularview-genepix.gif
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+1982a9463c4d02c39e99b55df5acb975
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23801
+
+tabular View.htm.bak
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+468a94ef262c98ba06bfbea5a002ec84
+2005-11-14T19:39:21.000000Z
+819
+edaly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1836
 
 tablePaneltoc.xml
 file
@@ -196,142 +332,6 @@ has-props
 
 1826
 
-tabular View.htm.bak
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-468a94ef262c98ba06bfbea5a002ec84
-2005-11-14T19:39:21.000000Z
-819
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1836
-
-tabular.htm
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-c7b48fd936c569ec8db6efe42a40acaa
-2005-11-01T18:57:07.000000Z
-620
-edaly
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5695
-
 tabular_files
 dir
-
-tabularview-affymetrix.gif
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-b649d5e3bdd861566a98a90292288fda
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21498
-
-tabularview-genepix.gif
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-1982a9463c4d02c39e99b55df5acb975
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-23801
 

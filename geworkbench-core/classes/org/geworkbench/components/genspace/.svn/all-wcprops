@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/geworkbench/!svn/ver/8928/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
+END
+ObjectLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectLogger.java
+END
+TransactionElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/TransactionElement.java
+END
+RuntimeEnvironmentSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/RuntimeEnvironmentSettings.java
+END
+ObjectHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/geworkbench/!svn/ver/8928/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectHandler.java
+END
+GenSpaceLogPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceLogPreferences.java
+END
+XMLLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/XMLLoader.java
+END
+BrowserLauncher.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/BrowserLauncher.java
+END
+login.conf
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/login.conf
+END
+ServerConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/4670/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ServerConfig.java
+END
+GenSpaceMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.java
+END
+FindJar.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/FindJar.java
+END
+GenSpaceMenu.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.cwb.xml
+END
+GenspaceLogger.cwb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenspaceLogger.cwb.xml
+END

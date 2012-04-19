@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/matrixreduce/src/org/geworkbench/components/matrixreduce
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-02-29T22:21:23.586889Z
-8942
-zji
+2012-03-09T00:55:43.465177Z
+9071
+smithken
 
 
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-MatrixReduceAnalysis.cwb.xml
-file
-
-
-
-
-2012-03-05T20:23:14.000000Z
-16b2edd6bffca718337a000cc5277341
-2012-02-24T21:49:55.965990Z
-8916
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1242
 
 MatrixReduceAnalysis.java
 file
@@ -94,40 +60,6 @@ has-props
 
 21689
 
-MatrixReduceParamPanel.java
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-d23e66092c4e99bc11a9d37cba5c2171
-2011-04-20T15:08:10.275873Z
-7762
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14859
-
 MatrixReduceViewer.cwb.xml
 file
 
@@ -162,18 +94,20 @@ zji
 
 1162
 
-MatrixReduceViewer.java
+help
+dir
+
+MatrixReduceAnalysis.cwb.xml
 file
 
 
 
 
 2012-03-05T20:23:14.000000Z
-17458dab2ed05d6c5227eeba457668b2
-2012-02-29T22:21:23.586889Z
-8942
+16b2edd6bffca718337a000cc5277341
+2012-02-24T21:49:55.965990Z
+8916
 zji
-has-props
 
 
 
@@ -194,7 +128,8 @@ has-props
 
 
 
-24162
+
+1242
 
 SequenceGraph.java
 file
@@ -230,6 +165,71 @@ has-props
 
 8386
 
-help
-dir
+MatrixReduceParamPanel.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+d23e66092c4e99bc11a9d37cba5c2171
+2011-04-20T15:08:10.275873Z
+7762
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14859
+
+MatrixReduceViewer.java
+file
+
+
+
+
+2012-03-05T20:23:14.000000Z
+17458dab2ed05d6c5227eeba457668b2
+2012-02-29T22:21:23.586889Z
+8942
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24162
 

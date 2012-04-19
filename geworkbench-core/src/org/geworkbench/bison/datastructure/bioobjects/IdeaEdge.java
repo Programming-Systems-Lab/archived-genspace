@@ -7,7 +7,7 @@ import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 /**
  * Edge data structure of IDEA Analysis.
  * 
- * @author zm2165 $Id: IdeaEdge.java 7296 2010-12-06 22:31:56Z zji $
+ * @author zm2165 $Id: IdeaEdge.java 9240 2012-03-29 20:27:24Z maz $
  */
 public class IdeaEdge implements Serializable, Comparable<IdeaEdge> {
 	// Edge is the gene pair which is expanded on probe Ids. For each edge, the
@@ -128,6 +128,25 @@ public class IdeaEdge implements Serializable, Comparable<IdeaEdge> {
 		if(d<0) return -1;
 		else if (d>0) return 1;
 		else return 0;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		IdeaEdge o=(IdeaEdge) obj;
+		String m1=this.getMarker1().getLabel();
+		String m2=this.getMarker2().getLabel();
+		String o1=o.getMarker1().getLabel();
+		String o2=o.getMarker2().getLabel();
+
+		if((m1.equals(o1)&&m2.equals(o2))||((m1.equals(o2))&&(m2.equals(o1))))
+			return true;
+		else
+			return false;		
+	}
+	
+	@Override
+	public int hashCode(){
+		return this.getMarker1().getLabel().hashCode()*this.getMarker2().getLabel().hashCode();
 	}
 
 	public void setzDeltaCorr(double zDeltaCorr) {

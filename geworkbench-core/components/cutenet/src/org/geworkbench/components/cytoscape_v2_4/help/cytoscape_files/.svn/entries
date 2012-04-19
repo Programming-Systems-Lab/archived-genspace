@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/cutenet/src/org/geworkbench/components/cytoscape_v2_4/help/cytoscape_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,108 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-T_Cytoscape_ARACNE_result.png
-file
-
-
-
-
-2011-08-17T00:10:40.000000Z
-f5412f979046e5606b5149b0f7ab0842
-2009-09-29T22:56:39.000000Z
-5632
-ksmith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-98796
-
-T_Cytoscape_Network_manipulations.png
-file
-
-
-
-
-2011-08-17T00:10:40.000000Z
-612eca6a044f8f9579bf2abf0981dcd2
-2009-09-29T22:56:39.000000Z
-5632
-ksmith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4393
-
-T_Cytoscape_manual_node_select.png
-file
-
-
-
-
-2011-08-17T00:10:40.000000Z
-e09ae5ffe7a0a45787f748079d29ab75
-2009-09-29T22:56:39.000000Z
-5632
-ksmith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-116386
 
 T_Cytoscape_select.png
 file
@@ -162,14 +60,14 @@ has-props
 
 62889
 
-T_Cytoscape_selected_set.png
+T_Cytoscape_manual_node_select.png
 file
 
 
 
 
 2011-08-17T00:10:40.000000Z
-77c317472c8e31f0313256c496946e89
+e09ae5ffe7a0a45787f748079d29ab75
 2009-09-29T22:56:39.000000Z
 5632
 ksmith
@@ -194,41 +92,7 @@ has-props
 
 
 
-10773
-
-T_Cytoscape_set_operations.png
-file
-
-
-
-
-2011-08-17T00:10:40.000000Z
-14148a87e2f534fc99f1c8c3fbebe770
-2009-09-29T22:56:39.000000Z
-5632
-ksmith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-42772
+116386
 
 T_Cytoscape_tag_for_vis.png
 file
@@ -264,6 +128,74 @@ has-props
 
 5687
 
+T_Cytoscape_selected_set.png
+file
+
+
+
+
+2011-08-17T00:10:40.000000Z
+77c317472c8e31f0313256c496946e89
+2009-09-29T22:56:39.000000Z
+5632
+ksmith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10773
+
+T_Cytoscape_ARACNE_result.png
+file
+
+
+
+
+2011-08-17T00:10:40.000000Z
+f5412f979046e5606b5149b0f7ab0842
+2009-09-29T22:56:39.000000Z
+5632
+ksmith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+98796
+
 T_Cytoscape_tagged.png
 file
 
@@ -297,6 +229,74 @@ has-props
 
 
 107953
+
+T_Cytoscape_Network_manipulations.png
+file
+
+
+
+
+2011-08-17T00:10:40.000000Z
+612eca6a044f8f9579bf2abf0981dcd2
+2009-09-29T22:56:39.000000Z
+5632
+ksmith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4393
+
+T_Cytoscape_set_operations.png
+file
+
+
+
+
+2011-08-17T00:10:40.000000Z
+14148a87e2f534fc99f1c8c3fbebe770
+2009-09-29T22:56:39.000000Z
+5632
+ksmith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+42772
 
 T_Cytoscape_zoom_view.png
 file

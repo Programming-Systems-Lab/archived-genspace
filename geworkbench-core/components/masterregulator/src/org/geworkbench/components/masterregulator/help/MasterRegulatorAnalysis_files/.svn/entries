@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/masterregulator/src/org/geworkbench/components/masterregulator/help/MasterRegulatorAnalysis_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 
 
 
@@ -26,17 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-Array_set_class_assignment_MRA.png
+Project_Folders_MRA_Tooltip.png
 file
 
 
 
 
-2011-08-17T00:19:04.000000Z
-802cf2ff53b9311327a85c441b6aa9c5
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+e487869177fdd918c64100144790fa3d
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -58,19 +58,19 @@ has-props
 
 
 
-20438
+8917
 
-MRA_Detailed_listing.png
+poweredby_mediawiki_88x31.png
 file
 
 
 
 
-2011-08-17T00:19:04.000000Z
-6f5b95e18cd371b8e5f5afaf672a16ae
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+faf87cb68c3ea99313b3e41dfb0dfa52
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -92,7 +92,109 @@ has-props
 
 
 
-11320
+1927
+
+MRA_graph_GBM_ZNF238.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+f932c736dd8f936f82ad38e10cd5089f
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2807
+
+MRA_Services_Grid_Selected.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+6cb389cd298e96922223ed6153e0369a
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45989
+
+MRA_Parameters_FET.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+14dbfb43374286d918a4597009ab1c39
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36662
 
 MRA_GBM_Marker_sets.png
 file
@@ -100,11 +202,11 @@ file
 
 
 
-2011-08-17T00:19:04.000000Z
+2012-04-19T14:02:56.000000Z
 e6347b47d1f8b22f5b1635f3be46c4e1
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -128,17 +230,17 @@ has-props
 
 24373
 
-MRA_GBM_param_setup.png
+MRA_Detailed_listing.png
 file
 
 
 
 
-2011-08-17T00:19:04.000000Z
-c4105747931546e7c3ac1d0cd8b8a9c4
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+04b848a4b9cd38568528772e92163110
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -160,19 +262,19 @@ has-props
 
 
 
-36154
+15368
 
-MRA_Parameters_panel.png
+Array_set_class_assignment_MRA.png
 file
 
 
 
 
-2011-08-17T00:19:04.000000Z
-4bc6acc2176428520bcaca38fa248e28
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+802cf2ff53b9311327a85c441b6aa9c5
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -194,7 +296,143 @@ has-props
 
 
 
-36845
+20438
+
+MRA_Parameters_Main.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+a7037d436f397540dcf211e5106d2b0f
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34269
+
+MRA_Load_Network_Dialog.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+b690b061bb19d126fbd31dd85781d3af
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18061
+
+MRA_Parameters_FET_Example.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+1a86512b5dbeb0560c742c7b17f2403f
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30170
+
+MRA_Parameters_Main_FET_Example.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+1e2eb2af556de4400b0e8ca3c9bdd909
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24632
 
 MRA_Summary_listing.png
 file
@@ -202,11 +440,11 @@ file
 
 
 
-2011-08-17T00:19:04.000000Z
-5c3274f2f747915b19c2e5a296d259c8
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+4cc16932c9e1fde854d2f0b3fb03a506
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -228,7 +466,41 @@ has-props
 
 
 
-16307
+27552
+
+MRA_Parameters_MARINa.png
+file
+
+
+
+
+2012-04-19T14:02:56.000000Z
+f5a918b56484df46482d183933f7d068
+2012-03-09T00:43:50.110740Z
+9068
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36915
 
 MRA_graph_GBM_FOSL2.png
 file
@@ -236,11 +508,11 @@ file
 
 
 
-2011-08-17T00:19:04.000000Z
-f93b1ddbf485418dd196deb53c2ef8ed
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+337336fd1df5b1c888a77772dcb80339
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -262,75 +534,7 @@ has-props
 
 
 
-2861
-
-MRA_graph_GBM_ZNF238.png
-file
-
-
-
-
-2011-08-17T00:19:04.000000Z
-bb80ac21bead06e070adf05d6b84c6b8
-2011-06-15T16:29:27.888300Z
-7991
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3177
-
-MRA_results_node.png
-file
-
-
-
-
-2011-08-17T00:19:04.000000Z
-266d205efb8161e88c068856ccb1d070
-2011-06-15T16:29:27.888300Z
-7991
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5001
+2433
 
 MRA_viewer_GBM_FOSL2.png
 file
@@ -338,11 +542,11 @@ file
 
 
 
-2011-08-17T00:19:04.000000Z
-9fce3f3a1282c65ecb92c89afa6f88af
-2011-06-15T16:29:27.888300Z
-7991
-zji
+2012-04-19T14:02:56.000000Z
+9a3b5639ce2a19412c835733ef7e8786
+2012-03-09T00:43:50.110740Z
+9068
+smithken
 has-props
 
 
@@ -364,39 +568,5 @@ has-props
 
 
 
-90992
-
-commonPrint.css
-file
-
-
-
-
-2011-08-17T00:19:04.000000Z
-8c089c8a9b3e6cff4f00568207330220
-2011-06-15T16:29:27.888300Z
-7991
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4731
+67797
 

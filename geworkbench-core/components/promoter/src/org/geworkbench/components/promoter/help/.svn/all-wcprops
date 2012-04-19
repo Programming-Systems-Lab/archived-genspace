@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help
+/svn/geworkbench/!svn/ver/9084/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help
 END
 promoter.jhm
 K 25
@@ -21,12 +21,6 @@ svn:wc:ra_dav:version-url
 V 131
 /svn/geworkbench/!svn/ver/729/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoterHelpSet.hs
 END
-promoter.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 127
-/svn/geworkbench/!svn/ver/3560/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoter.HTML
-END
 promotertoc.xml
 K 25
 svn:wc:ra_dav:version-url
@@ -37,5 +31,5 @@ promoter.htm
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoter.htm
+/svn/geworkbench/!svn/ver/9080/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoter.htm
 END

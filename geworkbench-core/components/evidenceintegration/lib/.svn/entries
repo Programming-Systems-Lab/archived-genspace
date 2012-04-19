@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/evidenceintegration/lib
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ xiaoqing
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-evidence-integration-0.1.jar
-file
-
-
-
-
-2011-08-17T00:10:42.000000Z
-8d4a9cbd0f29f0bb43fe037cb3467e36
-2007-09-25T14:09:45.000000Z
-3237
-xiaoqing
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16605
-
-junit-4.1.jar
-file
-
-
-
-
-2011-08-17T00:10:42.000000Z
-3aa45be8fd3f5ae8c69b73959a7fa57c
-2007-05-02T21:37:39.000000Z
-2761
-mhall
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-112249
 
 mysql-connector-java-5.0.5-bin.jar
 file
@@ -128,6 +60,40 @@ has-props
 
 512707
 
+junit-4.1.jar
+file
+
+
+
+
+2011-08-17T00:10:42.000000Z
+3aa45be8fd3f5ae8c69b73959a7fa57c
+2007-05-02T21:37:39.000000Z
+2761
+mhall
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+112249
+
 swingx-2006_10_27.jar
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 1140444
+
+evidence-integration-0.1.jar
+file
+
+
+
+
+2011-08-17T00:10:42.000000Z
+8d4a9cbd0f29f0bb43fe037cb3467e36
+2007-09-25T14:09:45.000000Z
+3237
+xiaoqing
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16605
 
 trove.jar
 file

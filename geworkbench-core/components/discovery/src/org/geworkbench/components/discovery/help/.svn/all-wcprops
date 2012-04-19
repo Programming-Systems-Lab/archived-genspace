@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help
+/svn/geworkbench/!svn/ver/9092/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help
 END
 patternDiscovery.jhm
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/7927/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery.jhm
+/svn/geworkbench/!svn/ver/9076/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery.jhm
 END
 patternDiscoveryHelpSet.hs
 K 25
@@ -19,11 +19,11 @@ patternDiscoverytoc.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svn/geworkbench/!svn/ver/7927/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscoverytoc.xml
+/svn/geworkbench/!svn/ver/9076/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscoverytoc.xml
 END
 patternDiscovery.htm
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery.htm
+/svn/geworkbench/!svn/ver/9076/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery.htm
 END

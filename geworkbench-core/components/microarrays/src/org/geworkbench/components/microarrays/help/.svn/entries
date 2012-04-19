@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/microarrays/src/org/geworkbench/components/microarrays/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2007-03-06T21:06:14.000000Z
-2477
-edaly
+2012-03-08T22:33:10.579828Z
+9039
+smithken
 
 
 
@@ -32,9 +32,9 @@ dir
 expressionvaluedist
 dir
 
-microarraypanel
+tablepanel
 dir
 
-tablepanel
+microarraypanel
 dir
 

@@ -1,47 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files
+/svn/geworkbench/!svn/ver/9088/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files
 END
-index_002.css
+Pudge_Academic_message.png
 K 25
 svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/index_002.css
+V 146
+/svn/geworkbench/!svn/ver/9088/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/Pudge_Academic_message.png
 END
-index_003.css
+poweredby_mediawiki_88x31.png
 K 25
 svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/index_003.css
+V 149
+/svn/geworkbench/!svn/ver/9088/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/poweredby_mediawiki_88x31.png
 END
-index_004.css
+Pudge_Parameters.png
 K 25
 svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/index_004.css
-END
-T_Pudge_Setup.png
-K 25
-svn:wc:ra_dav:version-url
-V 137
-/svn/geworkbench/!svn/ver/5445/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/T_Pudge_Setup.png
-END
-commonPrint.css
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/commonPrint.css
+V 140
+/svn/geworkbench/!svn/ver/9088/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/Pudge_Parameters.png
 END
 T_Pudge_Parameters.png
 K 25
 svn:wc:ra_dav:version-url
 V 142
 /svn/geworkbench/!svn/ver/5445/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/T_Pudge_Parameters.png
-END
-index.css
-K 25
-svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/pudge/src/org/geworkbench/components/pudge/help/pudge_files/index.css
 END

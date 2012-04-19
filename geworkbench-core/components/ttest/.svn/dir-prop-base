@@ -3,4 +3,8 @@ svn:ignore
 V 8
 classes
 
+K 13
+svn:mergeinfo
+V 69
+/branches/prototype_transition_to_services/components/ttest:8539-9106
 END

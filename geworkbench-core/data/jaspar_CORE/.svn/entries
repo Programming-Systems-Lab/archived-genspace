@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/data/jaspar_CORE
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ smithken
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-Jaspar_info.txt
-file
-
-
-
-
-2011-08-17T00:10:48.000000Z
-feecbefdb74856d0d77e85f58a74b859
-2010-03-02T18:02:47.173111Z
-6095
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-183
 
 MATRIX.txt
 file
@@ -94,14 +60,14 @@ has-props
 
 11286
 
-MATRIX_ANNOTATION.txt
+Jaspar_info.txt
 file
 
 
 
 
 2011-08-17T00:10:48.000000Z
-650e0688507cdbed644438b0426a9faf
+feecbefdb74856d0d77e85f58a74b859
 2010-03-02T18:02:47.173111Z
 6095
 smithken
@@ -126,7 +92,7 @@ has-props
 
 
 
-66544
+183
 
 MATRIX_DATA.txt
 file
@@ -161,4 +127,38 @@ has-props
 
 
 286877
+
+MATRIX_ANNOTATION.txt
+file
+
+
+
+
+2011-08-17T00:10:48.000000Z
+650e0688507cdbed644438b0426a9faf
+2010-03-02T18:02:47.173111Z
+6095
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+66544
 

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/8996/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help
+/svn/geworkbench/!svn/ver/9174/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help
 END
 analysisPanelHelpSet.hs
 K 25
@@ -9,15 +9,39 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/geworkbench/!svn/ver/8996/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisPanelHelpSet.hs
 END
+analysisFramework_toc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/9174/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisFramework_toc.xml
+END
 analysisPaneltoc.xml
 K 25
 svn:wc:ra_dav:version-url
 V 134
 /svn/geworkbench/!svn/ver/8996/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisPaneltoc.xml
 END
+analysisFramework.htm
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/geworkbench/!svn/ver/9174/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisFramework.htm
+END
+analysisFramework_Map.jhm
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/geworkbench/!svn/ver/9174/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisFramework_Map.jhm
+END
 analysisPanelMap.jhm
 K 25
 svn:wc:ra_dav:version-url
 V 134
 /svn/geworkbench/!svn/ver/8996/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisPanelMap.jhm
+END
+analysisFramework_HelpSet.hs
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/geworkbench/!svn/ver/9174/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/help/analysisFramework_HelpSet.hs
 END

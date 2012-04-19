@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/conf
+/svn/geworkbench/!svn/ver/9164/trunk/geworkbench/conf
 END
 client-config.wsdd
 K 25
@@ -25,7 +25,7 @@ all.xml
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svn/geworkbench/!svn/ver/8434/trunk/geworkbench/conf/all.xml
+/svn/geworkbench/!svn/ver/9164/trunk/geworkbench/conf/all.xml
 END
 log4j.properties
 K 25

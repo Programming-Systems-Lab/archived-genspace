@@ -1,15 +1,15 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-03-05T17:45:18.759987Z
-8955
-zji
+2012-03-09T18:22:36.373649Z
+9084
+smithken
 
 
 
@@ -26,16 +26,16 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-Distribution.java
+PromoterView.java
 file
 
 
 
 
-2011-08-17T00:10:44.000000Z
-96de7b52030456e62d2d08bb7182995f
-2011-02-23T19:53:05.257180Z
-7480
+2012-03-05T20:23:12.000000Z
+9eeebdfb836066e45e1975f755599b55
+2012-02-27T22:42:50.953800Z
+8924
 zji
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-4382
+3648
 
 ImagePanel.java
 file
@@ -94,17 +94,18 @@ has-props
 
 2101
 
-JASPAR_download_info.txt
+Matrix.java
 file
 
 
 
 
-2011-08-17T00:10:44.000000Z
-3177a3c4648fbfd45cf22f23bbc721a2
-2009-08-20T18:20:52.000000Z
-5488
-ksmith
+2012-01-10T19:15:27.000000Z
+70cd300ad2ba9438e4a5e2def713b8ac
+2011-11-07T21:31:43.670402Z
+8505
+zji
+has-props
 
 
 
@@ -125,8 +126,10 @@ ksmith
 
 
 
-
-312
+9645
+
+help
+dir
 
 MatchStats.java
 file
@@ -162,16 +165,16 @@ has-props
 
 495
 
-Matrix.java
+SequencePatternDisplayPanel.java
 file
 
 
 
 
-2012-01-10T19:15:27.000000Z
-70cd300ad2ba9438e4a5e2def713b8ac
-2011-11-07T21:31:43.670402Z
-8505
+2012-03-05T20:23:12.000000Z
+1602299f1798f51929762e564baa8913
+2012-03-05T17:45:18.759987Z
+8955
 zji
 has-props
 
@@ -194,7 +197,177 @@ has-props
 
 
 
-9645
+5280
+
+Distribution.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+96de7b52030456e62d2d08bb7182995f
+2011-02-23T19:53:05.257180Z
+7480
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4382
+
+JASPAR_download_info.txt
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+3177a3c4648fbfd45cf22f23bbc721a2
+2009-08-20T18:20:52.000000Z
+5488
+ksmith
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+312
+
+PromoterViewPanel.java
+file
+
+
+
+
+2012-03-05T20:23:12.000000Z
+c6ea54b45c56bc684807c061953224c4
+2012-03-05T17:45:18.759987Z
+8955
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+78338
+
+TFListPanel.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+bfebdf3dfb93d11232703e3ddb13cbd5
+2010-04-09T15:21:09.895726Z
+6324
+garbent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5248
+
+TFListModel.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+6ff41a2f4ac932d8ad321263f76560d8
+2010-06-10T02:39:43.512944Z
+6786
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2994
 
 MatrixScrollPane.java
 file
@@ -264,176 +437,6 @@ zji
 
 1160
 
-PromoterView.java
-file
-
-
-
-
-2012-03-05T20:23:12.000000Z
-9eeebdfb836066e45e1975f755599b55
-2012-02-27T22:42:50.953800Z
-8924
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3648
-
-PromoterViewPanel.java
-file
-
-
-
-
-2012-03-05T20:23:12.000000Z
-c6ea54b45c56bc684807c061953224c4
-2012-03-05T17:45:18.759987Z
-8955
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-78338
-
-SequencePatternDisplayPanel.java
-file
-
-
-
-
-2012-03-05T20:23:12.000000Z
-1602299f1798f51929762e564baa8913
-2012-03-05T17:45:18.759987Z
-8955
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5280
-
-TFListModel.java
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-6ff41a2f4ac932d8ad321263f76560d8
-2010-06-10T02:39:43.512944Z
-6786
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2994
-
-TFListPanel.java
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-bfebdf3dfb93d11232703e3ddb13cbd5
-2010-04-09T15:21:09.895726Z
-6324
-garbent
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5248
-
 TranscriptionFactor.java
 file
 
@@ -467,10 +470,4 @@ has-props
 
 
 3006
-
-help
-dir
-
-modulediscovery
-dir
 

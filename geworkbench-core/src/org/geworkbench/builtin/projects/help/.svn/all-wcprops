@@ -1,85 +1,61 @@
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/7925/trunk/geworkbench/src/org/geworkbench/builtin/projects/help
+/svn/geworkbench/!svn/ver/9144/trunk/geworkbench/src/org/geworkbench/builtin/projects/help
 END
-Project Folders Overview.HTML
+informationPanel_Map.jhm
 K 25
 svn:wc:ra_dav:version-url
-V 123
-/svn/geworkbench/!svn/ver/934/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Project%20Folders%20Overview.HTML
+V 115
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/informationPanel_Map.jhm
 END
-Rename Dataset.HTML
+localDataFiles_Map.jhm
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/9144/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/localDataFiles_Map.jhm
+END
+projectFolders_HelpSet.hs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectFolders_HelpSet.hs
+END
+projectFolders_toc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectFolders_toc.xml
+END
+informationPanel.htm
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/svn/geworkbench/!svn/ver/916/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Rename%20Dataset.HTML
+/svn/geworkbench/!svn/ver/9116/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/informationPanel.htm
 END
-cell.HTML
+localDataFiles.htm
 K 25
 svn:wc:ra_dav:version-url
-V 100
-/svn/geworkbench/!svn/ver/2616/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/cell.HTML
+V 109
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/localDataFiles.htm
 END
-Manage Project.HTML
+projectFolders_Map.jhm
 K 25
 svn:wc:ra_dav:version-url
-V 112
-/svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Manage%20Project.HTML
+V 113
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectFolders_Map.jhm
 END
-projectPanelHelpSet.hs
+informationPanel_HelpSet.hs
 K 25
 svn:wc:ra_dav:version-url
-V 112
-/svn/geworkbench/!svn/ver/651/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectPanelHelpSet.hs
+V 118
+/svn/geworkbench/!svn/ver/9116/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/informationPanel_HelpSet.hs
 END
-Affy File Matrix Format.HTML
+localDataFiles_HelpSet.hs
 K 25
 svn:wc:ra_dav:version-url
-V 125
-/svn/geworkbench/!svn/ver/2071/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Affy%20File%20Matrix%20Format.HTML
-END
-Affy File.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/geworkbench/!svn/ver/672/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Affy%20File.HTML
-END
-RMA Format.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svn/geworkbench/!svn/ver/4176/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/RMA%20Format.HTML
-END
-projectPaneltoc.xml
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/geworkbench/!svn/ver/2223/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectPaneltoc.xml
-END
-remote.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/geworkbench/!svn/ver/1317/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/remote.HTML
-END
-Affy MAS5_GCOS Format.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 121
-/svn/geworkbench/!svn/ver/3868/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Affy%20MAS5_GCOS%20Format.HTML
-END
-projectPanel.jhm
-K 25
-svn:wc:ra_dav:version-url
-V 107
-/svn/geworkbench/!svn/ver/7925/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectPanel.jhm
-END
-preferences.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/geworkbench/!svn/ver/919/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/preferences.HTML
+V 116
+/svn/geworkbench/!svn/ver/9144/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/localDataFiles_HelpSet.hs
 END
 ncicb.css
 K 25
@@ -87,39 +63,21 @@ svn:wc:ra_dav:version-url
 V 99
 /svn/geworkbench/!svn/ver/651/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/ncicb.css
 END
-Merge Dataset.HTML
+informationPanel_toc.xml
 K 25
 svn:wc:ra_dav:version-url
-V 111
-/svn/geworkbench/!svn/ver/2616/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Merge%20Dataset.HTML
+V 115
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/informationPanel_toc.xml
 END
-Open Dataset.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/geworkbench/!svn/ver/2502/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Open%20Dataset.HTML
-END
-Manage Workspace.HTML
+localDataFiles_toc.xml
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/913/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Manage%20Workspace.HTML
+/svn/geworkbench/!svn/ver/9144/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/localDataFiles_toc.xml
 END
-Genepix Format.HTML
+projectFolders.htm
 K 25
 svn:wc:ra_dav:version-url
-V 112
-/svn/geworkbench/!svn/ver/2071/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Genepix%20Format.HTML
-END
-Delete Dataset.HTML
-K 25
-svn:wc:ra_dav:version-url
-V 112
-/svn/geworkbench/!svn/ver/1078/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/Delete%20Dataset.HTML
-END
-ProjectPanel.htm
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/geworkbench/!svn/ver/651/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/ProjectPanel.htm
+V 109
+/svn/geworkbench/!svn/ver/9128/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectFolders.htm
 END

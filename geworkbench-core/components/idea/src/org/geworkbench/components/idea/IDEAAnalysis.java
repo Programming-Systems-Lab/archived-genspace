@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -52,7 +53,7 @@ import org.geworkbench.util.ProgressBar;
  * IDEAAnalysis of IDEA analysis component
  * 
  * @author zm2165
- * @version $Id: IDEAAnalysis.java 8990 2012-03-07 19:21:35Z zji $
+ * @version $Id: IDEAAnalysis.java 9238 2012-03-29 19:29:37Z maz $
  */
 public class IDEAAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -116,7 +117,7 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 		pbIdea.start();
 		this.stopAlgorithm = false;
 
-		ArrayList<IdeaEdge> edgeIndex = new ArrayList<IdeaEdge>();
+		HashSet<IdeaEdge> edgeIndex = new HashSet<IdeaEdge>();
 
 		List<IdeaNetworkEdge> network = IDEAAnalysisPanel.getNetwork();
 		if (network == null){			
@@ -175,16 +176,17 @@ public class IDEAAnalysis extends AbstractGridAnalysis implements
 				if ((gene1.getMarkers() != null) && (gene2.getMarkers() != null)) {
 					for (DSGeneMarker marker1 : gene1.getMarkers()) {
 						for (DSGeneMarker marker2 : gene2.getMarkers()) {
-							IdeaEdge anEdge = new IdeaEdge(edge.getGene1(),
-									edge.getGene2(), marker1, marker2,
-									marker1.getSerial(), marker2.getSerial(),
-									marker1.getLabel(), marker2.getLabel(),
-									edge.getInteractionType());
-							edgeIndex.add(anEdge);
-	
-							gene1.addEdge(anEdge);// add the edge to related
-													// gene in preGeneList
-							gene2.addEdge(anEdge);
+														
+								IdeaEdge anEdge = new IdeaEdge(edge.getGene1(),
+										edge.getGene2(), marker1, marker2,
+										marker1.getSerial(), marker2.getSerial(),
+										marker1.getLabel(), marker2.getLabel(),
+										edge.getInteractionType());
+								edgeIndex.add(anEdge);
+		
+								gene1.addEdge(anEdge);// add the edge to related
+														// gene in preGeneList
+								gene2.addEdge(anEdge);
 						}
 					}
 				}

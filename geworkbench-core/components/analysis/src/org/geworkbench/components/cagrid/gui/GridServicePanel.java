@@ -32,7 +32,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * 
  * @author keshav
- * @version $Id: GridServicePanel.java 8296 2011-09-15 01:04:47Z maz $
+ * @version $Id: GridServicePanel.java 9320 2012-04-17 19:01:54Z maz $
  */
 public class GridServicePanel extends JPanel {
 	private static final long serialVersionUID = -5691010510843212800L;
@@ -69,6 +69,7 @@ public class GridServicePanel extends JPanel {
 		analysisSet.add("SkyBase");
 		analysisSet.add("MRA");
 		analysisSet.add("Idea");
+		analysisSet.add("Sam");
 
 		/* part A */
 		DefaultFormBuilder indexServiceBuilder = new DefaultFormBuilder(

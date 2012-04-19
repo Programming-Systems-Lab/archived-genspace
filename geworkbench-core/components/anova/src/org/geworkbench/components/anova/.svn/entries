@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/anova/src/org/geworkbench/components/anova
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,6 +60,9 @@ smithken
 
 1453
 
+gui
+dir
+
 AnovaAnalysis.java
 file
 
@@ -93,9 +96,6 @@ has-props
 
 
 22027
-
-gui
-dir
 
 help
 dir
