@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="MacRoman" standalone="no"?>
+<jardesc>
+    <jar path="geworkbench-core/components/genspace/lib/genspace-common.jar"/>
+    <options buildIfNeeded="true" compress="false" descriptionLocation="/genspace-common/jar-descriptor.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="/invivo-junit-runner/META-INF/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <folder path="/genspace-common/lib"/>
+        <folder path="/genspace-common/src/META-INF"/>
+        <file path="/genspace-common/.classpath"/>
+        <file path="/genspace-common/.project"/>
+        <file path="/genspace-common/.gitignore"/>
+        <file path="/genspace-common/makeStubs.sh"/>
+        <file path="/genspace-common/makeStubs.bat"/>
+        <javaElement handleIdentifier="=genspace-common/src&lt;org.geworkbench.components.genspace.server.stubs"/>
+        <javaElement handleIdentifier="=genspace-common/src&lt;org.geworkbench.components.genspace.server.task"/>
+        <javaElement handleIdentifier="=genspace-common/src&lt;org.geworkbench.components.genspace.server"/>
+    </selectedElements>
+</jardesc>
