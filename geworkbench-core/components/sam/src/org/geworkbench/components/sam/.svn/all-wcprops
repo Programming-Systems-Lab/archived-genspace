@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svn/geworkbench/!svn/ver/9326/trunk/geworkbench/components/sam/src/org/geworkbench/components/sam
+/svn/geworkbench/!svn/ver/9387/trunk/geworkbench/components/sam/src/org/geworkbench/components/sam
 END
 SAMPanel.java
 K 25
@@ -19,7 +19,7 @@ SAMAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/geworkbench/!svn/ver/9326/trunk/geworkbench/components/sam/src/org/geworkbench/components/sam/SAMAnalysis.java
+/svn/geworkbench/!svn/ver/9387/trunk/geworkbench/components/sam/src/org/geworkbench/components/sam/SAMAnalysis.java
 END
 SAMViewer.cwb.xml
 K 25

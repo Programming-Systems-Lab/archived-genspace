@@ -1,17 +1,47 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/geworkbench/!svn/ver/9278/trunk/geworkbench-web/src/org/geworkbenchweb/layout
+/svn/geworkbench/!svn/ver/9476/trunk/geworkbench-web/src/org/geworkbenchweb/layout
 END
-DataTab.java
+USetsTabSheet.java
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svn/geworkbench/!svn/ver/9278/trunk/geworkbench-web/src/org/geworkbenchweb/layout/DataTab.java
+V 101
+/svn/geworkbench/!svn/ver/9472/trunk/geworkbench-web/src/org/geworkbenchweb/layout/USetsTabSheet.java
 END
-VisualPlugin.java
+UHeatMap.java
 K 25
 svn:wc:ra_dav:version-url
-V 100
-/svn/geworkbench/!svn/ver/9257/trunk/geworkbench-web/src/org/geworkbenchweb/layout/VisualPlugin.java
+V 96
+/svn/geworkbench/!svn/ver/9448/trunk/geworkbench-web/src/org/geworkbenchweb/layout/UHeatMap.java
+END
+UDataTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/src/org/geworkbenchweb/layout/UDataTab.java
+END
+UAccordionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/9476/trunk/geworkbench-web/src/org/geworkbenchweb/layout/UAccordionPanel.java
+END
+UMainLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/9470/trunk/geworkbench-web/src/org/geworkbenchweb/layout/UMainLayout.java
+END
+UVisualPlugin.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/geworkbench/!svn/ver/9470/trunk/geworkbench-web/src/org/geworkbenchweb/layout/UVisualPlugin.java
+END
+UMenuBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/src/org/geworkbenchweb/layout/UMenuBar.java
 END

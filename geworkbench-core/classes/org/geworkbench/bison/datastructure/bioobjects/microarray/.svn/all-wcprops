@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/8818/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray
+/svn/geworkbench/!svn/ver/9199/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray
 END
 DSMicroarray.java
 K 25
@@ -15,11 +15,11 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSProbeIntensityArray.java
 END
-CSTTestResultSet.java
+DSProbeIntensityArray.java
 K 25
 svn:wc:ra_dav:version-url
-V 132
-/svn/geworkbench/!svn/ver/8818/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSTTestResultSet.java
+V 137
+/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSProbeIntensityArray.java
 END
 CSMarkerValue.java
 K 25
@@ -27,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 129
 /svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSMarkerValue.java
 END
-DSProbeIntensityArray.java
+CSTTestResultSet.java
 K 25
 svn:wc:ra_dav:version-url
-V 137
-/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSProbeIntensityArray.java
+V 132
+/svn/geworkbench/!svn/ver/8818/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSTTestResultSet.java
 END
-DSMarkerValue.java
+DSTTestResultSet.java
 K 25
 svn:wc:ra_dav:version-url
-V 129
-/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSMarkerValue.java
+V 132
+/svn/geworkbench/!svn/ver/3498/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSTTestResultSet.java
 END
 CSAnovaResultSet.java
 K 25
@@ -45,11 +45,11 @@ svn:wc:ra_dav:version-url
 V 132
 /svn/geworkbench/!svn/ver/8450/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSAnovaResultSet.java
 END
-DSTTestResultSet.java
+DSMarkerValue.java
 K 25
 svn:wc:ra_dav:version-url
-V 132
-/svn/geworkbench/!svn/ver/3498/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSTTestResultSet.java
+V 129
+/svn/geworkbench/!svn/ver/7572/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSMarkerValue.java
 END
 DSAnovaResultSet.java
 K 25
@@ -73,7 +73,7 @@ DSMasterRagulatorResultSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 142
-/svn/geworkbench/!svn/ver/8532/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSMasterRagulatorResultSet.java
+/svn/geworkbench/!svn/ver/9199/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/DSMasterRagulatorResultSet.java
 END
 DSMutableMarkerValue.java
 K 25
@@ -85,7 +85,7 @@ CSMasterRegulatorResultSet.java
 K 25
 svn:wc:ra_dav:version-url
 V 142
-/svn/geworkbench/!svn/ver/8532/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSMasterRegulatorResultSet.java
+/svn/geworkbench/!svn/ver/9199/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/microarray/CSMasterRegulatorResultSet.java
 END
 CSSignificanceResultSet.java
 K 25

@@ -71,7 +71,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * @author mhall
  * @ch2514
  * @author oshteynb
- * @version $Id: MindyPlugin.java 8941 2012-02-29 21:40:51Z zji $
+ * @version $Id: MindyPlugin.java 9393 2012-04-25 19:07:11Z zji $
  */
 @SuppressWarnings("serial")
 public class MindyPlugin extends JPanel {
@@ -194,9 +194,9 @@ public class MindyPlugin extends JPanel {
 				+ System.currentTimeMillis());
 
 		/*   init like in param panel, check for null needed for loading saved workspace */
-		MindyParamPanel mindyParamPanel = MindyAnalysis.getParamsPanel();
-		if (mindyParamPanel != null){
-			filteringSelectorPanel = mindyParamPanel.getSelectorPanel();
+		DSPanel<DSGeneMarker> selectorPanel = visualPlugin.getSelectorPanel();
+		if(selectorPanel!=null) {
+			filteringSelectorPanel = selectorPanel;
 			resetTargetSetModel(filteringSelectorPanel);
 		}
 

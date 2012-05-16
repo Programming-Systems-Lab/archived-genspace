@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/hierarchicalclustering/src/org/geworkbench/components/hierarchicalclustering/help/Hierarchical_Clustering_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -128,40 +128,6 @@ has-props
 
 4180
 
-T_HC_computing.png
-file
-
-
-
-
-2012-03-08T18:51:45.000000Z
-0e72e7dfd16c53b6321cecf2e27d8a9d
-2012-03-07T23:52:57.177703Z
-9007
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11707
-
 T_HC_Dendrogram_marked.png
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 25625
+
+T_HC_computing.png
+file
+
+
+
+
+2012-03-08T18:51:45.000000Z
+0e72e7dfd16c53b6321cecf2e27d8a9d
+2012-03-07T23:52:57.177703Z
+9007
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11707
 
 T_HC_Dendrogram_display.png
 file
@@ -264,40 +264,6 @@ has-props
 
 1770
 
-T_HC_ArraySets-ClusterTree.png
-file
-
-
-
-
-2012-03-08T18:51:45.000000Z
-7c7e7192783a24f72db936e8b754e104
-2012-03-07T23:52:57.177703Z
-9007
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3859
-
 T_HC_set_activation.png
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 3877
+
+T_HC_ArraySets-ClusterTree.png
+file
+
+
+
+
+2012-03-08T18:51:45.000000Z
+7c7e7192783a24f72db936e8b754e104
+2012-03-07T23:52:57.177703Z
+9007
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3859
 
 HC_setup.png
 file
@@ -366,40 +366,6 @@ has-props
 
 21863
 
-T_HC_MarkerSets-ClusterTree.png
-file
-
-
-
-
-2012-03-08T18:51:45.000000Z
-15c6caa8983b75a1a37d53524ddc98a3
-2012-03-07T23:52:57.177703Z
-9007
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3995
-
 T_HC_Dendrogram_selecting.png
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 6162
+
+T_HC_MarkerSets-ClusterTree.png
+file
+
+
+
+
+2012-03-08T18:51:45.000000Z
+15c6caa8983b75a1a37d53524ddc98a3
+2012-03-07T23:52:57.177703Z
+9007
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3995
 
 HC_default_settings.png
 file

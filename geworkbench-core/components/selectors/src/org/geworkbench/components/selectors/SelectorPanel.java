@@ -73,7 +73,7 @@ import org.geworkbench.util.visualproperties.VisualPropertiesDialog;
 
 /**
  * @author John Watkinson
- * @version $Id: SelectorPanel.java 8725 2012-01-18 19:01:52Z zji $
+ * @version $Id: SelectorPanel.java 9417 2012-04-30 19:51:14Z zji $
  */
 public abstract class SelectorPanel<T extends DSSequential> implements
 		VisualPlugin, MenuListener {
@@ -395,7 +395,7 @@ public abstract class SelectorPanel<T extends DSSequential> implements
 		if (path != null) {
 			String label = getLabelForPath(path);
 			T item = getItemForPath(path);
-			if ((e.isMetaDown()) && (e.getClickCount() == 1)) {
+			if ((e.getButton()==MouseEvent.BUTTON3) && (e.getClickCount() == 1)) {
 				rightClickedPath = path;
 				ensurePathIsSelected(rightClickedPath);
 				if (label != null) {

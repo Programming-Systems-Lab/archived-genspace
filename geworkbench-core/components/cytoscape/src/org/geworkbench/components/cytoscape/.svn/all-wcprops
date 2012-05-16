@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/9269/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
+/svn/geworkbench/!svn/ver/9477/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape
 END
 HistogramGraph.java
 K 25
@@ -19,7 +19,7 @@ NetworkRedrawWindow.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/geworkbench/!svn/ver/9269/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/NetworkRedrawWindow.java
+/svn/geworkbench/!svn/ver/9477/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/NetworkRedrawWindow.java
 END
 CytoscapeWidget.cwb.xml
 K 25
@@ -37,7 +37,7 @@ MarkerSelectionPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svn/geworkbench/!svn/ver/9269/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/MarkerSelectionPanel.java
+/svn/geworkbench/!svn/ver/9477/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/MarkerSelectionPanel.java
 END
 TTestResultSelectionPanel.java
 K 25
@@ -55,5 +55,5 @@ CytoscapeWidget.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/geworkbench/!svn/ver/9269/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.java
+/svn/geworkbench/!svn/ver/9477/trunk/geworkbench/components/cytoscape/src/org/geworkbench/components/cytoscape/CytoscapeWidget.java
 END

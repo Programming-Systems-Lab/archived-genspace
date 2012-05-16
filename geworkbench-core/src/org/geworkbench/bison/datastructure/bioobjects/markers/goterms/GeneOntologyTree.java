@@ -36,7 +36,7 @@ import org.geworkbench.builtin.projects.OboSourcePreference;
  * 
  * @author John Watkinson
  * @author Xiaoqing Zhang
- * @version $Id: GeneOntologyTree.java 8762 2012-01-25 17:48:27Z zji $
+ * @version $Id: GeneOntologyTree.java 9423 2012-05-03 20:26:20Z zji $
  */
 public class GeneOntologyTree {
 	
@@ -205,8 +205,8 @@ public class GeneOntologyTree {
 					.showMessageDialog(
 							null,
 							oboFileName
-									+ ", which is part of geworkbench istallation, is missing. Gene Ontology related funactionality will not work correctly unless you choose to use remote obo source.",
-							".obo fil missing", JOptionPane.ERROR_MESSAGE);
+									+ ", which is part of geworkbench installation, is missing.\nGene Ontology related functionality will not work correctly unless you choose to use remote obo source.",
+							".obo file missing", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

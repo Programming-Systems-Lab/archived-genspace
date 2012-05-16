@@ -1,17 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/geworkbench/!svn/ver/8675/trunk/geworkbench/src/org/geworkbench/util/microarrayutils
+/svn/geworkbench/!svn/ver/9466/trunk/geworkbench/src/org/geworkbench/util/microarrayutils
 END
 MicroarrayViewEventBase.java
 K 25
 svn:wc:ra_dav:version-url
 V 118
 /svn/geworkbench/!svn/ver/8675/trunk/geworkbench/src/org/geworkbench/util/microarrayutils/MicroarrayViewEventBase.java
-END
-MicroarrayVisualizer.java
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/src/org/geworkbench/util/microarrayutils/MicroarrayVisualizer.java
 END

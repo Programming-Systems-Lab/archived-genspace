@@ -1,0 +1,11 @@
+K 13
+svn:mergeinfo
+V 519
+/branches/filter_enhancement/src/org/geworkbench/builtin/projects:6210-6293
+/branches/geworkbench_2_0_0/src/org/geworkbench/builtin/projects:6674-6785
+/branches/geworkbench_2_1_0/src/org/geworkbench/builtin/projects:6992-7050
+/branches/geworkbench_2_2_0/src/org/geworkbench/builtin/projects:7814-7924
+/branches/geworkbench_2_2_1/src/org/geworkbench/builtin/projects:8008-8186
+/branches/geworkbench_2_3_0/src/org/geworkbench/builtin/projects:8831-9115
+/genspace_integration/src/org/geworkbench/builtin/projects:7736-7750
+END

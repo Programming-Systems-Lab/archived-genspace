@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/help
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -131,9 +131,6 @@ has-props
 informationPanel_files
 dir
 
-localDataFiles_files
-dir
-
 projectFolders_toc.xml
 file
 
@@ -167,6 +164,9 @@ has-props
 
 
 1287
+
+localDataFiles_files
+dir
 
 informationPanel.htm
 file

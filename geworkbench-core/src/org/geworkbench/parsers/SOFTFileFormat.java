@@ -33,7 +33,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
 
 /**  
  * @author Nikhil
- * @version $Id: SOFTFileFormat.java 8807 2012-01-27 22:43:49Z zji $
+ * @version $Id: SOFTFileFormat.java 9458 2012-05-11 18:51:48Z wangmen $
  */
 public class SOFTFileFormat extends DataSetFileFormat {
 
@@ -159,11 +159,13 @@ public class SOFTFileFormat extends DataSetFileFormat {
 				if(lineCh.subSequence(0, 7).equals("!Series")){
 					GeoSeriesMatrixParser parser = new GeoSeriesMatrixParser();
 					maSet1 = parser.getMArraySet(file);
+					maSet1.setFile(file);
 					return maSet1;
 				}
 				if(lineCh.subSequence(0, 7).equals("^SAMPLE")){
 					SampleFileParser parser = new SampleFileParser();
 					maSet1 = parser.getMArraySet(file);
+					maSet1.setFile(file);
 					return maSet1;
 				}
 				if(lineCh.subSequence(0, 9).equals("^DATABASE")){
@@ -177,10 +179,12 @@ public class SOFTFileFormat extends DataSetFileFormat {
 						SOFTSeriesParser parser = new SOFTSeriesParser();
 						readIn.close();
 						maSet1 = parser.parseSOFTSeriesFile(file);
+						maSet1.setFile(file);
 						return maSet1;
 					}
 					if(!lineCh.subSequence(0, 7).equals("^SERIES")){
 						maSet1 = parseFile(file);
+						maSet1.setFile(file);
 						return  maSet1;
 					}
 				}

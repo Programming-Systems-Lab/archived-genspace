@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/geworkbench/!svn/ver/9274/trunk/geworkbench-web/WebContent/WEB-INF/lib
-END
-ProtovisGWT-0.4.1.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/8926/trunk/geworkbench-web/WebContent/WEB-INF/lib/ProtovisGWT-0.4.1.jar
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/WebContent/WEB-INF/lib
 END
 mysql-connector-java-5.1.13-bin.jar
 K 25
@@ -15,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 111
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/mysql-connector-java-5.1.13-bin.jar
 END
-geworkbench-bison.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-bison.jar
-END
 appfoundation.jar
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/appfoundation.jar
+END
+aracne-java.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/9404/trunk/geworkbench-web/WebContent/WEB-INF/lib/aracne-java.jar
 END
 javax.persistence_1.0.0.jar
 K 25
@@ -33,11 +27,11 @@ svn:wc:ra_dav:version-url
 V 103
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/javax.persistence_1.0.0.jar
 END
-geworkbench-util.jar
+ostermillerutils_1_04_03_for_kaffe.jar
 K 25
 svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-util.jar
+V 114
+/svn/geworkbench/!svn/ver/9291/trunk/geworkbench-web/WebContent/WEB-INF/lib/ostermillerutils_1_04_03_for_kaffe.jar
 END
 mysql-connector-java-5.1.18-bin.jar
 K 25
@@ -45,17 +39,11 @@ svn:wc:ra_dav:version-url
 V 111
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/mysql-connector-java-5.1.18-bin.jar
 END
-geworkbench-parsers.jar
+aracne-main.jar
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-parsers.jar
-END
-javax.persistence_2.0.3.v201010191057.jar
-K 25
-svn:wc:ra_dav:version-url
-V 117
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/javax.persistence_2.0.3.v201010191057.jar
+V 91
+/svn/geworkbench/!svn/ver/9407/trunk/geworkbench-web/WebContent/WEB-INF/lib/aracne-main.jar
 END
 vaadin-6.7.4.jar
 K 25
@@ -67,13 +55,25 @@ hierarchicalclustering.jar
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/9189/trunk/geworkbench-web/WebContent/WEB-INF/lib/hierarchicalclustering.jar
+/svn/geworkbench/!svn/ver/9381/trunk/geworkbench-web/WebContent/WEB-INF/lib/hierarchicalclustering.jar
 END
-chameleon-blue.jar
+commons-io-2.3.jar
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/chameleon-blue.jar
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-io-2.3.jar
+END
+commons-cli.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/geworkbench/!svn/ver/9407/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-cli.jar
+END
+workbook-0.91.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/9407/trunk/geworkbench-web/WebContent/WEB-INF/lib/workbook-0.91.jar
 END
 log4j-1.2.8.jar
 K 25
@@ -81,23 +81,17 @@ svn:wc:ra_dav:version-url
 V 91
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/log4j-1.2.8.jar
 END
-collections-generic-4.0.jar
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/collections-generic-4.0.jar
-END
-vaadin-chameleon-theme-1.0.2.jar
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/vaadin-chameleon-theme-1.0.2.jar
-END
-commons-lang-2.4.jar
+geworkbench-core.jar
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-lang-2.4.jar
+/svn/geworkbench/!svn/ver/9381/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-core.jar
+END
+commons-httpclient-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/geworkbench/!svn/ver/9291/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-httpclient-3.1.jar
 END
 jrobin-1.5.9.jar
 K 25
@@ -105,11 +99,11 @@ svn:wc:ra_dav:version-url
 V 92
 /svn/geworkbench/!svn/ver/8715/trunk/geworkbench-web/WebContent/WEB-INF/lib/jrobin-1.5.9.jar
 END
-icepush-0.2.1.jar
+colt-1.2.0.jar
 K 25
 svn:wc:ra_dav:version-url
-V 93
-/svn/geworkbench/!svn/ver/9274/trunk/geworkbench-web/WebContent/WEB-INF/lib/icepush-0.2.1.jar
+V 90
+/svn/geworkbench/!svn/ver/9407/trunk/geworkbench-web/WebContent/WEB-INF/lib/colt-1.2.0.jar
 END
 easyuploads-0.4.9.jar
 K 25
@@ -117,29 +111,11 @@ svn:wc:ra_dav:version-url
 V 97
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/easyuploads-0.4.9.jar
 END
-commons-logging.jar
+commons-math-1.2.jar
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-logging.jar
-END
-icepush-gwt.jar
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svn/geworkbench/!svn/ver/9274/trunk/geworkbench-web/WebContent/WEB-INF/lib/icepush-gwt.jar
-END
-geworkbench-others.jar
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-others.jar
-END
-geworkbench-events.jar
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-events.jar
+V 96
+/svn/geworkbench/!svn/ver/9407/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-math-1.2.jar
 END
 eclipselink-jpa-modelgen_2.3.2.v20111125-r10461.jar
 K 25
@@ -147,11 +123,59 @@ svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/8796/trunk/geworkbench-web/WebContent/WEB-INF/lib/eclipselink-jpa-modelgen_2.3.2.v20111125-r10461.jar
 END
-geworkbench-engine.jar
+ProtovisGWT-0.4.1.jar
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-engine.jar
+V 97
+/svn/geworkbench/!svn/ver/8926/trunk/geworkbench-web/WebContent/WEB-INF/lib/ProtovisGWT-0.4.1.jar
+END
+javax.persistence_2.0.3.v201010191057.jar
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/javax.persistence_2.0.3.v201010191057.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/9291/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-codec-1.3.jar
+END
+TableExport-1.3.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/WebContent/WEB-INF/lib/TableExport-1.3.0.jar
+END
+collections-generic-4.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/collections-generic-4.0.jar
+END
+invientcharts-0.8.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/9317/trunk/geworkbench-web/WebContent/WEB-INF/lib/invientcharts-0.8.6.jar
+END
+poi-3.8-20120326.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/WebContent/WEB-INF/lib/poi-3.8-20120326.jar
+END
+commons-lang-2.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-lang-2.4.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/commons-logging.jar
 END
 JSciCore.jar
 K 25
@@ -159,11 +183,11 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/JSciCore.jar
 END
-geworkbench-builtin.jar
+interactions.jar
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/WEB-INF/lib/geworkbench-builtin.jar
+V 92
+/svn/geworkbench/!svn/ver/9382/trunk/geworkbench-web/WebContent/WEB-INF/lib/interactions.jar
 END
 eclipselink.jar
 K 25

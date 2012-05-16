@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
+/svn/geworkbench/!svn/ver/9455/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei
 END
 EvidenceIntegrationVisualization.cwb.xml
 K 25
@@ -19,7 +19,7 @@ GenericDisplayPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/GenericDisplayPanel.java
+/svn/geworkbench/!svn/ver/9455/trunk/geworkbench/components/evidenceintegration/src/org/geworkbench/components/ei/GenericDisplayPanel.java
 END
 EvidenceIntegrationAnalysis.cwb.xml
 K 25

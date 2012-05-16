@@ -12,13 +12,13 @@ https://ncisvn.nci.nih.gov/svn/geworkbench
 bellj
 
 
-svn:special svn:externals svn:needs-lock
 
 
 
 
 
 
+copied
 
 
 
@@ -28,4 +28,22 @@ svn:special svn:externals svn:needs-lock
 
 ui
 dir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+copied
 

@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,179 +25,6 @@ smithken
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-PromoterView.java
-file
-
-
-
-
-2012-03-05T20:23:12.000000Z
-9eeebdfb836066e45e1975f755599b55
-2012-02-27T22:42:50.953800Z
-8924
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3648
-
-ImagePanel.java
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-a146bfd3bae52d9012af17d7c9470b32
-2011-02-23T19:53:05.257180Z
-7480
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2101
-
-Matrix.java
-file
-
-
-
-
-2012-01-10T19:15:27.000000Z
-70cd300ad2ba9438e4a5e2def713b8ac
-2011-11-07T21:31:43.670402Z
-8505
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9645
-
-help
-dir
-
-MatchStats.java
-file
-
-
-
-
-2011-08-17T00:10:44.000000Z
-ebb18aa652f48c32e1cd16489d3beb2a
-2005-07-28T22:36:56.000000Z
-50
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-495
-
-SequencePatternDisplayPanel.java
-file
-
-
-
-
-2012-03-05T20:23:12.000000Z
-1602299f1798f51929762e564baa8913
-2012-03-05T17:45:18.759987Z
-8955
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5280
 
 Distribution.java
 file
@@ -267,6 +94,74 @@ ksmith
 
 312
 
+PromoterView.java
+file
+
+
+
+
+2012-03-05T20:23:12.000000Z
+9eeebdfb836066e45e1975f755599b55
+2012-02-27T22:42:50.953800Z
+8924
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3648
+
+ImagePanel.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+a146bfd3bae52d9012af17d7c9470b32
+2011-02-23T19:53:05.257180Z
+7480
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2101
+
 PromoterViewPanel.java
 file
 
@@ -300,6 +195,40 @@ has-props
 
 
 78338
+
+Matrix.java
+file
+
+
+
+
+2012-01-10T19:15:27.000000Z
+70cd300ad2ba9438e4a5e2def713b8ac
+2011-11-07T21:31:43.670402Z
+8505
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9645
 
 TFListPanel.java
 file
@@ -403,6 +332,43 @@ has-props
 
 3147
 
+help
+dir
+
+MatchStats.java
+file
+
+
+
+
+2011-08-17T00:10:44.000000Z
+ebb18aa652f48c32e1cd16489d3beb2a
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+495
+
 PromoterView.cwb.xml
 file
 
@@ -436,6 +402,40 @@ zji
 
 
 1160
+
+SequencePatternDisplayPanel.java
+file
+
+
+
+
+2012-03-05T20:23:12.000000Z
+1602299f1798f51929762e564baa8913
+2012-03-05T17:45:18.759987Z
+8955
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5280
 
 TranscriptionFactor.java
 file

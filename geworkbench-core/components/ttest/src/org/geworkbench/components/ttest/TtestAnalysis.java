@@ -52,7 +52,7 @@ import org.geworkbench.util.ProgressBar;
  * &nbsp;&nbsp;&nbsp; org.tigr.microarray.mev.cluster.algorithm.impl
  * 
  * @author manjunath at genomecenter dot columbia dot edu
- * @version $Id: TtestAnalysis.java 9196 2012-03-21 21:04:31Z zji $
+ * @version $Id: TtestAnalysis.java 9367 2012-04-23 18:01:52Z zji $
  */
 public class TtestAnalysis extends AbstractAnalysis implements
 		ClusteringAnalysis {
@@ -334,12 +334,13 @@ public class TtestAnalysis extends AbstractAnalysis implements
 				alpha, isLogNormalized
 
 		);
-		for (int i = 0; i < output.pValue.length; i++) {
-			DSGeneMarker m = data.markers().get(i);
-			sigSet.setSignificance(m, output.pValue[i]);
-			sigSet.setTValue(m, output.tValue[i]);
+		for (int i = 0; i < output.significanceIndex.length; i++) {
+			int index = output.significanceIndex[i];
+			DSGeneMarker m = data.markers().get(index);
+			sigSet.setSignificance(m, output.pValue[index]);
+			sigSet.setTValue(m, output.tValue[index]);
 			
-			sigSet.setFoldChange(m, output.foldChange[i]);
+			sigSet.setFoldChange(m, output.foldChange[index]);
 		}
 		
 		// TODO why is this not done for pmin and tmax in the previous code?

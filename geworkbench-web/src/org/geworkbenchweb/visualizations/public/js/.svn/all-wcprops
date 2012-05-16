@@ -1,17 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/9241/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js
+/svn/geworkbench/!svn/ver/9399/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js
 END
-jquery.cytoscapeweb.js
+highcharts.js
 K 25
 svn:wc:ra_dav:version-url
-V 123
-/svn/geworkbench/!svn/ver/9241/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js/jquery.cytoscapeweb.js
+V 114
+/svn/geworkbench/!svn/ver/9317/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js/highcharts.js
 END
-jquery.cytoscapeweb.all.js
+exporting.js
 K 25
 svn:wc:ra_dav:version-url
-V 127
-/svn/geworkbench/!svn/ver/9241/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js/jquery.cytoscapeweb.all.js
+V 113
+/svn/geworkbench/!svn/ver/9317/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js/exporting.js
+END
+jquery-1.4.4.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/geworkbench/!svn/ver/9317/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/public/js/jquery-1.4.4.min.js
 END

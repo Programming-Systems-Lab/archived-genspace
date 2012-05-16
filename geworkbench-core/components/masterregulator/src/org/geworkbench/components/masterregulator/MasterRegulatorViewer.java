@@ -4,9 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -18,10 +23,13 @@ import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
@@ -33,6 +41,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
 
 import org.apache.commons.logging.Log;
@@ -49,9 +58,11 @@ import org.geworkbench.engine.management.AcceptTypes;
 import org.geworkbench.engine.management.Publish;
 import org.geworkbench.engine.management.Subscribe;
 import org.geworkbench.engine.properties.PropertiesManager;
+import org.geworkbench.events.ImageSnapshotEvent;
 import org.geworkbench.events.ProjectEvent;
 import org.geworkbench.events.SubpanelChangedEvent;
 import org.geworkbench.util.OWFileChooser;
+import org.geworkbench.util.SaveImage;
 
 import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.binding.value.ValueHolder;
@@ -63,7 +74,7 @@ import com.jgoodies.forms.layout.FormLayout;
 /**
  * 
  * @author y.c. mark, zji
- * @version $Id: MasterRegulatorViewer.java 9235 2012-03-28 21:17:45Z wangmen $
+ * @version $Id: MasterRegulatorViewer.java 9414 2012-04-27 20:20:01Z wangmen $
  *
  */
 @AcceptTypes( { DSMasterRagulatorResultSet.class })
@@ -96,13 +107,15 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 	private JScrollPane gspane2 = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	private static final int col0w = 120, col2w = 40;
 	private static final String[] graphheader = new String[]{"Master Regulator","Bar Graph","Mode"};
-	private DefaultTableModel bgm = new DefaultTableModel(new Object[0][3], graphheader);
+	private GraphTableModel bgm = new GraphTableModel(new Object[0][3], graphheader);
 	private JTable graphtable = new JTable(bgm);
-	private DefaultTableModel gdm = new DefaultTableModel(new Object[0][3], graphheader);
+	private GraphTableModel gdm = new GraphTableModel(new Object[0][3], graphheader);
 	private JTable gradienttable = new JTable(gdm);
 	private JRadioButton modeAll = new JRadioButton("All");
 	private JRadioButton activator = new JRadioButton("Activator(+)");
 	private JRadioButton repressor = new JRadioButton("Repressor(-)");
+	private JRadioButton regulonBar = new JRadioButton("Regulon");
+	private JRadioButton intersectionBar = new JRadioButton("Intersection Set");
 	private final JSplitPane jSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 	private boolean shown = false;
 
@@ -132,12 +145,12 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		jSplitPane2.setDividerLocation(650);
 		jSplitPane2.setDividerSize(3);
 
-		FormLayout layout = new FormLayout("500dlu:grow, pref",
+		FormLayout layout = new FormLayout("300dlu:grow, pref",
 				"20dlu, pref:grow");
 		DefaultFormBuilder builder = new DefaultFormBuilder(layout);
 
 		FormLayout headerLayout = new FormLayout(
-				"60dlu,6dlu,60dlu,20dlu,70dlu,1dlu,20dlu,25dlu,35dlu,2dlu,20dlu,55dlu,70dlu,20dlu,72dlu",
+				"40dlu,0dlu,45dlu,8dlu,48dlu,0dlu,20dlu,8dlu,35dlu,0dlu,20dlu,8dlu,26dlu,1dlu,40dlu,2dlu,61dlu",
 				"20dlu");
 		DefaultFormBuilder headerBuilder = new DefaultFormBuilder(headerLayout);
 		ActionListener actionListener = new ActionListener() {
@@ -166,21 +179,29 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		headerBuilder.append(showProbeSetButton);
 		// end of symbol and probe set
 
-		headerBuilder.append("Display results for top ");
-		headerBuilder.append(numtop);
-		numtop.addActionListener(new ActionListener(){
+		ActionListener barListener = new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				updateGraph();
 			}
-		});
+		};
+
+		headerBuilder.append("Results for top ");
+		headerBuilder.append(numtop);
+		numtop.addActionListener(barListener);
 		
 		headerBuilder.append("Bar height ");
 		headerBuilder.append(barheight);
-		barheight.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e){
-				updateGraph();
-			}
-		});
+		barheight.addActionListener(barListener);
+		
+		headerBuilder.append("Bars for ");
+		headerBuilder.append(regulonBar);
+		headerBuilder.append(intersectionBar);
+		ButtonGroup barGroup = new ButtonGroup();
+		barGroup.add(regulonBar);
+		barGroup.add(intersectionBar);
+		regulonBar.setSelected(true);
+		regulonBar.addActionListener(barListener);
+		intersectionBar.addActionListener(barListener);
 
 		// export part
 		JButton exportAllButton = new JButton("Export all targets");
@@ -238,8 +259,6 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 				}
 			}
 		});
-
-		headerBuilder.append(exportAllButton);
 	 
 		// add to set button and function
 		JButton addToSetButton = new JButton("Add targets to set");
@@ -260,13 +279,12 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 						SubpanelChangedEvent.NEW));
 			}
 		});
-		headerBuilder.append(addToSetButton);
 
 		builder.append(headerBuilder.getPanel(), 2);
 		builder.nextLine();
 
 		// build the top-left panel
-		FormLayout summaryTFFormLayout = new FormLayout("53dlu,70dlu,25dlu,6dlu,35dlu,6dlu,60dlu,6dlu,60dlu,pref:grow",
+		FormLayout summaryTFFormLayout = new FormLayout("53dlu,2dlu,68dlu,2dlu,70dlu,8dlu,20dlu,2dlu,23dlu,2dlu,50dlu,2dlu,55dlu,pref:grow",
 				"20dlu, pref:grow");
 		DefaultFormBuilder summaryTFFormBuilder = new DefaultFormBuilder(
 				summaryTFFormLayout);
@@ -287,13 +305,15 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		repressor.addActionListener(modeListener);
 		
 		summaryTFFormBuilder.append(tv.exportButton);
+		summaryTFFormBuilder.append(exportAllButton);
+		summaryTFFormBuilder.append(addToSetButton);
 		summaryTFFormBuilder.append("Mode:");
 		summaryTFFormBuilder.append(modeAll);
 		summaryTFFormBuilder.append(activator);
 		summaryTFFormBuilder.append(repressor);
 
 		summaryTFFormBuilder.nextLine();
-		summaryTFFormBuilder.add(tv, new CellConstraints("1,2,10,1,f,f"));
+		summaryTFFormBuilder.add(tv, new CellConstraints("1,2,14,1,f,f"));
 
 		jSplitPane2.setLeftComponent(new JScrollPane(summaryTFFormBuilder
 				.getPanel(), JScrollPane.VERTICAL_SCROLLBAR_NEVER,
@@ -322,7 +342,51 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 
 		JScrollPane wholeWindowScrollPane = new JScrollPane(builder.getPanel());
 		this.setLayout(new BorderLayout());
-		this.add(wholeWindowScrollPane, BorderLayout.CENTER);
+		this.add(wholeWindowScrollPane, BorderLayout.CENTER);	
+		
+		graphtable.addMouseListener(new MouseAdapter() {
+	        @Override
+	  
+	        public void mouseReleased(MouseEvent e) {	        	
+	            if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
+	                JPopupMenu popup = createSavePopUp();
+	                popup.show(e.getComponent(), e.getX(), e.getY());
+	            }
+	        }
+
+		});
+		
+	}
+
+	private JPopupMenu createSavePopUp(){
+		return new PopUpOptions();
+	}
+	class PopUpOptions extends JPopupMenu {
+	    
+		private static final long serialVersionUID = 2993281547057589679L;
+		JMenuItem itemSnapshot;
+		JMenuItem itemToDisk;
+	    public PopUpOptions(){
+	        itemSnapshot = new JMenuItem("Save image to Project (snapshot)");
+	        itemToDisk = new JMenuItem("Save image to Disk");
+	        add(itemSnapshot);
+	        add(itemToDisk);
+	        
+	        itemSnapshot.addActionListener(new java.awt.event.ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent paramActionEvent) {					
+					createImageSnapshot(graphtable, graphtable.getTableHeader());
+				}});
+	        
+	        itemToDisk.addActionListener(new java.awt.event.ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent paramActionEvent) {
+					saveToImage(graphtable, graphtable.getTableHeader());
+					
+				}});
+	    }
 	}
 
 	ChangeListener changeListener = new ChangeListener() {
@@ -455,7 +519,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 			graphdata[i][0] = button.getText();
 			DetailedTFGraphViewer gv = new DetailedTFGraphViewer();
 			gv.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-			gv.setTFA(MRAResultSet, MRAResultSet.getTFs().get(button.getName()));
+			gv.setTFA(MRAResultSet, MRAResultSet.getTFs().get(button.getName()), regulonBar.isSelected());
 			gv.updateUI();
 			graphdata[i][1] = gv;
 			graphdata[i][2] = tv.getTable().getValueAt(i, 4);
@@ -489,7 +553,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		while(columns.hasMoreElements()){
 			TableColumn tc = columns.nextElement();
 			switch (tc.getModelIndex()){
-				case 0: tc.setPreferredWidth(col0w); break;
+				case 0: tc.setPreferredWidth(col0w); tc.setMaxWidth(2*col0w); break;
 				case 1: tc.setCellRenderer(new DefaultTableCellRenderer() {
 							private static final long serialVersionUID = 5010765085642920180L;
 							public Component getTableCellRendererComponent(JTable jTable,
@@ -502,7 +566,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 							}
 						}); 
 						break;                                                                                                                        
-				case 2: tc.setPreferredWidth(col2w); break;
+				case 2: tc.setPreferredWidth(col2w); tc.setMaxWidth(col2w); break;
 				default: log.error("invalid column in graph table"); break;
 			}
 		}
@@ -518,7 +582,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		while(columns.hasMoreElements()){
 			TableColumn tc = columns.nextElement();
 			switch (tc.getModelIndex()){
-				case 0: tc.setPreferredWidth(col0w); 
+				case 0: tc.setPreferredWidth(col0w); tc.setMaxWidth(2*col0w);
 						tc.setCellRenderer(new BlankCellRenderer());
 						break;
 				case 1: tc.setCellRenderer(new DefaultTableCellRenderer() {
@@ -533,7 +597,7 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 							}
 						});
 						break;                                                                                                                        
-				case 2: tc.setPreferredWidth(col2w);
+				case 2: tc.setPreferredWidth(col2w); tc.setMaxWidth(col2w);
 						tc.setCellRenderer(new BlankCellRenderer());
 						break;
 				default: log.error("invalid column in gradient table"); break;
@@ -632,5 +696,47 @@ public class MasterRegulatorViewer extends JPanel implements VisualPlugin {
 		return event;
 	}
 
+	private class GraphTableModel extends DefaultTableModel{
+		private static final long serialVersionUID = -184811029499155710L;
+
+		GraphTableModel(Object[][] data, Object[] columnNames) {
+			super(data, columnNames);
+		}
+		
+		public boolean isCellEditable(int row, int col){
+			return false;
+		}
+	}
+	
+	@Publish public ImageSnapshotEvent createImageSnapshot(JTable table, JTableHeader header) {        
+        
+		int w = Math.max(table.getWidth(), header.getWidth());  
+	    int h = table.getHeight() + header.getHeight();  
+	    BufferedImage bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);  
+	    Graphics2D g2 = bi.createGraphics();  
+	    header.paint(g2);  
+	    g2.translate(0, header.getHeight());  
+	    table.paint(g2);  
+	    g2.dispose();
+        ImageIcon icon = new ImageIcon(bi, "Bar Graph");
+        org.geworkbench.events.ImageSnapshotEvent event = new org.geworkbench.events.ImageSnapshotEvent("Bar Graph Snapshot", icon, org.geworkbench.events.ImageSnapshotEvent.Action.SAVE);
+        return event;
+    }
+	
+	private static void saveToImage(JTable table, JTableHeader header)  
+    {  
+        int w = Math.max(table.getWidth(), header.getWidth());  
+        int h = table.getHeight() + header.getHeight();  
+        BufferedImage bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);  
+        Graphics2D g2 = bi.createGraphics();  
+        header.paint(g2);  
+        g2.translate(0, header.getHeight());  
+        table.paint(g2);  
+        g2.dispose();
+        Image currentImage=bi;
+        SaveImage si = new SaveImage(currentImage);
+        si.save();      
+        
+    }  
 	 
 }

@@ -24,7 +24,7 @@ import org.geworkbench.parsers.InputFileFormatException;
 
 /**
  * @author John Watkinson
- * @version $Id: AdjacencyMatrixDataSet.java 8665 2012-01-06 17:16:16Z youmi $
+ * @version $Id: AdjacencyMatrixDataSet.java 9477 2012-05-16 15:13:53Z zji $
  */
 public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 
@@ -174,7 +174,7 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 			String selectedRepresentedBy, boolean isRestrict)
 			throws InputFileFormatException {
 
-		AdjacencyMatrix matrix = new AdjacencyMatrix(fileName, maSet,
+		AdjacencyMatrix matrix = new AdjacencyMatrix(fileName,
 				interactionTypeSifMap);
 		 
 		try {
@@ -238,7 +238,7 @@ public class AdjacencyMatrixDataSet extends CSAncillaryDataSet<DSMicroarray> {
 			throws InputFileFormatException {
 
 		if (matrix == null)
-			matrix = new AdjacencyMatrix(null, maSet, interactionTypeSifMap);
+			matrix = new AdjacencyMatrix(null, interactionTypeSifMap);
 
 		try {
 			for (String line : lines) {

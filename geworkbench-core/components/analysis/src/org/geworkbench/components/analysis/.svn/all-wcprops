@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/9328/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis
+/svn/geworkbench/!svn/ver/9451/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis
 END
 AnalysisPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svn/geworkbench/!svn/ver/9328/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/AnalysisPanel.java
+/svn/geworkbench/!svn/ver/9451/trunk/geworkbench/components/analysis/src/org/geworkbench/components/analysis/AnalysisPanel.java
 END
 AnalysisPanel.cwb.xml
 K 25

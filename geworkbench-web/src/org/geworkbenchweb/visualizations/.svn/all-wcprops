@@ -1,23 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/geworkbench/!svn/ver/9275/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations
 END
-Dendrogram.java
+HeatMap.java
 K 25
 svn:wc:ra_dav:version-url
-V 106
-/svn/geworkbench/!svn/ver/9212/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/Dendrogram.java
+V 103
+/svn/geworkbench/!svn/ver/9448/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/HeatMap.java
+END
+Clustergram.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/geworkbench/!svn/ver/9300/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/Clustergram.java
 END
 Cytoscape.java
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svn/geworkbench/!svn/ver/9241/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/Cytoscape.java
+/svn/geworkbench/!svn/ver/9369/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/Cytoscape.java
 END
 GeworkbenchWidgetset.gwt.xml
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/geworkbench/!svn/ver/9275/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/GeworkbenchWidgetset.gwt.xml
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/src/org/geworkbenchweb/visualizations/GeworkbenchWidgetset.gwt.xml
 END

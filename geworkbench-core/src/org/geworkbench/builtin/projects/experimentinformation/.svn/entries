@@ -1,15 +1,15 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/experimentinformation
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-03-12T18:24:14.301669Z
-9117
-smithken
+2012-05-15T15:26:58.007117Z
+9467
+wangmen
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2012-01-10T19:15:28.000000Z
-7cc8f09ccfbd239a0946c579dc1f0fac
-2011-11-02T13:48:00.049131Z
-8478
-zji
+2012-05-16T16:17:02.000000Z
+b4b710787cfbc55c7e91827605b7c4af
+2012-05-15T15:26:58.007117Z
+9467
+wangmen
 has-props
 
 
@@ -58,5 +58,5 @@ has-props
 
 
 
-3122
+2816
 

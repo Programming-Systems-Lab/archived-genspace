@@ -124,7 +124,19 @@ public class ToolUsageInformation extends GenericUsageInformation{
 	public void refreshMahoutRecommender() {
 		super.refreshMahoutRecommender();
 	}
-
+	@Override
+	@WebMethod
+	public void analysisEventCompleted(Transaction transaction, String toolName) {
+		// TODO Auto-generated method stub
+		super.analysisEventCompleted(transaction, toolName);
+	}
+	@Override
+	@WebMethod
+	public Transaction popAnalysisFromTransaction(Transaction transaction, String toolName) {
+		// TODO Auto-generated method stub
+		return super.popAnalysisFromTransaction(transaction, toolName);
+	}
+	
 	@WebMethod(exclude=true)
 	@Override
 	public byte[] sendUsageSingleEvent(byte[] analysisEvent) {

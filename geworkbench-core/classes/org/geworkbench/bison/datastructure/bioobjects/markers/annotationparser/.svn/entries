@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/annotationparser
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,74 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-APSerializable.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-4f94d368d2fe1acfe6bf755382796a48
-2011-10-19T16:34:53.735246Z
-8424
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1465
-
-AffyAnnotationParser.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-293f91d8bc733a24d61cdbc4d68a22b5
-2011-10-07T21:46:08.179166Z
-8373
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5621
 
 AnnotationFields.java
 file
@@ -162,6 +94,40 @@ has-props
 
 5473
 
+APSerializable.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+4f94d368d2fe1acfe6bf755382796a48
+2011-10-19T16:34:53.735246Z
+8424
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1465
+
 AnnotationParser.java
 file
 
@@ -229,4 +195,38 @@ has-props
 
 
 1721
+
+AffyAnnotationParser.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+293f91d8bc733a24d61cdbc4d68a22b5
+2011-10-07T21:46:08.179166Z
+8373
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5621
 

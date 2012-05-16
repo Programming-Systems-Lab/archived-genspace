@@ -38,7 +38,7 @@ import cytoscape.view.CyNetworkView;
 /**
  * 
  * @author my2248
- * @version $Id: NetworkRedrawWindow.java 9269 2012-04-04 16:13:53Z youmi $
+ * @version $Id: NetworkRedrawWindow.java 9477 2012-05-16 15:13:53Z zji $
  */
 public class NetworkRedrawWindow {
 
@@ -326,8 +326,8 @@ public class NetworkRedrawWindow {
 		AdjacencyMatrixDataSet adjacencyMatrixdataSet = null;
 		AdjacencyMatrix origMatrix = CytoscapeWidget.getInstance()
 				.getAdjMatrix();
-		AdjacencyMatrix matrix = new AdjacencyMatrix(null, origMatrix
-				.getMicroarraySet(), origMatrix.getInteractionTypeSifMap(), origMatrix.getInteractionEvidenceMap());
+		AdjacencyMatrix matrix = new AdjacencyMatrix(null,
+				origMatrix.getInteractionTypeSifMap(), origMatrix.getInteractionEvidenceMap());
 
 		Double value = new Double(thresholdSlider.getValue());
 		value = value / 100;

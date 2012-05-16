@@ -105,7 +105,7 @@ import ding.view.DNodeView;
  * 
  * @author manjunath
  * @author yc2480
- * @version $Id: CytoscapeWidget.java 9269 2012-04-04 16:13:53Z youmi $
+ * @version $Id: CytoscapeWidget.java 9477 2012-05-16 15:13:53Z zji $
  */
 @SuppressWarnings("deprecation")
 @AcceptTypes( { AdjacencyMatrixDataSet.class })
@@ -386,7 +386,7 @@ public class CytoscapeWidget implements VisualPlugin {
 				adjSet = (AdjacencyMatrixDataSet) dataSet;
 				AdjacencyMatrix adjMatrix = adjSet.getMatrix();
 				adjMatrixId = adjMatrix.hashCode();
-				maSet = adjMatrix.getMicroarraySet();
+				maSet = (DSMicroarraySet) adjSet.getParentDataSet();
 
 				boolean found = false;
 				String foundID = null;

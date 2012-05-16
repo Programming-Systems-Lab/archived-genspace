@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/bison/model/analysis
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -26,18 +26,17 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-AlgorithmExecutionResults.java
+ProteinAnnotationAnalysis.java
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-9b43f377ff207cf681889e38902dbc86
-2005-08-23T16:42:04.000000Z
-151
-watkin
-has-props
+a4a8667810d9972dee571197e1073bae
+2008-07-07T22:19:15.000000Z
+3973
+wangm
 
 
 
@@ -58,211 +57,8 @@ has-props
 
 
 
-1715
-
-Analysis.java
-file
 
-
-
-
-2011-08-17T00:10:50.000000Z
-3d3b5aeef8d1704816c1dfac06dbb784
-2011-02-08T22:00:37.905866Z
-7423
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1941
-
-AnalysisParameters.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-078a84f89a9e0f7b627252c61bbe7dd2
-2005-08-23T16:42:04.000000Z
-151
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-228
-
-ClusteringAnalysis.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-50498d4c6fda2edfb34354f8dfbb1df7
-2005-08-23T16:42:04.000000Z
-151
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-251
-
-FilteringAnalysis.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-5f7f02fb65199ef325001df298db82bb
-2011-11-09T16:45:58.672990Z
-8518
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4627
-
-NormalizingAnalysis.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-bce93cd3299bafa7cbadd7b0d8032b22
-2005-08-23T16:42:04.000000Z
-151
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-250
-
-ParamValidationResults.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-297335f89c4f9cc6e70de73ccdfa389f
-2005-08-23T16:42:04.000000Z
-151
-watkin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1270
+191
 
 ParameterPanel.java
 file
@@ -332,17 +128,18 @@ has-props
 
 210
 
-ProteinAnnotationAnalysis.java
+Analysis.java
 file
 
 
 
 
 2011-08-17T00:10:50.000000Z
-a4a8667810d9972dee571197e1073bae
-2008-07-07T22:19:15.000000Z
-3973
-wangm
+3d3b5aeef8d1704816c1dfac06dbb784
+2011-02-08T22:00:37.905866Z
+7423
+zji
+has-props
 
 
 
@@ -363,8 +160,143 @@ wangm
 
 
 
+1941
+
+ClusteringAnalysis.java
+file
 
-191
+
+
+
+2011-08-17T00:10:50.000000Z
+50498d4c6fda2edfb34354f8dfbb1df7
+2005-08-23T16:42:04.000000Z
+151
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+251
+
+ProteinStructureAnalysis.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+cab57ab18450a19dafece845c7c1662c
+2009-05-12T18:53:31.000000Z
+5111
+jiz
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+367
+
+AnalysisParameters.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+078a84f89a9e0f7b627252c61bbe7dd2
+2005-08-23T16:42:04.000000Z
+151
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+228
+
+FilteringAnalysis.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+5f7f02fb65199ef325001df298db82bb
+2011-11-09T16:45:58.672990Z
+8518
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4627
 
 ProteinDatabaseAnalysis.java
 file
@@ -400,6 +332,108 @@ wangm
 
 160
 
+AlgorithmExecutionResults.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+9b43f377ff207cf681889e38902dbc86
+2005-08-23T16:42:04.000000Z
+151
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1715
+
+NormalizingAnalysis.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+bce93cd3299bafa7cbadd7b0d8032b22
+2005-08-23T16:42:04.000000Z
+151
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+250
+
+ParamValidationResults.java
+file
+
+
+
+
+2011-08-17T00:10:50.000000Z
+297335f89c4f9cc6e70de73ccdfa389f
+2005-08-23T16:42:04.000000Z
+151
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1270
+
 ProteinSequenceAnalysis.java
 file
 
@@ -433,38 +467,4 @@ jiz
 
 
 345
-
-ProteinStructureAnalysis.java
-file
-
-
-
-
-2011-08-17T00:10:50.000000Z
-cab57ab18450a19dafece845c7c1662c
-2009-05-12T18:53:31.000000Z
-5111
-jiz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-367
 

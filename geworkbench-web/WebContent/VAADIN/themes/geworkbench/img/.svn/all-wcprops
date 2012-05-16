@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/geworkbench/!svn/ver/8707/trunk/geworkbench-web/WebContent/VAADIN/themes/geworkbench/img
+/svn/geworkbench/!svn/ver/9424/trunk/geworkbench-web/WebContent/VAADIN/themes/geworkbench/img
 END
 toolbar-invert-bg.png
 K 25
@@ -9,15 +9,15 @@ svn:wc:ra_dav:version-url
 V 115
 /svn/geworkbench/!svn/ver/8707/trunk/geworkbench-web/WebContent/VAADIN/themes/geworkbench/img/toolbar-invert-bg.png
 END
-16.gif
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/geworkbench/!svn/ver/8647/trunk/geworkbench-web/WebContent/VAADIN/themes/geworkbench/img/16.gif
-END
 toolbar-bg.png
 K 25
 svn:wc:ra_dav:version-url
 V 108
 /svn/geworkbench/!svn/ver/8707/trunk/geworkbench-web/WebContent/VAADIN/themes/geworkbench/img/toolbar-bg.png
+END
+35.gif
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/9424/trunk/geworkbench-web/WebContent/VAADIN/themes/geworkbench/img/35.gif
 END

@@ -14,7 +14,6 @@ import javax.swing.SwingUtilities;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.geworkbench.analysis.AbstractAnalysis;
 import org.geworkbench.analysis.AbstractGridAnalysis;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix;
 import org.geworkbench.bison.datastructure.biocollections.AdjacencyMatrix.NodeType;
@@ -42,7 +41,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 
 /**
  * @author Matt Hall
- * @version $Id: AracneAnalysis.java 9242 2012-03-30 18:43:14Z zji $
+ * @version $Id: AracneAnalysis.java 9477 2012-05-16 15:13:53Z zji $
  */
 public class AracneAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -53,7 +52,6 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 
 	static Log log = LogFactory.getLog(AracneAnalysis.class);
 
-	private DSMicroarraySetView<DSGeneMarker, DSMicroarray> mSetView;
 	private AdjacencyMatrixDataSet adjMatrix;
 	private final String analysisName = "Aracne";
 	/**
@@ -66,30 +64,17 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.geworkbench.analysis.AbstractAnalysis#getAnalysisType()
-	 */
-	public int getAnalysisType() {
-		return AbstractAnalysis.ZERO_TYPE;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
 	 * @see org.geworkbench.bison.model.analysis.Analysis#execute(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
 	public AlgorithmExecutionResults execute(Object input) {
+		if (!(input instanceof DSMicroarraySetView)) {
+			log.error("Invalid type passed to Aracne analysis: "+input.getClass().getName());
+			return null;
+		}
 		log.debug("input: " + input);
 		AracneParamPanel params = (AracneParamPanel) aspp;
-		if (input instanceof DSMicroarraySetView) {
-			log.debug("Input dataset is microarray type.");
-			mSetView = (DSMicroarraySetView<DSGeneMarker, DSMicroarray>) input;
-		} else if (input instanceof AdjacencyMatrixDataSet) {
-			log
-					.debug("Input dataset is adjacency matrix, will only perform DPI.");
-			adjMatrix = (AdjacencyMatrixDataSet) input;
-			mSetView.setDataSet(adjMatrix.getParentDataSet());
-		}
+		DSMicroarraySetView<DSGeneMarker, DSMicroarray> mSetView = (DSMicroarraySetView<DSGeneMarker, DSMicroarray>) input;
 
 		final Parameter p = new Parameter();
 		if (params.isHubListSpecified()) {
@@ -170,16 +155,20 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 		if (bs <= 0 || pt <= 0 || pt > 1)
 			return null;
 		
+		AracneComputation aracneComputation = new AracneComputation(mSetView, p, bs, pt);
+		
         ProgressBar progressBar = ProgressBar.create(ProgressBar.INDETERMINATE_TYPE);
-		Thread computationalThread = Thread.currentThread();
-		progressBar.addObserver(new CancelObserver(computationalThread));
+		progressBar.addObserver(new CancelObserver(aracneComputation));
 		progressBar.setTitle("ARACNE");
 		progressBar.setMessage("ARACNE Process Running");
 		progressBar.start();
 
-		WeightedGraph weightedGraph = new AracneComputation(mSetView, p, bs, pt).execute();
+		WeightedGraph weightedGraph = aracneComputation.execute();
 		
 		progressBar.stop();
+		if(weightedGraph==null) { // likely cancelled
+			return null;
+		}
 		
 		if (weightedGraph.getEdges().size() > 0) {
 			boolean prune = params.isPrune();
@@ -189,7 +178,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 							.getMicroarraySet());
 			StringBuilder paramDescB = new StringBuilder(
 					"Generated with ARACNE run with data:\n");
-			paramDescB.append(this.generateHistoryForMaSetView(this.mSetView, this.useMarkersFromSelector()));
+			paramDescB.append(this.generateHistoryForMaSetView(mSetView, this.useMarkersFromSelector()));
 			String s=prune?"yes":"no";
 			HistoryPanel.addToHistory(dataSet,
 					"Generated with ARACNE run with paramters:\n"
@@ -209,19 +198,16 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 	
 	static private class CancelObserver implements Observer {
 		
-		private final Thread threadToBeCancelled;
+		private final AracneComputation aracneComputation;
 
-		CancelObserver(final Thread threadToBeCancelled) {
+		CancelObserver(final AracneComputation aracneComputation) {
 			super();
-			this.threadToBeCancelled = threadToBeCancelled;
+			this.aracneComputation = aracneComputation;
 		}
 		
-		@SuppressWarnings("deprecation")
 		@Override
 		public void update(Observable o, Object arg) {
-			// this is inherently unsafe. see http://docs.oracle.com/javase/6/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html
-			// but it is the only way to stop the thread running 3rd-party code, in this case, aracne-main.jar
-			threadToBeCancelled.stop();
+			aracneComputation.cancel();
 		}
 		
 	}
@@ -293,7 +279,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 	 */
 	private AdjacencyMatrix convert(WeightedGraph graph, Parameter p,
 			DSMicroarraySet mSet, boolean prune) {
-		AdjacencyMatrix matrix = new AdjacencyMatrix(null, mSet);
+		AdjacencyMatrix matrix = new AdjacencyMatrix(null);
 
 		Vector<String> subnet = p.getSubnet();
 
@@ -476,12 +462,8 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 		bisonParameters.put("prune", paramPanel.isPrune());
 		bisonParameters.put("isMI", paramPanel.isThresholdMI());
 
-		float threshold = paramPanel.getThreshold();
-		if (!paramPanel.isThresholdMI() && !paramPanel.noCorrection() && mSetView!=null && mSetView.markers().size() > 0){
-    		threshold = threshold / mSetView.markers().size();
-    		paramPanel.pval = threshold;
-		}
-		bisonParameters.put("threshold", threshold);
+		bisonParameters.put("noCorrection", paramPanel.noCorrection());
+		bisonParameters.put("threshold", paramPanel.getThreshold());
 
 		int bootstrapNumber = paramPanel.getBootstrapNumber();
 		bisonParameters.put("bootstrapNumber", bootstrapNumber);
@@ -572,7 +554,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			DSMicroarraySetView<DSGeneMarker, DSMicroarray> maSetView,
 			DSDataSet<?> refMASet) {
 		AracneParamPanel params = (AracneParamPanel) aspp;
-		mSetView = maSetView;
+
 		if (params.isHubListSpecified()) {
 			ArrayList<String> hubGeneList = params.getHubGeneList();
 			for (String modGene : hubGeneList) {
@@ -589,7 +571,7 @@ public class AracneAnalysis extends AbstractGridAnalysis implements
 			}
 		}
 
-		if(mSetView.size()<MINIMUM_ARRAY_NUMBER) {
+		if(maSetView.size()<MINIMUM_ARRAY_NUMBER) {
 			int n = JOptionPane.showConfirmDialog(
 				    null,
 				    "ARACNe should not in general be run on less than "+MINIMUM_ARRAY_NUMBER+" arrays. Do you want to continue?",

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/svn/geworkbench/!svn/ver/8762/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers
+/svn/geworkbench/!svn/ver/9450/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers
 END
 DSRangeMarker.java
 K 25
@@ -13,7 +13,7 @@ CSGeneMarker.java
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svn/geworkbench/!svn/ver/8384/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/CSGeneMarker.java
+/svn/geworkbench/!svn/ver/9450/trunk/geworkbench/src/org/geworkbench/bison/datastructure/bioobjects/markers/CSGeneMarker.java
 END
 CSExpressionMarker.java
 K 25

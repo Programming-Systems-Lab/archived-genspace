@@ -106,7 +106,7 @@ import org.ginkgo.labs.ws.GridEndpointReferenceType;
  * </p>
  * 
  * @author First Genetic Trust
- * @version $Id: ProjectPanel.java 9247 2012-03-30 21:02:42Z zji $
+ * @version $Id: ProjectPanel.java 9478 2012-05-16 15:22:23Z wangmen $
  */
 @SuppressWarnings("unchecked")
 public class ProjectPanel implements VisualPlugin, MenuListener {
@@ -541,6 +541,13 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 		else
 			filter = SaveFileFilterFactory.createFilter(ds);
 
+		if (!filter.accept(f)){
+			String newFileName = f.getAbsolutePath();
+			newFileName = newFileName.substring(0, newFileName.lastIndexOf("."));
+			newFileName += "." + filter.getExtension();
+			jFileChooser1.setSelectedFile(new File(newFileName));
+		}
+
 		jFileChooser1.setFileFilter(filter);
 
 		if (JFileChooser.APPROVE_OPTION == jFileChooser1
@@ -557,14 +564,11 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 				}
 			}
 
-			if (!filter.accept(new File(newFileName))) {
-				newFileName += "." + filter.getExtension();
-			}
-
 			if (new File(newFileName).exists()) {
-				int o = JOptionPane.showConfirmDialog(null, "Replace the file",
+				int o = JOptionPane.showConfirmDialog(null, 
+						"The file already exists. Do you wish to overwrite it?",
 						"Replace the existing file?",
-						JOptionPane.YES_NO_CANCEL_OPTION);
+						JOptionPane.YES_NO_OPTION);
 				if (o != JOptionPane.YES_OPTION) {
 					return;
 				}
@@ -999,15 +1003,15 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 					+ Util.formatDateStandard(endDate)+ "\n";
 			String firstLine = history.split("\n")[0];
 			String startTime = firstLine.split("=")[1].trim();
-			long elspedTime = endTime - (new Long(startTime));
-			history += "\nTotal elsped time: "
-					+ DurationFormatUtils.formatDurationHMS(elspedTime);
+			long elapsedTime = endTime - (new Long(startTime));
+			history += "\nTotal elapsed time: "
+					+ DurationFormatUtils.formatDurationHMS(elapsedTime);
 		} catch(NumberFormatException ne)
 		{
-			history += "\nError processing elspedTime: " + ne.getMessage();
+			history += "\nError processing elapsed time: " + ne.getMessage();
 		} catch (Exception e) {
-			history += "\nError processing elspedTime: " + e.getMessage();
-			log.error("Error processing elspedTime: " + e.getMessage());			 
+			history += "\nError processing elapsed tim: " + e.getMessage();
+			log.error("Error processing elapsed time: " + e.getMessage());			 
 		}
 
 		boolean pendingNodeFocused = false;
@@ -1715,6 +1719,9 @@ public class ProjectPanel implements VisualPlugin, MenuListener {
 	private ProjectTreeNode root = new ProjectTreeNode("Workspace");
 
 	private DefaultTreeModel projectTreeModel = new DefaultTreeModel(root);
+	public DefaultTreeModel getTreeModel(){
+		return projectTreeModel;
+	}
 
 	private JTree projectTree = new JTree(projectTreeModel);
 

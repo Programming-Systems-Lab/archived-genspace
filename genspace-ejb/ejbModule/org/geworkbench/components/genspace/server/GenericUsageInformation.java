@@ -349,13 +349,80 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 		}
 		return ret;
 	}
-
+	public void analysisEventCompleted(Transaction transaction, String toolName)
+	{
+		Transaction tr = getEntityManager().find(Transaction.class, transaction.getId());
+		if(!tr.getClientID().equals(transaction.getClientID())) //A basic security check
+			return;
+		Query q = getEntityManager().createNativeQuery("select a.* FROM analysisEvent a " +
+				"inner join transaction tr on tr.id=a.transaction_id " +
+				"inner join tool t on t.id=a.tool_id " +
+				"where tr.id=? AND t.name=? " +
+				"group by t.name HAVING max(a.createdat)", AnalysisEvent.class);
+		q.setParameter(1, tr.getId());
+		q.setParameter(2, toolName);
+		AnalysisEvent ev = (AnalysisEvent) q.getSingleResult();
+		ev.setFinishedAt(new Date());
+		getEntityManager().merge(ev);
+	}
 	@Override
 	public Transaction sendUsageEvent(AnalysisEvent e) {
 		e.setCreatedAt(new Date());
 //		System.out.println(">>>Incoming tool: " + e.getTool() + " -> " + e.getToolname());
 		e.setTransaction(createOrFindTransaction(e.getTransaction()));
 		return handleSingleUsageEvent(e);
+	}
+	public Transaction popAnalysisFromTransaction(Transaction transaction, String toolName)
+	{
+		if(transaction == null)
+			return null;
+		Transaction tr = getEntityManager().find(Transaction.class, transaction.getId());
+		if(!tr.getClientID().equals(transaction.getClientID())) //A basic security check
+			return null;
+		Query q = getEntityManager().createNativeQuery("select a.* FROM analysisEvent a " +
+				"inner join transaction tr on tr.id=a.transaction_id " +
+				"inner join tool t on t.id=a.tool_id " +
+				"where tr.id=? AND t.name=? " +
+				"group by t.name HAVING max(a.createdat)", AnalysisEvent.class);
+		q.setParameter(1, tr.getId());
+		q.setParameter(2, toolName);
+		AnalysisEvent ev = (AnalysisEvent) q.getSingleResult();
+		
+		
+		ev.getTransaction()
+		.getWorkflow()
+		.setUsageCount(
+				ev.getTransaction().getWorkflow().getUsageCount() - 1);
+
+		ev.getTool().setUsageCount(ev.getTool().getUsageCount() - 1);
+		getEntityManager().merge(ev.getTool());
+		getEntityManager().merge(ev.getTransaction().getWorkflow());
+		
+		tr.getAnalysisEvents().remove(ev);
+		if(ev != null)
+			getEntityManager().remove(ev);
+		getEntityManager().flush();
+		recalculateTransactionWorkflow(tr);
+		getEntityManager().merge(tr);
+		
+		if(tr.getWorkflow() != null)
+		{
+			getEntityManager().detach(tr.getWorkflow());
+			tr.getWorkflow().setParent(null);
+			tr.getWorkflow().setChildren(new ArrayList<Workflow>());
+		}
+		return tr;
+	}
+	private void recalculateTransactionWorkflow(Transaction tr) {
+		tr.setWorkflow(null);
+		getEntityManager().flush();
+		for(AnalysisEvent ev : tr.getAnalysisEvents())
+		{
+			System.out.println("Building up from " + ev);
+			tr.setWorkflow(getExtendedWorkflow(tr, ev.getTool()));
+			getEntityManager().flush();
+		}
+
 	}
 
 	private Transaction handleSingleUsageEvent(AnalysisEvent e) {
@@ -402,6 +469,7 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 					getEntityManager().merge(p);
 				}
 			}
+		
 		// Update the workflow for the transaction
 		e.getTransaction().setWorkflow(
 				getExtendedWorkflow(e.getTransaction(), e.getTool()));
@@ -459,6 +527,8 @@ public abstract class GenericUsageInformation extends AbstractFacade<Tool>
 	 * @return
 	 */
 	private Workflow getExtendedWorkflow(Transaction t, Tool tool) {
+		getEntityManager().getEntityManagerFactory().getCache().evictAll();
+
 		if (t.getWorkflow() == null) {
 			Query q = getEntityManager()
 					.createNativeQuery(

@@ -35,7 +35,7 @@ import org.geworkbench.util.AffyAnnotationUtil;
  * Sequence and Pattern Plugin
  * 
  * @author yc2480
- * @version $Id: TabDelimitedDataMatrixFileFormat.java 8795 2012-01-27 19:28:26Z zji $
+ * @version $Id: TabDelimitedDataMatrixFileFormat.java 9458 2012-05-11 18:51:48Z wangmen $
  * 
  */
 public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
@@ -245,6 +245,7 @@ public class TabDelimitedDataMatrixFileFormat extends DataSetFileFormat {
 		CSMicroarraySet maSet = new CSMicroarraySet();
 		String fileName = file.getName();		
 		maSet.setLabel(fileName);
+		maSet.setFile(file);
 		BufferedReader in = null;
 		try {
 			in = new BufferedReader(new FileReader(file));

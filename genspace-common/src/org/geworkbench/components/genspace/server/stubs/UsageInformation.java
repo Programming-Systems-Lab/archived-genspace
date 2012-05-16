@@ -141,6 +141,20 @@ public interface UsageInformation {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.AnalysisEventParameter>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getParametersForEvent", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetParametersForEvent")
+    @ResponseWrapper(localName = "getParametersForEventResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetParametersForEventResponse")
+    public List<AnalysisEventParameter> getParametersForEvent(
+        @WebParam(name = "arg0", targetNamespace = "")
+        AnalysisEvent arg0);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
@@ -155,5 +169,19 @@ public interface UsageInformation {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.geworkbench.components.genspace.server.stubs.AnalysisEventParameter>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAnalysisParameters", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetAnalysisParameters")
+    @ResponseWrapper(localName = "getAnalysisParametersResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.GetAnalysisParametersResponse")
+    public List<AnalysisEventParameter> getAnalysisParameters(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
 }

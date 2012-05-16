@@ -47,7 +47,7 @@ import edu.columbia.c2b2.aracne.Parameter;
 /**
  * @author mhall
  * @author yc2480
- * @version $Id: AracneParamPanel.java 8424 2011-10-19 16:34:53Z zji $
+ * @version $Id: AracneParamPanel.java 9453 2012-05-10 21:23:58Z zji $
  */
 public class AracneParamPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = 4023695671471667725L;
@@ -694,10 +694,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
         if (params.isThresholdMI()) {
             p.setThreshold(params.getThreshold());
         } else {
-    		if (!noCorrection() &&  pval >= 0)
-    			p.setPvalue(pval);
-    		else
-    			p.setPvalue(params.getThreshold());
+   			p.setPvalue(params.getThreshold());
         }
         if (params.isKernelWidthSpecified()) {
             p.setSigma(params.getKernelWidth());
@@ -711,7 +708,7 @@ public class AracneParamPanel extends AbstractSaveableParameterPanel {
         return resultString;
 
 	}
-	protected float pval = -1;
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.geworkbench.analysis.AbstractSaveableParameterPanel#setParameters(java.util.Map)

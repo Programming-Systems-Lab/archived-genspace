@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/filtering/src/org/geworkbench/components/filtering/help/filtering_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,40 +60,6 @@ has-props
 
 32643
 
-poweredby_mediawiki_88x31.png
-file
-
-
-
-
-2012-04-19T14:07:23.000000Z
-faf87cb68c3ea99313b3e41dfb0dfa52
-2012-03-09T21:28:54.000652Z
-9100
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1927
-
 CCM_Filters_Default.png
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 51823
+
+poweredby_mediawiki_88x31.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+faf87cb68c3ea99313b3e41dfb0dfa52
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1927
 
 Filtering_Multiple_Probeset.png
 file
@@ -230,14 +230,14 @@ has-props
 
 14796
 
-Multiple_Probeset_Filter_options.png
+Filtering_Expression_Threshold.png
 file
 
 
 
 
 2012-04-19T14:07:23.000000Z
-27a3b53312ec14286864ac96c44c5ede
+335c4595ac22d54f4a3d93fa48f71e23
 2012-03-09T21:28:54.000652Z
 9100
 smithken
@@ -262,7 +262,7 @@ has-props
 
 
 
-10788
+30625
 
 Filtering_GenePix_Flags.png
 file
@@ -298,14 +298,14 @@ has-props
 
 29802
 
-Filtering_Expression_Threshold.png
+Multiple_Probeset_Filter_options.png
 file
 
 
 
 
 2012-04-19T14:07:23.000000Z
-335c4595ac22d54f4a3d93fa48f71e23
+27a3b53312ec14286864ac96c44c5ede
 2012-03-09T21:28:54.000652Z
 9100
 smithken
@@ -330,7 +330,7 @@ has-props
 
 
 
-30625
+10788
 
 Filtering_Search_MYC.png
 file
@@ -366,40 +366,6 @@ has-props
 
 24871
 
-Filtering_Coefficient_of_Variation.png
-file
-
-
-
-
-2012-04-19T14:07:23.000000Z
-451d4eb957b48e3238164fc3b9998627
-2012-03-09T21:28:54.000652Z
-9100
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-22564
-
 Filtering_Affy_Detection_Call.png
 file
 
@@ -434,14 +400,14 @@ has-props
 
 28423
 
-Filtering_Preview.png
+Filtering_Coefficient_of_Variation.png
 file
 
 
 
 
 2012-04-19T14:07:23.000000Z
-c0348f7d31b0c806ab122a431e01a688
+451d4eb957b48e3238164fc3b9998627
 2012-03-09T21:28:54.000652Z
 9100
 smithken
@@ -466,7 +432,7 @@ has-props
 
 
 
-27862
+22564
 
 Filtering_Entrez_Gene_ID.png
 file
@@ -501,6 +467,40 @@ has-props
 
 
 21179
+
+Filtering_Preview.png
+file
+
+
+
+
+2012-04-19T14:07:23.000000Z
+c0348f7d31b0c806ab122a431e01a688
+2012-03-09T21:28:54.000652Z
+9100
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27862
 
 Project_Folders_Filtering.png
 file

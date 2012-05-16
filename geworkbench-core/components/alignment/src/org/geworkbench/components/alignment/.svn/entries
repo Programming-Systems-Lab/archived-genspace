@@ -1,14 +1,14 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2012-04-13T18:33:10.968680Z
-9310
+2012-05-10T20:38:58.728802Z
+9452
 zji
 
 
@@ -26,12 +26,77 @@ zji
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
 
-panels
-dir
+BlastViewComponent.java
+file
+
+
+
+
+2012-05-16T16:17:01.000000Z
+e05147570b31977d7fcad55b7c6998f8
+2012-05-10T20:38:58.728802Z
+9452
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22064
 
 blast
 dir
 
 help
 dir
+
+BlastViewComponent.cwb.xml
+file
+
+
+
+
+2012-05-16T16:17:01.000000Z
+c192730ee29c8d8a4079bce5c2a506ed
+2012-05-09T18:14:11.166173Z
+9442
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1450
 

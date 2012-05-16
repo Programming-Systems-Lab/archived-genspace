@@ -185,7 +185,8 @@ public class UsageInformation extends GenericUsageInformation implements
 	@WebMethod
 	@RolesAllowed("user")
 	public List<AnalysisEvent> getMyNotes(String filter, String sortOn) {
-		Query q = getEntityManager().createQuery("SELECT ev FROM AnalysisEvent ev join ev.transaction tr where tr.user=:user "+(filter != null ? "AND (ev.note LIKE :filter1 OR ev.tool.name LIKE :filter2)" : "")+" ORDER BY " + ("tool".equals(sortOn) ? "ev.tool.name" : "ev.createdAt"));
+		getEntityManager().getEntityManagerFactory().getCache().evictAll();
+		Query q = getEntityManager().createQuery("SELECT ev FROM AnalysisEvent ev join ev.transaction tr where tr.user=:user "+(filter != null ? "AND (ev.note LIKE :filter1 OR ev.tool.name LIKE :filter2)" : "")+" ORDER BY " + ("tool".equals(sortOn) ? "ev.tool.name" : "ev.createdAt DESC"));
 		q.setParameter("user", getUser());
 		if(filter != null)
 		{
@@ -203,6 +204,25 @@ public class UsageInformation extends GenericUsageInformation implements
 			ret.add((AnalysisEvent) o);
 		}
 		System.out.println(ret.size() +"being ret");
+		return ret;
+	}
+	
+	@WebMethod
+	@RolesAllowed("user")
+	public List<AnalysisEventParameter> getAnalysisParameters(int analysisId)
+	{
+		Query q = getEntityManager().createNativeQuery("select parm.* from analysiseventparameter parm " +
+				"inner join analysisevent ev on ev.id=parm.EVENT_ID " +
+				"inner join transaction tr on tr.id=ev.transaction_id where parm.event_id=? and tr.USER_ID=?;",AnalysisEventParameter.class);
+			q.setParameter(1,analysisId);
+			q.setParameter(2, getUser().getId());
+		ArrayList<AnalysisEventParameter> ret = new ArrayList<AnalysisEventParameter>();
+		for(Object o :q.getResultList())
+		{
+			getEntityManager().detach(o);
+			((AnalysisEventParameter) o).setEvent(null);
+			ret.add(((AnalysisEventParameter) o));
+		}
 		return ret;
 	}
 }

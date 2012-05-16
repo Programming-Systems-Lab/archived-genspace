@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ui
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -131,40 +131,6 @@ zji
 
 10929
 
-privacyTab.java
-file
-
-
-
-
-2012-01-10T18:25:35.000000Z
-4c656a9d43404d8a9412cf3eb8e8f86c
-2011-07-30T04:31:30.667242Z
-8187
-zji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10062
-
 GenSpaceGeneralProfile.java
 file
 
@@ -198,6 +164,40 @@ zji
 
 
 6232
+
+privacyTab.java
+file
+
+
+
+
+2012-01-10T18:25:35.000000Z
+4c656a9d43404d8a9412cf3eb8e8f86c
+2011-07-30T04:31:30.667242Z
+8187
+zji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10062
 
 NameRenderer.java
 file
@@ -335,40 +335,6 @@ bellj
 
 8934
 
-GenSpaceRegistration.java
-file
-
-
-
-
-2012-01-10T21:28:12.000000Z
-8f152d5de4311dc61a263c7f132c5b39
-2012-01-06T21:01:06.170581Z
-8667
-bellj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7838
-
 SocialNetworksHome.java
 file
 
@@ -403,17 +369,17 @@ zji
 
 29321
 
-friendsTab.java
+GenSpaceRegistration.java
 file
 
 
 
 
-2012-01-10T18:25:35.000000Z
-450eb36ab9b35820804bdabc8c98bba9
-2011-07-30T04:31:30.667242Z
-8187
-zji
+2012-01-10T21:28:12.000000Z
+8f152d5de4311dc61a263c7f132c5b39
+2012-01-06T21:01:06.170581Z
+8667
+bellj
 
 
 
@@ -435,7 +401,41 @@ zji
 
 
 
-7441
+7838
+
+DataVisibility.java
+file
+
+
+
+
+2012-03-08T20:56:52.000000Z
+53f332741d93a637ac8b6c13d035c62b
+2012-03-08T21:08:17.855224Z
+9025
+bellj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7322
 
 AutoCompleteCombo.java
 file
@@ -471,17 +471,17 @@ zji
 
 10105
 
-DataVisibility.java
+friendsTab.java
 file
 
 
 
 
-2012-03-08T20:56:52.000000Z
-53f332741d93a637ac8b6c13d035c62b
-2012-03-08T21:08:17.855224Z
-9025
-bellj
+2012-01-10T18:25:35.000000Z
+450eb36ab9b35820804bdabc8c98bba9
+2011-07-30T04:31:30.667242Z
+8187
+zji
 
 
 
@@ -503,7 +503,7 @@ bellj
 
 
 
-7322
+7441
 
 graph
 dir

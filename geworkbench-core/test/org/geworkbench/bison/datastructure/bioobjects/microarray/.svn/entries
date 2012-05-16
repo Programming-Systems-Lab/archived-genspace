@@ -1,14 +1,14 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/test/org/geworkbench/bison/datastructure/bioobjects/microarray
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
 
 
-2011-11-02T15:43:58.696033Z
-8481
+2012-05-11T14:44:58.015056Z
+9457
 zji
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-10T19:15:28.000000Z
-3c24c98a9a97bba188604d0f0e14d006
-2011-11-02T15:43:58.696033Z
-8481
+2012-05-16T16:17:02.000000Z
+866148151bcdb04b10c236238087577b
+2012-05-11T14:44:58.015056Z
+9457
 zji
 has-props
 
@@ -58,5 +58,5 @@ has-props
 
 
 
-14350
+14323
 

@@ -67,7 +67,7 @@ import org.jfree.ui.RectangleInsets;
  * <p>Company: Columbia University</p>
  *
  * @author Xiaoqing Zhang
- * @version $Id: EVDPanel.java 8771 2012-01-25 21:38:04Z zji $
+ * @version $Id: EVDPanel.java 9459 2012-05-11 19:30:39Z smithken $
  */
 @AcceptTypes({DSMicroarraySet.class})
 public class EVDPanel extends MicroarrayViewEventBase {

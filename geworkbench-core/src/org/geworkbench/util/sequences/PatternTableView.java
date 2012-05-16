@@ -39,7 +39,7 @@ import org.geworkbench.util.patterns.PatternOperations;
  * <p>Company: </p>
  *
  * @author not attributable
- * @version $Id: PatternTableView.java 8637 2011-12-22 19:23:14Z zji $
+ * @version $Id: PatternTableView.java 9456 2012-05-11 14:44:42Z wangmen $
  */
 
 public class PatternTableView extends JPanel {
@@ -225,9 +225,9 @@ public class PatternTableView extends JPanel {
 
                 if (selected.exists()) {
 					int o = JOptionPane.showConfirmDialog(null,
-
-					"Replace the file", "Replace the existing file?",
-							JOptionPane.YES_NO_CANCEL_OPTION);
+					"The file already exists. Do you wish to overwrite it?", 
+					"Replace the existing file?",
+					JOptionPane.YES_NO_OPTION);
 					if (o != JOptionPane.YES_OPTION) {
 						return;
 					}
@@ -292,9 +292,9 @@ public class PatternTableView extends JPanel {
 
                     if (file.exists()) {
     					int o = JOptionPane.showConfirmDialog(null,
-
-    					"Replace the file", "Replace existing file?",
-    							JOptionPane.YES_NO_CANCEL_OPTION);
+    					"The file already exists. Do you wish to overwrite it?", 
+    					"Replace existing file?",
+    					JOptionPane.YES_NO_OPTION);
     					if (o != JOptionPane.YES_OPTION) {
     						return;
     					}

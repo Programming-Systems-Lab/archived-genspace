@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/util/patterns
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-CSMatchedSeqPattern.java
-file
-
-
-
-
-2012-01-10T19:15:28.000000Z
-31016d2c61d6a71e7db465035169c36d
-2011-12-20T15:58:51.363784Z
-8624
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7256
 
 Pattern-ii.gif
 file
@@ -93,6 +59,108 @@ has-props
 
 
 3351
+
+PatternOperations.java
+file
+
+
+
+
+2012-03-05T20:23:31.000000Z
+55a8c3ba0c34cf6af244e78a24bfaeb6
+2012-03-05T17:45:18.759987Z
+8955
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8649
+
+pattern.gif
+file
+
+
+
+
+2011-08-17T00:10:51.000000Z
+82ebd6500ff760eea51d358f24cd3182
+2005-07-28T22:36:56.000000Z
+50
+watkin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+930
+
+CSMatchedSeqPattern.java
+file
+
+
+
+
+2012-01-10T19:15:28.000000Z
+31016d2c61d6a71e7db465035169c36d
+2011-12-20T15:58:51.363784Z
+8624
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7256
 
 PatternFetchException.java
 file
@@ -162,74 +230,6 @@ has-props
 
 1621
 
-PatternOfflet.java
-file
-
-
-
-
-2011-08-17T00:10:51.000000Z
-af2f6e6d8cc81d802f706e56b2165704
-2011-03-25T19:20:20.843093Z
-7647
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-662
-
-PatternOperations.java
-file
-
-
-
-
-2012-03-05T20:23:31.000000Z
-55a8c3ba0c34cf6af244e78a24bfaeb6
-2012-03-05T17:45:18.759987Z
-8955
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8649
-
 PatternSequenceDisplayUtil.java
 file
 
@@ -298,17 +298,17 @@ has-props
 
 4131
 
-pattern.gif
+PatternOfflet.java
 file
 
 
 
 
 2011-08-17T00:10:51.000000Z
-82ebd6500ff760eea51d358f24cd3182
-2005-07-28T22:36:56.000000Z
-50
-watkin
+af2f6e6d8cc81d802f706e56b2165704
+2011-03-25T19:20:20.843093Z
+7647
+zji
 has-props
 
 
@@ -330,5 +330,5 @@ has-props
 
 
 
-930
+662
 

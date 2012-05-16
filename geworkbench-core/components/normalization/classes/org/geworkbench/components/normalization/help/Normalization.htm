@@ -4,17 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="MediaWiki 1.16.0">
 <meta name="robots" content="noindex,follow">
-<link rel="alternate" type="application/x-wiki" title="Edit" href="http://wiki.c2b2.columbia.edu/workbench/index.php?title=Normalization&amp;action=edit">
-<link rel="edit" title="Edit" href="http://wiki.c2b2.columbia.edu/workbench/index.php?title=Normalization&amp;action=edit">
-<link rel="shortcut icon" href="http://wiki.c2b2.columbia.edu/workbench/skins/common/images/favicon.ico">
-<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.c2b2.columbia.edu/workbench/opensearch_desc.php" title="Workbench (en)">
-<link rel="alternate" type="application/atom+xml" title="Workbench Atom feed" href="http://wiki.c2b2.columbia.edu/workbench/index.php?title=Special:RecentChanges&amp;feed=atom">
-<link rel="stylesheet" href="Normalization_files/commonPrint.css" media="">
-<link rel="stylesheet" href="Normalization_files/index_003.css">
-<link rel="stylesheet" href="Normalization_files/index.css" media="">
-<link rel="stylesheet" href="Normalization_files/index_002.css">
-<link rel="stylesheet" href="Normalization_files/index_004.css">
-
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Normalization skin-monobook">
@@ -48,10 +37,22 @@ available in geWorkbench.  Affymetrix CEL files can be processed
 externally to geWorkbench using a program such as RMAExpress or in 
 R/Bioconductor and then the processed data imported into geWorkbench.
 </p><p>A short introduction to various methods of Affymetrix data preparation is available at <a href="http://discover.nci.nih.gov/microarrayAnalysis/Affymetrix.Preprocessing.jsp" class="external text" rel="nofollow">Affymetrix Preprocessing</a>.
+</p><p>As of geWorkbench 2.3.0, all normalizers are activated in one of two ways:
+1. By right-clicking on a microarray data node in the Project Folders component and following "Normalization".
+2. By use of the top level Commands Menu, and again selecting and following Normalization.
+</p><p>This is depicted for the Project Folders component 
+</p><p><br>
+<img alt="Project Folders Normalization Menu.png" src="normalization_files/Project_Folders_Normalization_Menu.png" height="405" width="438">
+</p><p><br>
+and for the Commands menu:
+</p><p><br>
+<img alt="Menu Bar Commands Normalization.png" src="normalization_files/Menu_Bar_Commands_Normalization.png" height="230" width="451">
 </p>
 <a name="Normalizer_Configuration"></a><h1> <span class="mw-headline" id="Normalizer_Configuration">Normalizer Configuration</span></h1>
-<p>Some normalizers may not be loaded by default in geWorkbench.  To configure which normalizers to load, use the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Tutorial_-_Component_Configuration_Manager" title="Tutorial - Component Configuration Manager" class="mw-redirect"> Component Configuration Manager</a>.  It is available in the top menu-bar under  <b>Tools-&gt;Component Configuration</b>.
-</p><p><img alt="Normalizers in CCM.png" src="Normalization_files/Normalizers_in_CCM.png" height="376" width="794">
+<p>Some normalizers may not be loaded by default in geWorkbench.  To configure which normalizers to load, use the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Component_Configuration_Manager" title="Component Configuration Manager"> Component Configuration Manager</a>.  It is available in the top menu-bar under  <b>Tools-&gt;Component Configuration</b>.
+</p><p>Only normalizers that have been loaded in the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Component_Configuration_Manager" title="Component Configuration Manager"> Component Configuration Manager (CCM)</a> will appear in the menus.
+</p><p><br>
+<img alt="Normalizers in CCM.png" src="normalization_files/Normalizers_in_CCM.png" height="351" width="794">
 </p>
 <a name="Available_Normalizers"></a><h1> <span class="mw-headline" id="Available_Normalizers">Available Normalizers</span></h1>
 <p>geWorkbench comes with the following normalization routines installed: 
@@ -59,17 +60,12 @@ R/Bioconductor and then the processed data imported into geWorkbench.
 </p>
 <a name="Basic_Controls"></a><h1> <span class="mw-headline" id="Basic_Controls">Basic Controls</span></h1>
 <a name="Overview_2"></a><h2> <span class="mw-headline" id="Overview_2">Overview</span></h2>
-<p><img alt="Normalization-Quantile full.png" src="Normalization_files/Normalization-Quantile_full.png" height="226" width="665">
+<p>See any of the below normalizers for a depiction of these controls.
 </p>
-<ul><li> <b>Normalizer</b> (menu) - Select the desired normalizer.
-</li></ul>
 <ul><li> <b>Saved Parameters</b> (menu) - Allows selection of stored parameter settings.
-</li></ul>
-<ul><li> <b>Normalize</b> (button)- Run the selected transformation.
-</li></ul>
-<ul><li> <b>Save Settings</b> - Save the current settings (see following section).
-</li></ul>
-<ul><li> <b>Delete Settings</b>- Delete the currently selected parameter set.
+</li><li> <b>Normalize</b> (button)- Run the selected transformation.
+</li><li> <b>Save Settings</b> - Save the current settings (see following section).
+</li><li> <b>Delete Settings</b>- Delete the currently selected parameter set.
 </li></ul>
 <a name="Saving_Parameters"></a><h2> <span class="mw-headline" id="Saving_Parameters">Saving Parameters</span></h2>
 <p>The current parameter settings can be saved to a named parameter set.
@@ -84,7 +80,7 @@ menu.
 </li></ul>
 <a name="Specific_Controls_for_each_Normalizer"></a><h1> <span class="mw-headline" id="Specific_Controls_for_each_Normalizer">Specific Controls for each Normalizer</span></h1>
 <a name="Housekeeping_Genes_Normalizer"></a><h2> <span class="mw-headline" id="Housekeeping_Genes_Normalizer">Housekeeping Genes Normalizer</span></h2>
-<p><img alt="Normalization-HouseKeeping.png" src="Normalization_files/Normalization-HouseKeeping.png" height="305" width="900">
+<p><img alt="Normalization-HouseKeeping.png" src="normalization_files/Normalization-HouseKeeping.png" height="323" width="888">
 </p><p><br>
 The Housekeeping Genes normalization method normalizes data using the 
 expression values of selected housekeeping genes. In particular, for 
@@ -131,10 +127,10 @@ yellow-highlighted markers.
 </li><li> <b>Clear Highlights</b> - Clear all highlights, leaving the list unchanged.
 </li></ul>
 </li></ul>
-<p><img alt="Normalization-Housekeeping invalid marker options.png" src="Normalization_files/Normalization-Housekeeping_invalid_marker_options.png" height="204" width="367">
+<p><img alt="Normalization-Housekeeping invalid marker options.png" src="normalization_files/Normalization-Housekeeping_invalid_marker_options.png" height="204" width="367">
 </p>
 <a name="Log2_Transformation"></a><h2> <span class="mw-headline" id="Log2_Transformation">Log2 Transformation</span></h2>
-<p><img alt="Normalization-Log2 Transformation.png" src="Normalization_files/Normalization-Log2_Transformation.png" height="191" width="668">
+<p><img alt="Normalization-Log2 Transformation.png" src="normalization_files/Normalization-Log2_Transformation.png" height="222" width="326">
 </p><p>Transforms the expression values in all microarrays in the 
 current data set of taking the base 2 log of the data.  The 
 transformation is applied to all expression measurements in all 
@@ -144,7 +140,7 @@ case, an error message appears indicating that the normalization could
 not be performed.
 </p>
 <a name="Marker_Centering_Normalizer"></a><h2> <span class="mw-headline" id="Marker_Centering_Normalizer">Marker Centering Normalizer</span></h2>
-<p><img alt="Normalization-Marker Centering.png" src="Normalization_files/Normalization-Marker_Centering.png" height="193" width="666">
+<p><img alt="Normalization-Marker Centering.png" src="normalization_files/Normalization-Marker_Centering.png" height="222" width="491">
 </p><p>This component allows normalizing using a choice of the mean or 
 median value for each marker profile across all arrays in the currently 
 loaded data set.  The calculated value for a given marker is subtracted 
@@ -164,14 +160,14 @@ the non-missing values within the profile.
 </li><li> <b>Ignore</b>: Missing values are left untouched.
 </li></ul>
 </li></ul>
-<a name="Mean-Variance_Normalizer"><h2> <span class="mw-headline" id="Mean-Variance_Normalizer">Mean-Variance Normalizer</span></h2>
-<p><img alt="Normalization-Mean Variance.png" src="Normalization_files/Normalization-Mean_Variance.png" height="198" width="721">
+<a name="Mean-Variance_Normalizer"></a><h2> <span class="mw-headline" id="Mean-Variance_Normalizer">Mean-Variance Normalizer</span></h2>
+<p><img alt="Normalization-Mean Variance.png" src="normalization_files/Normalization-Mean_Variance.png" height="222" width="489">
 </p><p><br>
 For each marker profile, the mean measurement of the entire profile is 
 subtracted from each measurement in the profile and the resulting value 
 is divided by the profile's standard deviation.
 </p>
-<h3> <span class="mw-headline" id="Mean-Variance_Parameters">Mean-Variance Parameters</span></h3>
+<a name="Mean-Variance_Parameters"></a><h3> <span class="mw-headline" id="Mean-Variance_Parameters">Mean-Variance Parameters</span></h3>
 <ul><li> <b>Missing values</b> - Designates how to handle missing values in a marker profile. Available options are:
 <ul><li> <b>Min profile</b>: Missing values are replaced with the minimum (post-centering) profile value.
 </li><li> <b>Max profile</b>: Missing values are replaced with the maximum (post-centering) profile value.
@@ -180,7 +176,7 @@ is divided by the profile's standard deviation.
 </li></ul>
 </li></ul>
 <a name="Microarray_Centering_Normalizer"></a><h2> <span class="mw-headline" id="Microarray_Centering_Normalizer">Microarray Centering Normalizer</span></h2>
-<p><img alt="Normalization-Microarray Centering.png" src="Normalization_files/Normalization-Microarray_Centering.png" height="192" width="667">
+<p><img alt="Normalization-Microarray Centering.png" src="normalization_files/Normalization-Microarray_Centering.png" height="207" width="506">
 </p>
 <a name="Centering_Parameters_2"></a><h3> <span class="mw-headline" id="Centering_Parameters_2">Centering Parameters</span></h3>
 <ul><li> <b>Averaging method</b> - Designates if the mean or the median 
@@ -197,7 +193,7 @@ the non-missing values within the profile.
 </li></ul>
 </li></ul>
 <a name="Missing_Values_Normalizer"></a><h2> <span class="mw-headline" id="Missing_Values_Normalizer">Missing Values Normalizer</span></h2>
-<p><img alt="Normalization-Missing Values.png" src="Normalization_files/Normalization-Missing_Values.png" height="195" width="668">
+<p><img alt="Normalization-Missing Values.png" src="normalization_files/Normalization-Missing_Values.png" height="207" width="542">
 </p><p>This normalizer replaces a missing measurement with a consensus 
 value. This value is computed based upon the selection at the drop-down 
 box titled "<b>Averaging method</b>". 
@@ -212,7 +208,7 @@ measurement with the average value of its corresponding microarray. The
 average is computed by taking into account only non-missing values.
 </li></ul>
 <a name="Quantile_Normalizer"></a><h2> <span class="mw-headline" id="Quantile_Normalizer">Quantile Normalizer</span></h2>
-<p><img alt="Normalization-Quantile.png" src="Normalization_files/Normalization-Quantile.png" height="207" width="665">
+<p><img alt="Normalization-Quantile.png" src="normalization_files/Normalization-Quantile.png" height="207" width="627">
 </p><p><br>
 Quantile normalization adjusts the expression measurements in each 
 microarray so that the expression value distribution is the same for all
@@ -232,7 +228,7 @@ average is computed by taking into account only non-missing values.
 </li></ul>
 <p><br>
 </p>
-<h3> <span class="mw-headline" id="References:">References:</span></h3>
+<a name="References:"></a><h3> <span class="mw-headline" id="References:">References:</span></h3>
 <p>Bolstad BM, Irizarry RA, Astrand M, Speed TP (2003) A comparison of 
 normalization methods for high density oligonucleotide array data based 
 on variance and bias. Bioinformatics 19(2):185-93. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/12538238" class="external free" rel="nofollow">http://www.ncbi.nlm.nih.gov/pubmed/12538238</a>)
@@ -240,7 +236,7 @@ on variance and bias. Bioinformatics 19(2):185-93. (<a href="http://www.ncbi.nlm
 Supplementary information: <a href="http://bmbolstad.com/misc/normalize/normalize.html" class="external free" rel="nofollow">http://bmbolstad.com/misc/normalize/normalize.html</a>.
 </p>
 <a name="Threshold_Normalizer"></a><h2> <span class="mw-headline" id="Threshold_Normalizer">Threshold Normalizer</span></h2>
-<p><img alt="Normalization-Threshold.png" src="Normalization_files/Normalization-Threshold.png" height="201" width="668">
+<p><img alt="Normalization-Threshold.png" src="normalization_files/Normalization-Threshold.png" height="228" width="474">
 </p><p>Allows a minimum or maximum value for the data to be set.  If a 
 minimum value is specified, any value less than that will be set to the 
 given minimum value.  If a maximum value is specified, any value greater
@@ -262,12 +258,12 @@ given minimum value.  If a maximum value is specified, any value greater
 <!-- 
 NewPP limit report
 Preprocessor node count: 102/1000000
-Post-expand include size: 1889/2097152 bytes
+Post-expand include size: 1907/2097152 bytes
 Template argument size: 0/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key workbench:pcache:idhash:2109-0!1!0!!en!2!printable=1 and timestamp 20110729020202 -->
+<!-- Saved in parser cache with key workbench:pcache:idhash:2109-0!1!0!!en!2!printable=1 and timestamp 20120309212950 -->
 <div class="printfooter">
 Retrieved from "<a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Normalization">http://wiki.c2b2.columbia.edu/workbench/index.php/Normalization</a>"</div>
 		<div id="catlinks" class="catlinks catlinks-allhidden"></div>		<!-- end content -->
@@ -276,12 +272,10 @@ Retrieved from "<a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Norma
 </div></div>
 <div class="visualClear"></div>
 <div id="footer">
-
-	This page was last modified on 8 June 2010, at 16:11.
-
-
+	<div id="f-poweredbyico"><img src="normalization_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 1 March 2012, at 12:20.</li>
+	</ul>
 </div>
 </div>
 
-<!-- Served in 0.446 secs. -->
-</body></html>

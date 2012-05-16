@@ -17,7 +17,7 @@ import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 
 /**
  * @author yc2480
- * @version $Id: CSAnovaResultSetTest.java 8481 2011-11-02 15:43:58Z zji $
+ * @version $Id: CSAnovaResultSetTest.java 9457 2012-05-11 14:44:58Z zji $
  */
 public class CSAnovaResultSetTest extends TestCase {
 
@@ -70,7 +70,6 @@ public class CSAnovaResultSetTest extends TestCase {
 		}
 
 		// generate arrays
-		view = new CSMicroarraySetView<DSGeneMarker, DSMicroarray>();
 		DSMicroarraySet microarraySet = new CSMicroarraySet();
 		microarraySet.setLabel(this.getClass().getName());
 
@@ -99,7 +98,7 @@ public class CSAnovaResultSetTest extends TestCase {
 		}
 
 		/* order here is important for marker labels */
-		view.setMicroarraySet(microarraySet);
+		view = new CSMicroarraySetView<DSGeneMarker, DSMicroarray>(microarraySet);
 		view.useMarkerPanel(true);
 		view.setMarkerPanel(markerPanel);
 

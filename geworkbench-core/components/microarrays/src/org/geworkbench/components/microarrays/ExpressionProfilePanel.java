@@ -24,6 +24,7 @@ import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarr
 import org.geworkbench.bison.datastructure.bioobjects.markers.DSGeneMarker;
 import org.geworkbench.bison.datastructure.bioobjects.microarray.DSMicroarray;
 import org.geworkbench.bison.datastructure.complex.panels.CSPanel;
+import org.geworkbench.bison.datastructure.complex.panels.DSItemList;
 import org.geworkbench.bison.datastructure.complex.panels.DSPanel;
 import org.geworkbench.engine.config.VisualPlugin;
 import org.geworkbench.engine.management.AcceptTypes;
@@ -54,7 +55,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  * Analysis
  * 
  * @author Adam Margolin
- * @version $Id: ExpressionProfilePanel.java 7178 2010-11-10 19:21:24Z zji $
+ * @version $Id: ExpressionProfilePanel.java 9388 2012-04-25 14:22:34Z zji $
  * 
  */
 @AcceptTypes( { DSMicroarraySet.class })
@@ -167,8 +168,7 @@ public class ExpressionProfilePanel extends MicroarrayViewEventBase implements
 					setBusy(graphPanel);
 					DSPanel<DSGeneMarker> genes = new CSPanel<DSGeneMarker>("");
 					genes.addAll(maSetView.markers());
-					DSPanel<DSMicroarray> arrays = new CSPanel<DSMicroarray>("");
-					arrays.addAll(maSetView.items());
+
 					XYSeriesCollection plots = new XYSeriesCollection();
                     int numGenes = genes.size();
                 	
@@ -180,6 +180,7 @@ public class ExpressionProfilePanel extends MicroarrayViewEventBase implements
             				numGenes, 0, numGenes, 1));
             		pb.start();
 
+            		DSItemList<DSMicroarray> arrays = maSetView.items();
 					for (int geneCtr = 0; geneCtr < numGenes; geneCtr++) {
 						XYSeries dataSeries = new XYSeries(genes.get(geneCtr)
 								.getLabel());
@@ -200,8 +201,7 @@ public class ExpressionProfilePanel extends MicroarrayViewEventBase implements
 
 					boolean isToolTipEnabled = jEnabledBox.isSelected();
 					if (isToolTipEnabled) {
-						tooltipGenerator = new ExpressionXYToolTip();
-						tooltipGenerator.setCurrentGenes(genes, arrays);
+						tooltipGenerator = new ExpressionXYToolTip(genes, arrays);
 					}
 
 					StandardXYItemRenderer renderer = new StandardXYItemRenderer(
@@ -306,11 +306,11 @@ public class ExpressionProfilePanel extends MicroarrayViewEventBase implements
 	private class ExpressionXYToolTip extends SymbolicXYItemLabelGenerator {
 		private static final long serialVersionUID = -3031603961146669009L;
 
-		DSPanel<DSGeneMarker> markers = new CSPanel<DSGeneMarker>("");
-		DSPanel<DSMicroarray> arrays = new CSPanel<DSMicroarray>("");
+		final DSPanel<DSGeneMarker> markers;
+		final DSItemList<DSMicroarray> arrays;
 
-		public void setCurrentGenes(DSPanel<DSGeneMarker> markers,
-				DSPanel<DSMicroarray> arrays) {
+		public ExpressionXYToolTip(final DSPanel<DSGeneMarker> markers,
+				final DSItemList<DSMicroarray> arrays) {
 			this.markers = markers;
 			this.arrays = arrays;
 		}

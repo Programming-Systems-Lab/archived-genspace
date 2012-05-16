@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/interactions/src/org/geworkbench/components/interactions/cellularnetwork/help/CNKB_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,40 +60,6 @@ has-props
 
 44967
 
-CNKB_marker_setup.png
-file
-
-
-
-
-2012-03-08T18:51:43.000000Z
-08bedc758661cb3164a965f6245aa44b
-2012-03-07T23:43:29.941001Z
-9006
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32324
-
 poweredby_mediawiki_88x31.png
 file
 
@@ -128,14 +94,14 @@ has-props
 
 1927
 
-CNKB_Result_Display_3types_threshold0.png
+CNKB_marker_setup.png
 file
 
 
 
 
 2012-03-08T18:51:43.000000Z
-194847ab588a6cf7260528cef818dcc3
+08bedc758661cb3164a965f6245aa44b
 2012-03-07T23:43:29.941001Z
 9006
 smithken
@@ -160,7 +126,7 @@ has-props
 
 
 
-69302
+32324
 
 CNKB_Result_Cytoscape_3types_v2.png
 file
@@ -195,6 +161,40 @@ has-props
 
 
 244447
+
+CNKB_Result_Display_3types_threshold0.png
+file
+
+
+
+
+2012-03-08T18:51:43.000000Z
+194847ab588a6cf7260528cef818dcc3
+2012-03-07T23:43:29.941001Z
+9006
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69302
 
 CNKB_GO_Right_Click.png
 file
@@ -298,40 +298,6 @@ has-props
 
 20293
 
-CNKB_Preferences_Column_Display_v2.png
-file
-
-
-
-
-2012-03-08T18:51:43.000000Z
-1c1ba1d61f093029eb7affe2c5ff7086
-2012-03-07T23:43:29.941001Z
-9006
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12961
-
 CNKB_throttle_graph_RC.png
 file
 
@@ -365,6 +331,40 @@ has-props
 
 
 36822
+
+CNKB_Preferences_Column_Display_v2.png
+file
+
+
+
+
+2012-03-08T18:51:43.000000Z
+1c1ba1d61f093029eb7affe2c5ff7086
+2012-03-07T23:43:29.941001Z
+9006
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12961
 
 CNKB_Gene_List_Right_click.png
 file
@@ -400,40 +400,6 @@ has-props
 
 11631
 
-CNKB_Result_Display_3types_v2.png
-file
-
-
-
-
-2012-03-08T18:51:43.000000Z
-b74184031097ed5cdd80d503f3fc0e22
-2012-03-07T23:43:29.941001Z
-9006
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-68588
-
 CNKB_markers_transfered.png
 file
 
@@ -467,6 +433,40 @@ has-props
 
 
 47922
+
+CNKB_Result_Display_3types_v2.png
+file
+
+
+
+
+2012-03-08T18:51:43.000000Z
+b74184031097ed5cdd80d503f3fc0e22
+2012-03-07T23:43:29.941001Z
+9006
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+68588
 
 CNKB_Selected_Markers_after_query.png
 file

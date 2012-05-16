@@ -79,7 +79,7 @@ import com.jgoodies.forms.layout.FormLayout;
  * Parameter Panel used for Master Regulator Analysis
  * 
  * @author yc2480
- * @version $Id: MasterRegulatorPanel.java 9227 2012-03-27 21:36:24Z wangmen $
+ * @version $Id: MasterRegulatorPanel.java 9473 2012-05-15 21:35:17Z zji $
  */
 public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 	private static final long serialVersionUID = -6160058089960168299L;
@@ -1118,16 +1118,18 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 		boolean goodNetwork = false;
 		allpos = true;
 		GZIPOutputStream zipout = null;
+		
+		DSMicroarraySet microarraySet = (DSMicroarraySet) amSet.getParentDataSet();
 		try{
 			ByteArrayOutputStream bo = new ByteArrayOutputStream();
 			zipout = new GZIPOutputStream(bo);
 
 			for (AdjacencyMatrix.Node node1 : matrix.getNodes()) {
-				DSGeneMarker marker1 = getMarkerInNode(node1, matrix);
+				DSGeneMarker marker1 = getMarkerInNode(node1, matrix, microarraySet);
 				if (marker1 != null && marker1.getLabel() != null) {
 					StringBuilder builder = new StringBuilder();
 					for (AdjacencyMatrix.Edge edge : matrix.getEdges(node1)) {
-						DSGeneMarker marker2 = getMarkerInNode(edge.node2, matrix);
+						DSGeneMarker marker2 = getMarkerInNode(edge.node2, matrix, microarraySet);
 						if (marker2 != null && marker2.getLabel() != null) {
 							double rho = 1, pvalue = 0;
 							double[] v1 = maSet.getRow(marker1);
@@ -1183,13 +1185,13 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 		return out;
 	}
 
-	private DSGeneMarker getMarkerInNode(AdjacencyMatrix.Node node, AdjacencyMatrix matrix){
+	private DSGeneMarker getMarkerInNode(AdjacencyMatrix.Node node, AdjacencyMatrix matrix, DSMicroarraySet microarraySet){
 		if (node == null || matrix == null) return null;
 		DSGeneMarker marker = null;
 		if (node.type == NodeType.MARKER) 
 			marker = node.getMarker();
 		else 
-			marker = matrix.getMicroarraySet().getMarkers().get(node.stringId);
+			marker = microarraySet.getMarkers().get(node.stringId);
 		return marker;
 	}
 
@@ -1429,11 +1431,12 @@ public final class MasterRegulatorPanel extends AbstractSaveableParameterPanel {
 			 AdjacencyMatrix matrix  = amSet.getMatrix();
 			 if (matrix==null) return "Network (Adjacency Matrix) has not been loaded yet.";
 
+			 DSMicroarraySet microarraySet = (DSMicroarraySet) amSet.getParentDataSet();
 			 for (AdjacencyMatrix.Node node1 : matrix.getNodes()) {
-				 DSGeneMarker marker1 = getMarkerInNode(node1, matrix);
+				DSGeneMarker marker1 = getMarkerInNode(node1, matrix, microarraySet);
 				 if (marker1 != null && marker1.getLabel() != null) {
 					 for (AdjacencyMatrix.Edge edge : matrix.getEdges(node1)) {
-						 DSGeneMarker marker2 = getMarkerInNode(edge.node2, matrix);
+						 DSGeneMarker marker2 = getMarkerInNode(edge.node2, matrix, microarraySet);
 						 if (marker2 != null && marker2.getLabel() != null) return "Valid";
 					 }
 				 }

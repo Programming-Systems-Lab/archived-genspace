@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @XmlRootElement
@@ -35,6 +36,7 @@ public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 	private Set<AnalysisEventParameter> parameters;
 	private String toolname;
 	private String note;
+	private java.util.Date finishedAt;
 	
 //	@Override 
 //	protected Object clone() throws CloneNotSupportedException {
@@ -102,5 +104,13 @@ public class AnalysisEvent extends LazyCycleBreaker implements Serializable {
 	}
 	public void setNote(String note) {
 		this.note = note;
+	}
+	@Temporal(TemporalType.TIMESTAMP)
+	@XmlTransient
+	public java.util.Date getFinishedAt() {
+		return finishedAt;
+	}
+	public void setFinishedAt(java.util.Date finishedAt) {
+		this.finishedAt = finishedAt;
 	}
 }

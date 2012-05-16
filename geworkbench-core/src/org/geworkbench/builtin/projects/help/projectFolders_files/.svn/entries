@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/help/projectFolders_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -60,14 +60,14 @@ has-props
 
 1927
 
-Project_Folders_Rename_Project.png
+Project_Folders_Workspace_New_Project.png
 file
 
 
 
 
 2012-04-19T14:07:37.000000Z
-c8d69acba448e58faee2518f3c3c109d
+7db2995264269c1c3ff7963b1a2c356d
 2012-03-13T00:11:17.398884Z
 9128
 smithken
@@ -92,7 +92,7 @@ has-props
 
 
 
-13687
+2973
 
 Dataset_hover_network.png
 file
@@ -128,14 +128,14 @@ has-props
 
 10160
 
-Project_Folders_Workspace_New_Project.png
+Project_Folders_Rename_Project.png
 file
 
 
 
 
 2012-04-19T14:07:37.000000Z
-7db2995264269c1c3ff7963b1a2c356d
+c8d69acba448e58faee2518f3c3c109d
 2012-03-13T00:11:17.398884Z
 9128
 smithken
@@ -160,7 +160,7 @@ has-props
 
 
 
-2973
+13687
 
 Project_Folders_Workspace.png
 file
@@ -332,40 +332,6 @@ has-props
 
 7620
 
-File_Open_Workspace.png
-file
-
-
-
-
-2012-04-19T14:07:37.000000Z
-dce92d5b10941520e970fe33afbebf45
-2012-03-13T00:11:17.398884Z
-9128
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7211
-
 File_New_Project.png
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 7930
+
+File_Open_Workspace.png
+file
+
+
+
+
+2012-04-19T14:07:37.000000Z
+dce92d5b10941520e970fe33afbebf45
+2012-03-13T00:11:17.398884Z
+9128
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7211
 
 Dataset_hover_microarray.png
 file

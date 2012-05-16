@@ -281,4 +281,35 @@ public interface ToolUsageInformation {
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "analysisEventCompleted", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AnalysisEventCompleted")
+    @ResponseWrapper(localName = "analysisEventCompletedResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AnalysisEventCompletedResponse")
+    public void analysisEventCompleted(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Transaction arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.Transaction
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "popAnalysisFromTransaction", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.PopAnalysisFromTransaction")
+    @ResponseWrapper(localName = "popAnalysisFromTransactionResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.PopAnalysisFromTransactionResponse")
+    public Transaction popAnalysisFromTransaction(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Transaction arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
 }

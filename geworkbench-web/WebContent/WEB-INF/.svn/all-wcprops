@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/geworkbench/!svn/ver/9274/trunk/geworkbench-web/WebContent/WEB-INF
+/svn/geworkbench/!svn/ver/9460/trunk/geworkbench-web/WebContent/WEB-INF
 END
 sun-web.xml
 K 25
@@ -13,5 +13,5 @@ web.xml
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svn/geworkbench/!svn/ver/8926/trunk/geworkbench-web/WebContent/WEB-INF/web.xml
+/svn/geworkbench/!svn/ver/9352/trunk/geworkbench-web/WebContent/WEB-INF/web.xml
 END

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/9048/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
+/svn/geworkbench/!svn/ver/9331/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace
 END
 TransactionElement.java
 K 25
@@ -15,23 +15,11 @@ svn:wc:ra_dav:version-url
 V 129
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/GenSpaceMenu.cwb.xml
 END
-ObjectHandler.java
-K 25
-svn:wc:ra_dav:version-url
-V 127
-/svn/geworkbench/!svn/ver/8928/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectHandler.java
-END
 BrowserLauncher.java
 K 25
 svn:wc:ra_dav:version-url
 V 129
 /svn/geworkbench/!svn/ver/7751/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/BrowserLauncher.java
-END
-ObjectLogger.java
-K 25
-svn:wc:ra_dav:version-url
-V 126
-/svn/geworkbench/!svn/ver/8924/trunk/geworkbench/components/genspace/src/org/geworkbench/components/genspace/ObjectLogger.java
 END
 XMLLoader.java
 K 25

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/src/org/geworkbench/util/annotation
+/svn/geworkbench/!svn/ver/9432/trunk/geworkbench/src/org/geworkbench/util/annotation
 END
 Pathway.java
 K 25
@@ -13,5 +13,5 @@ AffyAnnotationUtil.java
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/geworkbench/!svn/ver/8424/trunk/geworkbench/src/org/geworkbench/util/annotation/AffyAnnotationUtil.java
+/svn/geworkbench/!svn/ver/9432/trunk/geworkbench/src/org/geworkbench/util/annotation/AffyAnnotationUtil.java
 END

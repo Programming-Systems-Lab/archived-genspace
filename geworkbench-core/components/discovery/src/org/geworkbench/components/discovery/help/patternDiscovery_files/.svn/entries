@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/discovery/src/org/geworkbench/components/discovery/help/patternDiscovery_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -230,40 +230,6 @@ has-props
 
 10369
 
-PatternDiscovery_Basic_histone_result_blosum50_seqs.png
-file
-
-
-
-
-2011-08-17T00:19:02.000000Z
-3aa2ca750a532699fdfa9307b58ba90d
-2011-05-25T14:27:40.523570Z
-7927
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-72945
-
 PatternDiscovery_ProgressBar.png
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 12888
+
+PatternDiscovery_Basic_histone_result_blosum50_seqs.png
+file
+
+
+
+
+2011-08-17T00:19:02.000000Z
+3aa2ca750a532699fdfa9307b58ba90d
+2011-05-25T14:27:40.523570Z
+7927
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+72945
 
 PatternDiscovery_Params_Basic_support_options.png
 file
@@ -332,14 +332,14 @@ has-props
 
 14366
 
-PatternDiscovery_Params_Advanced_Matrix.png
+PatternDiscovery_Basic_histone_result_exact.png
 file
 
 
 
 
 2012-04-19T14:07:18.000000Z
-855f0b7a2cd01050da9703a2be574aad
+21ebdef8fef485900bbeec0ac4fdc332
 2012-03-09T17:36:26.107811Z
 9076
 smithken
@@ -364,7 +364,7 @@ has-props
 
 
 
-11336
+38501
 
 PatternDiscovery_Params_Advanced_Exact.png
 file
@@ -400,14 +400,14 @@ has-props
 
 11694
 
-PatternDiscovery_Basic_histone_result_exact.png
+PatternDiscovery_Params_Advanced_Matrix.png
 file
 
 
 
 
 2012-04-19T14:07:18.000000Z
-21ebdef8fef485900bbeec0ac4fdc332
+855f0b7a2cd01050da9703a2be574aad
 2012-03-09T17:36:26.107811Z
 9076
 smithken
@@ -432,7 +432,7 @@ has-props
 
 
 
-38501
+11336
 
 PatternDiscovery_SessionConnect.png
 file

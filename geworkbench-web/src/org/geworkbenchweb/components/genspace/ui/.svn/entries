@@ -12,13 +12,13 @@ https://ncisvn.nci.nih.gov/svn/geworkbench
 bellj
 
 
-svn:special svn:externals svn:needs-lock
 
 
 
 
 
 
+copied
 
 
 
@@ -45,7 +45,7 @@ has-props
 
 
 
-
+copied
 
 
 

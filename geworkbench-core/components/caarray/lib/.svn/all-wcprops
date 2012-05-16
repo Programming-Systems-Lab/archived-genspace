@@ -1,43 +1,49 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/geworkbench/!svn/ver/5638/trunk/geworkbench/components/caarray/lib
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib
 END
-jboss-jmx-4.0.5.GA.jar
+jbosssx-client.jar
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-jmx-4.0.5.GA.jar
+V 90
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jbosssx-client.jar
 END
-jboss-remoting-1.4.6.jar
+httpclient-4.2-beta1.jar
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-remoting-1.4.6.jar
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/httpclient-4.2-beta1.jar
 END
-google-collections-1.0-rc1.jar
+jboss-logging-spi-2.1.0.GAnci.jar
 K 25
 svn:wc:ra_dav:version-url
-V 102
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/google-collections-1.0-rc1.jar
+V 105
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-logging-spi-2.1.0.GAnci.jar
 END
-jboss-aspect-client-1.5.jar
+javassist-3.11.0.GA.jar
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-aspect-client-1.5.jar
+V 95
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/javassist-3.11.0.GA.jar
 END
-rmiio-2.0.2.jar
+jboss-system-jmx-5.1.0.GAnci.jar
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/rmiio-2.0.2.jar
+V 104
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-system-jmx-5.1.0.GAnci.jar
 END
-jbossall-client-4.0.5.GA.jar
+jboss-kernel-5.1.0.GAnci.jar
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jbossall-client-4.0.5.GA.jar
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-kernel-5.1.0.GAnci.jar
+END
+dozer-4.4.1nci.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/dozer-4.4.1nci.jar
 END
 mysql-connector-java-5.0.5.jar
 K 25
@@ -45,93 +51,219 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/geworkbench/!svn/ver/5638/trunk/geworkbench/components/caarray/lib/mysql-connector-java-5.0.5.jar
 END
-commons-io-1.4.jar
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/commons-io-1.4.jar
-END
-jboss-ejb3x-4.0.5.GA.jar
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-ejb3x-4.0.5.GA.jar
-END
-jboss-cache-1.4.0.SP1.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-cache-1.4.0.SP1.jar
-END
 caarray-client-external-v1_0.jar
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svn/geworkbench/!svn/ver/5638/trunk/geworkbench/components/caarray/lib/caarray-client-external-v1_0.jar
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/caarray-client-external-v1_0.jar
 END
-dozer-4.4.1.jar
+concurrent.jar
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/dozer-4.4.1.jar
+V 86
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/concurrent.jar
 END
-jboss-common-1.0.0.GA.jar
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-common-1.0.0.GA.jar
-END
-commons-collections-3.2.jar
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/geworkbench/!svn/ver/3819/trunk/geworkbench/components/caarray/lib/commons-collections-3.2.jar
-END
-jboss-annotations-ejb3-1.0.jar
+jboss-ejb3-security-client.jar
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-annotations-ejb3-1.0.jar
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-ejb3-security-client.jar
 END
-javacsv-1.0.jar
+httpcore-4.2-beta1.jar
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/javacsv-1.0.jar
+V 94
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/httpcore-4.2-beta1.jar
 END
-jboss-system-4.0.5.GA.jar
+jboss-aop-client-2.1.1.GAnci.jar
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-system-4.0.5.GA.jar
+V 104
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-aop-client-2.1.1.GAnci.jar
 END
-commons-lang-2.4.jar
+jboss-system-jmx-client-5.1.0.GAnci.jar
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/commons-lang-2.4.jar
+V 111
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-system-jmx-client-5.1.0.GAnci.jar
 END
-jboss-ejb3-client-noversion.jar
+log4j-1.2.14nci.jar
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-ejb3-client-noversion.jar
+V 91
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/log4j-1.2.14nci.jar
 END
-commons-logging-1.0.4.jar
+jboss-system-client-5.1.0.GAnci.jar
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/commons-logging-1.0.4.jar
+V 107
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-system-client-5.1.0.GAnci.jar
 END
-log4j-1.2.13.jar
+jboss-common-core-2.2.14.GAnci.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-common-core-2.2.14.GAnci.jar
+END
+jboss-j2se-5.1.0.GAnci.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-j2se-5.1.0.GAnci.jar
+END
+jboss-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-remoting.jar
+END
+jboss-ejb3-common-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-ejb3-common-client.jar
+END
+jboss-cache-1.4.1.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-cache-1.4.1.GA.jar
+END
+jboss-javaee.jar
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svn/geworkbench/!svn/ver/5638/trunk/geworkbench/components/caarray/lib/log4j-1.2.13.jar
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-javaee.jar
 END
-jboss-aop-client-1.5.2.GA.jar
+guava-r07.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/guava-r07.jar
+END
+commons-io-2.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/commons-io-2.0.1.jar
+END
+rmiio-2.0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/rmiio-2.0.2.jar
+END
+jboss-dependency-2.0.6.GAnci.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-dependency-2.0.6.GAnci.jar
+END
+jboss-security-spi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-security-spi.jar
+END
+xercesImpl-2.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/xercesImpl-2.7.1.jar
+END
+xercesImpl-2.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/xercesImpl-2.8.1.jar
+END
+jboss-aspect-jdk50-client.jar
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/geworkbench/!svn/ver/5492/trunk/geworkbench/components/caarray/lib/jboss-aop-client-1.5.2.GA.jar
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-aspect-jdk50-client.jar
+END
+jboss-ejb3-proxy-spi-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-ejb3-proxy-spi-client.jar
+END
+commons-collections-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/commons-collections-3.1.jar
+END
+hibernate-jbosscache-3.3.1.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/hibernate-jbosscache-3.3.1.GA.jar
+END
+jboss-ejb3-ext-api-1.0.0nci.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-ejb3-ext-api-1.0.0nci.jar
+END
+javacsv-2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/javacsv-2.0.jar
+END
+jboss-ejb3-proxy-impl-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-ejb3-proxy-impl-client.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/commons-logging-1.1.1.jar
+END
+jgroups-2.6.10.GAnci.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jgroups-2.6.10.GAnci.jar
+END
+commons-lang-2.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/commons-lang-2.5.jar
+END
+jbosssx-client-4.2.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jbosssx-client-4.2.2.GA.jar
+END
+jboss-integration.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-integration.jar
+END
+jsoup-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jsoup-1.6.1.jar
+END
+jboss-ejb3-core-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jboss-ejb3-core-client.jar
+END
+jnp-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/geworkbench/!svn/ver/9426/trunk/geworkbench/components/caarray/lib/jnp-client.jar
 END

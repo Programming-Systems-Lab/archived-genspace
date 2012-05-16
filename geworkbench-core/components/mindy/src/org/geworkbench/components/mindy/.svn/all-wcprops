@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/9251/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy
+/svn/geworkbench/!svn/ver/9421/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy
 END
 MindyPlugin.java
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/geworkbench/!svn/ver/8941/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyPlugin.java
+/svn/geworkbench/!svn/ver/9393/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyPlugin.java
 END
 MindyRowComparator.java
 K 25
@@ -21,17 +21,17 @@ svn:wc:ra_dav:version-url
 V 132
 /svn/geworkbench/!svn/ver/5054/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/GeneMarkerListComparator.java
 END
-MindyMarkerListComparator.java
-K 25
-svn:wc:ra_dav:version-url
-V 133
-/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyMarkerListComparator.java
-END
 ModulatorHeatMap.java
 K 25
 svn:wc:ra_dav:version-url
 V 124
 /svn/geworkbench/!svn/ver/8941/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/ModulatorHeatMap.java
+END
+MindyMarkerListComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/geworkbench/!svn/ver/5054/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyMarkerListComparator.java
 END
 ColumnHeaderListener.java
 K 25
@@ -39,29 +39,29 @@ svn:wc:ra_dav:version-url
 V 128
 /svn/geworkbench/!svn/ver/8508/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/ColumnHeaderListener.java
 END
-MindyAnalysis.cwb.xml
-K 25
-svn:wc:ra_dav:version-url
-V 124
-/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyAnalysis.cwb.xml
-END
 CheckBoxRenderer.java
 K 25
 svn:wc:ra_dav:version-url
 V 124
 /svn/geworkbench/!svn/ver/6315/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/CheckBoxRenderer.java
 END
-MindyTableTab.java
+MindyAnalysis.cwb.xml
 K 25
 svn:wc:ra_dav:version-url
-V 121
-/svn/geworkbench/!svn/ver/8547/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyTableTab.java
+V 124
+/svn/geworkbench/!svn/ver/8916/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyAnalysis.cwb.xml
 END
 AggregateTableModel.java
 K 25
 svn:wc:ra_dav:version-url
 V 127
 /svn/geworkbench/!svn/ver/8187/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/AggregateTableModel.java
+END
+MindyTableTab.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/geworkbench/!svn/ver/8547/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyTableTab.java
 END
 MindyVisualComponent.cwb.xml
 K 25
@@ -85,7 +85,7 @@ MindyAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/9251/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyAnalysis.java
+/svn/geworkbench/!svn/ver/9421/trunk/geworkbench/components/mindy/src/org/geworkbench/components/mindy/MindyAnalysis.java
 END
 MicroarrayMarkerPositionComparator.java
 K 25

@@ -1,15 +1,20 @@
 package org.geworkbench.components.sam;
  
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -30,6 +35,8 @@ import org.geworkbench.bison.model.analysis.AlgorithmExecutionResults;
 import org.geworkbench.bison.model.analysis.ClusteringAnalysis;
 import org.geworkbench.bison.model.analysis.ParamValidationResults;
 import org.geworkbench.builtin.projects.history.HistoryPanel;
+import org.geworkbench.engine.preferences.GlobalPreferences;
+import org.geworkbench.util.FilePathnameUtils;
 import org.geworkbench.util.ProgressBar;
 
 /**
@@ -43,14 +50,14 @@ public class SAMAnalysis extends AbstractGridAnalysis implements
 
  	private static final long serialVersionUID = -1672201775884915447L;
  	
- 	private static final String SAMROOT = "/samdata/";
- 	private static final String R_ROOT="C:\\Program Files\\R\\R-2.14.2\\bin\\";
- 	private static final String R_SCRIPTS_BASE="C:\\samdata\\samtry.r";
- 	private static final String R_SCRIPTS="C:\\samdata\\sam.r";
+ 	private static final String SAMROOT = "/samdata/";	//it should be replaced.
+ 	private static String r_root="";
+ 	private static final String R_SCRIPTS="samtry.r";
  	
  	private String samdir = SAMROOT;
- 	private String samOutput = SAMROOT+"output\\";
+ 	private final String samOutFolder = "output\\";
  	
+ 	private String logfile = "err.log";
 
  	private float deltaInc;
  	private float deltaMax;
@@ -71,8 +78,10 @@ public class SAMAnalysis extends AbstractGridAnalysis implements
 	private int[] groupAssignments;	
  	private static Log log = LogFactory.getLog(SAMAnalysis.class);
  	
- 	private final long POLL_INTERVAL = 5000; //5 seconds
- 	private final int MAX_ROUNDS=3;
+ 	private final long POLL_INTERVAL = 5000; //5 seconds 
+ 	
+ 	private static final String lastConf = FilePathnameUtils.getUserSettingDirectoryPath()
+ 			+ "sam" + FilePathnameUtils.FILE_SEPARATOR + "last.conf";
  	
  	private SAMPanel samPanel=new SAMPanel();
  	
@@ -103,6 +112,52 @@ public class SAMAnalysis extends AbstractGridAnalysis implements
 
 		if (!(set instanceof DSMicroarraySet)) {			
 			return null;
+		}		
+		
+		String currdir=System.getProperty("user.dir");		
+		String predir=currdir+"\\data\\sam";
+		
+		File prefile=new File(predir);
+		if(!prefile.exists()){
+			if(!(prefile ).mkdir())
+				return new AlgorithmExecutionResults(false, "Cannot create directory at "+predir, null);
+		}
+		samdir=predir+"\\";
+		String samOutput=samdir+samOutFolder;
+		
+		String noShow=getLast();
+		if((noShow.equals(""))||(noShow.equalsIgnoreCase("false"))){
+		
+			JCheckBox checkbox = new JCheckBox("Do not show this message again.");
+			String message = "SAM requires R installed on your computer. R location should be assigned in Tools->Preference->R location.\n" +
+				    "R package of SAM is also required which will be installed automatically if not installed yet.\n" +
+				    "Do you want to continue?";
+			Object[] params = {message, checkbox};
+			int n = JOptionPane.showConfirmDialog(
+					null,
+					params,
+				    "Pleas be aware of",
+				    JOptionPane.YES_NO_OPTION);
+			boolean dontShow = checkbox.isSelected();
+			String s=dontShow?"True":"False";
+			saveLast(s);
+			
+			if(n!=JOptionPane.YES_OPTION)
+				return new AlgorithmExecutionResults(false, "Analysis aborted.", null);
+			
+		}
+				
+		String rExe = GlobalPreferences.getInstance().getRLocation();
+		if ((rExe == null)||(rExe.equals(""))) {
+			//log.info("No R location configured.");
+			return new AlgorithmExecutionResults(false, "Rscript.exe's location is not assigned", null);
+		}		
+		else{
+			File rExeFile=new File(rExe);
+			if(!rExeFile.exists())
+				return new AlgorithmExecutionResults(false, "Rscript.exe not exist. Please check it's location at Tools->Preference->R location.", null);
+			else
+				r_root=rExe;
 		}
 		
 		ProgressBar pbSam = ProgressBar
@@ -308,40 +363,34 @@ public class SAMAnalysis extends AbstractGridAnalysis implements
 		if(resultFile.exists())
 			resultFile.delete();
 		
-		String command = R_ROOT+"rscript.exe"+" "+R_SCRIPTS;		
+		String command = r_root+" "+samdir+R_SCRIPTS +" > "+samdir+logfile+" 2>&1";		
 		System.out.println(command);
-		try {
-			
-			Process p = Runtime.getRuntime().exec(command);
-			
+		
+		try {			
+			Runtime.getRuntime().exec(command);			
 		} catch (Exception e) {
 			pbSam.dispose();
 			e.printStackTrace();
 			return new AlgorithmExecutionResults(false,
 					"error running R scripts.", null);
-		}
+		}		
 		
-		int round=0;
-		while(!resultFile.exists()){
-			round++;
+		while(!resultFile.exists()){			
 			 try{
-			    	Thread.sleep(POLL_INTERVAL);
-			    	if (this.stopAlgorithm) {
-						pbSam.dispose();
-						return null;
-					}
-			    }catch(InterruptedException e){
-			    	pbSam.dispose();
+			    	Thread.sleep(POLL_INTERVAL);			    	
+			    	
+			    	String err = null;
+				    if ((err = runError()) != null){
+				    	pbSam.dispose();
+				    	return new AlgorithmExecutionResults(false,
+				    			"Sam run got error:\n"+err, null);				    	
+				    }
+				}
+			 catch(InterruptedException e){
+			    	
 			    }		
-		}
+		}		
 		
-		if(round>MAX_ROUNDS){
-			pbSam.dispose();
-			return new AlgorithmExecutionResults(false,
-					"R scripts did not get results.", null);
-		}
-		
-		//mock sam result here from file
 		try {
 			dd=getResultFromFile(samOutput+"outd.txt");
 			dbar=getResultFromFile(samOutput+"outdbar.txt");
@@ -373,21 +422,15 @@ public class SAMAnalysis extends AbstractGridAnalysis implements
 	}
 	
 	private void prepareRscripts() throws IOException{
-		String scriptsBase=R_SCRIPTS_BASE;
-		BufferedReader br = new BufferedReader(new FileReader(scriptsBase));
-		String line = br.readLine(); //skip first line to make base r scripts similar as grid service
 		
-		line = br.readLine();
-		String rFile=R_SCRIPTS;
+		String dir4r=samdir.replace("\\", "/");
+		String rFile=dir4r+R_SCRIPTS;
 		PrintWriter out = null;
 				
 		try{
 			out = new PrintWriter(new File(rFile));
-			out.println("samdir<-\""+samdir+"\"");
-			while(line!=null){
-				out.println(line);
-				line=br.readLine();
-			}
+			out.println("samdir<-\""+dir4r+"\"");
+			out.println(R_COMMAND);
 			
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -622,5 +665,97 @@ public class SAMAnalysis extends AbstractGridAnalysis implements
 		
 		return new ParamValidationResults(true, "No, no Error");
 	}//end of validInputData
+	
+	private String runError(){
+		StringBuilder str = new StringBuilder();
+		BufferedReader br = null;
+		boolean error = false;
+		if (!new File(samdir+logfile).exists()) return null;
+		try{
+			br = new BufferedReader(new FileReader(samdir+logfile));
+			String line = null;
+			int i = 0;
+			while((line = br.readLine())!=null){
+				if (((i = line.indexOf("Error:"))>-1)||((i = line.indexOf("error:"))>-1)){
+					str.append(line.substring(i)+"\n");
+					error = true;
+				}
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if (br!=null) br.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		if (error)  return str.toString();
+		return null;
+	}
+	
+	private String getLast(){
+		String conf = "";
+		try {
+			File file = new File(lastConf);
+			if (file.exists()) {
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				conf = br.readLine();
+				br.close();
+			}
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		return conf;
+	}
+	private void saveLast(String conf){
+		//save as last used conf
+		try {
+			BufferedWriter br = new BufferedWriter(new FileWriter(lastConf));
+			br.write(conf);
+			br.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	
+	private static final String R_COMMAND=
+			"a<-require(siggenes)\n"
+					+"if(a==FALSE){\n"
+					+"source(\"http://bioconductor.org/biocLite.R\")\n"
+					+"biocLite(\"siggenes\")\n"
+					+"}\n"
+
+				+"library(siggenes)\n"
+				+"outdir<-paste(samdir,\"output\", sep=\"\")\n"
+				+"dir.create(outdir,showWarnings = FALSE)\n"
+				+"samoutput<-paste(samdir,\"output/\", sep=\"\")\n"
+				+"datafile<-paste(samdir, \"data.txt\", sep=\"\")\n"
+				+"clfile<-paste(samdir,\"cl.txt\",sep=\"\")\n"
+				+"deltafile<-paste(samdir,\"delta_vec.txt\",sep=\"\")\n"
+				+"permfile<-paste(samdir,\"perm.txt\",sep=\"\")\n"
+				+"unlogfile<-paste(samdir,\"unlog.txt\",sep=\"\")\n"
+
+				+"outdfile<-paste(samoutput,\"outd.txt\",sep=\"\")\n"
+				+"outdbarfile<-paste(samoutput,\"outdbar.txt\",sep=\"\")\n"
+				+"outpvaluefile<-paste(samoutput,\"outpvalue.txt\",sep=\"\")\n"
+				+"outfoldfile<-paste(samoutput,\"outfold.txt\",sep=\"\")\n"
+				+"outmatfdrfile<-paste(samoutput,\"outmatfdr.txt\",sep=\"\")\n"
+				+"donefile<-paste(samoutput,\"done.txt\",sep=\"\")\n"
+
+				+"data<-read.table(datafile, sep=\"\\t\")\n"
+				+"cl<-scan(clfile)\n"
+				+"delta_vec<-scan(deltafile)\n"
+				+"perm<-scan(permfile)\n"
+				+"unlogpre<-scan(unlogfile)\n"
+				+"unlog<-as.logical(unlogpre)\n"
+				+"sam.out<-sam(data,cl,control=samControl(delta=delta_vec), use.dm = FALSE, B=perm, R.unlog=unlog, rand=123)\n"
+				+"write.table(sam.out@d,outdfile)\n"
+				+"write.table(sam.out@d.bar,outdbarfile)\n"
+				+"write.table(sam.out@p.value,outpvaluefile)\n"
+				+"write.table(sam.out@fold,outfoldfile)\n"
+				+"write.table(sam.out@mat.fdr[,c(1,3:5)],outmatfdrfile)\n"
+				+"write.table(cl,donefile)";
 
 }

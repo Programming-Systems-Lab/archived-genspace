@@ -2,7 +2,7 @@ package org.geworkbench.components.cytoscape;
 
 /**
  * @author my2248
- * @version $Id: MarkerSelectionPanel.java 9269 2012-04-04 16:13:53Z youmi $ 
+ * @version $Id: MarkerSelectionPanel.java 9477 2012-05-16 15:13:53Z zji $ 
  */
 
 import giny.model.Node;
@@ -43,7 +43,7 @@ import cytoscape.view.CyNetworkView;
 /**
  * @author yc2480
  * 
- * @version $Id: MarkerSelectionPanel.java 9269 2012-04-04 16:13:53Z youmi $
+ * @version $Id: MarkerSelectionPanel.java 9477 2012-05-16 15:13:53Z zji $
  */
 
 @SuppressWarnings("unchecked")
@@ -103,8 +103,8 @@ public class MarkerSelectionPanel extends JPanel implements Observer {
 		AdjacencyMatrixDataSet adjacencyMatrixdataSet = null;
 		AdjacencyMatrix origMatrix = CytoscapeWidget.getInstance()
 				.getAdjMatrix();
-		AdjacencyMatrix matrix = new AdjacencyMatrix(null, origMatrix
-				.getMicroarraySet(), origMatrix.getInteractionTypeSifMap(), origMatrix.getInteractionEvidenceMap());
+		AdjacencyMatrix matrix = new AdjacencyMatrix(null,
+				origMatrix.getInteractionTypeSifMap(), origMatrix.getInteractionEvidenceMap());
 
 		DSPanel<DSGeneMarker> selectedObject = (DSPanel<DSGeneMarker>) list
 				.getSelectedValue();

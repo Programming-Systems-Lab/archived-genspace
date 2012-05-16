@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/geworkbench/!svn/ver/9325/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors
+/svn/geworkbench/!svn/ver/9417/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors
 END
 SelectorHelper.java
 K 25
@@ -13,7 +13,7 @@ SelectorPanel.java
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svn/geworkbench/!svn/ver/8725/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/SelectorPanel.java
+/svn/geworkbench/!svn/ver/9417/trunk/geworkbench/components/selectors/src/org/geworkbench/components/selectors/SelectorPanel.java
 END
 SelectorTreeModel.java
 K 25

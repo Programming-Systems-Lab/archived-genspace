@@ -22,7 +22,7 @@ import com.Ostermiller.util.LabeledCSVParser;
  * This used to be in class AnnotationParser, whose main role is no longer parsing but the name stuck.
  * 
  * @author zji
- * @version $Id: AffyAnnotationParser.java 8373 2011-10-07 21:46:08Z zji $
+ * @version $Id: AffyAnnotationParser.java 9425 2012-05-04 18:22:56Z zji $
  *
  */
 public class AffyAnnotationParser {
@@ -134,7 +134,7 @@ public class AffyAnnotationParser {
 					|| label.equals(AnnotationParser.GENE_ONTOLOGY_CELLULAR_COMPONENT)
 					|| label.equals(AnnotationParser.GENE_ONTOLOGY_MOLECULAR_FUNCTION)) {
 				// get rid of leading 0's
-				while (val.startsWith("0") && (val.length() > 0)) {
+				while (val!=null && val.startsWith("0") && (val.length() > 0)) {
 					val = val.substring(1);
 				}
 			}

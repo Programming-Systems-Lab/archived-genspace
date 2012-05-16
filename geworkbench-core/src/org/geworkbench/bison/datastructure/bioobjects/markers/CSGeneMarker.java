@@ -22,7 +22,7 @@ import java.io.*;
  * </p>
  * 
  * @author not attributable
- * @version $Id: CSGeneMarker.java 8384 2011-10-10 18:55:34Z zji $
+ * @version $Id: CSGeneMarker.java 9450 2012-05-09 21:39:39Z zji $
  */
 
 public class CSGeneMarker implements DSGeneMarker, Serializable {
@@ -205,11 +205,17 @@ public class CSGeneMarker implements DSGeneMarker, Serializable {
 	private String getCanonicalLabel() {
 		String text0 = "";
 
-		try {
-			String text1 = AnnotationParser.getInfo(label,
-					AnnotationParser.DESCRIPTION)[0];
+		String[] descriptions = AnnotationParser.getInfo(label,
+				AnnotationParser.DESCRIPTION);
+		String text1 = "";
+		if (descriptions != null && descriptions.length > 0) {
+			text1 = descriptions[0];
+		}
+		String[] geneSymbol = AnnotationParser.getInfo(label,
+				AnnotationParser.GENE_SYMBOL);
+		if (geneSymbol != null) {
 			text0 = label + ": (" + getShortName() + ") " + text1;
-		} catch (Exception ex) {
+		} else { // no gene symbol
 			text0 = this.getDescription();
 			if (text0 != null) {
 				int index = text0.indexOf("/DEFINITION");

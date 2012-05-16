@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/alignment/src/org/geworkbench/components/alignment/help/blast_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -94,40 +94,6 @@ has-props
 
 36104
 
-Blast_Wilms_NM_include_5prime.png
-file
-
-
-
-
-2012-03-08T18:51:46.000000Z
-9228e002a5fa526e9224df5950d2f56d
-2012-03-07T23:13:04.520694Z
-9004
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-59575
-
 poweredby_mediawiki_88x31.png
 file
 
@@ -162,14 +128,14 @@ has-props
 
 1927
 
-BLAST_Analysis_Command_invocation.png
+Blast_Wilms_NM_include_5prime.png
 file
 
 
 
 
 2012-03-08T18:51:46.000000Z
-95b4db288b1a633c930019e41f45e56c
+9228e002a5fa526e9224df5950d2f56d
 2012-03-07T23:13:04.520694Z
 9004
 smithken
@@ -194,7 +160,7 @@ has-props
 
 
 
-12249
+59575
 
 T_SequenceAlignment_BLAST_general_controls.png
 file
@@ -230,14 +196,14 @@ has-props
 
 1721
 
-BLAST_Parameters_Main-tblastn.png
+BLAST_Analysis_Command_invocation.png
 file
 
 
 
 
 2012-03-08T18:51:46.000000Z
-1f8dcab8de73af2f1dcf8156d96e6650
+95b4db288b1a633c930019e41f45e56c
 2012-03-07T23:13:04.520694Z
 9004
 smithken
@@ -262,7 +228,7 @@ has-props
 
 
 
-24757
+12249
 
 BLAST_Analysis_invocation.png
 file
@@ -297,6 +263,40 @@ has-props
 
 
 12767
+
+BLAST_Parameters_Main-tblastn.png
+file
+
+
+
+
+2012-03-08T18:51:46.000000Z
+1f8dcab8de73af2f1dcf8156d96e6650
+2012-03-07T23:13:04.520694Z
+9004
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24757
 
 BLAST_Parameters_blastx.png
 file
@@ -400,40 +400,6 @@ has-props
 
 67469
 
-BLAST_Parameters_Main-tblastx.png
-file
-
-
-
-
-2012-03-08T18:51:46.000000Z
-84032411d34118449747599cea59c39c
-2012-03-07T23:13:04.520694Z
-9004
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27510
-
 BLAST_Analysis_Progress_Dialog.png
 file
 
@@ -468,14 +434,14 @@ has-props
 
 11811
 
-BLAST_Parameters_Main-blastn.png
+BLAST_Parameters_Main-tblastx.png
 file
 
 
 
 
 2012-03-08T18:51:46.000000Z
-787befca5e033f327f23f3ee3597846d
+84032411d34118449747599cea59c39c
 2012-03-07T23:13:04.520694Z
 9004
 smithken
@@ -500,7 +466,7 @@ has-props
 
 
 
-31433
+27510
 
 BLAST_Parameters_Main-blastn-full.png
 file
@@ -535,6 +501,40 @@ has-props
 
 
 65220
+
+BLAST_Parameters_Main-blastn.png
+file
+
+
+
+
+2012-03-08T18:51:46.000000Z
+787befca5e033f327f23f3ee3597846d
+2012-03-07T23:13:04.520694Z
+9004
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31433
 
 BLAST_Parameters_tblastn.png
 file

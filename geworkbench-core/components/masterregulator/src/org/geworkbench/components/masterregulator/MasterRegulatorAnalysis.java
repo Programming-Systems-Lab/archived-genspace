@@ -57,7 +57,7 @@ import org.geworkbench.util.ProgressTask;
 
 /**
  * @author yc2480
- * @version $Id: MasterRegulatorAnalysis.java 9227 2012-03-27 21:36:24Z wangmen $
+ * @version $Id: MasterRegulatorAnalysis.java 9477 2012-05-16 15:13:53Z zji $
  */
 public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 		ClusteringAnalysis {
@@ -177,27 +177,13 @@ public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 			//t-analysis
 			log.info("Executing T Analysis");
 			Map<DSGeneMarker, Double> values = null;
-			String ttestlabel = mraAnalysisPanel.getTTestNode();
-			DSSignificanceResultSet<DSGeneMarker> ttestrst = null;
-			if (ttestlabel != null){
-				if ((ttestrst = ttesthm.get(ttestlabel))!=null){
-					values = new HashMap<DSGeneMarker, Double>();
-					for (int i = 0; i < view.markers().size(); i++) {
-						DSGeneMarker m = view.markers().get(i);
-						double pval = ttestrst.getSignificance(m);
-						double tval = ttestrst.getTValue(m);
-						values.put(m, Math.copySign(-Math.log10( pval ), tval));
-					}
-				}
-			}else{
-				try {
-					TAnalysis tTestAnalysis= new TAnalysis(view);
-					values = tTestAnalysis.calculateDisplayValues();
-				} catch (TAnalysisException e1) {
-					return new AlgorithmExecutionResults(false,
-							e1.getMessage(), 
-							null);
-				}
+			try {
+				TAnalysis tTestAnalysis= new TAnalysis(view);
+				values = tTestAnalysis.calculateDisplayValues();
+			} catch (TAnalysisException e1) {
+				return new AlgorithmExecutionResults(false,
+						e1.getMessage(), 
+						null);
 			}
 			if (values==null) return new AlgorithmExecutionResults(false,
 					"The set of display values is set null.", 
@@ -234,6 +220,10 @@ public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 			ArrayList<DSGeneMarker> posDE = new ArrayList<DSGeneMarker>();
 			//genes with negative differential expression(t-value<0)
 			ArrayList<DSGeneMarker> negDE = new ArrayList<DSGeneMarker>();
+			String ttestlabel = mraAnalysisPanel.getTTestNode();
+			DSSignificanceResultSet<DSGeneMarker> ttestrst = null;
+			if (ttestlabel != null)
+				ttestrst = ttesthm.get(ttestlabel);
 			if (ttestrst != null){
 				for (DSGeneMarker marker : ttestrst.getSignificantMarkers()){
 					signatureMarkers.add(marker);
@@ -267,6 +257,7 @@ public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 			//x = size of markers
 			int x = maSet.getMarkers().size();
 			
+			DSMicroarraySet microarraySet = (DSMicroarraySet) amSet.getParentDataSet();
 			//for each TF A 
 			int i = 0;
 			for (DSGeneMarker tfA: transcriptionFactors){
@@ -282,7 +273,7 @@ public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 				ArrayList<DSGeneMarker> negSC = new ArrayList<DSGeneMarker>();
 				//int geneid = tfA.getSerial();
 				AdjacencyMatrix adjMatrix = amSet.getMatrix();
-				Set<DSGeneMarker> neighbors = adjMatrix.get(tfA);
+				Set<DSGeneMarker> neighbors = adjMatrix.get(tfA, microarraySet );
 				if (neighbors!=null){
 					for (DSGeneMarker neighbor : neighbors){//for each neighbor
 						nA.add(neighbor);
@@ -327,7 +318,7 @@ public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 				int c=z-w;
 				int d=x-z-y+w;
 				double pValue = FishersExactTest.getRightSideOneTailedP(a,b,c,d);
-				//System.out.println(tfA.getLabel()+"\t"+ pValue +"\ta:"+a+"\tb:"+b+"\tc:"+c+"\td:"+d+"\tGenes in Regulon:"+z+"\tGenes in activated Targetlist:"+w);
+				log.debug(tfA.getLabel()+"\t"+ pValue +"\ta:"+a+"\tb:"+b+"\tc:"+c+"\td:"+d+"\tGenes in Regulon:"+z+"\tGenes in activated Targetlist:"+w);
 	
 				double pValue2 = 1.1;
 				char mode = 0;
@@ -339,15 +330,15 @@ public class MasterRegulatorAnalysis extends AbstractGridAnalysis implements
 					d=x-z-y+w;
 					pValue2 = FishersExactTest.getRightSideOneTailedP(a,b,c,d);
 	
-					//log.debug(tfA.getLabel()+"\t"+ pValue2 +"\ta:"+a+"\tb:"+b+"\tc:"+c+"\td:"+d+"\tGenes in Regulon:"+z+"\tGenes in repressed Targetlist:"+w);
+					log.debug(tfA.getLabel()+"\t"+ pValue2 +"\ta:"+a+"\tb:"+b+"\tc:"+c+"\td:"+d+"\tGenes in Regulon:"+z+"\tGenes in repressed Targetlist:"+w);
 	
 					//show the most significant pValue of the two FET
 					if (pValue <= pValue2){ //activator
 						mode = CSMasterRegulatorResultSet.ACTIVATOR;
-						//log.debug(pValue+" <= "+pValue2+" "+mode);
+						log.debug(pValue+" <= "+pValue2+" "+mode);
 					}else {                 //repressor
 						mode = CSMasterRegulatorResultSet.REPRESSOR;
-						//log.debug(pValue+" > "+pValue2+" "+mode);
+						log.debug(pValue+" > "+pValue2+" "+mode);
 						pValue = pValue2;
 					}
 				}

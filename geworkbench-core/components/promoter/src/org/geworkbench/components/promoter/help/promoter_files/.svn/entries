@@ -1,7 +1,7 @@
 10
 
 dir
-9328
+9479
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/components/promoter/src/org/geworkbench/components/promoter/help/promoter_files
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -162,6 +162,40 @@ has-props
 
 34512
 
+Markers_Set_CDH2.png
+file
+
+
+
+
+2012-04-19T14:07:19.000000Z
+7242082ffc7eb389eb5a4fac76056f97
+2012-03-09T18:22:36.373649Z
+9084
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18304
+
 Promoter_CDH2_AP2_2000updn_setup_logo.png
 file
 
@@ -230,6 +264,40 @@ has-props
 
 23069
 
+Promoter_TBP_selected.png
+file
+
+
+
+
+2012-04-19T14:07:19.000000Z
+e4f01ab6ca201fcfe3c9b9c5782c6d40
+2012-03-09T18:17:19.117706Z
+9080
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12599
+
 T_SequenceRetriever_CDH2_seq_in_proj_folder-2.png
 file
 
@@ -263,6 +331,40 @@ has-props
 
 
 3278
+
+Promoter_Result_CDH2_Sequence_View.png
+file
+
+
+
+
+2012-04-19T14:07:19.000000Z
+74cd49592ce516cbeef3f51361184145
+2012-03-09T18:22:36.373649Z
+9084
+smithken
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38390
 
 Promoter_Taxa_Pulldown.png
 file
@@ -331,108 +433,6 @@ has-props
 
 
 31201
-
-Markers_Set_CDH2.png
-file
-
-
-
-
-2012-04-19T14:07:19.000000Z
-7242082ffc7eb389eb5a4fac76056f97
-2012-03-09T18:22:36.373649Z
-9084
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18304
-
-Promoter_TBP_selected.png
-file
-
-
-
-
-2012-04-19T14:07:19.000000Z
-e4f01ab6ca201fcfe3c9b9c5782c6d40
-2012-03-09T18:17:19.117706Z
-9080
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12599
-
-Promoter_Result_CDH2_Sequence_View.png
-file
-
-
-
-
-2012-04-19T14:07:19.000000Z
-74cd49592ce516cbeef3f51361184145
-2012-03-09T18:22:36.373649Z
-9084
-smithken
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38390
 
 Promoter_Result_CDH2_Sequence_View_hover.png
 file

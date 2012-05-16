@@ -28,20 +28,6 @@ public interface WorkflowRepository {
      * 
      * @param arg0
      * @return
-     *     returns org.geworkbench.components.genspace.server.stubs.WorkflowComment
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addComment", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AddComment")
-    @ResponseWrapper(localName = "addCommentResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AddCommentResponse")
-    public WorkflowComment addComment(
-        @WebParam(name = "arg0", targetNamespace = "")
-        WorkflowComment arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns boolean
      */
     @WebMethod
@@ -124,6 +110,20 @@ public interface WorkflowRepository {
     public boolean removeComment(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.geworkbench.components.genspace.server.stubs.WorkflowComment
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addComment", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AddComment")
+    @ResponseWrapper(localName = "addCommentResponse", targetNamespace = "http://server.genspace.components.geworkbench.org/", className = "org.geworkbench.components.genspace.server.stubs.AddCommentResponse")
+    public WorkflowComment addComment(
+        @WebParam(name = "arg0", targetNamespace = "")
+        WorkflowComment arg0);
 
     /**
      * 

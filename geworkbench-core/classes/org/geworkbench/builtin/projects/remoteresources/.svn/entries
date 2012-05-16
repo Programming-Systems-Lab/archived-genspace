@@ -1,7 +1,7 @@
 10
 
 dir
-9024
+9328
 https://ncisvn.nci.nih.gov/svn/geworkbench/trunk/geworkbench/src/org/geworkbench/builtin/projects/remoteresources
 https://ncisvn.nci.nih.gov/svn/geworkbench
 
@@ -25,40 +25,6 @@ zji
 
 
 8b29bb6e-589a-435a-9a12-3ab907be3462
-
-CaArrayFilteringDialog.java
-file
-
-
-
-
-2012-03-08T18:51:46.000000Z
-95140a37ad90753efa956dd4d683a517
-2012-03-07T16:10:55.341491Z
-8974
-zji
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14673
 
 RemoteResource.java
 file
@@ -128,6 +94,43 @@ has-props
 
 16166
 
+CaArrayFilteringDialog.java
+file
+
+
+
+
+2012-03-08T18:51:46.000000Z
+95140a37ad90753efa956dd4d683a517
+2012-03-07T16:10:55.341491Z
+8974
+zji
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14673
+
+carraydata
+dir
+
 RemoteResourceManager.java
 file
 
@@ -161,7 +164,4 @@ has-props
 
 
 5434
-
-carraydata
-dir
 

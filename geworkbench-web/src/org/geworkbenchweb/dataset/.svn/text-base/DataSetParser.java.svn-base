@@ -5,11 +5,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.io.ObjectOutputStream;
-
 import org.geworkbench.bison.datastructure.biocollections.microarrays.DSMicroarraySet;
 import org.geworkbench.parsers.GeoSeriesMatrixParser;
 import org.geworkbench.parsers.InputFileFormatException;
 import org.geworkbench.parsers.MicroarraySetParser;
+import org.geworkbenchweb.layout.UAccordionPanel;
 import org.geworkbenchweb.pojos.DataSet;
 import org.vaadin.appfoundation.authentication.SessionHandler;
 import org.vaadin.appfoundation.authentication.data.User;
@@ -21,28 +21,36 @@ public class DataSetParser {
 	private String fileType;  
 	private String dataDescription;
 	
-	public DataSetParser(File dataFile, String fileType, String dataDescription) {
+	public DataSetParser(File dataFile, File annotFile, String fileType, String dataDescription) {
 		
 		
 		this.fileName 			= 	dataFile.getName();
 		this.fileType 			= 	fileType;
 		this.dataDescription 	= 	dataDescription;
 		
+		
 		if(fileType == "GEO SOFT File") {
 			
-			GeoSeriesDataSet(dataFile);
+			GeoSeriesDataSet(dataFile, annotFile);
 		
 		} else if(fileType == "Expression File") {
 			
-			ExpressionDataSet(dataFile);
+			ExpressionDataSet(dataFile, annotFile);
 			
 		}
 	}
 	
-	private void ExpressionDataSet(File dataFile) {
+	private void ExpressionDataSet(File dataFile, File annotFile) {
 		
 		MicroarraySetParser parser 	= 	new MicroarraySetParser();
-		DSMicroarraySet dataSet 	= 	parser.parseCSMicroarraySet(dataFile, null);
+		DSMicroarraySet dataSet 	= 	parser.parseCSMicroarraySet(dataFile);
+		
+		/* Here we are parsing Annotation file */
+		/*if(annotFile != null) {
+			
+			AnnotationParser.loadAnnotationFile(dataSet, annotFile);
+		
+		} */
 		
 		if(dataSet.isEmpty()) {
 			
@@ -51,19 +59,22 @@ public class DataSetParser {
 		}else {
 			
 			storeData(dataSet);
+			UAccordionPanel.resetDataContainer();
 			
 		}
 		
 	}
 
-	public void GeoSeriesDataSet(File dataFile) {
+	public void GeoSeriesDataSet(File dataFile, File annotFile) {
 		
 		GeoSeriesMatrixParser parser 	= 	new GeoSeriesMatrixParser();
 		
 		try {
 			
 			DSMicroarraySet dataSet 	= 	parser.getMArraySet(dataFile);
-			
+			if(annotFile.getName() != null) {
+				dataSet.setAnnotationFileName(annotFile.getName());
+			} 
 			if(dataSet.isEmpty()) {
 				
 				System.out.println("Dataset loading failed due to some unknown error. Go debug !!");
@@ -71,6 +82,7 @@ public class DataSetParser {
 			}else {
 				
 				storeData(dataSet);
+				UAccordionPanel.resetDataContainer();
 				
 			}
 		} catch (InputFileFormatException e) {
@@ -95,6 +107,8 @@ public class DataSetParser {
 	    dataset.setOwner(user.getId());	
 	    dataset.setData(convertToByte(dataSet));
 	    FacadeFactory.getFacade().store(dataset);
+	    
+	    UAccordionPanel.resetDataContainer();
 	    
 	}
 	

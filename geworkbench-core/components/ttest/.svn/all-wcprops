@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svn/geworkbench/!svn/ver/9322/trunk/geworkbench/components/ttest
+/svn/geworkbench/!svn/ver/9367/trunk/geworkbench/components/ttest
 END
 result4.txt
 K 25
@@ -27,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 77
 /svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/result7.txt
 END
-result8.txt
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/result8.txt
-END
 .project
 K 25
 svn:wc:ra_dav:version-url
 V 74
 /svn/geworkbench/!svn/ver/6522/trunk/geworkbench/components/ttest/.project
+END
+result8.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/geworkbench/!svn/ver/9131/trunk/geworkbench/components/ttest/result8.txt
 END
 result9.txt
 K 25

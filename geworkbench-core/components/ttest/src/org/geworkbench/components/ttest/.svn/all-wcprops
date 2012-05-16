@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svn/geworkbench/!svn/ver/9322/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
+/svn/geworkbench/!svn/ver/9367/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest
 END
 TtestAnalysis.cwb.xml
 K 25
@@ -55,7 +55,7 @@ TtestAnalysis.java
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svn/geworkbench/!svn/ver/9196/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.java
+/svn/geworkbench/!svn/ver/9367/trunk/geworkbench/components/ttest/src/org/geworkbench/components/ttest/TtestAnalysis.java
 END
 TtestAnalysisPanel.java
 K 25
